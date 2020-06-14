@@ -12,9 +12,10 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'element',
-    loadChildren: () => import('./pages/element/element.module').then( m => m.ElementPageModule)
+    path: 'element/earth',
+    loadChildren: () => import('./pages/earth/earth.module').then( m => m.EarthPageModule)
   }
+
 ];
 
 @NgModule({

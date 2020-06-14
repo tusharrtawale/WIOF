@@ -3,11 +3,11 @@ import { BlogService } from 'src/app/services/blog.service';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: "app-element",
-  templateUrl: "./element.page.html",
-  styleUrls: ["./element.page.scss"],
+  selector: "app-earth",
+  templateUrl: "./earth.page.html",
+  styleUrls: ["./earth.page.scss"],
 })
-export class ElementPage implements OnInit {
+export class EarthPage implements OnInit {
   blogs: Observable<Object>;
   slideOpts = {
     slidesPerView: 5,

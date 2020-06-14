@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { ElementPage } from './element.page';
+import { EarthPage } from './earth.page';
 
-describe('ElementPage', () => {
-  let component: ElementPage;
-  let fixture: ComponentFixture<ElementPage>;
+describe('EarthPage', () => {
+  let component: EarthPage;
+  let fixture: ComponentFixture<EarthPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ElementPage ],
+      declarations: [ EarthPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ElementPage);
+    fixture = TestBed.createComponent(EarthPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

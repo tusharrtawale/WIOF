@@ -1,0 +1,30 @@
+<app-header></app-header>
+
+<ion-content>
+  <app-life-elements></app-life-elements>
+  <ion-list-header></ion-list-header>
+  <ion-card>
+    <ion-card-header class="ion-align-center">
+      <strong>Blogs</strong>
+    </ion-card-header>
+    <ion-card-content
+      ><ion-slides [options]="slideOpts">
+        <ion-slide *ngFor="let blog of (blogs | async)">
+          <ion-card class="sliding-card-margin">
+            <ion-card-content class="ion-text-start">
+              <ion-img [src]="blog.image"></ion-img>
+              <h6 class="ion-padding-vertical">
+                <strong>{{ blog.title }}</strong>
+              </h6>
+              <!-- <ion-label>Category: {{ blog.category }}</ion-label> -->
+              <p>
+                {{ blog.shortDescription }}
+                <a [routerLink]="['blog-post', blog.id]">Read More</a>
+              </p>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

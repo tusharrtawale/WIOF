@@ -1,0 +1,116 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button
+        ><ion-icon name="menu-outline" menuId="wiof-menu"></ion-icon
+      ></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      WIOF
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col>
+        <div class="landing-welcome-img">
+          <p class="landing-welcome-label">
+            Inspire through Creativity<br>
+            Enlighten through Knowlegde<br>
+            Protect through action
+          </p>
+          <button class="wiof-primary-button ion-margin-top">
+            Discover More...
+          </button>
+        </div>
+      </ion-col>
+    </ion-row>
+    <app-life-elements></app-life-elements>
+    <ion-row>
+      <ion-col class="ion-padding" offset-md="1" size-md="5">
+        <ion-card class="wiof-landing-card">
+          <ion-card-content class="ion-text-center">
+            <p>
+              Overwhelmed with the information out there, here is a one stop
+              solution to create a better world
+            </p>
+            <button class="wiof-primary-button ion-margin-top">
+              Learn More
+            </button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col class="ion-padding" size-md="5"
+        ><ion-card class="ion-align-self-center wiof-landing-card">
+          <ion-card-content class="ion-text-center">
+            <p>
+              Want to implement the changes you want to see in the world
+            </p>
+            <button class="wiof-primary-button ion-margin-top">
+              Take Action
+            </button>
+          </ion-card-content>
+        </ion-card></ion-col
+      >
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-padding" offset-md="1" size-md="5">
+        <ion-card class="wiof-landing-card">
+          <ion-card-content class="ion-text-center">
+            <p>
+              Our Latest Blog Posts
+            </p>
+            <button class="wiof-primary-button ion-margin-top">
+              Learn More
+            </button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col class="ion-padding" size-md="5"
+        ><ion-card class="wiof-landing-card">
+          <ion-card-content class="ion-text-center">
+            <p>
+              Our Campaigns
+            </p>
+            <button class="wiof-primary-button ion-margin-top">
+              Participate
+            </button>
+          </ion-card-content>
+        </ion-card></ion-col
+      >
+    </ion-row>
+
+    <ion-row class="ion-padding wiof-footer">
+      <ion-col>
+        <ion-label class="ion-margin-bottom">Contact Us</ion-label><br />
+        <ion-label class="ion-margin-bottom">Email:</ion-label><br />
+        <div class="social-media-block">
+          <ion-button fill="clear" class="ion-no-padding"
+            ><ion-icon slot="icon-only" name="logo-facebook"></ion-icon
+          ></ion-button>
+          <ion-button fill="clear" class="ion-no-padding"
+            ><ion-icon slot="icon-only" name="logo-instagram"></ion-icon
+          ></ion-button>
+          <ion-button fill="clear" class="ion-no-padding"
+            ><ion-icon slot="icon-only" name="logo-twitter"></ion-icon
+          ></ion-button>
+          <ion-button fill="clear" class="ion-no-padding"
+            ><ion-icon slot="icon-only" name="logo-youtube"></ion-icon
+          ></ion-button>
+        </div>
+      </ion-col>
+      <ion-col class="ion-text-center">
+        Navigate
+      </ion-col>
+      <ion-col class="ion-text-center">
+        <ion-label>Newsletter Sign Up</ion-label>
+        <ion-item lines="none" class="ion-margin">
+          <ion-input type="email" placeholder="Email address"></ion-input>
+        </ion-item>
+        <button class="wiof-primary-button">Subscribe</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

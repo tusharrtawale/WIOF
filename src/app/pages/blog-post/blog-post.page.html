@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Blog Post</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+        <div *ngIf="(blogDetails | async) as blog">
+          <h1>{{ blog.title }}</h1>
+          <ion-img [src]="blog.image"></ion-img>
+          <ion-text [innerHTML]="blog.content"></ion-text>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

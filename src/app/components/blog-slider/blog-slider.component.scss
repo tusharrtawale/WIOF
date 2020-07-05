@@ -1,0 +1,13 @@
+.blog-card-content {
+  display: -webkit-box;
+  height: 60px;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.blog-card-footer {
+  background-color: white;
+  border-top: 1px solid lightgrey;
+}

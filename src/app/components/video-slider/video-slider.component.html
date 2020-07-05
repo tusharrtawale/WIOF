@@ -6,21 +6,27 @@
     <div *ngIf="videoList; else loading">
       <ion-slides [options]="slideOpts">
         <ion-slide *ngFor="let video of videoList">
-          <ion-card class="sliding-card-margin wiof-card">
+          <ion-card class="video-card">
             <ion-card-content class="ion-text-start">
               <ion-img [src]="video.thumbnail"></ion-img>
               <h6 class="ion-padding-vertical">
-                <a [routerLink]="['video', video.url]"
-                  ><strong>{{ video.title }}</strong></a
+                <strong
+                  ><a [routerLink]="['video', video.url]">{{
+                    video.title
+                  }}</a></strong
                 >
               </h6>
             </ion-card-content>
-            <ion-buttons class="wiof-take-action">
-              <ion-button [routerLink]="['take-action']">
-                <!-- <ion-icon slot="icon-only" name="person-circle"></ion-icon> -->
-                Take Action
-              </ion-button>
-            </ion-buttons>
+            <ion-row class="video-card-footer">
+              <ion-col>
+                <ion-buttons>
+                  <ion-button [routerLink]="['take-action']">
+                    <!-- <ion-icon slot="icon-only" name="person-circle"></ion-icon> -->
+                    Take Action
+                  </ion-button>
+                </ion-buttons>
+              </ion-col>
+            </ion-row>
           </ion-card>
         </ion-slide>
       </ion-slides>

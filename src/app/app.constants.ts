@@ -15,7 +15,7 @@ export const ELEMENT_BLOG_CATEGORY = {
 }
 
 export const VIDEO_SLIDER_OPTIONS = {
-  slidesPerView: 5,
+  slidesPerView: 4,
   freeMode: true,
   coverflowEffect: {
     rotate: 50,
@@ -24,10 +24,30 @@ export const VIDEO_SLIDER_OPTIONS = {
     modifier: 1,
     slideShadows: true,
   },
+  // Responsive breakpoints
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1
+    },
+    // when window width is >= 480px
+    480: {
+      slidesPerView: 2
+    },
+    // when window width is >= 767px
+    767: {
+      slidesPerView: 3
+    },
+    // when window width is >= 1024px
+    1024: {
+      slidesPerView: 4
+    }
+  }
 };
 
 export const BLOG_SLIDER_OPTIONS = {
-  slidesPerView: 5,
+  slidesPerView: 4,
+  spaceBetween: 1,
   freeMode: true,
   coverflowEffect: {
     rotate: 50,
@@ -36,4 +56,23 @@ export const BLOG_SLIDER_OPTIONS = {
     modifier: 1,
     slideShadows: true,
   },
+  // Responsive breakpoints
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1
+    },
+    // when window width is >= 480px
+    480: {
+      slidesPerView: 2
+    },
+    // when window width is >= 767px
+    767: {
+      slidesPerView: 3
+    },
+    // when window width is >= 1024px
+    1024: {
+      slidesPerView: 4
+    }
+  }
 };

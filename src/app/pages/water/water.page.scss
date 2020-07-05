@@ -1,0 +1,39 @@
+.sliding-card-margin {
+    margin: 5px;
+}
+
+.wiof-card{
+    width:240px;
+    min-height:290px;
+}
+
+.wiof-take-action{
+    position: absolute;
+    bottom:0;
+    left:55px;
+    margin-top:20px;
+    margin-bottom: 5px;
+    padding-top:20px;
+}
+
+
+.water-welcome-img {
+    background: url('../../../assets/Water\ Banner.jpg');
+    background-repeat: no-repeat;
+    // background-attachment: fixed;
+    background-size: cover;
+    height: 600px;
+    text-align: center;
+    padding-top: 200px;
+  }
+  
+  .water-welcome-label{
+    text-shadow: 1px 1px 5px green;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+    margin: 0;
+  }
+  
+

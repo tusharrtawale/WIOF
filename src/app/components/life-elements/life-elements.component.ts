@@ -12,3 +12,5 @@ export class LifeElementsComponent implements OnInit {
   ngOnInit() {}
 
 }
+
+

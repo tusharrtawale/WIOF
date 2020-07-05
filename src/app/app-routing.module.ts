@@ -14,6 +14,46 @@ const routes: Routes = [
   {
     path: 'element/earth',
     loadChildren: () => import('./pages/earth/earth.module').then( m => m.EarthPageModule)
+  },
+  {
+    path: 'element/earth',
+    loadChildren: () => import('./pages/air/air.module').then( m => m.AirPageModule)
+  },
+  {
+    path: 'element/water',
+    loadChildren: () => import('./pages/water/water.module').then( m => m.WaterPageModule)
+  },
+  {
+    path: 'element/fire',
+    loadChildren: () => import('./pages/fire/fire.module').then( m => m.FirePageModule)
+  },
+  {
+    path: 'element/spirit',
+    loadChildren: () => import('./pages/spirit/spirit.module').then( m => m.SpiritPageModule)
+  },
+  {
+    path: 'video-post',
+    loadChildren: () => import('./pages/video-post/video-post.module').then( m => m.VideoPostPageModule)
+  },
+  {
+    path: 'element/water',
+    loadChildren: () => import('./pages/water/water.module').then( m => m.WaterPageModule)
+  },
+  {
+    path: 'element/air',
+    loadChildren: () => import('./pages/air/air.module').then( m => m.AirPageModule)
+  },
+  {
+    path: 'spirit',
+    loadChildren: () => import('./pages/spirit/spirit.module').then( m => m.SpiritPageModule)
+  },
+  {
+    path: 'fire',
+    loadChildren: () => import('./pages/fire/fire.module').then( m => m.FirePageModule)
+  },
+  {
+    path: 'take-action',
+    loadChildren: () => import('./pages/take-action/take-action.module').then( m => m.TakeActionPageModule)
   }
 
 ];

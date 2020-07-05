@@ -1,14 +1,14 @@
 <app-header></app-header>
 
-<ion-content [fullscreen]="true">
+<ion-content>
   <ion-grid class="ion-no-padding">
     <ion-row>
       <ion-col>
         <div class="landing-welcome-img">
           <p class="landing-welcome-label">
-            Inspire through Creativity<br>
-            Enlighten through Knowlegde<br>
-            Protect through action
+            <span id="inspire" style="margin-right:20%" >Inspire through Creativity</span><br>
+            <span id="enlighten" style="margin-right:5%">Enlighten through Knowlegde</span><br>
+            <span id="protect" style="margin-right:-10%">Protect through action</span>
           </p>
           <button class="wiof-primary-button ion-margin-top">
             Discover More...
@@ -70,7 +70,7 @@
         </ion-card></ion-col
       >
     </ion-row>
-
+<!-- 
     <ion-row class="ion-padding wiof-footer">
       <ion-col>
         <ion-label class="ion-margin-bottom">Contact Us</ion-label><br />
@@ -100,6 +100,7 @@
         </ion-item>
         <button class="wiof-primary-button">Subscribe</button>
       </ion-col>
-    </ion-row>
+    </ion-row> -->
   </ion-grid>
+  <app-wiof-footer></app-wiof-footer>
 </ion-content>

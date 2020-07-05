@@ -1,0 +1,15 @@
+<app-header></app-header>
+<ion-content >
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="6" size-sm="12" offset-md="3">
+         <div *ngIf="(urlSafe) as blog">
+          <h1>{{videoTitle}}</h1>
+          <iframe [width]="videoPlayerWidth" [height]="videoPlayerHeight" [src]="urlSafe" allowfullscreen></iframe> 
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <app-wiof-footer></app-wiof-footer>
+</ion-content>

@@ -27,7 +27,7 @@
 }
 
 .landing-welcome-img {
-  background: url('https://live.staticflickr.com/4336/36711218736_5ca7d34e96_b.jpg');
+  background: url('../../../assets/Home\ Page\ Banner.jpg');
   background-repeat: no-repeat;
   // background-attachment: fixed;
   background-size: cover;
@@ -36,19 +36,23 @@
   padding-top: 200px;
 }
 
+
 .landing-welcome-label{
-  text-shadow: 1px 1px 5px green;
+  // text-shadow: 1px 1px 5px green;
   font-size: 30px;
-  color: white;
+  // color: white;
+  color: black;
   font-weight: bold;
   padding: 20px;
   margin: 0;
 }
 
+
 .landing-card {
   background: yellowgreen;
   color: white;
 }
+
 
 .wiof-primary-button {
   width: 150px;
@@ -75,3 +79,4 @@
   background: yellowgreen;
   color: white;
 }
+

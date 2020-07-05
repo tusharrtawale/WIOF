@@ -8,6 +8,14 @@ import { IonicModule, IonicRouteStrategy } from "@ionic/angular";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 
+//Firestore Integration Modules
+
+import {AngularFireModule} from '@angular/fire';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+// import {AngularFireAuthModule} from '@angular/fire/auth';
+import {AngularFireStorageModule} from '@angular/fire/storage'
+import firebaseConfig from '../environment';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -16,6 +24,10 @@ import { AppComponent } from "./app.component";
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireStorageModule
+    // AngularFireAuthModule    //To be used later to add authentication
   ],
   providers: [
     StatusBar,

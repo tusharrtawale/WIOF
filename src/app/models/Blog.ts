@@ -1,16 +1,18 @@
+import {Observable} from "rxjs";
+
 export class Blog {
-    id: number;
+    id: String;
     title: String;
 	shortDescription: String;
 	content: String;
-	image: String;
+	imageName: String;
+	image: Observable<String>;
 	externalUrl: String;
 	author: String;
 	category: String ;
     subCategory: String;
-    
     // List<Tag> tags;
 	// Date submitDate;
-	// Date publishDate;
+	publishDate:Date;
 	// Date approvalDate;
 }

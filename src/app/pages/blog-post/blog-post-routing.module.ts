@@ -6,7 +6,7 @@ const routes: Routes = [
   {
     path: ":blogId",
     component: BlogPostPage,
-  }
+  },
 ];
 
 @NgModule({

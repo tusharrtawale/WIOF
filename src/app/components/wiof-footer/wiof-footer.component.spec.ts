@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { IonicModule } from "@ionic/angular";
+import { WiofFooterComponent } from "./wiof-footer.component";
 
-import { WiofFooterComponent } from './wiof-footer.component';
-
-describe('WiofFooterComponent', () => {
+describe("WiofFooterComponent", () => {
   let component: WiofFooterComponent;
   let fixture: ComponentFixture<WiofFooterComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WiofFooterComponent ],
-      imports: [IonicModule.forRoot()]
+      declarations: [WiofFooterComponent],
+      imports: [IonicModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(WiofFooterComponent);
@@ -18,7 +17,7 @@ describe('WiofFooterComponent', () => {
     fixture.detectChanges();
   }));
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

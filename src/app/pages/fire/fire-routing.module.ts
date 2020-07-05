@@ -1,12 +1,11 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
-import { FirePage } from './fire.page';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { FirePage } from "./fire.page";
 
 const routes: Routes = [
   {
-    path: '',
-    component: FirePage
+    path: "",
+    component: FirePage,
   },
   {
     path: "blog",
@@ -16,13 +15,17 @@ const routes: Routes = [
   {
     path: "video",
     loadChildren: () =>
-      import("../video-post/video-post.module").then((m) => m.VideoPostPageModule),
+      import("../video-post/video-post.module").then(
+        (m) => m.VideoPostPageModule
+      ),
   },
   {
     path: "take-action",
     loadChildren: () =>
-      import("../take-action/take-action.module").then((m) => m.TakeActionPageModule),
-  }
+      import("../take-action/take-action.module").then(
+        (m) => m.TakeActionPageModule
+      ),
+  },
 ];
 
 @NgModule({

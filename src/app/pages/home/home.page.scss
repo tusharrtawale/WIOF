@@ -27,7 +27,7 @@
 }
 
 .landing-welcome-img {
-  background: url('../../../assets/Home\ Page\ Banner.jpg');
+  background: url("../../../assets/Home\ Page\ Banner.jpg");
   background-repeat: no-repeat;
   // background-attachment: fixed;
   background-size: cover;
@@ -36,8 +36,7 @@
   padding-top: 200px;
 }
 
-
-.landing-welcome-label{
+.landing-welcome-label {
   // text-shadow: 1px 1px 5px green;
   font-size: 30px;
   // color: white;
@@ -47,12 +46,10 @@
   margin: 0;
 }
 
-
 .landing-card {
   background: yellowgreen;
   color: white;
 }
-
 
 .wiof-primary-button {
   width: 150px;
@@ -79,4 +76,3 @@
   background: yellowgreen;
   color: white;
 }
-

@@ -1,52 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-import { BlogService } from 'src/app/services/blog.service';
-import { Observable } from 'rxjs';
-import {map} from 'rxjs/operators';
-import { YoutubeVideoService } from 'src/app/services/youtube-video.service';
-import {Video} from "../../models/Video";
-import {Blog} from '../../models/Blog';
-
+import { Component, OnInit } from "@angular/core";
+import { Observable } from "rxjs";
+import { ELEMENT_VIDEOS_PLAYLIST_ID, ELEMENT_BLOG_CATEGORY } from "src/app/app.constants";
+import { BlogService } from "src/app/services/blog.service";
+import { YoutubeVideoService } from "src/app/services/youtube-video.service";
+import { Blog } from "../../models/Blog";
+import { Video } from "../../models/Video";
 
 @Component({
-  selector: 'app-spirit',
-  templateUrl: './spirit.page.html',
-  styleUrls: ['./spirit.page.scss'],
+  selector: "app-spirit",
+  templateUrl: "./spirit.page.html",
+  styleUrls: ["./spirit.page.scss"],
 })
 export class SpiritPage implements OnInit {
   blogs: Observable<Blog[]>;
-  youtube_playlist:any;
-  vids:Video[];
-  vids_frontend:Observable<Video[]>;
-  playlistIdForSpiritPage:String="PLitAAO2FhPTFjxy3EsgDR_XPtgiX8Ez-q";
-  slideOpts = {
-    slidesPerView: 5,
-    freeMode: true,
-    coverflowEffect: {
-      rotate: 50,
-      stretch: 0,
-      depth: 100,
-      modifier: 1,
-      slideShadows: true,
-    },
-  };
+  videos: Observable<Video[]>;
 
-  constructor(private blogService: BlogService,
-    private videoService:YoutubeVideoService) { }
+  constructor(
+    private blogService: BlogService,
+    private videoService: YoutubeVideoService
+  ) {}
 
   ngOnInit() {
-    this.blogs = this.blogService.getBlogs("Spirit");
-
-    this.vids_frontend=this.videoService.getYoutubePlaylist(this.playlistIdForSpiritPage).pipe(map(data=>{
-      this.youtube_playlist=data;
-      let {items} = this.youtube_playlist;
-      // (items.map(x=> {({snippet:{thumbnails:{"default":def_one},title}}=x);return ([def_one.url,title])}))
-      this.vids=items.map(playlist_item=>({ video_thumbnail:playlist_item.snippet.thumbnails.default.url,
-                                            video_title:playlist_item.snippet.title,
-                                            video_link:playlist_item.snippet.resourceId.videoId
-                                                      }));
-
-        return this.vids; 
-      }));  
+    this.blogs = this.blogService.getBlogs(ELEMENT_BLOG_CATEGORY.SPIRIT);
+    this.videos = this.videoService.getYoutubePlaylist(
+      ELEMENT_VIDEOS_PLAYLIST_ID.SPIRIT
+    );
   }
-
 }

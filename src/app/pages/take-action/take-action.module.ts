@@ -1,14 +1,10 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { CommonModule } from "@angular/common";
+import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+import { IonicModule } from "@ionic/angular";
 import { AppCommonModule } from "src/app/app-common.module";
-
-
-import { IonicModule } from '@ionic/angular';
-
-import { TakeActionPageRoutingModule } from './take-action-routing.module';
-
-import { TakeActionPage } from './take-action.page';
+import { TakeActionPageRoutingModule } from "./take-action-routing.module";
+import { TakeActionPage } from "./take-action.page";
 
 @NgModule({
   imports: [
@@ -16,8 +12,8 @@ import { TakeActionPage } from './take-action.page';
     FormsModule,
     IonicModule,
     TakeActionPageRoutingModule,
-    AppCommonModule
+    AppCommonModule,
   ],
-  declarations: [TakeActionPage]
+  declarations: [TakeActionPage],
 })
 export class TakeActionPageModule {}

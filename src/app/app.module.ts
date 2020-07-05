@@ -10,11 +10,11 @@ import { AppComponent } from "./app.component";
 
 //Firestore Integration Modules
 
-import {AngularFireModule} from '@angular/fire';
-import {AngularFirestoreModule} from '@angular/fire/firestore';
+import { AngularFireModule } from "@angular/fire";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
 // import {AngularFireAuthModule} from '@angular/fire/auth';
-import {AngularFireStorageModule} from '@angular/fire/storage'
-import firebaseConfig from '../environment';
+import { AngularFireStorageModule } from "@angular/fire/storage";
+import firebaseConfig from "../environment";
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,7 +26,7 @@ import firebaseConfig from '../environment';
     HttpClientModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
     // AngularFireAuthModule    //To be used later to add authentication
   ],
   providers: [

@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { IonicModule } from "@ionic/angular";
+import { VideoPostPage } from "./video-post.page";
 
-import { VideoPostPage } from './video-post.page';
-
-describe('VideoPostPage', () => {
+describe("VideoPostPage", () => {
   let component: VideoPostPage;
   let fixture: ComponentFixture<VideoPostPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VideoPostPage ],
-      imports: [IonicModule.forRoot()]
+      declarations: [VideoPostPage],
+      imports: [IonicModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(VideoPostPage);
@@ -18,7 +17,7 @@ describe('VideoPostPage', () => {
     fixture.detectChanges();
   }));
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

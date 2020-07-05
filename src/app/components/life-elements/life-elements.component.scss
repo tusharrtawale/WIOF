@@ -1,6 +1,5 @@
 .landing-circle-img {
   border-radius: 50%;
-  //border: 1px solid black;
   box-shadow: 1px 1px 5px 1px grey;
   background-repeat: no-repeat;
   background-size: contain ;
@@ -9,32 +8,23 @@
   margin: auto;
 
   &.earth {
-    // background-image: url("https://i.pinimg.com/originals/07/cf/cd/07cfcd0bf1854e89800b22353caff381.jpg");
     background-image: url("../../../assets/earth.jpg");
-
   }
 
   &.water {
-    // background-image: url("https://www.sundaysoffpools.com/wp-content/uploads/2018/04/swimming-pool-material.jpg");
     background-image: url("../../../assets/water.jpg");
   }
 
   &.fire {
-    // background-image: url("https://cdn.pixabay.com/photo/2015/07/19/15/13/fire-851630_960_720.jpg");
     background-image: url("../../../assets/fire.jpg");
-
   }
 
   &.air {
-    // background-image: url("https://ichef.bbci.co.uk/images/ic/640x360/p0723j31.jpg");
     background-image: url("../../../assets/air.jpg");
-
   }
 
   &.space {
-    // background-image: url("https://freedesignfile.com/upload/2017/06/Fantasy-beautiful-space-nebula-Stock-Photo-12.jpg");
     background-image: url("../../../assets/spirit.jpg");
-
   }
 
   &:hover {

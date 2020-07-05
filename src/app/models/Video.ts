@@ -1,5 +1,5 @@
-export class Video{
-    video_title:String;
-    video_link:String;
-    video_thumbnail:String;
-  }
+export class Video {
+  title: String;
+  url: String;
+  thumbnail: String;
+}

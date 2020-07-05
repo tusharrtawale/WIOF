@@ -1,14 +1,10 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { CommonModule } from "@angular/common";
+import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+import { IonicModule } from "@ionic/angular";
 import { AppCommonModule } from "src/app/app-common.module";
-
-
-import { IonicModule } from '@ionic/angular';
-
-import { VideoPostPageRoutingModule } from './video-post-routing.module';
-
-import { VideoPostPage } from './video-post.page';
+import { VideoPostPageRoutingModule } from "./video-post-routing.module";
+import { VideoPostPage } from "./video-post.page";
 
 @NgModule({
   imports: [
@@ -16,9 +12,8 @@ import { VideoPostPage } from './video-post.page';
     FormsModule,
     IonicModule,
     VideoPostPageRoutingModule,
-    AppCommonModule
-
+    AppCommonModule,
   ],
-  declarations: [VideoPostPage]
+  declarations: [VideoPostPage],
 })
 export class VideoPostPageModule {}

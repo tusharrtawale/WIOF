@@ -1,0 +1,33 @@
+@mixin page-welcome-img {
+  background-repeat: no-repeat;
+  // background-attachment: fixed;
+  background-size: cover;
+  height: 600px;
+  text-align: center;
+  padding-top: 200px;
+}
+
+.air-welcome-img {
+  background: url("../../../assets/Air\ Banner.jpg");
+  @include page-welcome-img;
+}
+
+.earth-welcome-img {
+  background: url("../../../assets/Earth\ Banner.jpg");
+  @include page-welcome-img;
+}
+
+.fire-welcome-img {
+  background: url("../../../assets/Energy\ Banner.jpg");
+  @include page-welcome-img;
+}
+
+.spirit-welcome-img {
+  background: url("../../../assets/Spirit\ Banner.jpg");
+  @include page-welcome-img;
+}
+
+.water-welcome-img {
+  background: url("../../../assets/Water\ Banner.jpg");
+  @include page-welcome-img;
+}

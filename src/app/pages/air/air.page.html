@@ -1,89 +1,10 @@
 <app-header></app-header>
 <ion-content>
-  <ion-row>
-    <ion-col>
-      <div class="air-welcome-img">
-        <!-- <p class="earth-welcome-label">
-          <span id="inspire">Inspire through Creativity</span><br>
-          <span id="enlighten">Enlighten through Knowlegde</span><br>
-          <span id="protect">Protect through action</span>
-        </p>
-        <button class="wiof-primary-button ion-margin-top">
-          Discover More...
-        </button> -->
-      </div>
-    </ion-col>
-  </ion-row>
+  <app-element-welcome-image
+    welcomeImageClass="air-welcome-img"
+  ></app-element-welcome-image>
   <app-life-elements></app-life-elements>
-  <ion-list-header></ion-list-header>
-  <ion-card>
-    <ion-card-header class="ion-align-center">
-      <strong>Blogs</strong>
-    </ion-card-header>
-    <ion-card-content>
-        <div *ngIf="(blogs | async) as blogslist; else loading">
-          <ion-slides [options]="slideOpts">
-            <ion-slide *ngFor="let blog of blogslist ">
-              <ion-card class="sliding-card-margin wiof-card">
-                <ion-card-content class="ion-text-start">
-                  <ion-img [src]="(blog.image|async)"></ion-img>
-                  <h6 class="ion-padding-vertical">
-                    <a [routerLink]="['blog', blog.id]"><strong>{{ blog.title }}</strong></a>
-                  </h6>
-                  <!-- <ion-label>Category: {{ blog.category }}</ion-label> -->
-                  <p>
-                    {{ blog.shortDescription }}
-                    <!-- <a [routerLink]="['blog-post', blog.id]">Read More</a> -->
-                  </p>
-                </ion-card-content><br>
-                <ion-buttons class="wiof-take-action">
-                  <ion-button [routerLink]="['take-action']">
-                    <!-- <ion-icon slot="icon-only" name="person-circle"></ion-icon> -->
-                    Take Action
-                  </ion-button>
-                </ion-buttons>   
-              </ion-card>
-            </ion-slide>
-          </ion-slides>
-        </div>
-      <ng-template  #loading>
-        <ion-spinner name="crescent"></ion-spinner><br>Loading..
-      </ng-template>   
-    </ion-card-content>
-  </ion-card>
-
-  <br>
-  <ion-card>
-    <ion-card-header class="ion-align-center">
-      <strong>Videos</strong>
-    </ion-card-header>
-    <ion-card-content>
-        <div *ngIf="(vids_frontend | async ) as videoslist; else loading">
-          <ion-slides [options]="slideOpts">
-            <ion-slide *ngFor="let videoitem of videoslist ">
-              <ion-card class="sliding-card-margin wiof-card">
-                <ion-card-content class="ion-text-start">
-                  <ion-img [src]="(videoitem.video_thumbnail)"></ion-img>
-                  <h6 class="ion-padding-vertical">
-                    <a [routerLink]="['video', videoitem.video_link]"><strong>{{ videoitem.video_title }}</strong></a>
-                  </h6>
-  
-                </ion-card-content>
-                <ion-buttons class="wiof-take-action">
-                  <ion-button [routerLink]="['take-action']">
-                    <!-- <ion-icon slot="icon-only" name="person-circle"></ion-icon> -->
-                    Take Action
-                  </ion-button>
-                </ion-buttons>   
-              </ion-card>
-            </ion-slide>
-          </ion-slides>
-        </div>
-      <ng-template  #loading>
-        <ion-spinner name="crescent"></ion-spinner><br>Loading..
-      </ng-template>   
-    </ion-card-content>
-  </ion-card>
+  <app-blog-slider [blogList]="blogs | async"></app-blog-slider>
+  <app-video-slider [videoList]="videos | async"></app-video-slider>
   <app-wiof-footer></app-wiof-footer>
 </ion-content>
-

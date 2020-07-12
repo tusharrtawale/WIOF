@@ -70,7 +70,11 @@ const routes: Routes = [
       import("./pages/take-action/take-action.module").then(
         (m) => m.TakeActionPageModule
       ),
+  },  {
+    path: 'admin-dashboard',
+    loadChildren: () => import('./pages/admin-dashboard/admin-dashboard.module').then( m => m.AdminDashboardPageModule)
   },
+
 ];
 
 @NgModule({

@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Blog</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="success" fill="solid" size="large" (click)="onSubmit()"
+        >Save</ion-button
+      >
+      <ion-button color="medium" fill="clear" size="large" routerLink="/admin-dashboard">Cancel</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="addBlogForm" (submit)="onSubmit()">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-xs="12" size-md="6"
+          ><ion-item>
+            <ion-label position="floating">Blog Title</ion-label>
+            <ion-input formControlName="title"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size-xs="12" size-md="6"
+          ><ion-item>
+            <ion-label position="floating">Author Name</ion-label>
+            <ion-input formControlName="authorName"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size-xs="12" size-md="6"
+          ><ion-item>
+            <ion-label position="floating">Category</ion-label>
+            <ion-select formControlName="category">
+              <ion-select-option
+                [value]="category"
+                *ngFor="let category of categories"
+                >{{ category }}</ion-select-option
+              >
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size-xs="12" size-md="6"
+          ><ion-item>
+            <ion-label position="floating">Sub Category</ion-label>
+            <ion-input formControlName="subCategory"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size-xs="12"
+          ><ion-item>
+            <ion-label position="floating">Blog Image URL</ion-label>
+            <ion-input formControlName="image"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size-xs="12"
+          ><ion-item>
+            <ion-label position="floating">Blog Short Description</ion-label>
+            <ion-textarea
+              formControlName="shortDescription"
+              rows="2"
+              auto-grow="true"
+            ></ion-textarea>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size-xs="12"
+          ><ion-item>
+            <ion-label position="floating">Blog Content</ion-label>
+            <ion-textarea
+              formControlName="content"
+              rows="20"
+              auto-grow="true"
+            ></ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

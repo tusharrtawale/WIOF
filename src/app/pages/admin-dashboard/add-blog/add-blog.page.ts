@@ -1,8 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { AlertController, LoadingController } from "@ionic/angular";
+import { take, catchError } from "rxjs/operators";
 import { ELEMENT_BLOG_CATEGORY } from "src/app/app.constants";
 import { Blog } from "src/app/models/Blog";
+import { BlogService } from "src/app/services/blog.service";
 
 @Component({
   selector: "app-add-blog",
@@ -15,7 +17,8 @@ export class AddBlogPage implements OnInit {
   loader;
   constructor(
     private alertCtrl: AlertController,
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
+    private blogService: BlogService
   ) {}
 
   ngOnInit() {
@@ -32,14 +35,21 @@ export class AddBlogPage implements OnInit {
 
   onSubmit() {
     if (this.addBlogForm.valid) {
+      //TODO to handle image save
+      this.addBlogForm.value.image = "image1.jpg";
+      
       const blog = Blog.createByForm(this.addBlogForm);
       console.log("===== blog details captured =====", blog);
       this.showLoader("We are saving your blog...");
-      setTimeout(() => {
-        this.presentAlert("Success", "Blog saved successfully", ["OK"]);
-        this.loader.dismiss();
-        this.addBlogForm.reset();
-      }, 2000);
+      this.blogService
+        .saveBlog(blog)
+        .pipe(take(1))
+        .subscribe((blogId) => {
+          this.presentAlert("Success", "Blog saved successfully", ["OK"]);
+          this.loader.dismiss();
+          this.addBlogForm.reset();
+        });
+        //TODO handle error
     }
   }
 

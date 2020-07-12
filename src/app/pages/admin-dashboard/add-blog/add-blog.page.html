@@ -5,7 +5,13 @@
       <ion-button color="success" fill="solid" size="large" (click)="onSubmit()"
         >Save</ion-button
       >
-      <ion-button color="medium" fill="clear" size="large" routerLink="/admin-dashboard">Cancel</ion-button>
+      <ion-button
+        color="medium"
+        fill="clear"
+        size="large"
+        routerLink="/admin-dashboard"
+        >Cancel</ion-button
+      >
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -66,15 +72,9 @@
           </ion-item>
         </ion-col>
 
-        <ion-col size-xs="12"
-          ><ion-item>
-            <ion-label position="floating">Blog Content</ion-label>
-            <ion-textarea
-              formControlName="content"
-              rows="20"
-              auto-grow="true"
-            ></ion-textarea>
-          </ion-item>
+        <ion-col size-xs="12">
+          <ion-item><ion-label>Blog Content</ion-label></ion-item>
+          <quill-editor formControlName="content"></quill-editor>
         </ion-col>
       </ion-row>
     </ion-grid>

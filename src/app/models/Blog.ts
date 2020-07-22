@@ -34,13 +34,22 @@ export class Blog {
     this.content = content;
   }
 
+  static formatImageName(imageName: string) {
+    let newImageName = "";
+    if (imageName) {
+      const imgNameArr = imageName.split("\\");
+      newImageName = "_" + imgNameArr[imgNameArr.length - 1];
+    }
+    return Date.now() + newImageName; // add timestamp to image name to keep it unique
+  }
+
   static createByForm(addBlogForm: FormGroup) {
     return new Blog(
       addBlogForm.value.title,
       addBlogForm.value.authorName,
       addBlogForm.value.category,
       addBlogForm.value.subCategory,
-      addBlogForm.value.image,
+      this.formatImageName(addBlogForm.value.image),
       addBlogForm.value.shortDescription,
       addBlogForm.value.content
     );

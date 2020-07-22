@@ -1,7 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { AlertController, LoadingController } from "@ionic/angular";
-import { take, catchError } from "rxjs/operators";
+import { combineLatest, throwError } from "rxjs";
+import { catchError, map } from "rxjs/operators";
 import { ELEMENT_BLOG_CATEGORY } from "src/app/app.constants";
 import { Blog } from "src/app/models/Blog";
 import { BlogService } from "src/app/services/blog.service";
@@ -14,6 +15,8 @@ import { BlogService } from "src/app/services/blog.service";
 export class AddBlogPage implements OnInit {
   categories: String[] = Object.values(ELEMENT_BLOG_CATEGORY);
   addBlogForm: FormGroup;
+  blogImage: string;
+  blogImageToSave: any;
   loader;
   constructor(
     private alertCtrl: AlertController,
@@ -33,23 +36,50 @@ export class AddBlogPage implements OnInit {
     });
   }
 
+  onFileSelected(event) {
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(event.target.files[0]);
+    this.blogImageToSave = event.target.files[0];
+    fileReader.onload = () => {
+      this.blogImage = fileReader.result as string;
+      console.log(this.addBlogForm.value.image);
+    };
+  }
+
   onSubmit() {
     if (this.addBlogForm.valid) {
-      //TODO to handle image save
-      this.addBlogForm.value.image = "image1.jpg";
-      
       const blog = Blog.createByForm(this.addBlogForm);
       console.log("===== blog details captured =====", blog);
       this.showLoader("We are saving your blog...");
-      this.blogService
-        .saveBlog(blog)
-        .pipe(take(1))
-        .subscribe((blogId) => {
-          this.presentAlert("Success", "Blog saved successfully", ["OK"]);
-          this.loader.dismiss();
-          this.addBlogForm.reset();
-        });
-        //TODO handle error
+      combineLatest([
+        this.blogService.saveBlogImage(this.blogImageToSave, blog.imageName),
+        this.blogService.saveBlog(blog),
+      ])
+        .pipe(
+          map(([imgResp, blogResp]) => {
+            console.log(imgResp);
+            console.log(blogResp);
+            return [imgResp, blogResp];
+          }),
+          catchError((err) => {
+            return throwError(err);
+          })
+        )
+        .subscribe(
+          ([imgResp, blogResp]) => {
+            this.loader.dismiss();
+            this.addBlogForm.reset();
+            this.presentAlert("Success", "We saved your blog!", ["Cool!"]);
+          },
+          (error) => {
+            this.loader.dismiss();
+            this.presentAlert(
+              "Error",
+              "Uh oh! We could not save it. Please try again.",
+              ["OK"]
+            );
+          }
+        );
     }
   }
 

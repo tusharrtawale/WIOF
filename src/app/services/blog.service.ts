@@ -6,7 +6,7 @@ import {
   AngularFirestoreDocument,
 } from "@angular/fire/firestore";
 import { AngularFireStorage } from "@angular/fire/storage";
-import { Observable, from } from "rxjs";
+import { from, Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { Blog } from "../models/Blog";
 
@@ -95,6 +95,16 @@ export class BlogService {
     // console.log("client",this.client)
     return this.blog;
   }
+
+  saveBlogImage(imageData: any, imageName: String) {
+    const imageUploadTask = this.storage.upload(
+      `/blog-images/${imageName}`,
+      imageData
+    );
+    // from create an observable from promise
+    return from(imageUploadTask);
+  }
+
   saveBlog(blog: Blog) {
     // from create an observable from promise
     return from(this.blogCollection.add({ ...blog }));

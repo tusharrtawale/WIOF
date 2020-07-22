@@ -1,11 +1,18 @@
 import { NgModule } from "@angular/core";
 import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 
+import {AuthGaurd} from './gaurds/auth.gaurd';
+
 const routes: Routes = [
   {
     path: "home",
     loadChildren: () =>
       import("./pages/home/home.module").then((m) => m.HomePageModule),
+  },
+  {
+    path: "login",
+    loadChildren: () =>
+      import("./pages/login/login.module").then((m) => m.LoginPageModule),
   },
   {
     path: "",
@@ -73,8 +80,14 @@ const routes: Routes = [
   },
   {
     path: 'admin-dashboard',
-    loadChildren: () => import('./pages/admin-dashboard/admin-dashboard.module').then( m => m.AdminDashboardPageModule)
+    loadChildren: () => import('./pages/admin-dashboard/admin-dashboard.module').then( m => m.AdminDashboardPageModule),
+    canActivate:[AuthGaurd]
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+
 
 ];
 

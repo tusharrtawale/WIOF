@@ -15,6 +15,7 @@ import { Blog } from "../models/Blog";
 })
 export class BlogService {
   blogCollection: AngularFirestoreCollection<any>;
+  blogCollectionByCategory: AngularFirestoreCollection<any>;
   blogDoc: AngularFirestoreDocument<any>;
   blogs: Observable<Blog[]>;
   blog: Observable<Blog>;
@@ -54,27 +55,23 @@ export class BlogService {
 
   getBlogs(category: String): Observable<Blog[]> {
     // console.log("came here") //test
-
-    this.blogs = this.blogCollection.snapshotChanges().pipe(
+    this.blogCollectionByCategory = this.database.collection("Blogs", (ref) =>
+      ref.where("category", "==", category)
+    );
+    this.blogs = this.blogCollectionByCategory.snapshotChanges().pipe(
       map((actions) =>
         actions.map((a) => {
           const data = a.payload.doc.data() as Blog;
           data.id = a.payload.doc.id;
-
-          //Test
-          // console.log("data1",data);
-
+          // console.log("data1",data);       //Test
           data.image = this.getImage(data.imageName); //datatype is observable, handle accordingly
-
-          // console.log("imagesArray:",data.imagesArray) //test
-
+          // console.log("imagesArray:",data.imagesArray)
+          //test
           // console.log("thumbnail:",data.thumbnail)  //test
-
           return data;
         })
       )
     );
-
     // console.log("Blogs",this.blogs)  //test
     return this.blogs;
   }
@@ -98,9 +95,8 @@ export class BlogService {
     // console.log("client",this.client)
     return this.blog;
   }
-
-  saveBlog(blog: Blog){
+  saveBlog(blog: Blog) {
     // from create an observable from promise
-    return from(this.blogCollection.add({...blog}));
+    return from(this.blogCollection.add({ ...blog }));
   }
 }

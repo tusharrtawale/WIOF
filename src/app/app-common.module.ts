@@ -8,6 +8,7 @@ import { HeaderComponent } from "./components/header/header.component";
 import { LifeElementsComponent } from "./components/life-elements/life-elements.component";
 import { VideoSliderComponent } from "./components/video-slider/video-slider.component";
 import { WiofFooterComponent } from "./components/wiof-footer/wiof-footer.component";
+import {AqiWidgetComponent} from "./components/aqi-widget/aqi-widget.component";
 
 @NgModule({
   imports: [IonicModule, CommonModule, RouterModule],
@@ -21,6 +22,7 @@ import { WiofFooterComponent } from "./components/wiof-footer/wiof-footer.compon
     VideoSliderComponent,
     BlogSliderComponent,
     ElementWelcomeImageComponent,
+    AqiWidgetComponent
   ],
   declarations: [
     HeaderComponent,
@@ -29,6 +31,7 @@ import { WiofFooterComponent } from "./components/wiof-footer/wiof-footer.compon
     VideoSliderComponent,
     BlogSliderComponent,
     ElementWelcomeImageComponent,
+    AqiWidgetComponent
   ],
   providers: [],
 })

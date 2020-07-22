@@ -1,0 +1,124 @@
+<ion-card>
+    <ion-card-header class="wiof-aqi-widget-card-header">
+      <ion-card-title>AQI Widget</ion-card-title>
+      </ion-card-header>
+      <!-- <ion-row>d -->
+      <ion-toolbar class="wiof-aqi-widget-card-toolbar">
+        <ion-button fill="outline" slot="start" (click)="loadMajorCitiesDiv()">Major Cities</ion-button>
+        <ion-button fill="outline" slot="start" (click)="loadSearchCityDiv()">Search City</ion-button>
+        <!-- future use new window aqi map view button -->
+        <!-- <ion-button ><ion-icon name="browsers-outline"></ion-icon></ion-button> -->
+      </ion-toolbar>
+    <!-- </ion-row> -->
+      <ion-card-content>
+        <div *ngIf="widgetMajorCities">
+          <ion-row>
+            <ion-col size="4">Location</ion-col>
+            <ion-col size="8">AQI</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="4">Delhi</ion-col>
+            <ion-col size="8">
+              <p *ngIf="(aqiDelhi|async) as aqiDelhiData;else loadingDehi" > {{aqiDelhiData.data.aqi}}</p>               
+                <ng-template #loadingDelhi>
+                  <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />
+                </ng-template> 
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="4">Kolkata</ion-col>
+            <ion-col size="8">
+              <p *ngIf="(aqiKolkata|async) as aqiKolkataData;else loadingKolkata" > {{aqiKolkataData.data.aqi}}</p>               
+                <ng-template #loadingKolkata>
+                  <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />
+                </ng-template> 
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="4">Bangalore</ion-col>
+            <ion-col size="8">
+              <p *ngIf="(aqiBangalore|async) as aqiBangaloreData;else loadingBangalore" > {{aqiBangaloreData.data.aqi}}</p>               
+                <ng-template #loadingBangalore>
+                  <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />
+                </ng-template> 
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="4">Mumbai</ion-col>
+            <ion-col size="8">
+              <p *ngIf="(aqiMumbai|async) as aqiMumbaiData;else loadingMumbai" > {{aqiMumbaiData.data.aqi}}</p>               
+                <ng-template #loadingMumbai>
+                  <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />
+                </ng-template> 
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="4">Chennai</ion-col>
+            <ion-col size="8">
+              <p *ngIf="(aqiChennai|async) as aqiChennaiData;else loadingChennai" > {{aqiChennaiData.data.aqi}}</p>               
+                <ng-template #loadingChennai>
+                  <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />
+                </ng-template> 
+            </ion-col>
+          </ion-row>
+  
+  
+        </div>
+        <div *ngIf="widgetSearchCity">
+          Search Location
+          <ion-searchbar placeholder="City" showCancelButton="focus" [(ngModel)]="city"></ion-searchbar>
+          <ion-button (click)="loadCityAqiData()" >Search</ion-button>
+          <div *ngIf="searchClickFlag">
+            <div *ngIf="(searchCityAqi|async) as searchAqiData;else loading">
+              <div  *ngIf="searchAqiData.status==='ok';else notFound">
+                <ion-label>AQI: </ion-label>
+                <ion-text> {{searchAqiData.data.aqi}}</ion-text>
+                <br>
+                <ion-label>Station Name: </ion-label>
+                <ion-text> {{searchAqiData.data.city.name}}</ion-text>
+                <br>
+  
+                <ion-label>Dew: </ion-label>
+                <ion-text> {{searchAqiData.data.iaqi.dew.v}}</ion-text>
+                <br>
+  
+                <ion-label>Humidity: </ion-label>
+                <ion-text> {{searchAqiData.data.iaqi.h.v}}</ion-text>
+                <br>
+  
+                <ion-label>Pressure: </ion-label>
+                <ion-text> {{searchAqiData.data.iaqi.p.v}}</ion-text>
+                <br>
+  
+                <ion-label>PM25: </ion-label>
+                <ion-text> {{searchAqiData.data.iaqi.pm25.v}}</ion-text>
+                <br>
+  
+                <ion-label>Temperature: </ion-label>
+                <ion-text> {{searchAqiData.data.iaqi.t.v}}</ion-text>
+                <br>
+  
+                <ion-label>Wind: </ion-label>
+                <ion-text> {{searchAqiData.data.iaqi.w.v}}</ion-text>
+                <br>
+  
+                <!-- <ion-label>Dew: </ion-label>
+                <ion-text> {{searchAqiData.iaqi.wg.v}}</ion-text> -->
+                
+             </div>
+            </div>
+            <ng-template #loading>
+              <ion-spinner name="crescent" class="wiof-spinner" ></ion-spinner><br />
+            </ng-template> 
+            <ng-template #notFound>
+              <p>Sorry data not available for provided location</p>
+            </ng-template> 
+          </div>
+  
+        </div>
+  
+  
+  
+  
+      </ion-card-content>
+    </ion-card>

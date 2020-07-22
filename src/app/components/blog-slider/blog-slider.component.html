@@ -1,4 +1,10 @@
-<ion-card>
+<ion-card [ngClass]="{
+  'wiof-earth':element === 'earth',
+  'wiof-water':element === 'water',
+  'wiof-fire':element === 'fire',
+  'wiof-air':element === 'air',
+  'wiof-spirit':element === 'spirit'
+}">
   <ion-card-header class="ion-align-center">
     <strong>Blogs</strong>
   </ion-card-header>
@@ -7,8 +13,8 @@
       <ion-slides [options]="slideOpts">
         <ion-slide *ngFor="let blog of blogList">
           <ion-card class="blog-card">
-            <ion-card-content class="ion-text-start">
-              <ion-img [src]="blog.image | async"></ion-img>
+            <ion-card-content class="ion-text-start card-content">
+              <ion-img [src]="blog.image | async" class="blogImage"></ion-img>
               <h6 class="ion-padding-vertical">
                 <strong
                   ><a [routerLink]="['blog', blog.id]">{{
@@ -36,8 +42,9 @@
         </ion-slide>
       </ion-slides>
     </div>
+
     <ng-template #loading>
-      <ion-spinner name="crescent"></ion-spinner><br />Loading..
-    </ng-template>
+      <ion-spinner name="crescent" class="wiof-spinner" ></ion-spinner><br />
+    </ng-template> 
   </ion-card-content>
 </ion-card>

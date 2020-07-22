@@ -3,8 +3,22 @@
   <app-element-welcome-image
     welcomeImageClass="air-welcome-img"
   ></app-element-welcome-image>
-  <app-life-elements></app-life-elements>
-  <app-blog-slider [blogList]="blogs | async"></app-blog-slider>
-  <app-video-slider [videoList]="videos | async"></app-video-slider>
+  <app-life-elements  [element]="elementName"></app-life-elements>
+  <!-- <div >
+    <h1>AQI data</h1>
+    <p *ngIf="(aqi|async) as aqi_data" > {{aqi_data.data.aqi}} </p>
+
+    <p></p>
+    <div *ngIf="get_data|async">
+      </div> -->
+  <ion-row>
+    <ion-col size-xs="7"></ion-col>
+    <ion-col size-md="5" size-xs="12">
+    <app-aqi-widget></app-aqi-widget>
+</ion-col>
+</ion-row>
+  <!-- </div> -->
+  <app-blog-slider [blogList]="blogs | async" [element]="elementName"></app-blog-slider>
+  <app-video-slider [videoList]="videos | async" [element]="elementName"></app-video-slider>
   <app-wiof-footer></app-wiof-footer>
 </ion-content>

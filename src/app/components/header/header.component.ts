@@ -7,7 +7,10 @@ import { Platform } from "@ionic/angular";
   styleUrls: ["./header.component.scss"],
 })
 export class HeaderComponent implements OnInit {
+  wiofLogo:string="../../assets/logo.jpg";
   constructor(public platform: Platform) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
 }

@@ -14,6 +14,22 @@ export const ELEMENT_BLOG_CATEGORY = {
   SPIRIT: "Spirit",
 }
 
+export const ELEMENT_SELECT={
+  AIR: "air",
+  WATER: "water",
+  EARTH: "earth",
+  FIRE: "fire",
+  SPIRIT: "spirit",
+}
+
+export const AQI_WIDGET_LOCATIONS={
+  DELHI:"delhi",
+  MUMBAI:"mumbai",
+  KOLKATA:"kolkata",
+  CHENNAI:"chennai",
+  BANGALORE:"bangalore"
+}
+
 export const VIDEO_SLIDER_OPTIONS = {
   slidesPerView: 4,
   freeMode: true,
@@ -24,10 +40,16 @@ export const VIDEO_SLIDER_OPTIONS = {
     modifier: 1,
     slideShadows: true,
   },
+
+  // navigation: {
+  //   nextEl: '.swiper-button-next',
+  //   prevEl: '.swiper-button-prev',
+  // },
+
   // Responsive breakpoints
   breakpoints: {
     // when window width is >= 320px
-    320: {
+    0: {
       slidesPerView: 1
     },
     // when window width is >= 480px
@@ -45,6 +67,10 @@ export const VIDEO_SLIDER_OPTIONS = {
   }
 };
 
+// <div class="swiper-button-prev"></div>
+//     <div class="swiper-button-next"></div>
+
+
 export const BLOG_SLIDER_OPTIONS = {
   slidesPerView: 4,
   spaceBetween: 1,
@@ -59,7 +85,7 @@ export const BLOG_SLIDER_OPTIONS = {
   // Responsive breakpoints
   breakpoints: {
     // when window width is >= 320px
-    320: {
+    0: {
       slidesPerView: 1
     },
     // when window width is >= 480px

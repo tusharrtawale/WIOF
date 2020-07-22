@@ -3,8 +3,8 @@
   <app-element-welcome-image
     welcomeImageClass="fire-welcome-img"
   ></app-element-welcome-image>
-  <app-life-elements></app-life-elements>
-  <app-blog-slider [blogList]="blogs | async"></app-blog-slider>
-  <app-video-slider [videoList]="videos | async"></app-video-slider>
+  <app-life-elements [element]="elementName"></app-life-elements>
+  <app-blog-slider [blogList]="blogs | async"  [element]="elementName"></app-blog-slider>
+  <app-video-slider [videoList]="videos | async"  [element]="elementName"></app-video-slider>
   <app-wiof-footer></app-wiof-footer>
 </ion-content>

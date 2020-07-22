@@ -1,42 +1,52 @@
 <ion-row class="ion-align-items-center">
-  <ion-col class="ion-padding" size-xs="6" size-sm="2" offset-sm="1">
+  <ion-col class="ion-padding" size-xs="12" >
+    <p style="text-align:center;" >Choose any of the elements <span class="wiof-read-more">to get to know more about how our actions are impacting the environment and what can we do to help</span></p>
+  </ion-col>
+  <ion-col class="ion-padding"  size-xs="4" size-sm="2" offset-sm="1">
     <div
-      class="ion-text-center landing-circle-img earth"
+      class="ion-text-center landing-circle-img earth" [ngStyle]="{'box-shadow':element === 'earth' ? '1px 1px 12px 10px rgb(214,254,225)' : '1px 1px 5px 1px rgb(214,254,225)'  
+    }"
       [routerLink]="['/element', 'earth']"
     >
-      <!-- <h4 class="landing-circle-label">Earth</h4> -->
     </div>
+    <h4 class="landing-circle-label">Earth</h4>
   </ion-col>
-  <ion-col class="ion-padding" size-xs="6" size-sm="2">
+
+  <ion-col class="ion-padding" size-xs="4" size-sm="2">
     <div
-      class="ion-text-center landing-circle-img water"
-      [routerLink]="['/element', 'water']"
+      class="ion-text-center landing-circle-img fire"  [ngStyle]="{'box-shadow':element === 'fire' ? '1px 1px 12px 10px rgb(255,235,184)' : '1px 1px 5px 1px rgb(255,235,184)' }" 
+      [routerLink]="['/element', 'energy']"
     >
-      <!-- <h4 class="landing-circle-label">Water</h4> -->
     </div>
+    <h4 class="landing-circle-label">Energy</h4>
   </ion-col>
-  <ion-col class="ion-padding" size-xs="6" size-sm="2">
+
+  <ion-col class="ion-padding" size-xs="4" size-sm="2">
     <div
-      class="ion-text-center landing-circle-img fire"
-      [routerLink]="['/element', 'fire']"
-    >
-      <!-- <h4 class="landing-circle-label">Fire</h4> -->
-    </div>
-  </ion-col>
-  <ion-col class="ion-padding" size-xs="6" size-sm="2">
-    <div
-      class="ion-text-center landing-circle-img air"
+      class="ion-text-center landing-circle-img air"  [ngStyle]="{'box-shadow':element === 'air' ? '1px 1px 12px 10px rgb(229,229,229)' : '1px 1px 5px 1px rgb(229,229,229)'  
+    }"
       [routerLink]="['/element', 'air']"
     >
-      <!-- <h4 class="landing-circle-label">Air</h4> -->
     </div>
+    <h4 class="landing-circle-label">Air</h4>
   </ion-col>
-  <ion-col class="ion-padding" size-xs="6" size-sm="2">
+
+
+  <ion-col class="ion-padding" size-xs="5" size-sm="2" offset-xs="1" offset-sm="0">
     <div
-      class="ion-text-center landing-circle-img space"
-      [routerLink]="['/element', 'spirit']"
+      class="ion-text-center landing-circle-img water" [ngStyle]="{'box-shadow':element === 'water' ? '1px 1px 12px 10px rgb(223,243,255)' : '1px 1px 5px 1px rgb(223,243,255)'    }"
+      [routerLink]="['/element', 'water']"
     >
-      <!-- <h4 class="landing-circle-label">Space</h4> -->
     </div>
+    <h4 class="landing-circle-label">Water</h4>
+  </ion-col>
+ 
+
+  <ion-col class="ion-padding" size-xs="5" size-sm="2">
+    <div
+      class="ion-text-center landing-circle-img space" [ngStyle]="{'box-shadow':element === 'spirit' ? '1px 1px 12px 10px rgb(241,222,198)' : '1px 1px 5px 1px rgb(241,222,198)'    }"
+      [routerLink]="['/element', 'spirit']">
+    </div>
+    <h4 class="landing-circle-label">Spirit</h4>
   </ion-col>
 </ion-row>

@@ -1,5 +1,13 @@
 <ion-row>
   <ion-col>
-    <div [class]="welcomeImageClass"></div>
+    <div [class]="welcomeImageClass">
+      <p class="elements-welcome-label" [ngSwitch]="welcomeImageClass">
+        <span *ngSwitchCase="'spirit-welcome-img'">Spirit</span>
+        <span *ngSwitchCase="'air-welcome-img'">Air</span>
+        <span *ngSwitchCase="'earth-welcome-img'">Earth</span>
+        <span *ngSwitchCase="'water-welcome-img'">Water</span>
+        <span *ngSwitchCase="'fire-welcome-img'">Energy</span>
+      </p>
+    </div>
   </ion-col>
 </ion-row>

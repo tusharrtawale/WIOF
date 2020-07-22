@@ -2,3 +2,80 @@
   background-color: white;
   border-top: 1px solid lightgrey;
 }
+
+.video-card{
+  min-width:20%;
+}
+
+.card-content{
+  min-height:300px;
+}
+
+.thumbnailImage{
+  align-self: center;
+  min-width:180px;
+}
+
+// /* Using SCSS variables to store breakpoints */
+// $breakpoint-desktop: 1024px;
+// $breakpoint-tablet: 767px;
+// $breakpoint-mobile: 480px;
+
+// //xsmall view from 0 to 479
+// @media (max-width: $breakpoint-mobile){
+//   .thumbnailImage{
+//     width:320px;
+//   }
+// }
+
+// //small view from 480 to 766
+// @media (max-width: $breakpoint-tablet){
+//   .thumbnailImage{
+//     width:320px;
+//   }
+// }
+
+// //medium view from 767 to 1023
+// @media (max-width: $breakpoint-desktop){
+//   .thumbnailImage{
+//     width:249.5px;
+//   }
+// }
+
+// //large view 1024 and above 
+// @media (min-width: $breakpoint-desktop){
+//   .thumbnailImage{
+//     width:249.5px;
+//   }
+// }
+
+
+.wiof-spinner{
+  position: absolute;
+  left:50%;
+}
+
+.wiof-earth{
+  background-color: rgb(214,254,225)  ;
+}
+
+.wiof-water{
+  background-color: rgb(223,243,255)  ;
+}
+
+.wiof-fire{
+  background-color: rgb(255,235,184) ;
+}
+
+.wiof-air{
+  background-color:  rgb(229,229,229) ;
+}
+
+.wiof-spirit{
+  background-color: rgb(241,222,198)  ;
+}
+
+
+
+
+

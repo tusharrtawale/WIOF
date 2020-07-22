@@ -7,7 +7,47 @@
   text-overflow: ellipsis;
 }
 
+.card-content{
+  min-height:300px;
+}
+
 .blog-card-footer {
   background-color: white;
   border-top: 1px solid lightgrey;
 }
+
+blog-card{
+  min-width:20%;
+}
+
+.blogImage{
+  align-self: center;
+  min-width:180px;
+}
+
+.wiof-spinner{
+  position: absolute;
+  left:50%;
+}
+
+.wiof-earth{
+  background-color: rgb(214,254,225)  ;
+}
+
+.wiof-water{
+  background-color: rgb(223,243,255)  ;
+}
+
+.wiof-fire{
+  background-color: rgb(255,235,184) ;
+}
+
+.wiof-air{
+  background-color:  rgb(229,229,229) ;
+}
+
+.wiof-spirit{
+  background-color: rgb(241,222,198)  ;
+}
+
+

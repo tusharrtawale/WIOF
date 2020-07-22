@@ -1,10 +1,10 @@
 .landing-circle-img {
   border-radius: 50%;
-  box-shadow: 1px 1px 5px 1px grey;
+  
   background-repeat: no-repeat;
   background-size: contain ;
-  height: 150px;
-  width: 150px;
+  height: 100px;
+  width: 100px;
   margin: auto;
 
   &.earth {
@@ -33,8 +33,9 @@
 }
 
 .landing-circle-label {
-  padding-top: 10px;
-  color: white;
+  padding-top: 5px;
+  color: black;
+  text-align: center;
 }
 
 /* Using SCSS variables to store breakpoints */
@@ -43,14 +44,20 @@ $breakpoint-tablet: 767px;
 
 @media (max-width: $breakpoint-desktop){
     .landing-circle-img {
-        height: 120px;
-        width: 120px;
+        height: 100px;
+        width: 100px;
     }
 }
 @media (max-width: $breakpoint-tablet){
     .landing-circle-img {
-        height: 140px;
-        width: 140px;
+        height: 50px;
+        width: 50px;
+    }
+    .landing-circle-label {
+      font-size:80%;
+    }
+    .wiof-read-more{
+      display: none;
     }
 }
 

@@ -9,9 +9,11 @@ import { Blog } from 'src/app/models/Blog';
 })
 export class BlogSliderComponent implements OnInit {
   @Input() blogList: Array<Blog>;
+  @Input() element:String;
+
   slideOpts = BLOG_SLIDER_OPTIONS;
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() { }
 }

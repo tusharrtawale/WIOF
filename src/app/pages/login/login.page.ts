@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-
 import {AuthService} from '../../services/auth.service';
-
 
 @Component({
   selector: 'app-login',
@@ -15,9 +13,6 @@ export class LoginPage implements OnInit {
   error:string;
   wiofLogo:string="../../assets/logo.jpg";
 
-  
-
-
   constructor(private afService:AuthService,
     private router:Router
     ) { }
@@ -27,8 +22,6 @@ export class LoginPage implements OnInit {
       if(user){
         // console.log("yes",user);
         this.router.navigate(['/admin-dashboard']);
-        
-      
       }
       
       })

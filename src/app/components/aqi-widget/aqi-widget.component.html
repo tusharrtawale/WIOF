@@ -19,7 +19,7 @@
           <ion-row>
             <ion-col size="4">Delhi</ion-col>
             <ion-col size="8">
-              <p *ngIf="(aqiDelhi|async) as aqiDelhiData;else loadingDehi" > {{aqiDelhiData.data.aqi}}</p>               
+              <p *ngIf="(aqiDelhi|async) as aqiDelhiData;else loadingDelhi" > {{aqiDelhiData.data.aqi}}</p>               
                 <ng-template #loadingDelhi>
                   <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />
                 </ng-template> 
@@ -59,15 +59,23 @@
                 <ng-template #loadingChennai>
                   <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />
                 </ng-template> 
-            </ion-col>
+            </ion-col>        
           </ion-row>
-  
+                              
+          <ion-label>Global AQI Data Credit: </ion-label>
+          <ion-text>World Air Quality Index Project</ion-text>
   
         </div>
         <div *ngIf="widgetSearchCity">
           Search Location
-          <ion-searchbar placeholder="City" showCancelButton="focus" [(ngModel)]="city"></ion-searchbar>
-          <ion-button (click)="loadCityAqiData()" >Search</ion-button>
+          <ion-item>
+            <ion-label>City</ion-label>
+            <ion-input [(ngModel)]="city"></ion-input>
+            <ion-button (click)="loadCityAqiData()">Search</ion-button>
+          </ion-item>
+
+
+
           <div *ngIf="searchClickFlag">
             <div *ngIf="(searchCityAqi|async) as searchAqiData;else loading">
               <div  *ngIf="searchAqiData.status==='ok';else notFound">
@@ -100,6 +108,10 @@
   
                 <ion-label>Wind: </ion-label>
                 <ion-text> {{searchAqiData.data.iaqi.w.v}}</ion-text>
+                  
+                <ion-label>Global AQI Data Credit: </ion-label>
+                <ion-text>World Air Quality Index Project</ion-text>
+                
                 <br>
   
                 <!-- <ion-label>Dew: </ion-label>

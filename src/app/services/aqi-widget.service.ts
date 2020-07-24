@@ -13,7 +13,6 @@ export class AqiWidgetService {
   constructor(private http:HttpClient) { }
 
   getAqi(city:String):Observable<any>{
-    console.log("Reached aqi service with city: ", city)
     return this.http.get(`https://api.waqi.info/feed/${city}/?token=655a2796ba9301e9aa31a2119528c6dfaa383f53`);
   }
 

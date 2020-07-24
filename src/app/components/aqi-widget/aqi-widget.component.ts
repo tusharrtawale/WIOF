@@ -13,7 +13,7 @@ export class AqiWidgetComponent implements OnInit {
   //aqiwidget variables
   widgetMajorCities:boolean=true;
   widgetSearchCity:boolean=false;
-  city:string="";
+  city:string;
   searchCityAqi:Observable<any>;
   searchClickFlag:boolean=false;
   aqiDelhi:Observable<any>;

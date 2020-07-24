@@ -5,7 +5,7 @@
   'wiof-air':element === 'air',
   'wiof-spirit':element === 'spirit'
 }">
-  <ion-card-header class="ion-align-center">
+  <ion-card-header class="ion-align-center wiof-slider-header">
     <strong>Blogs</strong>
   </ion-card-header>
   <ion-card-content>
@@ -14,7 +14,7 @@
         <ion-slide *ngFor="let blog of blogList">
           <ion-card class="blog-card">
             <ion-card-content class="ion-text-start card-content">
-              <ion-img [src]="blog.image | async" class="blogImage"></ion-img>
+              <img [src]="blog.image | async" >
               <h6 class="ion-padding-vertical">
                 <strong
                   ><a [routerLink]="['blog', blog.id]">{{

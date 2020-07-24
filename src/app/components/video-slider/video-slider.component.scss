@@ -7,13 +7,17 @@
   min-width:20%;
 }
 
-.card-content{
-  min-height:300px;
-}
+// .card-content{
+//   min-height:300px;
+// }
 
 .thumbnailImage{
   align-self: center;
-  min-width:180px;
+  width:320px;
+}
+
+.wiof-slider-header{
+  border-bottom: white 2px solid;
 }
 
 // /* Using SCSS variables to store breakpoints */

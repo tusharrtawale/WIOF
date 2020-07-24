@@ -23,7 +23,7 @@ export class YoutubeVideoService {
       map(data => {
         return data.items.map(playlist_item => {
           return {
-            thumbnail: playlist_item.snippet.thumbnails.default.url,
+            thumbnail: playlist_item.snippet.thumbnails.medium.url,
             title: playlist_item.snippet.title,
             url: playlist_item.snippet.resourceId.videoId,
           } as Video;

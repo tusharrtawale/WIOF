@@ -5,7 +5,7 @@
   'wiof-air':element === 'air',
   'wiof-spirit':element === 'spirit'
 }">
-  <ion-card-header class="ion-align-center">
+  <ion-card-header class="ion-align-center wiof-slider-header">
     <strong>Videos</strong>
   </ion-card-header>
   <ion-card-content>
@@ -16,7 +16,7 @@
         <ion-slide *ngFor="let video of videoList">
           <ion-card class="video-card">
             <ion-card-content class="ion-text-start card-content">
-              <ion-img [src]="video.thumbnail" class="thumbnailImage"></ion-img>
+              <img [src]="video.thumbnail" class="thumbnailImage"/>
               <h6 class="ion-padding-vertical">
                 <strong
                   ><a [routerLink]="['video', video.url]">{{

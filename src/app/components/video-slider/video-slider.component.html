@@ -1,10 +1,12 @@
-<ion-card [ngClass]="{
-  'wiof-earth':element === 'earth',
-  'wiof-water':element === 'water',
-  'wiof-fire':element === 'fire',
-  'wiof-air':element === 'air',
-  'wiof-spirit':element === 'spirit'
-}">
+<ion-card
+  [ngClass]="{
+    'wiof-earth': element === 'earth',
+    'wiof-water': element === 'water',
+    'wiof-fire': element === 'fire',
+    'wiof-air': element === 'air',
+    'wiof-spirit': element === 'spirit'
+  }"
+>
   <ion-card-header class="ion-align-center wiof-slider-header">
     <strong>Videos</strong>
   </ion-card-header>
@@ -16,7 +18,7 @@
         <ion-slide *ngFor="let video of videoList">
           <ion-card class="video-card">
             <ion-card-content class="ion-text-start card-content">
-              <img [src]="video.thumbnail" class="thumbnailImage"/>
+              <img [src]="video.thumbnail" class="thumbnailImage" />
               <h6 class="ion-padding-vertical">
                 <strong
                   ><a [routerLink]="['video', video.url]">{{
@@ -37,13 +39,12 @@
             </ion-row>
           </ion-card>
         </ion-slide>
-        
       </ion-slides>
       <!-- <div class="swiper-button-prev" (click)="wiofVideoSlider.navigation.nextEl"></div>
       <div class="swiper-button-next"></div> -->
     </div>
     <ng-template #loading>
-      <ion-spinner name="crescent" class="wiof-spinner" ></ion-spinner><br />
-    </ng-template> 
+      <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />
+    </ng-template>
   </ion-card-content>
 </ion-card>

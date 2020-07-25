@@ -3,20 +3,20 @@
   border-top: 1px solid lightgrey;
 }
 
-.video-card{
-  min-width:20%;
+.video-card {
+  min-width: 20%;
 }
 
 // .card-content{
 //   min-height:300px;
 // }
 
-.thumbnailImage{
+.thumbnailImage {
   align-self: center;
-  width:320px;
+  width: 320px;
 }
 
-.wiof-slider-header{
+.wiof-slider-header {
   border-bottom: white 2px solid;
 }
 
@@ -46,40 +46,34 @@
 //   }
 // }
 
-// //large view 1024 and above 
+// //large view 1024 and above
 // @media (min-width: $breakpoint-desktop){
 //   .thumbnailImage{
 //     width:249.5px;
 //   }
 // }
 
-
-.wiof-spinner{
+.wiof-spinner {
   position: absolute;
-  left:50%;
+  left: 50%;
 }
 
-.wiof-earth{
-  background-color: rgb(214,254,225)  ;
+.wiof-earth {
+  background-color: rgb(214, 254, 225);
 }
 
-.wiof-water{
-  background-color: rgb(223,243,255)  ;
+.wiof-water {
+  background-color: rgb(223, 243, 255);
 }
 
-.wiof-fire{
-  background-color: rgb(255,235,184) ;
+.wiof-fire {
+  background-color: rgb(255, 235, 184);
 }
 
-.wiof-air{
-  background-color:  rgb(229,229,229) ;
+.wiof-air {
+  background-color: rgb(229, 229, 229);
 }
 
-.wiof-spirit{
-  background-color: rgb(241,222,198)  ;
+.wiof-spirit {
+  background-color: rgb(241, 222, 198);
 }
-
-
-
-
-

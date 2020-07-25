@@ -12,23 +12,23 @@ export const ELEMENT_BLOG_CATEGORY = {
   EARTH: "Earth",
   FIRE: "Fire",
   SPIRIT: "Spirit",
-}
+};
 
-export const ELEMENT_SELECT={
+export const ELEMENT_SELECT = {
   AIR: "air",
   WATER: "water",
   EARTH: "earth",
   FIRE: "fire",
   SPIRIT: "spirit",
-}
+};
 
-export const AQI_WIDGET_LOCATIONS={
-  DELHI:"delhi",
-  MUMBAI:"mumbai",
-  KOLKATA:"kolkata",
-  CHENNAI:"chennai",
-  BANGALORE:"bangalore"
-}
+export const AQI_WIDGET_LOCATIONS = {
+  DELHI: "delhi",
+  MUMBAI: "mumbai",
+  KOLKATA: "kolkata",
+  CHENNAI: "chennai",
+  BANGALORE: "bangalore",
+};
 
 export const VIDEO_SLIDER_OPTIONS = {
   slidesPerView: 4,
@@ -50,26 +50,25 @@ export const VIDEO_SLIDER_OPTIONS = {
   breakpoints: {
     // when window width is >= 320px
     0: {
-      slidesPerView: 1
+      slidesPerView: 1,
     },
     // when window width is >= 480px
     480: {
-      slidesPerView: 2
+      slidesPerView: 2,
     },
     // when window width is >= 767px
     767: {
-      slidesPerView: 3
+      slidesPerView: 3,
     },
     // when window width is >= 1024px
     1024: {
-      slidesPerView: 4
-    }
-  }
+      slidesPerView: 4,
+    },
+  },
 };
 
 // <div class="swiper-button-prev"></div>
 //     <div class="swiper-button-next"></div>
-
 
 export const BLOG_SLIDER_OPTIONS = {
   slidesPerView: 4,
@@ -86,19 +85,19 @@ export const BLOG_SLIDER_OPTIONS = {
   breakpoints: {
     // when window width is >= 320px
     0: {
-      slidesPerView: 1
+      slidesPerView: 1,
     },
     // when window width is >= 480px
     480: {
-      slidesPerView: 2
+      slidesPerView: 2,
     },
     // when window width is >= 767px
     767: {
-      slidesPerView: 3
+      slidesPerView: 3,
     },
     // when window width is >= 1024px
     1024: {
-      slidesPerView: 4
-    }
-  }
+      slidesPerView: 4,
+    },
+  },
 };

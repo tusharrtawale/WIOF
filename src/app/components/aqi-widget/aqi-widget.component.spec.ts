@@ -1,16 +1,16 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-
 import { AqiWidgetComponent } from './aqi-widget.component';
 
-describe('AqiWidgetComponent', () => {
+
+describe("AqiWidgetComponent", () => {
   let component: AqiWidgetComponent;
   let fixture: ComponentFixture<AqiWidgetComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AqiWidgetComponent ],
-      imports: [IonicModule.forRoot()]
+      declarations: [AqiWidgetComponent],
+      imports: [IonicModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(AqiWidgetComponent);
@@ -18,7 +18,7 @@ describe('AqiWidgetComponent', () => {
     fixture.detectChanges();
   }));
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

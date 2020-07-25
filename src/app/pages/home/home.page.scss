@@ -25,10 +25,10 @@
   text-decoration: none;
 }
 
-// // Using SCSS variables to store breakpoints 
+// // Using SCSS variables to store breakpoints
 $breakpoint-tablet: 767px;
 
-@media (max-width: $breakpoint-tablet){
+@media (max-width: $breakpoint-tablet) {
   .landing-welcome-label {
     // text-shadow: 1px 1px 5px green;
     font-size: 15px;
@@ -40,8 +40,7 @@ $breakpoint-tablet: 767px;
   }
 }
 
-
-@media (min-width: $breakpoint-tablet){
+@media (min-width: $breakpoint-tablet) {
   .landing-welcome-label {
     // text-shadow: 1px 1px 5px green;
     font-size: 30px;
@@ -72,7 +71,6 @@ $breakpoint-tablet: 767px;
   text-align: center;
   padding-top: 50px;
 }
-
 
 .landing-card {
   background: yellowgreen;

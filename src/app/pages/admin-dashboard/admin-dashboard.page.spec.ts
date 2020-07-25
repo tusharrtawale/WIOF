@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { IonicModule } from "@ionic/angular";
+import { AdminDashboardPage } from "./admin-dashboard.page";
 
-import { AdminDashboardPage } from './admin-dashboard.page';
-
-describe('AdminDashboardPage', () => {
+describe("AdminDashboardPage", () => {
   let component: AdminDashboardPage;
   let fixture: ComponentFixture<AdminDashboardPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminDashboardPage ],
-      imports: [IonicModule.forRoot()]
+      declarations: [AdminDashboardPage],
+      imports: [IonicModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(AdminDashboardPage);
@@ -18,7 +17,7 @@ describe('AdminDashboardPage', () => {
     fixture.detectChanges();
   }));
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

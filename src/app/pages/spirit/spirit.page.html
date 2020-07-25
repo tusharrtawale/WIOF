@@ -3,9 +3,15 @@
   <app-element-welcome-image
     welcomeImageClass="spirit-welcome-img"
   ></app-element-welcome-image>
-  
+
   <app-life-elements [element]="elementName"></app-life-elements>
-  <app-blog-slider [blogList]="blogs | async" [element]="elementName"></app-blog-slider>
-  <app-video-slider [videoList]="videos | async" [element]="elementName"></app-video-slider>
+  <app-blog-slider
+    [blogList]="blogs | async"
+    [element]="elementName"
+  ></app-blog-slider>
+  <app-video-slider
+    [videoList]="videos | async"
+    [element]="elementName"
+  ></app-video-slider>
   <app-wiof-footer></app-wiof-footer>
 </ion-content>

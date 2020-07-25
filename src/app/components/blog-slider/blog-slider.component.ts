@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { BLOG_SLIDER_OPTIONS } from "src/app/app.constants";
-import { Blog } from 'src/app/models/Blog';
+import { Blog } from "src/app/models/Blog";
 
 @Component({
   selector: "app-blog-slider",
@@ -9,11 +9,13 @@ import { Blog } from 'src/app/models/Blog';
 })
 export class BlogSliderComponent implements OnInit {
   @Input() blogList: Array<Blog>;
-  @Input() element:String;
-
+  @Input() element: String;
+  blogSliderClass: string;
   slideOpts = BLOG_SLIDER_OPTIONS;
 
   constructor() {}
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.blogSliderClass = `wiof-${this.element}`;
+  }
 }

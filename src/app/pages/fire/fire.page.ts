@@ -1,6 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
-import { ELEMENT_VIDEOS_PLAYLIST_ID, ELEMENT_BLOG_CATEGORY , ELEMENT_SELECT } from "src/app/app.constants";
+import {
+  ELEMENT_BLOG_CATEGORY,
+  ELEMENT_SELECT,
+  ELEMENT_VIDEOS_PLAYLIST_ID,
+} from "src/app/app.constants";
 import { BlogService } from "src/app/services/blog.service";
 import { YoutubeVideoService } from "src/app/services/youtube-video.service";
 import { Blog } from "../../models/Blog";
@@ -14,8 +18,7 @@ import { Video } from "../../models/Video";
 export class FirePage implements OnInit {
   blogs: Observable<Blog[]>;
   videos: Observable<Video[]>;
-  elementName:String=ELEMENT_SELECT.FIRE;
-
+  elementName: String = ELEMENT_SELECT.FIRE;
 
   constructor(
     private blogService: BlogService,
@@ -27,6 +30,5 @@ export class FirePage implements OnInit {
     this.videos = this.videoService.getYoutubePlaylist(
       ELEMENT_VIDEOS_PLAYLIST_ID.FIRE
     );
-    
   }
 }

@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { IonicModule } from "@ionic/angular";
+import { VideoSliderComponent } from "./video-slider.component";
 
-import { VideoSliderComponent } from './video-slider.component';
-
-describe('VideoSliderComponent', () => {
+describe("VideoSliderComponent", () => {
   let component: VideoSliderComponent;
   let fixture: ComponentFixture<VideoSliderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VideoSliderComponent ],
-      imports: [IonicModule.forRoot()]
+      declarations: [VideoSliderComponent],
+      imports: [IonicModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(VideoSliderComponent);
@@ -18,7 +17,7 @@ describe('VideoSliderComponent', () => {
     fixture.detectChanges();
   }));
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 
-import {AuthGaurd} from './gaurds/auth.gaurd';
+import {AuthGuard} from './guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -81,7 +81,7 @@ const routes: Routes = [
   {
     path: 'admin-dashboard',
     loadChildren: () => import('./pages/admin-dashboard/admin-dashboard.module').then( m => m.AdminDashboardPageModule),
-    canActivate:[AuthGaurd]
+    canActivate:[AuthGuard]
   },
   {
     path: 'login',

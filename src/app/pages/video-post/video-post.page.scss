@@ -1,0 +1,37 @@
+@media (max-width:575px ) {
+    .videoPlayer{
+        width:280px;
+        height:158px;
+    }
+}
+
+@media (min-width:576px ) {
+    .videoPlayer{
+        height:478px;
+        width:850px;
+    }
+}
+
+// @media (min-width:768px ) {
+//     .videoPlayer{
+//         height:478px;
+//         width:850px;
+//     }
+// }
+
+//Future Use for Larger Screen sizes
+
+
+// @media (min-width:992px ) {
+//     .videoPlayer{
+//         height:480px;
+//         width:853.4px;
+//     }
+// }
+
+// @media (min-width:1200px ) {
+//     .videoPlayer{
+//         height:480px;
+//         width:853.4px;
+//     }
+// }

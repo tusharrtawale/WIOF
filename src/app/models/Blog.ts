@@ -10,6 +10,7 @@ export class Blog {
   image: Observable<String>;
   externalUrl: String;
   author: String;
+  aboutAuthor:String;
   category: String;
   subCategory: String;
   // List<Tag> tags;
@@ -20,6 +21,7 @@ export class Blog {
   constructor(
     title,
     authorName,
+    aboutAuthor,
     category,
     subCategory,
     image,
@@ -28,6 +30,7 @@ export class Blog {
   ) {
     this.title = title;
     this.author = authorName;
+    this.aboutAuthor=aboutAuthor;
     this.category = category;
     this.subCategory = subCategory;
     (this.imageName = image), (this.shortDescription = shortDescription);
@@ -47,6 +50,7 @@ export class Blog {
     return new Blog(
       addBlogForm.value.title,
       addBlogForm.value.authorName,
+      addBlogForm.value.aboutAuthor,
       addBlogForm.value.category,
       addBlogForm.value.subCategory,
       this.formatImageName(addBlogForm.value.image),

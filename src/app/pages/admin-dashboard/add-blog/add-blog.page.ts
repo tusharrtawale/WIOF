@@ -28,6 +28,7 @@ export class AddBlogPage implements OnInit {
     this.addBlogForm = new FormGroup({
       title: new FormControl("", [Validators.required]),
       authorName: new FormControl("", [Validators.required]),
+      aboutAuthor: new FormControl("", [Validators.required]),
       category: new FormControl("", [Validators.required]),
       subCategory: new FormControl("", [Validators.required]),
       image: new FormControl("", [Validators.required]),

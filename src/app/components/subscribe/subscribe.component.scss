@@ -1,0 +1,98 @@
+.wiof-subscribe
+{
+position:absolute;
+height:350px;
+width: 250px;
+background-color:brown;
+top: 100px;
+z-index:100;
+transition:0.5s;
+left:-250px;
+    &.active{
+        left:0px;
+    }
+}
+
+// @keyframes slide{
+//     50%:
+
+// }
+.wiof-subscribe-form
+{
+padding: 10px;
+z-index:100;
+}
+
+.wiof-subscribe-button{
+    position:absolute;
+    height:150px;
+    width: 40px;
+    background-color:brown;
+    border-bottom-right-radius : 15px;
+    border-top-right-radius : 15px;
+    cursor:pointer;
+    top: 100px;
+    left:0px;
+    z-index:100;
+    opacity: 70%;
+    transition:.4s;
+    transition-delay:.5s;
+
+    &.inactive{
+        left:-40px;
+        opacity: 0%;
+    }
+
+
+}
+
+.mail{
+    position:absolute;
+    top:120px;
+    width:35px;
+    color:white;
+    font-weight:bold;
+}
+
+.subscribe-text{
+    transform: rotate(-90deg);
+    color:white;
+    width:100px;
+    position:absolute;
+    top:50px;
+    left:-34px;
+    margin:0px;
+    font-weight:bold;
+}
+
+
+// .wiof-subscribe-button:hover{
+//     height:350px;
+//     opacity: 100%;
+// }
+
+h4{
+    padding:10px;
+    color:white;
+    
+}
+
+.close-button{
+    position:absolute;
+    top:2px;
+    right:2px;
+    background-color:brown;
+    color:white;
+    font-size:x-large;
+}
+
+.subscribe-button{
+    color:white;
+    background-color:brown;
+    font-size:large;
+    align-self:center;
+
+    border: 1px solid white;
+    border-radius:5px;
+}
+

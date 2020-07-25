@@ -1,4 +1,18 @@
-@media (max-width:575px ) {
+@media (max-width:320px ) {
+    .videoPlayer{
+        width:280px;
+        height:158px;
+    }
+}
+
+@media (min-width:320px ) {
+    .videoPlayer{
+        width:280px;
+        height:158px;
+    }
+}
+
+@media (min-width:575px ) {
     .videoPlayer{
         width:280px;
         height:158px;

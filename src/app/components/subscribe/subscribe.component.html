@@ -1,0 +1,39 @@
+<div class="wiof-subscribe-button" (click)="onSubscribe()" [ngClass]="{ inactive: !subscribeButton }">
+  <p class="subscribe-text">Subscribe</p>
+  <ion-icon class="mail" name="mail-outline"></ion-icon>
+
+</div>
+<div class="wiof-subscribe" [ngClass]="{active: !subscribeButton }">
+  <h4 class="subscribe-heading">Subscribe to WIOF NewsLetter</h4>
+  <button class="close-button" (click)="onBack()"><ion-icon name="close-circle-outline"></ion-icon></button>
+
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="wiof-subscribe-form">
+          <ion-item>
+           <ion-label position="floating" >Firstname</ion-label>
+           <ion-input type="text" ngModel name="Firstname"
+           required
+           maxLength="20"
+           ></ion-input>
+         </ion-item><br/>
+         <ion-item>
+           <ion-label position="floating" >
+             Lastname</ion-label>
+           <ion-input  type="text" 
+           type="text" ngModel name="Lastname"
+           required
+           maxLength="20"
+           
+           ></ion-input>
+         </ion-item><br/>
+         <ion-item>
+           <ion-label position="floating"  >Email</ion-label>
+           <ion-input type="Email" 
+           ngModel 
+           name="Email"
+           required
+           email
+           ></ion-input>
+         </ion-item><br/>
+          <button class="subscribe-button" type="submit" expand="block" fill="clear" (click)="onSubmit()">Subscribe</button>
+          </form>
+        </div>

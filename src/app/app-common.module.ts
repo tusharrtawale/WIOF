@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule  } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { IonicModule } from "@ionic/angular";
 import { AqiWidgetComponent } from "./components/aqi-widget/aqi-widget.component";
@@ -25,6 +25,7 @@ import { WiofFooterComponent } from "./components/wiof-footer/wiof-footer.compon
     BlogSliderComponent,
     ElementWelcomeImageComponent,
     AqiWidgetComponent,
+    ReactiveFormsModule ,
     SubscribeComponent
   ],
   declarations: [

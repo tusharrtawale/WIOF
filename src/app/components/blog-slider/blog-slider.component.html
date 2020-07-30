@@ -1,8 +1,8 @@
-<ion-card [ngClass]="blogSliderClass">
-  <ion-card-header class="ion-align-center wiof-slider-header">
+<ion-card>
+  <ion-card-header class="ion-align-center wiof-slider-header"  [ngClass]="blogSliderClass">
     <strong>Blogs</strong>
   </ion-card-header>
-  <ion-card-content>
+  <ion-card-content class="background"  [ngClass]="blogSliderClass" >
     <div *ngIf="blogList; else loading">
       <ion-slides [options]="slideOpts">
         <ion-slide *ngFor="let blog of blogList">
@@ -22,7 +22,7 @@
                 <!-- <a [routerLink]="['blog-post', blog.id]">Read More</a> -->
               </p>
             </ion-card-content>
-            <ion-row class="blog-card-footer">
+            <ion-row class="blog-card-footer" [ngClass]="blogSliderClass">
               <ion-col>
                 <ion-buttons>
                   <ion-button [routerLink]="['take-action']">

@@ -1,3 +1,5 @@
+@import "../../wiof-custom-theming.scss";
+
 .blog-card-content {
   display: -webkit-box;
   height: 60px;
@@ -39,21 +41,37 @@
 }
 
 .wiof-earth {
-  background-color: rgb(214, 254, 225);
+  background-color: $earth-color  ;
+  &.background{
+    background-color: rgba($earth-color,$tint-fraction);
+  }
 }
 
 .wiof-water {
-  background-color: rgb(223, 243, 255);
+  background-color: $water-color;
+  &.background{
+    background-color: rgba($water-color,$tint-fraction);
+  }
 }
 
 .wiof-fire {
-  background-color: rgb(255, 235, 184);
+  background-color: $energy-color; //energy and fire are to be considered same element
+  &.background{
+    background-color: rgba($energy-color,$tint-fraction);
+  }
 }
 
 .wiof-air {
-  background-color: rgb(229, 229, 229);
+  background-color: $air-color;
+  &.background{
+    background-color: rgba($air-color,$tint-fraction);
+  }
+
 }
 
 .wiof-spirit {
-  background-color: rgb(241, 222, 198);
+  background-color: $spirit-color;
+  &.background{
+    background-color: rgba($spirit-color,$tint-fraction);
+  }
 }

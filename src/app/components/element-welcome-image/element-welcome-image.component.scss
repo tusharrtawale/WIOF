@@ -1,6 +1,5 @@
 @mixin page-welcome-img {
   background-repeat: no-repeat;
-  // background-attachment: fixed;
   background-size: cover;
   height: 310px;
   text-align: center;
@@ -8,20 +7,12 @@
 }
 
 .elements-welcome-label {
-  // text-shadow: 1px 1px 5px white;
   font-size: 40px;
   color: black;
   font-weight: normal;
   padding: 20px;
   margin: 0;
-  // animation: text 5s 1;
 }
-
-// @keyframes text{
-//   50%{
-//     letter-spacing: 40px;
-//   }
-// }
 
 .air-welcome-img {
   background: url("../../../assets/Air_Banner.jpg");

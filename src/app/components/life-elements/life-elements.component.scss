@@ -1,3 +1,5 @@
+@import "../../wiof-custom-theming.scss";
+
 .landing-circle-img {
   border-radius: 50%;
 
@@ -8,42 +10,51 @@
   margin: auto;
 
   &.earth {
-    background-image: url("../../../assets/earth.jpg");
-    box-shadow: 1px 1px 5px 1px rgb(214,254,225);
+    background-image: url("../../../assets/icons/icon_earth.svg");
+    box-shadow: 1px 1px 5px 1px $earth-color;
     &.active {
-      box-shadow: 1px 1px 12px 10px rgb(214,254,225);
+      box-shadow: 1px 1px 12px 10px $earth-color;
+      background-image: url("../../../assets/icons/icon_earth_selected.svg");
     }
   }
 
   &.water {
-    background-image: url("../../../assets/water.jpg");
-    box-shadow: 1px 1px 5px 1px rgb(223,243,255);
+    background-image: url("../../../assets/icons/icon_water.svg");
+
+    box-shadow: 1px 1px 5px 1px $water-color;
     &.active {
-      box-shadow: 1px 1px 12px 10px rgb(223,243,255);
+      box-shadow: 1px 1px 12px 10px $water-color;
+      background-image: url("../../../assets/icons/icon_water_selected.svg");
+
     }
   }
 
   &.fire {
-    background-image: url("../../../assets/fire.jpg");
-    box-shadow: 1px 1px 5px 1px rgb(255,235,184);
+    background-image: url("../../../assets/icons/icon_energy.svg");
+    box-shadow: 1px 1px 5px 1px $energy-color;    //energy and fire represent same element
     &.active {
-      box-shadow: 1px 1px 12px 10px rgb(255,235,184);
+      box-shadow: 1px 1px 12px 10px $energy-color;    //energy and fire represent same element
+      background-image: url("../../../assets/icons/icon_energy_selected.svg");
+
     }
   }
 
   &.air {
-    background-image: url("../../../assets/air.jpg");
-    box-shadow: 1px 1px 5px 1px rgb(229,229,229);
+    background-image: url("../../../assets/icons/icon_air.svg");
+    box-shadow: 1px 1px 5px 1px $air-color;
     &.active {
-      box-shadow: 1px 1px 12px 10px rgb(229,229,229);
+      box-shadow: 1px 1px 12px 10px $air-color;
+      background-image: url("../../../assets/icons/icon_air_selected.svg");
+
     }
   }
 
   &.spirit {
-    background-image: url("../../../assets/spirit.jpg");
-    box-shadow: 1px 1px 5px 1px rgb(241,222,198);
+    background-image: url("../../../assets/icons/icon_spirit.svg");
+    box-shadow: 1px 1px 5px 1px $spirit-color;
     &.active {
-      box-shadow: 1px 1px 12px 10px rgb(241,222,198);
+      box-shadow: 1px 1px 12px 10px $spirit-color;
+      background-image: url("../../../assets/icons/icon_spirit_selected.svg");
     }
   }
 

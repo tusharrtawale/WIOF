@@ -1,10 +1,12 @@
+@import "../../wiof-custom-theming.scss";
+
 .wiof-spinner {
   position: absolute;
   left: 50%;
 }
 
 .wiof-aqi-widget-card-header {
-  background-color: rgb(229, 229, 229);
+  background-color: $air-color;
 }
 
 .wiof-aqi-widget-card-toolbar {

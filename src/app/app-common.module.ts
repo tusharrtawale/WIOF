@@ -1,14 +1,15 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { FormsModule, ReactiveFormsModule  } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { IonicModule } from "@ionic/angular";
 import { AqiWidgetComponent } from "./components/aqi-widget/aqi-widget.component";
+import { BlogCardComponent } from "./components/blog-card/blog-card.component";
 import { BlogSliderComponent } from "./components/blog-slider/blog-slider.component";
 import { ElementWelcomeImageComponent } from "./components/element-welcome-image/element-welcome-image.component";
 import { HeaderComponent } from "./components/header/header.component";
-import {SubscribeComponent} from "./components/subscribe/subscribe.component"
 import { LifeElementsComponent } from "./components/life-elements/life-elements.component";
+import { SubscribeComponent } from "./components/subscribe/subscribe.component";
 import { VideoSliderComponent } from "./components/video-slider/video-slider.component";
 import { WiofFooterComponent } from "./components/wiof-footer/wiof-footer.component";
 
@@ -23,10 +24,11 @@ import { WiofFooterComponent } from "./components/wiof-footer/wiof-footer.compon
     WiofFooterComponent,
     VideoSliderComponent,
     BlogSliderComponent,
+    BlogCardComponent,
     ElementWelcomeImageComponent,
     AqiWidgetComponent,
-    ReactiveFormsModule ,
-    SubscribeComponent
+    ReactiveFormsModule,
+    SubscribeComponent,
   ],
   declarations: [
     HeaderComponent,
@@ -34,9 +36,10 @@ import { WiofFooterComponent } from "./components/wiof-footer/wiof-footer.compon
     WiofFooterComponent,
     VideoSliderComponent,
     BlogSliderComponent,
+    BlogCardComponent,
     ElementWelcomeImageComponent,
     AqiWidgetComponent,
-    SubscribeComponent
+    SubscribeComponent,
   ],
   providers: [],
 })

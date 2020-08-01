@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit } from "@angular/core";
+import { Observable } from "rxjs";
 import { AQI_WIDGET_LOCATIONS } from "../../app.constants";
-import { AqiWidgetService } from '../../services/aqi-widget.service';
+import { AqiWidgetService } from "../../services/aqi-widget.service";
 
 @Component({
   selector: "app-aqi-widget",
@@ -46,24 +46,21 @@ export class AqiWidgetComponent implements OnInit {
     this.aqiKolkata = this.aqiService.getAqi(AQI_WIDGET_LOCATIONS.KOLKATA);
   }
 
-  aqiColor(aqi:number){
-    if (aqi>0 && aqi<51){
-      return "aqi-good";
+  aqiColor(aqi: number) {
+    let aqiLevelClass = "aqi-level-card ";
+    if (aqi > 0 && aqi < 51) {
+      aqiLevelClass += "aqi-good";
+    } else if (aqi > 50 && aqi < 101) {
+      aqiLevelClass += "aqi-moderate";
+    } else if (aqi > 100 && aqi < 151) {
+      aqiLevelClass += "aqi-unhealthy-for-sensitive";
+    } else if (aqi > 150 && aqi < 201) {
+      aqiLevelClass += "aqi-unhealthy";
+    } else if (aqi > 200 && aqi < 300) {
+      aqiLevelClass += "aqi-very-unhealthy";
+    } else {
+      aqiLevelClass += "aqi-hazardous";
     }
-    else if (aqi>50 && aqi<101){
-      return "aqi-moderate";
-    }
-    else if (aqi>100 && aqi<151){
-      return "aqi-unhealthy-for-sensitive";
-    }
-    else if (aqi>150 && aqi<201){
-      return "aqi-unhealthy";
-    }
-    else if (aqi>200 && aqi<300){
-      return "aqi-very-unhealthy";
-    }
-    else{
-      return "aqi-hazardous";
-    }
+    return aqiLevelClass;
   }
 }

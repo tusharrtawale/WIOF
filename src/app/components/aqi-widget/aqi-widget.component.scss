@@ -14,34 +14,37 @@
   background-color: rgb(229, 229, 229);
 }
 
-.aqi-good{
-  background-color:rgb(0,228,0);
-  color:black
-  ;
+.aqi-level-card {
+  box-shadow: 1px 1px 2px 0px #afafaf;
+  border-radius: 5px;
+  color: black;
+  padding: 2px 5px;
+  font-size: 12px;
 }
 
-.aqi-moderate{
-  background-color:rgb(255,255,0);
-  color:black;
+.aqi-good {
+  background-color: rgb(0, 228, 0);
 }
 
-.aqi-unhealthy-for-sensitive{
-  background-color:rgb(255,156,0);
-  color:black;
+.aqi-moderate {
+  background-color: rgb(255, 255, 0);
 }
 
-
-.aqi-unhealthy{
-  background-color:rgb(255,0,0);
-  color:black;
+.aqi-unhealthy-for-sensitive {
+  background-color: rgb(255, 156, 0);
 }
 
-.aqi-very-unhealthy{
-  background-color:rgb(143,63,151);
-  color:black;
+.aqi-unhealthy {
+  background-color: rgb(255, 0, 0);
+  color: white;
 }
 
-.aqi-hazardous{
-  background-color:rgb(126,0,35);
-  color:white;
+.aqi-very-unhealthy {
+  background-color: rgb(143, 63, 151);
+  color: white;
+}
+
+.aqi-hazardous {
+  background-color: rgb(126, 0, 35);
+  color: white;
 }

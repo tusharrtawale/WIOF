@@ -101,3 +101,17 @@ export const BLOG_SLIDER_OPTIONS = {
     },
   },
 };
+
+export const ENDPOINTS = {
+  YOUTUBE : {
+    VIDEO: 'https://www.googleapis.com/youtube/v3/videos',
+    PLAYLIST: 'https://www.googleapis.com/youtube/v3/playlistItems'
+  },
+  AQI_WIDGET: 'https://api.waqi.info/feed'
+}
+
+export const FIREBASE_COLLECTION = {
+  BLOGS: "Blogs",
+  SUBSCRIPTIONS: "Subscriptions",
+  BLOG_IMAGE_STORAGE: 'blog-images'
+}

@@ -2,6 +2,8 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { map } from "rxjs/operators";
 import { Video } from "../models/Video";
+import { ENDPOINTS } from "../app.constants";
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: "root",
@@ -10,17 +12,14 @@ export class YoutubeVideoService {
   constructor(private http: HttpClient) {}
   getYoutubeVideo(id: String) {
     return this.http.get(
-      `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${id}&key=AIzaSyBolQt2dn0W30MV8zA9G348zT8lVs_wTPA`
+      `${ENDPOINTS.YOUTUBE.VIDEO}?part=snippet&id=${id}&key=${environment.youtube_api_key}`
     );
   }
 
   getYoutubePlaylist(id: String) {
-    // let youtube_playlist:any;
-    // var uploadsId="";
-    // return this.http.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=25&playlistId=PLvahqwMqN4M0GRkZY8WkLZMb6Z-W7qbLA&key=AIzaSyBolQt2dn0W30MV8zA9G348zT8lVs_wTPA')
     return this.http
       .get<any>(
-        `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=25&playlistId=${id}&key=AIzaSyBolQt2dn0W30MV8zA9G348zT8lVs_wTPA`
+        `${ENDPOINTS.YOUTUBE.PLAYLIST}?part=snippet&maxResults=25&playlistId=${id}&key=${environment.youtube_api_key}`
       )
       .pipe(
         map((data) => {

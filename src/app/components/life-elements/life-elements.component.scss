@@ -10,51 +10,48 @@
   margin: auto;
 
   &.earth {
-    background-image: url("../../../assets/icons/icon_earth.svg");
+    background-image: url("/assets/icons/icon_earth.svg");
     box-shadow: 1px 1px 5px 1px $earth-color;
     &.active {
       box-shadow: 1px 1px 12px 10px $earth-color;
-      background-image: url("../../../assets/icons/icon_earth_selected.svg");
+      background-image: url("/assets/icons/icon_earth_selected.svg");
     }
   }
 
   &.water {
-    background-image: url("../../../assets/icons/icon_water.svg");
+    background-image: url("/assets/icons/icon_water.svg");
 
     box-shadow: 1px 1px 5px 1px $water-color;
     &.active {
       box-shadow: 1px 1px 12px 10px $water-color;
-      background-image: url("../../../assets/icons/icon_water_selected.svg");
-
+      background-image: url("/assets/icons/icon_water_selected.svg");
     }
   }
 
   &.fire {
-    background-image: url("../../../assets/icons/icon_energy.svg");
-    box-shadow: 1px 1px 5px 1px $energy-color;    //energy and fire represent same element
+    background-image: url("/assets/icons/icon_energy.svg");
+    box-shadow: 1px 1px 5px 1px $energy-color; //energy and fire represent same element
     &.active {
-      box-shadow: 1px 1px 12px 10px $energy-color;    //energy and fire represent same element
-      background-image: url("../../../assets/icons/icon_energy_selected.svg");
-
+      box-shadow: 1px 1px 12px 10px $energy-color; //energy and fire represent same element
+      background-image: url("/assets/icons/icon_energy_selected.svg");
     }
   }
 
   &.air {
-    background-image: url("../../../assets/icons/icon_air.svg");
+    background-image: url("/assets/icons/icon_air.svg");
     box-shadow: 1px 1px 5px 1px $air-color;
     &.active {
       box-shadow: 1px 1px 12px 10px $air-color;
-      background-image: url("../../../assets/icons/icon_air_selected.svg");
-
+      background-image: url("/assets/icons/icon_air_selected.svg");
     }
   }
 
   &.spirit {
-    background-image: url("../../../assets/icons/icon_spirit.svg");
+    background-image: url("/assets/icons/icon_spirit.svg");
     box-shadow: 1px 1px 5px 1px $spirit-color;
     &.active {
       box-shadow: 1px 1px 12px 10px $spirit-color;
-      background-image: url("../../../assets/icons/icon_spirit_selected.svg");
+      background-image: url("/assets/icons/icon_spirit_selected.svg");
     }
   }
 
@@ -81,8 +78,8 @@ $breakpoint-tablet: 767px;
 }
 @media (max-width: $breakpoint-tablet) {
   .landing-circle-img {
-    height: 50px;
-    width: 50px;
+    height: 70px;
+    width: 70px;
   }
   .landing-circle-label {
     font-size: 80%;

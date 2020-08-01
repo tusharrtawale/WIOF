@@ -1,4 +1,4 @@
-<ion-card>
+<ion-card *ngIf="videoList && videoList.length > 0">
   <ion-card-header class="ion-align-center wiof-slider-header" [ngClass]="videoSliderClass">
     <strong>Videos</strong>
   </ion-card-header>
@@ -29,6 +29,14 @@
                 </ion-buttons>
               </ion-col>
             </ion-row>
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card class="show-more-card" routerLink="videos">
+            <ion-card-content>
+              <p>Show More</p>
+              <p><ion-icon name="add-outline"></ion-icon></p>
+            </ion-card-content>
           </ion-card>
         </ion-slide>
       </ion-slides>

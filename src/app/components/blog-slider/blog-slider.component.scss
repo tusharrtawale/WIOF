@@ -1,5 +1,18 @@
 @import "../../wiof-custom-theming.scss";
 
+.blog-card {
+  height: calc(100% - 20px);
+  padding-bottom: 50px;
+}
+
+.blog-card-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .blog-card-content {
   display: -webkit-box;
   height: 60px;
@@ -12,6 +25,9 @@
 .blog-card-footer {
   background-color: white;
   border-top: 1px solid lightgrey;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 .wiof-img-placeholder {
@@ -74,4 +90,23 @@
   &.background{
     background-color: rgba($spirit-color,$tint-fraction);
   }
+}
+
+.show-more-card {
+  height: calc(100% - 20px);
+  width: 100%;
+  padding-top: 40%;
+  cursor: pointer;
+
+  p {
+    font-size: 20px;
+
+    ion-icon {
+      font-size: 30px;
+    }
+  }
+}
+
+.swiper-slide {
+  height: auto;
 }

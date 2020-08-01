@@ -87,6 +87,11 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'element/:element/blogs',
+    loadChildren: () => import('./pages/blogs/blogs.module').then( m => m.BlogsPageModule)
+  },
+
 
 
 ];

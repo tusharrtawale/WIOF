@@ -3,15 +3,16 @@
 .video-card-footer {
   background-color: white;
   border-top: 1px solid lightgrey;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 .video-card {
   min-width: 20%;
+  height: calc(100% - 20px);
+  padding-bottom: 50px;
 }
-
-// .card-content{
-//   min-height:300px;
-// }
 
 .thumbnailImage {
   align-self: center;
@@ -60,37 +61,48 @@
   left: 50%;
 }
 
-.wiof-earth {
-  background-color: $earth-color;
-  &.background{
-    background-color: rgba($earth-color,$tint-fraction);
+@mixin video-card-style($color) {
+  background-color: $color;
+  &.background {
+    background-color: rgba($color, $tint-fraction);
   }
+}
+
+.wiof-earth {
+  @include video-card-style($earth-color);
 }
 
 .wiof-water {
-  background-color: $water-color;
-  &.background{
-    background-color: rgba($water-color,$tint-fraction);
-  }
+  @include video-card-style($water-color);
 }
 
 .wiof-fire {
-  background-color: $energy-color;    //energy and fire represent same element
-  &.background{
-    background-color: rgba($energy-color,$tint-fraction);
-  }
+  @include video-card-style($energy-color);
 }
 
 .wiof-air {
-  background-color: $air-color;
-  &.background{
-    background-color: rgba($air-color,$tint-fraction);
-  }
+  @include video-card-style($air-color);
 }
 
 .wiof-spirit {
-  background-color: $spirit-color;
-  &.background{
-    background-color: rgba($spirit-color,$tint-fraction);
+  @include video-card-style($spirit-color);
+}
+
+.show-more-card {
+  height: calc(100% - 20px);
+  width: 100%;
+  padding-top: 30%;
+  cursor: pointer;
+
+  p {
+    font-size: 20px;
+
+    ion-icon {
+      font-size: 30px;
+    }
   }
+}
+
+.swiper-slide {
+  height: auto;
 }

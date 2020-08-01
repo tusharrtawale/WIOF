@@ -19,7 +19,7 @@
           <ion-row>
             <ion-col size="4">Delhi</ion-col>
             <ion-col size="8">
-              <p *ngIf="(aqiDelhi|async) as aqiDelhiData;else loadingDelhi" > {{aqiDelhiData.data.aqi}}</p>               
+              <p *ngIf="(aqiDelhi|async) as aqiDelhiData;else loadingDelhi" [ngClass]="aqiColor(aqiDelhiData.data.aqi)"> {{aqiDelhiData.data.aqi}} with {{aqiDelhiData.data.dominentpol}} as the responsible pollutant.</p>               
                 <ng-template #loadingDelhi>
                   <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />
                 </ng-template> 
@@ -28,7 +28,7 @@
           <ion-row>
             <ion-col size="4">Kolkata</ion-col>
             <ion-col size="8">
-              <p *ngIf="(aqiKolkata|async) as aqiKolkataData;else loadingKolkata" > {{aqiKolkataData.data.aqi}}</p>               
+              <p *ngIf="(aqiKolkata|async) as aqiKolkataData;else loadingKolkata" [ngClass]="aqiColor(aqiKolkataData.data.aqi)"> {{aqiKolkataData.data.aqi}} with {{aqiKolkataData.data.dominentpol}} as the responsible pollutant.</p>               
                 <ng-template #loadingKolkata>
                   <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />
                 </ng-template> 
@@ -37,7 +37,7 @@
           <ion-row>
             <ion-col size="4">Bangalore</ion-col>
             <ion-col size="8">
-              <p *ngIf="(aqiBangalore|async) as aqiBangaloreData;else loadingBangalore" > {{aqiBangaloreData.data.aqi}}</p>               
+              <p *ngIf="(aqiBangalore|async) as aqiBangaloreData;else loadingBangalore" [ngClass]="aqiColor(aqiBangaloreData.data.aqi)" > {{aqiBangaloreData.data.aqi}} with {{aqiBangaloreData.data.dominentpol}} as the responsible pollutant.</p>               
                 <ng-template #loadingBangalore>
                   <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />
                 </ng-template> 
@@ -46,7 +46,7 @@
           <ion-row>
             <ion-col size="4">Mumbai</ion-col>
             <ion-col size="8">
-              <p *ngIf="(aqiMumbai|async) as aqiMumbaiData;else loadingMumbai" > {{aqiMumbaiData.data.aqi}}</p>               
+              <p *ngIf="(aqiMumbai|async) as aqiMumbaiData;else loadingMumbai" [ngClass]="aqiColor(aqiMumbaiData.data.aqi)" > {{aqiMumbaiData.data.aqi}} with {{aqiMumbaiData.data.dominentpol}} as the responsible pollutant.</p>               
                 <ng-template #loadingMumbai>
                   <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />
                 </ng-template> 
@@ -55,7 +55,7 @@
           <ion-row>
             <ion-col size="4">Chennai</ion-col>
             <ion-col size="8">
-              <p *ngIf="(aqiChennai|async) as aqiChennaiData;else loadingChennai" > {{aqiChennaiData.data.aqi}}</p>               
+              <p *ngIf="(aqiChennai|async) as aqiChennaiData;else loadingChennai" [ngClass]="aqiColor(aqiChennaiData.data.aqi)" > {{aqiChennaiData.data.aqi}} with {{aqiChennaiData.data.dominentpol}} as the responsible pollutant.</p>               
                 <ng-template #loadingChennai>
                   <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />
                 </ng-template> 
@@ -81,6 +81,9 @@
               <div  *ngIf="searchAqiData.status==='ok';else notFound">
                 <ion-label>AQI: </ion-label>
                 <ion-text> {{searchAqiData.data.aqi}}</ion-text>
+                <br>
+                <ion-label>Dominent pollutant: </ion-label>
+                <ion-text> {{searchAqiData.data.dominentpol}}</ion-text>
                 <br>
                 <ion-label>Station Name: </ion-label>
                 <ion-text > {{searchAqiData.data.city.name}}</ion-text>

@@ -45,4 +45,25 @@ export class AqiWidgetComponent implements OnInit {
     this.aqiChennai = this.aqiService.getAqi(AQI_WIDGET_LOCATIONS.CHENNAI);
     this.aqiKolkata = this.aqiService.getAqi(AQI_WIDGET_LOCATIONS.KOLKATA);
   }
+
+  aqiColor(aqi:number){
+    if (aqi>0 && aqi<51){
+      return "aqi-good";
+    }
+    else if (aqi>50 && aqi<101){
+      return "aqi-moderate";
+    }
+    else if (aqi>100 && aqi<151){
+      return "aqi-unhealthy-for-sensitive";
+    }
+    else if (aqi>150 && aqi<201){
+      return "aqi-unhealthy";
+    }
+    else if (aqi>200 && aqi<300){
+      return "aqi-very-unhealthy";
+    }
+    else{
+      return "aqi-hazardous";
+    }
+  }
 }

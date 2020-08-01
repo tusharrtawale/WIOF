@@ -1,0 +1,12 @@
+<ion-card>
+  <ion-card-header [ngClass]="videoPlayerClass">
+    <ion-card-title> {{videoPlayerTitle}} </ion-card-title>
+    </ion-card-header>
+    <ion-card-content style="padding-top: 7px;" >
+      <iframe
+            class="videoPlayer"
+            [src]="urlSafe"
+            allowfullscreen
+          ></iframe>
+    </ion-card-content>
+  </ion-card>

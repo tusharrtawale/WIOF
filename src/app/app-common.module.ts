@@ -11,6 +11,9 @@ import {SubscribeComponent} from "./components/subscribe/subscribe.component"
 import { LifeElementsComponent } from "./components/life-elements/life-elements.component";
 import { VideoSliderComponent } from "./components/video-slider/video-slider.component";
 import { WiofFooterComponent } from "./components/wiof-footer/wiof-footer.component";
+import { WaterWidgetComponent} from "./components/water-widget/water-widget.component";
+import { VideoWidgetComponent } from "./components/video-widget/video-widget.component";
+import { EQWidgetComponent } from "./components/eq-widget/eq-widget.component";
 
 @NgModule({
   imports: [IonicModule, CommonModule, RouterModule, FormsModule],
@@ -26,7 +29,10 @@ import { WiofFooterComponent } from "./components/wiof-footer/wiof-footer.compon
     ElementWelcomeImageComponent,
     AqiWidgetComponent,
     ReactiveFormsModule ,
-    SubscribeComponent
+    SubscribeComponent,
+    WaterWidgetComponent,
+    VideoWidgetComponent,
+    EQWidgetComponent
   ],
   declarations: [
     HeaderComponent,
@@ -36,7 +42,10 @@ import { WiofFooterComponent } from "./components/wiof-footer/wiof-footer.compon
     BlogSliderComponent,
     ElementWelcomeImageComponent,
     AqiWidgetComponent,
-    SubscribeComponent
+    SubscribeComponent,
+    WaterWidgetComponent,
+    VideoWidgetComponent,
+    EQWidgetComponent
   ],
   providers: [],
 })

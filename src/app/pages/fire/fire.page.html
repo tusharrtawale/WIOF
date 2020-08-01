@@ -4,6 +4,14 @@
     welcomeImageClass="fire-welcome-img"
   ></app-element-welcome-image>
   <app-life-elements [element]="elementName"></app-life-elements>
+  <ion-row>
+    <ion-col size-xs="7">
+      <app-video-widget [element]="elementName"></app-video-widget>
+    </ion-col>
+    <ion-col size-md="5" size-xs="12">
+      Space for Widget
+    </ion-col>
+  </ion-row>
   <app-blog-slider
     [blogList]="blogs | async"
     [element]="elementName"

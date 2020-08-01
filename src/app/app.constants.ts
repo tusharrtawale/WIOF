@@ -115,3 +115,20 @@ export const FIREBASE_COLLECTION = {
   SUBSCRIPTIONS: "Subscriptions",
   BLOG_IMAGE_STORAGE: 'blog-images'
 }
+
+export const VIDEO_PLAYER_TITLES = {
+  AIR: "What is Air Quality Index?",
+  WATER: "Water",
+  EARTH: "Earth",
+  FIRE: "Fire",
+  SPIRIT: "Spirit",
+}
+
+
+export const VIDEO_PLAYER_VIDEOS = {
+  AIR: "qmOkbaPtAJA",
+  WATER: "Water",
+  EARTH: "Earth",
+  FIRE: "Fire",
+  SPIRIT: "Spirit",
+}

@@ -1,0 +1,31 @@
+@import "../../wiof-custom-theming.scss";
+
+.wiof-spinner {
+    position: absolute;
+    left: 50%;
+  }
+  
+.wiof-water-widget-card-header {
+    background-color: $water-color;
+  }
+
+.wiof-water-widget-items{
+    height:350px;
+}
+.wiof-water-widget-items[scrolly=true] {
+    position: relative;
+    overflow: hidden;
+  
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+.wiof-water-widget-items[scrolly=true] {
+    overflow-y: auto;
+  }
+
+.wiof-water-widget-card-toolbar {
+    padding: 10px;
+    background-color: rgb(229, 229, 229);
+  }

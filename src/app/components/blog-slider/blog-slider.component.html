@@ -1,4 +1,4 @@
-<ion-card>
+<ion-card *ngIf="blogList && blogList.length > 0">
   <ion-card-header class="ion-align-center wiof-slider-header"  [ngClass]="blogSliderClass">
     <strong>Blogs</strong>
   </ion-card-header>
@@ -10,7 +10,7 @@
             <ion-card-content class="ion-text-start card-content">
               <img [src]="blog.image | async" />
               <h6 class="ion-padding-vertical">
-                <strong
+                <strong class="blog-card-title"
                   ><a [routerLink]="['blog', blog.id]">{{
                     blog.title
                   }}</a></strong
@@ -32,6 +32,14 @@
                 </ion-buttons>
               </ion-col>
             </ion-row>
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card class="show-more-card" routerLink="blogs">
+            <ion-card-content>
+              <p>Show More</p>
+              <p><ion-icon name="add-outline"></ion-icon></p>
+            </ion-card-content>
           </ion-card>
         </ion-slide>
       </ion-slides>

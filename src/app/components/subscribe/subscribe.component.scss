@@ -1,112 +1,99 @@
-$backgroundcolor:rgb(128,64,0);
-$shadowcolor:rgb(89,45,0);
-$fontcolor:#fff;
+$backgroundcolor: rgb(128, 64, 0);
+$shadowcolor: rgb(89, 45, 0);
+$fontcolor: #fff;
 
-.wiof-subscribe
-{
-position:absolute;
-height:390px;
-width: 250px;
-background-color:$backgroundcolor;
-top: 80px;
-border-bottom-right-radius : 15px;
-border-top-right-radius : 15px;
-z-index:100;
-transition:0.5s;
-left:-250px;
-    &.active{
-        left:0px;
-    }
+.wiof-subscribe {
+  position: absolute;
+  height: 390px;
+  width: 250px;
+  background-color: $backgroundcolor;
+  top: 80px;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+  z-index: 100;
+  transition: 0.5s;
+  left: -250px;
+  &.active {
+    left: 0px;
+  }
 }
 
-// @keyframes slide{
-//     50%:
+.wiof-subscribe-form {
+  padding: 10px;
+  z-index: 100;
 
-// }
-.wiof-subscribe-form
-{
-padding: 10px;
-z-index:100;
+  .item-input {
+    border-radius: 5px;
+  }
 }
 
-.wiof-subscribe-button{
-    position:absolute;
-    height:150px;
-    width: 40px;
-    background-color:$backgroundcolor;
-    border-bottom-right-radius : 15px;
-    border-top-right-radius : 15px;
-    cursor:pointer;
-    top: 180px;
-    left:0px;
-    z-index:100;
-    opacity: 85%;
-    transition:.4s;
-    transition-delay:.5s;
+.wiof-subscribe-button {
+  position: absolute;
+  height: 150px;
+  width: 40px;
+  background-color: $backgroundcolor;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+  cursor: pointer;
+  top: 180px;
+  left: 0px;
+  z-index: 100;
+  opacity: 85%;
+  transition: 0.4s;
+  transition-delay: 0.5s;
 
-    &.inactive{
-        left:-40px;
-        opacity: 0%;
-    }
-
-
+  &.inactive {
+    left: -40px;
+    opacity: 0%;
+  }
 }
 
-.mail{
-    position:absolute;
-    top:120px;
-    width:35px;
-    color:$fontcolor;
-    font-size:x-large;
-
+.mail {
+  position: absolute;
+  top: 120px;
+  width: 35px;
+  color: $fontcolor;
+  font-size: x-large;
 }
 
-.subscribe-text{
-    transform: rotate(-90deg);
-    color:$fontcolor;
-    width:100px;
-    position:absolute;
-    top:50px;
-    left:-34px;
-    margin:0px;
-    font-weight:bold;
+.subscribe-text {
+  transform: rotate(-90deg);
+  color: $fontcolor;
+  width: 100px;
+  position: absolute;
+  top: 50px;
+  left: -34px;
+  margin: 0px;
+  font-weight: bold;
 }
 
-
-// .wiof-subscribe-button:hover{
-//     height:350px;
-//     opacity: 100%;
-// }
-
-h4{
-    padding:10px;
-    color:$fontcolor;
-    
+h4 {
+  padding: 10px;
+  color: $fontcolor;
 }
 
-.close-button{
-    position:absolute;
-    top:5px;
-    right:4px;
-    background-color:$backgroundcolor;
-    color:$fontcolor;
-    font-size:x-large;
+.close-button {
+  position: absolute;
+  top: 5px;
+  right: 4px;
+  background-color: $backgroundcolor;
+  color: $fontcolor;
+  font-size: x-large;
 }
 
-.subscribe-button{
-    color:$fontcolor;
-    background-color:$backgroundcolor;
-    font-size:large;
-    border: 1px solid $fontcolor;
-    border-radius:5px;
-    transition:0.5s;
-    padding:12px;
-    margin-left: 40%;
-}
+.subscribe-button {
+  color: $fontcolor;
+  background-color: $backgroundcolor;
+  font-size: large;
+  border: 1px solid $fontcolor;
+  border-radius: 5px;
+  transition: 0.5s;
+  padding: 12px;
+  margin-left: 40%;
 
-.subscribe-button:hover{
-    color:$backgroundcolor;
-    background-color:$fontcolor;
+  &:hover {
+    color: $backgroundcolor;
+    background-color: $fontcolor;
     box-shadow: $shadowcolor 5px 6px;
-   
+  }
 }

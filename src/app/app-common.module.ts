@@ -15,6 +15,9 @@ import { WiofFooterComponent } from "./components/wiof-footer/wiof-footer.compon
 import { WaterWidgetComponent} from "./components/water-widget/water-widget.component";
 import { VideoWidgetComponent } from "./components/video-widget/video-widget.component";
 import { EQWidgetComponent } from "./components/eq-widget/eq-widget.component";
+import { PollsWidgetComponent } from "./components/polls-widget/polls-widget.component";
+import { FoodPhIndicatorComponent } from "./components/food-ph-indicator/food-ph-indicator.component";
+import { EnergyWidgetComponent } from "./components/energy-widget/energy-widget.component";
 
 @NgModule({
   imports: [IonicModule, CommonModule, RouterModule, FormsModule],
@@ -37,6 +40,10 @@ import { EQWidgetComponent } from "./components/eq-widget/eq-widget.component";
     EQWidgetComponent,
     ReactiveFormsModule,
     SubscribeComponent,
+    PollsWidgetComponent,
+    FoodPhIndicatorComponent,
+    EnergyWidgetComponent
+
   ],
   declarations: [
     HeaderComponent,
@@ -50,7 +57,11 @@ import { EQWidgetComponent } from "./components/eq-widget/eq-widget.component";
     SubscribeComponent,
     WaterWidgetComponent,
     VideoWidgetComponent,
-    EQWidgetComponent
+    EQWidgetComponent,
+    PollsWidgetComponent,
+    FoodPhIndicatorComponent,
+    EnergyWidgetComponent
+
   ],
   providers: [],
 })

@@ -81,6 +81,7 @@ export const BLOG_SLIDER_OPTIONS = {
     modifier: 1,
     slideShadows: true,
   },
+  
   // Responsive breakpoints
   breakpoints: {
     // when window width is >= 320px
@@ -119,17 +120,17 @@ export const FIREBASE_COLLECTION = {
 
 export const VIDEO_PLAYER_TITLES = {
   AIR: "What is Air Quality Index?",
-  WATER: "Water",
-  EARTH: "Earth",
-  FIRE: "Fire",
-  SPIRIT: "Spirit",
+  WATER: "What is Ground water?",
+  EARTH: "What is Food pH?",
+  FIRE: "Enegry consumption ranking from 1990 to 2017",
+  SPIRIT: "What is Emotional Intelligence?",
 }
 
 
 export const VIDEO_PLAYER_VIDEOS = {
   AIR: "qmOkbaPtAJA",
-  WATER: "Water",
-  EARTH: "Earth",
-  FIRE: "Fire",
-  SPIRIT: "Spirit",
+  WATER: "Z2HQY5A3o-s",
+  EARTH: "LrLrOYLAwWY",
+  FIRE: "L6murPEFbXg",
+  SPIRIT: "LgUCyWhJf6s",
 }

@@ -20,7 +20,7 @@ import { FoodPhIndicatorComponent } from "./components/food-ph-indicator/food-ph
 import { EnergyWidgetComponent } from "./components/energy-widget/energy-widget.component";
 
 @NgModule({
-  imports: [IonicModule, CommonModule, RouterModule, FormsModule],
+  imports: [IonicModule, CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
   exports: [
     CommonModule,
     IonicModule,

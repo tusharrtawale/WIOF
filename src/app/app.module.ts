@@ -5,7 +5,7 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 // import {AngularFireAuthModule} from '@angular/fire/auth';
 import { AngularFireStorageModule } from "@angular/fire/storage";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouteReuseStrategy } from "@angular/router";
 import { SplashScreen } from "@ionic-native/splash-screen/ngx";
@@ -22,6 +22,7 @@ import { AppComponent } from "./app.component";
     BrowserModule,
     IonicModule.forRoot(),
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
     AngularFireModule.initializeApp(firebaseConfig),

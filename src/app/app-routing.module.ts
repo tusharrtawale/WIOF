@@ -91,6 +91,10 @@ const routes: Routes = [
     path: 'element/:element/blogs',
     loadChildren: () => import('./pages/blogs/blogs.module').then( m => m.BlogsPageModule)
   },
+  {
+    path: 'element/:element/videos',
+    loadChildren: () => import('./pages/blogs/blogs.module').then( m => m.BlogsPageModule)
+  },
 
 
 

@@ -1,6 +1,14 @@
 <ion-card *ngIf="videoList && videoList.length > 0">
   <ion-card-header class="ion-align-center wiof-slider-header" [ngClass]="videoSliderClass">
-    <strong>Videos</strong>
+    <!-- <strong>Videos</strong> -->
+    <ion-row>
+        <ion-col><strong>Videos</strong>
+        </ion-col>
+        <ion-col><ion-button [routerLink]="['videos']">
+          Switch to list
+        </ion-button>
+        </ion-col>
+    </ion-row>
   </ion-card-header>
   <ion-card-content class="background" [ngClass]="videoSliderClass">
     <div *ngIf="videoList; else loading">
@@ -31,14 +39,14 @@
             </ion-row>
           </ion-card>
         </ion-slide>
-        <ion-slide>
+        <!-- <ion-slide>
           <ion-card class="show-more-card" routerLink="videos">
             <ion-card-content>
               <p>Show More</p>
               <p><ion-icon name="add-outline"></ion-icon></p>
             </ion-card-content>
           </ion-card>
-        </ion-slide>
+        </ion-slide> -->
       </ion-slides>
       <!-- <div class="swiper-button-prev" (click)="wiofVideoSlider.navigation.nextEl"></div>
       <div class="swiper-button-next"></div> -->

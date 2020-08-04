@@ -9,11 +9,6 @@ const routes: Routes = [
     loadChildren: () =>
       import("./pages/home/home.module").then((m) => m.HomePageModule),
   },
-  // {
-  //   path: "login",
-  //   loadChildren: () =>
-  //     import("./pages/login/login.module").then((m) => m.LoginPageModule),
-  // },
   {
     path: "",
     redirectTo: "home",
@@ -24,11 +19,6 @@ const routes: Routes = [
     loadChildren: () =>
       import("./pages/earth/earth.module").then((m) => m.EarthPageModule),
   },
-  // {
-  //   path: "element/air",
-  //   loadChildren: () =>
-  //     import("./pages/air/air.module").then((m) => m.AirPageModule),
-  // },
   {
     path: "element/water",
     loadChildren: () =>
@@ -44,13 +34,6 @@ const routes: Routes = [
     loadChildren: () =>
       import("./pages/spirit/spirit.module").then((m) => m.SpiritPageModule),
   },
-  // {
-  //   path: "video-post",
-  //   loadChildren: () =>
-  //     import("./pages/video-post/video-post.module").then(
-  //       (m) => m.VideoPostPageModule
-  //     ),
-  // },
   {
     path: "element/water",
     loadChildren: () =>
@@ -61,23 +44,6 @@ const routes: Routes = [
     loadChildren: () =>
       import("./pages/air/air.module").then((m) => m.AirPageModule),
   },
-  // {
-  //   path: "spirit",
-  //   loadChildren: () =>
-  //     import("./pages/spirit/spirit.module").then((m) => m.SpiritPageModule),
-  // },
-  // {
-  //   path: "fire",
-  //   loadChildren: () =>
-  //     import("./pages/fire/fire.module").then((m) => m.FirePageModule),
-  // },
-  // {
-  //   path: "take-action",
-  //   loadChildren: () =>
-  //     import("./pages/take-action/take-action.module").then(
-  //       (m) => m.TakeActionPageModule
-  //     ),
-  // },
   {
     path: 'admin-dashboard',
     loadChildren: () => import('./pages/admin-dashboard/admin-dashboard.module').then( m => m.AdminDashboardPageModule),
@@ -95,11 +61,7 @@ const routes: Routes = [
     path: 'element/:element/videos',
     loadChildren: () => import('./pages/videos/videos.module').then( m => m.VideosPageModule)
   },
-  // {
-  //   path: 'videos',
-  //   loadChildren: () => import('./pages/videos/videos.module').then( m => m.VideosPageModule)
-  // },
-
+  
 
 
 

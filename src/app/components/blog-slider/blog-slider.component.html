@@ -1,6 +1,13 @@
 <ion-card *ngIf="blogList && blogList.length > 0">
   <ion-card-header class="ion-align-center wiof-slider-header"  [ngClass]="blogSliderClass">
-    <strong>Blogs</strong>
+    <ion-row>
+      <ion-col><strong>Blogs</strong>
+      </ion-col>
+      <ion-col style="text-align: right;"><a [routerLink]="['blogs']" class="switch-to-list"> 
+        Switch to list
+      </a>
+      </ion-col>
+  </ion-row>
   </ion-card-header>
   <ion-card-content class="background"  [ngClass]="blogSliderClass" >
     <div *ngIf="blogList; else loading">
@@ -32,14 +39,6 @@
                 </ion-buttons>
               </ion-col>
             </ion-row>
-          </ion-card>
-        </ion-slide>
-        <ion-slide>
-          <ion-card class="show-more-card" routerLink="blogs">
-            <ion-card-content>
-              <p>Show More</p>
-              <p><ion-icon name="add-outline"></ion-icon></p>
-            </ion-card-content>
           </ion-card>
         </ion-slide>
       </ion-slides>

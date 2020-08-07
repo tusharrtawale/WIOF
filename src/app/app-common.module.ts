@@ -18,6 +18,7 @@ import { EQWidgetComponent } from "./components/eq-widget/eq-widget.component";
 import { PollsWidgetComponent } from "./components/polls-widget/polls-widget.component";
 import { FoodPhIndicatorComponent } from "./components/food-ph-indicator/food-ph-indicator.component";
 import { EnergyWidgetComponent } from "./components/energy-widget/energy-widget.component";
+import { AqiScorecardComponent } from "./components/aqi-scorecard/aqi-scorecard.component";
 
 @NgModule({
   imports: [IonicModule, CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
@@ -42,7 +43,8 @@ import { EnergyWidgetComponent } from "./components/energy-widget/energy-widget.
     SubscribeComponent,
     PollsWidgetComponent,
     FoodPhIndicatorComponent,
-    EnergyWidgetComponent
+    EnergyWidgetComponent,
+    AqiScorecardComponent
 
   ],
   declarations: [
@@ -60,7 +62,9 @@ import { EnergyWidgetComponent } from "./components/energy-widget/energy-widget.
     EQWidgetComponent,
     PollsWidgetComponent,
     FoodPhIndicatorComponent,
-    EnergyWidgetComponent
+    EnergyWidgetComponent,
+    AqiScorecardComponent
+
 
   ],
   providers: [],

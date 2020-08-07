@@ -7,11 +7,13 @@
 
 .wiof-aqi-widget-card-header {
   background-color: $air-color;
+  &.background{
+    background-color: rgba($air-color,$tint-fraction);
+  }
 }
 
 .wiof-aqi-widget-card-toolbar {
   padding: 10px;
-  background-color: rgb(229, 229, 229);
 }
 
 .aqi-level-card {
@@ -22,16 +24,44 @@
   font-size: 12px;
 }
 
+//adding scroll to search results
+
+.wiof-aqi-widget-items{
+  height:220px;
+}
+
+.wiof-aqi-widget-items [scrolly=true] {
+    position: relative;
+    overflow: hidden;
+  
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+.wiof-aqi-widget-items[scrolly=true] {
+    overflow-y: auto;
+  }
+
+.wiof-aqi-search-result-expand{
+  cursor:pointer;
+}
+
+//aqi colors
+
 .aqi-good {
   background-color: rgb(0, 228, 0);
+  color: black;
 }
 
 .aqi-moderate {
   background-color: rgb(255, 255, 0);
+  color: black;
 }
 
 .aqi-unhealthy-for-sensitive {
   background-color: rgb(255, 156, 0);
+  color: black;
 }
 
 .aqi-unhealthy {
@@ -48,3 +78,9 @@
   background-color: rgb(126, 0, 35);
   color: white;
 }
+
+.aqi-na{
+  background-color: white;
+  color: black;
+}
+

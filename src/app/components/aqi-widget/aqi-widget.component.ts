@@ -9,41 +9,39 @@ import { AqiWidgetService } from "../../services/aqi-widget.service";
   styleUrls: ["./aqi-widget.component.scss"],
 })
 export class AqiWidgetComponent implements OnInit {
-  //aqiwidget variables
-  widgetMajorCities: boolean = true;
-  widgetSearchCity: boolean = false;
-  city: string;
-  searchCityAqi: Observable<any>;
-  searchClickFlag: boolean = false;
-  aqiDelhi: Observable<any>;
-  aqiMumbai: Observable<any>;
-  aqiKolkata: Observable<any>;
-  aqiBangalore: Observable<any>;
-  aqiChennai: Observable<any>;
+  majorLocations:string[];
+  selectedLocation:string="mumbai";
+  searchLocation:string;
+  searchLocationClickedFlag:boolean=false;
+  searchLocationTabSelect:boolean=false;
+  showAqiScorecard:boolean=true;
+  searchLocationResults;
 
-  loadMajorCitiesDiv() {
-    this.widgetMajorCities = true;
-    this.widgetSearchCity = false;
+  constructor(private aqiService: AqiWidgetService) {
+
   }
-
-  loadSearchCityDiv() {
-    this.widgetMajorCities = false;
-    this.widgetSearchCity = true;
-  }
-
-  loadCityAqiData() {
-    this.searchCityAqi = this.aqiService.getAqi(this.city);
-    this.searchClickFlag = true;
-  }
-
-  constructor(private aqiService: AqiWidgetService) {}
 
   ngOnInit() {
-    this.aqiDelhi = this.aqiService.getAqi(AQI_WIDGET_LOCATIONS.DELHI);
-    this.aqiMumbai = this.aqiService.getAqi(AQI_WIDGET_LOCATIONS.MUMBAI);
-    this.aqiBangalore = this.aqiService.getAqi(AQI_WIDGET_LOCATIONS.BANGALORE);
-    this.aqiChennai = this.aqiService.getAqi(AQI_WIDGET_LOCATIONS.CHENNAI);
-    this.aqiKolkata = this.aqiService.getAqi(AQI_WIDGET_LOCATIONS.KOLKATA);
+    this.majorLocations = ['mumbai', 'delhi', 'lucknow', 'bangalore'];
+  }
+  searchByLocation(){
+    this.searchLocationResults = this.aqiService.search(this.searchLocation);
+    console.log(this.searchLocation);
+    this.searchLocationClickedFlag=true;
+    this.showAqiScorecard=false;
+  }
+  loadSearchLocationDiv(){
+    this.searchLocationTabSelect=true;
+    this.showAqiScorecard=false;
+  }
+
+  loadMajorCitiesDiv(){
+    this.searchLocationTabSelect=false;
+  }
+  expandLocationAqiDetails(locationUrl:string){
+    this.selectedLocation=locationUrl;
+    this.searchLocationClickedFlag=false;
+    this.showAqiScorecard=true;
   }
 
   aqiColor(aqi: number) {
@@ -58,9 +56,13 @@ export class AqiWidgetComponent implements OnInit {
       aqiLevelClass += "aqi-unhealthy";
     } else if (aqi > 200 && aqi < 300) {
       aqiLevelClass += "aqi-very-unhealthy";
-    } else {
+    } else if (aqi > 300){
       aqiLevelClass += "aqi-hazardous";
+    }
+    else{
+      aqiLevelClass += "aqi-na";
     }
     return aqiLevelClass;
   }
 }
+

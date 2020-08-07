@@ -108,7 +108,7 @@ export const ENDPOINTS = {
     VIDEO: 'https://www.googleapis.com/youtube/v3/videos',
     PLAYLIST: 'https://www.googleapis.com/youtube/v3/playlistItems'
   },
-  AQI_WIDGET: 'https://api.waqi.info/feed'
+  AQI_WIDGET: 'https://api.waqi.info'
 }
 
 export const FIREBASE_COLLECTION = {

@@ -13,21 +13,22 @@
 }
 
 .wiof-aqi-widget-card-toolbar {
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .aqi-level-card {
   box-shadow: 1px 1px 2px 0px #afafaf;
   border-radius: 5px;
   color: black;
-  padding: 2px 5px;
+  // padding: 2px 5px;
   font-size: 12px;
 }
 
 //adding scroll to search results
 
 .wiof-aqi-widget-items{
-  height:220px;
+  height:320px;
 }
 
 .wiof-aqi-widget-items [scrolly=true] {
@@ -45,6 +46,9 @@
 
 .wiof-aqi-search-result-expand{
   cursor:pointer;
+}
+.wiof-aqi-search-result-expand:hover{
+  color:blue;
 }
 
 //aqi colors

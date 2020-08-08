@@ -2,6 +2,7 @@ import { Component, OnInit,Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AqiWidgetService } from "../../services/aqi-widget.service";
 import { AqiResponse } from "../../models/Aqi";
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-aqi-scorecard',
@@ -11,8 +12,12 @@ import { AqiResponse } from "../../models/Aqi";
 export class AqiScorecardComponent implements OnInit {
 
   @Input() locationUrl:string;
-  searchAqiData:Observable<any>;
+  // searchAqiData:Observable<any>;
   parameters:any; //change
+  aqiResponse:AqiResponse;
+  aqi:number;
+  dominentpol:string;
+  stationName:string;
   // searchAqiData:Observable<any>;
 
   constructor(private aqiService:AqiWidgetService) { }
@@ -23,8 +28,15 @@ export class AqiScorecardComponent implements OnInit {
 
   ngOnChanges(){
     console.log(this.locationUrl);
-    this.searchAqiData=this.aqiService.getAqi(this.locationUrl);
-    this.aqiService.getAqi(this.locationUrl).subscribe(data=>{this.parameters=AqiResponse.getAqiParameters(data);});
+    // this.searchAqiData=this.aqiService.getAqi(this.locationUrl);
+    this.aqiService.getAqi(this.locationUrl).subscribe(data=>{
+      this.aqiResponse=data;
+      this.parameters=AqiResponse.getAqiParameters(data);
+      this.aqi=this.aqiResponse.data.aqi;
+      this.dominentpol=this.aqiResponse.data.dominentpol;
+      this.stationName=this.aqiResponse.data.city.name;
+      console.log(data);
+    });
     // this.searchAqiData=this.location;
     // console.log("aqi scorecard is arrived");
     

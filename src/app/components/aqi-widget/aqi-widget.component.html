@@ -3,12 +3,13 @@
 <ion-card style="height:520px;" class="wiof-aqi-widget-card-header background">
     <ion-card-header class="wiof-aqi-widget-card-header">
       <ion-card-title>
-        AQI Widget
+        AQI Widget<ion-icon slot="end" name="information-circle-outline"></ion-icon>
       </ion-card-title>
     </ion-card-header>
     <ion-toolbar color="air" class="wiof-aqi-widget-card-toolbar">
-        <ion-button fill="outline" slot="start" (click)="loadMajorCitiesDiv()">Major Cities</ion-button>
-        <ion-button fill="outline" slot="start" (click)="loadSearchLocationDiv()">Search Location</ion-button>
+        <ion-button fill="solid" slot="start" (click)="loadMajorCitiesDiv()"><ion-icon name="golf-outline"></ion-icon> Major Cities</ion-button>
+        <ion-button fill="solid" slot="start" (click)="loadSearchLocationDiv()"><ion-icon name="search-outline"></ion-icon> Search Location</ion-button>
+        <ion-button fill="solid" slot="start" target="_blank" href="https://waqi.info/forecast/#/!pol:pm25">AQI Forecast   <ion-icon name="open-outline"></ion-icon></ion-button>
         <!-- future use new window aqi map view button -->
         <!-- <ion-button ><ion-icon name="browsers-outline"></ion-icon></ion-button> -->
     </ion-toolbar>
@@ -22,41 +23,53 @@
     </ion-toolbar>
 
     <ion-toolbar color="air" class="wiof-aqi-widget-card-toolbar" *ngIf="searchLocationTabSelect">
-        <ion-item>
-            <ion-label position="floating">Enter Location</ion-label>
-            <ion-input [(ngModel)]="searchLocation"></ion-input>
-        </ion-item>
-        <ion-button (click)="searchByLocation()">Search</ion-button>        
+        <ion-row>
+            <ion-col size="9">
+                <ion-item>
+                    <ion-label position="floating">Enter Location</ion-label>
+                    <ion-input [(ngModel)]="searchLocation"></ion-input>
+                </ion-item>
+            </ion-col>
+            <ion-col size="3">
+                <ion-button (click)="searchByLocation()">Search</ion-button>                        
+            </ion-col>
+        </ion-row>        
         <div *ngIf="searchLocationClickedFlag">
             <div scrollY="true"  class="wiof-aqi-widget-items">
                 <div *ngIf="(searchLocationResults|async) as locationsFound;else loading">
                     <!-- <p> {{locationsFound.data|json}} </p> -->
-                    <ion-row>
-                        <ion-col size-xs="10">
-                        <p><strong>Station Name (Click on location for AQI details)</strong></p>
-                        </ion-col>
-                        <ion-col size-xs="2">
-                        <p style="text-align: center;"><strong>AQI</strong></p>                      
-                        </ion-col>
-                    </ion-row>   
-                    <div *ngFor="let location of locationsFound.data">
+                    <div *ngIf="!locationsFound.data[0]">
+                        <p style="color:red">AQI data for this location is not available.</p>
+                        <p style="color:grey">Please search for another location.</p>
+                    </div>
+                    <div *ngIf="locationsFound.data[0]">
                         <ion-row>
                             <ion-col size-xs="10">
-                                <p class="wiof-aqi-search-result-expand" (click)="expandLocationAqiDetails(location.station.url)" >
-                                <!-- (click)=expandLocationAqiDetails({{location.station.url}}) -->                        
-                                {{location.station.name}}                          
-                                </p>
+                            <p><strong>Station Name (Click on location for AQI details)</strong></p>
                             </ion-col>
                             <ion-col size-xs="2">
-                                <p style="text-align: center;" [ngClass]="aqiColor(location.aqi)">{{location.aqi}}</p>                      
+                            <p style="text-align: center;"><strong>AQI</strong></p> 
                             </ion-col>
-                        </ion-row>                  
+                        </ion-row>   
+                        <div *ngFor="let location of locationsFound.data">
+                            <ion-row>
+                                <ion-col size-xs="10">
+                                    <p class="wiof-aqi-search-result-expand" (click)="expandLocationAqiDetails(location.station.url)" >
+                                    <!-- (click)=expandLocationAqiDetails({{location.station.url}}) -->                        
+                                    {{location.station.name}}                          
+                                    </p>
+                                </ion-col>
+                                <ion-col size-xs="2">
+                                    <p style="text-align: center;" [ngClass]="aqiColor(location.aqi)">{{location.aqi}}</p>                      
+                                </ion-col>
+                            </ion-row>                  
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </ion-toolbar>
-    <ion-card-content>        
+    <ion-card-content style="padding:5px;">        
         <!-- <p>{{selectedMajorLocation}}</p> -->
         <!-- <div *ngFor="let majorLocation of majorLocations">
             <p >{{majorLocation}}</p>

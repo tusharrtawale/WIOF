@@ -4,6 +4,7 @@ export class AqiResponse
     "data": {
           idx:number;
           aqi:number;
+          dominentpol:string;
           time:{
               v:number;
               s:Date;

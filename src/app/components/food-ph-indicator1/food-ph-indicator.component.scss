@@ -1,3 +1,10 @@
+@import "../../wiof-custom-theming.scss";
+
+.wiof-earth-widget-card-header{
+    background-color: $earth-color;
+}
+
+
 .wiof-food-ph-indicator
 {
 position: absolute;

@@ -1,48 +1,31 @@
-import { Component, OnInit,Input } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit, Input, OnChanges } from "@angular/core";
+import { Observable } from "rxjs";
 import { AqiWidgetService } from "../../services/aqi-widget.service";
-import { AqiResponse } from "../../models/Aqi";
-import { ThrowStmt } from '@angular/compiler';
+import { AqiResponseData } from "../../models/Aqi";
+import { map } from "rxjs/operators";
 
 @Component({
-  selector: 'app-aqi-scorecard',
-  templateUrl: './aqi-scorecard.component.html',
-  styleUrls: ['./aqi-scorecard.component.scss'],
+  selector: "app-aqi-scorecard",
+  templateUrl: "./aqi-scorecard.component.html",
+  styleUrls: ["./aqi-scorecard.component.scss"],
 })
 export class AqiScorecardComponent implements OnInit {
+  @Input() locationUrl: string;
+  aqiData$: Observable<AqiResponseData>;
 
-  @Input() locationUrl:string;
-  // searchAqiData:Observable<any>;
-  parameters:any; //change
-  aqiResponse:AqiResponse;
-  aqi:number;
-  dominentpol:string;
-  stationName:string;
-  // searchAqiData:Observable<any>;
+  constructor(private aqiService: AqiWidgetService) {}
 
-  constructor(private aqiService:AqiWidgetService) { }
+  ngOnInit() {}
 
-  ngOnInit() {
-  
+  getAqiParameters(iaqi: any) {
+    return Object.entries(iaqi) as Array<[string, { v: number }]>;
   }
 
-  ngOnChanges(){
-    console.log(this.locationUrl);
-    // this.searchAqiData=this.aqiService.getAqi(this.locationUrl);
-    this.aqiService.getAqi(this.locationUrl).subscribe(data=>{
-      this.aqiResponse=data;
-      this.parameters=AqiResponse.getAqiParameters(data);
-      this.aqi=this.aqiResponse.data.aqi;
-      this.dominentpol=this.aqiResponse.data.dominentpol;
-      this.stationName=this.aqiResponse.data.city.name;
-      console.log(data);
-    });
-    // this.searchAqiData=this.location;
-    // console.log("aqi scorecard is arrived");
-    
-
+  ngOnChanges() {
+    this.aqiData$ = this.aqiService
+      .getAqi(this.locationUrl)
+      .pipe(map((response) => response.data));
   }
-
 
   aqiColor(aqi: number) {
     let aqiLevelClass = "aqi-level-card ";
@@ -56,13 +39,11 @@ export class AqiScorecardComponent implements OnInit {
       aqiLevelClass += "aqi-unhealthy";
     } else if (aqi > 200 && aqi < 300) {
       aqiLevelClass += "aqi-very-unhealthy";
-    } else if (aqi > 300){
+    } else if (aqi > 300) {
       aqiLevelClass += "aqi-hazardous";
-    }
-    else{
+    } else {
       aqiLevelClass += "aqi-na";
     }
     return aqiLevelClass;
   }
-
 }

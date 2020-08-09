@@ -1,183 +1,62 @@
-<ion-row>
-  <ion-col size="12" >
-    <ion-card [ngClass]="aqiColor(aqi)">
-      <ion-card-header style="padding:0px">
-        <ion-row>
-          <ion-col>
-            <p style="font-size: small ;text-align: left;">Station: {{stationName|titlecase}} </p>
-          </ion-col>          
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <p style="font-size:large;text-align: center;">AQI : {{aqi}}
-            </p>
-          </ion-col>
-          <ion-col>
-            <p style="font-size: small ;text-align: center;">Dominent Pollutant: {{dominentpol|uppercase}} </p>
-            <!-- {{aqiResponse.status|json}} -->
-          </ion-col>
-        </ion-row>  
+<ion-grid *ngIf="aqiData$ | async as aqiData" class="ion-no-padding">
+  <ion-row>
+    <ion-col size="12">
+      <ion-card [ngClass]="aqiColor(aqiData.aqi)">
+        <ion-card-content class="aq-data-card">
+          <ion-row>
+            <ion-col>
+              <p class="aqi-station-name">
+                Station: {{ aqiData.city.name | titlecase }}
+              </p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <p class="aqi-index">AQI : {{ aqiData.aqi }}</p>
+            </ion-col>
+            <ion-col>
+              <p class="dominent-pollutant">
+                Dominent Pollutant: {{ aqiData.dominentpol | uppercase }}
+              </p>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
 
-      </ion-card-header>
-      <ion-card-content>
-
-      </ion-card-content>
-    </ion-card>
-  </ion-col>
-</ion-row>
-<ion-grid>
-  <div scrollY="true"  class="wiof-aqi-widget-items">
+  <!-- Parameters data -->
+  <div scrollY="true" class="wiof-aqi-widget-items">
     <ion-row>
-      <ion-col size="4" *ngFor="let parameter of parameters">
+      <ion-col
+        size="4"
+        *ngFor="let parameter of getAqiParameters(aqiData.iaqi)"
+      >
         <ion-card class="card-not-aqi">
-          <ion-card-header style="padding:0px">
-            <p style="color:black;font-size:large;text-align: center;padding: 2px;margin:5px;">{{parameter[0]|uppercase}}</p>
+          <ion-card-header style="padding: 0px;">
+            <p class="aqi-parameter">
+              {{ parameter[0] | uppercase }}
+            </p>
           </ion-card-header>
           <ion-card-content>
-            <p style="color:black;font-size:medium;text-align: center;margin:5px;">{{parameter[1].v|number:'1.0-2'}}</p>
+            <p class="aqi-parameter-value">
+              {{ parameter[1].v | number: "1.0-2" }}
+            </p>
           </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <p>Data Credit:<a href="https://waqi.info/" target="_blank" style="font-size: small ;text-align: left;">World Air Quality Index project</a></p>
-      </ion-col>          
+        <p class="ion-padding">
+          Data Credit:&nbsp;<a
+            href="https://waqi.info/"
+            target="_blank"
+            class="data-credit"
+            >World Air Quality Index project</a
+          >
+        </p>
+      </ion-col>
     </ion-row>
   </div>
 </ion-grid>
-  
-
-
-
-<!--   
-  <ion-col size-xs="4">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Temperature</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-text>1</ion-text>
-      </ion-card-content>
-    </ion-card>
-  </ion-col>
-  <ion-col size-xs="4">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>AQI</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-text>1</ion-text>
-      </ion-card-content>
-    </ion-card>
-  </ion-col>
-  <ion-col size-xs="4">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>AQI</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-text>1</ion-text>
-      </ion-card-content>
-    </ion-card>
-  </ion-col>
-  <ion-col size-xs="4">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>AQI</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-text>1</ion-text>
-      </ion-card-content>
-    </ion-card>
-  </ion-col>
-  <ion-col size-xs="4">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>AQI</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-text>1</ion-text>
-      </ion-card-content>
-    </ion-card>
-  </ion-col>
-  <ion-col size-xs="4">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>AQI</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-text>1</ion-text>
-      </ion-card-content>
-    </ion-card>
-  </ion-col>
-  <ion-col size-xs="4">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>AQI</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-text>1</ion-text>
-      </ion-card-content>
-    </ion-card>
-  </ion-col>
-</ion-row> -->
-
-
-<!-- old scorecard -->
-<!-- 
-<div  *ngIf="searchAqiData.status==='ok';else notFound">
-  <ion-label>AQI: </ion-label>
-  <ion-text> {{searchAqiData.data.aqi}}</ion-text>
-  <br>
-  <ion-label>Dominent pollutant: </ion-label>
-  <ion-text> {{searchAqiData.data.dominentpol | uppercase}}</ion-text>
-  <br>
-  <ion-label>Station Name: </ion-label>
-  <ion-text > {{searchAqiData.data.city.name}}</ion-text>
-  <br>
-  
-  <div *ngIf="searchAqiData.data.iaqi.dew">
-  <ion-label>Dew: </ion-label>
-  <ion-text> {{searchAqiData.data.iaqi.dew.v}}</ion-text>
-  <br>
-  </div>
-
-  <div *ngIf="searchAqiData.data.iaqi.h">
-  <ion-label>Humidity: </ion-label>
-  <ion-text> {{searchAqiData.data.iaqi.h.v}}</ion-text>
-  <br>
-</div>
-
-<div *ngIf="searchAqiData.data.iaqi.p">
-  <ion-label>Pressure: </ion-label>
-  <ion-text> {{searchAqiData.data.iaqi.p.v}}</ion-text>
-  <br>
-</div>
-
-<div *ngIf="searchAqiData.data.iaqi.pm25">
-  <ion-label>PM25: </ion-label>
-  <ion-text> {{searchAqiData.data.iaqi.pm25.v}}</ion-text>
-  <br>
-</div>
-
-<div *ngIf="searchAqiData.data.iaqi.t">
-  <ion-label>Temperature: </ion-label>
-  <ion-text> {{searchAqiData.data.iaqi.t.v}}</ion-text>
-  <br>
-</div>
-
-<div *ngIf="searchAqiData.data.iaqi.w">
-  <ion-label>Wind: </ion-label>
-  <ion-text> {{searchAqiData.data.iaqi.w.v}}</ion-text>
-  <br>
-</div>
-
-  <ion-label>Global AQI Data Credit: </ion-label>
-  <ion-text>World Air Quality Index Project</ion-text>
-  
-  <br>
-
-  <ion-label>Dew: </ion-label>
-  <ion-text> {{searchAqiData.iaqi.wg.v}}</ion-text>
-  </div> -->

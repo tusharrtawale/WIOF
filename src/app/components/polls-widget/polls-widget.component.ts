@@ -41,18 +41,18 @@ export class PollsWidgetComponent implements OnInit {
     this.ip.getIp4().subscribe(ipData => {this.IP4= ipData;console.log(this.IP4)});
     this.ip.getIp6().subscribe(ipData => {this.IP6= ipData;console.log(this.IP4)});
 
-    // this.poll={pollId:"kjsfdkjh", question:"First sample question?",status:"published",option1:"First opt",
-    // option2:"Second opt",
-    // option3:"Third opt",
-    // option4:"Fourth opt"}
+    this.poll={pollId:"kjsfdkjh", question:"First sample question?",status:"published",option1:"First opt",
+    option2:"Second opt",
+    option3:"Third opt",
+    option4:"Fourth opt"}
 
-    this.pollService.getPoll().subscribe(data => this.pollAllPublished=data);
-    this.poll=this.pollAllPublished[0];
+
 
   }
 
   getPolls(){
-
+    this.pollService.getPoll().subscribe(data => this.pollAllPublished=data);
+    this.poll=this.pollAllPublished[0];
   }
 
   submit()

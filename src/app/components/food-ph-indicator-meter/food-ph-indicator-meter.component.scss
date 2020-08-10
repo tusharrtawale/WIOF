@@ -1,0 +1,53 @@
+@import "../../wiof-custom-theming.scss";
+
+.wiof-ph-widget-arrow {
+    //style common for all the color column
+    position:absolute;
+    transition:.5s;
+  
+    &.ph0{
+        left:$ph0;
+    }
+    &.ph1{
+        left:$ph1;
+    }
+    &.ph2{
+        left:$ph2;
+    }
+    &.ph3{
+        left:$ph3;
+    }
+    &.ph4{
+        left:$ph4;
+    }
+    &.ph5{
+        left:$ph5;
+    }
+    &.ph6{
+        left:$ph6;
+    }
+    &.ph7{
+        left:$ph7;
+    }
+    &.ph8{
+        left:$ph8;
+    }
+    &.ph9{
+        left:$ph9;
+    }
+    &.ph10{
+        left:$ph10;
+    }
+    &.ph11{
+        left:$ph11;
+    }
+    &.ph12{
+        left:$ph12;
+    }
+    &.ph13{
+        left:$ph13;
+    }
+    &.ph14{
+        left:$ph14;
+    }
+}

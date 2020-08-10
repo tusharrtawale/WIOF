@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import {NgForm} from '@angular/forms';
+import {NgForm} from '@angular/forms';
 @Component({
   selector: 'app-food-ph-indicator',
   templateUrl: './food-ph-indicator.component.html',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FoodPhIndicatorComponent implements OnInit {
 
-  phValue = "";
+  phvalue: number = 0;
   constructor() { 
 
 
@@ -16,22 +16,12 @@ export class FoodPhIndicatorComponent implements OnInit {
 
   ngOnInit() {}
 
-
-//   onSubmit(form: NgForm)
-//   {
-// console.log(form);
-
-//   }
+  onSubmit(form: NgForm)
+  {
+console.log(form);
+  }
   
-// onChange(event: any)
-// {
-//   this.phvalue= (<HTMLSelectElement>event.target).value;
-// }
 
-getPh()
-{
-
-}
-
+    
   }
 

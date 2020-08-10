@@ -1,0 +1,47 @@
+<ion-card>
+  <ion-card-header class="wiof-earth-widget-card-header">
+    <ion-card-title> Food Ph Indicator </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <!-- <form action="" class="wiof-food-ph-indicator" #f="ngForm" (ngSubmit)="onSubmit(f)">  -->
+        <ion-list>
+          <ion-item class="wiof-food-ph-indicator-selector"> 
+            <ion-label>Food List</ion-label>
+            <!-- <ion-select interface="popover" value="brown" okText="Okay" cancelText="Dismiss" name="phvalue"  ngModel required > -->
+            <ion-select>
+              <ion-select-option value="1"  name="papaya"  >Papaya</ion-select-option>
+              <ion-select-option value="2"  name="Banana" >Banana</ion-select-option>
+              <ion-select-option value="3" name="Apple"> Apple</ion-select-option>
+              <ion-select-option value="4" name="Mango" >Mango</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item><img src="https://www.jansanconsulting.com/uploads/5/5/5/8/55581447/ph-scale_orig.jpg" alt=""></ion-item>
+          
+          <p> ph value is {{phvalue}}</p>
+        
+        
+        
+          <!-- <ion-grid>
+            <ion-row  style="height: 70px;">
+              <ion-col style="background-color:red ; "  value="0"  name="redColor" ngModel ngDefaultControl >  </ion-col>
+              <ion-col style="background-color:orangered;" value=" 1">  </ion-col>
+              <ion-col style="background-color:orange; " value=" 2" >  </ion-col>
+              <ion-col style="background-color:yellow; " value=" 3" >  </ion-col>
+              <ion-col style="background-color:yellowgreen; " value=" 4" >  </ion-col>
+              <ion-col style="background-color:lightgreen; " value=" 5" >   </ion-col>
+              <ion-col style="background-color:green; " value=" 6" >  </ion-col>
+              <ion-col style="background-color:rgb(32, 212, 32); " value=" 7" >  </ion-col>
+              <ion-col style="background-color:lightblue; " value=" 8" >  </ion-col>
+              <ion-col style="background-color:blue; " value=" 9" >  </ion-col>
+              <ion-col style="background-color:darkblue; " value=" 10" >  </ion-col>
+            </ion-row>
+          </ion-grid> -->
+        
+         
+        </ion-list>
+        <!-- <ion-button type="submit" expand="block" fill="clear" (click)="onSubmit()">Calculate PH Value</ion-button> -->
+        <ion-button>Calculate PH Value</ion-button>
+        
+        <!-- </form> -->
+    </ion-card-content>
+  </ion-card>

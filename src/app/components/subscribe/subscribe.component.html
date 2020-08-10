@@ -23,6 +23,6 @@
            <ion-input formControlName="email"></ion-input>
 
           </ion-item><br/>
-          <button class="subscribe-button" type="submit" expand="block" fill="clear" >Subscribe</button>
+          <button [disabled]="!addSubscriberForm.valid" class="subscribe-button" type="submit" expand="block" fill="clear" >Subscribe</button>
         </form>
       </div>

@@ -2,6 +2,7 @@ import { FormGroup } from "@angular/forms";
 import { Poll } from "./Poll";
 
 export class Polls{
+    id:string;
     poll:Poll;
     option:string;
     ip4?:string;

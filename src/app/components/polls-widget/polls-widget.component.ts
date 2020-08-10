@@ -5,6 +5,7 @@ import {throwError} from "rxjs";
 import { Polls } from "../../models/Polls";
 import { Poll } from "../../models/Poll";
 import { PollsService } from "../../services/polls.service";
+import { PollService } from "../../services/poll.service";
 import { IpService } from "../../services/ip.service";
 import { AlertController, LoadingController} from "@ionic/angular";
 
@@ -17,6 +18,7 @@ import { AlertController, LoadingController} from "@ionic/angular";
 export class PollsWidgetComponent implements OnInit {
 
   poll:Poll;
+  pollAllPublished:Poll[];
   IP4:any;
   IP6:any;
   loader;
@@ -24,6 +26,7 @@ export class PollsWidgetComponent implements OnInit {
   wiofPollsForm:FormGroup;
   constructor(
     private pollsService: PollsService,
+    private pollService: PollService,
     private ip:IpService,
     private alertCtrl: AlertController,
     private loadingCtrl: LoadingController
@@ -38,10 +41,17 @@ export class PollsWidgetComponent implements OnInit {
     this.ip.getIp4().subscribe(ipData => {this.IP4= ipData;console.log(this.IP4)});
     this.ip.getIp6().subscribe(ipData => {this.IP6= ipData;console.log(this.IP4)});
 
-    this.poll={pollId:"kjsfdkjh", question:"First sample question?",status:"published",option1:"First opt",
-    option2:"Second opt",
-    option3:"Third opt",
-    option4:"Fourth opt"}
+    // this.poll={pollId:"kjsfdkjh", question:"First sample question?",status:"published",option1:"First opt",
+    // option2:"Second opt",
+    // option3:"Third opt",
+    // option4:"Fourth opt"}
+
+    this.pollService.getPoll().subscribe(data => this.pollAllPublished=data);
+    this.poll=this.pollAllPublished[0];
+
+  }
+
+  getPolls(){
 
   }
 
@@ -51,7 +61,7 @@ export class PollsWidgetComponent implements OnInit {
     if (this.wiofPollsForm.valid) {
       const polls = Polls.createByForm(this.poll,this.wiofPollsForm,this.IP4.ip,this.IP6.ip)
       this.showLoader("Saving your vote...");
-      this.pollsService.saveSubscriber(polls)
+      this.pollsService.savePolls(polls)
       .pipe(
         map(pollsRes => {
           return pollsRes;

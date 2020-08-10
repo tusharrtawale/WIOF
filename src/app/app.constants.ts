@@ -115,7 +115,8 @@ export const FIREBASE_COLLECTION = {
   BLOGS: "Blogs",
   SUBSCRIPTIONS: "Subscriptions",
   BLOG_IMAGE_STORAGE: 'blog-images',
-  POLLS:"Polls"
+  POLLS:"Polls",
+  POLL:"Poll"
 }
 
 export const VIDEO_PLAYER_TITLES = {

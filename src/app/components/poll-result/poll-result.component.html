@@ -1,16 +1,21 @@
 <ion-card>
   <ion-card-content>
+    <p>{{pollObject.question}}</p>
+    <ion-label>{{pollObject.option1}}</ion-label>
     <div class="poll-bar">
       <div class="poll-bar-fill" [style.width]="optApercent"></div>
     </div><br/><br/>
+    <ion-label>{{pollObject.option2}}</ion-label>
     <div class="poll-bar">
       <div class="poll-bar-fill" [style.width]="optBpercent"></div>
 
     </div><br/><br/>
+    <ion-label>{{pollObject.option3}}</ion-label>
     <div class="poll-bar">
       <div class="poll-bar-fill" [style.width]="optCpercent"></div>
 
     </div><br/><br/>
+    <ion-label>{{pollObject.option4}}</ion-label>
     <div class="poll-bar">
       <div class="poll-bar-fill" [style.width]="optDpercent"></div>
 

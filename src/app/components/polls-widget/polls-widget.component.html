@@ -3,42 +3,44 @@
     <ion-card-title class="wiof-spirit-widget-card-header-text"> Weekly Polls </ion-card-title>
   </ion-card-header>
   <ion-card-content>
-    <form  [formGroup]="wiofPollsForm"  (submit)="submit()" >
-    <input  formControlName="name" name="name">
-    <p>{{poll.pollId}}</p>
-    <ion-list>
-      <ion-radio-group formControlName="option">
-        <ion-list-header>
-          <ion-label>{{poll.question}}</ion-label>
-        </ion-list-header>
-    
-        <ion-item>
-          <ion-label>{{poll.option1}}</ion-label>
-          <ion-radio slot="start" value="option 1"></ion-radio>
-        </ion-item>
-    
-        <ion-item>
-          <ion-label>{{poll.option2}}</ion-label>
-          <ion-radio slot="start" value="option 2"></ion-radio>
-        </ion-item>
-    
-        <ion-item>
-          <ion-label>{{poll.option3}}</ion-label>
-          <ion-radio slot="start" value="option 3"></ion-radio>
-        </ion-item>
+    <div *ngIf="showForm">
+      <form  [formGroup]="wiofPollsForm"  (submit)="submit()" >
+      <input  formControlName="name" name="name">
+      <p>{{poll.pollId}}</p>
+      <ion-list>
+        <ion-radio-group formControlName="option">
+          <ion-list-header>
+            <ion-label>{{poll.question}}</ion-label>
+          </ion-list-header>
+      
+          <ion-item>
+            <ion-label>{{poll.option1}}</ion-label>
+            <ion-radio slot="start" value="option 1"></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>{{poll.option2}}</ion-label>
+            <ion-radio slot="start" value="option 2"></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>{{poll.option3}}</ion-label>
+            <ion-radio slot="start" value="option 3"></ion-radio>
+          </ion-item>
 
-        <ion-item>
-          <ion-label>{{poll.option4}}</ion-label>
-          <ion-radio slot="start" value="option 4"></ion-radio>
-        </ion-item>
-      </ion-radio-group><br/>
-      <ion-button class="wiof-polls-submit-button" color="dark" type="submit">Submit Poll</ion-button>
-      <!-- <button class="subscribe-button" type="submit" expand="block" fill="clear" >Subscribe</button> -->
+          <ion-item>
+            <ion-label>{{poll.option4}}</ion-label>
+            <ion-radio slot="start" value="option 4"></ion-radio>
+          </ion-item>
+        </ion-radio-group><br/>
+        <ion-button class="wiof-polls-submit-button" color="dark" type="submit">Submit Poll</ion-button>
+        <!-- <button class="subscribe-button" type="submit" expand="block" fill="clear" >Subscribe</button> -->
 
-    </ion-list>
-  </form>
+      </ion-list>
+    </form>
+  </div>
   <!-- <app-poll-result [pollId]="'RaJp0wmNCvDLBm2Ef1nO'"></app-poll-result> -->
-  <app-poll-result [pollId]="poll.pollId"></app-poll-result>
+  <app-poll-result *ngIf="showPollResult" [pollId]="poll.pollId"></app-poll-result>
 
   </ion-card-content>
 </ion-card>

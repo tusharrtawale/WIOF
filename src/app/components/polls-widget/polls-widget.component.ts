@@ -21,7 +21,10 @@ export class PollsWidgetComponent implements OnInit {
   pollAllPublished:Poll[];
   IP4:any;
   IP6:any;
+  showPollResult:boolean=false;
+  showForm:boolean=true;
   loader;
+
 
   wiofPollsForm:FormGroup;
   constructor(
@@ -55,7 +58,7 @@ export class PollsWidgetComponent implements OnInit {
 
   getPolls(){
     // this.pollService.getPoll().subscribe(data => this.pollAllPublished=data);
-    this.pollService.getPoll().subscribe(data => {this.pollAllPublished= data;this.poll=this.pollAllPublished[0]});
+    this.pollService.getPoll().subscribe(data => {this.pollAllPublished= data;this.poll=this.pollAllPublished[0];});
     return this.poll;
   }
 
@@ -78,6 +81,8 @@ export class PollsWidgetComponent implements OnInit {
           this.loader.dismiss();
           this.presentAlert("Vote Recorded", `Your vote has been recorded. Thanks ${this.wiofPollsForm.get('name').value} for voting..!!`, ["Okay"]);
           this.wiofPollsForm.reset();      
+          this.showPollResult=true;
+          this.showForm=false;
         },
         (error) => {
           this.loader.dismiss();

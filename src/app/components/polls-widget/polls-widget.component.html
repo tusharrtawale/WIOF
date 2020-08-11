@@ -5,6 +5,7 @@
   <ion-card-content>
     <form  [formGroup]="wiofPollsForm"  (submit)="submit()" >
     <input  formControlName="name" name="name">
+    <p>{{poll.pollId}}</p>
     <ion-list>
       <ion-radio-group formControlName="option">
         <ion-list-header>
@@ -36,8 +37,8 @@
 
     </ion-list>
   </form>
-  
-  <app-poll-result></app-poll-result>
+  <!-- <app-poll-result [pollId]="'RaJp0wmNCvDLBm2Ef1nO'"></app-poll-result> -->
+  <app-poll-result [pollId]="poll.pollId"></app-poll-result>
 
   </ion-card-content>
 </ion-card>

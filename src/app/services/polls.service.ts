@@ -28,6 +28,8 @@ export class PollsService {
   }
 
   getPolls(pollId:string): Observable<Polls[]>{
+  // getPolls(): Observable<Polls[]>{
+
     const pollsCollectionById = this.database.collection(
       FIREBASE_COLLECTION.POLLS,
       (ref) => ref.where("poll.pollId", "==", pollId)

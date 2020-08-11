@@ -38,21 +38,25 @@ export class PollsWidgetComponent implements OnInit {
       name:new FormControl("", [Validators.required]),
       option:new FormControl("", [Validators.required])
     });
-    this.ip.getIp4().subscribe(ipData => {this.IP4= ipData;console.log(this.IP4)});
-    this.ip.getIp6().subscribe(ipData => {this.IP6= ipData;console.log(this.IP4)});
+    this.ip.getIp4().subscribe(ipData => {this.IP4= ipData;});
+    this.ip.getIp6().subscribe(ipData => {this.IP6= ipData;});
 
-    this.poll={pollId:"kjsfdkjh", question:"First sample question?",status:"published",option1:"First opt",
-    option2:"Second opt",
-    option3:"Third opt",
-    option4:"Fourth opt"}
+    
+    this.poll={pollId:"kjsfdkjh", question:"",status:"",option1:"",
+    option2:"",
+    option3:"",
+    option4:""}
 
+
+    this.getPolls();
 
 
   }
 
   getPolls(){
-    this.pollService.getPoll().subscribe(data => this.pollAllPublished=data);
-    this.poll=this.pollAllPublished[0];
+    // this.pollService.getPoll().subscribe(data => this.pollAllPublished=data);
+    this.pollService.getPoll().subscribe(data => {this.pollAllPublished= data;this.poll=this.pollAllPublished[0]});
+    return this.poll;
   }
 
   submit()

@@ -1,36 +1,36 @@
 <!-- <form action="" (ngSubmit)=onSubmit(f) #f="ngForm"> -->
-<ion-grid>
-  <ion-row >
-    <ion-col size-sm="6" offset-sm="3">
-    <ion-label position="floating" >
-      Food List
-    </ion-label>
-   <ion-select interface="popover" [(ngModel)]="phValue">
-        <ion-select-option value="2" >
-          Apple
-        </ion-select-option>
-        <ion-select-option value="3">
-         Mango
-        </ion-select-option>
-        <ion-select-option value="4">
-         Banana
-        </ion-select-option>
-      </ion-select>
-    </ion-col>
-    <!-- <ion-col>
-      <ion-button>
-        Calculate PH Value
-      </ion-button>
-    </ion-col> -->
-  </ion-row>
-  <ion-row>
-    <!-- <ion-col size="12">
-      <input [(ngModel)]="phValue">
-      {{phValue}}
-    </ion-col> -->
-    <ion-col>
-      <app-food-ph-indicator-meter [phValue]="phValue"></app-food-ph-indicator-meter>
-    </ion-col>
-  </ion-row>
-</ion-grid>
-<!-- </form> -->
+  <ion-grid>
+    <ion-row >
+      <ion-col size-sm="6" offset-sm="3">
+      <ion-label position="floating" >
+        Food List
+      </ion-label>
+     <ion-select interface="popover" [(ngModel)]="phValue">
+          <ion-select-option value="2" >
+            Apple
+          </ion-select-option>
+          <ion-select-option value="3">
+           Mango
+          </ion-select-option>
+          <ion-select-option value="4">
+           Banana
+          </ion-select-option>
+        </ion-select>
+      </ion-col>
+      <!-- <ion-col>
+        <ion-button>
+          Calculate PH Value
+        </ion-button>
+      </ion-col> -->
+    </ion-row>
+    <ion-row>
+      <!-- <ion-col size="12">
+        <input [(ngModel)]="phValue">
+        {{phValue}}
+      </ion-col> -->
+      <ion-col>
+        <app-food-ph-indicator-meter [phValue]="phValue"></app-food-ph-indicator-meter>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- </form> -->

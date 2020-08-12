@@ -3,16 +3,39 @@
 </p>
 
 ph Value in ph Indicator meter {{phValue}}
-<div style="height: 300px; width: 500px; background-color:white; margin-left: auto; margin-right: auto; border-radius: 5px;">
+<!-- <div style="height: 300px; width: 500px; background-color:white; margin-left: auto; margin-right: auto; border-radius: 5px;"> -->
+<div>
   <ion-row style="padding-top: 50px;">
     <ion-col size="12">
-      <img src="../../../assets/phScale.jpg"/>
+      <!-- <img src="../../../assets/phScale.jpg"/> -->
+      <ion-row>
+        <ion-col class="phScale" size="12">
+          <div class="phScaleBlock ph0" ></div>
+          <div class="phScaleBlock ph1" ></div>
+          <div class="phScaleBlock ph2" ></div>
+          <div class="phScaleBlock ph3" ></div>
+          <div class="phScaleBlock ph4" ></div>
+          <div class="phScaleBlock ph5" ></div>
+          <div class="phScaleBlock ph6" ></div>
+          <div class="phScaleBlock ph7" ></div>
+          <div class="phScaleBlock ph8" ></div>
+          <div class="phScaleBlock ph9" ></div>
+          <div class="phScaleBlock ph10" ></div>
+          <div class="phScaleBlock ph11" ></div>
+          <div class="phScaleBlock ph12" ></div>
+          <div class="phScaleBlock ph13" ></div>
+          <div class="phScaleBlock ph14" ></div>
+
+        </ion-col>
+      </ion-row>
+      <div class="bracket" [ngClass]="updatePhPointer()" ></div>
+
     </ion-col> 
     <ion-col size="12">
       <!-- <img src="../../../assets/phScale.jpg"/> -->
       <!-- arrow size adjustment is 1.5% -->
       <!-- <ion-icon style="position:absolute;left:48.5%;" name="caret-up-outline"></ion-icon> -->
-      <ion-icon class="wiof-ph-widget-arrow" [ngClass]="updatePhPointer()" name="caret-up-outline"></ion-icon>
+      <!-- <ion-icon class="wiof-ph-widget-arrow" [ngClass]="updatePhPointer()" name="caret-up-outline"></ion-icon> -->
 
     </ion-col> 
 <!-- <ion-col class="wiof-ph-widget-stripe ph0" [ngClass]="ion-select"></ion-col>

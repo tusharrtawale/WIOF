@@ -1,53 +1,230 @@
 @import "../../wiof-custom-theming.scss";
 
-.wiof-ph-widget-arrow {
-    //style common for all the color column
-    position:absolute;
-    transition:.5s;
+// .wiof-ph-widget-arrow {
+//     //style common for all the color column
+//     position:absolute;
+//     transition:.5s;
   
+//     &.ph0{
+//         left:$ph0;
+//     }
+//     &.ph1{
+//         left:$ph1;
+//     }
+//     &.ph2{
+//         left:$ph2;
+//     }
+//     &.ph3{
+//         left:$ph3;
+//     }
+//     &.ph4{
+//         left:$ph4;
+//     }
+//     &.ph5{
+//         left:$ph5;
+//     }
+//     &.ph6{
+//         left:$ph6;
+//     }
+//     &.ph7{
+//         left:$ph7;
+//     }
+//     &.ph8{
+//         left:$ph8;
+//     }
+//     &.ph9{
+//         left:$ph9;
+//     }
+//     &.ph10{
+//         left:$ph10;
+//     }
+//     &.ph11{
+//         left:$ph11;
+//     }
+//     &.ph12{
+//         left:$ph12;
+//     }
+//     &.ph13{
+//         left:$ph13;
+//     }
+//     &.ph14{
+//         left:$ph14;
+//     }
+// }
+
+.bracket{
+        border: #202020 4px solid;
+        width: 8.19%;
+        height: 48px;
+        z-index: 2;
+        position: absolute;
+        padding:.8%;
+        transition:.5s;
+        top: 5px;
+        // left: 5.5px;
+        &.ph0{
+            left:$ph0;
+            background-color:#FF0000;
+        
+        }
+        &.ph1{
+            left:$ph1;
+                background-color:#FF7C00;
+        
+        }
+        &.ph2{
+            left:$ph2;
+                background-color:#EDAA46;
+        
+        }
+        &.ph3{
+            left:$ph3;
+                background-color:#FED957;
+        
+        }
+        &.ph4{
+            left:$ph4;
+                background-color:#B4E873;
+        
+        }
+        &.ph5{
+            left:$ph5;
+                background-color:#A6DB63;
+        
+        }
+        &.ph6{
+            left:$ph6;
+                background-color:#95CC50;
+        
+        }
+        &.ph7{
+            left:$ph7;
+                background-color:#81B540;
+        
+        }
+        &.ph8{
+            left:$ph8;
+                background-color:#34BE8D;
+        
+        }
+        &.ph9{
+            left:$ph9;
+                background-color:#43C8D0;
+        
+        }
+        &.ph10{
+            left:$ph10;
+                background-color:#438CD0;
+        
+        }
+        &.ph11{
+            left:$ph11;
+                background-color:#4A66CB;
+        
+        }
+        &.ph12{
+            left:$ph12;
+                background-color:#786CBF;
+        
+        }
+        &.ph13{
+            left:$ph13;
+               background-color:#5E4FB6;
+        
+        }
+        &.ph14{
+            left:$ph14;
+               background-color:#3D2D9B;
+        }
+}
+
+.phScaleBlock{
+    // border: black px solid;
+    // width: 32.8px;
+    width: 6.667%;
+    // border:white 0.25% solid;
+
+    display:inline-block;
+    height: 40px;
+    border:white 1.7px solid;
+    z-index: 1;
+    // position: absolute;
+    
+    top: 5px;
     &.ph0{
-        left:$ph0;
+        // left:0%;
+        background-color:#FF0000;
+        
+    
     }
     &.ph1{
-        left:$ph1;
+        // left:7.38%;
+            background-color:#FF7C00;
+    
     }
     &.ph2{
-        left:$ph2;
+        // left:14.3%;
+            background-color:#EDAA46;
+    
     }
     &.ph3{
-        left:$ph3;
+        // left:21.22%;
+            background-color:#FED957;
+    
     }
     &.ph4{
-        left:$ph4;
+        // left:28.14%;
+            background-color:#B4E873;
+    
     }
     &.ph5{
-        left:$ph5;
+        // left:35.06%;
+            background-color:#A6DB63;
+    
     }
     &.ph6{
-        left:$ph6;
+        // left:41.98%;
+            background-color:#95CC50;
+    
     }
     &.ph7{
-        left:$ph7;
+        // left:48.9%;
+            background-color:#81B540;
+    
     }
     &.ph8{
-        left:$ph8;
+        // left:55.82%;
+            background-color:#34BE8D;
+    
     }
     &.ph9{
-        left:$ph9;
+        // left:62.74%;
+            background-color:#43C8D0;
+    
     }
     &.ph10{
-        left:$ph10;
+        // left:69.66%;
+            background-color:#438CD0;
+    
     }
     &.ph11{
-        left:$ph11;
+        // left:76.58%;
+            background-color:#4A66CB;
+    
     }
     &.ph12{
-        left:$ph12;
+        // left:83.5%;
+            background-color:#786CBF;
+    
     }
     &.ph13{
-        left:$ph13;
+        // left:90.42%;
+           background-color:#5E4FB6;
+    
     }
     &.ph14{
-        left:$ph14;
+        // left:97.34%;
+           background-color:#3D2D9B;
     }
 }
+

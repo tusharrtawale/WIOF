@@ -12,6 +12,7 @@ export class Poll{
     status:string;
 
     constructor(pollId,question,option1,option2,option3,option4,status){
+        
         this.pollId=pollId;
         this.question=question;
         this.option1=option1;

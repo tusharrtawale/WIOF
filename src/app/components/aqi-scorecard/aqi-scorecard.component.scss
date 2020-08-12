@@ -35,7 +35,7 @@
   color: black;
 }
 
-.card-not-aqi {
+.card-non-aqi {
   background-color: #e0caf5;
   color: black;
 }
@@ -63,8 +63,22 @@
   cursor: pointer;
 }
 
-.aq-data-card {
+.aqi-data-card {
   padding: 5px;
+  background-color: grey;
+  color:white;      
+}
+
+.aqi-level-card {
+  // box-shadow: -1px -1px 2px 0px #000000;
+  border-radius: 5px;
+  border-bottom:2px white solid;
+  border-right:2px white solid;
+  color: black;
+  padding: 2px 5px;
+  // font-size: 12px;
+  font-size: large;
+  text-align: center;
 }
 
 .aqi-station-name {
@@ -73,10 +87,7 @@
   padding: 5px;
 }
 
-.aqi-index {
-  font-size: large;
-  text-align: center;
-}
+
 
 .dominent-pollutant {
   font-size: small;
@@ -97,6 +108,7 @@
   text-align: center;
   margin: 5px;
 }
+
 
 .data-credit {
   font-size: small;

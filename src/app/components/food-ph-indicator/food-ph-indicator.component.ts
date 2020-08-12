@@ -7,14 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FoodPhIndicatorComponent implements OnInit {
 
-  phValue = "";
+  // phValue = "";
+  foodOptions:any[];
+  selectedFood:any;
   constructor() { 
 
 
 
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.foodOptions=[
+      {name:'Apple',value:2},
+      {name:'Mango',value:3},
+      {name:'Banana',value:4}
+
+    ]
+  }
 
 
 //   onSubmit(form: NgForm)

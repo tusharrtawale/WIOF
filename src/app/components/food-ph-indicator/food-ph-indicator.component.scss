@@ -1,3 +1,5 @@
+@import "../../wiof-custom-theming.scss";
+
 .wiof-food-ph-indicator
 {
 position: absolute;
@@ -6,6 +8,21 @@ width: 300px;
 background-color: transparent;
 
 }
+
+.wiof-primary-button {
+    width: 150px;
+    border-radius: 25px;
+    height: 30px;
+    background: #2B2B2B;
+    color: white;
+  }
+
+.wiof-food-ph-widget-card-header {
+    background-color: $earth-color;
+    &.background{
+      background-color: rgba($earth-color,$tint-fraction);
+    }
+  }
 
 .wiof-food-ph-indicator-selector{
 

@@ -1,13 +1,6 @@
-<p>
-  food-ph-indicator-meter works!
-</p>
-
-ph Value in ph Indicator meter {{phValue}}
-<!-- <div style="height: 300px; width: 500px; background-color:white; margin-left: auto; margin-right: auto; border-radius: 5px;"> -->
-<div>
+<div class="food-ph-indicator-meter">
   <ion-row style="padding-top: 50px;">
     <ion-col size="12">
-      <!-- <img src="../../../assets/phScale.jpg"/> -->
       <ion-row>
         <ion-col class="phScale" size="12">
           <div class="phScaleBlock ph0" ></div>
@@ -25,31 +18,14 @@ ph Value in ph Indicator meter {{phValue}}
           <div class="phScaleBlock ph12" ></div>
           <div class="phScaleBlock ph13" ></div>
           <div class="phScaleBlock ph14" ></div>
-
         </ion-col>
       </ion-row>
       <div class="bracket" [ngClass]="updatePhPointer()" ></div>
-
     </ion-col> 
-    <ion-col size="12">
-      <!-- <img src="../../../assets/phScale.jpg"/> -->
-      <!-- arrow size adjustment is 1.5% -->
-      <!-- <ion-icon style="position:absolute;left:48.5%;" name="caret-up-outline"></ion-icon> -->
-      <!-- <ion-icon class="wiof-ph-widget-arrow" [ngClass]="updatePhPointer()" name="caret-up-outline"></ion-icon> -->
-
+    <ion-col size="12" style="text-align:center;">
+      <!-- {{food|json}} -->
+      <!-- ph Value in ph Indicator meter {{food.value}} -->
+      {{message}}
     </ion-col> 
-<!-- <ion-col class="wiof-ph-widget-stripe ph0" [ngClass]="ion-select"></ion-col>
-<ion-col class="wiof-ph-widget-stripe ph1"></ion-col> 
-<ion-col class="wiof-ph-widget-stripe ph2"></ion-col>
-<ion-col class="wiof-ph-widget-stripe ph3"></ion-col>
-<ion-col class="wiof-ph-widget-stripe ph4"></ion-col>
-<ion-col class="wiof-ph-widget-stripe ph5"></ion-col>
-<ion-col class="wiof-ph-widget-stripe ph6" ></ion-col>
-<ion-col class="wiof-ph-widget-stripe ph7" ></ion-col>
-<ion-col class="wiof-ph-widget-stripe ph8" ></ion-col>
-<ion-col class="wiof-ph-widget-stripe ph9" ></ion-col>
-<ion-col class="wiof-ph-widget-stripe ph10" ></ion-col>
-<ion-col class="wiof-ph-widget-stripe ph11" ></ion-col> -->
-
   </ion-row>
 </div>

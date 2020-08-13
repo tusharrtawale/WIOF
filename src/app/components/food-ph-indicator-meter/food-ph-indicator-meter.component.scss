@@ -97,7 +97,9 @@
     // width: 32.8px;
     width: 6.667%;
     // border:white 0.25% solid;
-
+    text-align:center;
+    font:"roboto";
+    color:black;
     display:inline-block;
     height: 40px;
     border:white 1.7px solid;
@@ -182,3 +184,10 @@
     }
 }
 
+.text{
+    color:#000;
+    padding:40px;
+    padding-top: 5px;
+    text-align:center;
+  }
+  

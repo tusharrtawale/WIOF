@@ -12,36 +12,32 @@ export class FoodPhIndicatorMeterComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // this.phValue=8;
-    if(!this.food){
-      this.message="Please select a food to find its pH value."
-    }
-    else if(this.food){
-      this.message=`ph Level of ${this.food.name} is ${this.food.value}`;
-    }
-
     this.updatePhPointer();
-    console.log(this.food);
+    // this.generateMessage();    
   }
 
   ngOnChanges(){
-    console.log(this.food);
-
     this.updatePhPointer();
-    if(!this.food){
-      this.message="Please select a food to find its pH value."
-    }
-    else if(this.food){
-      this.message=`ph Level of ${this.food.name} is ${this.food.value}`;
-    }
+    // this.generateMessage();    
   }
+
   updatePhPointer(){
-    // return 'ph8';
-    if (this.food){
-      return `ph${this.food.value}`;
+    if (this.food.name=="Default"){
+      this.message="Please select a food to find its pH value."
+      return 'ph7';
     }
     else{
-      return '8';
+      this.message=`ph Level of ${this.food.name} is ${this.food.value}`;
+      return `ph${this.food.value}`;
     }      
   }
+
+  // generateMessage(){
+  //   if(!this.food){
+  //     this.message="Please select a food to find its pH value."
+  //   }
+  //   else if(this.food){
+  //     this.message=`ph Level of ${this.food.name} is ${this.food.value}`;
+  //   }
+  // }
 }

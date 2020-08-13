@@ -1,30 +1,20 @@
-<!-- <form action="" (ngSubmit)=onSubmit(f) #f="ngForm"> -->
 <ion-card style="height: 520px;" class="wiof-food-ph-widget-card-header background">
   <ion-card-header class="wiof-food-ph-widget-card-header">
     <ion-card-title>
-      Food pH Widget
+      pH Widget
     </ion-card-title>
   </ion-card-header>
   <ion-card-content style="padding: 5px;">
     <ion-grid>
       <ion-row>
-          <ion-label position="floating" >
+          <ion-label class="text">
             Check the pH value of various commonly consumed food items.
           </ion-label>
           <ion-col size="6">
-          <!-- <ion-select interface="popover" [(ngModel)]="phValue" placeholder="Food list"> -->
-          <ion-select interface="popover" [(ngModel)]="selectedFood" placeholder="Food list">
-            
-            <!-- <ion-select-option value="2" >
-              Apple
-            </ion-select-option>
-            <ion-select-option value="3">
-              Mango
-            </ion-select-option>
-            <ion-select-option value="4">
-              Banana
-            </ion-select-option>
-             -->
+          <ion-label class="text" location="floating">
+            Food list
+          </ion-label>
+          <ion-select interface="popover" [(ngModel)]="selectedFood" placeholder="Select Food">           
               <ion-select-option
               *ngFor="let food of foodOptions"
               [value]="food"
@@ -32,32 +22,18 @@
             </ion-select>
         </ion-col>
         <ion-col size="6">
-          <button class="wiof-primary-button ion-margin-top">
+          <button class="wiof-primary-button ion-margin-top" (click)="updateBridgeVariable()">
             calculate pH value
           </button>
         </ion-col>
-        
-        <!-- <ion-col>
-          <ion-button>
-            Calculate PH Value
-          </ion-button>
-        </ion-col> -->
       </ion-row>
-      <ion-item-divider></ion-item-divider>
-
+      <hr class="divider"/>
       <ion-row>
-        <!-- <ion-col size="12">
-          <input [(ngModel)]="phValue">
-          {{phValue}}
-        </ion-col> -->
         <ion-col>
-          <p>{{selectedFood|json}}</p>
-          <h2>pH Meter</h2>
-          <!-- <app-food-ph-indicator-meter [phValue]="phValue" ></app-food-ph-indicator-meter> -->          
-          <app-food-ph-indicator-meter [food]="selectedFood" ></app-food-ph-indicator-meter>
+          <p class="ph-meter-text" >pH Meter</p>
+          <app-food-ph-indicator-meter [food]="bridgeVariable" ></app-food-ph-indicator-meter>
         </ion-col>
       </ion-row>
     </ion-grid>
-    <!-- </form> -->
   </ion-card-content>
 </ion-card>

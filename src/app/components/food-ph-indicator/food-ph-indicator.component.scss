@@ -24,8 +24,25 @@ background-color: transparent;
     }
   }
 
-.wiof-food-ph-indicator-selector{
+.divider{
+  background-color: $earth-color;
+  height: 1px;
+  border-width: 0px;
+  background-color: #4d4b4b;
+}
 
+.ph-meter-text{
+  font-size: large;
+  color:#000;
+  padding-bottom: 5px;
+}
+
+.text{
+  color:#000;
+  padding-top: 5px;
+}
+
+.wiof-food-ph-indicator-selector{
     padding: 10px;
 }
 

@@ -3,29 +3,34 @@
 @media (max-width:320px ) {
   .videoPlayer{
       width:280px;
-      height:158px;
+      // height:158px;
   }
 }
 
 @media (min-width:320px ) {
   .videoPlayer{
       width:280px;
-      height:158px;
+      // height:158px;
   }
 }
 
 @media (min-width:575px ) {
   .videoPlayer{
       width:280px;
-      height:158px;
+      // height:158px;
   }
 }
 
-@media (min-width:576px ) {
+@media (min-width:768px ) {
   .videoPlayer{
-      height:438px;
+      // height:438px;
       width:780px;
   }
+}
+
+.title-text{
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .wiof-earth {
@@ -63,3 +68,13 @@
       background-color: rgba($spirit-color,$tint-fraction);
     }
   }
+
+.wiof-video-player-content{
+  padding-top: 15px;
+  text-align: center;
+}
+
+.wiof-video-player-header {
+  border-bottom: white 2px solid;
+}
+

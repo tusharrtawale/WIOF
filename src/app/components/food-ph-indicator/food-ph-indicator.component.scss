@@ -19,6 +19,7 @@ background-color: transparent;
 
 .wiof-food-ph-widget-card-header {
     background-color: $earth-color;
+    border-bottom: white 2px solid;
     &.background{
       background-color: rgba($earth-color,$tint-fraction);
     }

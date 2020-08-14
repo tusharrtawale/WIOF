@@ -123,7 +123,7 @@ export const VIDEO_PLAYER_TITLES = {
   AIR: "What is Air Quality Index?",
   WATER: "What is Ground water?",
   EARTH: "What is Food pH?",
-  FIRE: "Enegry consumption ranking from 1990 to 2017",
+  FIRE: "Energy consumption ranking from 1990 to 2017",
   SPIRIT: "What is Emotional Intelligence?",
 }
 

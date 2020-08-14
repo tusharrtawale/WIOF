@@ -7,6 +7,7 @@
 
 .wiof-aqi-widget-card-header {
   background-color: $air-color;
+  border-bottom:white 2px solid;
   &.background{
     background-color: rgba($air-color,$tint-fraction);
   }
@@ -81,4 +82,3 @@
   background-color: white;
   color: black;
 }
-

@@ -7,6 +7,10 @@
   
 .wiof-water-widget-card-header {
     background-color: $water-color;
+    border-bottom: white 2px solid;
+    &.background{
+      background-color: rgba($water-color,$tint-fraction);
+    }
   }
 
 .wiof-water-widget-items{

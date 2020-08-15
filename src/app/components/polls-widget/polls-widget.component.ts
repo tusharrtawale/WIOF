@@ -23,6 +23,7 @@ export class PollsWidgetComponent implements OnInit {
   IP6:any;
   showPollResult:boolean=false;
   showForm:boolean=true;
+  errorShow:boolean=false;
   loader;
 
 
@@ -96,7 +97,16 @@ export class PollsWidgetComponent implements OnInit {
       );
 
     }
+    else{
+      this.showError();
+    }
+
     // this.subscribeButton=true;
+  }
+
+  showError(){
+    this.errorShow=true;
+    setTimeout(()=>this.errorShow=false,2000)
   }
 
   async presentAlert(header: string, message: string, buttons: string[]) {

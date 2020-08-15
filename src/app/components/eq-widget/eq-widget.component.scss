@@ -3,8 +3,8 @@
 .wiof-spirit-widget-card-header{
     background-color: $spirit-color;
     border-bottom: white 2px solid;
-    &.background{
-        background-color: rgba($spirit-color,$tint-fraction);
-      }
 }
 
+.wiof-spirit-widget-card-background{
+        background-color: rgba($spirit-color,$tint-fraction);
+}

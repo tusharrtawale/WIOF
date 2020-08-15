@@ -1,3 +1,5 @@
+@import "../../wiof-custom-theming.scss";
+
 .poll-bar{
     height:20px;
     width:300px;
@@ -5,7 +7,14 @@
 }
 .poll-bar-fill{
     transition:1s;
-    height:18px;
+    height:16px;
     border-right:solid black 2px;
-    background-color: red;
+    background-color: $home-color;
 }
+
+.wiof-polls-widget-card-background{
+    background-color: rgba($home-color,$tint-fraction);
+    color:black;
+    font-size: large;
+}
+

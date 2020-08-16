@@ -8,9 +8,10 @@
 .wiof-aqi-widget-card-header {
   background-color: $air-color;
   border-bottom:white 2px solid;
-  &.background{
-    background-color: rgba($air-color,$tint-fraction);
-  }
+}
+
+.wiof-aqi-widget-card-background{
+  background-color: rgba($air-color,$tint-fraction);
 }
 
 .wiof-primary-button {
@@ -27,12 +28,10 @@
   padding-right: 10px;
 }
 
-
-
 //adding scroll to search results
 
 .wiof-aqi-widget-items{
-  height:320px;
+  height:380px;
 }
 
 .wiof-aqi-widget-items [scrolly=true] {

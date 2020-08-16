@@ -3,9 +3,11 @@
 .wiof-fire-widget-card-header{
     background-color: $energy-color;
     border-bottom:white 2px solid;
-    &.background{
-        background-color: rgba($energy-color,$tint-fraction);
-      }
+    
+}
+
+.wiof-fire-widget-card-background{
+  background-color: rgba($energy-color,$tint-fraction);
 }
 
 .wiof-primary-button {

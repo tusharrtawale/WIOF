@@ -21,7 +21,7 @@ background-color: transparent;
 //   }
 // }
 .ph-widget-height{
-  height: 520px;
+  height: 577px;
 }
 // @media (min-width:320px ) {
 //   .videoPlayer{
@@ -64,11 +64,13 @@ background-color: transparent;
 
 .wiof-food-ph-widget-card-header {
     background-color: $earth-color;
-    border-bottom: white 2px solid;
-    &.background{
-      background-color: rgba($earth-color,$tint-fraction);
-    }
+    border-bottom: white 2px solid;    
   }
+
+  .wiof-food-ph-widget-card-background{
+    background-color: rgba($earth-color,$tint-fraction);
+  }
+
 
 .divider{
   background-color: $earth-color;

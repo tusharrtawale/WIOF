@@ -135,3 +135,12 @@ export const VIDEO_PLAYER_VIDEOS = {
   FIRE: "L6murPEFbXg",
   SPIRIT: "LgUCyWhJf6s",
 }
+
+//TODO try to find another way
+export const PAGE_CATEGORY_MAP = {
+  air: 'Air',
+  water: 'Water',
+  earth: 'Earth',
+  energy: 'Energy',
+  spirit: 'Spirit'
+}

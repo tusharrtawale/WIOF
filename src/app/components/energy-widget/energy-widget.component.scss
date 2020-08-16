@@ -7,3 +7,13 @@
         background-color: rgba($energy-color,$tint-fraction);
       }
 }
+
+.wiof-primary-button {
+    width: 180px;
+    border-radius: 25px;
+    font-size:large;
+    height: 40px;
+    background: #2B2B2B;
+    color: white;
+    margin-right:4px;
+  }

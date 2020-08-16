@@ -3,22 +3,43 @@
     <ion-card-title> Energy Widget </ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <!-- <ion-header><ion-toolbar>
-        <ion-title>Energy Widget</ion-title>
-      </ion-toolbar></ion-header> -->
-      <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-        <ion-list>
-        <ion-item>
-      <ion-label position="floating"> Enter your Monthly Energy Consumption</ion-label>
-      <!-- <ion-input   type="number" ngModel name="energyinput"  #inputCtrl="ngModel" required number></ion-input> -->
-      <ion-input  ></ion-input>
-      
-      <!-- <p *ngIf="!energyinput.valid && energyinput.touched" >   Energy Consumption should be a number</p> -->
-      <p>   Energy Consumption should be a number</p>
-          
-    </ion-item>
-      </ion-list>
-      <ion-button type="submit" expand="block" fill="clear">Calculate</ion-button>
-      </form>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-list>
+              <ion-item>
+                <ion-label position="floating">Enter Monthly Energy Consumption</ion-label>          
+                <ion-input  [(ngModel)]="EnergyConsumption" type="number" required></ion-input>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+          <ion-col>
+            <ion-label position="floating">Select Unit KW/KWH</ion-label>
+            <ion-select [(ngModel)]="Selectedunit" interface="popover" > 
+              <ion-select-option value="1">
+                KW
+              </ion-select-option>
+              <ion-select-option value="2">
+                KWH
+              </ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <!-- <ion-button type="button" expand="block" fill="clear" (click)="CalculateCO2()">Calculate</ion-button> -->
+            
+            <button class="wiof-primary-button" (click)="CalculateCO2()">
+              <ion-icon name="calculator-outline"></ion-icon> Calculate
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="buttonClicked" style="border: solid peachpuff 2px; background-color:rgb(238, 199, 165);"> 
+          <ion-col style=" border-right:  solid peachpuff 2px;"><p>Can drive {{kmsbycar|number:"1.0-2"}} kms using a Petrol Fueled car</p></ion-col>
+          <ion-col><p>Can drive {{KmsbySUV|number:"1.0-2"}} kms using a Diesel Fueled SUV</p></ion-col>
+        </ion-row>
+      </ion-grid>
+
+
     </ion-card-content>
   </ion-card>

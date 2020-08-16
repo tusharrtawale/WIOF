@@ -65,15 +65,17 @@
 
 .aqi-data-card {
   padding: 5px;
-  background-color: grey;
-  color:white;      
+  background-color: $air-color;
+  color:black;      
 }
 
 .aqi-level-card {
   // box-shadow: -1px -1px 2px 0px #000000;
   border-radius: 5px;
-  border-bottom:2px white solid;
-  border-right:2px white solid;
+  border-top:1px #3d2e4b solid;
+  border-left:1px  #3d2e4b solid;
+  border-bottom:2px rgb(247, 228, 255)  solid;
+  border-right:2px rgb(247, 228, 255) solid;
   color: black;
   padding: 2px 5px;
   // font-size: 12px;

@@ -9,12 +9,57 @@ background-color: transparent;
 
 }
 
+// @media (max-width:320px ) {
+//   .ph-widget-height{
+//     height: 520px;
+//   }
+// }
+
+// @media (min-width:321px ) {
+//   .ph-widget-height{
+//     height: 520px;
+//   }
+// }
+.ph-widget-height{
+  height: 520px;
+}
+// @media (min-width:320px ) {
+//   .videoPlayer{
+//       width:280px;
+//       // height:158px;
+//   }
+// }
+
+// @media (min-width:575px ) {
+//   .videoPlayer{
+//       width:280px;
+//       // height:158px;
+//   }
+// }
+
+@media (min-width:768px ) {
+  .wiof-primary-button {
+    width:120px;
+    height:40px;
+    border-radius: 25px;
+    background: #2B2B2B;
+    color: white;
+  }
+}
+
+@media (max-width:767px ) {
 .wiof-primary-button {
     width: 150px;
     border-radius: 25px;
     height: 30px;
     background: #2B2B2B;
     color: white;
+  }
+}
+
+  .title-text{
+    font-size: 20px;
+    font-weight: 500;
   }
 
 .wiof-food-ph-widget-card-header {

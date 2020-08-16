@@ -1,15 +1,18 @@
 <ion-card *ngIf="blogList && blogList.length > 0">
-  <ion-card-header class="ion-align-center wiof-slider-header"  [ngClass]="blogSliderClass">
+  <ion-card-header
+    class="ion-align-center wiof-slider-header"
+    [ngClass]="blogSliderClass"
+  >
     <ion-row>
-      <ion-col><strong>Blogs</strong>
+      <ion-col><strong>Blogs</strong> </ion-col>
+      <ion-col style="text-align: right;"
+        ><a [routerLink]="['blogs']" class="switch-to-list">
+          Switch to list
+        </a>
       </ion-col>
-      <ion-col style="text-align: right;"><a [routerLink]="['blogs']" class="switch-to-list"> 
-        Switch to list
-      </a>
-      </ion-col>
-  </ion-row>
+    </ion-row>
   </ion-card-header>
-  <ion-card-content class="background"  [ngClass]="blogSliderClass" >
+  <ion-card-content class="background" [ngClass]="blogSliderClass">
     <div *ngIf="blogList; else loading">
       <ion-slides [options]="slideOpts">
         <ion-slide *ngFor="let blog of blogList">

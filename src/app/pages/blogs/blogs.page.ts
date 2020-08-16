@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { BlogService } from "src/app/services/blog.service";
 import { PAGE_CATEGORY_MAP } from "src/app/app.constants";
+import { Blog } from "src/app/models/Blog";
+import { Observable } from "rxjs";
 
 @Component({
   selector: "app-blogs",
@@ -9,7 +11,11 @@ import { PAGE_CATEGORY_MAP } from "src/app/app.constants";
   styleUrls: ["./blogs.page.scss"],
 })
 export class BlogsPage implements OnInit {
-  blogs: any;
+  blogs: Observable<Blog[]>;
+  category: string = "";
+  isLoading: boolean = false;
+  elementThemeClass: string;
+
   constructor(
     private route: ActivatedRoute,
     private blogService: BlogService
@@ -18,9 +24,9 @@ export class BlogsPage implements OnInit {
   ngOnInit() {
     this.route.params.subscribe((paramsMap) => {
       if (paramsMap["element"]) {
-        this.blogs = this.blogService.getBlogs(
-          PAGE_CATEGORY_MAP[paramsMap["element"]]
-        );
+        this.category = PAGE_CATEGORY_MAP[paramsMap["element"]];
+        this.blogs = this.blogService.getBlogs(this.category);
+        this.elementThemeClass = paramsMap["element"];
       }
     });
   }

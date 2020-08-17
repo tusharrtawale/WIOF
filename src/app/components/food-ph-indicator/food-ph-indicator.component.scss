@@ -37,25 +37,44 @@ background-color: transparent;
 //   }
 // }
 
-@media (min-width:768px ) {
-  .wiof-primary-button {
-    width:120px;
-    height:40px;
-    border-radius: 25px;
-    background: #2B2B2B;
-    color: white;
-  }
-}
+// @media (min-width:977px ) {
+//   .wiof-primary-button {
+//     width:200px;
+//     height:40px;
+//     border-radius: 25px;
+//     background: #2B2B2B;
+//     color: white;
+//   }
+// }
 
-@media (max-width:767px ) {
+// @media (min-width:768px ) {
+//   .wiof-primary-button {
+//     width:120px;
+//     height:40px;
+//     border-radius: 25px;
+//     background: #2B2B2B;
+//     color: white;
+//   }
+// }
+
+// @media (max-width:767px ) {
+// .wiof-primary-button {
+//     width: 150px;
+//     border-radius: 25px;
+//     height: 30px;
+//     background: #2B2B2B;
+//     color: white;
+//   }
+// }
+
 .wiof-primary-button {
-    width: 150px;
-    border-radius: 25px;
-    height: 30px;
-    background: #2B2B2B;
-    color: white;
-  }
-}
+      width: 80%;
+      border-radius: 25px;
+      height: 35px;
+      background: #2B2B2B;
+      color: white;
+      padding:2px;
+    }
 
   .title-text{
     font-size: 20px;

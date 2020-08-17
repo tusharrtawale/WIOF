@@ -8,6 +8,7 @@ import { Blog } from 'src/app/models/Blog';
 })
 export class BlogCardComponent implements OnInit {
   @Input() blog: Blog;
+    
   constructor() { }
 
   ngOnInit() {}

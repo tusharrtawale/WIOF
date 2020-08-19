@@ -1,8 +1,6 @@
-// $earth-color:rgb(222,239,201);  
 $earth-color:rgb(189, 237, 129);
 $water-color:rgb(223, 243, 255); 
 $energy-color:rgb(255, 235, 184);  //energy and fire are to be considered same element
-// $air-color:rgb(245,207,252);
 $air-color:rgb(224, 202,	245);
 $spirit-color:rgb(241, 222, 198);
 $home-color: rgb(128, 64, 0);
@@ -11,6 +9,12 @@ $home-color: rgb(128, 64, 0);
 //add tint to various slider backgrounds
 
 $tint-fraction:0.5;
+
+// font color
+$dark-color:#2D2D2D;
+$light-color:#fff;
+
+
 
 //swtich to list button on sliders
 .switch-to-list{
@@ -27,27 +31,12 @@ $tint-fraction:0.5;
     font-weight: 500;
   }
 
-  
-//ph values and corresponding ph arrow locations
-// $ph0:2%;
-// $ph1:8.5%;
-// $ph2:15.15%;
-// $ph3:21.8%;
-// $ph4:28.67%;
-// $ph5:35.36%;
-// $ph6:41.77%;
-// $ph7:48.5%;
-// $ph8:55.17%;
-// $ph9:61.2%;
-// $ph10:68.3%;
-// $ph11:75.2%;
-// $ph12:81.4%;
-// $ph13:88.5%;
-// $ph14:94.9%;
+  .link-title{
+    text-decoration:none;
+    font-weight: bold;
+  }
 
-
-
-//ph values and corresponding ph arrow locations
+//ph values and corresponding highlighting square locations
 $ph0:0.88%;
 $ph1:7.31%;
 $ph2:13.74%;
@@ -63,3 +52,17 @@ $ph11:71.61%;
 $ph12:78.04%;
 $ph13:84.47%;
 $ph14:90.9%;
+
+//air-widget colors
+
+$aqi-good-color:rgb(0, 228, 0);
+$aqi-moderate-color:rgb(255, 255, 0);
+$aqi-unhealthy-for-sensitive-color:rgb(255, 156, 0);
+$aqi-unhealthy-color:rgb(255, 0, 0);
+$aqi-very-unhealthy-color:rgb(143, 63, 151);
+$aqi-hazardous-color: rgb(126, 0, 35);
+
+//setting font color
+// *{
+//   color: $dark-color;
+// }

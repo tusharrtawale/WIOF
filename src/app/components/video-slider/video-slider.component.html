@@ -14,14 +14,14 @@
     <div *ngIf="videoList; else loading">
       <!-- <ion-slides [options]="slideOpts" pager> -->
       <!-- <ion-slides #wiofVideoSlider [options]="slideOpts">         -->
-      <ion-slides [options]="slideOpts">
+      <ion-slides #wiofVideoSlider [options]="slideOpts">
         <ion-slide *ngFor="let video of videoList">
           <ion-card class="video-card">
             <ion-card-content class="ion-text-start card-content">
               <img [src]="video.thumbnail" class="thumbnailImage" />
               <h6 class="ion-padding-vertical">
                 <strong
-                  ><a [routerLink]="['video', video.url]">{{
+                  ><a class="link-title" [routerLink]="['video', video.url]">{{
                     video.title
                   }}</a></strong
                 >
@@ -48,8 +48,8 @@
           </ion-card>
         </ion-slide> -->
       </ion-slides>
-      <!-- <div class="swiper-button-prev" (click)="wiofVideoSlider.navigation.nextEl"></div>
-      <div class="swiper-button-next"></div> -->
+      <div class="swiper-button-prev" (click)="wiofVideoSlider.slidePrev()"></div>
+      <div class="swiper-button-next" (click)="wiofVideoSlider.slideNext()"></div>
     </div>
     <ng-template #loading>
       <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />

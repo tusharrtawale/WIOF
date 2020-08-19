@@ -6,12 +6,15 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+  color:$dark-color;
 }
 
 .video-card {
   min-width: 20%;
   height: calc(100% - 20px);
   padding-bottom: 50px;
+  
+  
 }
 
 .thumbnailImage {
@@ -21,6 +24,7 @@
 
 .wiof-slider-header {
   border-bottom: white 2px solid;
+  color:$dark-color;
 }
 
 
@@ -106,4 +110,8 @@
 
 .swiper-slide {
   height: auto;
+}
+
+.video-title{
+  text-decoration: none;
 }

@@ -1,43 +1,45 @@
 @import "../../wiof-custom-theming.scss";
 
 .aqi-good {
-  background-color: rgb(0, 228, 0);
-  color: black;
+  background-color: $aqi-good-color;
+  color:$dark-color;
 }
 
 .aqi-moderate {
-  background-color: rgb(255, 255, 0);
-  color: black;
+  background-color: $aqi-moderate-color;
+  color:$dark-color;
+
 }
 
 .aqi-unhealthy-for-sensitive {
-  background-color: rgb(255, 156, 0);
-  color: black;
+  background-color:$aqi-unhealthy-for-sensitive-color;
+  color:$dark-color;
+
 }
 
 .aqi-unhealthy {
-  background-color: rgb(255, 0, 0);
-  color: white;
+  background-color: $aqi-unhealthy-color;
+  color: $light-color;
 }
 
 .aqi-very-unhealthy {
-  background-color: rgb(143, 63, 151);
-  color: white;
+  background-color: $aqi-very-unhealthy-color;
+  color: $light-color;
 }
 
 .aqi-hazardous {
-  background-color: rgb(126, 0, 35);
-  color: white;
+  background-color: $aqi-hazardous-color;
+  color: $light-color;
 }
 
 .aqi-na {
-  background-color: white;
-  color: black;
+  background-color: $light-color;;
+  color:$dark-color;
 }
 
 .card-non-aqi {
-  background-color: #e0caf5;
-  color: black;
+  background-color: $light-color;;
+  color: $dark-color;
 }
 
 //adding scroll to search results
@@ -66,7 +68,7 @@
 .aqi-data-card {
   padding: 5px;
   background-color: $air-color;
-  color:black;      
+  color:$dark-color;      
 }
 
 .aqi-level-card {
@@ -76,7 +78,7 @@
   // border-left:1px  #3d2e4b solid;
   // border-bottom:2px rgb(247, 228, 255)  solid;
   // border-right:2px rgb(247, 228, 255) solid;
-  color: black;
+  color:$dark-color;      
   padding: 2px 5px;
   // font-size: 12px;
   font-size: large;
@@ -97,7 +99,7 @@
 }
 
 .aqi-parameter {
-  color: black;
+  color: $dark-color;
   font-size: large;
   text-align: center;
   padding: 2px;
@@ -105,7 +107,7 @@
 }
 
 .aqi-parameter-value {
-  color: black;
+  color: $dark-color;
   font-size: medium;
   text-align: center;
   margin: 5px;

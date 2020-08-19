@@ -20,6 +20,7 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  color:$dark-color;
 }
 
 .blog-card-footer {
@@ -28,6 +29,7 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+  color:$dark-color;
 }
 
 .wiof-img-placeholder {
@@ -49,6 +51,7 @@
 
 .wiof-slider-header {
   border-bottom: white 2px solid;
+  color:$dark-color;
 }
 
 .wiof-spinner {

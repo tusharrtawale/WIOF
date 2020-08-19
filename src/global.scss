@@ -24,3 +24,15 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+//importing roboto font
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto");
+
+  *:not(ion-icon) {
+    font-family: 'Roboto', sans-serif!important;
+  }
+
+//   $font-color:#2D2D2D;
+
+

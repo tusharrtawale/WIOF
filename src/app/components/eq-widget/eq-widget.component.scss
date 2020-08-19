@@ -8,3 +8,9 @@
 .wiof-spirit-widget-card-background{
         background-color: rgba($spirit-color,$tint-fraction);
 }
+
+.eq-widget-card-content{
+    text-align: justify; 
+    text-justify: inter-word;
+    color:$dark-color;
+}

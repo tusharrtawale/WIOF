@@ -1,50 +1,45 @@
-<!-- <ion-card class="wiof-fire-widget-card-background widget-height">
-  <ion-card-header class="wiof-fire-widget-card-header">
-    <ion-card-title class="title-text"> Energy Widget </ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <ion-list>
-              <ion-item>
-                <ion-label position="floating">Enter Monthly Energy Consumption</ion-label>          
-                <ion-input  [(ngModel)]="EnergyConsumption" type="number" required></ion-input>
-              </ion-item>
-            </ion-list>
-          </ion-col>
-          <ion-col>
-            <ion-label position="floating">Select Unit KW/KWH</ion-label>
-            <ion-select [(ngModel)]="Selectedunit" interface="popover" > 
-              <ion-select-option value="1">
-                KW
-              </ion-select-option>
-              <ion-select-option value="2">
-                KWH
-              </ion-select-option>
-            </ion-select>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            
-            <button class="wiof-primary-button" (click)="CalculateCO2()">
-              <ion-icon name="calculator-outline"></ion-icon> Calculate
-            </button>
-          </ion-col>
-        </ion-row>
-        <ion-row *ngIf="buttonClicked" style="border: solid peachpuff 2px; background-color:rgb(238, 199, 165);"> 
-          <ion-col style=" border-right:  solid peachpuff 2px;"><p>Can drive {{kmsbycar|number:"1.0-2"}} kms using a Petrol Fueled car</p></ion-col>
-          <ion-col><p>Can drive {{KmsbySUV|number:"1.0-2"}} kms using a Diesel Fueled SUV</p></ion-col>
-        </ion-row>
-      </ion-grid>
+<!-- <ion-header><ion-toolbar>
+  <ion-title>Energy Widget</ion-title>
+</ion-toolbar></ion-header>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)"> 
+  <ion-grid>
+<ion-row>
+      <ion-col>
+       <ion-list>
+         <ion-item>
+        <ion-label position="floating"> Enter your Monthly Energy Consumption</ion-label>
+<ion-input  [(ngModel)]="EnergyConsumption" type="number" required></ion-input>
+
+</ion-item>
+</ion-list>
+      </ion-col>
+      <ion-col>
+        <ion-label position="floating">Select Unit KW/KWH</ion-label>
+        <ion-select [(ngModel)]="Selectedunit"  > 
+          <ion-select-option value="1">
+            KW
+          </ion-select-option>
+          <ion-select-option value="2">
+            KWH
+          </ion-select-option>
+        </ion-select>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button type="button" expand="block" fill="clear" (click)="CalculateCO2()">Calculate</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="buttonClicked" style="border: solid peachpuff 2px ; border-radius: 5px ;background-color:rgb(238, 199, 165);"> 
+      <ion-col style="border-right:  solid peachpuff 2px; border-radius: 5px"><p>Can drive {{kmsbycar}} kms using a Petrol Fueled car</p></ion-col>
+      <ion-col><p>Can drive {{ KmsbySUV | number :'1.1-1'}} kms using a Diesel Fueled SUV</p></ion-col>
+    </ion-row>
+    
+  </ion-grid>
+  </form>  -->
 
 
-    </ion-card-content>
-  </ion-card> -->
-
-
-  <ion-card class="wiof-fire-widget-card-background widget-height">
+  <ion-card style="height: 520px;" >
     <ion-card-header class="wiof-fire-widget-card-header">
       <ion-card-title> Energy Widget </ion-card-title>
       </ion-card-header>

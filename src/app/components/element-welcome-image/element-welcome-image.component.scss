@@ -16,25 +16,30 @@
 
 .air-welcome-img {
   background: url("../../../assets/Air_Banner.png");
+  outline: none;
   @include page-welcome-img;
 }
 
 .earth-welcome-img {
   background: url("../../../assets/Earth_Banner.jpg");
+  outline: none;
   @include page-welcome-img;
 }
 
 .fire-welcome-img {
   background: url("../../../assets/Energy_Banner.jpg");
+  outline: none;
   @include page-welcome-img;
 }
 
 .spirit-welcome-img {
   background: url("../../../assets/Spirit_Banner.png");
+  outline: none;
   @include page-welcome-img;
 }
 
 .water-welcome-img {
   background: url("../../../assets/Water_Banner.jpg");
+  outline: none;
   @include page-welcome-img;
 }

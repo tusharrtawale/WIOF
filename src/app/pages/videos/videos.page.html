@@ -1,9 +1,13 @@
 <app-header></app-header>
 
 <ion-content>
-  <h1 class="ion-padding">Blogs</h1>
+  <h1 class="ion-padding">Videos</h1>
   <ion-grid *ngIf="videos | async as videosList">
+    
     <ion-row>
+      <ion-col size="12">
+        <app-back-button></app-back-button>
+      </ion-col>
       <ion-col
         size="12"
         size-sm="6"

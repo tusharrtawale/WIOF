@@ -1,5 +1,9 @@
 @import "../../wiof-custom-theming.scss";
 
+.wiof-select{
+  color:$dark-color;
+}
+
 .wiof-fire-widget-card-header{
     background-color: $energy-color;
     border-bottom:white 2px solid;

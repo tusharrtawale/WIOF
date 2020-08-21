@@ -22,7 +22,7 @@ export class FoodPhIndicatorMeterComponent implements OnInit {
   }
 
   updatePhPointer() {
-    if (this.food.name == "Default") {
+    if (this.food.name === "Default") {
       this.message = "Please select a food to find its pH value.";
       return "ph7";
     } else {

@@ -53,7 +53,7 @@ export class BlogService {
     );
     return blogDoc.snapshotChanges().pipe(
       map((a) => {
-        if (a.payload.exists === false) {
+        if (!a.payload.exists) {
           return null;
         } else {
           var data = a.payload.data() as Blog;

@@ -27,10 +27,6 @@ export class PollResultComponent implements OnInit {
 
   optArray: number[] = [0, 0, 0, 0];
   optPercentageArray: number[] = [];
-  // opt1Count:number=0;
-  // opt2Count:number=0;
-  // opt3Count:number=0;
-  // opt4Count:number=0;
   total: number = 0;
 
   constructor(private pollsService: PollsService) {}
@@ -66,13 +62,13 @@ export class PollResultComponent implements OnInit {
 
   checkVote() {
     this.pollsArray.forEach((x) => {
-      if (x.option == "option 1") {
+      if (x.option === "option 1") {
         this.optArray[0] += 1;
-      } else if (x.option == "option 2") {
+      } else if (x.option === "option 2") {
         this.optArray[1] += 1;
-      } else if (x.option == "option 3") {
+      } else if (x.option === "option 3") {
         this.optArray[2] += 1;
-      } else if (x.option == "option 4") {
+      } else if (x.option === "option 4") {
         this.optArray[3] += 1;
       }
     });

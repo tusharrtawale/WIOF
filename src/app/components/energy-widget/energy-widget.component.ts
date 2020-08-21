@@ -22,7 +22,7 @@ export class EnergyWidgetComponent implements OnInit {
   ngOnInit() {}
 
   CalculateCO2() {
-    if (this.Selectedunit == "1" && this.EnergyConsumption > 0) {
+    if (this.Selectedunit === "1" && this.EnergyConsumption > 0) {
       this.buttonClicked = true;
       this.unitnull = false;
       this.Consumptionnull = false;
@@ -33,7 +33,7 @@ export class EnergyWidgetComponent implements OnInit {
 
       this.kmsbycar = this.litresofPetrol * 15;
       this.KmsbySUV = this.litresofDiesel * 12;
-    } else if (this.Selectedunit == "2" && this.EnergyConsumption > 0) {
+    } else if (this.Selectedunit === "2" && this.EnergyConsumption > 0) {
       this.buttonClicked = true;
       this.unitnull = false;
       this.Consumptionnull = false;
@@ -45,14 +45,14 @@ export class EnergyWidgetComponent implements OnInit {
       this.KmsbySUV = this.litresofDiesel * 12;
     } else if (
       this.EnergyConsumption < 0 &&
-      (this.Selectedunit == "2" || this.Selectedunit == "1")
+      (this.Selectedunit === "2" || this.Selectedunit === "1")
     ) {
       this.unitnull = false;
       this.Consumptionnull = true;
-    } else if (this.EnergyConsumption > 0 && this.Selectedunit == "") {
+    } else if (this.EnergyConsumption > 0 && this.Selectedunit === "") {
       this.unitnull = true;
       this.Consumptionnull = false;
-    } else if (this.EnergyConsumption == undefined && this.Selectedunit == "") {
+    } else if (this.EnergyConsumption === undefined && this.Selectedunit === "") {
       this.unitnull = true;
       this.Consumptionnull = true;
     }

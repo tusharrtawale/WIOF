@@ -31,28 +31,28 @@ export class VideoWidgetComponent implements OnInit {
   }
 
   setPlayerTitle() {
-    if (this.element == ELEMENT_SELECT.AIR) {
+    if (this.element === ELEMENT_SELECT.AIR) {
       this.videoPlayerTitle = VIDEO_PLAYER_TITLES.AIR;
-    } else if (this.element == ELEMENT_SELECT.WATER) {
+    } else if (this.element === ELEMENT_SELECT.WATER) {
       this.videoPlayerTitle = VIDEO_PLAYER_TITLES.WATER;
-    } else if (this.element == ELEMENT_SELECT.EARTH) {
+    } else if (this.element === ELEMENT_SELECT.EARTH) {
       this.videoPlayerTitle = VIDEO_PLAYER_TITLES.EARTH;
-    } else if (this.element == ELEMENT_SELECT.FIRE) {
+    } else if (this.element === ELEMENT_SELECT.FIRE) {
       this.videoPlayerTitle = VIDEO_PLAYER_TITLES.FIRE;
-    } else if (this.element == ELEMENT_SELECT.SPIRIT) {
+    } else if (this.element === ELEMENT_SELECT.SPIRIT) {
       this.videoPlayerTitle = VIDEO_PLAYER_TITLES.SPIRIT;
     }
   }
   setVideoLink() {
-    if (this.element == ELEMENT_SELECT.AIR) {
+    if (this.element === ELEMENT_SELECT.AIR) {
       this.videoLink = VIDEO_PLAYER_VIDEOS.AIR;
-    } else if (this.element == ELEMENT_SELECT.WATER) {
+    } else if (this.element === ELEMENT_SELECT.WATER) {
       this.videoLink = VIDEO_PLAYER_VIDEOS.WATER;
-    } else if (this.element == ELEMENT_SELECT.EARTH) {
+    } else if (this.element === ELEMENT_SELECT.EARTH) {
       this.videoLink = VIDEO_PLAYER_VIDEOS.EARTH;
-    } else if (this.element == ELEMENT_SELECT.FIRE) {
+    } else if (this.element === ELEMENT_SELECT.FIRE) {
       this.videoLink = VIDEO_PLAYER_VIDEOS.FIRE;
-    } else if (this.element == ELEMENT_SELECT.SPIRIT) {
+    } else if (this.element === ELEMENT_SELECT.SPIRIT) {
       this.videoLink = VIDEO_PLAYER_VIDEOS.SPIRIT;
     }
   }

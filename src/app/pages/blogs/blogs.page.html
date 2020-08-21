@@ -5,7 +5,7 @@
     {{category}} Blogs
   </h1>
   <app-back-button></app-back-button>
-  <div *ngIf="blogs | async as blogList; else loading" class="blogs-content">
+  <div *ngIf="blogs | async as blogList; else loading" class="blogs-content" [ngClass]="elementThemeClass">
     <ion-grid *ngIf="blogList.length > 0">
       <ion-row>
         <ion-col
@@ -15,7 +15,7 @@
           size-lg="3"
           *ngFor="let blog of blogList"
         >
-          <app-blog-card [blog]="blog"></app-blog-card>
+          <app-blog-card [blog]="blog" [elementThemeClass]="elementThemeClass"></app-blog-card>
         </ion-col>
       </ion-row>
     </ion-grid>

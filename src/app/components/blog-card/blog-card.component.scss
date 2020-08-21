@@ -28,4 +28,28 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+
+  .button {
+    color: #2d2d2d;
+  }
+
+  &.air {
+    background-color: $air-color;
+  }
+
+  &.earth {
+    background-color: $earth-color;
+  }
+
+  &.water {
+    background-color: $water-color;
+  }
+
+  &.energy {
+    background-color: $energy-color;
+  }
+
+  &.spirit {
+    background-color: $spirit-color;
+  }
 }

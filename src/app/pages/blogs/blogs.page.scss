@@ -1,7 +1,27 @@
 @import "../../wiof-custom-theming.scss";
 
 .blogs-content {
-  padding-top: 60px;
+  padding-top: 10px;
+
+  &.air {
+    background-color: rgba($air-color, $tint-fraction);
+  }
+
+  &.earth {
+    background-color: rgba($earth-color, $tint-fraction);
+  }
+
+  &.water {
+    background-color: rgba($water-color, $tint-fraction);
+  }
+
+  &.energy {
+    background-color: rgba($energy-color, $tint-fraction);
+  }
+
+  &.spirit {
+    background-color: rgba($spirit-color, $tint-fraction);
+  }
 }
 
 .blogs-header {
@@ -10,6 +30,7 @@
   width: 100%;
   z-index: 10;
   font-size: 18px;
+  box-shadow: 0px 2px 5px 0px darkgrey;
 
   &.air {
     background-color: $air-color;

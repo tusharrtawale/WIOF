@@ -12,7 +12,7 @@
       <!-- <a [routerLink]="['blog-post', blog.id]">Read More</a> -->
     </p>
   </ion-card-content>
-  <ion-row class="blog-card-footer">
+  <ion-row class="blog-card-footer" [ngClass]="elementThemeClass">
     <ion-col>
       <ion-buttons>
         <ion-button [routerLink]="['take-action']">

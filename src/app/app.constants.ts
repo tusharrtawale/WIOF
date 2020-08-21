@@ -4,6 +4,12 @@ export const ELEMENT_VIDEOS_PLAYLIST_ID = {
   EARTH: "PLitAAO2FhPTHdtNVNkcm3JIX6jmhPZjyN",
   FIRE: "PLitAAO2FhPTFw5EoLsuua6Ang60PGBH0d",
   SPIRIT: "PLitAAO2FhPTFjxy3EsgDR_XPtgiX8Ez-q",
+
+  "air": "PLitAAO2FhPTECrRbhFyIllj6TSobTGiJI",
+  "water": "PLitAAO2FhPTHZRcarOENNjYcdPlzwpZEn",
+  "earth": "PLitAAO2FhPTHdtNVNkcm3JIX6jmhPZjyN",
+  "energy": "PLitAAO2FhPTFw5EoLsuua6Ang60PGBH0d",
+  "spirit": "PLitAAO2FhPTFjxy3EsgDR_XPtgiX8Ez-q",
 };
 
 export const ELEMENT_BLOG_CATEGORY = {

@@ -1,3 +1,22 @@
-<p>
-  video-card works!
-</p>
+<ion-card class="video-card">
+  <ion-card-content class="ion-text-start card-content">
+    <img [src]="video.thumbnail" class="thumbnailImage" />
+    <h6 class="ion-padding-vertical">
+      <strong
+        ><a class="link-title" [routerLink]="['video', video.url]">{{
+          video.title
+        }}</a></strong
+      >
+    </h6>
+  </ion-card-content>
+  <ion-row class="video-card-footer" [ngClass]="elementThemeClass">
+    <ion-col>
+      <ion-buttons>
+        <ion-button [routerLink]="['take-action']">
+          <!-- <ion-icon slot="icon-only" name="person-circle"></ion-icon> -->
+          Take Action
+        </ion-button>
+      </ion-buttons>
+    </ion-col>
+  </ion-row>
+</ion-card>

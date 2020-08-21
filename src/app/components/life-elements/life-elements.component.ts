@@ -6,12 +6,12 @@ import { Component, Input, OnInit } from "@angular/core";
   styleUrls: ["./life-elements.component.scss"],
 })
 export class LifeElementsComponent implements OnInit {
-  @Input('element') selectedElement: String;
+  @Input("element") selectedElement: String;
   constructor() {}
 
   ngOnInit() {}
 
-  isSelectedElement(element: String){
+  isSelectedElement(element: String) {
     return this.selectedElement === element;
   }
 }

@@ -1,33 +1,32 @@
 @import "../../wiof-custom-theming.scss";
 
 .wiof-spinner {
-    position: absolute;
-    left: 50%;
-  }
-  
-.wiof-water-widget-card-header {
-    background-color: $water-color;
-    border-bottom: white 2px solid;
-    
-  }
+  position: absolute;
+  left: 50%;
+}
 
-.wiof-water-widget-card-background{
-  background-color: rgba($water-color,$tint-fraction);
+.wiof-water-widget-card-header {
+  background-color: $water-color;
+  border-bottom: white 2px solid;
+}
+
+.wiof-water-widget-card-background {
+  background-color: rgba($water-color, $tint-fraction);
 }
 
 .wiof-water-widget-icons {
   background-color: $water-color;
-  height:75%;
+  height: 75%;
 }
 
-.wiof-water-widget-icons-text{
-  color:black;
+.wiof-water-widget-icons-text {
+  color: black;
   text-align: center;
-  padding-top:7px;
+  padding-top: 7px;
 }
 
-.wiof-water-widget-items{
-    height:460px;
+.wiof-water-widget-items {
+  height: 460px;
 }
 
 .tooltip {
@@ -43,7 +42,7 @@
   text-align: center;
   padding: 5px 0;
   border-radius: 6px;
- 
+
   /* Position the tooltip text - see examples below! */
   position: absolute;
   z-index: 1;
@@ -51,20 +50,20 @@
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
-.wiof-water-widget-items[scrolly=true] {
-    position: relative;
-    overflow: hidden;
-  
-    ::-webkit-scrollbar {
-      display: none;
-    }
-  }
+.wiof-water-widget-items[scrolly="true"] {
+  position: relative;
+  overflow: hidden;
 
-.wiof-water-widget-items[scrolly=true] {
-    overflow-y: auto;
+  ::-webkit-scrollbar {
+    display: none;
   }
+}
+
+.wiof-water-widget-items[scrolly="true"] {
+  overflow-y: auto;
+}
 
 .wiof-water-widget-card-toolbar {
-    padding: 10px;
-    background-color: rgb(229, 229, 229);
-  }
+  padding: 10px;
+  background-color: rgb(229, 229, 229);
+}

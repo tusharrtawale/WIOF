@@ -12,7 +12,6 @@
 <ion-content>
   <ion-grid>
     <ion-row>
-      
       <ion-col class="wiof-blog-col" size-md="6" offset-md="3">
         <div *ngIf="(blogDetails | async) as blog">
           <ion-row>
@@ -22,26 +21,29 @@
             <ion-col size="12">
               <ion-img [src]="(blog.image| async)"></ion-img>
             </ion-col>
-            <ion-col size="12">            
-              <ion-text *ngIf="blog.author">By {{blog.author}}</ion-text><br/>
-              <ion-text *ngIf="blog.publishDate">Published on {{blog.publishDate |  date  }}</ion-text>
-            </ion-col>  
+            <ion-col size="12">
+              <ion-text *ngIf="blog.author">By {{blog.author}}</ion-text><br />
+              <ion-text *ngIf="blog.publishDate"
+                >Published on {{blog.publishDate | date }}</ion-text
+              >
+            </ion-col>
             <ion-col size="12">
               <app-back-button></app-back-button>
               <app-social-share></app-social-share>
             </ion-col>
             <ion-item-divider></ion-item-divider>
-            <ion-col size="12">              
+            <ion-col size="12">
               <ion-text
                 style="text-align: justify; text-justify: inter-word;"
                 [innerHTML]="blog.content"
               ></ion-text>
             </ion-col>
             <ion-item-divider></ion-item-divider>
-            <ion-col size="12">              
+            <ion-col size="12">
               <h4>About {{blog.author}}</h4>
-              <ion-text 
-              style="text-align: justify; text-justify: inter-word;">{{blog.aboutAuthor}}</ion-text>         
+              <ion-text style="text-align: justify; text-justify: inter-word;"
+                >{{blog.aboutAuthor}}</ion-text
+              >
             </ion-col>
           </ion-row>
         </div>

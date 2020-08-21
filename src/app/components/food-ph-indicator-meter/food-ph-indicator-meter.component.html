@@ -5,32 +5,49 @@
         <ion-col style="text-align: center;" size="5">Acidic</ion-col>
         <ion-col style="text-align: center;" size="2">Neutral</ion-col>
         <ion-col style="text-align: center;" size="5">Alkaline</ion-col>
-      </ion-row>          
+      </ion-row>
     </ion-col>
-    <ion-col size="12">      
-        <ion-row>
-          <ion-col class="phScale" size="12">
-            <div class="phScaleBlock ph0" ></div>          <div class="phScaleBlock ph1" ></div>          <div class="phScaleBlock ph2" ></div>
-            <div class="phScaleBlock ph3" ></div>          <div class="phScaleBlock ph4" ></div>          <div class="phScaleBlock ph5" ></div>          <div class="phScaleBlock ph6" ></div>
-            <div class="phScaleBlock ph7" ></div>          <div class="phScaleBlock ph8" ></div>          <div class="phScaleBlock ph9" ></div>
-            <div class="phScaleBlock ph10" ></div>          <div class="phScaleBlock ph11" ></div>          <div class="phScaleBlock ph12" ></div>
-            <div class="phScaleBlock ph13" ></div>          <div class="phScaleBlock ph14" ></div>
-          </ion-col>        
-          <ion-col class="phScale" size="12">
-            <div class="phScaleBlock " ><p>0</p></div>          <div class="phScaleBlock " ><p>1</p></div>
-            <div class="phScaleBlock " ><p>2</p></div>          <div class="phScaleBlock " ><p>3</p></div>
-            <div class="phScaleBlock " ><p>4</p></div>          <div class="phScaleBlock " ><p>5</p></div>
-            <div class="phScaleBlock " ><p>6</p></div>          <div class="phScaleBlock " ><p>7</p></div>
-            <div class="phScaleBlock " ><p>8</p></div>          <div class="phScaleBlock " ><p>9</p></div>
-            <div class="phScaleBlock " ><p>10</p></div>          <div class="phScaleBlock " ><p>11</p></div>
-            <div class="phScaleBlock " ><p>12</p></div>          <div class="phScaleBlock " ><p>13</p></div>
-            <div class="phScaleBlock " ><p>14</p></div>
-          </ion-col>
-        </ion-row>
-      <div class="bracket" [ngClass]="updatePhPointer()" ></div>
-    </ion-col> 
+    <ion-col size="12">
+      <ion-row>
+        <ion-col class="phScale" size="12">
+          <div class="phScaleBlock ph0"></div>
+          <div class="phScaleBlock ph1"></div>
+          <div class="phScaleBlock ph2"></div>
+          <div class="phScaleBlock ph3"></div>
+          <div class="phScaleBlock ph4"></div>
+          <div class="phScaleBlock ph5"></div>
+          <div class="phScaleBlock ph6"></div>
+          <div class="phScaleBlock ph7"></div>
+          <div class="phScaleBlock ph8"></div>
+          <div class="phScaleBlock ph9"></div>
+          <div class="phScaleBlock ph10"></div>
+          <div class="phScaleBlock ph11"></div>
+          <div class="phScaleBlock ph12"></div>
+          <div class="phScaleBlock ph13"></div>
+          <div class="phScaleBlock ph14"></div>
+        </ion-col>
+        <ion-col class="phScale" size="12">
+          <div class="phScaleBlock"><p>0</p></div>
+          <div class="phScaleBlock"><p>1</p></div>
+          <div class="phScaleBlock"><p>2</p></div>
+          <div class="phScaleBlock"><p>3</p></div>
+          <div class="phScaleBlock"><p>4</p></div>
+          <div class="phScaleBlock"><p>5</p></div>
+          <div class="phScaleBlock"><p>6</p></div>
+          <div class="phScaleBlock"><p>7</p></div>
+          <div class="phScaleBlock"><p>8</p></div>
+          <div class="phScaleBlock"><p>9</p></div>
+          <div class="phScaleBlock"><p>10</p></div>
+          <div class="phScaleBlock"><p>11</p></div>
+          <div class="phScaleBlock"><p>12</p></div>
+          <div class="phScaleBlock"><p>13</p></div>
+          <div class="phScaleBlock"><p>14</p></div>
+        </ion-col>
+      </ion-row>
+      <div class="bracket" [ngClass]="updatePhPointer()"></div>
+    </ion-col>
     <ion-col size="12" class="text">
-      {{message}}
-    </ion-col> 
+      {{ message }}
+    </ion-col>
   </ion-row>
 </div>

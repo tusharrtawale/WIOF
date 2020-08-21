@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 import { Polls } from "../models/Polls";
 import {
   AngularFirestore,
@@ -9,10 +9,9 @@ import { from, Observable } from "rxjs";
 import { FIREBASE_COLLECTION } from "../app.constants";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class PollsService {
-
   pollsCollection: AngularFirestoreCollection<any>;
 
   constructor(public database: AngularFirestore) {
@@ -20,15 +19,15 @@ export class PollsService {
       // FIREBASE_COLLECTION.SUBSCRIPTIONS
       FIREBASE_COLLECTION.POLLS
     );
-   }
+  }
 
   savePolls(polls: Polls) {
     // from is used to create an observable from promise
     return from(this.pollsCollection.add({ ...polls }));
   }
 
-  getPolls(pollId:string): Observable<Polls[]>{
-  // getPolls(): Observable<Polls[]>{
+  getPolls(pollId: string): Observable<Polls[]> {
+    // getPolls(): Observable<Polls[]>{
 
     const pollsCollectionById = this.database.collection(
       FIREBASE_COLLECTION.POLLS,
@@ -43,9 +42,7 @@ export class PollsService {
         })
       )
     );
-  }  
-  
-
+  }
 }
 // ----------------------------------------
 // import { Injectable } from "@angular/core";
@@ -65,20 +62,20 @@ export class PollsService {
 // export class BlogService {
 //   blogCollection: AngularFirestoreCollection<any>;
 
-  // constructor(
-  //   private storage: AngularFireStorage,
-  //   public database: AngularFirestore
-  // ) {
-  //   this.blogCollection = this.database.collection(FIREBASE_COLLECTION.BLOGS);
-  // }
+// constructor(
+//   private storage: AngularFireStorage,
+//   public database: AngularFirestore
+// ) {
+//   this.blogCollection = this.database.collection(FIREBASE_COLLECTION.BLOGS);
+// }
 
-  // function to pull Images from firebase storage using image link stored in firestore in each blog
-  // getImage(Image: String): Observable<String> {
-  //   const ref = this.storage.ref(
-  //     `/${FIREBASE_COLLECTION.BLOG_IMAGE_STORAGE}/${Image}`
-  //   ); //creates reference to storage item using the link in parameter
-  //   return ref.getDownloadURL(); //pulls the download URL which is an observable , handle accordingly
-  // }
+// function to pull Images from firebase storage using image link stored in firestore in each blog
+// getImage(Image: String): Observable<String> {
+//   const ref = this.storage.ref(
+//     `/${FIREBASE_COLLECTION.BLOG_IMAGE_STORAGE}/${Image}`
+//   ); //creates reference to storage item using the link in parameter
+//   return ref.getDownloadURL(); //pulls the download URL which is an observable , handle accordingly
+// }
 
 //   getBlogs(category: String): Observable<Blog[]> {
 //     const blogCollectionByCategory = this.database.collection(

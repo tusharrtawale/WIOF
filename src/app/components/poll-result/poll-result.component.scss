@@ -1,20 +1,19 @@
 @import "../../wiof-custom-theming.scss";
 
-.poll-bar{
-    height:20px;
-    width:300px;
-    border:solid black 2px;
+.poll-bar {
+  height: 20px;
+  width: 300px;
+  border: solid black 2px;
 }
-.poll-bar-fill{
-    transition:1s;
-    height:16px;
-    border-right:solid black 2px;
-    background-color: $home-color;
-}
-
-.wiof-polls-widget-card-background{
-    background-color: rgba($home-color,$tint-fraction);
-    color:black;
-    font-size: large;
+.poll-bar-fill {
+  transition: 1s;
+  height: 16px;
+  border-right: solid black 2px;
+  background-color: $home-color;
 }
 
+.wiof-polls-widget-card-background {
+  background-color: rgba($home-color, $tint-fraction);
+  color: black;
+  font-size: large;
+}

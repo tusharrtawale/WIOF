@@ -33,7 +33,7 @@ export const AQI_WIDGET_LOCATIONS = {
 export const VIDEO_SLIDER_OPTIONS = {
   slidesPerView: 4,
   freeMode: true,
-  loop:true,
+  loop: true,
   coverflowEffect: {
     rotate: 50,
     stretch: 0,
@@ -74,7 +74,7 @@ export const VIDEO_SLIDER_OPTIONS = {
 export const BLOG_SLIDER_OPTIONS = {
   slidesPerView: 4,
   spaceBetween: 1,
-  loop:true,
+  loop: true,
   freeMode: true,
   coverflowEffect: {
     rotate: 50,
@@ -83,7 +83,7 @@ export const BLOG_SLIDER_OPTIONS = {
     modifier: 1,
     slideShadows: true,
   },
-  
+
   // Responsive breakpoints
   breakpoints: {
     // when window width is >= 320px
@@ -106,20 +106,20 @@ export const BLOG_SLIDER_OPTIONS = {
 };
 
 export const ENDPOINTS = {
-  YOUTUBE : {
-    VIDEO: 'https://www.googleapis.com/youtube/v3/videos',
-    PLAYLIST: 'https://www.googleapis.com/youtube/v3/playlistItems'
+  YOUTUBE: {
+    VIDEO: "https://www.googleapis.com/youtube/v3/videos",
+    PLAYLIST: "https://www.googleapis.com/youtube/v3/playlistItems",
   },
-  AQI_WIDGET: 'https://api.waqi.info'
-}
+  AQI_WIDGET: "https://api.waqi.info",
+};
 
 export const FIREBASE_COLLECTION = {
   BLOGS: "Blogs",
   SUBSCRIPTIONS: "Subscriptions",
-  BLOG_IMAGE_STORAGE: 'blog-images',
-  POLLS:"Polls",
-  POLL:"Poll"
-}
+  BLOG_IMAGE_STORAGE: "blog-images",
+  POLLS: "Polls",
+  POLL: "Poll",
+};
 
 export const VIDEO_PLAYER_TITLES = {
   AIR: "What is Air Quality Index?",
@@ -127,8 +127,7 @@ export const VIDEO_PLAYER_TITLES = {
   EARTH: "What is Food pH?",
   FIRE: "Energy consumption ranking from 1990 to 2017",
   SPIRIT: "What is Emotional Intelligence?",
-}
-
+};
 
 export const VIDEO_PLAYER_VIDEOS = {
   AIR: "qmOkbaPtAJA",
@@ -136,13 +135,13 @@ export const VIDEO_PLAYER_VIDEOS = {
   EARTH: "LrLrOYLAwWY",
   FIRE: "L6murPEFbXg",
   SPIRIT: "LgUCyWhJf6s",
-}
+};
 
 //TODO try to find another way
 export const PAGE_CATEGORY_MAP = {
-  air: 'Air',
-  water: 'Water',
-  earth: 'Earth',
-  energy: 'Energy',
-  spirit: 'Spirit'
-}
+  air: "Air",
+  water: "Water",
+  earth: "Earth",
+  energy: "Energy",
+  spirit: "Spirit",
+};

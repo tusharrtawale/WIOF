@@ -1,17 +1,17 @@
-.wiof-fire-widget-card-header{
+.wiof-fire-widget-card-header {
+  background-color: peachpuff;
+  border-bottom: white 2px solid;
+  &.background {
     background-color: peachpuff;
-    border-bottom:white 2px solid;
-    &.background{
-        background-color: peachpuff;
-      }
+  }
 }
 
 .wiof-primary-button {
-    width: 180px;
-    border-radius: 25px;
-    font-size:large;
-    height: 40px;
-    background: #2B2B2B;
-    color: white;
-    margin-right:4px;
+  width: 180px;
+  border-radius: 25px;
+  font-size: large;
+  height: 40px;
+  background: #2b2b2b;
+  color: white;
+  margin-right: 4px;
 }

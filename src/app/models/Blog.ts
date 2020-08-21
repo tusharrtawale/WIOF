@@ -10,7 +10,7 @@ export class Blog {
   image: Observable<String>;
   externalUrl: String;
   author: String;
-  aboutAuthor:String;
+  aboutAuthor: String;
   category: String;
   subCategory: String;
   // List<Tag> tags;
@@ -30,7 +30,7 @@ export class Blog {
   ) {
     this.title = title;
     this.author = authorName;
-    this.aboutAuthor=aboutAuthor;
+    this.aboutAuthor = aboutAuthor;
     this.category = category;
     this.subCategory = subCategory;
     (this.imageName = image), (this.shortDescription = shortDescription);

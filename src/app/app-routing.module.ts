@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 
-import {AuthGuard} from './guards/auth.guard';
+import { AuthGuard } from "./guards/auth.guard";
 
 const routes: Routes = [
   {
@@ -45,26 +45,28 @@ const routes: Routes = [
       import("./pages/air/air.module").then((m) => m.AirPageModule),
   },
   {
-    path: 'admin-dashboard',
-    loadChildren: () => import('./pages/admin-dashboard/admin-dashboard.module').then( m => m.AdminDashboardPageModule),
-    canActivate:[AuthGuard]
+    path: "admin-dashboard",
+    loadChildren: () =>
+      import("./pages/admin-dashboard/admin-dashboard.module").then(
+        (m) => m.AdminDashboardPageModule
+      ),
+    canActivate: [AuthGuard],
   },
   {
-    path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    path: "login",
+    loadChildren: () =>
+      import("./pages/login/login.module").then((m) => m.LoginPageModule),
   },
   {
-    path: 'element/:element/blogs',
-    loadChildren: () => import('./pages/blogs/blogs.module').then( m => m.BlogsPageModule)
+    path: "element/:element/blogs",
+    loadChildren: () =>
+      import("./pages/blogs/blogs.module").then((m) => m.BlogsPageModule),
   },
   {
-    path: 'element/:element/videos',
-    loadChildren: () => import('./pages/videos/videos.module').then( m => m.VideosPageModule)
+    path: "element/:element/videos",
+    loadChildren: () =>
+      import("./pages/videos/videos.module").then((m) => m.VideosPageModule),
   },
-  
-
-
-
 ];
 
 @NgModule({

@@ -10,7 +10,7 @@ import { Video } from "src/app/models/Video";
 export class VideoSliderComponent implements OnInit {
   @Input() videoList: Array<Video>;
   @Input() element: String;
-  videoSliderClass:String;
+  videoSliderClass: String;
 
   slideOpts = VIDEO_SLIDER_OPTIONS;
 

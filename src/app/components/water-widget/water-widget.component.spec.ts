@@ -1,16 +1,16 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { IonicModule } from "@ionic/angular";
 
-import { WaterWidgetComponent } from './water-widget.component';
+import { WaterWidgetComponent } from "./water-widget.component";
 
-describe('WaterWidgetComponent', () => {
+describe("WaterWidgetComponent", () => {
   let component: WaterWidgetComponent;
   let fixture: ComponentFixture<WaterWidgetComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WaterWidgetComponent ],
-      imports: [IonicModule.forRoot()]
+      declarations: [WaterWidgetComponent],
+      imports: [IonicModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(WaterWidgetComponent);
@@ -18,7 +18,7 @@ describe('WaterWidgetComponent', () => {
     fixture.detectChanges();
   }));
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

@@ -15,8 +15,8 @@ export class VideoPostPage implements OnInit {
   video: any;
   vid: any;
   videoTitle: String;
-  videoChannelName:String;
-  videoDescription:String;
+  videoChannelName: String;
+  videoDescription: String;
 
   constructor(
     private route: ActivatedRoute,
@@ -41,8 +41,8 @@ export class VideoPostPage implements OnInit {
             this.vid = itemData;
             let { snippet } = this.vid;
             this.videoTitle = snippet.title;
-            this.videoDescription=snippet.description;
-            this.videoChannelName=snippet.title;
+            this.videoDescription = snippet.description;
+            this.videoChannelName = snippet.title;
           });
         });
       }

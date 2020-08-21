@@ -3,7 +3,6 @@
 <ion-content>
   <h1 class="ion-padding">Videos</h1>
   <ion-grid *ngIf="videos | async as videosList">
-    
     <ion-row>
       <ion-col size="12">
         <app-back-button></app-back-button>
@@ -17,7 +16,7 @@
       >
         <app-video-card></app-video-card>
       </ion-col>
-      
+
       <!-- Infinite scroll pending -->
     </ion-row>
   </ion-grid>

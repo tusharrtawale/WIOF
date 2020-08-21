@@ -1,16 +1,16 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { IonicModule } from "@ionic/angular";
 
-import { EnergyWidgetComponent } from './energy-widget.component';
+import { EnergyWidgetComponent } from "./energy-widget.component";
 
-describe('EnergyWidgetComponent', () => {
+describe("EnergyWidgetComponent", () => {
   let component: EnergyWidgetComponent;
   let fixture: ComponentFixture<EnergyWidgetComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EnergyWidgetComponent ],
-      imports: [IonicModule.forRoot()]
+      declarations: [EnergyWidgetComponent],
+      imports: [IonicModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(EnergyWidgetComponent);
@@ -18,7 +18,7 @@ describe('EnergyWidgetComponent', () => {
     fixture.detectChanges();
   }));
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

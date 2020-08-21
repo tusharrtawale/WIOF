@@ -1,28 +1,41 @@
-<div class="wiof-subscribe-button" (click)="onSubscribeButtonClick()" [ngClass]="{ inactive: !subscribeButton }">
+<div
+  class="wiof-subscribe-button"
+  (click)="onSubscribeButtonClick()"
+  [ngClass]="{ inactive: !subscribeButton }"
+>
   <p class="subscribe-text">Subscribe</p>
   <ion-icon class="mail" name="mail-outline"></ion-icon>
-
 </div>
-<div class="wiof-subscribe" [ngClass]="{active: !subscribeButton }">
+<div class="wiof-subscribe" [ngClass]="{ active: !subscribeButton }">
   <h4 class="subscribe-heading">Subscribe to WIOF NewsLetter</h4>
-  <button class="close-button" (click)="onBack()"><ion-icon name="close-circle-outline"></ion-icon></button>
-  <form [formGroup]="addSubscriberForm"  (submit)="onSubmit()" class="wiof-subscribe-form">
-          
+  <button class="close-button" (click)="onBack()">
+    <ion-icon name="close-circle-outline"></ion-icon>
+  </button>
+  <form
+    [formGroup]="addSubscriberForm"
+    (submit)="onSubmit()"
+    class="wiof-subscribe-form"
+  >
     <ion-item>
-           <ion-label position="floating" >First Name</ion-label>
-           <ion-input formControlName="firstName"></ion-input>
-
-         </ion-item><br/>
-         <ion-item>
-           <ion-label position="floating">Last Name</ion-label>
-           <ion-input formControlName="lastName"></ion-input>
-
-         </ion-item><br/>
-         <ion-item>
-           <ion-label position="floating">Email</ion-label>
-           <ion-input formControlName="email"></ion-input>
-
-          </ion-item><br/>
-          <button [disabled]="!addSubscriberForm.valid" class="subscribe-button" type="submit" expand="block" fill="clear" >Subscribe</button>
-        </form>
-      </div>
+      <ion-label position="floating">First Name</ion-label>
+      <ion-input formControlName="firstName"></ion-input> </ion-item
+    ><br />
+    <ion-item>
+      <ion-label position="floating">Last Name</ion-label>
+      <ion-input formControlName="lastName"></ion-input> </ion-item
+    ><br />
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email"></ion-input> </ion-item
+    ><br />
+    <button
+      [disabled]="!addSubscriberForm.valid"
+      class="subscribe-button"
+      type="submit"
+      expand="block"
+      fill="clear"
+    >
+      Subscribe
+    </button>
+  </form>
+</div>

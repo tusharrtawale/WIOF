@@ -7,11 +7,11 @@
 
 .wiof-aqi-widget-card-header {
   background-color: $air-color;
-  border-bottom:$light-color 2px solid;
+  border-bottom: $light-color 2px solid;
 }
 
-.wiof-aqi-widget-card-background{
-  background-color: rgba($air-color,$tint-fraction);
+.wiof-aqi-widget-card-background {
+  background-color: rgba($air-color, $tint-fraction);
 }
 
 .wiof-primary-button {
@@ -20,8 +20,8 @@
   height: 30px;
   background: $dark-color;
   color: $light-color;
-  margin-right:4px;
-  padding:2px;
+  margin-right: 4px;
+  padding: 2px;
   font-weight: 600;
 }
 
@@ -32,28 +32,28 @@
 
 //adding scroll to search results
 
-.wiof-aqi-widget-items{
-  height:380px;
+.wiof-aqi-widget-items {
+  height: 380px;
 }
 
-.wiof-aqi-widget-items [scrolly=true] {
-    position: relative;
-    overflow: hidden;
-  
-    ::-webkit-scrollbar {
-      display: none;
-    }
-  }
+.wiof-aqi-widget-items [scrolly="true"] {
+  position: relative;
+  overflow: hidden;
 
-.wiof-aqi-widget-items[scrolly=true] {
-    overflow-y: auto;
+  ::-webkit-scrollbar {
+    display: none;
   }
-
-.wiof-aqi-search-result-expand{
-  cursor:pointer;
 }
-.wiof-aqi-search-result-expand:hover{
-  color:blue;
+
+.wiof-aqi-widget-items[scrolly="true"] {
+  overflow-y: auto;
+}
+
+.wiof-aqi-search-result-expand {
+  cursor: pointer;
+}
+.wiof-aqi-search-result-expand:hover {
+  color: blue;
 }
 
 //aqi colors
@@ -88,8 +88,7 @@
   color: $light-color;
 }
 
-.aqi-na{
+.aqi-na {
   background-color: $light-color;
   color: $dark-color;
 }
-

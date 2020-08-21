@@ -1,35 +1,76 @@
 <ion-card>
-  <ion-card-header class="wiof-polls-widget-card-header" >
-    <ion-card-title class="wiof-polls-widget-card-header-text"> Weekly Polls </ion-card-title>
+  <ion-card-header class="wiof-polls-widget-card-header">
+    <ion-card-title class="wiof-polls-widget-card-header-text">
+      Weekly Polls
+    </ion-card-title>
   </ion-card-header>
-  <ion-card-content  class="wiof-polls-widget-card-background">
+  <ion-card-content class="wiof-polls-widget-card-background">
     <div *ngIf="showForm">
-      <form  [formGroup]="wiofPollsForm"  (submit)="submit()" >
+      <form [formGroup]="wiofPollsForm" (submit)="submit()">
         <label for="name">Please enter your name : </label>
-        <input  formControlName="name" id="name" name="name" placeholder="Name">
-        <br>
-        <p style="font-size: large;">Question: {{poll.question}}</p>
-        <p style="font-size: large;">Options:</p>      
-        <input type="radio" id="option 1" name="option" value="option 1" formControlName="option">
-        <label for="option 1">  {{poll.option1|titlecase}}</label><br>
+        <input
+          formControlName="name"
+          id="name"
+          name="name"
+          placeholder="Name"
+        />
+        <br />
+        <p style="font-size: large;">Question: {{ poll.question }}</p>
+        <p style="font-size: large;">Options:</p>
+        <input
+          type="radio"
+          id="option 1"
+          name="option"
+          value="option 1"
+          formControlName="option"
+        />
+        <label for="option 1"> {{ poll.option1 | titlecase }}</label
+        ><br />
 
-        <input type="radio" id="option 2" name="option" value="option 2" formControlName="option">
-        <label for="option 2">  {{poll.option2|titlecase}}</label><br>
+        <input
+          type="radio"
+          id="option 2"
+          name="option"
+          value="option 2"
+          formControlName="option"
+        />
+        <label for="option 2"> {{ poll.option2 | titlecase }}</label
+        ><br />
 
-        <input type="radio" id="option 3" name="option" value="option 3" formControlName="option">
-        <label for="option 3">  {{poll.option3|titlecase}}</label><br>
+        <input
+          type="radio"
+          id="option 3"
+          name="option"
+          value="option 3"
+          formControlName="option"
+        />
+        <label for="option 3"> {{ poll.option3 | titlecase }}</label
+        ><br />
 
-        <input type="radio" id="option 4" name="option" value="option 4" formControlName="option">
-        <label for="option 4">  {{poll.option4|titlecase}}</label><br>
+        <input
+          type="radio"
+          id="option 4"
+          name="option"
+          value="option 4"
+          formControlName="option"
+        />
+        <label for="option 4"> {{ poll.option4 | titlecase }}</label
+        ><br />
 
-        <br><p *ngIf="errorShow" style="color:rgb(243, 124, 124)(124, 82, 82);transition:0.5s">Please fill all fields correctly</p>
-      
-        <ion-button  color="home" type="submit">Submit Poll</ion-button>
+        <br />
+        <p
+          *ngIf="errorShow"
+          style="color: rgb(243, 124, 124) (124, 82, 82); transition: 0.5s;"
+        >
+          Please fill all fields correctly
+        </p>
 
+        <ion-button color="home" type="submit">Submit Poll</ion-button>
       </form>
     </div>
-  <app-poll-result *ngIf="showPollResult" [pollId]="poll.pollId"></app-poll-result>
+    <app-poll-result
+      *ngIf="showPollResult"
+      [pollId]="poll.pollId"
+    ></app-poll-result>
   </ion-card-content>
 </ion-card>
-
-

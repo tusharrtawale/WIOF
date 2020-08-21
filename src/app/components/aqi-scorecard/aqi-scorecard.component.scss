@@ -2,19 +2,17 @@
 
 .aqi-good {
   background-color: $aqi-good-color;
-  color:$dark-color;
+  color: $dark-color;
 }
 
 .aqi-moderate {
   background-color: $aqi-moderate-color;
-  color:$dark-color;
-
+  color: $dark-color;
 }
 
 .aqi-unhealthy-for-sensitive {
-  background-color:$aqi-unhealthy-for-sensitive-color;
-  color:$dark-color;
-
+  background-color: $aqi-unhealthy-for-sensitive-color;
+  color: $dark-color;
 }
 
 .aqi-unhealthy {
@@ -33,12 +31,12 @@
 }
 
 .aqi-na {
-  background-color: $light-color;;
-  color:$dark-color;
+  background-color: $light-color;
+  color: $dark-color;
 }
 
 .card-non-aqi {
-  background-color: $light-color;;
+  background-color: $light-color;
   color: $dark-color;
 }
 
@@ -68,7 +66,7 @@
 .aqi-data-card {
   padding: 5px;
   background-color: $air-color;
-  color:$dark-color;      
+  color: $dark-color;
 }
 
 .aqi-level-card {
@@ -78,7 +76,7 @@
   // border-left:1px  #3d2e4b solid;
   // border-bottom:2px rgb(247, 228, 255)  solid;
   // border-right:2px rgb(247, 228, 255) solid;
-  color:$dark-color;      
+  color: $dark-color;
   padding: 2px 5px;
   // font-size: 12px;
   font-size: large;
@@ -90,8 +88,6 @@
   text-align: left;
   padding: 5px;
 }
-
-
 
 .dominent-pollutant {
   font-size: small;
@@ -112,7 +108,6 @@
   text-align: center;
   margin: 5px;
 }
-
 
 .data-credit {
   font-size: small;

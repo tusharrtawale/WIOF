@@ -1,7 +1,7 @@
 <ion-grid *ngIf="aqiData$ | async as aqiData" class="ion-no-padding">
   <ion-row>
     <ion-col size="12">
-      <ion-card >
+      <ion-card>
         <ion-card-content class="aqi-data-card">
           <ion-row>
             <ion-col>
@@ -12,7 +12,9 @@
           </ion-row>
           <ion-row>
             <ion-col>
-              <p class="aqi-level-card" [ngClass]="aqiColor(aqiData.aqi)">AQI : {{ aqiData.aqi }}</p>
+              <p class="aqi-level-card" [ngClass]="aqiColor(aqiData.aqi)">
+                AQI : {{ aqiData.aqi }}
+              </p>
             </ion-col>
             <ion-col>
               <p class="dominent-pollutant">

@@ -1,28 +1,25 @@
-.videoPlayer{
-            width:90%;
-            margin:5%;
-        }
-
-
-
-@media (max-width:350px ) {
-    .videoPlayer{
-        height:197px;
-    }
+.videoPlayer {
+  width: 90%;
+  margin: 5%;
 }
 
-@media (min-width:351px ) and (max-width:575px ) {
-    .videoPlayer{
-        height:324px;
-    }
+@media (max-width: 350px) {
+  .videoPlayer {
+    height: 197px;
+  }
 }
 
-@media (min-width:576px ) {
-    .videoPlayer{
-        height:420px;
-    }
+@media (min-width: 351px) and (max-width: 575px) {
+  .videoPlayer {
+    height: 324px;
+  }
 }
 
+@media (min-width: 576px) {
+  .videoPlayer {
+    height: 420px;
+  }
+}
 
 //old
 
@@ -34,7 +31,6 @@
 // }
 
 //Future Use for Larger Screen sizes
-
 
 // @media (min-width:992px ) {
 //     .videoPlayer{

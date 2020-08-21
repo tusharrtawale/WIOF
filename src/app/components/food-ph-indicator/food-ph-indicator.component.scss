@@ -1,12 +1,10 @@
 @import "../../wiof-custom-theming.scss";
 
-.wiof-food-ph-indicator
-{
-position: absolute;
-height: 300px;
-width: 300px;
-background-color: transparent;
-
+.wiof-food-ph-indicator {
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  background-color: transparent;
 }
 
 // @media (max-width:320px ) {
@@ -20,7 +18,7 @@ background-color: transparent;
 //     height: 520px;
 //   }
 // }
-.ph-widget-height{
+.ph-widget-height {
   height: 577px;
 }
 // @media (min-width:320px ) {
@@ -68,48 +66,46 @@ background-color: transparent;
 // }
 
 .wiof-primary-button {
-      width: 80%;
-      border-radius: 25px;
-      height: 35px;
-      background: #2B2B2B;
-      color: white;
-      padding:2px;
-    }
+  width: 80%;
+  border-radius: 25px;
+  height: 35px;
+  background: #2b2b2b;
+  color: white;
+  padding: 2px;
+}
 
-  .title-text{
-    font-size: 20px;
-    font-weight: 500;
-  }
+.title-text {
+  font-size: 20px;
+  font-weight: 500;
+}
 
 .wiof-food-ph-widget-card-header {
-    background-color: $earth-color;
-    border-bottom: white 2px solid;    
-  }
+  background-color: $earth-color;
+  border-bottom: white 2px solid;
+}
 
-  .wiof-food-ph-widget-card-background{
-    background-color: rgba($earth-color,$tint-fraction);
-  }
+.wiof-food-ph-widget-card-background {
+  background-color: rgba($earth-color, $tint-fraction);
+}
 
-
-.divider{
+.divider {
   background-color: $earth-color;
   height: 1px;
   border-width: 0px;
   background-color: #4d4b4b;
 }
 
-.ph-meter-text{
+.ph-meter-text {
   font-size: large;
-  color:#000;
+  color: #000;
   padding-bottom: 5px;
 }
 
-.text{
-  color:#000;
+.text {
+  color: #000;
   padding-top: 5px;
 }
 
-.wiof-food-ph-indicator-selector{
-    padding: 10px;
+.wiof-food-ph-indicator-selector {
+  padding: 10px;
 }
-

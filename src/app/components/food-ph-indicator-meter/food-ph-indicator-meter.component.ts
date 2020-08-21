@@ -1,35 +1,34 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
-  selector: 'app-food-ph-indicator-meter',
-  templateUrl: './food-ph-indicator-meter.component.html',
-  styleUrls: ['./food-ph-indicator-meter.component.scss'],
+  selector: "app-food-ph-indicator-meter",
+  templateUrl: "./food-ph-indicator-meter.component.html",
+  styleUrls: ["./food-ph-indicator-meter.component.scss"],
 })
 export class FoodPhIndicatorMeterComponent implements OnInit {
-  @Input() food:any;
-  message:string;
+  @Input() food: any;
+  message: string;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     this.updatePhPointer();
-    // this.generateMessage();    
+    // this.generateMessage();
   }
 
-  ngOnChanges(){
+  ngOnChanges() {
     this.updatePhPointer();
-    // this.generateMessage();    
+    // this.generateMessage();
   }
 
-  updatePhPointer(){
-    if (this.food.name=="Default"){
-      this.message="Please select a food to find its pH value."
-      return 'ph7';
-    }
-    else{
-      this.message=`ph Level of ${this.food.name} is ${this.food.value}`;
+  updatePhPointer() {
+    if (this.food.name == "Default") {
+      this.message = "Please select a food to find its pH value.";
+      return "ph7";
+    } else {
+      this.message = `ph Level of ${this.food.name} is ${this.food.value}`;
       return `ph${this.food.value}`;
-    }      
+    }
   }
 
   // generateMessage(){

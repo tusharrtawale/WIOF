@@ -1,65 +1,66 @@
-$earth-color:rgb(189, 237, 129);
-$water-color:rgb(223, 243, 255); 
-$energy-color:rgb(255, 235, 184);  //energy and fire are to be considered same element
-$air-color:rgb(224, 202,	245);
-$spirit-color:rgb(241, 222, 198);
+$earth-color: rgb(189, 237, 129);
+$water-color: rgb(223, 243, 255);
+$energy-color: rgb(
+  255,
+  235,
+  184
+); //energy and fire are to be considered same element
+$air-color: rgb(224, 202, 245);
+$spirit-color: rgb(241, 222, 198);
 $home-color: rgb(128, 64, 0);
-
 
 //add tint to various slider backgrounds
 
-$tint-fraction:0.5;
+$tint-fraction: 0.5;
 
 // font color
-$dark-color:#2D2D2D;
-$light-color:#fff;
-
-
+$dark-color: #2d2d2d;
+$light-color: #fff;
 
 //swtich to list button on sliders
-.switch-to-list{
-    text-decoration:none;
-    font-weight: bold;
-  }
+.switch-to-list {
+  text-decoration: none;
+  font-weight: bold;
+}
 
-  .widget-height{
-    height: 577px;
-  }
+.widget-height {
+  height: 577px;
+}
 
-  .title-text{
-    font-size: 20px;
-    font-weight: 500;
-  }
+.title-text {
+  font-size: 20px;
+  font-weight: 500;
+}
 
-  .link-title{
-    text-decoration:none;
-    font-weight: bold;
-  }
+.link-title {
+  text-decoration: none;
+  font-weight: bold;
+}
 
 //ph values and corresponding highlighting square locations
-$ph0:0.88%;
-$ph1:7.31%;
-$ph2:13.74%;
-$ph3:20.17%;
-$ph4:26.6%;
-$ph5:33.03%;
-$ph6:39.46%;
-$ph7:45.89%;
-$ph8:52.32%;
-$ph9:58.75%;
-$ph10:65.18%;
-$ph11:71.61%;
-$ph12:78.04%;
-$ph13:84.47%;
-$ph14:90.9%;
+$ph0: 0.88%;
+$ph1: 7.31%;
+$ph2: 13.74%;
+$ph3: 20.17%;
+$ph4: 26.6%;
+$ph5: 33.03%;
+$ph6: 39.46%;
+$ph7: 45.89%;
+$ph8: 52.32%;
+$ph9: 58.75%;
+$ph10: 65.18%;
+$ph11: 71.61%;
+$ph12: 78.04%;
+$ph13: 84.47%;
+$ph14: 90.9%;
 
 //air-widget colors
 
-$aqi-good-color:rgb(0, 228, 0);
-$aqi-moderate-color:rgb(255, 255, 0);
-$aqi-unhealthy-for-sensitive-color:rgb(255, 156, 0);
-$aqi-unhealthy-color:rgb(255, 0, 0);
-$aqi-very-unhealthy-color:rgb(143, 63, 151);
+$aqi-good-color: rgb(0, 228, 0);
+$aqi-moderate-color: rgb(255, 255, 0);
+$aqi-unhealthy-for-sensitive-color: rgb(255, 156, 0);
+$aqi-unhealthy-color: rgb(255, 0, 0);
+$aqi-very-unhealthy-color: rgb(143, 63, 151);
 $aqi-hazardous-color: rgb(126, 0, 35);
 
 //setting font color

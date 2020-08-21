@@ -8,7 +8,7 @@
     </ion-card-title>
   </ion-card-header>
   <ion-toolbar color="air" class="wiof-aqi-widget-card-toolbar">
-  <!-- <ion-toolbar color="air"> -->
+    <!-- <ion-toolbar color="air"> -->
 
     <!-- <ion-button fill="solid" slot="start" (click)="loadMajorCitiesDiv()"
       ><ion-icon name="golf-outline"></ion-icon> Major Cities</ion-button
@@ -16,15 +16,27 @@
     <ion-button fill="solid" slot="start" (click)="loadSearchLocationDiv()"
       ><ion-icon name="search-outline"></ion-icon> Search Location</ion-button
     > -->
-    <button class="wiof-primary-button" slot="start" (click)="loadMajorCitiesDiv()">
+    <button
+      class="wiof-primary-button"
+      slot="start"
+      (click)="loadMajorCitiesDiv()"
+    >
       <ion-icon name="golf-outline"></ion-icon> Major Cities
-      </button>
-    <button class="wiof-primary-button" slot="start" (click)="loadSearchLocationDiv()">
-    <ion-icon name="search-outline"></ion-icon> Search Location
     </button>
-    <button class="wiof-primary-button" slot="start"
-    target="_blank" href="https://waqi.info/forecast/#/!pol:pm25">
-    <ion-icon name="open-outline"></ion-icon> AQI Forecast
+    <button
+      class="wiof-primary-button"
+      slot="start"
+      (click)="loadSearchLocationDiv()"
+    >
+      <ion-icon name="search-outline"></ion-icon> Search Location
+    </button>
+    <button
+      class="wiof-primary-button"
+      slot="start"
+      target="_blank"
+      href="https://waqi.info/forecast/#/!pol:pm25"
+    >
+      <ion-icon name="open-outline"></ion-icon> AQI Forecast
     </button>
 
     <!-- <ion-button

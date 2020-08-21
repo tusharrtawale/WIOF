@@ -1,13 +1,16 @@
 <ion-card *ngIf="videoList && videoList.length > 0">
-  <ion-card-header class="ion-align-center wiof-slider-header" [ngClass]="videoSliderClass">
+  <ion-card-header
+    class="ion-align-center wiof-slider-header"
+    [ngClass]="videoSliderClass"
+  >
     <!-- <strong>Videos</strong> -->
     <ion-row>
-        <ion-col><strong>Videos</strong>
-        </ion-col>
-        <ion-col style="text-align: right;"><a [routerLink]="['videos']" class="switch-to-list"> 
+      <ion-col><strong>Videos</strong> </ion-col>
+      <ion-col style="text-align: right;"
+        ><a [routerLink]="['videos']" class="switch-to-list">
           Switch to list
         </a>
-        </ion-col>
+      </ion-col>
     </ion-row>
   </ion-card-header>
   <ion-card-content class="background" [ngClass]="videoSliderClass">
@@ -48,8 +51,14 @@
           </ion-card>
         </ion-slide> -->
       </ion-slides>
-      <div class="swiper-button-prev" (click)="wiofVideoSlider.slidePrev()"></div>
-      <div class="swiper-button-next" (click)="wiofVideoSlider.slideNext()"></div>
+      <div
+        class="swiper-button-prev"
+        (click)="wiofVideoSlider.slidePrev()"
+      ></div>
+      <div
+        class="swiper-button-next"
+        (click)="wiofVideoSlider.slideNext()"
+      ></div>
     </div>
     <ng-template #loading>
       <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />

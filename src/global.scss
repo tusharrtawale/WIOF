@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -29,10 +29,8 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto");
 
-  *:not(ion-icon) {
-    font-family: 'Roboto', sans-serif!important;
-  }
+*:not(ion-icon) {
+  font-family: "Roboto", sans-serif !important;
+}
 
 //   $font-color:#2D2D2D;
-
-

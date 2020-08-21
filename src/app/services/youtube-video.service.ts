@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { map } from "rxjs/operators";
 import { Video } from "../models/Video";
 import { ENDPOINTS } from "../app.constants";
-import { environment } from 'src/environments/environment';
+import { environment } from "src/environments/environment";
 
 @Injectable({
   providedIn: "root",

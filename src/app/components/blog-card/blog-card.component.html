@@ -3,9 +3,7 @@
     <img [src]="blog.image | async" />
     <h6 class="ion-padding-vertical">
       <strong class="blog-card-title"
-        ><a [routerLink]="['blog', blog.id]">{{
-          blog.title
-        }}</a></strong
+        ><a [routerLink]="['blog', blog.id]">{{ blog.title }}</a></strong
       >
     </h6>
     <!-- <ion-label>Category: {{ blog.category }}</ion-label> -->

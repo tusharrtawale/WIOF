@@ -60,7 +60,7 @@ import { WiofSpinnerComponent } from "./components/wiof-spinner/wiof-spinner.com
     PollResultComponent,
     WiofSpinnerComponent,
     BackButtonComponent,
-    SocialShareComponent
+    SocialShareComponent,
   ],
   declarations: [
     HeaderComponent,
@@ -83,7 +83,7 @@ import { WiofSpinnerComponent } from "./components/wiof-spinner/wiof-spinner.com
     PollResultComponent,
     WiofSpinnerComponent,
     BackButtonComponent,
-    SocialShareComponent
+    SocialShareComponent,
   ],
   providers: [],
 })

@@ -1,16 +1,16 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { IonicModule } from "@ionic/angular";
 
-import { PollsWidgetComponent } from './polls-widget.component';
+import { PollsWidgetComponent } from "./polls-widget.component";
 
-describe('PollsWidgetComponent', () => {
+describe("PollsWidgetComponent", () => {
   let component: PollsWidgetComponent;
   let fixture: ComponentFixture<PollsWidgetComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PollsWidgetComponent ],
-      imports: [IonicModule.forRoot()]
+      declarations: [PollsWidgetComponent],
+      imports: [IonicModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PollsWidgetComponent);
@@ -18,7 +18,7 @@ describe('PollsWidgetComponent', () => {
     fixture.detectChanges();
   }));
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

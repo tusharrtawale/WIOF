@@ -1,16 +1,16 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { IonicModule } from "@ionic/angular";
 
-import { SubscribeComponent } from './subscribe.component';
+import { SubscribeComponent } from "./subscribe.component";
 
-describe('SubscribeComponent', () => {
+describe("SubscribeComponent", () => {
   let component: SubscribeComponent;
   let fixture: ComponentFixture<SubscribeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SubscribeComponent ],
-      imports: [IonicModule.forRoot()]
+      declarations: [SubscribeComponent],
+      imports: [IonicModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(SubscribeComponent);
@@ -18,7 +18,7 @@ describe('SubscribeComponent', () => {
     fixture.detectChanges();
   }));
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

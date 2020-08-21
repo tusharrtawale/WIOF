@@ -7,31 +7,42 @@
   <ion-card-content style="padding: 5px;">
     <ion-grid>
       <ion-row>
-          <ion-label class="text">
-            Check the pH value of various commonly consumed food items.
-          </ion-label>
-          <ion-col size="6">
+        <ion-label class="text">
+          Check the pH value of various commonly consumed food items.
+        </ion-label>
+        <ion-col size="6">
           <ion-label class="text" location="floating">
             Food list
           </ion-label>
-          <ion-select color="dark" interface="popover" [(ngModel)]="selectedFood" placeholder="Select Food">           
-              <ion-select-option
+          <ion-select
+            color="dark"
+            interface="popover"
+            [(ngModel)]="selectedFood"
+            placeholder="Select Food"
+          >
+            <ion-select-option
               *ngFor="let food of foodOptions"
               [value]="food"
-              >{{ food.name | titlecase }}</ion-select-option>
-            </ion-select>
+              >{{ food.name | titlecase }}</ion-select-option
+            >
+          </ion-select>
         </ion-col>
         <ion-col size="6" style="text-align: center;">
-          <button class="wiof-primary-button ion-margin-top" (click)="updateBridgeVariable()">
+          <button
+            class="wiof-primary-button ion-margin-top"
+            (click)="updateBridgeVariable()"
+          >
             Calculate pH value
           </button>
         </ion-col>
       </ion-row>
-      <hr class="divider"/>
+      <hr class="divider" />
       <ion-row>
         <ion-col>
-          <p class="ph-meter-text" >pH Meter</p>
-          <app-food-ph-indicator-meter [food]="bridgeVariable" ></app-food-ph-indicator-meter>
+          <p class="ph-meter-text">pH Meter</p>
+          <app-food-ph-indicator-meter
+            [food]="bridgeVariable"
+          ></app-food-ph-indicator-meter>
         </ion-col>
       </ion-row>
     </ion-grid>

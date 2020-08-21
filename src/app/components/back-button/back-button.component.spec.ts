@@ -1,16 +1,16 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { IonicModule } from "@ionic/angular";
 
-import { BackButtonComponent } from './back-button.component';
+import { BackButtonComponent } from "./back-button.component";
 
-describe('BackButtonComponent', () => {
+describe("BackButtonComponent", () => {
   let component: BackButtonComponent;
   let fixture: ComponentFixture<BackButtonComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BackButtonComponent ],
-      imports: [IonicModule.forRoot()]
+      declarations: [BackButtonComponent],
+      imports: [IonicModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(BackButtonComponent);
@@ -18,7 +18,7 @@ describe('BackButtonComponent', () => {
     fixture.detectChanges();
   }));
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

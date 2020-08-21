@@ -33,7 +33,6 @@ export const AQI_WIDGET_LOCATIONS = {
 export const VIDEO_SLIDER_OPTIONS = {
   slidesPerView: 4,
   freeMode: true,
-  loop: true,
   coverflowEffect: {
     rotate: 50,
     stretch: 0,
@@ -74,7 +73,6 @@ export const VIDEO_SLIDER_OPTIONS = {
 export const BLOG_SLIDER_OPTIONS = {
   slidesPerView: 4,
   spaceBetween: 1,
-  loop: true,
   freeMode: true,
   coverflowEffect: {
     rotate: 50,

@@ -43,14 +43,12 @@ export class AddBlogPage implements OnInit {
     this.blogImageToSave = event.target.files[0];
     fileReader.onload = () => {
       this.blogImage = fileReader.result as string;
-      console.log(this.addBlogForm.value.image);
     };
   }
 
   onSubmit() {
     if (this.addBlogForm.valid) {
       const blog = Blog.createByForm(this.addBlogForm);
-      console.log("===== blog details captured =====", blog);
       this.showLoader("We are saving your blog...");
       combineLatest([
         this.blogService.saveBlogImage(this.blogImageToSave, blog.imageName),
@@ -58,8 +56,6 @@ export class AddBlogPage implements OnInit {
       ])
         .pipe(
           map(([imgResp, blogResp]) => {
-            console.log(imgResp);
-            console.log(blogResp);
             return [imgResp, blogResp];
           }),
           catchError((err) => {

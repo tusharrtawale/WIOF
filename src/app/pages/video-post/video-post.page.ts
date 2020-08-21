@@ -32,7 +32,6 @@ export class VideoPostPage implements OnInit {
         this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(
           this.videoUrl
         );
-        // console.log("Video:",this.urlSafe)
         this.videoService.getYoutubeVideo(this.id).subscribe((data) => {
           this.video = data;
           let { items } = this.video;

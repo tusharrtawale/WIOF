@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { NgForm } from "@angular/forms";
 
 @Component({
   selector: "app-energy-widget",
@@ -23,16 +22,11 @@ export class EnergyWidgetComponent implements OnInit {
   ngOnInit() {}
 
   CalculateCO2() {
-    // if(this.EnergyConsumption==0 || this.Selectedunit==null)
-
     if (this.Selectedunit == "1" && this.EnergyConsumption > 0) {
       this.buttonClicked = true;
       this.unitnull = false;
       this.Consumptionnull = false;
       this.KgsofCO2 = this.EnergyConsumption * 612;
-      console.log(this.Selectedunit);
-      console.log(typeof this.Selectedunit);
-      // console.log( this.KgsofCO2=this.EnergyConsumption*0);
 
       this.litresofPetrol = this.KgsofCO2 / 2.296;
       this.litresofDiesel = this.KgsofCO2 / 2.653;
@@ -44,20 +38,12 @@ export class EnergyWidgetComponent implements OnInit {
       this.unitnull = false;
       this.Consumptionnull = false;
       this.KgsofCO2 = this.EnergyConsumption * 0.85;
-      console.log(this.KgsofCO2);
 
       this.litresofPetrol = this.KgsofCO2 / 2.296;
       this.litresofDiesel = this.KgsofCO2 / 2.653;
       this.kmsbycar = this.litresofPetrol * 15;
       this.KmsbySUV = this.litresofDiesel * 12;
-    }
-
-    // else if( this.EnergyConsumption<0 || this.Selectedunit==null   )
-    // {
-    //   this.Consumptionnull=true;
-    //   this.unitnull=true;
-    // }
-    else if (
+    } else if (
       this.EnergyConsumption < 0 &&
       (this.Selectedunit == "2" || this.Selectedunit == "1")
     ) {
@@ -70,43 +56,5 @@ export class EnergyWidgetComponent implements OnInit {
       this.unitnull = true;
       this.Consumptionnull = true;
     }
-
-    // else {
-    // this.Consumptionnull=true;
-    // this.unitnull=true;
-    // else
-    // {
-    //   return this.Consumptionnull;
-    //   return this.unitnull;
-    // }
   }
-
-  //old
-
-  //  CalculateCO2(){
-  //   this.buttonClicked=true;
-  // if (this.Selectedunit=="1")
-  // {
-
-  //   this.KgsofCO2=this.EnergyConsumption*612;
-  //   console.log(this.Selectedunit);
-  //   console.log(typeof(this.Selectedunit));
-  //  // console.log( this.KgsofCO2=this.EnergyConsumption*0);
-
-  //  this.litresofPetrol=this.KgsofCO2/2.296;
-  //   this.litresofDiesel=this.KgsofCO2/2.653;
-  //   this.kmsbycar=this.litresofPetrol*15;
-  //   this.KmsbySUV=this.litresofDiesel*12;
-  // }
-
-  // else{
-  // this.KgsofCO2= this.EnergyConsumption *0.85
-  // console.log(this.KgsofCO2);
-
-  //   this.litresofPetrol=this.KgsofCO2/2.296;
-  //   this.litresofDiesel=this.KgsofCO2/2.653;
-  //   this.kmsbycar=this.litresofPetrol*15;
-  //   this.KmsbySUV=this.litresofDiesel*12;
-  // }
-  //  }
 }

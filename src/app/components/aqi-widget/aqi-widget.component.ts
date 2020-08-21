@@ -23,7 +23,6 @@ export class AqiWidgetComponent implements OnInit {
 
   searchByLocation() {
     this.searchLocationResults = this.aqiService.search(this.searchLocation);
-    console.log(this.searchLocationResults);
     this.searchLocationClickedFlag = true;
     this.showAqiScorecard = false;
   }

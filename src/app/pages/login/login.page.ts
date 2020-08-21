@@ -18,7 +18,6 @@ export class LoginPage implements OnInit {
   ngOnInit() {
     var logged_in = this.afService.getAuth().subscribe((user) => {
       if (user) {
-        // console.log("yes",user);
         this.router.navigate(["/admin-dashboard"]);
       }
     });

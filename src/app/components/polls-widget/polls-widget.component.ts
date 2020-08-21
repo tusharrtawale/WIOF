@@ -68,7 +68,6 @@ export class PollsWidgetComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.wiofPollsForm.value);
     if (this.wiofPollsForm.valid) {
       const polls = Polls.createByForm(
         this.poll,

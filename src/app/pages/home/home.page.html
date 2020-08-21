@@ -16,7 +16,7 @@
               >Protect through action</span
             >
           </p>
-          <button class="wiof-primary-button ion-margin-top">
+          <button class="wiof-primary-button ion-margin-top" [routerLink]="['/discover-more']" routerLinkActive="router-link-active" >
             Discover More...
           </button>
         </div>
@@ -24,8 +24,9 @@
     </ion-row>
     <app-life-elements></app-life-elements>
     <ion-row>
-      <ion-col size-xs="7">
+      <ion-col size-md="7" size-xs="12">
         <!-- <app-video-widget [element]="elementName"></app-video-widget> -->
+        <app-env-calender></app-env-calender>
       </ion-col>
       <ion-col size-md="5" size-xs="12">
         <app-polls-widget></app-polls-widget>

@@ -16,6 +16,7 @@ import { FoodPhIndicatorMeterComponent } from "./components/food-ph-indicator-me
 import { FoodPhIndicatorComponent } from "./components/food-ph-indicator/food-ph-indicator.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { LifeElementsComponent } from "./components/life-elements/life-elements.component";
+import { EnvCalenderComponent } from "./components/env-calender/env-calender.component";
 import { PollResultComponent } from "./components/poll-result/poll-result.component";
 import { PollsWidgetComponent } from "./components/polls-widget/polls-widget.component";
 import { SubscribeComponent } from "./components/subscribe/subscribe.component";
@@ -45,6 +46,7 @@ import { VideoCardComponent } from './components/video-card/video-card.component
     BlogSliderComponent,
     BlogCardComponent,
     ElementWelcomeImageComponent,
+    EnvCalenderComponent,
     AqiWidgetComponent,
     ReactiveFormsModule,
     SubscribeComponent,
@@ -72,6 +74,7 @@ import { VideoCardComponent } from './components/video-card/video-card.component
     BlogSliderComponent,
     BlogCardComponent,
     ElementWelcomeImageComponent,
+    EnvCalenderComponent,
     AqiWidgetComponent,
     SubscribeComponent,
     WaterWidgetComponent,

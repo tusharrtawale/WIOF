@@ -67,6 +67,26 @@ const routes: Routes = [
     loadChildren: () =>
       import("./pages/videos/videos.module").then((m) => m.VideosPageModule),
   },
+  {
+    path: 'discover-more',
+    loadChildren: () => import('./pages/discover-more/discover-more.module').then( m => m.DiscoverMorePageModule)
+  },
+  {
+    path: 'privacy-policy',
+    loadChildren: () => import('./pages/privacy-policy/privacy-policy.module').then( m => m.PrivacyPolicyPageModule)
+  },
+  {
+    path: 'sitemap',
+    loadChildren: () => import('./pages/sitemap/sitemap.module').then( m => m.SitemapPageModule)
+  },
+  {
+    path: 'copyright',
+    loadChildren: () => import('./pages/copyright/copyright.module').then( m => m.CopyrightPageModule)
+  },
+  {
+    path: '**',
+    loadChildren: () => import('./pages/not-found/not-found.module').then( m => m.NotFoundPageModule)
+  },
 ];
 
 @NgModule({

@@ -1,14 +1,19 @@
 @import "../../wiof-custom-theming.scss";
 
+.wiof-poll-card{
+  background-color: rgba($home-color, $tint-fraction);
+  height:455px;
+}
+
 .wiof-polls-widget-card-header {
   background-color: $home-color;
   border-bottom: white 2px solid;
 }
 
 .wiof-polls-widget-card-background {
-  background-color: rgba($home-color, $tint-fraction);
   color: black;
   font-size: large;
+  // transform:translateY(-50%);
 }
 
 .wiof-polls-widget-card-header-text {

@@ -1,6 +1,10 @@
 <ion-row class="ion-padding wiof-footer">
   <ion-col>
-    <ion-label class="ion-margin-bottom">Sitemap</ion-label><br />
+    <ion-label class="ion-margin-bottom">
+      <button class="wiof-primary-button ion-margin-top" [routerLink]="['/sitemap']" routerLinkActive="router-link-active" >
+        Sitemap
+      </button>
+    </ion-label><br />
     <!-- <div class="social-media-block">
       <ion-button fill="clear" class="ion-no-padding"
         ><ion-icon slot="icon-only" name="logo-facebook"></ion-icon
@@ -17,6 +21,12 @@
     </div> -->
   </ion-col>
   <ion-col class="ion-text-center">
-    Privacy Policy | Copyright
+    <button class="wiof-primary-button ion-margin-top" [routerLink]="['/privacy-policy']" routerLinkActive="router-link-active" >
+      Privacy Policy 
+    </button>
+      <span>  </span>
+    <button class="wiof-primary-button ion-margin-top" [routerLink]="['/copyright']" routerLinkActive="router-link-active" >
+      Copyright
+    </button>
   </ion-col>
 </ion-row>

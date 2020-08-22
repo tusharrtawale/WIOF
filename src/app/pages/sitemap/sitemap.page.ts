@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sitemap.page.scss'],
 })
 export class SitemapPage implements OnInit {
-  public blogDetails: Observable<Blog>;
   constructor() { }
 
   ngOnInit() {

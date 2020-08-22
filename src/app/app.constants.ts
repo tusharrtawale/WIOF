@@ -123,6 +123,7 @@ export const FIREBASE_COLLECTION = {
   BLOG_IMAGE_STORAGE: "blog-images",
   POLLS: "Polls",
   POLL: "Poll",
+  CONFIG:"config"
 };
 
 export const VIDEO_PLAYER_TITLES = {

@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-copyright',
-  templateUrl: './copyright.page.html',
-  styleUrls: ['./copyright.page.scss'],
+  selector: "app-copyright",
+  templateUrl: "./copyright.page.html",
+  styleUrls: ["./copyright.page.scss"],
 })
 export class CopyrightPage implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

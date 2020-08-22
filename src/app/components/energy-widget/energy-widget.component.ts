@@ -52,7 +52,10 @@ export class EnergyWidgetComponent implements OnInit {
     } else if (this.EnergyConsumption > 0 && this.Selectedunit === "") {
       this.unitnull = true;
       this.Consumptionnull = false;
-    } else if (this.EnergyConsumption === undefined && this.Selectedunit === "") {
+    } else if (
+      this.EnergyConsumption === undefined &&
+      this.Selectedunit === ""
+    ) {
       this.unitnull = true;
       this.Consumptionnull = true;
     }

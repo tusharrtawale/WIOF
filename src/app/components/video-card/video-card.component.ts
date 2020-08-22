@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { Video } from 'src/app/models/Video';
+import { Video } from "src/app/models/Video";
 
 @Component({
   selector: "app-video-card",
@@ -9,7 +9,7 @@ import { Video } from 'src/app/models/Video';
 export class VideoCardComponent implements OnInit {
   @Input() video: Video;
   @Input() elementThemeClass: string;
-  
+
   constructor() {}
 
   ngOnInit() {}

@@ -1,8 +1,8 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { AlertController, LoadingController } from "@ionic/angular";
-import { combineLatest, throwError } from "rxjs";
-import { catchError, map } from "rxjs/operators";
+import { combineLatest, throwError, Subject } from "rxjs";
+import { catchError, map, takeUntil } from "rxjs/operators";
 import { ELEMENT_BLOG_CATEGORY } from "src/app/app.constants";
 import { Blog } from "src/app/models/Blog";
 import { BlogService } from "src/app/services/blog.service";
@@ -12,12 +12,14 @@ import { BlogService } from "src/app/services/blog.service";
   templateUrl: "./add-blog.page.html",
   styleUrls: ["./add-blog.page.scss"],
 })
-export class AddBlogPage implements OnInit {
+export class AddBlogPage implements OnInit, OnDestroy {
   categories: String[] = Object.values(ELEMENT_BLOG_CATEGORY);
   addBlogForm: FormGroup;
   blogImage: string;
   blogImageToSave: any;
   loader;
+  destroy$: Subject<boolean> = new Subject();
+
   constructor(
     private alertCtrl: AlertController,
     private loadingCtrl: LoadingController,
@@ -55,6 +57,7 @@ export class AddBlogPage implements OnInit {
         this.blogService.saveBlog(blog),
       ])
         .pipe(
+          takeUntil(this.destroy$),
           map(([imgResp, blogResp]) => {
             return [imgResp, blogResp];
           }),
@@ -94,5 +97,10 @@ export class AddBlogPage implements OnInit {
       message: message,
     });
     this.loader.present();
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next(true);
+    this.destroy$.unsubscribe();
   }
 }

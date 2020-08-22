@@ -1,12 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-env-calender',
-  templateUrl: './env-calender.component.html',
-  styleUrls: ['./env-calender.component.scss'],
+  selector: "app-env-calender",
+  templateUrl: "./env-calender.component.html",
+  styleUrls: ["./env-calender.component.scss"],
 })
 export class EnvCalenderComponent implements OnInit {
-
   // today:Date=new Date;
   // currentMonth:number;
   // currentYear:number;
@@ -19,13 +18,11 @@ export class EnvCalenderComponent implements OnInit {
   constructor() {
     // this.currentMonth=this.today.getMonth();
     // this.currentYear=this.today.getFullYear();
-    
-   }
+  }
 
   ngOnInit() {
     // console.log(this.currentMonth);
   }
-
 }
 
 //   showCalendar(month, year) {
@@ -72,14 +69,12 @@ export class EnvCalenderComponent implements OnInit {
 //                 date++;
 //             }
 
-
 //         }
 
 //         tbl.appendChild(row); // appending each row into calendar body.
 //     }
 
 // }
-
 
 // let today = new Date();
 // let currentMonth = today.getMonth();
@@ -91,7 +86,6 @@ export class EnvCalenderComponent implements OnInit {
 
 // let monthAndYear = document.getElementById("monthAndYear"); //select in template
 // showCalendar(currentMonth, currentYear);
-
 
 // function next() {
 //     currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
@@ -155,11 +149,9 @@ export class EnvCalenderComponent implements OnInit {
 //                 date++;
 //             }
 
-
 //         }
 
 //         tbl.appendChild(row); // appending each row into calendar body.
 //     }
 
 // }
-

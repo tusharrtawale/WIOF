@@ -5,11 +5,11 @@ export const ELEMENT_VIDEOS_PLAYLIST_ID = {
   FIRE: "PLitAAO2FhPTFw5EoLsuua6Ang60PGBH0d",
   SPIRIT: "PLitAAO2FhPTFjxy3EsgDR_XPtgiX8Ez-q",
 
-  "air": "PLitAAO2FhPTECrRbhFyIllj6TSobTGiJI",
-  "water": "PLitAAO2FhPTHZRcarOENNjYcdPlzwpZEn",
-  "earth": "PLitAAO2FhPTHdtNVNkcm3JIX6jmhPZjyN",
-  "energy": "PLitAAO2FhPTFw5EoLsuua6Ang60PGBH0d",
-  "spirit": "PLitAAO2FhPTFjxy3EsgDR_XPtgiX8Ez-q",
+  air: "PLitAAO2FhPTECrRbhFyIllj6TSobTGiJI",
+  water: "PLitAAO2FhPTHZRcarOENNjYcdPlzwpZEn",
+  earth: "PLitAAO2FhPTHdtNVNkcm3JIX6jmhPZjyN",
+  energy: "PLitAAO2FhPTFw5EoLsuua6Ang60PGBH0d",
+  spirit: "PLitAAO2FhPTFjxy3EsgDR_XPtgiX8Ez-q",
 };
 
 export const ELEMENT_BLOG_CATEGORY = {
@@ -26,7 +26,7 @@ export const ELEMENT_SELECT = {
   EARTH: "earth",
   FIRE: "fire",
   SPIRIT: "spirit",
-  CONFIG:"config"
+  CONFIG: "config",
 };
 
 export const AQI_WIDGET_LOCATIONS = {
@@ -124,7 +124,7 @@ export const FIREBASE_COLLECTION = {
   BLOG_IMAGE_STORAGE: "blog-images",
   POLLS: "Polls",
   POLL: "Poll",
-  CONFIG:"config"
+  CONFIG: "config",
 };
 
 export const VIDEO_PLAYER_TITLES = {
@@ -133,7 +133,7 @@ export const VIDEO_PLAYER_TITLES = {
   EARTH: "What is Food pH?",
   FIRE: "Energy consumption ranking from 1990 to 2017",
   SPIRIT: "What is Emotional Intelligence?",
-  CONFIG:"About WorldIsOneFamily.com"
+  CONFIG: "About WorldIsOneFamily.com",
 };
 
 export const VIDEO_PLAYER_VIDEOS = {
@@ -142,7 +142,7 @@ export const VIDEO_PLAYER_VIDEOS = {
   EARTH: "LrLrOYLAwWY",
   FIRE: "L6murPEFbXg",
   SPIRIT: "LgUCyWhJf6s",
-  CONFIG:"LgUCyWhJf6s"
+  CONFIG: "LgUCyWhJf6s",
 };
 
 //TODO try to find another way

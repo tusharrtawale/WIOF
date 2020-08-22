@@ -47,14 +47,25 @@ $fontcolor: #fff;
     left: -40px;
     opacity: 0%;
   }
+
+  @media only screen and (max-width: 767px) {
+    height: 120px;
+    width: 35px;
+  } 
 }
 
 .mail {
   position: absolute;
-  top: 120px;
+  top: 110px;
   width: 35px;
   color: $fontcolor;
   font-size: x-large;
+
+  @media only screen and (max-width: 767px) {
+    top: 90px;
+    width: 32px;
+    font-size: large;
+  }
 }
 
 .subscribe-text {
@@ -62,10 +73,15 @@ $fontcolor: #fff;
   color: $fontcolor;
   width: 100px;
   position: absolute;
-  top: 50px;
+  top: 40px;
   left: -34px;
   margin: 0px;
   font-weight: bold;
+
+  @media only screen and (max-width: 767px) {
+    top: 20px;
+    font-size: 14px;
+  }
 }
 
 h4 {

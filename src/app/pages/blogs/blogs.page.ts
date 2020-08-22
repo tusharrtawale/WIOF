@@ -24,9 +24,9 @@ export class BlogsPage implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
       if (params.has("element")) {
-        this.blogs = this.blogService.getBlogs(this.category);
         this.category = PAGE_CATEGORY_MAP[params.get("element")];
         this.elementThemeClass = params.get("element");
+        this.blogs = this.blogService.getBlogs(this.category);
       }
     });
   }

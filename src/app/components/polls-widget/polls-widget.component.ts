@@ -67,7 +67,7 @@ export class PollsWidgetComponent implements OnInit {
     return this.poll;
   }
 
-  submit() {
+  async submit() {
     if (this.wiofPollsForm.valid) {
       const polls = Polls.createByForm(
         this.poll,
@@ -75,7 +75,7 @@ export class PollsWidgetComponent implements OnInit {
         this.IP4.ip,
         this.IP6.ip
       );
-      this.showLoader("Saving your vote...");
+      await this.showLoader("Saving your vote...");
       this.pollsService
         .savePolls(polls)
         .pipe(

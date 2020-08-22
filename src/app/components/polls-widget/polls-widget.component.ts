@@ -113,8 +113,6 @@ export class PollsWidgetComponent implements OnInit {
     } else {
       this.showError();
     }
-
-    // this.subscribeButton=true;
   }
 
   showError() {

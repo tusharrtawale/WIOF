@@ -24,13 +24,14 @@ export class VideosPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.route.params.subscribe((paramsMap) => {
-      if (paramsMap["element"]) {
-        this.category = PAGE_CATEGORY_MAP[paramsMap["element"]];
+    this.route.paramMap.subscribe((params) => {
+      if (params.has("element")) {
+        const element = params.get("element");
         this.videos = this.videoService.getYoutubePlaylist(
-          ELEMENT_VIDEOS_PLAYLIST_ID[paramsMap["element"]]
+          ELEMENT_VIDEOS_PLAYLIST_ID[element]
         );
-        this.elementThemeClass = paramsMap["element"];
+        this.category = PAGE_CATEGORY_MAP[element];
+        this.elementThemeClass = element;
       }
     });
   }

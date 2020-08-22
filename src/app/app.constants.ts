@@ -26,6 +26,7 @@ export const ELEMENT_SELECT = {
   EARTH: "earth",
   FIRE: "fire",
   SPIRIT: "spirit",
+  CONFIG:"config"
 };
 
 export const AQI_WIDGET_LOCATIONS = {
@@ -132,6 +133,7 @@ export const VIDEO_PLAYER_TITLES = {
   EARTH: "What is Food pH?",
   FIRE: "Energy consumption ranking from 1990 to 2017",
   SPIRIT: "What is Emotional Intelligence?",
+  CONFIG:"About WorldIsOneFamily.com"
 };
 
 export const VIDEO_PLAYER_VIDEOS = {
@@ -140,6 +142,7 @@ export const VIDEO_PLAYER_VIDEOS = {
   EARTH: "LrLrOYLAwWY",
   FIRE: "L6murPEFbXg",
   SPIRIT: "LgUCyWhJf6s",
+  CONFIG:"LgUCyWhJf6s"
 };
 
 //TODO try to find another way

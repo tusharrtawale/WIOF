@@ -85,6 +85,18 @@
   }
 }
 
+.wiof-config {
+  background-color: $dark-color;
+  .title-text {
+    font-size: 20px;
+    font-weight: 500;
+    color:$light-color;
+  }
+  &.background {
+    background-color: rgba($dark-color, $tint-fraction);
+  }
+}
+
 .wiof-video-player-header {
   border-bottom: white 2px solid;
 }

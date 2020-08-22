@@ -1,9 +1,17 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>discoverMore</ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<app-header></app-header>
 <ion-content>
-
+  <ion-row>
+    <ion-col size="10">
+      <h1 class="wiof-take-action">
+        Discover More
+      </h1>
+    </ion-col>
+    <ion-col size="2" style="text-align: right;">
+      <app-back-button style="padding:auto 0;"></app-back-button>
+    </ion-col>
+    <ion-col size="12">
+      <app-video-widget [element]="'config'"></app-video-widget>
+    </ion-col>
+  </ion-row>
+  <app-wiof-footer></app-wiof-footer>
 </ion-content>

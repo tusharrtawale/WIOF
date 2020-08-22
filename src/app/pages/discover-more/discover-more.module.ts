@@ -8,12 +8,15 @@ import { DiscoverMorePageRoutingModule } from './discover-more-routing.module';
 
 import { DiscoverMorePage } from './discover-more.page';
 
+import { AppCommonModule} from '../../app-common.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    DiscoverMorePageRoutingModule
+    DiscoverMorePageRoutingModule,
+    AppCommonModule
   ],
   declarations: [DiscoverMorePage]
 })

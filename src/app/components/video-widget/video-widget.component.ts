@@ -41,6 +41,8 @@ export class VideoWidgetComponent implements OnInit {
       this.videoPlayerTitle = VIDEO_PLAYER_TITLES.FIRE;
     } else if (this.element === ELEMENT_SELECT.SPIRIT) {
       this.videoPlayerTitle = VIDEO_PLAYER_TITLES.SPIRIT;
+    } else if (this.element === ELEMENT_SELECT.CONFIG) {
+      this.videoPlayerTitle = VIDEO_PLAYER_TITLES.CONFIG;
     }
   }
   setVideoLink() {
@@ -54,6 +56,8 @@ export class VideoWidgetComponent implements OnInit {
       this.videoLink = VIDEO_PLAYER_VIDEOS.FIRE;
     } else if (this.element === ELEMENT_SELECT.SPIRIT) {
       this.videoLink = VIDEO_PLAYER_VIDEOS.SPIRIT;
+    } else if (this.element === ELEMENT_SELECT.CONFIG) {
+      this.videoLink = VIDEO_PLAYER_VIDEOS.CONFIG;
     }
   }
 }

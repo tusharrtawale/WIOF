@@ -1,14 +1,16 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 import { ActivatedRoute } from "@angular/router";
 import { YoutubeVideoService } from "../../services/youtube-video.service";
+import { Subject } from "rxjs";
+import { takeUntil } from "rxjs/operators";
 
 @Component({
   selector: "app-video-post",
   templateUrl: "./video-post.page.html",
   styleUrls: ["./video-post.page.scss"],
 })
-export class VideoPostPage implements OnInit {
+export class VideoPostPage implements OnInit, OnDestroy {
   videoUrl: string = "";
   urlSafe: SafeResourceUrl;
   id: String;
@@ -17,6 +19,7 @@ export class VideoPostPage implements OnInit {
   videoTitle: String;
   videoChannelName: String;
   videoDescription: String;
+  destroy$: Subject<boolean> = new Subject();
 
   constructor(
     private route: ActivatedRoute,
@@ -32,19 +35,27 @@ export class VideoPostPage implements OnInit {
         this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(
           this.videoUrl
         );
-        this.videoService.getYoutubeVideo(this.id).subscribe((data) => {
-          this.video = data;
-          let { items } = this.video;
+        this.videoService
+          .getYoutubeVideo(this.id)
+          .pipe(takeUntil(this.destroy$))
+          .subscribe((data) => {
+            this.video = data;
+            let { items } = this.video;
 
-          items.map((itemData) => {
-            this.vid = itemData;
-            let { snippet } = this.vid;
-            this.videoTitle = snippet.title;
-            this.videoDescription = snippet.description;
-            this.videoChannelName = snippet.title;
+            items.map((itemData) => {
+              this.vid = itemData;
+              let { snippet } = this.vid;
+              this.videoTitle = snippet.title;
+              this.videoDescription = snippet.description;
+              this.videoChannelName = snippet.title;
+            });
           });
-        });
       }
     });
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next(true);
+    this.destroy$.unsubscribe();
   }
 }

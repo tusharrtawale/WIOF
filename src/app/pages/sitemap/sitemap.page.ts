@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Blog } from 'src/app/models/Blog';
 
 @Component({
   selector: 'app-sitemap',

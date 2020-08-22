@@ -24,18 +24,31 @@
   background: url("../../../assets/Earth_Banner.jpg");
   outline: none;
   @include page-welcome-img;
+  @media only screen and (max-width: 768px) {
+    background-position: -250px;
+  }
 }
 
 .fire-welcome-img {
   background: url("../../../assets/Energy_Banner.jpg");
   outline: none;
   @include page-welcome-img;
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (max-width: 768px) {
+    background-position: -150px;
+  }
 }
 
 .spirit-welcome-img {
   background: url("../../../assets/Spirit_Banner.png");
   outline: none;
   @include page-welcome-img;
+  @media only screen and (max-width: 768px) {
+    background-position: -10px;
+  }
+  @media only screen and (max-width: 700px) {
+    background-position: 27% -50px;
+  }
 }
 
 .water-welcome-img {

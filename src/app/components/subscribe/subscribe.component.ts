@@ -32,10 +32,10 @@ export class SubscribeComponent implements OnInit {
     });
   }
 
-  onSubmit() {
+  async onSubmit() {
     if (this.addSubscriberForm.valid) {
       const subscriber = Subscriber.createByForm(this.addSubscriberForm);
-      this.showLoader("Saving your subscription...");
+      await this.showLoader("Saving your subscription...");
       this.subscribeService
         .saveSubscriber(subscriber)
         .pipe(

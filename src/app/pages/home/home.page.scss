@@ -70,6 +70,15 @@ $breakpoint-tablet: 767px;
   height: 310px;
   text-align: center;
   padding-top: 50px;
+  @media only screen and (min-width: 200px) {
+    background-position: 53%;
+  }
+  @media only screen and (min-width: 768px) {
+    background-position: 56%;
+  }
+  @media only screen and (min-width: 1024px) {
+    background-position: 68%;
+  }
 }
 
 .landing-card {

@@ -22,11 +22,11 @@ export class BlogsPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.route.params.subscribe((paramsMap) => {
-      if (paramsMap["element"]) {
-        this.category = PAGE_CATEGORY_MAP[paramsMap["element"]];
+    this.route.paramMap.subscribe((params) => {
+      if (params.has("element")) {
         this.blogs = this.blogService.getBlogs(this.category);
-        this.elementThemeClass = paramsMap["element"];
+        this.category = PAGE_CATEGORY_MAP[params.get("element")];
+        this.elementThemeClass = params.get("element");
       }
     });
   }

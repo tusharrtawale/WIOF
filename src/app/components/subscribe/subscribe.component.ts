@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { AlertController, LoadingController } from "@ionic/angular";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { throwError } from "rxjs";
+import { throwError, Subject } from "rxjs";
 import { Subscriber } from "../../models/Subscriber";
-import { catchError, map } from "rxjs/operators";
+import { catchError, map, takeUntil } from "rxjs/operators";
 import { SubscriptionService } from "../../services/subscription.service";
 
 @Component({
@@ -16,6 +16,7 @@ export class SubscribeComponent implements OnInit {
   subscribeButton: Boolean;
   error: String;
   loader;
+  destroy$: Subject<boolean> = new Subject();
 
   constructor(
     private alertCtrl: AlertController,
@@ -39,6 +40,7 @@ export class SubscribeComponent implements OnInit {
       this.subscribeService
         .saveSubscriber(subscriber)
         .pipe(
+          takeUntil(this.destroy$),
           map((subscribeRes) => {
             return subscribeRes;
           }),
@@ -91,5 +93,10 @@ export class SubscribeComponent implements OnInit {
       message: message,
     });
     this.loader.present();
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next(true);
+    this.destroy$.unsubscribe();
   }
 }

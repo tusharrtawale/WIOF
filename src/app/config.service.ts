@@ -13,12 +13,11 @@ import { FIREBASE_COLLECTION } from "./app.constants";
 export class ConfigService {
   congifCollection: AngularFirestoreCollection<any>;
 
-  constructor(
-    public database: AngularFirestore
-  ) {
-    this.congifCollection = this.database.collection(FIREBASE_COLLECTION.CONFIG);
+  constructor(public database: AngularFirestore) {
+    this.congifCollection = this.database.collection(
+      FIREBASE_COLLECTION.CONFIG
+    );
   }
-
 
   getConfig(file: string): Observable<any> {
     const configCollectionByCategory = this.database.collection(

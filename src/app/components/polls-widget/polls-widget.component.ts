@@ -1,7 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { map, catchError } from "rxjs/operators";
-import { throwError } from "rxjs";
+import { map, catchError, takeUntil } from "rxjs/operators";
+import { throwError, Subject } from "rxjs";
 import { Polls } from "../../models/Polls";
 import { Poll } from "../../models/Poll";
 import { PollsService } from "../../services/polls.service";
@@ -14,7 +14,7 @@ import { AlertController, LoadingController } from "@ionic/angular";
   templateUrl: "./polls-widget.component.html",
   styleUrls: ["./polls-widget.component.scss"],
 })
-export class PollsWidgetComponent implements OnInit {
+export class PollsWidgetComponent implements OnInit, OnDestroy {
   poll: Poll;
   pollAllPublished: Poll[];
   IP4: any;
@@ -23,6 +23,7 @@ export class PollsWidgetComponent implements OnInit {
   showForm: boolean = true;
   errorShow: boolean = false;
   loader;
+  destroy$: Subject<boolean> = new Subject();
 
   wiofPollsForm: FormGroup;
   constructor(
@@ -38,12 +39,18 @@ export class PollsWidgetComponent implements OnInit {
       name: new FormControl("", [Validators.required]),
       option: new FormControl("", [Validators.required]),
     });
-    this.ip.getIp4().subscribe((ipData) => {
-      this.IP4 = ipData;
-    });
-    this.ip.getIp6().subscribe((ipData) => {
-      this.IP6 = ipData;
-    });
+    this.ip
+      .getIp4()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((ipData) => {
+        this.IP4 = ipData;
+      });
+    this.ip
+      .getIp6()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((ipData) => {
+        this.IP6 = ipData;
+      });
 
     this.poll = {
       pollId: "kjsfdkjh",
@@ -59,11 +66,13 @@ export class PollsWidgetComponent implements OnInit {
   }
 
   getPolls() {
-    // this.pollService.getPoll().subscribe(data => this.pollAllPublished=data);
-    this.pollService.getPoll().subscribe((data) => {
-      this.pollAllPublished = data;
-      this.poll = this.pollAllPublished[0];
-    });
+    this.pollService
+      .getPoll()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((data) => {
+        this.pollAllPublished = data;
+        this.poll = this.pollAllPublished[0];
+      });
     return this.poll;
   }
 
@@ -79,6 +88,7 @@ export class PollsWidgetComponent implements OnInit {
       this.pollsService
         .savePolls(polls)
         .pipe(
+          takeUntil(this.destroy$),
           map((pollsRes) => {
             return pollsRes;
           }),
@@ -134,5 +144,10 @@ export class PollsWidgetComponent implements OnInit {
       message: message,
     });
     this.loader.present();
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next(true);
+    this.destroy$.unsubscribe();
   }
 }

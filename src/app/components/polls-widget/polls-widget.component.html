@@ -7,7 +7,7 @@
   <ion-card-content class="wiof-polls-widget-card-background">
     <div *ngIf="showForm">
       <form [formGroup]="wiofPollsForm" (submit)="submit()">
-        <label for="name">Please enter your name : </label><br/>
+        <label for="name">Please enter your name : </label><br />
         <input
           formControlName="name"
           id="name"
@@ -15,8 +15,10 @@
           placeholder="Name"
         />
         <br />
-        <p style="font-size: large;">Question: {{ poll.question }}</p><br/>
-        <p style="font-size: large;">Options:</p><br/>
+        <p style="font-size: large;">Question: {{ poll.question }}</p>
+        <br />
+        <p style="font-size: large;">Options:</p>
+        <br />
         <input
           type="radio"
           id="option 1"

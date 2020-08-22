@@ -31,7 +31,7 @@ export class EnergyWidgetComponent implements OnInit {
       this.unitnull = false;
       this.Consumptionnull = false;
       this.KgsofCO2 = this.EnergyConsumption * 612;
-      
+
       this.litresofPetrol = this.KgsofCO2 / 2.296;
       this.litresofDiesel = this.KgsofCO2 / 2.653;
 
@@ -63,7 +63,10 @@ export class EnergyWidgetComponent implements OnInit {
     } else if (this.EnergyConsumption > 0 && this.Selectedunit === "") {
       this.unitnull = true;
       this.Consumptionnull = false;
-    } else if (this.EnergyConsumption === undefined && this.Selectedunit === "") {
+    } else if (
+      this.EnergyConsumption === undefined &&
+      this.Selectedunit === ""
+    ) {
       this.unitnull = true;
       this.Consumptionnull = true;
     }

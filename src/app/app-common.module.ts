@@ -25,7 +25,7 @@ import { VideoWidgetComponent } from "./components/video-widget/video-widget.com
 import { WaterWidgetComponent } from "./components/water-widget/water-widget.component";
 import { WiofFooterComponent } from "./components/wiof-footer/wiof-footer.component";
 import { WiofSpinnerComponent } from "./components/wiof-spinner/wiof-spinner.component";
-import { VideoCardComponent } from './components/video-card/video-card.component';
+import { VideoCardComponent } from "./components/video-card/video-card.component";
 
 @NgModule({
   imports: [
@@ -64,7 +64,7 @@ import { VideoCardComponent } from './components/video-card/video-card.component
     WiofSpinnerComponent,
     BackButtonComponent,
     SocialShareComponent,
-    VideoCardComponent
+    VideoCardComponent,
   ],
   declarations: [
     HeaderComponent,
@@ -89,7 +89,7 @@ import { VideoCardComponent } from './components/video-card/video-card.component
     WiofSpinnerComponent,
     BackButtonComponent,
     SocialShareComponent,
-    VideoCardComponent
+    VideoCardComponent,
   ],
   providers: [],
 })

@@ -1,14 +1,14 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
 
-import { IonicModule } from '@ionic/angular';
+import { IonicModule } from "@ionic/angular";
 
-import { DiscoverMorePageRoutingModule } from './discover-more-routing.module';
+import { DiscoverMorePageRoutingModule } from "./discover-more-routing.module";
 
-import { DiscoverMorePage } from './discover-more.page';
+import { DiscoverMorePage } from "./discover-more.page";
 
-import { AppCommonModule} from '../../app-common.module';
+import { AppCommonModule } from "../../app-common.module";
 
 @NgModule({
   imports: [
@@ -16,8 +16,8 @@ import { AppCommonModule} from '../../app-common.module';
     FormsModule,
     IonicModule,
     DiscoverMorePageRoutingModule,
-    AppCommonModule
+    AppCommonModule,
   ],
-  declarations: [DiscoverMorePage]
+  declarations: [DiscoverMorePage],
 })
 export class DiscoverMorePageModule {}

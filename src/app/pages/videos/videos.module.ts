@@ -7,7 +7,7 @@ import { IonicModule } from "@ionic/angular";
 import { VideosPageRoutingModule } from "./videos-routing.module";
 
 import { VideosPage } from "./videos.page";
-import { AppCommonModule } from 'src/app/app-common.module';
+import { AppCommonModule } from "src/app/app-common.module";
 
 @NgModule({
   imports: [

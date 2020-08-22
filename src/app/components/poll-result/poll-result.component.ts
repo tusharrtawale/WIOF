@@ -13,20 +13,12 @@ import { takeUntil } from "rxjs/operators";
 export class PollResultComponent implements OnInit, OnDestroy {
   @Input() pollId: string;
   destroy$: Subject<boolean> = new Subject();
-  optApercent = "0%";
-  optBpercent = "0%";
-  optCpercent = "0%";
-  optDpercent = "0%";
+  optApercent = 0;
+  optBpercent = 0;
+  optCpercent = 0;
+  optDpercent = 0;
   pollsArray: Polls[];
-  pollObject: Poll = {
-    pollId: "",
-    question: "",
-    option1: "",
-    option2: "",
-    option3: "",
-    option4: "",
-    status: "",
-  };
+  pollObject: Poll = {} as Poll;
 
   optArray: number[] = [0, 0, 0, 0];
   optPercentageArray: number[] = [];
@@ -49,21 +41,18 @@ export class PollResultComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe((data) => {
         this.pollsArray = data;
-        this.pollObject = data[0].poll;
+        this.pollObject = data[data.length - 1].poll;
         this.checkVote();
         this.optArray.forEach((x) => (this.total += x));
         this.optArray.forEach((x) => {
           const percent = (x / this.total) * 100;
           this.optPercentageArray.push(percent);
         });
-        this.optApercent = this.optPercentageArray[0].toString() + "%";
-        this.optBpercent = this.optPercentageArray[1].toString() + "%";
-        this.optCpercent = this.optPercentageArray[2].toString() + "%";
-        this.optDpercent = this.optPercentageArray[3].toString() + "%";
+        this.optApercent = this.optPercentageArray[0];
+        this.optBpercent = this.optPercentageArray[1];
+        this.optCpercent = this.optPercentageArray[2];
+        this.optDpercent = this.optPercentageArray[3];
       });
-    //reduce for each opt
-    //assign to votesCount Obj
-    //calculate using votesCount.optX and votesCount.total
   }
 
   checkVote() {

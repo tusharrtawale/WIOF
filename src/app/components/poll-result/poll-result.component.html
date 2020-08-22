@@ -1,22 +1,36 @@
-<p style="font-size: x-large;">Poll Results</p>
-<p style="font-size: large;">Question: {{ pollObject.question }}</p>
-<p style="font-size: large;">Options:</p>
-<ion-label>{{ pollObject.option1 | titlecase }}</ion-label>
-<div class="poll-bar">
-  <div class="poll-bar-fill" [style.width]="optApercent"></div>
-</div>
-<br />
-<ion-label>{{ pollObject.option2 | titlecase }}</ion-label>
-<div class="poll-bar">
-  <div class="poll-bar-fill" [style.width]="optBpercent"></div>
-</div>
-<br />
-<ion-label>{{ pollObject.option3 | titlecase }}</ion-label>
-<div class="poll-bar">
-  <div class="poll-bar-fill" [style.width]="optCpercent"></div>
-</div>
-<br />
-<ion-label>{{ pollObject.option4 | titlecase }}</ion-label>
-<div class="poll-bar">
-  <div class="poll-bar-fill" [style.width]="optDpercent"></div>
+<div>
+  <p class="title-text">Poll Results</p>
+  <p style="font-size: medium;">
+    Question: <span style="font-size: large;">{{ pollObject.question }}</span>
+  </p>
+  <br/>
+  <p style="font-size: medium;">Options:</p>
+  <ion-label>{{ pollObject.option1 | titlecase }}</ion-label>
+  <!--TODO move this to directive or component-->
+  <div class="poll-bar">
+    <div class="poll-bar-fill" [style.width]="optApercent + '%'">
+      <span class="poll-percent">{{ optApercent | number: "1.0-2" }}%</span>
+    </div>
+  </div>
+
+  <ion-label>{{ pollObject.option2 | titlecase }}</ion-label>
+  <div class="poll-bar">
+    <div class="poll-bar-fill" [style.width]="optBpercent + '%'">
+      <span class="poll-percent">{{ optBpercent | number: "1.0-2" }}%</span>
+    </div>
+  </div>
+
+  <ion-label>{{ pollObject.option3 | titlecase }}</ion-label>
+  <div class="poll-bar">
+    <div class="poll-bar-fill" [style.width]="optCpercent + '%'">
+      <span class="poll-percent">{{ optCpercent | number: "1.0-2" }}%</span>
+    </div>
+  </div>
+
+  <ion-label>{{ pollObject.option4 | titlecase }}</ion-label>
+  <div class="poll-bar">
+    <div class="poll-bar-fill" [style.width]="optDpercent + '%'">
+      <span class="poll-percent">{{ optDpercent | number: "1.0-2" }}%</span>
+    </div>
+  </div>
 </div>

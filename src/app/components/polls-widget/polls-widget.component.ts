@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { map, catchError, takeUntil } from "rxjs/operators";
-import { throwError, Subject } from "rxjs";
+import { throwError, Subject, forkJoin, pipe, combineLatest } from "rxjs";
 import { Polls } from "../../models/Polls";
 import { Poll } from "../../models/Poll";
 import { PollsService } from "../../services/polls.service";
@@ -16,7 +16,6 @@ import { AlertController, LoadingController } from "@ionic/angular";
 })
 export class PollsWidgetComponent implements OnInit, OnDestroy {
   poll: Poll;
-  pollAllPublished: Poll[];
   IP4: any;
   IP6: any;
   showPollResult: boolean = false;
@@ -39,41 +38,15 @@ export class PollsWidgetComponent implements OnInit, OnDestroy {
       name: new FormControl("", [Validators.required]),
       option: new FormControl("", [Validators.required]),
     });
-    this.ip
-      .getIp4()
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((ipData) => {
-        this.IP4 = ipData;
+    
+    this.poll = {} as Poll;
+    combineLatest([this.ip.getIp4(), this.ip.getIp6(), this.pollService.getPoll()])
+      .pipe(takeUntil(this.destroy$), map(data => data))
+      .subscribe(([ip4Data, ip6Data, pollData]) => {
+        this.IP4 = ip4Data;
+        this.IP6 = ip6Data;
+        this.poll = pollData[0];
       });
-    this.ip
-      .getIp6()
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((ipData) => {
-        this.IP6 = ipData;
-      });
-
-    this.poll = {
-      pollId: "kjsfdkjh",
-      question: "",
-      status: "",
-      option1: "",
-      option2: "",
-      option3: "",
-      option4: "",
-    };
-
-    this.getPolls();
-  }
-
-  getPolls() {
-    this.pollService
-      .getPoll()
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((data) => {
-        this.pollAllPublished = data;
-        this.poll = this.pollAllPublished[0];
-      });
-    return this.poll;
   }
 
   async submit() {

@@ -4,12 +4,20 @@
   height: 20px;
   width: 300px;
   border: solid black 2px;
+  margin-bottom: 5px;
 }
 .poll-bar-fill {
   transition: 1s;
   height: 16px;
   border-right: solid black 2px;
   background-color: $home-color;
+}
+
+.poll-percent {
+  left: 10%;
+  position: absolute;
+  font-size: 11px;
+  color: white;
 }
 
 .wiof-polls-widget-card-background {

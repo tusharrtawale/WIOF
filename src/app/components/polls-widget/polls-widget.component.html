@@ -7,18 +7,21 @@
   <ion-card-content class="wiof-polls-widget-card-background">
     <div *ngIf="showForm">
       <form [formGroup]="wiofPollsForm" (submit)="submit()">
-        <label for="name">Please enter your name : </label><br />
-        <input
-          formControlName="name"
-          id="name"
-          name="name"
-          placeholder="Name"
-        />
+        <p>
+          <label for="name">Please enter your name : </label><br />
+          <input
+            formControlName="name"
+            id="name"
+            name="name"
+            placeholder="Name"
+          />
+        </p>
         <br />
-        <p style="font-size: large;">Question: {{ poll.question }}</p>
+        <p style="font-size: medium;">
+          Question: <span style="font-size: large;">{{ poll.question }}</span>
+        </p>
         <br />
-        <p style="font-size: large;">Options:</p>
-        <br />
+        <p style="font-size: medium;">Options:</p>
         <input
           type="radio"
           id="option 1"

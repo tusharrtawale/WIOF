@@ -15,6 +15,16 @@ const routes: Routes = [
     pathMatch: "full",
   },
   {
+    path:"element/:element/blogs/blog",
+    redirectTo:"element/:element/blog",
+    pathMatch:"prefix"
+  },
+  {
+    path:"element/:element/videos/video",
+    redirectTo:"element/:element/video",
+    pathMatch:"prefix"
+  },
+  {
     path: "element/earth",
     loadChildren: () =>
       import("./pages/earth/earth.module").then((m) => m.EarthPageModule),
@@ -62,6 +72,7 @@ const routes: Routes = [
     loadChildren: () =>
       import("./pages/blogs/blogs.module").then((m) => m.BlogsPageModule),
   },
+  
   {
     path: "element/:element/videos",
     loadChildren: () =>

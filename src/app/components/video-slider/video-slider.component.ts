@@ -75,11 +75,5 @@ export class VideoSliderComponent implements OnInit {
 
       }
 
-    // if (this.videoList.length<6){
-    //   return false;
-    // }
-    // else {
-    //   return true;
-    // }
   }
 }

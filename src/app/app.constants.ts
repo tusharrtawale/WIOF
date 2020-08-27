@@ -142,7 +142,7 @@ export const VIDEO_PLAYER_VIDEOS = {
   EARTH: "LrLrOYLAwWY",
   FIRE: "L6murPEFbXg",
   SPIRIT: "LgUCyWhJf6s",
-  CONFIG:"hS1xw3R6_hA"
+  CONFIG:"pCbvwGJk3oE"
 };
 
 //TODO try to find another way

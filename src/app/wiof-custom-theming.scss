@@ -24,6 +24,7 @@ $light-color: #fff;
   color: rgba(0, 0, 255, 0.602);
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 255, 0.602);
+  transition: 0.2s;
   vertical-align: -webkit-baseline-middle;
 
   &:hover {

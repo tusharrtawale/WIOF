@@ -16,7 +16,7 @@ import { ActivatedRoute } from "@angular/router";
 export class VideosPage implements OnInit {
   videos: Observable<Video[]>;
   category: string;
-  elementThemeClass: string;
+  element: string;
 
   constructor(
     private videoService: YoutubeVideoService,
@@ -31,7 +31,7 @@ export class VideosPage implements OnInit {
           ELEMENT_VIDEOS_PLAYLIST_ID[element]
         );
         this.category = PAGE_CATEGORY_MAP[element];
-        this.elementThemeClass = element;
+        this.element = element;
       }
     });
   }

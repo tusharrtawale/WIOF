@@ -8,7 +8,7 @@ import { Video } from "src/app/models/Video";
 })
 export class VideoCardComponent implements OnInit {
   @Input() video: Video;
-  @Input() elementThemeClass: string;
+  @Input() element: string;
 
   constructor() {}
 

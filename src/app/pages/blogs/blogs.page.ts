@@ -14,7 +14,7 @@ export class BlogsPage implements OnInit {
   blogs: Observable<Blog[]>;
   category: string = "";
   isLoading: boolean = false;
-  elementThemeClass: string;
+  element: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -25,7 +25,7 @@ export class BlogsPage implements OnInit {
     this.route.paramMap.subscribe((params) => {
       if (params.has("element")) {
         this.category = PAGE_CATEGORY_MAP[params.get("element")];
-        this.elementThemeClass = params.get("element");
+        this.element = params.get("element");
         this.blogs = this.blogService.getBlogs(this.category);
       }
     });

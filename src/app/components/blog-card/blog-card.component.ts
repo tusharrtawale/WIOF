@@ -8,7 +8,7 @@ import { Blog } from "src/app/models/Blog";
 })
 export class BlogCardComponent implements OnInit {
   @Input() blog: Blog;
-  @Input() elementThemeClass: string;
+  @Input() element: string;
 
   constructor() {}
 

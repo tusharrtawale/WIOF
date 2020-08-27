@@ -3,7 +3,7 @@
     <img [src]="blog.image | async" />
     <h6 class="ion-padding-vertical">
       <strong class="blog-card-title"
-        ><a [routerLink]="['blog', blog.id]">{{ blog.title }}</a></strong
+        ><a [routerLink]="['/element', element, 'blog', blog.id]">{{ blog.title }}</a></strong
       >
     </h6>
     <!-- <ion-label>Category: {{ blog.category }}</ion-label> -->
@@ -12,7 +12,7 @@
       <!-- <a [routerLink]="['blog-post', blog.id]">Read More</a> -->
     </p>
   </ion-card-content>
-  <ion-row class="blog-card-footer" [ngClass]="elementThemeClass">
+  <ion-row class="blog-card-footer" [ngClass]="element">
     <ion-col>
       <ion-buttons>
         <ion-button [routerLink]="['take-action']">

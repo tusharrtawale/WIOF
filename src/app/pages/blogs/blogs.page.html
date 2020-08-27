@@ -1,13 +1,13 @@
 <app-header></app-header>
 
 <ion-content>
-  <h1 class="ion-padding blogs-header" [ngClass]="elementThemeClass">
+  <h1 class="ion-padding blogs-header" [ngClass]="element">
     {{category}} Blogs
   </h1>
   <div
     *ngIf="blogs | async as blogList; else loading"
     class="blogs-content"
-    [ngClass]="elementThemeClass"
+    [ngClass]="element"
   >
     <ion-grid *ngIf="blogList.length > 0">
       <ion-row>
@@ -20,7 +20,7 @@
         >
           <app-blog-card
             [blog]="blog"
-            [elementThemeClass]="elementThemeClass"
+            [element]="element"
           ></app-blog-card>
         </ion-col>
       </ion-row>

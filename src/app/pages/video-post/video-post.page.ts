@@ -20,6 +20,7 @@ export class VideoPostPage implements OnInit, OnDestroy {
   videoChannelName: String;
   videoDescription: String;
   destroy$: Subject<boolean> = new Subject();
+  showFullVideoDescription:boolean=true;
 
   constructor(
     private route: ActivatedRoute,
@@ -57,5 +58,10 @@ export class VideoPostPage implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next(true);
     this.destroy$.unsubscribe();
+  }
+
+  toggleVideoDescription(){
+    this.showFullVideoDescription=!this.showFullVideoDescription;
+
   }
 }

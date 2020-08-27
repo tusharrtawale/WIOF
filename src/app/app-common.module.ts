@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { IonicModule } from "@ionic/angular";
 import { AqiScorecardComponent } from "./components/aqi-scorecard/aqi-scorecard.component";
+import { ConcentPopupComponent } from "./components/concent-popup/concent-popup.component";
 import { AqiWidgetComponent } from "./components/aqi-widget/aqi-widget.component";
 import { BlogCardComponent } from "./components/blog-card/blog-card.component";
 import { BlogSliderComponent } from "./components/blog-slider/blog-slider.component";
@@ -45,6 +46,7 @@ import { VideoCardComponent } from "./components/video-card/video-card.component
     VideoSliderComponent,
     BlogSliderComponent,
     BlogCardComponent,
+    ConcentPopupComponent,
     ElementWelcomeImageComponent,
     EnvCalenderComponent,
     AqiWidgetComponent,
@@ -73,6 +75,7 @@ import { VideoCardComponent } from "./components/video-card/video-card.component
     VideoSliderComponent,
     BlogSliderComponent,
     BlogCardComponent,
+    ConcentPopupComponent,
     ElementWelcomeImageComponent,
     EnvCalenderComponent,
     AqiWidgetComponent,

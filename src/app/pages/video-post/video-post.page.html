@@ -27,9 +27,13 @@
             >
           </ion-col>
           <ion-col size="12">
-            <ion-text style="text-align: justify; text-justify: inter-word;"
+            <ion-text style="text-align: justify; text-justify: inter-word; color:#2D2D2D;" [ngClass]="{'video-description-content-hide':showFullVideoDescription}" *ngIf="videoDescription"
               >Description: {{videoDescription}}</ion-text
             >
+          </ion-col>
+          <ion-col size="12" style="text-align: right;">          
+              <p class="toggleVideoDescription" *ngIf="showFullVideoDescription" (click)="toggleVideoDescription()" >Show More</p>
+              <p class="toggleVideoDescription" *ngIf="!showFullVideoDescription" (click)="toggleVideoDescription()">Show Less</p>            
           </ion-col>
         </ion-row>
 

@@ -13,6 +13,19 @@
   text-overflow: ellipsis;
 }
 
+
+.navigation-arrow-custom-styling{
+  opacity:40%;
+  transition:0.6s;
+  background-color: rgba(85, 83, 83, 0.4);
+  border-radius: 5px;  
+  height: 70px;
+  &:hover{
+    opacity: 100%;
+    background-color: rgba(85, 83, 83, 0.1);
+  }
+}
+
 .blog-card-content {
   display: -webkit-box;
   height: 60px;

@@ -9,6 +9,22 @@
   }
 }
 
+
+.video-description-content-hide {
+  display: -webkit-box;
+  height: 60px;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.toggleVideoDescription{
+  color:rgb(47, 128, 233);
+  cursor: pointer;
+}
+
+
 @media (min-width: 351px) and (max-width: 575px) {
   .videoPlayer {
     height: 324px;

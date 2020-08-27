@@ -46,12 +46,14 @@
         </ion-slide>
       </ion-slides>
       <div
-        class="swiper-button-prev"
+        class="swiper-button-prev navigation-arrow-custom-styling"
         (click)="wiofBlogSlider.slidePrev()"
+        *ngIf="showNavigator()"
       ></div>
       <div
-        class="swiper-button-next"
+        class="swiper-button-next navigation-arrow-custom-styling"
         (click)="wiofBlogSlider.slideNext()"
+        *ngIf="showNavigator()"
       ></div>
     </div>
 

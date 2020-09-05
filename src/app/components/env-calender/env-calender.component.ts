@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { EnvDay } from '../../models/env-cal-data';
 
 @Component({
   selector: "app-env-calender",
@@ -6,152 +7,206 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./env-calender.component.scss"],
 })
 export class EnvCalenderComponent implements OnInit {
-  // today:Date=new Date;
-  // currentMonth:number;
-  // currentYear:number;
-  // months:string[]= ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  // selectYear = document.getElementById("year");  //select in template
-  // selectMonth = document.getElementById("month");  //select in template
 
-  // monthAndYear = document.getElementById("monthAndYear"); //select in template
+  todayDate=new Date();
+  // selectDate=new Date();
+
+  displayMonth:string;
+  displayDay:string;
+
+  days:{class:string,day:string,occasion:any[]}[]=[];
+
+
 
   constructor() {
-    // this.currentMonth=this.today.getMonth();
-    // this.currentYear=this.today.getFullYear();
   }
+
+  EnvDays:EnvDay[];
 
   ngOnInit() {
-    // console.log(this.currentMonth);
+    //test data
+    this.EnvDays=[
+      {
+        month:"4",day:"12",occasion:"tiger day"
+      },
+      {
+        month:"5",day:"15",occasion:"lion day"
+      },
+      {
+        month:"6",day:"18",occasion:"elephant day"
+      },
+      {
+        month:"7",day:"19",occasion:"girraf day"
+      },
+      {
+        month:"8",day:"5",occasion:"camel day"
+      },
+      {
+        month:"8",day:"7",occasion:"camel2 day"
+      },
+      {
+        month:"8",day:"7",occasion:"camel3 day"
+      },
+      {
+        month:"8",day:"16",occasion:"camel4 day"
+      },
+      {
+        month:"8",day:"17",occasion:"camel5 day"
+      }
+    
+
+
+    ];
+      this.renderCalendar();
   }
-}
 
-//   showCalendar(month, year) {
+  getOccasion(day,month){
+    const occasion=new Array;
+    this.EnvDays.forEach(x=> {if ((x.day==day) && (x.month==month)){occasion.push(x.occasion); 
+    }});
+    return occasion;
+  }
 
-//     let firstDay = (new Date(year, month)).getDay();
-//     let daysInMonth = 32 - new Date(year, month, 32).getDate();
+  renderCalendar = () => {
+    this.todayDate.setDate(1);
+    const lastDay=new Date(
+      this.todayDate.getFullYear(),
+      this.todayDate.getMonth()+1,
+      0
+    ).getDate();
+    const prevLastDay=new Date(
+      this.todayDate.getFullYear(),
+      this.todayDate.getMonth(),
+      0
+    ).getDate(); 
+    const firstDayIndex=this.todayDate.getDay();
+    const lastDayIndex=new Date(
+      this.todayDate.getFullYear(),
+      this.todayDate.getMonth()+1,
+      0
+    ).getDate(); 
+    const nextDays=7-lastDayIndex-1;
+    const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    this.displayMonth=months[this.todayDate.getMonth()];
+    this.displayDay=new Date().toDateString();
+      for (let x = firstDayIndex; x > 0; x--) {
+        // this.days.push({class:"prev-date",day:(prevLastDay - x + 1)})
+        this.days.push({class:"day",day:"",occasion:[]})
+      }
+    
+      for (let i = 1; i <= lastDay; i++) {
+          if (
+            i === new Date().getDate() &&
+            this.todayDate.getMonth() === new Date().getMonth()
+          ) {
+            this.days.push({class:"day today",day:String(i),occasion:this.getOccasion(String(i),String(this.todayDate.getMonth()))});            
+          } else {
+            this.days.push({class:"day",day:String(i),occasion:this.getOccasion(String(i),String(this.todayDate.getMonth()))});
+          }
+          
+      }
 
-//      let tbl =(<HTMLInputElement>document.getElementById("calendar-body")).value; // body of the calendar
+    };
 
-//     // clearing all previous cells
-//     tbl.innerHTML = "";
+    prevMonth(){
+      this.todayDate.setMonth(this.todayDate.getMonth() - 1);
+      this.renderCalendar();
+    };
 
-//     // filing data about month and in the page via DOM.
-//     this.monthAndYear.innerHTML = this.months[month] + " " + year;
-//     this.selectYear.value = year;
-//     this.selectMonth. value = month;
+    
+    nextMonth(){
+        this.todayDate.setMonth(this.todayDate.getMonth() + 1);
+        this.renderCalendar();
+      };
 
-//     // creating all cells
-//     let date = 1;
-//     for (let i = 0; i < 6; i++) {
-//         // creates a table row
-//         let row = document.createElement("tr");
 
-//         //creating individual cells, filing them up with data.
-//         for (let j = 0; j < 7; j++) {
-//             if (i === 0 && j < firstDay) {
-//                 let cell = document.createElement("td");
-//                 let cellText = document.createTextNode("");
-//                 cell.appendChild(cellText);
-//                 row.appendChild(cell);
-//             }
-//             else if (date > daysInMonth) {
-//                 break;
-//             }
 
-//             else {
-//                 let cell = document.createElement("td");
-//                 let cellText = document.createTextNode(date);
-//                 if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
-//                     cell.classList.add("bg-info");
-//                 } // color today's date
-//                 cell.appendChild(cellText);
-//                 row.appendChild(cell);
-//                 date++;
-//             }
+  }
 
-//         }
 
-//         tbl.appendChild(row); // appending each row into calendar body.
+//   const date = new Date();
+
+// const renderCalendar = () => {
+//   date.setDate(1);
+
+//   const monthDays = document.querySelector(".days");
+
+//   const lastDay = new Date(
+//     date.getFullYear(),
+//     date.getMonth() + 1,
+//     0
+//   ).getDate();
+
+//   const prevLastDay = new Date(
+//     date.getFullYear(),
+//     date.getMonth(),
+//     0
+//   ).getDate();
+
+//   const firstDayIndex = date.getDay();
+
+//   const lastDayIndex = new Date(
+//     date.getFullYear(),
+//     date.getMonth() + 1,
+//     0
+//   ).getDay();
+
+//   const nextDays = 7 - lastDayIndex - 1;
+
+//   const months = [
+//     "January",
+//     "February",
+//     "March",
+//     "April",
+//     "May",
+//     "June",
+//     "July",
+//     "August",
+//     "September",
+//     "October",
+//     "November",
+//     "December",
+//   ];
+
+//   document.querySelector(".date h1").innerHTML = months[date.getMonth()];
+
+//   document.querySelector(".date p").innerHTML = new Date().toDateString();
+
+//   let days = "";
+
+//   for (let x = firstDayIndex; x > 0; x--) {
+//     days += `<div class="prev-date">${prevLastDay - x + 1}</div>`;
+//   }
+
+//   for (let i = 1; i <= lastDay; i++) {
+//     if (
+//       i === new Date().getDate() &&
+//       date.getMonth() === new Date().getMonth()
+//     ) {
+//       days += `<div class="today">${i}</div>`;
+//     } else {
+//       days += `<div>${i}</div>`;
 //     }
+//   }
 
-// }
+//   for (let j = 1; j <= nextDays; j++) {
+//     days += `<div class="next-date">${j}</div>`;
+//     monthDays.innerHTML = days;
+//   }
+// };
 
-// let today = new Date();
-// let currentMonth = today.getMonth();
-// let currentYear = today.getFullYear();
-// let selectYear = document.getElementById("year");  //select in template
-// let selectMonth = document.getElementById("month");  //select in template
+// document.querySelector(".prev").addEventListener("click", () => {
+//   date.setMonth(date.getMonth() - 1);
+//   renderCalendar();
+// });
 
-// let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+// document.querySelector(".next").addEventListener("click", () => {
+//   date.setMonth(date.getMonth() + 1);
+//   renderCalendar();
+// });
 
-// let monthAndYear = document.getElementById("monthAndYear"); //select in template
-// showCalendar(currentMonth, currentYear);
+// renderCalendar();
 
-// function next() {
-//     currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
-//     currentMonth = (currentMonth + 1) % 12;
-//     showCalendar(currentMonth, currentYear);
-// }
 
-// function previous() {
-//     currentYear = (currentMonth === 0) ? currentYear - 1 : currentYear;
-//     currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
-//     showCalendar(currentMonth, currentYear);
-// }
 
-// function jump() {
-//     currentYear = parseInt(selectYear.value);
-//     currentMonth = parseInt(selectMonth.value);
-//     showCalendar(currentMonth, currentYear);
-// }
 
-// function showCalendar(month, year) {
-
-//     let firstDay = (new Date(year, month)).getDay();
-//     let daysInMonth = 32 - new Date(year, month, 32).getDate();
-
-//     let tbl = document.getElementById("calendar-body"); // body of the calendar
-
-//     // clearing all previous cells
-//     tbl.innerHTML = "";
-
-//     // filing data about month and in the page via DOM.
-//     monthAndYear.innerHTML = months[month] + " " + year;
-//     selectYear.value = year;
-//     selectMonth.value = month;
-
-//     // creating all cells
-//     let date = 1;
-//     for (let i = 0; i < 6; i++) {
-//         // creates a table row
-//         let row = document.createElement("tr");
-
-//         //creating individual cells, filing them up with data.
-//         for (let j = 0; j < 7; j++) {
-//             if (i === 0 && j < firstDay) {
-//                 let cell = document.createElement("td");
-//                 let cellText = document.createTextNode("");
-//                 cell.appendChild(cellText);
-//                 row.appendChild(cell);
-//             }
-//             else if (date > daysInMonth) {
-//                 break;
-//             }
-
-//             else {
-//                 let cell = document.createElement("td");
-//                 let cellText = document.createTextNode(date);
-//                 if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
-//                     cell.classList.add("bg-info");
-//                 } // color today's date
-//                 cell.appendChild(cellText);
-//                 row.appendChild(cell);
-//                 date++;
-//             }
-
-//         }
-
-//         tbl.appendChild(row); // appending each row into calendar body.
-//     }
-
-// }

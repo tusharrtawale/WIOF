@@ -30,17 +30,17 @@ $light-color: #fff;
   &:hover {
     border: 1px solid rgb(43, 43, 209);
     color: #fff;
-    background-color: #2D2D2D;
+    background-color: #2d2d2d;
   }
 }
 
-.navigation-arrow-custom-styling{
-  opacity:0.4;
-  transition:0.6s;
+.navigation-arrow-custom-styling {
+  opacity: 0.4;
+  transition: 0.6s;
   background-color: rgba(85, 83, 83, 0.4);
-  border-radius: 5px;  
+  border-radius: 5px;
   height: 70px;
-  &:hover{
+  &:hover {
     opacity: 1;
     background-color: rgba(85, 83, 83, 0.1);
   }
@@ -86,6 +86,11 @@ $aqi-unhealthy-color: rgb(255, 0, 0);
 $aqi-very-unhealthy-color: rgb(143, 63, 151);
 $aqi-hazardous-color: rgb(126, 0, 35);
 
+$font-size-medium: 18px;
+
+.font-size-medium {
+  font-size: $font-size-medium;
+}
 //setting font color
 // *{
 //   color: $dark-color;

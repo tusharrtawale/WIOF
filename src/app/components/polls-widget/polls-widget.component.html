@@ -8,20 +8,23 @@
     <div *ngIf="showForm">
       <form [formGroup]="wiofPollsForm" (submit)="submit()">
         <p>
-          <label for="name">Please enter your name : </label><br />
+          <label class="font-size-medium" for="name"
+            >Please enter your name :</label
+          ><br />
           <input
             formControlName="name"
             id="name"
             name="name"
             placeholder="Name"
+            class="poll-widget-name-input"
           />
         </p>
         <br />
-        <p style="font-size: medium;">
-          Question: <span style="font-size: large;">{{ poll.question }}</span>
+        <p class="font-size-medium">
+          Question: <span style="font-size: large">{{ poll.question }}</span>
         </p>
         <br />
-        <p style="font-size: medium;">Options:</p>
+        <p class="font-size-medium">Options:</p>
         <input
           type="radio"
           id="option 1"
@@ -65,7 +68,7 @@
         <br />
         <p
           *ngIf="errorShow"
-          style="color: rgb(243, 124, 124) (124, 82, 82); transition: 0.5s;"
+          style="color: rgb(243, 124, 124) (124, 82, 82); transition: 0.5s"
         >
           Please fill all fields correctly
         </p>

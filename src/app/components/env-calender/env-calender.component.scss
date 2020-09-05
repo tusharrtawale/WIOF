@@ -1,20 +1,17 @@
 @import "../../wiof-custom-theming.scss";
 
-@media (max-width: 479px) {
-  .wiof-env-calender-content {
-    padding-top: 15px;
-    height: 220px;
-    text-align: center;
-  }
-}
+.wiof-env-calender-content {
+  padding: 0;
+  overflow: auto;
 
-@media (min-width: 480px) and (max-width: 767px) {
-  .wiof-env-calender-content {
-    padding-top: 15px;
-    height: 320px;
-    text-align: center;
+  .env-calendar-heading {
+    background-color: rgba(128, 64, 0, 0.5);
+    color: #fff;
+    font-size: 20px;
+    padding-left: 15px;
+    height: 40px;
+    padding-top: 5px;
   }
-}
 
 @media (min-width: 768px) {
   .wiof-env-calender-content {
@@ -23,13 +20,18 @@
     text-align: center;
   }
 }
+  .env-calendar-div {
+    height: 400px;
+    width: auto;
 
-.envCal {
-  width: 100%;
-  height: 100%;
-  color: white;
-  margin-top: auto;
-  margin-bottom: auto;
+    @media only screen and (max-width: 1200px) {
+      width: 800px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
 }
 
 .title-text {

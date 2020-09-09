@@ -34,9 +34,28 @@
   }
 }
 
+.wiof-calendar-container
+{
+background-color: antiquewhite;
+// width: 90%;
+margin: 2% 5%;
+background-color: antiquewhite;
+border-radius:4px;
+
+}
+
+.weekday{
+  color:#2D2D2D;
+  text-align: center;
+}
+
 .title-text {
   font-size: 20px;
   font-weight: 500;
+}
+
+.occasion-name{
+  font-size:10px;
 }
 
 .wiof-home {
@@ -51,13 +70,50 @@
 }
 
 .day{
-  border:1px black solid;
+  border:1px antiquewhite solid;
   // width:calc(100%/7);
-  padding: 5.7% 0;
+  // padding: 5.7% 0;
+  background-color: #dfdec9;
+  border-radius:5px;
+  transition: 0.2s;
+  padding: 12px;
   color:#2D2D2D;
   width:calc(100%/7);
-  &.today{
-    background-color: tomato;  
+  &:hover{
+  background-color: #cccbb5;    
   }
+  &.today{
+    background-color: rgba(255, 99, 71, 0.801);  
+    color:purple;
+    &:hover{
+      background-color: rgba(221, 83, 59, 0.801);  
+      // color:rgb(221, 5, 221);
+    }
+  }
+  &.prev-date{
+    color:#616060;
+  }
+  // &.noOccasion{
+  //   // padding: 5.7% 0;
+  // color:purple;
+
+  // }
+  // &.occasion{
+  //   // padding: 5.7% 0;
+  // color:violet;
+
+  // }
+}
+
+.occasionFormatDay{
+  font-size: 15px;
+  color:red;
+}
+
+.noOccasionFormatDay{
+  // color:blue;
+  font-size:25px;
+  text-align: center;
+  padding: 15px;
 }
 

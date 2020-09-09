@@ -25,7 +25,7 @@ export class SubscribeComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.subscribeButton = false;
+    this.subscribeButton = true;
     this.addSubscriberForm = new FormGroup({
       firstName: new FormControl("", [Validators.required]),
       lastName: new FormControl("", [Validators.required]),

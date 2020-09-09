@@ -2,7 +2,7 @@
 
 .wiof-poll-card {
   background-color: rgba($home-color, $tint-fraction);
-  height: 455px;
+  // height: 455px;
 }
 
 .wiof-polls-widget-card-header {
@@ -10,6 +10,23 @@
   border-bottom: white 2px solid;
 }
 
+.polls-container{
+  background-color:  antiquewhite;
+  padding:4%;
+  border-radius: 5px;
+}
+
+.poll-options{
+  background-color:#dfdec9;
+  margin:2%;
+  padding:2%;
+  border-radius: 5px;
+  }
+
+.error{
+  color: rgb(243, 124, 124) (124, 82, 82);
+  transition: 0.5s
+}
 .wiof-polls-widget-card-background {
   color: black;
   font-size: large;

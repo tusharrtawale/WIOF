@@ -122,8 +122,10 @@ export const FIREBASE_COLLECTION = {
   BLOGS: "Blogs",
   SUBSCRIPTIONS: "Subscriptions",
   BLOG_IMAGE_STORAGE: "blog-images",
+  ENVCAL_IMAGE_STORAGE: "environment-calendar",
   POLLS: "Polls",
   POLL: "Poll",
+  ENVCAL:"Envcal",
   CONFIG: "config",
 };
 

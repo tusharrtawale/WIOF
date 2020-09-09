@@ -5,7 +5,7 @@
     </ion-card-title>
   </ion-card-header>
   <ion-card-content class="wiof-polls-widget-card-background">
-    <div *ngIf="showForm">
+    <div *ngIf="showForm" class="polls-container">
       <form [formGroup]="wiofPollsForm" (submit)="submit()">
         <p>
           <label class="font-size-medium" for="name"
@@ -24,26 +24,31 @@
           Question: <span style="font-size: large">{{ poll.question }}</span>
         </p>
         <br />
+        
         <p class="font-size-medium">Options:</p>
-        <input
-          type="radio"
-          id="option 1"
-          name="option"
-          value="option 1"
-          formControlName="option"
-        />
-        <label for="option 1"> {{ poll.option1 | titlecase }}</label
-        ><br />
+        <div class="poll-options">
+          <input
+            type="radio"
+            id="option 1"
+            name="option"
+            value="option 1"
+            formControlName="option"
+          />
+          <label for="option 1"> {{ poll.option1 | titlecase }}</label>
+        </div>
 
-        <input
-          type="radio"
-          id="option 2"
-          name="option"
-          value="option 2"
-          formControlName="option"
-        />
-        <label for="option 2"> {{ poll.option2 | titlecase }}</label
-        ><br />
+        <div class="poll-options">
+          <input
+            type="radio"
+            id="option 2"
+            name="option"
+            value="option 2"
+            formControlName="option"
+          />
+          <label for="option 2"> {{ poll.option2 | titlecase }}</label>
+        </div>
+      
+        <div class="poll-options">
 
         <input
           type="radio"
@@ -53,22 +58,25 @@
           formControlName="option"
         />
         <label for="option 3"> {{ poll.option3 | titlecase }}</label
-        ><br />
+        >
+        </div>
 
-        <input
-          type="radio"
-          id="option 4"
-          name="option"
-          value="option 4"
-          formControlName="option"
-        />
-        <label for="option 4"> {{ poll.option4 | titlecase }}</label
-        ><br />
+        <div class="poll-options">
+
+          <input
+            type="radio"
+            id="option 4"
+            name="option"
+            value="option 4"
+            formControlName="option"
+          />
+          <label for="option 4"> {{ poll.option4 | titlecase }}</label>
+        </div>
 
         <br />
         <p
           *ngIf="errorShow"
-          style="color: rgb(243, 124, 124) (124, 82, 82); transition: 0.5s"
+          class="error"
         >
           Please fill all fields correctly
         </p>

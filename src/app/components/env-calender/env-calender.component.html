@@ -1,39 +1,36 @@
-
 <ion-card class="wiof-home background">
   <ion-card-header class="wiof-env-calender-header wiof-home">
     <ion-card-title class="title-text">
-      <span style="color: white;">Environment Calender</span></ion-card-title
-    >
+      <span style="color: white;">Environment Calender</span></ion-card-title>
   </ion-card-header>
   <ion-card-content class="wiof-env-calender-content background">
-    <ion-grid style="background-color: antiquewhite;">
+    <ion-grid class="wiof-calendar-container">
       <ion-row>
-        <ion-col>
-          <ion-button (click)="prevMonth"> <p> < </p> </ion-button>
-          <p>{{displayDay}} {{displayMonth}}</p>
-          <ion-button (click)="nextMonth"> <p> > </p> </ion-button>
+        <ion-col style="text-align: center;color:#2D2D2D;">
+          <!-- <ion-button (click)="prevMonth()"> <p> < </p> </ion-button> -->
+          <h1>{{displayMonth}}</h1>
+          <p>{{displayDay}}</p>
+          <!-- <ion-button (click)="nextMonth()"> <p> > </p> </ion-button> -->
         </ion-col>
       </ion-row>
           <ion-row>
-            <ion-col class="weekday">Sun</ion-col>
-            <ion-col class="weekday">Mon</ion-col>
-            <ion-col class="weekday">Tue</ion-col>
-            <ion-col class="weekday">Wed</ion-col>
-            <ion-col class="weekday">Thr</ion-col>
-            <ion-col class="weekday">Fri</ion-col>
-            <ion-col class="weekday">Sat</ion-col>
+            <ion-col class="weekday">Sunday</ion-col>
+            <ion-col class="weekday">Monday</ion-col>
+            <ion-col class="weekday">Tueday</ion-col>
+            <ion-col class="weekday">Wednesday</ion-col>
+            <ion-col class="weekday">Thursday</ion-col>
+            <ion-col class="weekday">Friday</ion-col>
+            <ion-col class="weekday">Saturday</ion-col>
           </ion-row>
           <ion-row>
-            <div *ngFor="let day of days" [ngClass]="day.class">
-              
-              <h1>{{day.day}}</h1>
-              <p>{{day.occasion[0]}}</p>
-
+            <div *ngFor="let day of days" [ngClass]="day.class">              
+              <!-- To be done - show month with date, currently its stacking up -->
+              <!-- <h1 [ngClass]="{'occasionFormatDay':day.occasion[0]!=null,'noOccasionFormatDay':day.occasion[0]==null}">{{day.day}} <span *ngIf="day.occasion[0]!=null">{{displayMonth}}</span></h1> -->
+              <h1 [ngClass]="{'occasionFormatDay':day.occasion[0]!=null,'noOccasionFormatDay':day.occasion[0]==null}">{{day.day}}</h1>
+              <p *ngIf="day.occasion[0]" class="occasion-name">{{day.occasion[0]}}</p>
             </div>            
           </ion-row>
     </ion-grid>
-
-
   </ion-card-content>
 </ion-card>
 

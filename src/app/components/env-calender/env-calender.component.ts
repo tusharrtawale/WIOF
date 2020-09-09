@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { EnvDay } from '../../models/env-cal-data';
+import { EnvcalServiceService } from '../../services/envcal-service.service';
 
 @Component({
   selector: "app-env-calender",
@@ -15,59 +16,24 @@ export class EnvCalenderComponent implements OnInit {
   displayDay:string;
 
   days:{class:string,day:string,occasion:any[]}[]=[];
-
-
-
-  constructor() {
-  }
+  constructor(private envDayService:EnvcalServiceService) {}
 
   EnvDays:EnvDay[];
-
   ngOnInit() {
     //test data
-    this.EnvDays=[
-      {
-        month:"4",day:"12",occasion:"tiger day"
-      },
-      {
-        month:"5",day:"15",occasion:"lion day"
-      },
-      {
-        month:"6",day:"18",occasion:"elephant day"
-      },
-      {
-        month:"7",day:"19",occasion:"girraf day"
-      },
-      {
-        month:"8",day:"5",occasion:"camel day"
-      },
-      {
-        month:"8",day:"7",occasion:"camel2 day"
-      },
-      {
-        month:"8",day:"7",occasion:"camel3 day"
-      },
-      {
-        month:"8",day:"16",occasion:"camel4 day"
-      },
-      {
-        month:"8",day:"17",occasion:"camel5 day"
-      }
-    
-
-
-    ];
-      this.renderCalendar();
-  }
+    this.envDayService.getEnvCal(String(this.todayDate.getMonth())).subscribe(data=>{this.EnvDays=data;this.renderCalendar()});
+    // [
+      // {        month:"4",day:"12",occasion:"tiger day"      },      {        month:"5",day:"15",occasion:"lion day"      },      {        month:"6",day:"18",occasion:"elephant day"      },      {        month:"7",day:"19",occasion:"girraf day"      },      {        month:"8",day:"5",occasion:"camel day"      },      {        month:"8",day:"7",occasion:"camel2 day"      },      {        month:"8",day:"7",occasion:"camel3 da sfdasfdsf  faddfdsaffsady"      },      {        month:"8",day:"16",occasion:"camel4 fdfsda day"      },      {        month:"8",day:"17",occasion:"camel5 day"      }    ];
+      // this.renderCalendar();
+    }
 
   getOccasion(day,month){
     const occasion=new Array;
     this.EnvDays.forEach(x=> {if ((x.day==day) && (x.month==month)){occasion.push(x.occasion); 
     }});
-    return occasion;
-  }
+    return occasion; }
 
-  renderCalendar = () => {
+  renderCalendar(){
     this.todayDate.setDate(1);
     const lastDay=new Date(
       this.todayDate.getFullYear(),
@@ -80,44 +46,42 @@ export class EnvCalenderComponent implements OnInit {
       0
     ).getDate(); 
     const firstDayIndex=this.todayDate.getDay();
-    const lastDayIndex=new Date(
-      this.todayDate.getFullYear(),
-      this.todayDate.getMonth()+1,
-      0
-    ).getDate(); 
-    const nextDays=7-lastDayIndex-1;
+    // const lastDayIndex=new Date(
+    //   this.todayDate.getFullYear(),
+    //   this.todayDate.getMonth()+1,
+    //   0
+    // ).getDay(); 
+    // const nextDays=7-lastDayIndex-1;
     const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
     this.displayMonth=months[this.todayDate.getMonth()];
     this.displayDay=new Date().toDateString();
-      for (let x = firstDayIndex; x > 0; x--) {
-        // this.days.push({class:"prev-date",day:(prevLastDay - x + 1)})
-        this.days.push({class:"day",day:"",occasion:[]})
-      }
+    for (let x = firstDayIndex; x > 0; x--) {
+      // this.days.push({class:"day prev-date",day:String((prevLastDay - x + 1)),occasion:[]})    // to display dates instead of empty spaces
+      this.days.push({class:"day",day:"",occasion:[]})
+    }
     
-      for (let i = 1; i <= lastDay; i++) {
-          if (
-            i === new Date().getDate() &&
-            this.todayDate.getMonth() === new Date().getMonth()
-          ) {
-            this.days.push({class:"day today",day:String(i),occasion:this.getOccasion(String(i),String(this.todayDate.getMonth()))});            
-          } else {
-            this.days.push({class:"day",day:String(i),occasion:this.getOccasion(String(i),String(this.todayDate.getMonth()))});
-          }
-          
-      }
+    for (let i = 1; i <= lastDay; i++) {
+        if (
+          i === new Date().getDate() &&
+          this.todayDate.getMonth() === new Date().getMonth()
+        ) {
+          this.days.push({class:"day today",day:String(i),occasion:this.getOccasion(String(i),String(this.todayDate.getMonth()))});            
+        } else {
+          this.days.push({class:"day",day:String(i),occasion:this.getOccasion(String(i),String(this.todayDate.getMonth()))});
+        }        
+    }    
+  };
 
-    };
+  // prevMonth(){
+  //   this.todayDate.setMonth(this.todayDate.getMonth() - 1);
+  //   this.renderCalendar();
+  // };
 
-    prevMonth(){
-      this.todayDate.setMonth(this.todayDate.getMonth() - 1);
-      this.renderCalendar();
-    };
-
-    
-    nextMonth(){
-        this.todayDate.setMonth(this.todayDate.getMonth() + 1);
-        this.renderCalendar();
-      };
+  
+  // nextMonth(){
+  //     this.todayDate.setMonth(this.todayDate.getMonth() + 1);
+  //     this.renderCalendar();
+  //   };
 
 
 

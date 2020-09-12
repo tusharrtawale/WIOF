@@ -27,7 +27,8 @@
               <!-- To be done - show month with date, currently its stacking up -->
               <!-- <h1 [ngClass]="{'occasionFormatDay':day.occasion[0]!=null,'noOccasionFormatDay':day.occasion[0]==null}">{{day.day}} <span *ngIf="day.occasion[0]!=null">{{displayMonth}}</span></h1> -->
               <h1 [ngClass]="{'occasionFormatDay':day.occasion[0]!=null,'noOccasionFormatDay':day.occasion[0]==null}">{{day.day}}</h1>
-              <p *ngIf="day.occasion[0]" class="occasion-name">{{day.occasion[0]}}</p>
+              <img *ngIf="day.occasion[0]" [src]="day.occasion[0].image|async">              
+              <p *ngIf="day.occasion[0]" class="occasion-name">{{day.occasion[0].name}}</p>
             </div>            
           </ion-row>
     </ion-grid>

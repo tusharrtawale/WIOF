@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { EnvDay } from '../../models/env-cal-data';
 import { EnvcalServiceService } from '../../services/envcal-service.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: "app-env-calender",
@@ -11,6 +12,8 @@ export class EnvCalenderComponent implements OnInit {
 
   todayDate=new Date();
   // selectDate=new Date();
+  imageUrl:Observable<any>;
+
 
   displayMonth:string;
   displayDay:string;
@@ -22,14 +25,12 @@ export class EnvCalenderComponent implements OnInit {
   ngOnInit() {
     //test data
     this.envDayService.getEnvCal(String(this.todayDate.getMonth())).subscribe(data=>{this.EnvDays=data;this.renderCalendar()});
-    // [
-      // {        month:"4",day:"12",occasion:"tiger day"      },      {        month:"5",day:"15",occasion:"lion day"      },      {        month:"6",day:"18",occasion:"elephant day"      },      {        month:"7",day:"19",occasion:"girraf day"      },      {        month:"8",day:"5",occasion:"camel day"      },      {        month:"8",day:"7",occasion:"camel2 day"      },      {        month:"8",day:"7",occasion:"camel3 da sfdasfdsf  faddfdsaffsady"      },      {        month:"8",day:"16",occasion:"camel4 fdfsda day"      },      {        month:"8",day:"17",occasion:"camel5 day"      }    ];
-      // this.renderCalendar();
+    // this.imageUrl = ;
     }
 
   getOccasion(day,month){
     const occasion=new Array;
-    this.EnvDays.forEach(x=> {if ((x.day==day) && (x.month==month)){occasion.push(x.occasion); 
+    this.EnvDays.forEach(x=> {if ((x.day==day) && (x.month==month)){occasion.push({name:x.occasion,image:this.envDayService.getImage(x.image)}); 
     }});
     return occasion; }
 
@@ -69,7 +70,7 @@ export class EnvCalenderComponent implements OnInit {
         } else {
           this.days.push({class:"day",day:String(i),occasion:this.getOccasion(String(i),String(this.todayDate.getMonth()))});
         }        
-    }    
+    }  
   };
 
   // prevMonth(){

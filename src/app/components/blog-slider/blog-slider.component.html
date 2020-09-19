@@ -4,13 +4,23 @@
     [ngClass]="blogSliderClass"
   >
     <ion-row>
-      <ion-col class="title-text">Blogs</ion-col>
-      <ion-col style="text-align: right;"
-        ><a [routerLink]="['blogs']" class="switch-to-list">
-          Switch to list
-        </a>
+      <ion-col class="title-text">
+        Blogs
       </ion-col>
-    </ion-row>
+      <ion-col style="text-align: right;">
+        <a [routerLink]="['blogs']" class="rect-button">
+          <!-- Switch to list -->
+          <ion-icon name="list"></ion-icon>
+
+        </a>
+        <a [routerLink]="['take-action']" class="rect-button">
+            <!-- <ion-icon slot="icon-only" name="person-circle"></ion-icon> -->
+            <!-- Take Action -->
+          <ion-icon name="trail-sign-outline"></ion-icon>
+
+        </a>
+    </ion-col>
+  </ion-row>
   </ion-card-header>
   <ion-card-content class="background" [ngClass]="blogSliderClass">
     <div *ngIf="blogList; else loading">
@@ -32,16 +42,16 @@
                 <!-- <a [routerLink]="['blog-post', blog.id]">Read More</a> -->
               </p>
             </ion-card-content>
-            <ion-row class="blog-card-footer" [ngClass]="blogSliderClass">
+            <!-- <ion-row class="blog-card-footer" [ngClass]="blogSliderClass">
               <ion-col>
                 <ion-buttons>
-                  <ion-button [routerLink]="['take-action']">
+                  <ion-button [routerLink]="['take-action']"> -->
                     <!-- <ion-icon slot="icon-only" name="person-circle"></ion-icon> -->
-                    Take Action
+                    <!-- Take Action
                   </ion-button>
                 </ion-buttons>
               </ion-col>
-            </ion-row>
+            </ion-row> -->
           </ion-card>
         </ion-slide>
       </ion-slides>

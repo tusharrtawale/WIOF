@@ -7,6 +7,12 @@
         <p class="header-text">{{category}} Videos</p>        
       </ion-col>
       <ion-col size=4 style="text-align: right;">
+        <a [routerLink]="['take-action']" class="rect-button" style="top: 10px;position: relative;">
+          <!-- <ion-icon slot="icon-only" name="person-circle"></ion-icon> -->
+          <!-- Take Action -->
+        <ion-icon name="trail-sign-outline"></ion-icon>
+
+      </a>
         <app-back-button></app-back-button>
       </ion-col>
     </ion-row>

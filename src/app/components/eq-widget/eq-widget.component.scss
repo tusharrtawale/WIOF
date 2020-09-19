@@ -14,3 +14,13 @@
   text-justify: inter-word;
   color: $dark-color;
 }
+
+.show-test-button{
+  cursor: pointer;
+}
+
+.eq-user-response{
+  overflow: scroll;
+  height:500px;
+  display:inline-block;
+}

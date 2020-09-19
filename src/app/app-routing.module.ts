@@ -20,9 +20,19 @@ const routes: Routes = [
     pathMatch:"prefix"
   },
   {
+    path:"element/:element/blogs/take-action",
+    redirectTo:"element/:element/take-action",
+    pathMatch:"full"
+  },
+  {
     path:"element/:element/videos/video",
     redirectTo:"element/:element/video",
     pathMatch:"prefix"
+  },
+  {
+    path:"element/:element/videos/take-action",
+    redirectTo:"element/:element/take-action",
+    pathMatch:"full"
   },
   {
     path: "element/earth",

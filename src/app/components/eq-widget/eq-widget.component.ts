@@ -6,7 +6,11 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./eq-widget.component.scss"],
 })
 export class EQWidgetComponent implements OnInit {
+  showTest:boolean=false;
   constructor() {}
 
   ngOnInit() {}
+  startTest(){
+    this.showTest=true;
+  }
 }

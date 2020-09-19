@@ -13,6 +13,8 @@ import { SocialShareComponent } from "./components/social-share/social-share.com
 import { ElementWelcomeImageComponent } from "./components/element-welcome-image/element-welcome-image.component";
 import { EnergyWidgetComponent } from "./components/energy-widget/energy-widget.component";
 import { EQWidgetComponent } from "./components/eq-widget/eq-widget.component";
+import { EqWidgetResultComponent } from "./components/eq-widget-result/eq-widget-result.component";
+import { EqWidgetQuestionCardComponent } from "./components/eq-widget-question-card/eq-widget-question-card.component";
 import { FoodPhIndicatorMeterComponent } from "./components/food-ph-indicator-meter/food-ph-indicator-meter.component";
 import { FoodPhIndicatorComponent } from "./components/food-ph-indicator/food-ph-indicator.component";
 import { HeaderComponent } from "./components/header/header.component";
@@ -55,6 +57,8 @@ import { VideoCardComponent } from "./components/video-card/video-card.component
     WaterWidgetComponent,
     VideoWidgetComponent,
     EQWidgetComponent,
+    EqWidgetResultComponent,
+    EqWidgetQuestionCardComponent,
     ReactiveFormsModule,
     SubscribeComponent,
     PollsWidgetComponent,
@@ -78,6 +82,8 @@ import { VideoCardComponent } from "./components/video-card/video-card.component
     ConcentPopupComponent,
     ElementWelcomeImageComponent,
     EnvCalenderComponent,
+    EqWidgetResultComponent,
+    EqWidgetQuestionCardComponent,
     AqiWidgetComponent,
     SubscribeComponent,
     WaterWidgetComponent,

@@ -1,0 +1,20 @@
+<div *ngIf="!showResult">
+  <div class="eq-user-response" *ngFor="let question of questions;let i=index;" [formGroup]="userResponse">
+    <h5>{{i+1}} ) {{question}}</h5>
+    <ion-item>
+      <ion-range min="1" max="5" step="1" [formControlName]="getFormControlName(i)" snaps color="success">
+        <ion-text slot="start" color="success" >1</ion-text>
+        <ion-text slot="end" color="success" >5</ion-text>
+      </ion-range>
+    </ion-item>
+  </div>
+</div>
+
+<ion-button *ngIf="!showResult" (click)="onSubmit()">Submit</ion-button>
+
+<div>
+  <app-eq-widget-result *ngIf="showResult" class="result1" [percent]="results[0]" [msg]="result1msg"></app-eq-widget-result>
+  <app-eq-widget-result *ngIf="showResult" class="result2" [percent]="results[1]" [msg]="result2msg"></app-eq-widget-result>
+  <app-eq-widget-result *ngIf="showResult" class="result3" [percent]="results[2]" [msg]="result3msg"></app-eq-widget-result>
+
+</div>

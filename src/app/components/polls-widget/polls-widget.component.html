@@ -1,4 +1,4 @@
-<ion-card class="wiof-poll-card" style="height: 652px">
+<ion-card class="wiof-poll-card">
   <ion-card-header class="wiof-polls-widget-card-header">
     <ion-card-title class="wiof-polls-widget-card-header-text">
       Weekly Polls
@@ -20,12 +20,12 @@
           />
         </p>
         <br />
-        <p class="font-size-medium">
-          Question: <span style="font-size: large">{{ poll.question }}</span>
-        </p>
+        <div class="font-size-medium">
+          <p>Poll Question</p>
+          <p style="font-size: large">{{ poll.question }}</p>
+        </div>
         <br />
 
-        <p class="font-size-medium">Options:</p>
         <div class="poll-options">
           <input
             type="radio"

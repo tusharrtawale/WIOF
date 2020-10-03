@@ -38,6 +38,14 @@
 .card-non-aqi {
   background-color: $light-color;
   color: $dark-color;
+
+  ion-card-header {
+    padding: 0px;
+  }
+
+  ion-card-content {
+    padding: 0px;
+  }
 }
 
 //adding scroll to search results

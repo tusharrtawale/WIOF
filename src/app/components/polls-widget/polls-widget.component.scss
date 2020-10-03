@@ -2,7 +2,7 @@
 
 .wiof-poll-card {
   background-color: rgba($home-color, $tint-fraction);
-  // height: 455px;
+  height: calc(100% - 20px);
 }
 
 .wiof-polls-widget-card-header {
@@ -12,15 +12,19 @@
 
 .polls-container {
   background-color: antiquewhite;
-  padding: 4%;
+  padding: 10px;
+  padding-left: 20px;
   border-radius: 5px;
+  height: 100%;
+  overflow: auto;
 }
 
 .poll-options {
   background-color: #dfdec9;
-  margin: 2%;
-  padding: 2%;
+  margin: 0px 0px 10px;
+  padding: 8px;
   border-radius: 5px;
+  margin-left: 0;
 }
 
 .error {
@@ -31,7 +35,8 @@
   color: black;
   font-size: large;
   padding-top: 10px;
-  // transform:translateY(-50%);
+  padding: 0;
+  height: 100%;
 }
 
 .wiof-polls-widget-card-header-text {

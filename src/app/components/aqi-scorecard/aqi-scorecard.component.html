@@ -31,11 +31,14 @@
   <div scrollY="true" class="wiof-aqi-widget-items">
     <ion-row>
       <ion-col
-        size="4"
+        size-xs="4"
+        size-md="6"
+        size-lg="4"
+        size-xl="3"
         *ngFor="let parameter of getAqiParameters(aqiData.iaqi)"
       >
         <ion-card class="card-non-aqi">
-          <ion-card-header style="padding: 0px">
+          <ion-card-header>
             <p class="aqi-parameter">
               {{ parameter[0] | uppercase }}
             </p>
@@ -55,7 +58,7 @@
             href="https://waqi.info/"
             target="_blank"
             class="data-credit"
-            >World Air Quality Index project</a
+            >World Air Quality Index Project</a
           >
         </p>
       </ion-col>

@@ -6,11 +6,21 @@
     <ion-row>
       <ion-col class="title-text"> Blogs </ion-col>
       <ion-col style="text-align: right">
-        <a [routerLink]="['blogs']" class="rect-button">
+        <a
+          [routerLink]="['blogs']"
+          class="rect-button"
+          alt="Switch to list"
+          title="Switch to list"
+        >
           <!-- Switch to list -->
           <ion-icon name="list"></ion-icon>
         </a>
-        <a [routerLink]="['take-action']" class="rect-button">
+        <a
+          [routerLink]="['take-action']"
+          class="rect-button"
+          alt="Take Action"
+          title="Take Action"
+        >
           <!-- <ion-icon slot="icon-only" name="person-circle"></ion-icon> -->
           <!-- Take Action -->
           <ion-icon name="trail-sign-outline"></ion-icon>

@@ -1,9 +1,10 @@
 <app-header></app-header>
 <app-subscribe></app-subscribe>
-<app-concent-popup *ngIf="viewConcentPopup"  (accepted)="onAccept()"></app-concent-popup>
+<app-concent-popup
+  *ngIf="viewConcentPopup"
+  (accepted)="onAccept()"
+></app-concent-popup>
 <!-- <app-concent-popup *ngIf="viewConcentPopup" #cp='concentPopup' (accepted)="onAccept()"></app-concent-popup> -->
-
-
 
 <ion-content>
   <ion-grid class="ion-no-padding">
@@ -11,13 +12,13 @@
       <ion-col>
         <div class="landing-welcome-img">
           <p class="landing-welcome-label">
-            <span id="inspire" style="margin-right: 20%;"
+            <span id="inspire" style="margin-right: 20%"
               >Inspire through Creativity</span
             ><br />
-            <span id="enlighten" style="margin-right: 5%;"
+            <span id="enlighten" style="margin-right: 5%"
               >Enlighten through Knowlegde</span
             ><br />
-            <span id="protect" style="margin-right: -10%;"
+            <span id="protect" style="margin-right: -10%"
               >Protect through Action</span
             >
           </p>

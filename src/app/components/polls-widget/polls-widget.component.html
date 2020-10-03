@@ -1,4 +1,4 @@
-<ion-card class="wiof-poll-card" style="height: 652px;">
+<ion-card class="wiof-poll-card" style="height: 652px">
   <ion-card-header class="wiof-polls-widget-card-header">
     <ion-card-title class="wiof-polls-widget-card-header-text">
       Weekly Polls
@@ -24,7 +24,7 @@
           Question: <span style="font-size: large">{{ poll.question }}</span>
         </p>
         <br />
-        
+
         <p class="font-size-medium">Options:</p>
         <div class="poll-options">
           <input
@@ -47,22 +47,19 @@
           />
           <label for="option 2"> {{ poll.option2 | titlecase }}</label>
         </div>
-      
-        <div class="poll-options">
 
-        <input
-          type="radio"
-          id="option 3"
-          name="option"
-          value="option 3"
-          formControlName="option"
-        />
-        <label for="option 3"> {{ poll.option3 | titlecase }}</label
-        >
+        <div class="poll-options">
+          <input
+            type="radio"
+            id="option 3"
+            name="option"
+            value="option 3"
+            formControlName="option"
+          />
+          <label for="option 3"> {{ poll.option3 | titlecase }}</label>
         </div>
 
         <div class="poll-options">
-
           <input
             type="radio"
             id="option 4"
@@ -74,12 +71,7 @@
         </div>
 
         <br />
-        <p
-          *ngIf="errorShow"
-          class="error"
-        >
-          Please fill all fields correctly
-        </p>
+        <p *ngIf="errorShow" class="error">Please fill all fields correctly</p>
 
         <ion-button color="home" type="submit">Submit Poll</ion-button>
       </form>

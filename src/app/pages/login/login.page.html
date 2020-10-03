@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-title routerLink="/home"
       ><ion-img
-        style="height: 60px; width: 144px;"
+        style="height: 60px; width: 144px"
         alt="WIOF"
         [src]="wiofLogo"
       ></ion-img
@@ -14,7 +14,7 @@
   <ion-text color="dark" class="wiof-login">
     <h1>Login to Admin Dashboard</h1>
   </ion-text>
-  <div *ngIf="error" style="color: red;">
+  <div *ngIf="error" style="color: red">
     <p>{{error}}</p>
   </div>
   <ion-item>
@@ -29,7 +29,5 @@
       [(ngModel)]="password"
     ></ion-input>
   </ion-item>
-  <ion-button class="wiof-login" (click)="onLogin()">
-    Login
-  </ion-button>
+  <ion-button class="wiof-login" (click)="onLogin()"> Login </ion-button>
 </ion-content>

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
 import { EnvDay } from "../models/env-cal-data";
 import {
@@ -11,13 +11,15 @@ import { from, Observable } from "rxjs";
 import { FIREBASE_COLLECTION } from "../app.constants";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class EnvcalServiceService {
   envcalCollectionByMonth: AngularFirestoreCollection<any>;
-  
-  constructor(private storage: AngularFireStorage,
-    public database: AngularFirestore) { }
+
+  constructor(
+    private storage: AngularFireStorage,
+    public database: AngularFirestore
+  ) {}
 
   getEnvCal(month: string): Observable<EnvDay[]> {
     // getPolls(): Observable<Polls[]>{
@@ -44,6 +46,4 @@ export class EnvcalServiceService {
   }
 
   //to-do link images to each envday obj
-
-
 }

@@ -8,24 +8,25 @@ import { Platform } from "@ionic/angular";
 })
 export class HeaderComponent implements OnInit {
   wiofLogo: string = "../../assets/logo.jpg";
-  isIos:boolean;
+  isIos: boolean;
   constructor(public platform: Platform) {}
 
   ngOnInit() {
-    this.isIos=this.testiOS();
-  };
+    this.isIos = this.testiOS();
+  }
 
   testiOS() {
-    return [
-      'iPad Simulator',
-      'iPhone Simulator',
-      'iPod Simulator',
-      'iPad',
-      'iPhone',
-      'iPod'
-    ].includes(navigator.platform)
-    // iPad on iOS 13 detection
-    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
-      
+    return (
+      [
+        "iPad Simulator",
+        "iPhone Simulator",
+        "iPod Simulator",
+        "iPad",
+        "iPhone",
+        "iPod",
+      ].includes(navigator.platform) ||
+      // iPad on iOS 13 detection
+      (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+    );
   }
 }

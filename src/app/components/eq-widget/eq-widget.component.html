@@ -13,11 +13,11 @@
         Emotional intelligence (otherwise known as emotional quotient or EQ) is
         the ability to understand, use, and manage your own emotions in positive
         ways to relieve stress, communicate effectively, empathize with others,
-        overcome challenges and defuse conflict. Emotional intelligence helps you
-        build stronger relationships, succeed at school and work, and achieve your
-        career and personal goals. It can also help you to connect with your
-        feelings, turn intention into action, and make informed decisions about
-        what matters most to you.
+        overcome challenges and defuse conflict. Emotional intelligence helps
+        you build stronger relationships, succeed at school and work, and
+        achieve your career and personal goals. It can also help you to connect
+        with your feelings, turn intention into action, and make informed
+        decisions about what matters most to you.
       </p>
       <br />
       <!-- uncomment to rollback show test -->
@@ -25,15 +25,17 @@
         href="https://www.mindtools.com/pages/article/ei-quiz.htm"
         target="_blank"
         >Check your Emotional Quotient</a
-      > -->      
-      <a
-        (click)="startTest()" class="show-test-button"
+      > -->
+      <a (click)="startTest()" class="show-test-button"
         >Check your Emotional Quotient</a
       >
-      <div style="text-align: center; padding-top: 12px;">
+      <div style="text-align: center; padding-top: 12px">
         <img src="../../../assets/Group 94.png" />
       </div>
     </div>
-    <app-eq-widget-question-card class="eq-user-response" *ngIf="showTest"></app-eq-widget-question-card>
+    <app-eq-widget-question-card
+      class="eq-user-response"
+      *ngIf="showTest"
+    ></app-eq-widget-question-card>
   </ion-card-content>
 </ion-card>

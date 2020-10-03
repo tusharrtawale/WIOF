@@ -20,7 +20,7 @@ export class VideoPostPage implements OnInit, OnDestroy {
   videoChannelName: String;
   videoDescription: String;
   destroy$: Subject<boolean> = new Subject();
-  showFullVideoDescription:boolean=true;
+  showFullVideoDescription: boolean = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -60,8 +60,7 @@ export class VideoPostPage implements OnInit, OnDestroy {
     this.destroy$.unsubscribe();
   }
 
-  toggleVideoDescription(){
-    this.showFullVideoDescription=!this.showFullVideoDescription;
-
+  toggleVideoDescription() {
+    this.showFullVideoDescription = !this.showFullVideoDescription;
   }
 }

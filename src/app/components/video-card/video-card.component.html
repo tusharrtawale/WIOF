@@ -3,9 +3,11 @@
     <img [src]="video.thumbnail" class="thumbnailImage" />
     <h6 class="ion-padding-vertical">
       <strong
-        ><a class="link-title" [routerLink]="['/element', element, 'video', video.url]">{{
-          video.title
-        }}</a></strong
+        ><a
+          class="link-title"
+          [routerLink]="['/element', element, 'video', video.url]"
+          >{{ video.title }}</a
+        ></strong
       >
     </h6>
   </ion-card-content>
@@ -13,8 +15,8 @@
     <ion-col>
       <ion-buttons>
         <ion-button [routerLink]="['take-action']"> -->
-          <!-- <ion-icon slot="icon-only" name="person-circle"></ion-icon> -->
-          <!-- Take Action
+  <!-- <ion-icon slot="icon-only" name="person-circle"></ion-icon> -->
+  <!-- Take Action
         </ion-button>
       </ion-buttons>
     </ion-col>

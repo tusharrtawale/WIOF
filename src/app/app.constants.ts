@@ -125,7 +125,7 @@ export const FIREBASE_COLLECTION = {
   ENVCAL_IMAGE_STORAGE: "environment-calendar",
   POLLS: "Polls",
   POLL: "Poll",
-  ENVCAL:"Envcal",
+  ENVCAL: "Envcal",
   CONFIG: "config",
 };
 
@@ -144,7 +144,7 @@ export const VIDEO_PLAYER_VIDEOS = {
   EARTH: "LrLrOYLAwWY",
   FIRE: "L6murPEFbXg",
   SPIRIT: "LgUCyWhJf6s",
-  CONFIG:"pCbvwGJk3oE"
+  CONFIG: "pCbvwGJk3oE",
 };
 
 //TODO try to find another way

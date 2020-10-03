@@ -1,16 +1,16 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { IonicModule } from "@ionic/angular";
 
-import { ConcentPopupComponent } from './concent-popup.component';
+import { ConcentPopupComponent } from "./concent-popup.component";
 
-describe('ConcentPopupComponent', () => {
+describe("ConcentPopupComponent", () => {
   let component: ConcentPopupComponent;
   let fixture: ComponentFixture<ConcentPopupComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ConcentPopupComponent ],
-      imports: [IonicModule.forRoot()]
+      declarations: [ConcentPopupComponent],
+      imports: [IonicModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ConcentPopupComponent);
@@ -18,7 +18,7 @@ describe('ConcentPopupComponent', () => {
     fixture.detectChanges();
   }));
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

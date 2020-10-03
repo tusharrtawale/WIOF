@@ -1,16 +1,16 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { IonicModule } from "@ionic/angular";
 
-import { EqWidgetQuestionCardComponent } from './eq-widget-question-card.component';
+import { EqWidgetQuestionCardComponent } from "./eq-widget-question-card.component";
 
-describe('EqWidgetQuestionCardComponent', () => {
+describe("EqWidgetQuestionCardComponent", () => {
   let component: EqWidgetQuestionCardComponent;
   let fixture: ComponentFixture<EqWidgetQuestionCardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EqWidgetQuestionCardComponent ],
-      imports: [IonicModule.forRoot()]
+      declarations: [EqWidgetQuestionCardComponent],
+      imports: [IonicModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(EqWidgetQuestionCardComponent);
@@ -18,7 +18,7 @@ describe('EqWidgetQuestionCardComponent', () => {
     fixture.detectChanges();
   }));
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

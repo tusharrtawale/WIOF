@@ -57,7 +57,7 @@
               >Enter Monthly Energy Consumption</ion-label
             >
             <ion-input [(ngModel)]="EnergyConsumption"></ion-input>
-            <p *ngIf="Consumptionnull" style="color: red;">
+            <p *ngIf="Consumptionnull" style="color: red">
               Please enter a valid Consumption
             </p>
           </ion-item>
@@ -79,7 +79,7 @@
               KWH
             </ion-select-option>
           </ion-select>
-          <p *ngIf="unitnull" style="color: red;">Please select a Unit</p>
+          <p *ngIf="unitnull" style="color: red">Please select a Unit</p>
         </ion-col>
       </ion-row>
       <ion-row>
@@ -98,13 +98,13 @@
           background-color: rgb(238, 199, 165);
         "
       >
-        <ion-col style="border-right: solid peachpuff 2px; color: #2d2d2d;"
+        <ion-col style="border-right: solid peachpuff 2px; color: #2d2d2d"
           ><p>
             Can drive {{ kmsbycar | number: "1.0-2" }} kms using a Petrol Fueled
             car
           </p></ion-col
         >
-        <ion-col style="color: #2d2d2d;"
+        <ion-col style="color: #2d2d2d"
           ><p>
             Can drive {{ KmsbySUV | number: "1.0-2" }} kms using a Diesel Fueled
             SUV

@@ -99,10 +99,10 @@
         >
           <!-- <p> {{locationsFound.data|json}} </p> -->
           <div *ngIf="!locationsFound.data[0]">
-            <p style="color: red;">
+            <p style="color: red">
               AQI data for this location is not available.
             </p>
-            <p style="color: grey;">Please search for another location.</p>
+            <p style="color: grey">Please search for another location.</p>
           </div>
           <div *ngIf="locationsFound.data[0]">
             <ion-row>
@@ -114,7 +114,7 @@
                 </p>
               </ion-col>
               <ion-col size-xs="2">
-                <p style="text-align: center;"><strong>AQI</strong></p>
+                <p style="text-align: center"><strong>AQI</strong></p>
               </ion-col>
             </ion-row>
             <div *ngFor="let location of locationsFound.data">
@@ -130,7 +130,7 @@
                 </ion-col>
                 <ion-col size-xs="2">
                   <p
-                    style="text-align: center;"
+                    style="text-align: center"
                     [ngClass]="aqiColor(location.aqi)"
                   >
                     {{ location.aqi }}
@@ -140,13 +140,11 @@
             </div>
           </div>
         </div>
-        <ng-template #loading>
-          Fetching locations...
-        </ng-template>
+        <ng-template #loading> Fetching locations... </ng-template>
       </div>
     </div>
   </ion-toolbar>
-  <ion-card-content style="padding: 5px;">
+  <ion-card-content style="padding: 5px">
     <app-aqi-scorecard
       *ngIf="showAqiScorecard"
       [locationUrl]="selectedLocation"

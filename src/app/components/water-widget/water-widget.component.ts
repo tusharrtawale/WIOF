@@ -43,7 +43,8 @@ export class WaterWidgetComponent implements OnInit {
       },
       {
         name: "Surface Water Quality",
-        icon: "../../../assets/water-widget-icons/icon surface water quality.png",
+        icon:
+          "../../../assets/water-widget-icons/icon surface water quality.png",
         url: "https://indiawris.gov.in/wris/#/SWQuality",
       },
     ];

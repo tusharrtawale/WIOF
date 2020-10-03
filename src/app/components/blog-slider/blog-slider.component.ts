@@ -20,58 +20,47 @@ export class BlogSliderComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-        this.detectScreenSize();
-    }
+    this.detectScreenSize();
+  }
 
   detectScreenSize() {
-        this.width = window.innerWidth;
-    }
+    this.width = window.innerWidth;
+  }
 
   constructor() {}
 
   ngOnInit() {
     this.blogSliderClass = `wiof-${this.element}`;
   }
-  showNavigator(){
-    if (this.width>=1024){
+  showNavigator() {
+    if (this.width >= 1024) {
       // slidesPerView: 4
-      if (this.blogList.length<5){
+      if (this.blogList.length < 5) {
         return false;
-      }
-      else {
+      } else {
         return true;
       }
-
-    }
-    else if (this.width<1024 && this.width>=767){ 
+    } else if (this.width < 1024 && this.width >= 767) {
       // slidesPerView: 3
-      if (this.blogList.length<4){
+      if (this.blogList.length < 4) {
         return false;
-      }
-      else {
+      } else {
         return true;
       }
-
-    }
-    else if (this.width<767 && this.width>=480){
+    } else if (this.width < 767 && this.width >= 480) {
       // slidesPerView: 2
-      if (this.blogList.length<3){
+      if (this.blogList.length < 3) {
         return false;
-      }
-      else {
+      } else {
         return true;
       }
-
-    }
-    else if (this.width<480){
+    } else if (this.width < 480) {
       // slidesPerView: 1
-      if (this.blogList.length<2){
+      if (this.blogList.length < 2) {
         return false;
-      }
-      else {
+      } else {
         return true;
       }
-
     }
-}
+  }
 }

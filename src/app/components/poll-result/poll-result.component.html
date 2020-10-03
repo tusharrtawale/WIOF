@@ -1,46 +1,42 @@
 <div class="polls-results-container">
   <p class="title-text">Poll Results</p>
-  <p style="font-size: medium;">
-    Question: <span style="font-size: large;">{{ pollObject.question }}</span>
+  <p style="font-size: medium">
+    Question: <span style="font-size: large">{{ pollObject.question }}</span>
   </p>
-  <br/>
-  <p style="font-size: medium;">Options:</p>
+  <br />
+  <p style="font-size: medium">Options:</p>
 
   <div class="poll-options">
-
-  <ion-label>{{ pollObject.option1 | titlecase }}</ion-label>
-  <!--TODO move this to directive or component-->
-  <div class="poll-bar">
-    <div class="poll-bar-fill" [style.width]="optApercent + '%'">
-      <span class="poll-percent">{{ optApercent | number: "1.0-2" }}%</span>
+    <ion-label>{{ pollObject.option1 | titlecase }}</ion-label>
+    <!--TODO move this to directive or component-->
+    <div class="poll-bar">
+      <div class="poll-bar-fill" [style.width]="optApercent + '%'">
+        <span class="poll-percent">{{ optApercent | number: "1.0-2" }}%</span>
+      </div>
     </div>
-  </div>
   </div>
   <div class="poll-options">
-
-  <ion-label>{{ pollObject.option2 | titlecase }}</ion-label>
-  <div class="poll-bar">
-    <div class="poll-bar-fill" [style.width]="optBpercent + '%'">
-      <span class="poll-percent">{{ optBpercent | number: "1.0-2" }}%</span>
+    <ion-label>{{ pollObject.option2 | titlecase }}</ion-label>
+    <div class="poll-bar">
+      <div class="poll-bar-fill" [style.width]="optBpercent + '%'">
+        <span class="poll-percent">{{ optBpercent | number: "1.0-2" }}%</span>
+      </div>
     </div>
-  </div>
-</div>
-<div class="poll-options">
-
-  <ion-label>{{ pollObject.option3 | titlecase }}</ion-label>
-  <div class="poll-bar">
-    <div class="poll-bar-fill" [style.width]="optCpercent + '%'">
-      <span class="poll-percent">{{ optCpercent | number: "1.0-2" }}%</span>
-    </div>
-  </div>
   </div>
   <div class="poll-options">
-
-  <ion-label>{{ pollObject.option4 | titlecase }}</ion-label>
-  <div class="poll-bar">
-    <div class="poll-bar-fill" [style.width]="optDpercent + '%'">
-      <span class="poll-percent">{{ optDpercent | number: "1.0-2" }}%</span>
+    <ion-label>{{ pollObject.option3 | titlecase }}</ion-label>
+    <div class="poll-bar">
+      <div class="poll-bar-fill" [style.width]="optCpercent + '%'">
+        <span class="poll-percent">{{ optCpercent | number: "1.0-2" }}%</span>
+      </div>
     </div>
   </div>
+  <div class="poll-options">
+    <ion-label>{{ pollObject.option4 | titlecase }}</ion-label>
+    <div class="poll-bar">
+      <div class="poll-bar-fill" [style.width]="optDpercent + '%'">
+        <span class="poll-percent">{{ optDpercent | number: "1.0-2" }}%</span>
+      </div>
+    </div>
   </div>
 </div>

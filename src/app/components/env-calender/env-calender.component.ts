@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { EnvDay } from '../../models/env-cal-data';
-import { EnvcalServiceService } from '../../services/envcal-service.service';
-import { Observable } from 'rxjs';
+import { EnvDay } from "../../models/env-cal-data";
+import { EnvcalServiceService } from "../../services/envcal-service.service";
+import { Observable } from "rxjs";
 
 @Component({
   selector: "app-env-calender",
@@ -9,85 +9,117 @@ import { Observable } from 'rxjs';
   styleUrls: ["./env-calender.component.scss"],
 })
 export class EnvCalenderComponent implements OnInit {
-
-  todayDate=new Date();
+  todayDate = new Date();
   // selectDate=new Date();
-  imageUrl:Observable<any>;
+  imageUrl: Observable<any>;
 
+  displayMonth: string;
+  displayDay: string;
 
-  displayMonth:string;
-  displayDay:string;
+  days: { class: string; day: string; occasion: any[] }[] = [];
+  constructor(private envDayService: EnvcalServiceService) {}
 
-  days:{class:string,day:string,occasion:any[]}[]=[];
-  constructor(private envDayService:EnvcalServiceService) {}
-
-  EnvDays:EnvDay[];
+  EnvDays: EnvDay[];
   ngOnInit() {
     //test data
-    this.envDayService.getEnvCal(String(this.todayDate.getMonth())).subscribe(data=>{this.EnvDays=data;this.renderCalendar()});
+    this.envDayService
+      .getEnvCal(String(this.todayDate.getMonth()))
+      .subscribe((data) => {
+        this.EnvDays = data;
+        this.renderCalendar();
+      });
     // this.imageUrl = ;
-    }
+  }
 
-  getOccasion(day,month){
-    const occasion=new Array;
-    this.EnvDays.forEach(x=> {if ((x.day==day) && (x.month==month)){occasion.push({name:x.occasion,image:this.envDayService.getImage(x.image)}); 
-    }});
-    return occasion; }
+  getOccasion(day, month) {
+    const occasion = new Array();
+    this.EnvDays.forEach((x) => {
+      if (x.day == day && x.month == month) {
+        occasion.push({
+          name: x.occasion,
+          image: this.envDayService.getImage(x.image),
+        });
+      }
+    });
+    return occasion;
+  }
 
-  renderCalendar(){
+  renderCalendar() {
     this.todayDate.setDate(1);
-    const lastDay=new Date(
+    const lastDay = new Date(
       this.todayDate.getFullYear(),
-      this.todayDate.getMonth()+1,
+      this.todayDate.getMonth() + 1,
       0
     ).getDate();
-    const prevLastDay=new Date(
+    const prevLastDay = new Date(
       this.todayDate.getFullYear(),
       this.todayDate.getMonth(),
       0
-    ).getDate(); 
-    const firstDayIndex=this.todayDate.getDay();
+    ).getDate();
+    const firstDayIndex = this.todayDate.getDay();
     // const lastDayIndex=new Date(
     //   this.todayDate.getFullYear(),
     //   this.todayDate.getMonth()+1,
     //   0
-    // ).getDay(); 
+    // ).getDay();
     // const nextDays=7-lastDayIndex-1;
-    const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-    this.displayMonth=months[this.todayDate.getMonth()];
-    this.displayDay=new Date().toDateString();
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    this.displayMonth = months[this.todayDate.getMonth()];
+    this.displayDay = new Date().toDateString();
     for (let x = firstDayIndex; x > 0; x--) {
       // this.days.push({class:"day prev-date",day:String((prevLastDay - x + 1)),occasion:[]})    // to display dates instead of empty spaces
-      this.days.push({class:"day",day:"",occasion:[]})
+      this.days.push({ class: "day", day: "", occasion: [] });
     }
-    
+
     for (let i = 1; i <= lastDay; i++) {
-        if (
-          i === new Date().getDate() &&
-          this.todayDate.getMonth() === new Date().getMonth()
-        ) {
-          this.days.push({class:"day today",day:String(i),occasion:this.getOccasion(String(i),String(this.todayDate.getMonth()))});            
-        } else {
-          this.days.push({class:"day",day:String(i),occasion:this.getOccasion(String(i),String(this.todayDate.getMonth()))});
-        }        
-    }  
-  };
+      if (
+        i === new Date().getDate() &&
+        this.todayDate.getMonth() === new Date().getMonth()
+      ) {
+        this.days.push({
+          class: "day today",
+          day: String(i),
+          occasion: this.getOccasion(
+            String(i),
+            String(this.todayDate.getMonth())
+          ),
+        });
+      } else {
+        this.days.push({
+          class: "day",
+          day: String(i),
+          occasion: this.getOccasion(
+            String(i),
+            String(this.todayDate.getMonth())
+          ),
+        });
+      }
+    }
+  }
 
   // prevMonth(){
   //   this.todayDate.setMonth(this.todayDate.getMonth() - 1);
   //   this.renderCalendar();
   // };
 
-  
   // nextMonth(){
   //     this.todayDate.setMonth(this.todayDate.getMonth() + 1);
   //     this.renderCalendar();
   //   };
-
-
-
-  }
-
+}
 
 //   const date = new Date();
 
@@ -171,7 +203,3 @@ export class EnvCalenderComponent implements OnInit {
 // });
 
 // renderCalendar();
-
-
-
-

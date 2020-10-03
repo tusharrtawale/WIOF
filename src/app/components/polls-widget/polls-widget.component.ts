@@ -38,10 +38,17 @@ export class PollsWidgetComponent implements OnInit, OnDestroy {
       name: new FormControl("", [Validators.required]),
       option: new FormControl("", [Validators.required]),
     });
-    
+
     this.poll = {} as Poll;
-    combineLatest([this.ip.getIp4(), this.ip.getIp6(), this.pollService.getPoll()])
-      .pipe(takeUntil(this.destroy$), map(data => data))
+    combineLatest([
+      this.ip.getIp4(),
+      this.ip.getIp6(),
+      this.pollService.getPoll(),
+    ])
+      .pipe(
+        takeUntil(this.destroy$),
+        map((data) => data)
+      )
       .subscribe(([ip4Data, ip6Data, pollData]) => {
         this.IP4 = ip4Data;
         this.IP6 = ip6Data;

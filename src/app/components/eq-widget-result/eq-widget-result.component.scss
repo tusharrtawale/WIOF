@@ -2,8 +2,8 @@
 
 .wiof-eq-meter {
   width: 200px;
-  height: 200px;
-  margin: 200px auto;
+  height: 150px;
+  margin: 0px auto;
 }
 .meter-background {
   position: relative;
@@ -52,6 +52,7 @@
 
 .msg-style {
   text-align: center;
-  position: relative;
-  top: -270px;
+  font-weight: bold;
+  // position: relative;
+  // top: -270px;
 }

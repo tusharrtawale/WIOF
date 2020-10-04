@@ -1,15 +1,23 @@
-.result1 {
-  position: absolute;
-  top: -150px;
-  left: 50px;
+// .result1 {
+//   position: absolute;
+//   top: -150px;
+//   left: 50px;
+// }
+// .result2 {
+//   position: absolute;
+//   top: 0px;
+//   left: 50px;
+// }
+// .result3 {
+//   position: absolute;
+//   top: 150px;
+//   left: 50px;
+// }
+.eq-meter-heading{
+  font-size: large;
+  font-weight: bold;
 }
-.result2 {
-  position: absolute;
-  top: 0px;
-  left: 50px;
-}
-.result3 {
-  position: absolute;
-  top: 150px;
-  left: 50px;
+.result-box{
+  border-radius: 5px;
+  background-color: white;
 }

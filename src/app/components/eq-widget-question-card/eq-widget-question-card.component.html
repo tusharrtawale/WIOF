@@ -4,7 +4,7 @@
     *ngFor="let question of questions; let i = index"
     [formGroup]="userResponse"
   >
-    <h5>{{ i + 1 }} ) {{ question }}</h5>
+    <p>{{ i + 1 }} ) {{ question }}</p>
     <ion-item>
       <ion-range
         min="1"
@@ -12,10 +12,10 @@
         step="1"
         [formControlName]="getFormControlName(i)"
         snaps
-        color="success"
+        color="home"
       >
-        <ion-text slot="start" color="success">1</ion-text>
-        <ion-text slot="end" color="success">5</ion-text>
+        <ion-text slot="start" color="home">1</ion-text>
+        <ion-text slot="end" color="home">5</ion-text>
       </ion-range>
     </ion-item>
   </div>
@@ -23,23 +23,41 @@
 
 <ion-button *ngIf="!showResult" (click)="onSubmit()">Submit</ion-button>
 
-<div>
-  <app-eq-widget-result
-    *ngIf="showResult"
-    class="result1"
-    [percent]="results[0]"
-    [msg]="result1msg"
-  ></app-eq-widget-result>
-  <app-eq-widget-result
-    *ngIf="showResult"
-    class="result2"
-    [percent]="results[1]"
-    [msg]="result2msg"
-  ></app-eq-widget-result>
-  <app-eq-widget-result
-    *ngIf="showResult"
-    class="result3"
-    [percent]="results[2]"
-    [msg]="result3msg"
-  ></app-eq-widget-result>
+<div *ngIf="showResult">
+  <p class="eq-meter-heading">Your emotional intelligence is:</p>
+  <ion-row class="result-box">
+    <ion-col size="6">
+        <p class="eq-meter-heading">Attention:</p>
+        <app-eq-widget-result        
+        class="result1"
+        [percent]="results[0]"
+        [msg]="result1msg">
+        </app-eq-widget-result>
+    </ion-col>
+    <ion-col size="6">
+      <p class="eq-meter-heading">Clarity:</p>
+      <app-eq-widget-result      
+      class="result2"
+      [percent]="results[1]"
+      [msg]="result2msg"
+      ></app-eq-widget-result>
+    </ion-col>
+    <ion-col size="6" offset="3">
+      <p class="eq-meter-heading">Reparation:</p>
+      <app-eq-widget-result
+      class="result3"
+      [percent]="results[2]"
+      [msg]="result3msg"
+      ></app-eq-widget-result>          
+    </ion-col>
+
+  </ion-row>
+  <ion-row>
+    <ion-col size="12">
+      <p>Attention: I am able to feel and express feelings properlt.</p>
+      <p>Clarity: I understand my states well.</p>
+      <p>Reparation: I am able to regulate emotional states correctly.</p>
+    </ion-col>
+  </ion-row>
+
 </div>

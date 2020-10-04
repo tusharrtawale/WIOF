@@ -13,13 +13,21 @@
       <app-water-widget></app-water-widget>
     </ion-col>
   </ion-row>
-  <app-blog-slider
-    [blogList]="blogs | async"
-    [element]="elementName"
-  ></app-blog-slider>
-  <app-video-slider
-    [videoList]="videos | async"
-    [element]="elementName"
-  ></app-video-slider>
+  <ion-row
+    ><ion-col
+      ><app-blog-slider
+        [blogList]="blogs | async"
+        [element]="elementName"
+      ></app-blog-slider
+    ></ion-col>
+  </ion-row>
+  <ion-row
+    ><ion-col
+      ><app-video-slider
+        [videoList]="videos | async"
+        [element]="elementName"
+      ></app-video-slider>
+    </ion-col>
+  </ion-row>
   <app-wiof-footer></app-wiof-footer>
 </ion-content>

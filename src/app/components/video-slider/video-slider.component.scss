@@ -66,6 +66,7 @@
 @mixin video-card-style($color) {
   background-color: $color;
   &.background {
+    padding-bottom: 5px;
     background-color: rgba($color, $tint-fraction);
   }
 }

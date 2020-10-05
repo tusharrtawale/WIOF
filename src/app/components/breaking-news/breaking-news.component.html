@@ -1,0 +1,39 @@
+<!-- <ion-card *ngIf="newsList && newsList.length > 0"> -->
+<ion-card>
+  <ion-card-header
+    class="ion-align-center wiof-slider-header"
+  >
+    <ion-row>
+      <ion-col class="title-text" size="4">Breaking NEWS</ion-col>
+    </ion-row>
+  </ion-card-header>
+  <ion-card-content class="background">
+    <div *ngIf="newsList; else loading">
+      <ion-slides #wiofNewsSlider [options]="slideOpts">
+        <ion-slide *ngFor="let news of newsList">
+          <ion-card class="news-card">
+            <ion-card-content class="ion-text-start card-content">
+              <h4 class="ion-padding-vertical">
+                {{news.Headline}}<br>
+                {{news.Content}}
+              </h4>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+      <!-- <div
+        class="swiper-button-prev navigation-arrow-custom-styling"
+        (click)="wiofNewsSlider.slidePrev()"
+        *ngIf="showNavigator()"
+      ></div>
+      <div
+        class="swiper-button-next navigation-arrow-custom-styling"
+        (click)="wiofNewsSlider.slideNext()"
+        *ngIf="showNavigator()"
+      ></div> -->
+    </div>
+    <ng-template #loading>
+      <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />
+    </ng-template>
+  </ion-card-content>
+</ion-card>

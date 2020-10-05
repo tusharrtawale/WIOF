@@ -29,6 +29,7 @@ import { WaterWidgetComponent } from "./components/water-widget/water-widget.com
 import { WiofFooterComponent } from "./components/wiof-footer/wiof-footer.component";
 import { WiofSpinnerComponent } from "./components/wiof-spinner/wiof-spinner.component";
 import { VideoCardComponent } from "./components/video-card/video-card.component";
+import { BreakingNewsComponent } from "./components/breaking-news/breaking-news.component";
 
 @NgModule({
   imports: [
@@ -71,6 +72,7 @@ import { VideoCardComponent } from "./components/video-card/video-card.component
     BackButtonComponent,
     SocialShareComponent,
     VideoCardComponent,
+    BreakingNewsComponent
   ],
   declarations: [
     HeaderComponent,
@@ -99,6 +101,7 @@ import { VideoCardComponent } from "./components/video-card/video-card.component
     BackButtonComponent,
     SocialShareComponent,
     VideoCardComponent,
+    BreakingNewsComponent
   ],
   providers: [],
 })

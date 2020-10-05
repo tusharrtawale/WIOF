@@ -77,6 +77,40 @@ export const VIDEO_SLIDER_OPTIONS = {
 // <div class="swiper-button-prev"></div>
 //     <div class="swiper-button-next"></div>
 
+export const BREAKING_NEWS_SLIDER_OPTIONS = {
+  slidesPerView: 4,
+  spaceBetween: 1,
+  freeMode: true,
+  coverflowEffect: {
+    rotate: 50,
+    stretch: 0,
+    depth: 100,
+    modifier: 1,
+    slideShadows: true,
+  },
+
+  // Responsive breakpoints
+  breakpoints: {
+    // when window width is >= 320px
+    0: {
+      slidesPerView: 1,
+    },
+    // when window width is >= 480px
+    480: {
+      slidesPerView: 2,
+    },
+    // when window width is >= 767px
+    767: {
+      slidesPerView: 3,
+    },
+    // when window width is >= 1024px
+    1024: {
+      slidesPerView: 4,
+    },
+  },
+};
+
+
 export const BLOG_SLIDER_OPTIONS = {
   slidesPerView: 4,
   spaceBetween: 1,
@@ -126,6 +160,7 @@ export const FIREBASE_COLLECTION = {
   POLLS: "Polls",
   POLL: "Poll",
   ENVCAL: "Envcal",
+  NEWS:"News",
   CONFIG: "config",
 };
 

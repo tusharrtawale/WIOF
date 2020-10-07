@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 import { News } from "../models/News";
 import {
   AngularFirestore,
@@ -9,17 +9,15 @@ import { from, Observable } from "rxjs";
 import { FIREBASE_COLLECTION } from "../app.constants";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class NewsService {
   newsCollection: AngularFirestoreCollection<any>;
 
   constructor(public database: AngularFirestore) {
-    this.newsCollection = this.database.collection(
-      FIREBASE_COLLECTION.NEWS
-    );
-   }
-   saveNews(news: News) {
+    this.newsCollection = this.database.collection(FIREBASE_COLLECTION.NEWS);
+  }
+  saveNews(news: News) {
     // from is used to create an observable from promise
     return from(this.newsCollection.add({ ...news }));
   }

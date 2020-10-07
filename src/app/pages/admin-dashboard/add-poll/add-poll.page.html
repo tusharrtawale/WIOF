@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Poll</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="success" fill="solid" size="large" (click)="onSubmit()"
+        >Save</ion-button
+      >
+      <ion-button
+        color="medium"
+        fill="clear"
+        size="large"
+        routerLink="/admin-dashboard"
+        >Cancel</ion-button
+      >
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="addPollForm" (submit)="onSubmit()">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-xs="12" size-lg="6">
+          <ion-item>
+            <ion-label position="floating">Poll Question</ion-label>
+            <ion-textarea formControlName="question"></ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-xs="12" size-lg="6">
+          <ion-row formArrayName="options">
+            <ion-col
+              size-xs="12"
+              size-md="6"
+              *ngFor="let option of getOptionControls(); let i = index"
+            >
+              <ion-item>
+                <ion-label position="floating">Option {{ i + 1 }}</ion-label>
+                <ion-input [formControlName]="i"></ion-input>
+                <span
+                  class="input-close-icon"
+                  title="Remove this option"
+                  (click)="removeOption(i)"
+                  ><ion-icon name="close"></ion-icon
+                ></span>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size-xs="12" size-md="3">
+              <ion-button (click)="addOption()"
+                >Add Option <ion-icon name="add"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+      <hr />
+      <ion-row>
+        <ion-col size-xs="12" size-lg="3">
+          <ion-item
+            ><ion-label position="stacked">Active From</ion-label>
+            <ion-input type="date" formControlName="releaseDate"></ion-input>
+            <p>
+              <ion-note
+                >*Start date of accepting polls for this question</ion-note
+              >
+            </p>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-lg="3">
+          <ion-item
+            ><ion-label position="stacked">Active Till</ion-label>
+            <ion-input type="date" formControlName="expiryDate"></ion-input>
+            <p>
+              <ion-note
+                >*Last date of accepting polls for this question</ion-note
+              >
+            </p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

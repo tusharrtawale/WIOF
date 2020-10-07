@@ -6,6 +6,7 @@ import { catchError, map, takeUntil } from "rxjs/operators";
 import { ELEMENT_BLOG_CATEGORY } from "src/app/app.constants";
 import { Blog } from "src/app/models/Blog";
 import { BlogService } from "src/app/services/blog.service";
+import { UiUtilService } from "src/app/util/UiUtilService";
 
 @Component({
   selector: "app-add-blog",
@@ -21,9 +22,8 @@ export class AddBlogPage implements OnInit, OnDestroy {
   destroy$: Subject<boolean> = new Subject();
 
   constructor(
-    private alertCtrl: AlertController,
-    private loadingCtrl: LoadingController,
-    private blogService: BlogService
+    private blogService: BlogService,
+    private uiUtil: UiUtilService
   ) {}
 
   ngOnInit() {
@@ -48,10 +48,10 @@ export class AddBlogPage implements OnInit, OnDestroy {
     };
   }
 
-  onSubmit() {
+  async onSubmit() {
     if (this.addBlogForm.valid) {
       const blog = Blog.createByForm(this.addBlogForm);
-      this.showLoader("We are saving your blog...");
+      this.loader = await this.uiUtil.showLoader("We are saving your blog...");
       combineLatest([
         this.blogService.saveBlogImage(this.blogImageToSave, blog.imageName),
         this.blogService.saveBlog(blog),
@@ -69,11 +69,13 @@ export class AddBlogPage implements OnInit, OnDestroy {
           ([imgResp, blogResp]) => {
             this.loader.dismiss();
             this.addBlogForm.reset();
-            this.presentAlert("Success", "We saved your blog!", ["Cool!"]);
+            this.uiUtil.presentAlert("Success", "We saved your blog!", [
+              "Cool!",
+            ]);
           },
           (error) => {
             this.loader.dismiss();
-            this.presentAlert(
+            this.uiUtil.presentAlert(
               "Error",
               "Uh oh! We could not save it. Please try again.",
               ["OK"]
@@ -81,22 +83,6 @@ export class AddBlogPage implements OnInit, OnDestroy {
           }
         );
     }
-  }
-
-  async presentAlert(header: string, message: string, buttons: string[]) {
-    const alert = await this.alertCtrl.create({
-      header: header,
-      message: message,
-      buttons: buttons,
-    });
-    await alert.present();
-  }
-
-  async showLoader(message: string) {
-    this.loader = await this.loadingCtrl.create({
-      message: message,
-    });
-    this.loader.present();
   }
 
   ngOnDestroy(): void {

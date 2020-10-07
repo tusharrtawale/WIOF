@@ -9,7 +9,6 @@ import { AddBlogPage } from "./add-blog.page";
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
     IonicModule,
     AddBlogPageRoutingModule,
     FormsModule,

@@ -72,7 +72,7 @@ import { BreakingNewsComponent } from "./components/breaking-news/breaking-news.
     BackButtonComponent,
     SocialShareComponent,
     VideoCardComponent,
-    BreakingNewsComponent
+    BreakingNewsComponent,
   ],
   declarations: [
     HeaderComponent,
@@ -101,7 +101,7 @@ import { BreakingNewsComponent } from "./components/breaking-news/breaking-news.
     BackButtonComponent,
     SocialShareComponent,
     VideoCardComponent,
-    BreakingNewsComponent
+    BreakingNewsComponent,
   ],
   providers: [],
 })

@@ -7,7 +7,7 @@ import { Poll } from "../../models/Poll";
 import { PollsService } from "../../services/polls.service";
 import { PollService } from "../../services/poll.service";
 import { IpService } from "../../services/ip.service";
-import { AlertController, LoadingController } from "@ionic/angular";
+import { UiUtilService } from "src/app/util/UiUtilService";
 
 @Component({
   selector: "app-polls-widget",
@@ -29,8 +29,7 @@ export class PollsWidgetComponent implements OnInit, OnDestroy {
     private pollsService: PollsService,
     private pollService: PollService,
     private ip: IpService,
-    private alertCtrl: AlertController,
-    private loadingCtrl: LoadingController
+    private uiUtil: UiUtilService
   ) {}
 
   ngOnInit() {
@@ -64,7 +63,7 @@ export class PollsWidgetComponent implements OnInit, OnDestroy {
         this.IP4.ip,
         this.IP6.ip
       );
-      await this.showLoader("Saving your vote...");
+      this.loader = await this.uiUtil.showLoader("Saving your vote...");
       this.pollsService
         .savePolls(polls)
         .pipe(
@@ -79,7 +78,7 @@ export class PollsWidgetComponent implements OnInit, OnDestroy {
         .subscribe(
           (subscribeRes) => {
             this.loader.dismiss();
-            this.presentAlert(
+            this.uiUtil.presentAlert(
               "Vote Recorded",
               `Your vote has been recorded. Thanks ${
                 this.wiofPollsForm.get("name").value
@@ -92,7 +91,7 @@ export class PollsWidgetComponent implements OnInit, OnDestroy {
           },
           (error) => {
             this.loader.dismiss();
-            this.presentAlert(
+            this.uiUtil.presentAlert(
               "Error",
               "Uh oh! We could not save it. Please try again.",
               ["OK"]
@@ -108,22 +107,6 @@ export class PollsWidgetComponent implements OnInit, OnDestroy {
   showError() {
     this.errorShow = true;
     setTimeout(() => (this.errorShow = false), 2000);
-  }
-
-  async presentAlert(header: string, message: string, buttons: string[]) {
-    const alert = await this.alertCtrl.create({
-      header: header,
-      message: message,
-      buttons: buttons,
-    });
-    await alert.present();
-  }
-
-  async showLoader(message: string) {
-    this.loader = await this.loadingCtrl.create({
-      message: message,
-    });
-    this.loader.present();
   }
 
   ngOnDestroy(): void {

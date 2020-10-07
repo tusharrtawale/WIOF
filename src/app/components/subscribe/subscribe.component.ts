@@ -5,6 +5,7 @@ import { throwError, Subject } from "rxjs";
 import { Subscriber } from "../../models/Subscriber";
 import { catchError, map, takeUntil } from "rxjs/operators";
 import { SubscriptionService } from "../../services/subscription.service";
+import { UiUtilService } from "src/app/util/UiUtilService";
 
 @Component({
   selector: "app-subscribe",
@@ -19,9 +20,8 @@ export class SubscribeComponent implements OnInit {
   destroy$: Subject<boolean> = new Subject();
 
   constructor(
-    private alertCtrl: AlertController,
     private subscribeService: SubscriptionService,
-    private loadingCtrl: LoadingController
+    private uiUtil: UiUtilService
   ) {}
 
   ngOnInit() {
@@ -36,7 +36,7 @@ export class SubscribeComponent implements OnInit {
   async onSubmit() {
     if (this.addSubscriberForm.valid) {
       const subscriber = Subscriber.createByForm(this.addSubscriberForm);
-      await this.showLoader("Saving your subscription...");
+      this.loader = await this.uiUtil.showLoader("Saving your subscription...");
       this.subscribeService
         .saveSubscriber(subscriber)
         .pipe(
@@ -52,7 +52,7 @@ export class SubscribeComponent implements OnInit {
           (subscribeRes) => {
             this.loader.dismiss();
             this.addSubscriberForm.reset();
-            this.presentAlert(
+            this.uiUtil.presentAlert(
               "Success",
               "You are now subscribed to WIOF Newsletter",
               ["Cool!"]
@@ -60,7 +60,7 @@ export class SubscribeComponent implements OnInit {
           },
           (error) => {
             this.loader.dismiss();
-            this.presentAlert(
+            this.uiUtil.presentAlert(
               "Error",
               "Uh oh! We could not save it. Please try again.",
               ["OK"]
@@ -77,22 +77,6 @@ export class SubscribeComponent implements OnInit {
 
   onBack() {
     this.subscribeButton = true;
-  }
-
-  async presentAlert(header: string, message: string, buttons: string[]) {
-    const alert = await this.alertCtrl.create({
-      header: header,
-      message: message,
-      buttons: buttons,
-    });
-    await alert.present();
-  }
-
-  async showLoader(message: string) {
-    this.loader = await this.loadingCtrl.create({
-      message: message,
-    });
-    this.loader.present();
   }
 
   ngOnDestroy(): void {

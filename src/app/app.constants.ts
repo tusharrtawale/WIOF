@@ -110,7 +110,6 @@ export const BREAKING_NEWS_SLIDER_OPTIONS = {
   },
 };
 
-
 export const BLOG_SLIDER_OPTIONS = {
   slidesPerView: 4,
   spaceBetween: 1,
@@ -160,7 +159,7 @@ export const FIREBASE_COLLECTION = {
   POLLS: "Polls",
   POLL: "Poll",
   ENVCAL: "Envcal",
-  NEWS:"News",
+  NEWS: "News",
   CONFIG: "config",
 };
 

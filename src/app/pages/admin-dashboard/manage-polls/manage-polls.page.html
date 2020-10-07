@@ -9,8 +9,8 @@
 
 <ion-content>
   <ion-grid>
-    <ion-row>
-      <ion-col size-xs="12" size-md="4" size-lg="4"
+    <ion-row class="item-divider-line">
+      <ion-col size-xs="12" size-md="4" size-lg="4" class="ion-align-self-center"
         ><strong>Poll Question</strong></ion-col
       >
       <ion-col size-xs="4" size-md="2" size-lg="2"
@@ -23,10 +23,10 @@
         ><strong>Publish End</strong></ion-col
       >
       <ion-col size-xs="4" size-md="2" size-lg="2"
-        ><strong style="padding-left: 20px">Actions</strong></ion-col
+        ><strong class="action-heading">Actions</strong></ion-col
       >
     </ion-row>
-    <ion-row *ngFor="let poll of (pollsList$ | async)">
+    <ion-row *ngFor="let poll of (pollsList$ | async)" class="item-divider-line">
       <ion-col
         size-xs="12"
         size-md="4"

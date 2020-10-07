@@ -3,23 +3,23 @@ import { Form, FormGroup } from "@angular/forms";
 export class PollQuestion {
   question: string;
   options: string[];
-  releaseDate: number;
-  expiryDate: number;
+  publishStartDate: number;
+  publishEndDate: number;
   submitDate: number;
   status: string;
 
   constructor(
     question: string,
     options: string[],
-    releaseDate: number,
-    expiryDate: number,
+    publishStartDate: number,
+    publishEndDate: number,
     submitDate: number,
     status: string
   ) {
     this.question = question;
     this.options = options;
-    this.releaseDate = releaseDate;
-    this.expiryDate = expiryDate;
+    this.publishStartDate = publishStartDate;
+    this.publishEndDate = publishEndDate;
     this.submitDate = submitDate;
     this.status = status;
   }
@@ -28,9 +28,9 @@ export class PollQuestion {
     return new PollQuestion(
       addPollForm.value.question,
       addPollForm.value.options,
-      new Date(addPollForm.value.releaseDate).getTime(),
-      new Date(addPollForm.value.releaseDate).getTime(),
-      new Date(addPollForm.value.releaseDate).getTime(),
+      new Date(addPollForm.value.publishStartDate).getTime(),
+      new Date(addPollForm.value.publishEndDate).getTime(),
+      new Date(addPollForm.value.submitDate).getTime(),
       addPollForm.value.status
     );
   }

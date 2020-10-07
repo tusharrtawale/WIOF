@@ -35,8 +35,8 @@ export class AddPollPage implements OnInit {
         new FormControl("", Validators.required),
         new FormControl("", Validators.required),
       ]),
-      releaseDate: new FormControl(),
-      expiryDate: new FormControl(),
+      publishStartDate: new FormControl(),
+      publishEndDate: new FormControl(),
     });
   }
 

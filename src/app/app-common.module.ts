@@ -14,6 +14,7 @@ import { ElementWelcomeImageComponent } from "./components/element-welcome-image
 import { EnergyWidgetComponent } from "./components/energy-widget/energy-widget.component";
 import { EQWidgetComponent } from "./components/eq-widget/eq-widget.component";
 import { EqWidgetResultComponent } from "./components/eq-widget-result/eq-widget-result.component";
+import { EqWidgetTestComponent } from "./components/eq-widget-test/eq-widget-test.component";
 import { EqWidgetQuestionCardComponent } from "./components/eq-widget-question-card/eq-widget-question-card.component";
 import { FoodPhIndicatorMeterComponent } from "./components/food-ph-indicator-meter/food-ph-indicator-meter.component";
 import { FoodPhIndicatorComponent } from "./components/food-ph-indicator/food-ph-indicator.component";
@@ -72,7 +73,8 @@ import { BreakingNewsComponent } from "./components/breaking-news/breaking-news.
     BackButtonComponent,
     SocialShareComponent,
     VideoCardComponent,
-    BreakingNewsComponent
+    BreakingNewsComponent,
+    EqWidgetTestComponent
   ],
   declarations: [
     HeaderComponent,
@@ -101,7 +103,9 @@ import { BreakingNewsComponent } from "./components/breaking-news/breaking-news.
     BackButtonComponent,
     SocialShareComponent,
     VideoCardComponent,
-    BreakingNewsComponent
+    BreakingNewsComponent,
+    EqWidgetTestComponent
+
   ],
   providers: [],
 })

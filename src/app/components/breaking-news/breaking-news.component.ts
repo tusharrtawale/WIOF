@@ -1,13 +1,18 @@
-import { Component, OnInit,HostListener, Input,AfterViewInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  HostListener,
+  Input,
+  AfterViewInit,
+} from "@angular/core";
 import { BREAKING_NEWS_SLIDER_OPTIONS } from "src/app/app.constants";
 import { News } from "src/app/models/News";
 import { NewsService } from "../../services/news.service";
 
-
 @Component({
-  selector: 'app-breaking-news',
-  templateUrl: './breaking-news.component.html',
-  styleUrls: ['./breaking-news.component.scss'],
+  selector: "app-breaking-news",
+  templateUrl: "./breaking-news.component.html",
+  styleUrls: ["./breaking-news.component.scss"],
 })
 export class BreakingNewsComponent implements OnInit {
   newsList: Array<News>;
@@ -29,11 +34,13 @@ export class BreakingNewsComponent implements OnInit {
 
   slideOpts = BREAKING_NEWS_SLIDER_OPTIONS;
 
-
-  constructor(private NewsService:NewsService) { }
+  constructor(private NewsService: NewsService) {}
 
   ngOnInit() {
-    this.NewsService.getAllNews().subscribe(data => {this.newsList=data;console.log(this.newsList)});
+    this.NewsService.getAllNews().subscribe((data) => {
+      this.newsList = data;
+      console.log(this.newsList);
+    });
   }
 
   // showNavigator() {
@@ -68,7 +75,3 @@ export class BreakingNewsComponent implements OnInit {
   //   }
   // }
 }
-
-
-
-

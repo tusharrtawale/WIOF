@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/admin-dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Manage Polls</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="item-divider-line">
+      <ion-col size-xs="12" size-md="4" size-lg="4" class="ion-align-self-center"
+        ><strong>Poll Question</strong></ion-col
+      >
+      <ion-col size-xs="4" size-md="2" size-lg="2"
+        ><strong>Submit Date</strong></ion-col
+      >
+      <ion-col size-xs="4" size-md="2" size-lg="2"
+        ><strong>Publish Start</strong></ion-col
+      >
+      <ion-col size-xs="4" size-md="2" size-lg="2"
+        ><strong>Publish End</strong></ion-col
+      >
+      <ion-col size-xs="4" size-md="2" size-lg="2"
+        ><strong class="action-heading">Actions</strong></ion-col
+      >
+    </ion-row>
+    <ion-row *ngFor="let poll of (pollsList$ | async)" class="item-divider-line">
+      <ion-col
+        size-xs="12"
+        size-md="4"
+        size-lg="4"
+        class="ion-align-self-center"
+        >{{ poll.question }}</ion-col
+      >
+      <ion-col
+        size-xs="4"
+        size-md="2"
+        size-lg="2"
+        class="ion-align-self-center"
+      >
+        {{'2020-12-12' | date}}
+      </ion-col>
+      <ion-col size-xs="4" size-md="2" size-lg="2" class="ion-align-self-center"
+        >{{'2020-12-12' | date}}</ion-col
+      >
+      <ion-col size-xs="4" size-md="2" size-lg="2" class="ion-align-self-center"
+        >{{'2020-12-12' | date}}</ion-col
+      >
+      <ion-col size-xs="4" size-md="2" size-lg="2">
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button
+              ><ion-icon slot="icon-only" name="rocket-outline"></ion-icon
+            ></ion-button>
+            <ion-button
+              ><ion-icon slot="icon-only" name="eye-outline"></ion-icon
+            ></ion-button>
+            <ion-button
+              ><ion-icon slot="icon-only" name="trash-outline"></ion-icon
+            ></ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

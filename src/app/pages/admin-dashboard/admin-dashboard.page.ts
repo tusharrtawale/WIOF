@@ -9,6 +9,22 @@ import { AuthService } from "../../services/auth.service";
 })
 export class AdminDashboardPage implements OnInit {
   constructor(private afAuthService: AuthService, private router: Router) {}
+  adminDB = {
+    buttons: [
+      {
+        name: "Add Blog",
+        actionUrl: "add-blog",
+      },
+      {
+        name: "Add Poll",
+        actionUrl: "add-poll",
+      },
+      {
+        name: "Manage Polls",
+        actionUrl: "manage-polls",
+      },
+    ],
+  };
 
   ngOnInit() {}
 

@@ -28,28 +28,35 @@
   <ion-row class="result-box">
     <ion-col size="6">
       <p class="eq-meter-heading">Attention:</p>
-      <app-eq-widget-result
+      <!-- <app-eq-widget-result
         class="result1"
         [percent]="results[0]"
         [msg]="result1msg"
       >
-      </app-eq-widget-result>
+      </app-eq-widget-result> -->
+      <app-eq-widget-test [gpr]="['m','1',results[0]]"></app-eq-widget-test>
+
     </ion-col>
     <ion-col size="6">
       <p class="eq-meter-heading">Clarity:</p>
-      <app-eq-widget-result
+      <!-- <app-eq-widget-result
         class="result2"
         [percent]="results[1]"
         [msg]="result2msg"
-      ></app-eq-widget-result>
+      ></app-eq-widget-result> -->
+      <app-eq-widget-test [gpr]="['m','2',results[1]]"></app-eq-widget-test>
+
+
     </ion-col>
     <ion-col size="6" offset="3">
       <p class="eq-meter-heading">Reparation:</p>
-      <app-eq-widget-result
+      <!-- <app-eq-widget-result
         class="result3"
         [percent]="results[2]"
         [msg]="result3msg"
-      ></app-eq-widget-result>
+      ></app-eq-widget-result> -->
+      <app-eq-widget-test [gpr]="['m','3',results[2]]"></app-eq-widget-test>
+
     </ion-col>
   </ion-row>
   <ion-row>

@@ -78,7 +78,7 @@ export const VIDEO_SLIDER_OPTIONS = {
 //     <div class="swiper-button-next"></div>
 
 export const BREAKING_NEWS_SLIDER_OPTIONS = {
-  slidesPerView: 4,
+  slidesPerView: 1,
   spaceBetween: 1,
   freeMode: true,
   coverflowEffect: {
@@ -89,25 +89,25 @@ export const BREAKING_NEWS_SLIDER_OPTIONS = {
     slideShadows: true,
   },
 
-  // Responsive breakpoints
-  breakpoints: {
-    // when window width is >= 320px
-    0: {
-      slidesPerView: 1,
-    },
-    // when window width is >= 480px
-    480: {
-      slidesPerView: 2,
-    },
-    // when window width is >= 767px
-    767: {
-      slidesPerView: 3,
-    },
-    // when window width is >= 1024px
-    1024: {
-      slidesPerView: 4,
-    },
-  },
+  // // Responsive breakpoints
+  // breakpoints: {
+  //   // when window width is >= 320px
+  //   0: {
+  //     slidesPerView: 1,
+  //   },
+  //   // when window width is >= 480px
+  //   480: {
+  //     slidesPerView: 2,
+  //   },
+  //   // when window width is >= 767px
+  //   767: {
+  //     slidesPerView: 3,
+  //   },
+  //   // when window width is >= 1024px
+  //   1024: {
+  //     slidesPerView: 4,
+  //   },
+  // },
 };
 
 export const BLOG_SLIDER_OPTIONS = {
@@ -156,6 +156,7 @@ export const FIREBASE_COLLECTION = {
   SUBSCRIPTIONS: "Subscriptions",
   BLOG_IMAGE_STORAGE: "blog-images",
   ENVCAL_IMAGE_STORAGE: "environment-calendar",
+  NEWS_IMAGE_STORAGE:"news-images",
   POLLS: "Polls",
   POLL: "Poll",
   ENVCAL: "Envcal",

@@ -8,6 +8,8 @@ import {
 import { BREAKING_NEWS_SLIDER_OPTIONS } from "src/app/app.constants";
 import { News } from "src/app/models/News";
 import { NewsService } from "../../services/news.service";
+import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
+
 
 @Component({
   selector: "app-breaking-news",
@@ -18,6 +20,11 @@ export class BreakingNewsComponent implements OnInit {
   newsList: Array<News>;
   videoSliderClass: String;
   width: number;
+  isVideo:boolean;
+
+  //handle youtube video
+  videoLink: string;
+
 
   @HostListener("window:resize", [])
   public onResize() {
@@ -34,13 +41,26 @@ export class BreakingNewsComponent implements OnInit {
 
   slideOpts = BREAKING_NEWS_SLIDER_OPTIONS;
 
-  constructor(private NewsService: NewsService) {}
+  constructor(private NewsService: NewsService,private sanitizer: DomSanitizer) {}
 
   ngOnInit() {
     this.NewsService.getAllNews().subscribe((data) => {
       this.newsList = data;
       console.log(this.newsList);
+      this.newsList.map(x=>
+        {
+          if (x.mediaType=="video"){
+            x.sanitizedLink= this.sanitizer.bypassSecurityTrustResourceUrl(
+              `https://www.youtube.com/embed/${x.mediaLink}?controls=1`
+            );
+          }
+          else if(x.mediaType=="image"){
+            //handle image from storage
+          }
+        }
+        )
     });
+    
   }
 
   // showNavigator() {

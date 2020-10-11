@@ -1,6 +1,8 @@
 //Schema for the News
 
 import { FormGroup } from "@angular/forms";
+import { SafeResourceUrl } from "@angular/platform-browser";
+import { Observable } from 'rxjs';
 
 export class News {
   newsId: string;
@@ -9,6 +11,8 @@ export class News {
   date: string;
   mediaLink: string;
   mediaType: string;
+  sanitizedLink:SafeResourceUrl;
+  imageLink:Observable<any>;
 
   constructor(newsId, headline, content, date, mediaLink, mediaType) {
     this.newsId = newsId;

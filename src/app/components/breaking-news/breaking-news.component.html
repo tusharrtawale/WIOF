@@ -11,24 +11,34 @@
         <ion-slide *ngFor="let news of newsList">
           <ion-card class="news-card">
             <ion-card-content class="ion-text-start card-content">
-              <h4 class="ion-padding-vertical">
-                {{ news.Headline }}<br />
-                {{ news.Content }}
-              </h4>
+              <ion-row>
+                <ion-col class="mediaContainer" size-xs="12" size-md="4">
+                  <img class="mediaPlayer"  [src]="news.imageLink| async" *ngIf="news.mediaType=='image'">
+                  <iframe class="mediaPlayer" [src]="news.sanitizedLink" *ngIf="news.mediaType=='video'"></iframe>
+                </ion-col>
+                <ion-col class="newsContent" size-xs="12" size-md="8">
+                  <h2>{{ news.Headline }}</h2>
+                  <p>{{ news.Content }}</p>
+                </ion-col>
+              </ion-row>
             </ion-card-content>
           </ion-card>
         </ion-slide>
       </ion-slides>
-      <!-- <div
+      <marquee class="newsHeadlineScroll" direction="left" behavior="slide">
+        <p><span *ngFor="let news of newsList"> |  {{news.Headline}}  | </span></p>
+      </marquee>
+      <div
         class="swiper-button-prev navigation-arrow-custom-styling"
         (click)="wiofNewsSlider.slidePrev()"
-        *ngIf="showNavigator()"
+        
       ></div>
       <div
         class="swiper-button-next navigation-arrow-custom-styling"
         (click)="wiofNewsSlider.slideNext()"
-        *ngIf="showNavigator()"
-      ></div> -->
+       
+      ></div>
+      <!-- *ngIf="showNavigator()" -->
     </div>
     <ng-template #loading>
       <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />

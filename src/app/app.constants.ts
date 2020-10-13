@@ -156,7 +156,7 @@ export const FIREBASE_COLLECTION = {
   SUBSCRIPTIONS: "Subscriptions",
   BLOG_IMAGE_STORAGE: "blog-images",
   ENVCAL_IMAGE_STORAGE: "environment-calendar",
-  NEWS_IMAGE_STORAGE:"news-images",
+  NEWS_IMAGE_STORAGE: "news-images",
   POLLS: "Polls",
   POLL: "Poll",
   ENVCAL: "Envcal",
@@ -189,4 +189,10 @@ export const PAGE_CATEGORY_MAP = {
   earth: "Earth",
   energy: "Energy",
   spirit: "Spirit",
+};
+
+export const POLL_STATUS = {
+  SUBMITTED: "submitted",
+  PUBLISHED: "published",
+  INACTIVE: "inactive",
 };

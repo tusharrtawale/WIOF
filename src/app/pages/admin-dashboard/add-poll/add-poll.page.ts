@@ -1,8 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, FormArray, Validators } from "@angular/forms";
 import { UiUtilService } from "src/app/util/UiUtilService";
-import { Poll } from "src/app/models/Poll";
-import { PollService } from "src/app/services/poll.service";
+import { PollQuestionService } from "src/app/services/poll-question.service";
 import { Subject, throwError } from "rxjs";
 import { takeUntil, map, catchError } from "rxjs/operators";
 import { PollQuestion } from "src/app/models/PollQuestion";
@@ -16,10 +15,11 @@ export class AddPollPage implements OnInit {
   addPollForm: FormGroup;
   loader;
   destroy$: Subject<boolean> = new Subject();
+  minDate: string;
 
   constructor(
     private uiUtil: UiUtilService,
-    private pollService: PollService
+    private pollQuestionService: PollQuestionService
   ) {}
 
   ngOnInit() {
@@ -27,6 +27,7 @@ export class AddPollPage implements OnInit {
   }
 
   initForm() {
+    //TODO handle validation of options
     return new FormGroup({
       question: new FormControl("", Validators.required),
       options: new FormArray([
@@ -41,28 +42,18 @@ export class AddPollPage implements OnInit {
   }
 
   getOptionControls() {
-    return (this.addPollForm.get("options") as FormArray).controls;
+    return this.addPollForm.get("options") as FormArray;
   }
 
   async onSubmit() {
     if (this.addPollForm.valid) {
       console.log(this.addPollForm.value);
       const pollQuestion = PollQuestion.createByForm(this.addPollForm);
-      //TODO update poll object model
-      const poll = new Poll(
-        null,
-        pollQuestion.question,
-        pollQuestion.options[0],
-        pollQuestion.options[1],
-        pollQuestion.options[2],
-        pollQuestion.options[3],
-        "Active"
-      );
       this.loader = await this.uiUtil.showLoader(
         "We are saving your poll question..."
       );
-      this.pollService
-        .savePoll(poll)
+      this.pollQuestionService
+        .savePollQuestion(pollQuestion)
         .pipe(
           takeUntil(this.destroy$),
           map((response) => {
@@ -96,7 +87,7 @@ export class AddPollPage implements OnInit {
   }
 
   removeOption(index: number) {
-    this.getOptionControls().splice(index, 1);
+    this.getOptionControls().removeAt(index);
   }
 
   addOption() {

@@ -1,7 +1,15 @@
 .item-divider-line {
-    border-bottom: 1px solid lightgrey
+  border-bottom: 1px solid lightgrey;
 }
 
 .action-heading {
-    padding-left: 20px;
+  padding-left: 20px;
+}
+
+.status-published {
+  color: orange;
+}
+
+.status-inactive {
+  color: grey;
 }

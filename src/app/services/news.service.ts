@@ -15,7 +15,10 @@ import { FIREBASE_COLLECTION } from "../app.constants";
 export class NewsService {
   newsCollection: AngularFirestoreCollection<any>;
 
-  constructor(private storage: AngularFireStorage,public database: AngularFirestore) {
+  constructor(
+    private storage: AngularFireStorage,
+    public database: AngularFirestore
+  ) {
     this.newsCollection = this.database.collection(FIREBASE_COLLECTION.NEWS);
   }
   saveNews(news: News) {
@@ -36,8 +39,8 @@ export class NewsService {
         actions.map((a) => {
           const data = a.payload.doc.data() as News;
           data.newsId = a.payload.doc.id;
-          if(data.mediaType=="image"){
-            data.imageLink=this.getImage(data.mediaLink);
+          if (data.mediaType == "image") {
+            data.imageLink = this.getImage(data.mediaLink);
           }
           return data;
         })

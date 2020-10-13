@@ -74,7 +74,7 @@ import { BreakingNewsComponent } from "./components/breaking-news/breaking-news.
     SocialShareComponent,
     VideoCardComponent,
     BreakingNewsComponent,
-    EqWidgetTestComponent
+    EqWidgetTestComponent,
   ],
   declarations: [
     HeaderComponent,
@@ -104,8 +104,7 @@ import { BreakingNewsComponent } from "./components/breaking-news/breaking-news.
     SocialShareComponent,
     VideoCardComponent,
     BreakingNewsComponent,
-    EqWidgetTestComponent
-
+    EqWidgetTestComponent,
   ],
   providers: [],
 })

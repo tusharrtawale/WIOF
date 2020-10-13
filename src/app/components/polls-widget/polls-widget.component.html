@@ -22,52 +22,22 @@
         <br />
         <div class="font-size-medium">
           <p>Poll Question</p>
-          <p style="font-size: large">{{ poll.question }}</p>
+          <p style="font-size: large">{{ pollQuestion.question }}</p>
         </div>
         <br />
 
-        <div class="poll-options">
+        <div
+          class="poll-options"
+          *ngFor="let option of pollQuestion.options; let i = index"
+        >
           <input
             type="radio"
-            id="option 1"
+            id="option{{ i + 1 }}"
             name="option"
-            value="option 1"
+            value="option{{ i + 1 }}"
             formControlName="option"
           />
-          <label for="option 1"> {{ poll.option1 | titlecase }}</label>
-        </div>
-
-        <div class="poll-options">
-          <input
-            type="radio"
-            id="option 2"
-            name="option"
-            value="option 2"
-            formControlName="option"
-          />
-          <label for="option 2"> {{ poll.option2 | titlecase }}</label>
-        </div>
-
-        <div class="poll-options">
-          <input
-            type="radio"
-            id="option 3"
-            name="option"
-            value="option 3"
-            formControlName="option"
-          />
-          <label for="option 3"> {{ poll.option3 | titlecase }}</label>
-        </div>
-
-        <div class="poll-options">
-          <input
-            type="radio"
-            id="option 4"
-            name="option"
-            value="option 4"
-            formControlName="option"
-          />
-          <label for="option 4"> {{ poll.option4 | titlecase }}</label>
+          <label for="option{{ i + 1 }}"> {{ option | titlecase }}</label>
         </div>
 
         <br />
@@ -78,7 +48,7 @@
     </div>
     <app-poll-result
       *ngIf="showPollResult"
-      [pollId]="poll.pollId"
+      [pollQuestion]="pollQuestion"
     ></app-poll-result>
   </ion-card-content>
 </ion-card>

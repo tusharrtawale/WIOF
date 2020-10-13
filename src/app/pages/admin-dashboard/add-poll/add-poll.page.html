@@ -36,7 +36,7 @@
             <ion-col
               size-xs="12"
               size-md="6"
-              *ngFor="let option of getOptionControls(); let i = index"
+              *ngFor="let option of getOptionControls().controls; let i = index"
             >
               <ion-item>
                 <ion-label position="floating">Option {{ i + 1 }}</ion-label>

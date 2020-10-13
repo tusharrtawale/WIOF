@@ -1,0 +1,88 @@
+@import "../../wiof-custom-theming.scss";
+
+$fontcolor: #fff;
+
+.wiof-social-share-button {
+  position: absolute;
+  padding:10px;
+  width: 55px;
+  background-color: #ffee0647;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+  cursor: pointer;
+  top: 500px;
+  left: 0px;
+  z-index: 100;
+  transition: 0.4s;
+  transition-delay: 0.5s;
+
+  &.inactive {
+    left: -40px;
+    opacity: 0%;
+  }
+
+//   @media only screen and (max-width: 767px) {
+//     height: 120px;
+//     width: 35px;
+//   }
+}
+
+
+.wiof-social-share-container {
+//   transform: rotate(-90deg);
+//   color: $fontcolor;
+//   width: 100px;
+//   position: relative;
+//   top: 40px;
+//   left: -58px;
+//   margin: 0px;
+//   font-weight: bold;
+//   background: #fff;
+//   padding: 5px;
+//   text-align: right;
+
+//   @media only screen and (max-width: 767px) {
+//     top: 20px;
+//     font-size: 14px;
+//   }
+}
+
+/* Share Buttons */
+
+  .wiof-social-share-container a ion-icon {
+    font-size: 32px;
+  }
+  
+  .wiof-social-share-container a {
+    // margin: 0 8px;
+    transition: 500ms;
+  }
+  
+  .wiof-social-share-container #fb {
+    color: #3b5998;
+    &:hover{
+        scale:1.2;    
+    }
+  }
+  
+  .wiof-social-share-container #tw {
+    color: #1da1f2;
+    &:hover{
+        scale:1.2;    
+    }
+  }
+  
+  .wiof-social-share-container #li {
+    color: #0077b5;
+    &:hover{
+        scale:1.2;    
+    }
+  }
+
+  .wiof-social-share-container #wa {
+    color: #25d366;
+    &:hover{
+        scale:1.2;    
+    }
+  }
+  

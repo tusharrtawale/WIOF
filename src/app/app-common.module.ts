@@ -31,6 +31,7 @@ import { WiofFooterComponent } from "./components/wiof-footer/wiof-footer.compon
 import { WiofSpinnerComponent } from "./components/wiof-spinner/wiof-spinner.component";
 import { VideoCardComponent } from "./components/video-card/video-card.component";
 import { BreakingNewsComponent } from "./components/breaking-news/breaking-news.component";
+import { SocialShareHomeComponent } from "./components/social-share-home/social-share-home.component";
 
 @NgModule({
   imports: [
@@ -74,7 +75,8 @@ import { BreakingNewsComponent } from "./components/breaking-news/breaking-news.
     SocialShareComponent,
     VideoCardComponent,
     BreakingNewsComponent,
-    EqWidgetTestComponent
+    EqWidgetTestComponent,
+    SocialShareHomeComponent
   ],
   declarations: [
     HeaderComponent,
@@ -104,7 +106,8 @@ import { BreakingNewsComponent } from "./components/breaking-news/breaking-news.
     SocialShareComponent,
     VideoCardComponent,
     BreakingNewsComponent,
-    EqWidgetTestComponent
+    EqWidgetTestComponent,
+    SocialShareHomeComponent
 
   ],
   providers: [],

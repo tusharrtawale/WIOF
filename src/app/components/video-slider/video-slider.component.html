@@ -38,7 +38,7 @@
         <ion-slide *ngFor="let video of videoList">
           <ion-card class="video-card">
             <ion-card-content class="ion-text-start card-content">
-              <img [src]="video.thumbnail" class="thumbnailImage" />
+              <img [src]="video.thumbnail" class="thumbnailImage" [routerLink]="['video', video.url]"/>
               <h4 class="ion-padding-vertical">
                 <strong
                   ><a class="link-title" [routerLink]="['video', video.url]">{{

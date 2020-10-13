@@ -1,6 +1,8 @@
 import { Form, FormGroup } from "@angular/forms";
+import { POLL_STATUS } from "../app.constants";
 
 export class PollQuestion {
+  pollId: string;
   question: string;
   options: string[];
   publishStartDate: number;
@@ -30,8 +32,8 @@ export class PollQuestion {
       addPollForm.value.options,
       new Date(addPollForm.value.publishStartDate).getTime(),
       new Date(addPollForm.value.publishEndDate).getTime(),
-      new Date(addPollForm.value.submitDate).getTime(),
-      addPollForm.value.status
+      new Date().getTime(),
+      POLL_STATUS.SUBMITTED
     );
   }
 }

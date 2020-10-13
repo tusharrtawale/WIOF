@@ -5,36 +5,34 @@
   background-color: white;
 }
 
-.arrow-container{
- padding:2.5%; 
+.arrow-container {
+  padding: 2.5%;
 }
-.arrow{
+.arrow {
   position: relative;
-  display:inline-block;
-  transition:0.5s;
+  display: inline-block;
+  transition: 0.5s;
 }
-.eqScaleContainer{
-  display:flex;
-  width:100%;
-
+.eqScaleContainer {
+  display: flex;
+  width: 100%;
 }
-.eqScale{
-  display:block;
-  width:10%;
-  text-align:center;
+.eqScale {
+  display: block;
+  width: 10%;
+  text-align: center;
 }
-
 
 .bracket {
   width: 3px;
 
   border: #202020 1px solid;
   // width: 8.19%;
-  width:1px;
+  width: 1px;
   height: 48px;
   z-index: 2;
   position: absolute;
-  background-color: #2D2D2D;
+  background-color: #2d2d2d;
   transition-delay: 1s;
   transition: 0.5s;
   top: 5px;

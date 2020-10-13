@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Polls } from "../models/Polls";
+import { Poll } from "../models/Poll";
 import {
   AngularFirestore,
   AngularFirestoreCollection,
@@ -21,21 +21,21 @@ export class PollsService {
     );
   }
 
-  savePolls(polls: Polls) {
+  savePolls(poll: Poll) {
     // from is used to create an observable from promise
-    return from(this.pollsCollection.add({ ...polls }));
+    return from(this.pollsCollection.add({ ...poll }));
   }
 
-  getPolls(pollId: string): Observable<Polls[]> {
+  getPolls(pollQuestionId: string): Observable<Poll[]> {
     // getPolls(): Observable<Polls[]>{
     const pollsCollectionById = this.database.collection(
       FIREBASE_COLLECTION.POLLS,
-      (ref) => ref.where("poll.pollId", "==", pollId)
+      (ref) => ref.where("pollQuestionId", "==", pollQuestionId)
     );
     return pollsCollectionById.snapshotChanges().pipe(
       map((actions) =>
         actions.map((a) => {
-          const data = a.payload.doc.data() as Polls;
+          const data = a.payload.doc.data() as Poll;
           data.id = a.payload.doc.id;
           return data;
         })

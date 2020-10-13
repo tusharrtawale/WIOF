@@ -1,13 +1,13 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { map, catchError, takeUntil } from "rxjs/operators";
-import { throwError, Subject, forkJoin, pipe, combineLatest } from "rxjs";
-import { Polls } from "../../models/Polls";
-import { Poll } from "../../models/Poll";
-import { PollsService } from "../../services/polls.service";
-import { PollService } from "../../services/poll.service";
-import { IpService } from "../../services/ip.service";
+import { combineLatest, Subject, throwError } from "rxjs";
+import { catchError, map, takeUntil } from "rxjs/operators";
+import { PollQuestion } from "src/app/models/PollQuestion";
 import { UiUtilService } from "src/app/util/UiUtilService";
+import { IpService } from "../../services/ip.service";
+import { PollQuestionService } from "../../services/poll-question.service";
+import { PollsService } from "../../services/polls.service";
+import { Poll } from "src/app/models/Poll";
 
 @Component({
   selector: "app-polls-widget",
@@ -15,9 +15,9 @@ import { UiUtilService } from "src/app/util/UiUtilService";
   styleUrls: ["./polls-widget.component.scss"],
 })
 export class PollsWidgetComponent implements OnInit, OnDestroy {
-  poll: Poll;
-  IP4: any;
-  IP6: any;
+  pollQuestion: PollQuestion;
+  IP4: any = { ip: "" };
+  IP6: any = { ip: "" };
   showPollResult: boolean = false;
   showForm: boolean = true;
   errorShow: boolean = false;
@@ -27,7 +27,7 @@ export class PollsWidgetComponent implements OnInit, OnDestroy {
   wiofPollsForm: FormGroup;
   constructor(
     private pollsService: PollsService,
-    private pollService: PollService,
+    private pollQuestionService: PollQuestionService,
     private ip: IpService,
     private uiUtil: UiUtilService
   ) {}
@@ -38,34 +38,38 @@ export class PollsWidgetComponent implements OnInit, OnDestroy {
       option: new FormControl("", [Validators.required]),
     });
 
-    this.poll = {} as Poll;
+    this.pollQuestion = {} as PollQuestion;
     combineLatest([
-      this.ip.getIp4(),
-      this.ip.getIp6(),
-      this.pollService.getPoll(),
+      //TODO IP handling pending
+      // this.ip.getIp4(),
+      // this.ip.getIp6(),
+      this.pollQuestionService.getPollQuestion(),
     ])
-      .pipe(
-        takeUntil(this.destroy$),
-        map((data) => data)
-      )
-      .subscribe(([ip4Data, ip6Data, pollData]) => {
-        this.IP4 = ip4Data;
-        this.IP6 = ip6Data;
-        this.poll = pollData[0];
-      });
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(
+        ([pollData]) => {
+          //TODO IP handling pending
+          // this.IP4 = ip4Data;
+          // this.IP6 = ip6Data;
+          this.pollQuestion = pollData[0];
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
   }
 
   async submit() {
     if (this.wiofPollsForm.valid) {
-      const polls = Polls.createByForm(
-        this.poll,
+      const poll = Poll.createByForm(
+        this.pollQuestion.pollId,
         this.wiofPollsForm,
         this.IP4.ip,
         this.IP6.ip
       );
       this.loader = await this.uiUtil.showLoader("Saving your vote...");
       this.pollsService
-        .savePolls(polls)
+        .savePolls(poll)
         .pipe(
           takeUntil(this.destroy$),
           map((pollsRes) => {

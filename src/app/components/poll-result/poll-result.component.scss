@@ -5,11 +5,13 @@
   width: 300px;
   border: solid black 2px;
   margin-bottom: 5px;
+  position: relative;
 }
 .polls-results-container {
   background-color: antiquewhite;
   padding: 5%;
   border-radius: 5px;
+  height: 100%;
 }
 .poll-options {
   background-color: #dfdec9;
@@ -26,7 +28,7 @@
 }
 
 .poll-percent {
-  left: 10%;
+  left: 5%;
   position: absolute;
   font-size: 11px;
   padding-left: 2%;

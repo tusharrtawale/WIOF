@@ -1,9 +1,9 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Observable, Subject, throwError } from "rxjs";
+import { catchError, map, takeUntil } from "rxjs/operators";
 import { PollQuestion } from "src/app/models/PollQuestion";
-import { PollService } from "src/app/services/poll.service";
-import { Subject, Observable, throwError } from "rxjs";
-import { takeUntil, catchError, map } from "rxjs/operators";
-import { Poll } from "src/app/models/Poll";
+import { PollQuestionService } from "src/app/services/poll-question.service";
+import { UiUtilService } from "src/app/util/UiUtilService";
 
 @Component({
   selector: "app-manage-polls",
@@ -11,16 +11,18 @@ import { Poll } from "src/app/models/Poll";
   styleUrls: ["./manage-polls.page.scss"],
 })
 export class ManagePollsPage implements OnInit, OnDestroy {
-  pollsList: Array<PollQuestion> = [];
   destroy$: Subject<boolean> = new Subject();
-  pollsList$: Observable<Poll[]>;
+  pollQuestionList$: Observable<PollQuestion[]>;
 
-  constructor(private pollService: PollService) {}
+  constructor(
+    private pollQuestionService: PollQuestionService,
+    private uiUtil: UiUtilService
+  ) {}
   ngOnInit() {
-    this.pollsList$ = this.pollService.getPoll().pipe(
+    this.pollQuestionList$ = this.pollQuestionService.getPollQuestions().pipe(
       takeUntil(this.destroy$),
-      map((pollsList) => {
-        return pollsList;
+      map((pollQuestionList) => {
+        return pollQuestionList.sort((a, b) => b.submitDate - a.submitDate);
       }),
       catchError((err) => {
         return throwError(err);
@@ -31,5 +33,50 @@ export class ManagePollsPage implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next(true);
     this.destroy$.unsubscribe();
+  }
+
+  public async deletePollQuestion(
+    pollQuestionList: PollQuestion[],
+    index: number,
+    pollQuestionId: string
+  ) {
+    const loader = await this.uiUtil.showLoader(
+      "We are deleting the poll question..."
+    );
+    this.pollQuestionService.deletePollQuestion(pollQuestionId).subscribe(
+      //TODO handle delete error case
+      (response) => {
+        console.log(response);
+        loader.dismiss();
+        this.uiUtil.presentAlert(
+          "Success",
+          "Poll question successfully deleted!",
+          ["OK"]
+        );
+        pollQuestionList.splice(index, 1);
+      },
+      (error) => {
+        console.log(error);
+        loader.dismiss();
+        this.uiUtil.presentAlert(
+          "Error",
+          "Uh Oh! We could not delete poll question. Please try again.",
+          ["OK"]
+        );
+      }
+    );
+  }
+
+  publishPollQuestion(pollQuestionId: string) {
+    this.pollQuestionService
+      .publishPollQuestion(pollQuestionId)
+      .subscribe((data) => {
+        console.log(data);
+        this.uiUtil.presentAlert(
+          "Success",
+          "Poll question successfully published!",
+          ["OK"]
+        );
+      });
   }
 }

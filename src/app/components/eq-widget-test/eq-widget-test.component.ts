@@ -6,17 +6,16 @@ import { Component, OnInit, Input } from "@angular/core";
   styleUrls: ["./eq-widget-test.component.scss"],
 })
 export class EqWidgetTestComponent implements OnInit {
-  @Input() gpr:string[];  //gender, parameter, result
-  food: any="nothing";
+  @Input() gpr: string[]; //gender, parameter, result
+  food: any = "nothing";
 
-  firstBlockWidth:string;
-  secondBlockWidth:string;
-  thirdBlockWidth:string;
-  arrowPosition:string;
+  firstBlockWidth: string;
+  secondBlockWidth: string;
+  thirdBlockWidth: string;
+  arrowPosition: string;
   message: string;
 
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit() {
     // this.updatePhPointer();
@@ -50,44 +49,36 @@ export class EqWidgetTestComponent implements OnInit {
   //   }
   // }
 
-  positionArrow(){
+  positionArrow() {
     // this.arrowPosition=String((Number(this.gpr[2])/40)*100)+"%";
-    this.arrowPosition=this.gpr[2]+"%";
+    this.arrowPosition = this.gpr[2] + "%";
   }
 
-  updateRanges(){
-    if(this.gpr[0]=="m" && this.gpr[1]=="1"){
-      this.firstBlockWidth="52.5%";
-      this.secondBlockWidth="27.5%";
-      this.thirdBlockWidth="20%";
+  updateRanges() {
+    if (this.gpr[0] == "m" && this.gpr[1] == "1") {
+      this.firstBlockWidth = "52.5%";
+      this.secondBlockWidth = "27.5%";
+      this.thirdBlockWidth = "20%";
+    } else if (this.gpr[0] == "f" && this.gpr[1] == "1") {
+      this.firstBlockWidth = "60%";
+      this.secondBlockWidth = "27.5%";
+      this.thirdBlockWidth = "12.5%";
+    } else if (this.gpr[0] == "m" && this.gpr[1] == "2") {
+      this.firstBlockWidth = "62.5%";
+      this.secondBlockWidth = "25%";
+      this.thirdBlockWidth = "12.5%";
+    } else if (this.gpr[0] == "f" && this.gpr[1] == "2") {
+      this.firstBlockWidth = "57.5%";
+      this.secondBlockWidth = "27.5%";
+      this.thirdBlockWidth = "15%";
+    } else if (this.gpr[0] == "m" && this.gpr[1] == "3") {
+      this.firstBlockWidth = "57.5%";
+      this.secondBlockWidth = "30%";
+      this.thirdBlockWidth = "12.5%";
+    } else if (this.gpr[0] == "f" && this.gpr[1] == "3") {
+      this.firstBlockWidth = "57.5%";
+      this.secondBlockWidth = "27.5%";
+      this.thirdBlockWidth = "15%";
     }
-    else if(this.gpr[0]=="f" && this.gpr[1]=="1"){
-      this.firstBlockWidth="60%";
-      this.secondBlockWidth="27.5%";
-      this.thirdBlockWidth="12.5%";
-    }
-    else if(this.gpr[0]=="m" && this.gpr[1]=="2"){
-      this.firstBlockWidth="62.5%";
-      this.secondBlockWidth="25%";
-      this.thirdBlockWidth="12.5%";
-    }
-    else if(this.gpr[0]=="f" && this.gpr[1]=="2"){
-      this.firstBlockWidth="57.5%";
-      this.secondBlockWidth="27.5%";
-      this.thirdBlockWidth="15%";
-    }
-    else if(this.gpr[0]=="m" && this.gpr[1]=="3"){
-      this.firstBlockWidth="57.5%";
-      this.secondBlockWidth="30%";
-      this.thirdBlockWidth="12.5%";
-    }
-    else if(this.gpr[0]=="f" && this.gpr[1]=="3"){
-      this.firstBlockWidth="57.5%";
-      this.secondBlockWidth="27.5%";
-      this.thirdBlockWidth="15%";
-    }
-
   }
-
-
 }

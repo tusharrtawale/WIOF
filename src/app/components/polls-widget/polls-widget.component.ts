@@ -34,7 +34,7 @@ export class PollsWidgetComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.wiofPollsForm = new FormGroup({
-      name: new FormControl("", [Validators.required]),
+      name: new FormControl(""),
       option: new FormControl("", [Validators.required]),
     });
 

@@ -33,11 +33,11 @@ export class PollQuestionService {
       FIREBASE_COLLECTION.POLL,
       (ref) => ref.where("status", "==", POLL_STATUS.PUBLISHED)
     );
-    return pollCollectionById.snapshotChanges().pipe(
-      map((actions) =>
-        actions.map((a) => {
-          const data = a.payload.doc.data() as PollQuestion;
-          data.pollId = a.payload.doc.id;
+    return pollCollectionById.get().pipe(
+      map((querySnapshot) =>
+        querySnapshot.docs.map((doc) => {
+          const data = doc.data() as PollQuestion;
+          data.pollId = doc.id;
           return data;
         })
       )
@@ -48,11 +48,11 @@ export class PollQuestionService {
     const pollCollectionById = this.database.collection(
       FIREBASE_COLLECTION.POLL
     );
-    return pollCollectionById.snapshotChanges().pipe(
-      map((actions) =>
-        actions.map((a) => {
-          const data = a.payload.doc.data() as PollQuestion;
-          data.pollId = a.payload.doc.id;
+    return pollCollectionById.get().pipe(
+      map((querySnapshot) =>
+        querySnapshot.docs.map((doc) => {
+          const data = doc.data() as PollQuestion;
+          data.pollId = doc.id;
           return data;
         })
       )

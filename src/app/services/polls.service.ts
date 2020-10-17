@@ -32,11 +32,11 @@ export class PollsService {
       FIREBASE_COLLECTION.POLLS,
       (ref) => ref.where("pollQuestionId", "==", pollQuestionId)
     );
-    return pollsCollectionById.snapshotChanges().pipe(
-      map((actions) =>
-        actions.map((a) => {
-          const data = a.payload.doc.data() as Poll;
-          data.id = a.payload.doc.id;
+    return pollsCollectionById.get().pipe(
+      map((querySnapshot) =>
+        querySnapshot.docs.map((doc) => {
+          const data = doc.data() as Poll;
+          data.id = doc.id;
           return data;
         })
       )

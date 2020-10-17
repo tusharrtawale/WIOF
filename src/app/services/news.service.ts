@@ -34,11 +34,11 @@ export class NewsService {
   }
 
   getAllNews(): Observable<News[]> {
-    return this.newsCollection.snapshotChanges().pipe(
-      map((actions) =>
-        actions.map((a) => {
-          const data = a.payload.doc.data() as News;
-          data.newsId = a.payload.doc.id;
+    return this.newsCollection.get().pipe(
+      map((querySnapshot) =>
+        querySnapshot.docs.map((doc) => {
+          const data = doc.data() as News;
+          data.newsId = doc.id;
           if (data.mediaType == "image") {
             data.imageLink = this.getImage(data.mediaLink);
           }

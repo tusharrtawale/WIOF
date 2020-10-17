@@ -35,11 +35,11 @@ export class BlogService {
       FIREBASE_COLLECTION.BLOGS,
       (ref) => ref.where("category", "==", category)
     );
-    return blogCollectionByCategory.snapshotChanges().pipe(
-      map((actions) =>
-        actions.map((a) => {
-          const data = a.payload.doc.data() as Blog;
-          data.id = a.payload.doc.id;
+    return blogCollectionByCategory.get().pipe(
+      map((querySnapshot) =>
+        querySnapshot.docs.map((doc) => {
+          const data = doc.data() as Blog;
+          data.id = doc.id;
           data.image = this.getImage(data.imageName); //datatype is observable, handle accordingly
           return data;
         })
@@ -51,13 +51,13 @@ export class BlogService {
     const blogDoc = this.database.doc<Blog>(
       `${FIREBASE_COLLECTION.BLOGS}/${id}`
     );
-    return blogDoc.snapshotChanges().pipe(
-      map((a) => {
-        if (!a.payload.exists) {
+    return blogDoc.get().pipe(
+      map((querySnapshot) => {
+        if (!querySnapshot.exists) {
           return null;
         } else {
-          var data = a.payload.data() as Blog;
-          data.id = a.payload.id;
+          var data = querySnapshot.data() as Blog;
+          data.id = querySnapshot.id;
           data.image = this.getImage(data.imageName); //datatype is observable, handle accordingly
           return data;
         }

@@ -27,11 +27,11 @@ export class EnvcalServiceService {
       FIREBASE_COLLECTION.ENVCAL,
       (ref) => ref.where("month", "==", month)
     );
-    return this.envcalCollectionByMonth.snapshotChanges().pipe(
-      map((actions) =>
-        actions.map((a) => {
-          const data = a.payload.doc.data() as EnvDay;
-          data.id = a.payload.doc.id;
+    return this.envcalCollectionByMonth.get().pipe(
+      map((querySnapshot) =>
+        querySnapshot.docs.map((doc) => {
+          const data = doc.data() as EnvDay;
+          data.id = doc.id;
           return data;
         })
       )

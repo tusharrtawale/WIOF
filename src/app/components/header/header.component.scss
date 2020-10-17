@@ -9,8 +9,19 @@
   }
 }
 .ios {
-  padding-top: 10px;
+  padding-top: 7px;
+  background-color: white;
+  .wiof-logo {
+    top: -10px;
+  }
 }
+
+.md {
+  .wiof-logo {
+    top: -25px;
+  }
+}
+
 .wiof-logo {
   height: 60px;
   width: 144px;

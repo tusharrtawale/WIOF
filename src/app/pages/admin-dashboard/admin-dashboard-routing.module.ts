@@ -13,16 +13,21 @@ const routes: Routes = [
       import("./add-blog/add-blog.module").then((m) => m.AddBlogPageModule),
   },
   {
-    path: "add-poll",
-    loadChildren: () =>
-      import("./add-poll/add-poll.module").then((m) => m.AddPollPageModule),
-  },
-  {
     path: "manage-polls",
-    loadChildren: () =>
-      import("./manage-polls/manage-polls.module").then(
-        (m) => m.ManagePollsPageModule
-      ),
+    children: [
+      {
+        path: "",
+        loadChildren: () =>
+          import("./manage-polls/manage-polls.module").then(
+            (m) => m.ManagePollsPageModule
+          ),
+      },
+      {
+        path: "poll/:mode",
+        loadChildren: () =>
+          import("./add-poll/add-poll.module").then((m) => m.AddPollPageModule),
+      },
+    ],
   },
 ];
 

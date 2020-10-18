@@ -4,6 +4,16 @@
       <ion-back-button defaultHref="/admin-dashboard"></ion-back-button>
     </ion-buttons>
     <ion-title>Manage Polls</ion-title>
+    <ion-buttons slot="end">
+      <ion-button
+        color="success"
+        fill="solid"
+        size="large"
+        (click)="addNewPoll()"
+        ><ion-icon name="add-outline" slot="start"></ion-icon>Add New
+        Poll</ion-button
+      >
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -65,6 +75,8 @@
               ></ion-icon
             ></ion-button>
             <ion-button
+              title="Click to view poll details"
+              (click)="viewPollDetails(pollQuestion)"
               ><ion-icon slot="icon-only" name="eye-outline"></ion-icon
             ></ion-button>
             <ion-button

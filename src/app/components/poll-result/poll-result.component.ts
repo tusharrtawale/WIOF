@@ -13,7 +13,6 @@ import { PollQuestion } from "src/app/models/PollQuestion";
 export class PollResultComponent implements OnInit, OnDestroy {
   @Input() pollQuestion: PollQuestion;
   destroy$: Subject<boolean> = new Subject();
-  pollsArray: Poll[];
   optionData = {};
 
   constructor(private pollsService: PollsService) {}
@@ -32,26 +31,28 @@ export class PollResultComponent implements OnInit, OnDestroy {
       .getPolls(this.pollQuestion.pollId)
       .pipe(takeUntil(this.destroy$))
       .subscribe((data) => {
-        this.pollsArray = data;
-        this.pollQuestion.options.forEach((option, index) => {
-          this.optionData["option" + (index + 1)] = {
-            option,
-            votes: 0,
-            percent: 0,
-          };
-        });
-
-        let totalVotes = 0;
-        this.pollsArray.forEach((x, index) => {
-          totalVotes++;
-          this.optionData[x.option].votes += 1;
-        });
-
-        Object.keys(this.optionData).forEach((x) => {
-          this.optionData[x].percent =
-            (this.optionData[x].votes / totalVotes) * 100;
-        });
+        this.calculatePollResult(this.pollQuestion, data, this.optionData);
       });
+  }
+
+  calculatePollResult(pollQuestion, pollsArray, optionData) {
+    pollQuestion.options.forEach((option, index) => {
+      optionData["option" + (index + 1)] = {
+        option,
+        votes: 0,
+        percent: 0,
+      };
+    });
+
+    let totalVotes = 0;
+    pollsArray.forEach((x, index) => {
+      totalVotes++;
+      optionData[x.option].votes += 1;
+    });
+
+    Object.keys(optionData).forEach((x) => {
+      optionData[x].percent = (optionData[x].votes / totalVotes) * 100;
+    });
   }
 
   ngOnDestroy(): void {

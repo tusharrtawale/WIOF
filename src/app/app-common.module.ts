@@ -76,7 +76,7 @@ import { SocialShareHomeComponent } from "./components/social-share-home/social-
     VideoCardComponent,
     BreakingNewsComponent,
     EqWidgetTestComponent,
-    SocialShareHomeComponent
+    SocialShareHomeComponent,
   ],
   declarations: [
     HeaderComponent,
@@ -107,8 +107,7 @@ import { SocialShareHomeComponent } from "./components/social-share-home/social-
     VideoCardComponent,
     BreakingNewsComponent,
     EqWidgetTestComponent,
-    SocialShareHomeComponent
-
+    SocialShareHomeComponent,
   ],
   providers: [],
 })

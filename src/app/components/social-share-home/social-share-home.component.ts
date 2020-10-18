@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-social-share-home',
-  templateUrl: './social-share-home.component.html',
-  styleUrls: ['./social-share-home.component.scss'],
+  selector: "app-social-share-home",
+  templateUrl: "./social-share-home.component.html",
+  styleUrls: ["./social-share-home.component.scss"],
 })
 export class SocialShareHomeComponent implements OnInit {
   title: string = "Checkout this amazing website Worldisonefamily.com..!!";
@@ -14,8 +14,7 @@ export class SocialShareHomeComponent implements OnInit {
   twitterShareLink: string = `https://twitter.com/share?url=${this.url}&text=${this.title}`;
   whatsappShareLink: string = `https://api.whatsapp.com/send?text=${this.title} ${this.url}`;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {}
-
 }

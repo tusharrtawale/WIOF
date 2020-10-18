@@ -29,7 +29,10 @@ export class SubscribeComponent implements OnInit {
     this.addSubscriberForm = new FormGroup({
       firstName: new FormControl("", [Validators.required]),
       lastName: new FormControl("", [Validators.required]),
-      email: new FormControl("", [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
+      email: new FormControl("", [
+        Validators.required,
+        Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"),
+      ]),
     });
   }
 

@@ -16,10 +16,6 @@ export class AdminDashboardPage implements OnInit {
         actionUrl: "add-blog",
       },
       {
-        name: "Add Poll",
-        actionUrl: "add-poll",
-      },
-      {
         name: "Manage Polls",
         actionUrl: "manage-polls",
       },

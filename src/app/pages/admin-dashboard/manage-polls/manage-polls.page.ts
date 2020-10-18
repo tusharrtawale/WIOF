@@ -4,6 +4,7 @@ import { catchError, map, takeUntil } from "rxjs/operators";
 import { PollQuestion } from "src/app/models/PollQuestion";
 import { PollQuestionService } from "src/app/services/poll-question.service";
 import { UiUtilService } from "src/app/util/UiUtilService";
+import { Router, ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-manage-polls",
@@ -16,7 +17,9 @@ export class ManagePollsPage implements OnInit, OnDestroy {
 
   constructor(
     private pollQuestionService: PollQuestionService,
-    private uiUtil: UiUtilService
+    private uiUtil: UiUtilService,
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
   ngOnInit() {
     this.pollQuestionList$ = this.pollQuestionService.getPollQuestions().pipe(
@@ -78,5 +81,13 @@ export class ManagePollsPage implements OnInit, OnDestroy {
           ["OK"]
         );
       });
+  }
+
+  viewPollDetails(pollQuestion: PollQuestion) {
+    this.router.navigate(["poll", "edit"], { relativeTo: this.route });
+  }
+
+  addNewPoll() {
+    this.router.navigate(["poll", "new"], { relativeTo: this.route });
   }
 }

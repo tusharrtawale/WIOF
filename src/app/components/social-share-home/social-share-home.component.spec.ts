@@ -1,16 +1,16 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { IonicModule } from "@ionic/angular";
 
-import { SocialShareHomeComponent } from './social-share-home.component';
+import { SocialShareHomeComponent } from "./social-share-home.component";
 
-describe('SocialShareHomeComponent', () => {
+describe("SocialShareHomeComponent", () => {
   let component: SocialShareHomeComponent;
   let fixture: ComponentFixture<SocialShareHomeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SocialShareHomeComponent ],
-      imports: [IonicModule.forRoot()]
+      declarations: [SocialShareHomeComponent],
+      imports: [IonicModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(SocialShareHomeComponent);
@@ -18,7 +18,7 @@ describe('SocialShareHomeComponent', () => {
     fixture.detectChanges();
   }));
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

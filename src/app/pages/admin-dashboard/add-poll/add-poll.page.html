@@ -62,29 +62,44 @@
       <hr />
       <ion-row>
         <ion-col size-xs="12" size-md="6" size-lg="3">
-          <ion-item
-            ><ion-label position="stacked">Publish Start</ion-label>
-            <ion-input
-              type="date"
+          <mat-form-field appearance="fill">
+            <mat-label>Publish End Date</mat-label>
+            <input
+              matInput
+              [matDatepicker]="publishStartDatePicker"
               formControlName="publishStartDate"
-            ></ion-input>
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="publishStartDatePicker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #publishStartDatePicker></mat-datepicker>
             <p>
               <ion-note
                 >*Start date of accepting polls for this question</ion-note
               >
             </p>
-          </ion-item>
+          </mat-form-field>
         </ion-col>
         <ion-col size-xs="12" size-md="6" size-lg="3">
-          <ion-item
-            ><ion-label position="stacked">Publish End</ion-label>
-            <ion-input type="date" formControlName="publishEndDate"></ion-input>
+          <mat-form-field appearance="fill">
+            <mat-label>Publish End Date</mat-label>
+            <input
+              matInput
+              [matDatepicker]="publishEndDatePicker"
+              formControlName="publishEndDate"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="publishEndDatePicker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #publishEndDatePicker></mat-datepicker>
             <p>
               <ion-note
                 >*Last date of accepting polls for this question</ion-note
               >
             </p>
-          </ion-item>
+          </mat-form-field>
         </ion-col>
       </ion-row>
     </ion-grid>

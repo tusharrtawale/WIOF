@@ -25,8 +25,8 @@
                   ></iframe>
                 </ion-col>
                 <ion-col class="newsContent" size-xs="12" size-md="8">
-                  <h2>{{ news.Headline }}</h2>
-                  <p>{{ news.Content }}</p>
+                  <h2>{{ news.headline }}</h2>
+                  <p>{{ news.content }}</p>
                 </ion-col>
               </ion-row>
             </ion-card-content>
@@ -35,7 +35,7 @@
       </ion-slides>
       <marquee class="newsHeadlineScroll" direction="left" behavior="slide">
         <p>
-          <span *ngFor="let news of newsList"> | {{ news.Headline }} | </span>
+          <span *ngFor="let news of newsList"> | {{ news.headline }} | </span>
         </p>
       </marquee>
       <div

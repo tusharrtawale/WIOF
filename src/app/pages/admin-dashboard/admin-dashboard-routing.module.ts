@@ -23,7 +23,7 @@ const routes: Routes = [
           ),
       },
       {
-        path: "poll/:mode",
+        path: "poll/:mode/:?id",
         loadChildren: () =>
           import("./add-poll/add-poll.module").then((m) => m.AddPollPageModule),
       },

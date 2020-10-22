@@ -15,7 +15,8 @@ import { PollQuestion } from "../models/PollQuestion";
   providedIn: "root",
 })
 export class PollQuestionService {
-  pollCollection: AngularFirestoreCollection<any>;
+  private pollCollection: AngularFirestoreCollection<any>;
+  private viewEditModePollQuestion: PollQuestion;
 
   constructor(public database: AngularFirestore) {
     this.pollCollection = this.database.collection(
@@ -24,8 +25,16 @@ export class PollQuestionService {
     );
   }
 
-  savePollQuestion(poll: PollQuestion) {
-    return from(this.pollCollection.add({ ...poll }));
+  savePollQuestion(pollQuestion: PollQuestion) {
+    let savePoll$ = null;
+    if (pollQuestion.pollId !== undefined) {
+      savePoll$ = this.pollCollection.doc(pollQuestion.pollId).update({
+        ...pollQuestion,
+      });
+    } else {
+      savePoll$ = this.pollCollection.add({ ...pollQuestion });
+    }
+    return from(savePoll$);
   }
 
   getPollQuestion(): Observable<PollQuestion[]> {
@@ -93,5 +102,17 @@ export class PollQuestionService {
           })
         )
       );
+  }
+
+  setViewEditModePollQuestion(pollQuestion: PollQuestion) {
+    this.viewEditModePollQuestion = { ...pollQuestion };
+  }
+
+  getViewEditModePollQuestion() {
+    return this.viewEditModePollQuestion;
+  }
+
+  clearViewEditModePollQuestion() {
+    this.viewEditModePollQuestion = null;
   }
 }

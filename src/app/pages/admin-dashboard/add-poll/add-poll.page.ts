@@ -7,6 +7,8 @@ import { takeUntil, map, catchError } from "rxjs/operators";
 import { PollQuestion } from "src/app/models/PollQuestion";
 import { ActivatedRoute } from "@angular/router";
 import { POLL_STATUS } from "src/app/app.constants";
+import { PollsService } from "src/app/services/polls.service";
+import { AppUtilService } from "src/app/util/AppUtilService";
 
 @Component({
   selector: "app-add-poll",
@@ -19,12 +21,15 @@ export class AddPollPage implements OnInit {
   destroy$: Subject<boolean> = new Subject();
   minDate: string;
   isEditMode: boolean = false;
-  pollQuestion: PollQuestion;
+  pollQuestion: PollQuestion = {} as PollQuestion;
+  optionData = {};
 
   constructor(
     private uiUtil: UiUtilService,
     private pollQuestionService: PollQuestionService,
-    private route: ActivatedRoute
+    private pollsService: PollsService,
+    private route: ActivatedRoute,
+    private appUtil: AppUtilService
   ) {}
 
   ngOnInit() {
@@ -37,11 +42,26 @@ export class AddPollPage implements OnInit {
       ) {
         this.isEditMode = true;
         this.addPollForm = this.initFormByPollQuestion(this.pollQuestion);
+        this.countVotes();
       } else {
         this.isEditMode = false;
         this.addPollForm = this.initForm();
       }
     });
+  }
+
+  countVotes() {
+    //read all votes
+    this.pollsService
+      .getPolls(this.pollQuestion.pollId)
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((data) => {
+        this.appUtil.calculatePollResult(
+          this.pollQuestion,
+          data,
+          this.optionData
+        );
+      });
   }
 
   private initForm() {
@@ -108,7 +128,9 @@ export class AddPollPage implements OnInit {
         .subscribe(
           (response) => {
             this.loader.dismiss();
-            this.addPollForm.reset();
+            if (!this.isEditMode) {
+              this.addPollForm.reset();
+            }
             this.uiUtil.presentAlert(
               "Success",
               "We saved your poll question!",

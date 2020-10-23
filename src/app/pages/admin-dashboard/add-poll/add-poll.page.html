@@ -3,7 +3,8 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/admin-dashboard"></ion-back-button>
     </ion-buttons>
-    <ion-title>Add Poll</ion-title>
+    <ion-title *ngIf="!isEditMode">Add Poll</ion-title>
+    <ion-title *ngIf="isEditMode">Edit Poll</ion-title>
     <ion-buttons slot="end">
       <ion-button color="success" fill="solid" size="large" (click)="onSubmit()"
         >Save</ion-button
@@ -59,7 +60,6 @@
           </ion-row>
         </ion-col>
       </ion-row>
-      <hr />
       <ion-row>
         <ion-col size-xs="12" size-md="6" size-lg="3">
           <mat-form-field appearance="fill">
@@ -100,6 +100,40 @@
               >
             </p>
           </mat-form-field>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="isEditMode">
+        <ion-col size-xs="12" size-md="6">
+          <ion-card>
+            <ion-card-header class="poll-result-header"
+              >Poll Result</ion-card-header
+            >
+            <ion-card-content>
+              <ion-grid>
+                <ion-row>
+                  <ion-col
+                    size-xs="12"
+                    size-lg="6"
+                    class="poll-options"
+                    *ngFor="let option of pollQuestion.options; let i = index"
+                  >
+                    <ion-label>{{ option | titlecase }}</ion-label>
+                    <div class="poll-bar">
+                      <div
+                        class="poll-bar-fill"
+                        [style.width]="optionData['option' + (i + 1)]?.percent + '%'"
+                      >
+                        <span class="poll-percent"
+                          >{{ optionData["option" + (i + 1)]?.percent | number:
+                          "1.0-2" }}%</span
+                        >
+                      </div>
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
         </ion-col>
       </ion-row>
     </ion-grid>

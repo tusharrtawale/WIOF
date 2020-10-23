@@ -12,7 +12,7 @@ import { FIREBASE_COLLECTION } from "../app.constants";
   providedIn: "root",
 })
 export class PollsService {
-  pollsCollection: AngularFirestoreCollection<any>;
+  private pollsCollection: AngularFirestoreCollection<any>;
 
   constructor(public database: AngularFirestore) {
     this.pollsCollection = this.database.collection(

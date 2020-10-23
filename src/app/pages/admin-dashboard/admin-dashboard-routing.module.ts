@@ -29,6 +29,14 @@ const routes: Routes = [
       },
     ],
   },
+  {
+    path: 'manage-news',
+    loadChildren: () => import('./manage-news/manage-news.module').then( m => m.ManageNewsPageModule)
+  },
+  {
+    path: 'manage-calendar',
+    loadChildren: () => import('./manage-calendar/manage-calendar.module').then( m => m.ManageCalendarPageModule)
+  },
 ];
 
 @NgModule({

@@ -19,6 +19,10 @@ export class AdminDashboardPage implements OnInit {
         name: "Manage Polls",
         actionUrl: "manage-polls",
       },
+      {
+        name: "Manage Calendar",
+        actionUrl: "manage-calendar",
+      },
     ],
   };
 

@@ -15,11 +15,15 @@ import { FIREBASE_COLLECTION } from "../app.constants";
 })
 export class EnvcalServiceService {
   envcalCollectionByMonth: AngularFirestoreCollection<any>;
+  envcalCollection: AngularFirestoreCollection<any>;
 
   constructor(
     private storage: AngularFireStorage,
     public database: AngularFirestore
-  ) {}
+  ) {
+    this.envcalCollection=this.database.collection(
+      FIREBASE_COLLECTION.ENVCAL);
+  }
 
   getEnvCal(month: string): Observable<EnvDay[]> {
     // getPolls(): Observable<Polls[]>{
@@ -46,4 +50,15 @@ export class EnvcalServiceService {
   }
 
   //to-do link images to each envday obj
+
+  saveImage(imageData: any, imageName: String) {
+    const imageUploadTask = this.storage.upload(
+      `/${FIREBASE_COLLECTION.ENVCAL_IMAGE_STORAGE}/${imageName}`,
+      imageData
+    );
+    return from(imageUploadTask);
+  }
+  saveOccasion(occasion: EnvDay) {
+    return from(this.envcalCollection.add({ ...occasion }));
+  }
 }

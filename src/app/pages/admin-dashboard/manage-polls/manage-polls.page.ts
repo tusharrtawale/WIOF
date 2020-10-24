@@ -85,8 +85,9 @@ export class ManagePollsPage implements OnInit, OnDestroy {
 
   viewPollDetails(pollQuestion: PollQuestion) {
     this.pollQuestionService.setViewEditModePollQuestion(pollQuestion);
-    this.router.navigate(["poll", "edit", pollQuestion.pollId], {
+    this.router.navigate(["poll", "edit"], {
       relativeTo: this.route,
+      queryParams: { id: pollQuestion.pollId },
     });
   }
 

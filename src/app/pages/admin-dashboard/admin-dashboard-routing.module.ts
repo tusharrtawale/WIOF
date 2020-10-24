@@ -23,19 +23,25 @@ const routes: Routes = [
           ),
       },
       {
-        path: "poll/:mode/:?id",
+        path: "poll/:mode",
         loadChildren: () =>
           import("./add-poll/add-poll.module").then((m) => m.AddPollPageModule),
       },
     ],
   },
   {
-    path: 'manage-news',
-    loadChildren: () => import('./manage-news/manage-news.module').then( m => m.ManageNewsPageModule)
+    path: "manage-news",
+    loadChildren: () =>
+      import("./manage-news/manage-news.module").then(
+        (m) => m.ManageNewsPageModule
+      ),
   },
   {
-    path: 'manage-calendar',
-    loadChildren: () => import('./manage-calendar/manage-calendar.module').then( m => m.ManageCalendarPageModule)
+    path: "manage-calendar",
+    loadChildren: () =>
+      import("./manage-calendar/manage-calendar.module").then(
+        (m) => m.ManageCalendarPageModule
+      ),
   },
 ];
 

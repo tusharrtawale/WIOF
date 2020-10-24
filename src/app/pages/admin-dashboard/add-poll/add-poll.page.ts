@@ -5,7 +5,7 @@ import { PollQuestionService } from "src/app/services/poll-question.service";
 import { Subject, throwError } from "rxjs";
 import { takeUntil, map, catchError } from "rxjs/operators";
 import { PollQuestion } from "src/app/models/PollQuestion";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { POLL_STATUS } from "src/app/app.constants";
 import { PollsService } from "src/app/services/polls.service";
 import { AppUtilService } from "src/app/util/AppUtilService";
@@ -29,17 +29,22 @@ export class AddPollPage implements OnInit {
     private pollQuestionService: PollQuestionService,
     private pollsService: PollsService,
     private route: ActivatedRoute,
+    private router: Router,
     private appUtil: AppUtilService
   ) {}
 
   ngOnInit() {
+    this.pollQuestion = {} as PollQuestion;
     this.route.paramMap.subscribe((param) => {
-      this.pollQuestion = this.pollQuestionService.getViewEditModePollQuestion();
       if (
         param.has("mode") &&
-        param.get("mode") === "edit" &&
-        this.pollQuestion
+        param.get("mode") === "edit"
       ) {
+        this.pollQuestion = this.pollQuestionService.getViewEditModePollQuestion();
+        if(!this.pollQuestion){
+          this.router.navigateByUrl('/admin-dashboard/manage-polls');
+          return;
+        }
         this.isEditMode = true;
         this.addPollForm = this.initFormByPollQuestion(this.pollQuestion);
         this.countVotes();

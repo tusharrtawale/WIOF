@@ -23,6 +23,20 @@ export class AddPollPage implements OnInit {
   isEditMode: boolean = false;
   pollQuestion: PollQuestion = {} as PollQuestion;
   optionData = {};
+  pageData = {
+    addPollTitle: "Add Poll",
+    editPollTitle: "Edit Poll",
+    savePollLabel: "Save",
+    cancelLabel: "Cancel",
+    pollQuestionLabel: "Poll Question",
+    optionLabel: "Option",
+    addOptionBtnLabel: "Add Option",
+    publishStartDateLabel: "Publish Start Date",
+    publishStartDateDesc: "*Start date of accepting polls for this question",
+    publishEndDateDesc: "*Last date of accepting polls for this question",
+    publishEndDateLabel: "Publish End Date",
+    pollResultTitle: "Poll Result",
+  }
 
   constructor(
     private uiUtil: UiUtilService,

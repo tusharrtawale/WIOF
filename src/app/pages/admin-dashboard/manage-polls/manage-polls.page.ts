@@ -43,6 +43,33 @@ export class ManagePollsPage implements OnInit, OnDestroy {
     index: number,
     pollQuestionId: string
   ) {
+    this.uiUtil.presentAlert(
+      "Confirm",
+      "Are you sure you want to delete the poll question?",
+      [
+        {
+          text: "Yes",
+          handler: async () => {
+            await this.deletePollQuestn(
+              pollQuestionList,
+              index,
+              pollQuestionId
+            );
+          },
+        },
+        {
+          text: "No",
+          role: "cancel",
+        },
+      ]
+    );
+  }
+
+  private async deletePollQuestn(
+    pollQuestionList: PollQuestion[],
+    index: number,
+    pollQuestionId: string
+  ) {
     const loader = await this.uiUtil.showLoader(
       "We are deleting the poll question..."
     );

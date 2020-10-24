@@ -16,11 +16,7 @@ export class UiUtilService {
     return loader;
   }
 
-  public async presentAlert(
-    header: string,
-    message: string,
-    buttons: string[]
-  ) {
+  public async presentAlert(header: string, message: string, buttons: any[]) {
     const alert = await this.alertCtrl.create({
       header: header,
       message: message,

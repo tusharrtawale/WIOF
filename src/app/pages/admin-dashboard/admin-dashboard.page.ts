@@ -20,6 +20,10 @@ export class AdminDashboardPage implements OnInit {
         actionUrl: "manage-polls",
       },
       {
+        name: "Manage Breaking News",
+        actionUrl: "manage-news",
+      },
+      {
         name: "Manage Calendar",
         actionUrl: "manage-calendar",
       },

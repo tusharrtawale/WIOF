@@ -8,7 +8,7 @@ export class News {
   newsId: string;
   headline: string;
   content: string;
-  date: string;
+  date: number;
   mediaLink: string;
   mediaType: string;
   sanitizedLink: SafeResourceUrl;

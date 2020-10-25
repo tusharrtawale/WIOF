@@ -196,3 +196,8 @@ export const POLL_STATUS = {
   PUBLISHED: "published",
   INACTIVE: "inactive",
 };
+
+export const MEDIA_TYPE = {
+  IMAGE: "image",
+  VIDEO: "video",
+};

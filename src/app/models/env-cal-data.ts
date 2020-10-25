@@ -6,11 +6,11 @@ export class EnvDay {
   occasion: string;
   image: string;
 
-  constructor(day,month,occasion,image ){
-    this.day=day;
-    this.month=month;
-    this.occasion=occasion;
-    this.image=image;
+  constructor(day, month, occasion, image) {
+    this.day = day;
+    this.month = month;
+    this.occasion = occasion;
+    this.image = image;
   }
 
   static formatImageName(imageName: string) {
@@ -21,15 +21,15 @@ export class EnvDay {
     }
     return Date.now() + newImageName; // add timestamp to image name to keep it unique
   }
-  static getMonth(day){
-    return String(parseInt(day)-1);
+  static getMonth(day) {
+    return String(parseInt(day) - 1);
   }
   static createByForm(addOccasionForm: FormGroup) {
     return new EnvDay(
       addOccasionForm.value.day,
       this.getMonth(addOccasionForm.value.month),
       addOccasionForm.value.occasion,
-      this.formatImageName(addOccasionForm.value.image)      
+      this.formatImageName(addOccasionForm.value.image)
     );
   }
 }

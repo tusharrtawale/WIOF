@@ -1,0 +1,114 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/admin-dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="!isEditMode">{{ pageContent.addNewsTitle }}</ion-title>
+    <ion-title *ngIf="isEditMode">{{ pageContent.editNewsTitle }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="success" fill="solid" size="large" (click)="onSubmit()"
+        >{{ pageContent.saveNewsLabel }}</ion-button
+      >
+      <ion-button
+        color="medium"
+        fill="clear"
+        size="large"
+        routerLink="/admin-dashboard/manage-polls"
+        >{{ pageContent.cancelLabel }}</ion-button
+      >
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="addNewsForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-xs="12"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.headlineLabel}}</ion-label
+            >
+            <ion-input formControlName="headline"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size-xs="12" size-md="4"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.categoryLabel}}</ion-label
+            >
+            <ion-select formControlName="category">
+              <ion-select-option
+                [value]="category"
+                *ngFor="let category of categories"
+                >{{ category }}</ion-select-option
+              >
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size-xs="12" size-md="4">
+          <mat-form-field appearance="standard" class="date-picker-field">
+            <mat-label> {{ pageContent.newsDateLabel }}</mat-label>
+            <input
+              matInput
+              [matDatepicker]="newsDatePicker"
+              formControlName="date"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="newsDatePicker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #newsDatePicker></mat-datepicker>
+          </mat-form-field>
+        </ion-col>
+
+        <ion-col size-xs="12" size-md="4"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.mediaTypeLabel}}</ion-label
+            >
+            <ion-select formControlName="mediaType" #mediaType>
+              <ion-select-option [value]="'image'">Image</ion-select-option>
+              <ion-select-option [value]="'video'">Video</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col
+          *ngIf="mediaType.value && mediaType.value === 'image'"
+          size-xs="12"
+          ><ion-item>
+            <ion-label position="stacked"
+              >{{pageContent.selectImageLabel}}</ion-label
+            >
+            <ion-input
+              type="file"
+              accept="image/*"
+              (change)="onFileSelected($event)"
+              formControlName="image"
+            ></ion-input>
+            <div><ion-img [src]="imageToDisplay"></ion-img></div>
+          </ion-item>
+        </ion-col>
+
+        <ion-col
+          *ngIf="mediaType.value && mediaType.value === 'video'"
+          size-xs="12"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.mediaLinkLabel}}</ion-label
+            >
+            <ion-input formControlName="mediaLink"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size-xs="12">
+          <ion-item><ion-label>News Overview</ion-label></ion-item>
+          <quill-editor formControlName="content"></quill-editor>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

@@ -1,5 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { FormsModule, FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
+import { Component, OnInit } from "@angular/core";
+import {
+  FormsModule,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from "@angular/forms";
 // import { AlertController, LoadingController } from "@ionic/angular";
 import { combineLatest, throwError, Subject } from "rxjs";
 import { catchError, map, takeUntil } from "rxjs/operators";
@@ -9,30 +15,28 @@ import { EnvcalServiceService } from "src/app/services/envcal-service.service";
 import { UiUtilService } from "src/app/util/UiUtilService";
 
 @Component({
-  selector: 'app-manage-calendar',
-  templateUrl: './manage-calendar.page.html',
-  styleUrls: ['./manage-calendar.page.scss'],
+  selector: "app-manage-calendar",
+  templateUrl: "./manage-calendar.page.html",
+  styleUrls: ["./manage-calendar.page.scss"],
 })
-export class ManageCalendarPage implements OnInit{
-
+export class ManageCalendarPage implements OnInit {
   addOccasionForm: FormGroup;
   image: string;
   imageToSave: any;
   loader;
   destroy$: Subject<boolean> = new Subject();
 
-  
   constructor(
     private calendarService: EnvcalServiceService,
     private uiUtil: UiUtilService
-    ) { }
+  ) {}
 
   ngOnInit() {
-    this.addOccasionForm= new FormGroup({
-      day:new FormControl("", [Validators.required]),
-      month:new FormControl("", [Validators.required]),
-      occasion:new FormControl("", [Validators.required]),
-      image:new FormControl("", [Validators.required])
+    this.addOccasionForm = new FormGroup({
+      day: new FormControl("", [Validators.required]),
+      month: new FormControl("", [Validators.required]),
+      occasion: new FormControl("", [Validators.required]),
+      image: new FormControl("", [Validators.required]),
     });
   }
 
@@ -45,11 +49,13 @@ export class ManageCalendarPage implements OnInit{
     };
   }
 
-  async addNewOccassion(){    
-    console.log("Hi")
+  async addNewOccassion() {
+    console.log("Hi");
     if (this.addOccasionForm.valid) {
       const occasion = EnvDay.createByForm(this.addOccasionForm);
-      this.loader = await this.uiUtil.showLoader("We are saving occasion details...");
+      this.loader = await this.uiUtil.showLoader(
+        "We are saving occasion details..."
+      );
       combineLatest([
         this.calendarService.saveImage(this.imageToSave, occasion.image),
         this.calendarService.saveOccasion(occasion),
@@ -81,9 +87,8 @@ export class ManageCalendarPage implements OnInit{
           }
         );
     }
-  };
+  }
   // ngOnDestroy(){
 
   // }
-
 }

@@ -21,8 +21,9 @@ export class EnvcalServiceService {
     private storage: AngularFireStorage,
     public database: AngularFirestore
   ) {
-    this.envcalCollection=this.database.collection(
-      FIREBASE_COLLECTION.ENVCAL);
+    this.envcalCollection = this.database.collection(
+      FIREBASE_COLLECTION.ENVCAL
+    );
   }
 
   getEnvCal(month: string): Observable<EnvDay[]> {

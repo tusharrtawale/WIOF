@@ -20,4 +20,22 @@ export class AppUtilService {
       optionData[x].percent = (optionData[x].votes / totalVotes) * 100;
     });
   }
+
+  onFileSelected(event, component) {
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(event.target.files[0]);
+    component.imageToSave = event.target.files[0];
+    fileReader.onload = () => {
+      component.imageToDisplay = fileReader.result as string;
+    };
+  }
+
+  formatImageName(imageName: string) {
+    let newImageName = "";
+    if (imageName) {
+      const imgNameArr = imageName.split("\\");
+      newImageName = "_" + imgNameArr[imgNameArr.length - 1];
+    }
+    return Date.now() + newImageName; // add timestamp to image name to keep it unique
+  }
 }

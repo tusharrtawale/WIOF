@@ -10,7 +10,9 @@ const routes: Routes = [
   {
     path: "add-blog",
     loadChildren: () =>
-      import("./add-blog/add-blog.module").then((m) => m.AddBlogPageModule),
+      import("./blog/add-blog/add-blog.module").then(
+        (m) => m.AddBlogPageModule
+      ),
   },
   {
     path: "manage-polls",
@@ -18,29 +20,50 @@ const routes: Routes = [
       {
         path: "",
         loadChildren: () =>
-          import("./manage-polls/manage-polls.module").then(
+          import("./poll/manage-polls/manage-polls.module").then(
             (m) => m.ManagePollsPageModule
           ),
       },
       {
         path: "poll/:mode",
         loadChildren: () =>
-          import("./add-poll/add-poll.module").then((m) => m.AddPollPageModule),
+          import("./poll/add-poll/add-poll.module").then(
+            (m) => m.AddPollPageModule
+          ),
       },
     ],
   },
   {
     path: "manage-news",
-    loadChildren: () =>
-      import("./manage-news/manage-news.module").then(
-        (m) => m.ManageNewsPageModule
-      ),
+    children: [
+      {
+        path: "",
+        loadChildren: () =>
+          import("./news/manage-news/manage-news.module").then(
+            (m) => m.ManageNewsPageModule
+          ),
+      },
+      {
+        path: "news/:mode",
+        loadChildren: () =>
+          import("./news/add-news/add-news.module").then(
+            (m) => m.AddNewsPageModule
+          ),
+      },
+    ],
   },
   {
     path: "manage-calendar",
     loadChildren: () =>
       import("./manage-calendar/manage-calendar.module").then(
         (m) => m.ManageCalendarPageModule
+      ),
+  },
+  {
+    path: "add-news",
+    loadChildren: () =>
+      import("./news/add-news/add-news.module").then(
+        (m) => m.AddNewsPageModule
       ),
   },
 ];

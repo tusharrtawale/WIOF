@@ -46,7 +46,10 @@
                 >
               </h6>
               <!-- <ion-label>Category: {{ blog.category }}</ion-label> -->
-              <p class="blog-card-content ion-padding-horizontal" [routerLink]="['blog', blog.id]">
+              <p
+                class="blog-card-content ion-padding-horizontal"
+                [routerLink]="['blog', blog.id]"
+              >
                 {{ blog.shortDescription }}
                 <!-- <a [routerLink]="['blog-post', blog.id]">Read More</a> -->
               </p>

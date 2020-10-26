@@ -13,6 +13,10 @@
   min-width: 20%;
   height: calc(100% - 20px);
   width: 100%;
+
+  ion-card-content {
+    padding: 5px 5px 15px 5px;
+  }  
 }
 
 .thumbnailImage {

@@ -73,7 +73,7 @@ export class AddNewsPage implements OnInit {
       if (mediaType === MEDIA_TYPE.IMAGE) {
         this.addNewsForm.get("image").setValidators(Validators.required);
       } else if (mediaType === MEDIA_TYPE.VIDEO) {
-        this.addNewsForm.get("imediaLink").setValidators(Validators.required);
+        this.addNewsForm.get("mediaLink").setValidators(Validators.required);
       }
     });
   }
@@ -87,6 +87,7 @@ export class AddNewsPage implements OnInit {
       mediaType: new FormControl("", Validators.required),
       mediaLink: new FormControl(""),
       image: new FormControl(""),
+      newsSource: new FormControl("", Validators.required),
     });
   }
 
@@ -99,6 +100,7 @@ export class AddNewsPage implements OnInit {
       mediaType: new FormControl(news.mediaType, Validators.required),
       mediaLink: new FormControl(news.mediaLink),
       image: new FormControl(""),
+      newsSource: new FormControl(news.newsSource, Validators.required),
     });
   }
 
@@ -162,7 +164,8 @@ export class AddNewsPage implements OnInit {
       addNewsForm.value.category,
       new Date(addNewsForm.value.date).getTime(),
       this.appUtil.formatImageName(addNewsForm.value.image),
-      addNewsForm.value.mediaType
+      addNewsForm.value.mediaType,
+      addNewsForm.value.newsSource
     );
   }
 }

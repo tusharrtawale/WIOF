@@ -106,8 +106,19 @@
           </ion-item>
         </ion-col>
 
+        <ion-col size-xs="12"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.newsSourceLabel}}</ion-label
+            >
+            <ion-input formControlName="newsSource"></ion-input>
+          </ion-item>
+        </ion-col>
+
         <ion-col size-xs="12">
-          <ion-item><ion-label>News Overview</ion-label></ion-item>
+          <ion-item
+            ><ion-label>{{pageContent.contentLabel}}</ion-label></ion-item
+          >
           <quill-editor formControlName="content"></quill-editor>
         </ion-col>
       </ion-row>

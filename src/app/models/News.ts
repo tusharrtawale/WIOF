@@ -13,11 +13,21 @@ export class News {
   mediaType: string;
   sanitizedLink: SafeResourceUrl;
   imageLink: Observable<any>;
+  newsSource: string;
   //tags: string[]
   //subcategory: string[]
   //indicator: string
 
-  constructor(newsId, headline, content, category, date, mediaLink, mediaType) {
+  constructor(
+    newsId,
+    headline,
+    content,
+    category,
+    date,
+    mediaLink,
+    mediaType,
+    newsSource
+  ) {
     this.newsId = newsId;
     this.headline = headline;
     this.category = category;
@@ -25,5 +35,6 @@ export class News {
     this.date = date;
     this.mediaLink = mediaLink;
     this.mediaType = mediaType;
+    this.newsSource = newsSource;
   }
 }

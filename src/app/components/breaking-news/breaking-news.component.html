@@ -29,6 +29,9 @@
                     <strong>{{ news.headline }}</strong>
                   </h2>
                   <p [innerHTML]="news.content"></p>
+                  <p *ngIf="news.newsSource">
+                    <a [href]="news.newsSource" target="blank">Read More</a>
+                  </p>
                 </ion-col>
               </ion-row>
             </ion-card-content>

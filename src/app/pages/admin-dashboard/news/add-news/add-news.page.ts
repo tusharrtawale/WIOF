@@ -1,13 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
-import { Subject, throwError, combineLatest } from "rxjs";
-import { catchError, takeUntil, switchMap } from "rxjs/operators";
+import { Subject, throwError } from "rxjs";
+import { catchError, switchMap, takeUntil } from "rxjs/operators";
+import { MEDIA_TYPE, PAGE_CATEGORY_MAP } from "src/app/app.constants";
 import { News } from "src/app/models/News";
 import { NewsService } from "src/app/services/news.service";
 import { AppUtilService } from "src/app/util/AppUtilService";
 import { UiUtilService } from "src/app/util/UiUtilService";
-import { MEDIA_TYPE } from "src/app/app.constants";
 
 @Component({
   selector: "app-add-news",
@@ -22,7 +22,7 @@ export class AddNewsPage implements OnInit {
   destroy$: Subject<boolean> = new Subject();
   imageToDisplay: string;
   imageToSave: any;
-  categories = ["Air", "Earth", "Energy", "Spirit", "Water"];
+  categories: String[] = Object.values(PAGE_CATEGORY_MAP);
 
   pageContent = {
     addNewsTitle: "Add News",
@@ -54,6 +54,9 @@ export class AddNewsPage implements OnInit {
     this.route.paramMap.subscribe((param) => {
       if (param.has("mode") && param.get("mode") === "edit") {
         this.news = this.newsService.getViewEditModeNews();
+        this.news.imageLink.subscribe((imageData) => {
+          this.imageToDisplay = imageData;
+        });
         if (!this.news) {
           this.router.navigateByUrl("/admin-dashboard/manage-news");
           return;
@@ -112,10 +115,6 @@ export class AddNewsPage implements OnInit {
         this.isEditMode
       );
       this.loader = await this.uiUtil.showLoader("We are saving your news...");
-      // combineLatest([
-      //   this.newsService.saveNewsImage(this.imageToSave, this.news.mediaLink),
-      //   ,
-      // ])
       this.newsService
         .saveNewsImage(this.imageToSave, this.news.mediaLink)
         .pipe(

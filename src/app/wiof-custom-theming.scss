@@ -95,6 +95,14 @@ $font-size-medium: 18px;
 .font-size-medium {
   font-size: $font-size-medium;
 }
+
+.item-divider-line {
+  border-bottom: 1px solid lightgrey;
+}
+
+.action-heading {
+  padding-left: 20px;
+}
 //setting font color
 // *{
 //   color: $dark-color;

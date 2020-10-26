@@ -43,8 +43,12 @@ export class ManageNewsPage implements OnInit, OnDestroy {
     this.router.navigate(["news", "new"], { relativeTo: this.route });
   }
 
-  viewNewsDetails() {
-    //TODO
+  viewNewsDetails(news: News) {
+    this.newsService.setViewEditModeNews(news);
+    this.router.navigate(["news", "edit"], {
+      relativeTo: this.route,
+      queryParams: { id: news.newsId },
+    });
   }
 
   deleteNews(newsList: News[], index: number, newsId: string) {

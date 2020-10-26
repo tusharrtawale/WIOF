@@ -13,7 +13,7 @@
         color="medium"
         fill="clear"
         size="large"
-        routerLink="/admin-dashboard/manage-polls"
+        routerLink="/admin-dashboard/manage-news"
         >{{ pageContent.cancelLabel }}</ion-button
       >
     </ion-buttons>
@@ -89,7 +89,9 @@
               (change)="onFileSelected($event)"
               formControlName="image"
             ></ion-input>
-            <div><ion-img [src]="imageToDisplay"></ion-img></div>
+            <div>
+              <ion-img [src]="imageToDisplay"></ion-img>
+            </div>
           </ion-item>
         </ion-col>
 

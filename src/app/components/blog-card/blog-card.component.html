@@ -1,7 +1,7 @@
 <ion-card class="blog-card">
   <ion-card-content class="ion-text-start card-content">
     <img [src]="blog.image | async" />
-    <h6 class="ion-padding-vertical">
+    <h6 class="ion-padding">
       <strong class="blog-card-title"
         ><a [routerLink]="['/element', element, 'blog', blog.id]">{{
           blog.title
@@ -9,7 +9,7 @@
       >
     </h6>
     <!-- <ion-label>Category: {{ blog.category }}</ion-label> -->
-    <p class="blog-card-content">
+    <p class="blog-card-content ion-padding-horizontal">
       {{ blog.shortDescription }}
       <!-- <a [routerLink]="['blog-post', blog.id]">Read More</a> -->
     </p>

@@ -25,8 +25,8 @@ export class EnvDay {
     }
     return Date.now() + newImageName; // add timestamp to image name to keep it unique
   }
-  static getMonth(day){
-    return String(parseInt(day)-1);
+  static getMonth(day) {
+    return String(parseInt(day) - 1);
   }
   static createByForm(addOccasionForm: FormGroup) {
     return new EnvDay(

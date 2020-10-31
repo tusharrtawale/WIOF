@@ -50,11 +50,7 @@ export class ManagePollsPage implements OnInit, OnDestroy {
         {
           text: "Yes",
           handler: async () => {
-            await this.deletePollQuestn(
-              pollQuestionList,
-              index,
-              pollQuestionId
-            );
+            await this.delPollQuestion(pollQuestionList, index, pollQuestionId);
           },
         },
         {
@@ -65,7 +61,7 @@ export class ManagePollsPage implements OnInit, OnDestroy {
     );
   }
 
-  private async deletePollQuestn(
+  private async delPollQuestion(
     pollQuestionList: PollQuestion[],
     index: number,
     pollQuestionId: string

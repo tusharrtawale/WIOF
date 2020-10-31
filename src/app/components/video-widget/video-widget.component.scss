@@ -14,27 +14,26 @@
 //   }
 // }
 
+.wiof-video-player-content {
+  padding: 5px;
+  text-align: center;
+}
+
 @media (max-width: 479px) {
   .wiof-video-player-content {
-    padding-top: 15px;
     height: 220px;
-    text-align: center;
   }
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
   .wiof-video-player-content {
-    padding-top: 15px;
     height: 320px;
-    text-align: center;
   }
 }
 
 @media (min-width: 768px) {
   .wiof-video-player-content {
-    padding-top: 15px;
     height: 520px;
-    text-align: center;
   }
 }
 

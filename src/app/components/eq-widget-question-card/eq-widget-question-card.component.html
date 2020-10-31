@@ -13,6 +13,7 @@
         [formControlName]="getFormControlName(i)"
         snaps
         color="home"
+        class="ion-no-padding"
       >
         <ion-text slot="start" color="home">1</ion-text>
         <ion-text slot="end" color="home">5</ion-text>
@@ -21,7 +22,15 @@
   </div>
 </div>
 
-<ion-button *ngIf="!showResult" (click)="onSubmit()">Submit</ion-button>
+<ion-button
+  expand="block"
+  fill="solid"
+  class="ion-margin-top"
+  color="light"
+  *ngIf="!showResult"
+  (click)="onSubmit()"
+  >Submit</ion-button
+>
 
 <div *ngIf="showResult">
   <p class="eq-meter-heading">Your emotional intelligence is:</p>

@@ -14,6 +14,7 @@ import { FIREBASE_COLLECTION } from "../app.constants";
 })
 export class NewsService {
   newsCollection: AngularFirestoreCollection<any>;
+  viewEditModeNews: News;
 
   constructor(
     private storage: AngularFireStorage,
@@ -22,13 +23,28 @@ export class NewsService {
     this.newsCollection = this.database.collection(FIREBASE_COLLECTION.NEWS);
   }
   saveNews(news: News) {
-    // from is used to create an observable from promise
-    return from(this.newsCollection.add({ ...news }));
+    let saveNews$ = null;
+    if (news.newsId !== null) {
+      saveNews$ = this.newsCollection.doc(news.newsId).update({
+        ...news,
+      });
+    } else {
+      saveNews$ = this.newsCollection.add({ ...news });
+    }
+    return from(saveNews$);
   }
 
-  getImage(Image: String): Observable<String> {
+  saveNewsImage(imageData: any, imageName: String) {
+    const imageUploadTask = this.storage.upload(
+      `/${FIREBASE_COLLECTION.NEWS_IMAGE_STORAGE}/${imageName}`,
+      imageData
+    );
+    return from(imageUploadTask);
+  }
+
+  getImage(imageName: String): Observable<String> {
     const ref = this.storage.ref(
-      `/${FIREBASE_COLLECTION.NEWS_IMAGE_STORAGE}/${Image}`
+      `/${FIREBASE_COLLECTION.NEWS_IMAGE_STORAGE}/${imageName}`
     ); //creates reference to storage item using the link in parameter
     return ref.getDownloadURL(); //pulls the download URL which is an observable , handle accordingly
   }
@@ -46,5 +62,21 @@ export class NewsService {
         })
       )
     );
+  }
+
+  deleteNews(newsId: string) {
+    return from(this.newsCollection.doc(newsId).delete());
+  }
+
+  setViewEditModeNews(news: News) {
+    this.viewEditModeNews = { ...news };
+  }
+
+  getViewEditModeNews() {
+    return this.viewEditModeNews;
+  }
+
+  clearViewEditModeNews() {
+    this.viewEditModeNews = null;
   }
 }

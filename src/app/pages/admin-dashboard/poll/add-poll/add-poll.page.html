@@ -3,18 +3,14 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/admin-dashboard"></ion-back-button>
     </ion-buttons>
-    <ion-title *ngIf="!isEditMode">{{ pageData.addPollTitle }}</ion-title>
-    <ion-title *ngIf="isEditMode">{{ pageData.editPollTitle }}</ion-title>
+    <ion-title *ngIf="!isEditMode">{{ pageContent.addPollTitle }}</ion-title>
+    <ion-title *ngIf="isEditMode">{{ pageContent.editPollTitle }}</ion-title>
     <ion-buttons slot="end">
       <ion-button color="success" fill="solid" size="large" (click)="onSubmit()"
-        >{{ pageData.savePollLabel }}</ion-button
+        >{{ pageContent.savePollLabel }}</ion-button
       >
-      <ion-button
-        color="medium"
-        fill="clear"
-        size="large"
-        routerLink="/admin-dashboard/manage-polls"
-        >{{ pageData.cancelLabel }}</ion-button
+      <ion-button color="medium" fill="clear" size="large" routerLink=""
+        >{{ pageContent.cancelLabel }}</ion-button
       >
     </ion-buttons>
   </ion-toolbar>
@@ -26,7 +22,9 @@
       <ion-row>
         <ion-col size-xs="12" size-lg="6">
           <ion-item>
-            <ion-label position="floating">{{ pageData.pollQuestionLabel }}</ion-label>
+            <ion-label position="floating"
+              >{{ pageContent.pollQuestionLabel }}</ion-label
+            >
             <ion-textarea formControlName="question"></ion-textarea>
           </ion-item>
         </ion-col>
@@ -40,7 +38,9 @@
               *ngFor="let option of getOptionControls().controls; let i = index"
             >
               <ion-item>
-                <ion-label position="floating">{{ pageData.optionLabel }} {{ i + 1 }}</ion-label>
+                <ion-label position="floating"
+                  >{{ pageContent.optionLabel }} {{ i + 1 }}</ion-label
+                >
                 <ion-input [formControlName]="i"></ion-input>
                 <span
                   class="input-close-icon"
@@ -54,7 +54,8 @@
           <ion-row>
             <ion-col size-xs="12" size-md="3">
               <ion-button (click)="addOption()"
-                >{{ pageData.addOptionBtnLabel }} <ion-icon name="add"></ion-icon>
+                >{{ pageContent.addOptionBtnLabel }}
+                <ion-icon name="add"></ion-icon>
               </ion-button>
             </ion-col>
           </ion-row>
@@ -63,7 +64,7 @@
       <ion-row>
         <ion-col size-xs="12" size-md="6" size-lg="3">
           <mat-form-field appearance="fill">
-            <mat-label>{{ pageData.publishEndDateLabel }}</mat-label>
+            <mat-label>{{ pageContent.publishEndDateLabel }}</mat-label>
             <input
               matInput
               [matDatepicker]="publishStartDatePicker"
@@ -75,15 +76,13 @@
             ></mat-datepicker-toggle>
             <mat-datepicker #publishStartDatePicker></mat-datepicker>
             <p>
-              <ion-note
-                >{{ pageData.publishStartDateDesc }}</ion-note
-              >
+              <ion-note>{{ pageContent.publishStartDateDesc }}</ion-note>
             </p>
           </mat-form-field>
         </ion-col>
         <ion-col size-xs="12" size-md="6" size-lg="3">
           <mat-form-field appearance="fill">
-            <mat-label>{{ pageData.publishEndDateLabel }}</mat-label>
+            <mat-label>{{ pageContent.publishEndDateLabel }}</mat-label>
             <input
               matInput
               [matDatepicker]="publishEndDatePicker"
@@ -95,9 +94,7 @@
             ></mat-datepicker-toggle>
             <mat-datepicker #publishEndDatePicker></mat-datepicker>
             <p>
-              <ion-note
-                >{{ pageData.publishEndDateDesc }}</ion-note
-              >
+              <ion-note>{{ pageContent.publishEndDateDesc }}</ion-note>
             </p>
           </mat-form-field>
         </ion-col>
@@ -106,7 +103,7 @@
         <ion-col size-xs="12" size-md="6">
           <ion-card>
             <ion-card-header class="poll-result-header"
-              >{{ pageData.pollResultTitle }}</ion-card-header
+              >{{ pageContent.pollResultTitle }}</ion-card-header
             >
             <ion-card-content>
               <ion-grid>

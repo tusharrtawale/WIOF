@@ -23,7 +23,7 @@ export class AddPollPage implements OnInit {
   isEditMode: boolean = false;
   pollQuestion: PollQuestion = {} as PollQuestion;
   optionData = {};
-  pageData = {
+  pageContent = {
     addPollTitle: "Add Poll",
     editPollTitle: "Edit Poll",
     savePollLabel: "Save",
@@ -36,7 +36,7 @@ export class AddPollPage implements OnInit {
     publishEndDateDesc: "*Last date of accepting polls for this question",
     publishEndDateLabel: "Publish End Date",
     pollResultTitle: "Poll Result",
-  }
+  };
 
   constructor(
     private uiUtil: UiUtilService,
@@ -50,13 +50,10 @@ export class AddPollPage implements OnInit {
   ngOnInit() {
     this.pollQuestion = {} as PollQuestion;
     this.route.paramMap.subscribe((param) => {
-      if (
-        param.has("mode") &&
-        param.get("mode") === "edit"
-      ) {
+      if (param.has("mode") && param.get("mode") === "edit") {
         this.pollQuestion = this.pollQuestionService.getViewEditModePollQuestion();
-        if(!this.pollQuestion){
-          this.router.navigateByUrl('/admin-dashboard/manage-polls');
+        if (!this.pollQuestion) {
+          this.router.navigateByUrl("/admin-dashboard/manage-polls");
           return;
         }
         this.isEditMode = true;

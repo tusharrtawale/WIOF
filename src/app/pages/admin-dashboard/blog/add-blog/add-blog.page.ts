@@ -1,12 +1,12 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { AlertController, LoadingController } from "@ionic/angular";
-import { combineLatest, throwError, Subject } from "rxjs";
+import { combineLatest, Subject, throwError } from "rxjs";
 import { catchError, map, takeUntil } from "rxjs/operators";
 import { ELEMENT_BLOG_CATEGORY } from "src/app/app.constants";
 import { Blog } from "src/app/models/Blog";
 import { BlogService } from "src/app/services/blog.service";
 import { UiUtilService } from "src/app/util/UiUtilService";
+import { AppUtilService } from "src/app/util/AppUtilService";
 
 @Component({
   selector: "app-add-blog",
@@ -16,14 +16,15 @@ import { UiUtilService } from "src/app/util/UiUtilService";
 export class AddBlogPage implements OnInit, OnDestroy {
   categories: String[] = Object.values(ELEMENT_BLOG_CATEGORY);
   addBlogForm: FormGroup;
-  blogImage: string;
-  blogImageToSave: any;
+  imageToDisplay: string;
+  imageToSave: any;
   loader;
   destroy$: Subject<boolean> = new Subject();
 
   constructor(
     private blogService: BlogService,
-    private uiUtil: UiUtilService
+    private uiUtil: UiUtilService,
+    private appUtil: AppUtilService
   ) {}
 
   ngOnInit() {
@@ -40,27 +41,19 @@ export class AddBlogPage implements OnInit, OnDestroy {
   }
 
   onFileSelected(event) {
-    const fileReader = new FileReader();
-    fileReader.readAsDataURL(event.target.files[0]);
-    this.blogImageToSave = event.target.files[0];
-    fileReader.onload = () => {
-      this.blogImage = fileReader.result as string;
-    };
+    this.appUtil.onFileSelected(event, this);
   }
 
   async onSubmit() {
     if (this.addBlogForm.valid) {
-      const blog = Blog.createByForm(this.addBlogForm);
+      const blog = this.createByForm(this.addBlogForm);
       this.loader = await this.uiUtil.showLoader("We are saving your blog...");
       combineLatest([
-        this.blogService.saveBlogImage(this.blogImageToSave, blog.imageName),
+        this.blogService.saveBlogImage(this.imageToSave, blog.imageName),
         this.blogService.saveBlog(blog),
       ])
         .pipe(
           takeUntil(this.destroy$),
-          map(([imgResp, blogResp]) => {
-            return [imgResp, blogResp];
-          }),
           catchError((err) => {
             return throwError(err);
           })
@@ -83,6 +76,19 @@ export class AddBlogPage implements OnInit, OnDestroy {
           }
         );
     }
+  }
+
+  private createByForm(addBlogForm: FormGroup) {
+    return new Blog(
+      addBlogForm.value.title,
+      addBlogForm.value.authorName,
+      addBlogForm.value.aboutAuthor,
+      addBlogForm.value.category,
+      addBlogForm.value.subCategory,
+      this.appUtil.formatImageName(addBlogForm.value.image),
+      addBlogForm.value.shortDescription,
+      addBlogForm.value.content
+    );
   }
 
   ngOnDestroy(): void {

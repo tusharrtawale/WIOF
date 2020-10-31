@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { EnvDay } from "../../models/env-cal-data";
 import { EnvcalServiceService } from "../../services/envcal-service.service";
 import { Observable } from "rxjs";
+import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
+
 
 @Component({
   selector: "app-env-calender",
@@ -12,12 +14,21 @@ export class EnvCalenderComponent implements OnInit {
   todayDate = new Date();
   // selectDate=new Date();
   imageUrl: Observable<any>;
+  openDialog:boolean=false;
+  // urlSafe: SafeResourceUrl;
+
+  // safeUrl="https://firebasestorage.googleapis.com/v0/b/wiof-staging.appspot.com/o/environment-calendar%2F1603616920627_IMG-20180901-WA0021.jpg?alt=media&token=d81cae0f-9581-4f37-8d9a-425a001ea94b";
+
+  safeUrl:string;
 
   displayMonth: string;
   displayDay: string;
+  link :SafeResourceUrl;
+
+  occasionForDialog:any;
 
   days: { class: string; day: string; occasion: any[] }[] = [];
-  constructor(private envDayService: EnvcalServiceService) {}
+  constructor(private envDayService: EnvcalServiceService, private santz:DomSanitizer) {}
 
   EnvDays: EnvDay[];
   ngOnInit() {
@@ -28,6 +39,11 @@ export class EnvCalenderComponent implements OnInit {
         this.EnvDays = data;
         this.renderCalendar();
       });
+    this.link=this.santz.bypassSecurityTrustResourceUrl(this.safeUrl);
+
+      // this.safeUrl=this.envDayService.getImage('dolphin-203875_640.jpg')
+      this.safeUrl="https://firebasestorage.googleapis.com/v0/b/wiof-staging.appspot.com/o/environment-calendar%2F1603616920627_IMG-20180901-WA0021.jpg?alt=media&token=d81cae0f-9581-4f37-8d9a-425a001ea94b";
+      // this.urlSafe=this.santz.bypassSecurityTrustResourceUrl(this.safeUrl);
     // this.imageUrl = ;
   }
 
@@ -36,8 +52,12 @@ export class EnvCalenderComponent implements OnInit {
     this.EnvDays.forEach((x) => {
       if (x.day == day && x.month == month) {
         occasion.push({
+          day:x.day,
+          month:x.month,
           name: x.occasion,
           image: this.envDayService.getImage(x.image),
+          desc:x.description,
+          link:x.showMoreLink
         });
       }
     });
@@ -108,6 +128,16 @@ export class EnvCalenderComponent implements OnInit {
         });
       }
     }
+  };
+  closeDialog(){
+    this.openDialog=false;
+    this.occasionForDialog=null;
+  }
+
+  openOccasionDialog(occasion){
+    this.openDialog=true;
+    this.occasionForDialog=occasion;  
+    console.log(this.occasionForDialog);
   }
 
   // prevMonth(){

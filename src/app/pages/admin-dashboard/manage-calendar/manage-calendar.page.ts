@@ -32,7 +32,9 @@ export class ManageCalendarPage implements OnInit{
       day:new FormControl("", [Validators.required]),
       month:new FormControl("", [Validators.required]),
       occasion:new FormControl("", [Validators.required]),
-      image:new FormControl("", [Validators.required])
+      image:new FormControl("", [Validators.required]),
+      description:new FormControl("", [Validators.required]),
+      showMoreLink:new FormControl("", [Validators.required])
     });
   }
 

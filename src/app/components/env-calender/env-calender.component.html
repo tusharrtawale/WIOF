@@ -24,24 +24,29 @@
         <ion-col class="weekday">Saturday</ion-col>
       </ion-row>
       <ion-row>
-        <div *ngFor="let day of days" [ngClass]="day.class">
-          <!-- To be done - show month with date, currently its stacking up -->
-          <!-- <h1 [ngClass]="{'occasionFormatDay':day.occasion[0]!=null,'noOccasionFormatDay':day.occasion[0]==null}">{{day.day}} <span *ngIf="day.occasion[0]!=null">{{displayMonth}}</span></h1> -->
-          <h1
+        <div *ngFor="let day of days" [ngClass]="day.class" [ngStyle]="{'background-image':safeUrl}">
+          <div >
+          <h1 
             [ngClass]="{
               occasionFormatDay: day.occasion[0] != null,
               noOccasionFormatDay: day.occasion[0] == null
             }"
           >
+          <!-- <h1 class="noOccasionFormatDay"
+        > -->
             {{ day.day }}
           </h1>
-          <img *ngIf="day.occasion[0]" [src]="day.occasion[0].image | async" />
-          <p *ngIf="day.occasion[0]" class="occasion-name">
+          <img *ngIf="day.occasion[0]" [src]="day.occasion[0].image | async" (click)="openOccasionDialog(day)" />
+          <!-- <p *ngIf="day.occasion[0]" class="occasion-name">
             {{ day.occasion[0].name }}
-          </p>
+          </p> -->
+          </div>
         </div>
       </ion-row>
     </ion-grid>
+    <div class="wiof-env-calendar-dialog-container" *ngIf="openDialog">
+      <app-env-cal-dialog [occasionDetails]="occasionForDialog" (close)="closeDialog()" ></app-env-cal-dialog>
+    </div>
   </ion-card-content>
 </ion-card>
 

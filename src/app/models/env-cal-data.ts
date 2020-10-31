@@ -5,12 +5,16 @@ export class EnvDay {
   day: string;
   occasion: string;
   image: string;
+  description:string;
+  showMoreLink:string;
 
-  constructor(day,month,occasion,image ){
+  constructor(day,month,occasion,image,description,showMoreLink){
     this.day=day;
     this.month=month;
     this.occasion=occasion;
     this.image=image;
+    this.description=description;
+    this.showMoreLink=showMoreLink;
   }
 
   static formatImageName(imageName: string) {
@@ -29,7 +33,9 @@ export class EnvDay {
       addOccasionForm.value.day,
       this.getMonth(addOccasionForm.value.month),
       addOccasionForm.value.occasion,
-      this.formatImageName(addOccasionForm.value.image)      
+      this.formatImageName(addOccasionForm.value.image),
+      addOccasionForm.value.description,
+      addOccasionForm.value.showMoreLink      
     );
   }
 }

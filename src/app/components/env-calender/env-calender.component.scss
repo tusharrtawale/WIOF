@@ -60,6 +60,17 @@
   }
 }
 
+.wiof-env-calendar-dialog-container{
+    position: absolute;
+    // text-align:center;
+    top:20%;
+    left: 10%;
+    width: 80%;
+    background-color: antiquewhite;
+    border-radius: 15px;
+    border: 2px solid black;
+}
+
 .wiof-env-calender-header {
   border-bottom: white 2px solid;
 }
@@ -68,7 +79,10 @@
   border: 1px antiquewhite solid;
   // width:calc(100%/7);
   // padding: 5.7% 0;
-  background-color: #dfdec9;
+
+  // background-color: #dfdec9;
+  // background-image: url('https://firebasestorage.googleapis.com/v0/b/wiof-staging.appspot.com/o/environment-calendar%2F1603616920627_IMG-20180901-WA0021.jpg?alt=media&token=d81cae0f-9581-4f37-8d9a-425a001ea94b');
+
   border-radius: 5px;
   transition: 0.2s;
   padding: 12px;

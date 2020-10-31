@@ -32,6 +32,7 @@ import { WiofSpinnerComponent } from "./components/wiof-spinner/wiof-spinner.com
 import { VideoCardComponent } from "./components/video-card/video-card.component";
 import { BreakingNewsComponent } from "./components/breaking-news/breaking-news.component";
 import { SocialShareHomeComponent } from "./components/social-share-home/social-share-home.component";
+import { EnvCalDialogComponent } from "./components/env-cal-dialog/env-cal-dialog.component";
 
 @NgModule({
   imports: [
@@ -77,6 +78,7 @@ import { SocialShareHomeComponent } from "./components/social-share-home/social-
     BreakingNewsComponent,
     EqWidgetTestComponent,
     SocialShareHomeComponent,
+    EnvCalDialogComponent
   ],
   declarations: [
     HeaderComponent,
@@ -108,6 +110,8 @@ import { SocialShareHomeComponent } from "./components/social-share-home/social-
     BreakingNewsComponent,
     EqWidgetTestComponent,
     SocialShareHomeComponent,
+    EnvCalDialogComponent
+
   ],
   providers: [],
 })

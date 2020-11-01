@@ -12,8 +12,8 @@ export class AdminDashboardPage implements OnInit {
   adminDB = {
     buttons: [
       {
-        name: "Add Blog",
-        actionUrl: "add-blog",
+        name: "Manage Blogs",
+        actionUrl: "manage-blog",
       },
       {
         name: "Manage Polls",

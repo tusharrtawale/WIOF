@@ -19,6 +19,7 @@ export class Blog {
   publishDate: Date;
 
   constructor(
+    id,
     title,
     authorName,
     aboutAuthor,
@@ -28,6 +29,7 @@ export class Blog {
     shortDescription,
     content
   ) {
+    this.id = id;
     this.title = title;
     this.author = authorName;
     this.aboutAuthor = aboutAuthor;

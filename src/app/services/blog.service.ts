@@ -14,6 +14,7 @@ import { FIREBASE_COLLECTION } from "../app.constants";
 })
 export class BlogService {
   blogCollection: AngularFirestoreCollection<any>;
+  private viewEditModeBlog: Blog;
 
   constructor(
     private storage: AngularFireStorage,
@@ -30,12 +31,15 @@ export class BlogService {
     return ref.getDownloadURL(); //pulls the download URL which is an observable , handle accordingly
   }
 
-  getBlogs(category: String): Observable<Blog[]> {
-    const blogCollectionByCategory = this.database.collection(
-      FIREBASE_COLLECTION.BLOGS,
-      (ref) => ref.where("category", "==", category)
-    );
-    return blogCollectionByCategory.get().pipe(
+  getBlogs(category?: String): Observable<Blog[]> {
+    let blogCollectn = this.database.collection(FIREBASE_COLLECTION.BLOGS);
+    if (category !== undefined) {
+      blogCollectn = this.database.collection(
+        FIREBASE_COLLECTION.BLOGS,
+        (ref) => ref.where("category", "==", category)
+      );
+    }
+    return blogCollectn.get().pipe(
       map((querySnapshot) =>
         querySnapshot.docs.map((doc) => {
           const data = doc.data() as Blog;
@@ -74,6 +78,30 @@ export class BlogService {
   }
 
   saveBlog(blog: Blog) {
-    return from(this.blogCollection.add({ ...blog }));
+    let saveBlog$ = null;
+    if (blog.id !== null) {
+      saveBlog$ = this.blogCollection.doc(blog.id.valueOf()).update({
+        ...blog,
+      });
+    } else {
+      saveBlog$ = this.blogCollection.add({ ...blog });
+    }
+    return from(saveBlog$);
+  }
+
+  deleteBlog(blogId: string) {
+    return from(this.blogCollection.doc(blogId).delete());
+  }
+
+  setViewEditModeBlog(pollQuestion: Blog) {
+    this.viewEditModeBlog = { ...pollQuestion };
+  }
+
+  getViewEditModeBlog() {
+    return this.viewEditModeBlog;
+  }
+
+  clearViewEditModeBlog() {
+    this.viewEditModeBlog = null;
   }
 }

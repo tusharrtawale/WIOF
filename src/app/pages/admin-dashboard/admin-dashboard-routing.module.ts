@@ -8,13 +8,6 @@ const routes: Routes = [
     component: AdminDashboardPage,
   },
   {
-    path: "add-blog",
-    loadChildren: () =>
-      import("./blog/add-blog/add-blog.module").then(
-        (m) => m.AddBlogPageModule
-      ),
-  },
-  {
     path: "manage-polls",
     children: [
       {
@@ -60,11 +53,23 @@ const routes: Routes = [
       ),
   },
   {
-    path: "add-news",
-    loadChildren: () =>
-      import("./news/add-news/add-news.module").then(
-        (m) => m.AddNewsPageModule
-      ),
+    path: "manage-blog",
+    children: [
+      {
+        path: "",
+        loadChildren: () =>
+          import("./blog/manage-blog/manage-blog.module").then(
+            (m) => m.ManageBlogPageModule
+          ),
+      },
+      {
+        path: "blog/:mode",
+        loadChildren: () =>
+          import("./blog/add-blog/add-blog.module").then(
+            (m) => m.AddBlogPageModule
+          ),
+      },
+    ],
   },
 ];
 

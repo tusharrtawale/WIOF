@@ -12,6 +12,7 @@ export class EqWidgetTestComponent implements OnInit {
   firstBlockWidth: string;
   secondBlockWidth: string;
   thirdBlockWidth: string;
+  arrowPositionBracket:string;
   arrowPosition: string;
   message: string;
 
@@ -51,7 +52,8 @@ export class EqWidgetTestComponent implements OnInit {
 
   positionArrow() {
     // this.arrowPosition=String((Number(this.gpr[2])/40)*100)+"%";
-    this.arrowPosition = this.gpr[2] + "%";
+    this.arrowPositionBracket = this.gpr[2] + "%";
+    this.arrowPosition = (Number(this.gpr[2])-8) + "%";
   }
 
   updateRanges() {

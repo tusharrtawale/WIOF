@@ -13,6 +13,7 @@ export class EnvCalDialogComponent implements OnInit {
   @Output() close:EventEmitter<any>= new EventEmitter;
   width: number;
   slideOpts = BREAKING_NEWS_SLIDER_OPTIONS;
+  showNavigation:boolean=false;
 
 
 
@@ -20,6 +21,20 @@ export class EnvCalDialogComponent implements OnInit {
   public onResize() {
     this.detectScreenSize();
   }
+  months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
   constructor() { }
 
 
@@ -28,9 +43,19 @@ export class EnvCalDialogComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.occasionDetails)
+    if(this.occasionDetails.occasion.length >1 ){
+      this.showNavigation=true;      
+    }
   }
 
+  ngDestroy(){
+    this.showNavigation=false;  
+  }
+
+  getMonth(month){
+    const month_num=Number(month);
+    return this.months[month];
+  }
 
   detectScreenSize() {
     this.width = window.innerWidth;

@@ -6,7 +6,7 @@
 }
 
 .arrow-container {
-  padding: 2.5%;
+  padding: 0%;
 }
 .arrow {
   position: relative;
@@ -24,10 +24,7 @@
 }
 
 .bracket {
-  width: 3px;
-
   border: #202020 1px solid;
-  // width: 8.19%;
   width: 1px;
   height: 48px;
   z-index: 2;
@@ -36,7 +33,7 @@
   transition-delay: 1s;
   transition: 0.5s;
   top: 5px;
-  margin: 0 1%;
+  // margin: 0 1%;
 }
 
 .phScaleBlock {

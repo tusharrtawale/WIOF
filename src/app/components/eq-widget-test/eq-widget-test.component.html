@@ -1,13 +1,5 @@
 <div class="food-ph-indicator-meter">
   <ion-row style="padding-top: 50px">
-    <!-- <ion-col size="12">
-        <ion-row>
-          <ion-col style="text-align: center" size="5">Acidic</ion-col>
-          <ion-col style="text-align: center" size="2">Neutral</ion-col>
-          <ion-col style="text-align: center" size="5">Alkaline</ion-col>
-        </ion-row>
-      </ion-col> -->
-
     <ion-col size="12">
       <ion-row>
         <ion-col class="phScale" size="12">
@@ -23,6 +15,14 @@
             class="phScaleBlock range2"
             [style.width]="thirdBlockWidth"
           ></div>
+        </ion-col>
+        <ion-col class="phScale" size="12">
+          
+          <div class="arrow-container">
+            <div class="arrow" [style.left]="arrowPosition">
+              <ion-icon name="chevron-up-outline"></ion-icon>
+            </div>
+          </div>
         </ion-col>
         <ion-col class="eqScaleContainer" size="12">
           <div class="eqScale" style="width: 15%"><p>0%</p></div>
@@ -47,13 +47,10 @@
 
           <div class="eqScale" style="width: 20%"><p>100%</p></div>
         </ion-col>
+        <div class="bracket" [style.left]="arrowPositionBracket"></div>
       </ion-row>
-      <div class="arrow-container">
-        <div class="arrow" [style.left]="arrowPosition">
-          <ion-icon name="chevron-up-outline"></ion-icon>
-        </div>
-      </div>
-      <div class="bracket" [style.left]="arrowPosition"></div>
+
+      
     </ion-col>
     <!-- <ion-col size="12" class="text">
         {{ message }}

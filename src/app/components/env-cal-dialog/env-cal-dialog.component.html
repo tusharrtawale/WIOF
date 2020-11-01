@@ -1,45 +1,42 @@
-<div class="wiof-env-calendar-dialog">
-  
-    <div *ngIf="occasionDetails; else loading">
-      
+<div class="wiof-env-calendar-dialog">  
+  <div *ngIf="occasionDetails; else loading">
+    <ion-row>
+      <ion-col size="1">
+        <div *ngIf="showNavigation" class="swiper-button-prev navigation-arrow-custom-styling"
+              (click)="wiofOccasionSlider.slidePrev()"></div>
+      </ion-col>
+      <ion-col size="10">
 
-      <ion-slides #wiofOccasionSlider [options]="slideOpts">
-        <ion-slide *ngFor="let occasn of occasionDetails.occasion">
-          <ion-card>
-            <ion-card-content class="ion-text-start card-content">
-              <ion-row>
-                <ion-col size="8">
-                  <p *ngIf="occasn.day">Date: {{occasn.day}} / {{occasn.month}}</p>
-                  <p *ngIf="occasn.name">Special Event: {{occasn.name}}</p>
-                  <p *ngIf="occasn.desc">Description: {{occasn.desc}}</p>
-                  <a *ngIf="occasn.link" target="_blank" [href]="occasn.link">Show More ...</a>
-                </ion-col>
-                <ion-col size="3" class="image-container">
-                  <img [src]="occasn.image | async"/>
-                </ion-col>
-                
-
-              </ion-row>
-              <ion-col size="1" class="image-container">
-                  <p class="closeButton" (click)="closeDialog()">X</p>
-                </ion-col>
-              <div
-        class="swiper-button-prev navigation-arrow-custom-styling"
-        (click)="wiofNewsSlider.slidePrev()"
-      ></div>
-      <div
-        class="swiper-button-next navigation-arrow-custom-styling"
-        (click)="wiofNewsSlider.slideNext()"
-      ></div>
-            </ion-card-content>
-          </ion-card>
-        </ion-slide>
-      </ion-slides>
-
-
-    </div>
-    <ng-template #loading>
-      <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />
-    </ng-template>
-  
+        <ion-slides #wiofOccasionSlider [options]="slideOpts">
+          <ion-slide *ngFor="let occasn of occasionDetails.occasion">            
+            <ion-card>
+              <ion-card-content class="ion-text-start card-content">
+                <ion-row>
+                  <ion-col size="8">
+                    <p style="color:#2D2D2D" *ngIf="occasn.day">Date: {{occasn.day}} {{getMonth(occasn.month)}}</p>
+                    <p style="color:#2D2D2D" *ngIf="occasn.name">Special Event: {{occasn.name}}</p>
+                    <p style="color:#2D2D2D" *ngIf="occasn.desc">Description: {{occasn.desc}}</p>
+                    <a *ngIf="occasn.link" target="_blank" [href]="occasn.link">Show More ...</a>
+                  </ion-col>
+                  <ion-col size="4" class="image-container">
+                    <img [src]="occasn.image | async"/>
+                  </ion-col>
+                </ion-row>
+              </ion-card-content>
+            </ion-card>                
+          </ion-slide>
+        </ion-slides>
+        
+        
+      </ion-col>
+      <ion-col size="1">
+        <p class="closeButton" (click)="closeDialog()">X</p>
+        <div *ngIf="showNavigation" class="swiper-button-next navigation-arrow-custom-styling"
+          (click)="wiofOccasionSlider.slideNext()"></div>
+      </ion-col>
+    </ion-row>
+  </div>
+  <ng-template #loading>
+    <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />
+  </ng-template>
 </div>

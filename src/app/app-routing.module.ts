@@ -115,12 +115,17 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'aboutus',
+    loadChildren: () => import('./pages/aboutus/aboutus.module').then( m => m.AboutusPageModule)
+  },
+  {
     path: "**",
     loadChildren: () =>
       import("./pages/not-found/not-found.module").then(
         (m) => m.NotFoundPageModule
       ),
   },
+  
 ];
 
 @NgModule({

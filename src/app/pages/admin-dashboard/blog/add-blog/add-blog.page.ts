@@ -17,7 +17,7 @@ import { UiUtilService } from "src/app/util/UiUtilService";
 export class AddBlogPage implements OnInit, OnDestroy {
   categories: String[] = Object.values(ELEMENT_BLOG_CATEGORY);
   addBlogForm: FormGroup;
-  imageToDisplay: string;
+  imageToDisplay: String;
   imageToSave: any;
   loader;
   destroy$: Subject<boolean> = new Subject();

@@ -14,6 +14,7 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ["./videos.page.scss"],
 })
 export class VideosPage implements OnInit {
+  iframe_player=document.getElementsByTagName("iframe");
   videos: Observable<Video[]>;
   category: string;
   element: string;
@@ -34,5 +35,13 @@ export class VideosPage implements OnInit {
         this.element = element;
       }
     });
+  };
+  ngOnDestroy(){
+    this.stopVideo();    
+  }
+
+  stopVideo(){
+    console.log("play pressed")
+    this.iframe_player[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
   }
 }

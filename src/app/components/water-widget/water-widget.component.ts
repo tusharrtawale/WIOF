@@ -3,7 +3,7 @@ import { Component, OnInit } from "@angular/core";
 @Component({
   selector: "app-water-widget",
   templateUrl: "./water-widget.component.html",
-  styleUrls: ["./water-widget.component.scss"],
+  styleUrls: ["./water-widget.component.scss"]
 })
 export class WaterWidgetComponent implements OnInit {
   waterWidgetItems: { name: string; icon: string; url: string }[];
@@ -14,39 +14,39 @@ export class WaterWidgetComponent implements OnInit {
       {
         name: "Ground Water",
         icon: "../../../assets/water-widget-icons/icons ground water.png",
-        url: "https://indiawris.gov.in/wris/#/groundWater",
+        url: "https://indiawris.gov.in/wris/#/groundWater"
       },
       {
         name: "Rainfall",
         icon: "../../../assets/water-widget-icons/icons rainfall.png",
-        url: "https://indiawris.gov.in/wris/#/rainfall",
+        url: "https://indiawris.gov.in/wris/#/rainfall"
       },
       {
         name: "Evapo-Transpiration",
         icon: "../../../assets/water-widget-icons/icons8-sparkling_water 1.png",
-        url: "https://indiawris.gov.in/wris/#/evapotranspiration",
+        url: "https://indiawris.gov.in/wris/#/evapotranspiration"
       },
       {
         name: "Reservoirs",
         icon: "../../../assets/water-widget-icons/icons reservoir.png",
-        url: "https://indiawris.gov.in/wris/#/Reservoirs",
+        url: "https://indiawris.gov.in/wris/#/Reservoirs"
       },
       {
         name: "River",
         icon: "../../../assets/water-widget-icons/icons river.png",
-        url: "https://indiawris.gov.in/wris/#/RiverMonitoring",
+        url: "https://indiawris.gov.in/wris/#/RiverMonitoring"
       },
       {
         name: "Soil Moisture",
         icon: "../../../assets/water-widget-icons/icons soil moisture.png",
-        url: "https://indiawris.gov.in/wris/#/soilMoisture",
+        url: "https://indiawris.gov.in/wris/#/soilMoisture"
       },
       {
         name: "Surface Water Quality",
         icon:
           "../../../assets/water-widget-icons/icon surface water quality.png",
-        url: "https://indiawris.gov.in/wris/#/SWQuality",
-      },
+        url: "https://indiawris.gov.in/wris/#/SWQuality"
+      }
     ];
   }
 }

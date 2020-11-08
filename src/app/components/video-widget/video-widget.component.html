@@ -9,10 +9,14 @@
     class="wiof-video-player-content background"
     [ngClass]="videoPlayerClass"
   >
-    <iframe id="iframeYTvideo" class="videoPlayer" [src]="urlSafe" allowfullscreen></iframe>
+    <iframe
+      id="iframeYTvideo"
+      class="videoPlayer"
+      [src]="urlSafe"
+      allowfullscreen
+    ></iframe>
 
-    <br>
+    <br />
   </ion-card-content>
 </ion-card>
 <!-- <button (click)="stopVideo()">stop</button> -->
-

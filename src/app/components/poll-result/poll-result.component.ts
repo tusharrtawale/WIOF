@@ -9,7 +9,7 @@ import { AppUtilService } from "src/app/util/AppUtilService";
 @Component({
   selector: "app-poll-result",
   templateUrl: "./poll-result.component.html",
-  styleUrls: ["./poll-result.component.scss"],
+  styleUrls: ["./poll-result.component.scss"]
 })
 export class PollResultComponent implements OnInit, OnDestroy {
   @Input() pollQuestion: PollQuestion;

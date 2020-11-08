@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from "@angular/core";
 @Component({
   selector: "app-food-ph-indicator-meter",
   templateUrl: "./food-ph-indicator-meter.component.html",
-  styleUrls: ["./food-ph-indicator-meter.component.scss"],
+  styleUrls: ["./food-ph-indicator-meter.component.scss"]
 })
 export class FoodPhIndicatorMeterComponent implements OnInit {
   @Input() food: any;

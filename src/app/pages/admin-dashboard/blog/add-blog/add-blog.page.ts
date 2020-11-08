@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
-import { Subject, throwError } from "rxjs";
+import { Subject, throwError, of } from "rxjs";
 import { catchError, switchMap, takeUntil } from "rxjs/operators";
 import { ELEMENT_BLOG_CATEGORY } from "src/app/app.constants";
 import { Blog } from "src/app/models/Blog";
@@ -12,7 +12,7 @@ import { UiUtilService } from "src/app/util/UiUtilService";
 @Component({
   selector: "app-add-blog",
   templateUrl: "./add-blog.page.html",
-  styleUrls: ["./add-blog.page.scss"],
+  styleUrls: ["./add-blog.page.scss"]
 })
 export class AddBlogPage implements OnInit, OnDestroy {
   categories: String[] = Object.values(ELEMENT_BLOG_CATEGORY);
@@ -30,7 +30,7 @@ export class AddBlogPage implements OnInit, OnDestroy {
     titleLabel: "Title",
     shortDescriptionLabel: "Short Description",
     saveBlogLabel: "Save",
-    cancelLabel: "Cancel",
+    cancelLabel: "Cancel"
   };
 
   constructor(
@@ -71,7 +71,7 @@ export class AddBlogPage implements OnInit, OnDestroy {
       subCategory: new FormControl("", [Validators.required]),
       image: new FormControl("", [Validators.required]),
       shortDescription: new FormControl("", [Validators.required]),
-      content: new FormControl("", [Validators.required]),
+      content: new FormControl("", [Validators.required])
     });
   }
 
@@ -84,9 +84,9 @@ export class AddBlogPage implements OnInit, OnDestroy {
       subCategory: new FormControl(blog.subCategory, [Validators.required]),
       image: new FormControl(blog.imageName, [Validators.required]),
       shortDescription: new FormControl(blog.shortDescription, [
-        Validators.required,
+        Validators.required
       ]),
-      content: new FormControl(blog.content, [Validators.required]),
+      content: new FormControl(blog.content, [Validators.required])
     });
   }
 
@@ -96,18 +96,25 @@ export class AddBlogPage implements OnInit, OnDestroy {
 
   async onSubmit() {
     if (this.addBlogForm.valid) {
-      const blog = this.createByForm(
+      this.blog = this.createByForm(
         this.addBlogForm,
         this.blog,
         this.isEditMode
       );
       this.loader = await this.uiUtil.showLoader("We are saving your blog...");
       this.blogService
-        .saveBlogImage(this.imageToSave, this.blog.imageName)
+        .saveBlog(this.blog)
         .pipe(
           switchMap((data) => {
             console.log(data);
-            return this.blogService.saveBlog(this.blog);
+            if (this.imageToSave !== undefined) {
+              return this.blogService.saveBlogImage(
+                this.imageToSave,
+                this.blog.imageName
+              );
+            } else {
+              return of(true);
+            }
           }),
           takeUntil(this.destroy$),
           catchError((err) => {
@@ -115,18 +122,23 @@ export class AddBlogPage implements OnInit, OnDestroy {
           })
         )
         .subscribe(
-          ([imgResp, blogResp]) => {
+          (response) => {
+            console.log(response);
             this.loader.dismiss();
-            this.addBlogForm.reset();
+            if (!this.isEditMode) {
+              this.addBlogForm.reset();
+              this.imageToDisplay = null;
+              this.imageToSave = null;
+            }
             this.uiUtil.presentAlert("Success", "We saved your blog!", [
-              "Cool!",
+              "Cool!"
             ]);
           },
           (error) => {
             this.loader.dismiss();
             this.uiUtil.presentAlert(
               "Error",
-              "Uh oh! We could not save it. Please try again.",
+              "Uh oh! We could not save the blog. Please try again.",
               ["OK"]
             );
           }
@@ -146,7 +158,9 @@ export class AddBlogPage implements OnInit, OnDestroy {
       addBlogForm.value.aboutAuthor,
       addBlogForm.value.category,
       addBlogForm.value.subCategory,
-      this.appUtil.formatImageName(addBlogForm.value.image),
+      isEditMode && blog.imageName !== undefined
+        ? blog.imageName
+        : this.appUtil.formatImageName("blog_", this.imageToSave),
       addBlogForm.value.shortDescription,
       addBlogForm.value.content
     );

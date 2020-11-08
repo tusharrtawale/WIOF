@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import {
   MatDatepickerModule,
   MatDatepicker,
-  MatDatepickerToggle,
+  MatDatepickerToggle
 } from "@angular/material/datepicker";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
@@ -23,8 +23,8 @@ import { MatNativeDateModule } from "@angular/material/core";
     MatFormFieldModule,
     MatInputModule,
     MatNativeDateModule,
-    MatDatepickerModule,
+    MatDatepickerModule
   ],
-  declarations: [AddPollPage],
+  declarations: [AddPollPage]
 })
 export class AddPollPageModule {}

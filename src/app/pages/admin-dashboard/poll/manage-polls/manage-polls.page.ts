@@ -9,7 +9,7 @@ import { Router, ActivatedRoute } from "@angular/router";
 @Component({
   selector: "app-manage-polls",
   templateUrl: "./manage-polls.page.html",
-  styleUrls: ["./manage-polls.page.scss"],
+  styleUrls: ["./manage-polls.page.scss"]
 })
 export class ManagePollsPage implements OnInit, OnDestroy {
   destroy$: Subject<boolean> = new Subject();
@@ -25,7 +25,7 @@ export class ManagePollsPage implements OnInit, OnDestroy {
     this.initPage();
   }
 
-  initPage(){
+  initPage() {
     this.pollQuestionList$ = this.pollQuestionService.getPollQuestions().pipe(
       takeUntil(this.destroy$),
       map((pollQuestionList) => {
@@ -37,7 +37,7 @@ export class ManagePollsPage implements OnInit, OnDestroy {
     );
   }
 
-  refreshData(){
+  refreshData() {
     this.initPage();
   }
 
@@ -59,12 +59,12 @@ export class ManagePollsPage implements OnInit, OnDestroy {
           text: "Yes",
           handler: async () => {
             await this.delPollQuestion(pollQuestionList, index, pollQuestionId);
-          },
+          }
         },
         {
           text: "No",
-          role: "cancel",
-        },
+          role: "cancel"
+        }
       ]
     );
   }
@@ -118,7 +118,7 @@ export class ManagePollsPage implements OnInit, OnDestroy {
     this.pollQuestionService.setViewEditModePollQuestion(pollQuestion);
     this.router.navigate(["poll", "edit"], {
       relativeTo: this.route,
-      queryParams: { id: pollQuestion.pollId },
+      queryParams: { id: pollQuestion.pollId }
     });
   }
 

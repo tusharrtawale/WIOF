@@ -1,23 +1,21 @@
 @import "../../wiof-custom-theming.scss";
 
-
-.wiof-env-calendar-dialog{
-    padding:5px;
-    color:#2D2D2D;
-  }
-.image-container{
-    text-align: center;
+.wiof-env-calendar-dialog {
+  padding: 5px;
+  color: #2d2d2d;
 }
-.closeButton{
-    text-align: right;
-    cursor:pointer;
-    font-size: medium;
-    font-weight: bold;
-    padding-right:5px;
-    
+.image-container {
+  text-align: center;
 }
-.navigation-arrow-custom-styling{
-    width: 40px;
-    height: 40px;
-    top: 50%;
+.closeButton {
+  text-align: right;
+  cursor: pointer;
+  font-size: medium;
+  font-weight: bold;
+  padding-right: 5px;
+}
+.navigation-arrow-custom-styling {
+  width: 40px;
+  height: 40px;
+  top: 50%;
 }

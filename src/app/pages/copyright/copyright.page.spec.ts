@@ -10,7 +10,7 @@ describe("CopyrightPage", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [CopyrightPage],
-      imports: [IonicModule.forRoot()],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(CopyrightPage);

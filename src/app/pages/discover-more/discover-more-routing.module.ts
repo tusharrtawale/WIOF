@@ -6,12 +6,12 @@ import { DiscoverMorePage } from "./discover-more.page";
 const routes: Routes = [
   {
     path: "",
-    component: DiscoverMorePage,
-  },
+    component: DiscoverMorePage
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class DiscoverMorePageRoutingModule {}

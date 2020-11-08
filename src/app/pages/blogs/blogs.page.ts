@@ -8,7 +8,7 @@ import { Observable } from "rxjs";
 @Component({
   selector: "app-blogs",
   templateUrl: "./blogs.page.html",
-  styleUrls: ["./blogs.page.scss"],
+  styleUrls: ["./blogs.page.scss"]
 })
 export class BlogsPage implements OnInit {
   blogs: Observable<Blog[]>;

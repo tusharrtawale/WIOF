@@ -13,8 +13,8 @@ import { AddBlogPage } from "./add-blog.page";
     AddBlogPageRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    QuillModule.forRoot(),
+    QuillModule.forRoot()
   ],
-  declarations: [AddBlogPage],
+  declarations: [AddBlogPage]
 })
 export class AddBlogPageModule {}

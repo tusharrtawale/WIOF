@@ -9,7 +9,7 @@ describe("AqiWidgetComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [AqiWidgetComponent],
-      imports: [IonicModule.forRoot()],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(AqiWidgetComponent);

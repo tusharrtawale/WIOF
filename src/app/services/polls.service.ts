@@ -2,14 +2,14 @@ import { Injectable } from "@angular/core";
 import { Poll } from "../models/Poll";
 import {
   AngularFirestore,
-  AngularFirestoreCollection,
+  AngularFirestoreCollection
 } from "@angular/fire/firestore";
 import { map } from "rxjs/operators";
 import { from, Observable } from "rxjs";
 import { FIREBASE_COLLECTION } from "../app.constants";
 
 @Injectable({
-  providedIn: "root",
+  providedIn: "root"
 })
 export class PollsService {
   private pollsCollection: AngularFirestoreCollection<any>;

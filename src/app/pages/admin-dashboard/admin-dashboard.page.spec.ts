@@ -9,7 +9,7 @@ describe("AdminDashboardPage", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [AdminDashboardPage],
-      imports: [IonicModule.forRoot()],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(AdminDashboardPage);

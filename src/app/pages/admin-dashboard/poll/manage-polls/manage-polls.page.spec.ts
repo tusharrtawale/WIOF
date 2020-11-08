@@ -10,7 +10,7 @@ describe("ManagePollsPage", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ManagePollsPage],
-      imports: [IonicModule.forRoot()],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(ManagePollsPage);

@@ -6,12 +6,12 @@ import { VideosPage } from "./videos.page";
 const routes: Routes = [
   {
     path: "",
-    component: VideosPage,
-  },
+    component: VideosPage
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class VideosPageRoutingModule {}

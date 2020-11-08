@@ -10,8 +10,8 @@ import { ManagePollsPage } from "./manage-polls.page";
     CommonModule,
     FormsModule,
     IonicModule,
-    ManagePollsPageRoutingModule,
+    ManagePollsPageRoutingModule
   ],
-  declarations: [ManagePollsPage],
+  declarations: [ManagePollsPage]
 })
 export class ManagePollsPageModule {}

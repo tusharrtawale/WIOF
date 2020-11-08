@@ -21,8 +21,8 @@ import { AddNewsPage } from "./add-news.page";
     MatFormFieldModule,
     MatInputModule,
     MatNativeDateModule,
-    MatDatepickerModule,
+    MatDatepickerModule
   ],
-  declarations: [AddNewsPage],
+  declarations: [AddNewsPage]
 })
 export class AddNewsPageModule {}

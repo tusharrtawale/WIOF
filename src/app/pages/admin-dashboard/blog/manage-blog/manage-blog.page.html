@@ -5,7 +5,10 @@
     </ion-buttons>
     <ion-title>Manage Blogs</ion-title>
     <ion-buttons slot="end">
-      <ion-button
+      <ion-button color="dark" fill="clear" size="large" (click)="refreshData()"
+        ><ion-icon name="refresh-outline" slot="start"></ion-icon
+        >Refresh</ion-button
+      ><ion-button
         color="success"
         fill="solid"
         size="large"
@@ -56,7 +59,8 @@
               (click)="viewBlogDetails(blog)"
               ><ion-icon slot="icon-only" name="eye-outline"></ion-icon
             ></ion-button>
-            <ion-button (click)="deleteBlog(blog, i, blog.id)"
+            <ion-button
+              (click)="deleteBlog(blogList, i, blog.id, blog.imageName)"
               ><ion-icon slot="icon-only" name="trash-outline"></ion-icon
             ></ion-button>
           </ion-buttons>

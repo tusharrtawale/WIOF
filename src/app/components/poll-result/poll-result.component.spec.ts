@@ -10,7 +10,7 @@ describe("PollResultComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [PollResultComponent],
-      imports: [IonicModule.forRoot()],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(PollResultComponent);

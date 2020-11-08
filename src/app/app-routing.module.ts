@@ -7,62 +7,62 @@ const routes: Routes = [
   {
     path: "home",
     loadChildren: () =>
-      import("./pages/home/home.module").then((m) => m.HomePageModule),
+      import("./pages/home/home.module").then((m) => m.HomePageModule)
   },
   {
     path: "",
     redirectTo: "home",
-    pathMatch: "full",
+    pathMatch: "full"
   },
   {
     path: "element/:element/blogs/blog",
     redirectTo: "element/:element/blog",
-    pathMatch: "prefix",
+    pathMatch: "prefix"
   },
   {
     path: "element/:element/blogs/take-action",
     redirectTo: "element/:element/take-action",
-    pathMatch: "full",
+    pathMatch: "full"
   },
   {
     path: "element/:element/videos/video",
     redirectTo: "element/:element/video",
-    pathMatch: "prefix",
+    pathMatch: "prefix"
   },
   {
     path: "element/:element/videos/take-action",
     redirectTo: "element/:element/take-action",
-    pathMatch: "full",
+    pathMatch: "full"
   },
   {
     path: "element/earth",
     loadChildren: () =>
-      import("./pages/earth/earth.module").then((m) => m.EarthPageModule),
+      import("./pages/earth/earth.module").then((m) => m.EarthPageModule)
   },
   {
     path: "element/water",
     loadChildren: () =>
-      import("./pages/water/water.module").then((m) => m.WaterPageModule),
+      import("./pages/water/water.module").then((m) => m.WaterPageModule)
   },
   {
     path: "element/energy",
     loadChildren: () =>
-      import("./pages/fire/fire.module").then((m) => m.FirePageModule),
+      import("./pages/fire/fire.module").then((m) => m.FirePageModule)
   },
   {
     path: "element/spirit",
     loadChildren: () =>
-      import("./pages/spirit/spirit.module").then((m) => m.SpiritPageModule),
+      import("./pages/spirit/spirit.module").then((m) => m.SpiritPageModule)
   },
   {
     path: "element/water",
     loadChildren: () =>
-      import("./pages/water/water.module").then((m) => m.WaterPageModule),
+      import("./pages/water/water.module").then((m) => m.WaterPageModule)
   },
   {
     path: "element/air",
     loadChildren: () =>
-      import("./pages/air/air.module").then((m) => m.AirPageModule),
+      import("./pages/air/air.module").then((m) => m.AirPageModule)
   },
   {
     path: "admin-dashboard",
@@ -70,68 +70,68 @@ const routes: Routes = [
       import("./pages/admin-dashboard/admin-dashboard.module").then(
         (m) => m.AdminDashboardPageModule
       ),
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard]
   },
   {
     path: "login",
     loadChildren: () =>
-      import("./pages/login/login.module").then((m) => m.LoginPageModule),
+      import("./pages/login/login.module").then((m) => m.LoginPageModule)
   },
   {
     path: "element/:element/blogs",
     loadChildren: () =>
-      import("./pages/blogs/blogs.module").then((m) => m.BlogsPageModule),
+      import("./pages/blogs/blogs.module").then((m) => m.BlogsPageModule)
   },
 
   {
     path: "element/:element/videos",
     loadChildren: () =>
-      import("./pages/videos/videos.module").then((m) => m.VideosPageModule),
+      import("./pages/videos/videos.module").then((m) => m.VideosPageModule)
   },
   {
     path: "discover-more",
     loadChildren: () =>
       import("./pages/discover-more/discover-more.module").then(
         (m) => m.DiscoverMorePageModule
-      ),
+      )
   },
   {
     path: "privacy-policy",
     loadChildren: () =>
       import("./pages/privacy-policy/privacy-policy.module").then(
         (m) => m.PrivacyPolicyPageModule
-      ),
+      )
   },
   {
     path: "sitemap",
     loadChildren: () =>
-      import("./pages/sitemap/sitemap.module").then((m) => m.SitemapPageModule),
+      import("./pages/sitemap/sitemap.module").then((m) => m.SitemapPageModule)
   },
   {
     path: "copyright",
     loadChildren: () =>
       import("./pages/copyright/copyright.module").then(
         (m) => m.CopyrightPageModule
-      ),
+      )
   },
   {
-    path: 'aboutus',
-    loadChildren: () => import('./pages/aboutus/aboutus.module').then( m => m.AboutusPageModule)
+    path: "aboutus",
+    loadChildren: () =>
+      import("./pages/aboutus/aboutus.module").then((m) => m.AboutusPageModule)
   },
   {
     path: "**",
     loadChildren: () =>
       import("./pages/not-found/not-found.module").then(
         (m) => m.NotFoundPageModule
-      ),
-  },
-  
+      )
+  }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}

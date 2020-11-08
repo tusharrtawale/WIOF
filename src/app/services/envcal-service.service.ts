@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { EnvDay } from "../models/env-cal-data";
 import {
   AngularFirestore,
-  AngularFirestoreCollection,
+  AngularFirestoreCollection
 } from "@angular/fire/firestore";
 import { AngularFireStorage } from "@angular/fire/storage";
 import { map } from "rxjs/operators";
@@ -11,7 +11,7 @@ import { from, Observable } from "rxjs";
 import { FIREBASE_COLLECTION } from "../app.constants";
 
 @Injectable({
-  providedIn: "root",
+  providedIn: "root"
 })
 export class EnvcalServiceService {
   envcalCollectionByMonth: AngularFirestoreCollection<any>;

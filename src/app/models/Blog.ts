@@ -25,7 +25,7 @@ export class Blog {
     aboutAuthor,
     category,
     subCategory,
-    image,
+    imageName,
     shortDescription,
     content
   ) {
@@ -35,7 +35,7 @@ export class Blog {
     this.aboutAuthor = aboutAuthor;
     this.category = category;
     this.subCategory = subCategory;
-    (this.imageName = image), (this.shortDescription = shortDescription);
+    (this.imageName = imageName), (this.shortDescription = shortDescription);
     this.content = content;
   }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
-import { Subject, throwError } from "rxjs";
+import { Subject, throwError, of } from "rxjs";
 import { catchError, switchMap, takeUntil } from "rxjs/operators";
 import { MEDIA_TYPE, PAGE_CATEGORY_MAP } from "src/app/app.constants";
 import { News } from "src/app/models/News";
@@ -12,7 +12,7 @@ import { UiUtilService } from "src/app/util/UiUtilService";
 @Component({
   selector: "app-add-news",
   templateUrl: "./add-news.page.html",
-  styleUrls: ["./add-news.page.scss"],
+  styleUrls: ["./add-news.page.scss"]
 })
 export class AddNewsPage implements OnInit {
   isEditMode: boolean = false;
@@ -38,7 +38,7 @@ export class AddNewsPage implements OnInit {
     newsSourceDescLabel:
       "Link to read more information about the news or news source",
     saveNewsLabel: "Save",
-    cancelLabel: "Cancel",
+    cancelLabel: "Cancel"
   };
 
   constructor(
@@ -87,7 +87,7 @@ export class AddNewsPage implements OnInit {
       mediaType: new FormControl("", Validators.required),
       mediaLink: new FormControl(""),
       image: new FormControl(""),
-      newsSource: new FormControl("", Validators.required),
+      newsSource: new FormControl("", Validators.required)
     });
   }
 
@@ -100,7 +100,7 @@ export class AddNewsPage implements OnInit {
       mediaType: new FormControl(news.mediaType, Validators.required),
       mediaLink: new FormControl(news.mediaLink),
       image: new FormControl(""),
-      newsSource: new FormControl(news.newsSource, Validators.required),
+      newsSource: new FormControl(news.newsSource, Validators.required)
     });
   }
 
@@ -118,11 +118,18 @@ export class AddNewsPage implements OnInit {
       );
       this.loader = await this.uiUtil.showLoader("We are saving your news...");
       this.newsService
-        .saveNewsImage(this.imageToSave, this.news.mediaLink)
+        .saveNews(this.news)
         .pipe(
           switchMap((data) => {
             console.log(data);
-            return this.newsService.saveNews(this.news);
+            if (this.imageToSave !== undefined) {
+              return this.newsService.saveNewsImage(
+                this.imageToSave,
+                this.news.mediaLink
+              );
+            } else {
+              return of(true);
+            }
           }),
           takeUntil(this.destroy$),
           catchError((err) => {
@@ -134,9 +141,11 @@ export class AddNewsPage implements OnInit {
             this.loader.dismiss();
             if (!this.isEditMode) {
               this.addNewsForm.reset();
+              this.imageToDisplay = null;
+              this.imageToSave = null;
             }
             this.uiUtil.presentAlert("Success", "We saved your news!", [
-              "Cool!",
+              "Cool!"
             ]);
           },
           (error) => {
@@ -144,7 +153,7 @@ export class AddNewsPage implements OnInit {
             this.loader.dismiss();
             this.uiUtil.presentAlert(
               "Error",
-              "Uh oh! We could not save it. Please try again.",
+              "Uh oh! We could not save the news. Please try again.",
               ["OK"]
             );
           }
@@ -163,7 +172,9 @@ export class AddNewsPage implements OnInit {
       addNewsForm.value.content,
       addNewsForm.value.category,
       new Date(addNewsForm.value.date).getTime(),
-      this.appUtil.formatImageName(addNewsForm.value.image),
+      isEditMode && news.mediaLink !== undefined
+        ? news.mediaLink
+        : this.appUtil.formatImageName("news_", this.imageToSave),
       addNewsForm.value.mediaType,
       addNewsForm.value.newsSource
     );

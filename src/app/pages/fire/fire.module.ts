@@ -5,6 +5,6 @@ import { FirePage } from "./fire.page";
 
 @NgModule({
   imports: [AppCommonModule, FirePageRoutingModule],
-  declarations: [FirePage],
+  declarations: [FirePage]
 })
 export class FirePageModule {}

@@ -10,7 +10,7 @@ describe("SocialShareHomeComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [SocialShareHomeComponent],
-      imports: [IonicModule.forRoot()],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(SocialShareHomeComponent);

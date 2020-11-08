@@ -2,18 +2,18 @@ import { Component, OnInit, Input } from "@angular/core";
 import {
   VIDEO_PLAYER_TITLES,
   VIDEO_PLAYER_VIDEOS,
-  ELEMENT_SELECT,
+  ELEMENT_SELECT
 } from "../../app.constants";
 import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 
 @Component({
   selector: "app-video-widget",
   templateUrl: "./video-widget.component.html",
-  styleUrls: ["./video-widget.component.scss"],
+  styleUrls: ["./video-widget.component.scss"]
 })
 export class VideoWidgetComponent implements OnInit {
   @Input() element: string;
-  iframe_player=document.getElementsByTagName("iframe");
+  iframe_player = document.getElementsByTagName("iframe");
 
   videoPlayerTitle: string;
   videoLink: string;
@@ -30,31 +30,33 @@ export class VideoWidgetComponent implements OnInit {
       `https://www.youtube.com/embed/${this.videoLink}?enablejsapi=1&version=3&playerapiid=ytplayer?controls=1`
     );
 
-    "https://www.youtube.com/embed/glEiPXAYE-U?enablejsapi=1&version=3&playerapiid=ytplayer"
+    ("https://www.youtube.com/embed/glEiPXAYE-U?enablejsapi=1&version=3&playerapiid=ytplayer");
   }
 
-  ngOnDestroy(){
-    this.stopVideo();    
+  ngOnDestroy() {
+    this.stopVideo();
   }
 
-  stopVideo(){
-    console.log("play pressed")
-    this.iframe_player[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+  stopVideo() {
+    console.log("play pressed");
+    this.iframe_player[0].contentWindow.postMessage(
+      '{"event":"command","func":"' + "stopVideo" + '","args":""}',
+      "*"
+    );
   }
 
   //future reference
   // $('a.play-video').click(function(){
   //   $('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
   // });
-  
+
   // $('a.stop-video').click(function(){
   //   $('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
   // });
-  
+
   // $('a.pause-video').click(function(){
   //   $('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
   // });
-
 
   setPlayerTitle() {
     if (this.element === ELEMENT_SELECT.AIR) {

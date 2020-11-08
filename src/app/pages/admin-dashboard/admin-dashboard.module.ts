@@ -10,8 +10,8 @@ import { AdminDashboardPage } from "./admin-dashboard.page";
     CommonModule,
     FormsModule,
     IonicModule,
-    AdminDashboardPageRoutingModule,
+    AdminDashboardPageRoutingModule
   ],
-  declarations: [AdminDashboardPage],
+  declarations: [AdminDashboardPage]
 })
 export class AdminDashboardPageModule {}

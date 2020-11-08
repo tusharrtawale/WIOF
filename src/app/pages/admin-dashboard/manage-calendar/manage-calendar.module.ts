@@ -14,8 +14,8 @@ import { ManageCalendarPage } from "./manage-calendar.page";
     FormsModule,
     IonicModule,
     ReactiveFormsModule,
-    ManageCalendarPageRoutingModule,
+    ManageCalendarPageRoutingModule
   ],
-  declarations: [ManageCalendarPage],
+  declarations: [ManageCalendarPage]
 })
 export class ManageCalendarPageModule {}

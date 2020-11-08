@@ -16,8 +16,8 @@ import { AppCommonModule } from "../../app-common.module";
     FormsModule,
     IonicModule,
     DiscoverMorePageRoutingModule,
-    AppCommonModule,
+    AppCommonModule
   ],
-  declarations: [DiscoverMorePage],
+  declarations: [DiscoverMorePage]
 })
 export class DiscoverMorePageModule {}

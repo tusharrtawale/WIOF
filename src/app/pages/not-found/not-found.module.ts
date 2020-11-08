@@ -12,8 +12,8 @@ import { AppCommonModule } from "src/app/app-common.module";
     FormsModule,
     IonicModule,
     NotFoundPageRoutingModule,
-    AppCommonModule,
+    AppCommonModule
   ],
-  declarations: [NotFoundPage],
+  declarations: [NotFoundPage]
 })
 export class NotFoundPageModule {}

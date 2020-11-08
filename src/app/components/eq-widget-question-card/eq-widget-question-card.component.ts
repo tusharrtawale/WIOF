@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 @Component({
   selector: "app-eq-widget-question-card",
   templateUrl: "./eq-widget-question-card.component.html",
-  styleUrls: ["./eq-widget-question-card.component.scss"],
+  styleUrls: ["./eq-widget-question-card.component.scss"]
 })
 export class EqWidgetQuestionCardComponent implements OnInit {
   userResponse: FormGroup;
@@ -38,7 +38,7 @@ export class EqWidgetQuestionCardComponent implements OnInit {
     "If I turn things around too much, complicating them, I try to calm myself down.",
     "I worry about being in a good mood.",
     "I have lots of energy when I feel happy.",
-    "When I am angry try to change my mood.",
+    "When I am angry try to change my mood."
   ];
 
   constructor(private fb: FormBuilder) {}
@@ -68,7 +68,7 @@ export class EqWidgetQuestionCardComponent implements OnInit {
       response20: [1, Validators.required],
       response21: [1, Validators.required],
       response22: [1, Validators.required],
-      response23: [1, Validators.required],
+      response23: [1, Validators.required]
     });
     this.gender = "M";
   }
@@ -81,7 +81,7 @@ export class EqWidgetQuestionCardComponent implements OnInit {
     this.results = [
       this.getEmotionalAttentionFactor(),
       this.getEmotionalClarityFactor(),
-      this.getEmotionalRepairFactor(),
+      this.getEmotionalRepairFactor()
     ];
     this.setMessage();
     this.showResult = true;

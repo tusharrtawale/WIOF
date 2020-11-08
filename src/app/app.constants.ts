@@ -9,23 +9,23 @@ export const ELEMENT_VIDEOS_PLAYLIST_ID = {
   water: "PLitAAO2FhPTHZRcarOENNjYcdPlzwpZEn",
   earth: "PLitAAO2FhPTHdtNVNkcm3JIX6jmhPZjyN",
   energy: "PLitAAO2FhPTFw5EoLsuua6Ang60PGBH0d",
-  spirit: "PLitAAO2FhPTFjxy3EsgDR_XPtgiX8Ez-q",
+  spirit: "PLitAAO2FhPTFjxy3EsgDR_XPtgiX8Ez-q"
 };
 
 export const ELEMENTS = {
-  EARTH: 'earth',
-  ENERGY: 'energy',
-  AIR: 'air',
-  WATER: 'water',
-  SPIRIT: 'spirit'
-}
+  EARTH: "earth",
+  ENERGY: "energy",
+  AIR: "air",
+  WATER: "water",
+  SPIRIT: "spirit"
+};
 
 export const ELEMENT_BLOG_CATEGORY = {
   AIR: "Air",
   WATER: "Water",
   EARTH: "Earth",
   FIRE: "Fire",
-  SPIRIT: "Spirit",
+  SPIRIT: "Spirit"
 };
 
 export const ELEMENT_SELECT = {
@@ -34,7 +34,7 @@ export const ELEMENT_SELECT = {
   EARTH: "earth",
   FIRE: "fire",
   SPIRIT: "spirit",
-  CONFIG: "config",
+  CONFIG: "config"
 };
 
 export const AQI_WIDGET_LOCATIONS = {
@@ -42,7 +42,7 @@ export const AQI_WIDGET_LOCATIONS = {
   MUMBAI: "mumbai",
   KOLKATA: "kolkata",
   CHENNAI: "chennai",
-  BANGALORE: "bangalore",
+  BANGALORE: "bangalore"
 };
 
 export const VIDEO_SLIDER_OPTIONS = {
@@ -53,7 +53,7 @@ export const VIDEO_SLIDER_OPTIONS = {
     stretch: 0,
     depth: 100,
     modifier: 1,
-    slideShadows: true,
+    slideShadows: true
   },
 
   // navigation: {
@@ -65,21 +65,21 @@ export const VIDEO_SLIDER_OPTIONS = {
   breakpoints: {
     // when window width is >= 320px
     0: {
-      slidesPerView: 1,
+      slidesPerView: 1
     },
     // when window width is >= 480px
     480: {
-      slidesPerView: 2,
+      slidesPerView: 2
     },
     // when window width is >= 767px
     767: {
-      slidesPerView: 3,
+      slidesPerView: 3
     },
     // when window width is >= 1024px
     1024: {
-      slidesPerView: 4,
-    },
-  },
+      slidesPerView: 4
+    }
+  }
 };
 
 export const BREAKING_NEWS_SLIDER_OPTIONS = {
@@ -91,8 +91,8 @@ export const BREAKING_NEWS_SLIDER_OPTIONS = {
     stretch: 0,
     depth: 100,
     modifier: 1,
-    slideShadows: true,
-  },
+    slideShadows: true
+  }
 };
 
 export const BLOG_SLIDER_OPTIONS = {
@@ -104,36 +104,36 @@ export const BLOG_SLIDER_OPTIONS = {
     stretch: 0,
     depth: 100,
     modifier: 1,
-    slideShadows: true,
+    slideShadows: true
   },
 
   // Responsive breakpoints
   breakpoints: {
     // when window width is >= 320px
     0: {
-      slidesPerView: 1,
+      slidesPerView: 1
     },
     // when window width is >= 480px
     480: {
-      slidesPerView: 2,
+      slidesPerView: 2
     },
     // when window width is >= 767px
     767: {
-      slidesPerView: 3,
+      slidesPerView: 3
     },
     // when window width is >= 1024px
     1024: {
-      slidesPerView: 4,
-    },
-  },
+      slidesPerView: 4
+    }
+  }
 };
 
 export const ENDPOINTS = {
   YOUTUBE: {
     VIDEO: "https://www.googleapis.com/youtube/v3/videos",
-    PLAYLIST: "https://www.googleapis.com/youtube/v3/playlistItems",
+    PLAYLIST: "https://www.googleapis.com/youtube/v3/playlistItems"
   },
-  AQI_WIDGET: "https://api.waqi.info",
+  AQI_WIDGET: "https://api.waqi.info"
 };
 
 export const FIREBASE_COLLECTION = {
@@ -146,7 +146,7 @@ export const FIREBASE_COLLECTION = {
   POLL: "Poll",
   ENVCAL: "Envcal",
   NEWS: "News",
-  CONFIG: "config",
+  CONFIG: "config"
 };
 
 export const VIDEO_PLAYER_TITLES = {
@@ -155,7 +155,7 @@ export const VIDEO_PLAYER_TITLES = {
   EARTH: "What is Food pH?",
   FIRE: "Energy consumption ranking from 1990 to 2017",
   SPIRIT: "What is Emotional Intelligence?",
-  CONFIG: "About WorldIsOneFamily.com",
+  CONFIG: "About WorldIsOneFamily.com"
 };
 
 export const VIDEO_PLAYER_VIDEOS = {
@@ -164,7 +164,7 @@ export const VIDEO_PLAYER_VIDEOS = {
   EARTH: "LrLrOYLAwWY",
   FIRE: "L6murPEFbXg",
   SPIRIT: "LgUCyWhJf6s",
-  CONFIG: "SYWb9hNX-1s",
+  CONFIG: "SYWb9hNX-1s"
 };
 
 //TODO try to find another way
@@ -173,24 +173,24 @@ export const PAGE_CATEGORY_MAP = {
   water: "Water",
   earth: "Earth",
   energy: "Energy",
-  spirit: "Spirit",
+  spirit: "Spirit"
 };
 
 export const POLL_STATUS = {
   SUBMITTED: "submitted",
   PUBLISHED: "published",
-  INACTIVE: "inactive",
+  INACTIVE: "inactive"
 };
 
 export const MEDIA_TYPE = {
   IMAGE: "image",
-  VIDEO: "video",
+  VIDEO: "video"
 };
 
 export const Routes = {
   NEWS: {
     MANAGE: "/admin-dashboard/manage-news",
     ADD: "/admin-dashboard/add",
-    EDIT: "/admin-dashboard/edit",
-  },
+    EDIT: "/admin-dashboard/edit"
+  }
 };

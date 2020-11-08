@@ -12,8 +12,8 @@ import { VideoPostPage } from "./video-post.page";
     FormsModule,
     IonicModule,
     VideoPostPageRoutingModule,
-    AppCommonModule,
+    AppCommonModule
   ],
-  declarations: [VideoPostPage],
+  declarations: [VideoPostPage]
 })
 export class VideoPostPageModule {}

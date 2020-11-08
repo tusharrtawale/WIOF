@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { News } from "../models/News";
 import {
   AngularFirestore,
-  AngularFirestoreCollection,
+  AngularFirestoreCollection
 } from "@angular/fire/firestore";
 import { AngularFireStorage } from "@angular/fire/storage";
 import { map } from "rxjs/operators";
@@ -10,7 +10,7 @@ import { from, Observable } from "rxjs";
 import { FIREBASE_COLLECTION } from "../app.constants";
 
 @Injectable({
-  providedIn: "root",
+  providedIn: "root"
 })
 export class NewsService {
   newsCollection: AngularFirestoreCollection<any>;
@@ -26,7 +26,7 @@ export class NewsService {
     let saveNews$ = null;
     if (news.newsId !== null) {
       saveNews$ = this.newsCollection.doc(news.newsId).update({
-        ...news,
+        ...news
       });
     } else {
       saveNews$ = this.newsCollection.add({ ...news });
@@ -47,6 +47,12 @@ export class NewsService {
       `/${FIREBASE_COLLECTION.NEWS_IMAGE_STORAGE}/${imageName}`
     ); //creates reference to storage item using the link in parameter
     return ref.getDownloadURL(); //pulls the download URL which is an observable , handle accordingly
+  }
+
+  deleteNewsImage(imageName: String): Observable<String> {
+    return this.storage
+      .ref(`/${FIREBASE_COLLECTION.NEWS_IMAGE_STORAGE}/${imageName}`)
+      .delete();
   }
 
   getAllNews(): Observable<News[]> {

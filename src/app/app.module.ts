@@ -29,14 +29,14 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
     AngularFireStorageModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule
     // AngularFireAuthModule    //To be used later to add authentication
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

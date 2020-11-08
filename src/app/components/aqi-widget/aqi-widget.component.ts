@@ -4,7 +4,7 @@ import { AqiWidgetService } from "../../services/aqi-widget.service";
 @Component({
   selector: "app-aqi-widget",
   templateUrl: "./aqi-widget.component.html",
-  styleUrls: ["./aqi-widget.component.scss"],
+  styleUrls: ["./aqi-widget.component.scss"]
 })
 export class AqiWidgetComponent implements OnInit {
   majorLocations: string[];

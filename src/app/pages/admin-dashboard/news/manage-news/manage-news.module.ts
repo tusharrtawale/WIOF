@@ -13,8 +13,8 @@ import { ManageNewsPage } from "./manage-news.page";
     CommonModule,
     FormsModule,
     IonicModule,
-    ManageNewsPageRoutingModule,
+    ManageNewsPageRoutingModule
   ],
-  declarations: [ManageNewsPage],
+  declarations: [ManageNewsPage]
 })
 export class ManageNewsPageModule {}

@@ -10,7 +10,7 @@ describe("AddPollPage", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [AddPollPage],
-      imports: [IonicModule.forRoot()],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(AddPollPage);

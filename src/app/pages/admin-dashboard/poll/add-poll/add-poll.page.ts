@@ -13,7 +13,7 @@ import { AppUtilService } from "src/app/util/AppUtilService";
 @Component({
   selector: "app-add-poll",
   templateUrl: "./add-poll.page.html",
-  styleUrls: ["./add-poll.page.scss"],
+  styleUrls: ["./add-poll.page.scss"]
 })
 export class AddPollPage implements OnInit {
   addPollForm: FormGroup;
@@ -35,7 +35,7 @@ export class AddPollPage implements OnInit {
     publishStartDateDesc: "*Start date of accepting polls for this question",
     publishEndDateDesc: "*Last date of accepting polls for this question",
     publishEndDateLabel: "Publish End Date",
-    pollResultTitle: "Poll Result",
+    pollResultTitle: "Poll Result"
   };
 
   constructor(
@@ -91,10 +91,10 @@ export class AddPollPage implements OnInit {
         new FormControl("", Validators.required),
         new FormControl("", Validators.required),
         new FormControl("", Validators.required),
-        new FormControl("", Validators.required),
+        new FormControl("", Validators.required)
       ]),
       publishStartDate: new FormControl(publishStartDate, Validators.required),
-      publishEndDate: new FormControl(publishEndDate, Validators.required),
+      publishEndDate: new FormControl(publishEndDate, Validators.required)
     });
   }
 
@@ -112,7 +112,7 @@ export class AddPollPage implements OnInit {
       publishEndDate: new FormControl(
         new Date(pollQuestion.publishEndDate),
         Validators.required
-      ),
+      )
     });
     return this.addPollForm;
   }

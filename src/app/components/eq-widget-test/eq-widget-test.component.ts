@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from "@angular/core";
 @Component({
   selector: "app-eq-widget-test",
   templateUrl: "./eq-widget-test.component.html",
-  styleUrls: ["./eq-widget-test.component.scss"],
+  styleUrls: ["./eq-widget-test.component.scss"]
 })
 export class EqWidgetTestComponent implements OnInit {
   @Input() gpr: string[]; //gender, parameter, result
@@ -12,7 +12,7 @@ export class EqWidgetTestComponent implements OnInit {
   firstBlockWidth: string;
   secondBlockWidth: string;
   thirdBlockWidth: string;
-  arrowPositionBracket:string;
+  arrowPositionBracket: string;
   arrowPosition: string;
   message: string;
 
@@ -53,7 +53,7 @@ export class EqWidgetTestComponent implements OnInit {
   positionArrow() {
     // this.arrowPosition=String((Number(this.gpr[2])/40)*100)+"%";
     this.arrowPositionBracket = this.gpr[2] + "%";
-    this.arrowPosition = (Number(this.gpr[2])-8) + "%";
+    this.arrowPosition = Number(this.gpr[2]) - 8 + "%";
   }
 
   updateRanges() {

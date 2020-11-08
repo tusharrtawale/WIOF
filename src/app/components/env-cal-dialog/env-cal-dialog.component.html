@@ -1,38 +1,49 @@
-<div class="wiof-env-calendar-dialog">  
+<div class="wiof-env-calendar-dialog">
   <div *ngIf="occasionDetails; else loading">
     <ion-row>
       <ion-col size="1">
-        <div *ngIf="showNavigation" class="swiper-button-prev navigation-arrow-custom-styling"
-              (click)="wiofOccasionSlider.slidePrev()"></div>
+        <div
+          *ngIf="showNavigation"
+          class="swiper-button-prev navigation-arrow-custom-styling"
+          (click)="wiofOccasionSlider.slidePrev()"
+        ></div>
       </ion-col>
       <ion-col size="10">
-
         <ion-slides #wiofOccasionSlider [options]="slideOpts">
-          <ion-slide *ngFor="let occasn of occasionDetails.occasion">            
+          <ion-slide *ngFor="let occasn of occasionDetails.occasion">
             <ion-card>
               <ion-card-content class="ion-text-start card-content">
                 <ion-row>
                   <ion-col size="8">
-                    <p style="color:#2D2D2D" *ngIf="occasn.day">Date: {{occasn.day}} {{getMonth(occasn.month)}}</p>
-                    <p style="color:#2D2D2D" *ngIf="occasn.name">Special Event: {{occasn.name}}</p>
-                    <p style="color:#2D2D2D" *ngIf="occasn.desc">Description: {{occasn.desc}}</p>
-                    <a *ngIf="occasn.link" target="_blank" [href]="occasn.link">Show More ...</a>
+                    <p style="color: #2d2d2d" *ngIf="occasn.day">
+                      Date: {{ occasn.day }} {{ getMonth(occasn.month) }}
+                    </p>
+                    <p style="color: #2d2d2d" *ngIf="occasn.name">
+                      Special Event: {{ occasn.name }}
+                    </p>
+                    <p style="color: #2d2d2d" *ngIf="occasn.desc">
+                      Description: {{ occasn.desc }}
+                    </p>
+                    <a *ngIf="occasn.link" target="_blank" [href]="occasn.link"
+                      >Show More ...</a
+                    >
                   </ion-col>
                   <ion-col size="4" class="image-container">
-                    <img [src]="occasn.image | async"/>
+                    <img [src]="occasn.image | async" />
                   </ion-col>
                 </ion-row>
               </ion-card-content>
-            </ion-card>                
+            </ion-card>
           </ion-slide>
         </ion-slides>
-        
-        
       </ion-col>
       <ion-col size="1">
         <p class="closeButton" (click)="closeDialog()">X</p>
-        <div *ngIf="showNavigation" class="swiper-button-next navigation-arrow-custom-styling"
-          (click)="wiofOccasionSlider.slideNext()"></div>
+        <div
+          *ngIf="showNavigation"
+          class="swiper-button-next navigation-arrow-custom-styling"
+          (click)="wiofOccasionSlider.slideNext()"
+        ></div>
       </ion-col>
     </ion-row>
   </div>

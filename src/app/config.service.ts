@@ -1,14 +1,14 @@
 import { Injectable } from "@angular/core";
 import {
   AngularFirestore,
-  AngularFirestoreCollection,
+  AngularFirestoreCollection
 } from "@angular/fire/firestore";
 import { from, Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { FIREBASE_COLLECTION } from "./app.constants";
 
 @Injectable({
-  providedIn: "root",
+  providedIn: "root"
 })
 export class ConfigService {
   congifCollection: AngularFirestoreCollection<any>;

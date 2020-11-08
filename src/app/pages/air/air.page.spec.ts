@@ -9,7 +9,7 @@ describe("AirPage", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [AirPage],
-      imports: [IonicModule.forRoot()],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(AirPage);

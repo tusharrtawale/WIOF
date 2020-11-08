@@ -12,8 +12,8 @@ import { TakeActionPage } from "./take-action.page";
     FormsModule,
     IonicModule,
     TakeActionPageRoutingModule,
-    AppCommonModule,
+    AppCommonModule
   ],
-  declarations: [TakeActionPage],
+  declarations: [TakeActionPage]
 })
 export class TakeActionPageModule {}

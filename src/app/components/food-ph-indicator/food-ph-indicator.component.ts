@@ -3,7 +3,7 @@ import { Component, OnInit } from "@angular/core";
 @Component({
   selector: "app-food-ph-indicator",
   templateUrl: "./food-ph-indicator.component.html",
-  styleUrls: ["./food-ph-indicator.component.scss"],
+  styleUrls: ["./food-ph-indicator.component.scss"]
 })
 export class FoodPhIndicatorComponent implements OnInit {
   foodOptions: any[];
@@ -27,7 +27,7 @@ export class FoodPhIndicatorComponent implements OnInit {
       { name: "Apple", value: 8 },
       { name: "Raw Celery", value: 9 },
       { name: "Watermelon", value: 7 },
-      { name: "Fresh Lemon", value: 10 },
+      { name: "Fresh Lemon", value: 10 }
     ];
   }
   updateBridgeVariable() {

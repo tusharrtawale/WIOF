@@ -5,6 +5,6 @@ import { BlogPostPage } from "./blog-post.page";
 
 @NgModule({
   imports: [AppCommonModule, BlogPostPageRoutingModule],
-  declarations: [BlogPostPage],
+  declarations: [BlogPostPage]
 })
 export class BlogPostPageModule {}

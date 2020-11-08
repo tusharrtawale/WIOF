@@ -12,7 +12,7 @@ import { Poll } from "src/app/models/Poll";
 @Component({
   selector: "app-polls-widget",
   templateUrl: "./polls-widget.component.html",
-  styleUrls: ["./polls-widget.component.scss"],
+  styleUrls: ["./polls-widget.component.scss"]
 })
 export class PollsWidgetComponent implements OnInit, OnDestroy {
   pollQuestion: PollQuestion;
@@ -35,7 +35,7 @@ export class PollsWidgetComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.wiofPollsForm = new FormGroup({
       name: new FormControl(""),
-      option: new FormControl("", [Validators.required]),
+      option: new FormControl("", [Validators.required])
     });
 
     this.pollQuestion = {} as PollQuestion;
@@ -43,7 +43,7 @@ export class PollsWidgetComponent implements OnInit, OnDestroy {
       //TODO IP handling pending
       // this.ip.getIp4(),
       // this.ip.getIp6(),
-      this.pollQuestionService.getPollQuestion(),
+      this.pollQuestionService.getPollQuestion()
     ])
       .pipe(takeUntil(this.destroy$))
       .subscribe(

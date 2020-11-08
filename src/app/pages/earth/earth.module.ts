@@ -5,6 +5,6 @@ import { EarthPage } from "./earth.page";
 
 @NgModule({
   imports: [AppCommonModule, EarthPageRoutingModule],
-  declarations: [EarthPage],
+  declarations: [EarthPage]
 })
 export class EarthPageModule {}

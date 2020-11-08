@@ -15,8 +15,8 @@ import { AppCommonModule } from "src/app/app-common.module";
     FormsModule,
     IonicModule,
     VideosPageRoutingModule,
-    AppCommonModule,
+    AppCommonModule
   ],
-  declarations: [VideosPage],
+  declarations: [VideosPage]
 })
 export class VideosPageModule {}

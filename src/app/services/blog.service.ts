@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import {
   AngularFirestore,
-  AngularFirestoreCollection,
+  AngularFirestoreCollection
 } from "@angular/fire/firestore";
 import { AngularFireStorage } from "@angular/fire/storage";
 import { from, Observable } from "rxjs";
@@ -10,7 +10,7 @@ import { Blog } from "../models/Blog";
 import { FIREBASE_COLLECTION } from "../app.constants";
 
 @Injectable({
-  providedIn: "root",
+  providedIn: "root"
 })
 export class BlogService {
   blogCollection: AngularFirestoreCollection<any>;
@@ -77,11 +77,17 @@ export class BlogService {
     return from(imageUploadTask);
   }
 
+  deleteBlogImage(imageName: String) {
+    return this.storage
+      .ref(`/${FIREBASE_COLLECTION.BLOG_IMAGE_STORAGE}/${imageName}`)
+      .delete();
+  }
+
   saveBlog(blog: Blog) {
     let saveBlog$ = null;
     if (blog.id !== null) {
       saveBlog$ = this.blogCollection.doc(blog.id.valueOf()).update({
-        ...blog,
+        ...blog
       });
     } else {
       saveBlog$ = this.blogCollection.add({ ...blog });

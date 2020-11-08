@@ -8,7 +8,7 @@ import { takeUntil } from "rxjs/operators";
 @Component({
   selector: "app-video-post",
   templateUrl: "./video-post.page.html",
-  styleUrls: ["./video-post.page.scss"],
+  styleUrls: ["./video-post.page.scss"]
 })
 export class VideoPostPage implements OnInit, OnDestroy {
   videoUrl: string = "";

@@ -5,6 +5,6 @@ import { SpiritPage } from "./spirit.page";
 
 @NgModule({
   imports: [AppCommonModule, SpiritPageRoutingModule],
-  declarations: [SpiritPage],
+  declarations: [SpiritPage]
 })
 export class SpiritPageModule {}

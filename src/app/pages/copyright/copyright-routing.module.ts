@@ -6,12 +6,12 @@ import { CopyrightPage } from "./copyright.page";
 const routes: Routes = [
   {
     path: "",
-    component: CopyrightPage,
-  },
+    component: CopyrightPage
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class CopyrightPageRoutingModule {}

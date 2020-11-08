@@ -40,7 +40,7 @@ import { EnvCalDialogComponent } from "./components/env-cal-dialog/env-cal-dialo
     CommonModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     CommonModule,
@@ -111,8 +111,7 @@ import { EnvCalDialogComponent } from "./components/env-cal-dialog/env-cal-dialo
     EqWidgetTestComponent,
     SocialShareHomeComponent,
     EnvCalDialogComponent
-
   ],
-  providers: [],
+  providers: []
 })
 export class AppCommonModule {}

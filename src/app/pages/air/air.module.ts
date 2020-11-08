@@ -12,8 +12,8 @@ import { AirPage } from "./air.page";
     AppCommonModule,
     IonicModule,
     AirPageRoutingModule,
-    FormsModule,
+    FormsModule
   ],
-  declarations: [AirPage],
+  declarations: [AirPage]
 })
 export class AirPageModule {}

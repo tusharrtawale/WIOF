@@ -9,7 +9,7 @@ describe("EarthPage", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [EarthPage],
-      imports: [IonicModule.forRoot()],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(EarthPage);

@@ -12,8 +12,8 @@ import { AppCommonModule } from "src/app/app-common.module";
     FormsModule,
     IonicModule,
     SitemapPageRoutingModule,
-    AppCommonModule,
+    AppCommonModule
   ],
-  declarations: [SitemapPage],
+  declarations: [SitemapPage]
 })
 export class SitemapPageModule {}

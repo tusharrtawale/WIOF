@@ -3,7 +3,7 @@ import {
   OnInit,
   HostListener,
   Input,
-  AfterViewInit,
+  AfterViewInit
 } from "@angular/core";
 import { BREAKING_NEWS_SLIDER_OPTIONS } from "src/app/app.constants";
 import { News } from "src/app/models/News";
@@ -13,7 +13,7 @@ import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 @Component({
   selector: "app-breaking-news",
   templateUrl: "./breaking-news.component.html",
-  styleUrls: ["./breaking-news.component.scss"],
+  styleUrls: ["./breaking-news.component.scss"]
 })
 export class BreakingNewsComponent implements OnInit {
   newsList: Array<News>;

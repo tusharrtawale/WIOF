@@ -9,7 +9,7 @@ describe("ElementWelcomeImageComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ElementWelcomeImageComponent],
-      imports: [IonicModule.forRoot()],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(ElementWelcomeImageComponent);

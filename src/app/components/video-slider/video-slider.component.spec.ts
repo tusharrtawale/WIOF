@@ -9,7 +9,7 @@ describe("VideoSliderComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [VideoSliderComponent],
-      imports: [IonicModule.forRoot()],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(VideoSliderComponent);

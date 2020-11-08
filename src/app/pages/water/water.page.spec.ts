@@ -9,7 +9,7 @@ describe("WaterPage", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [WaterPage],
-      imports: [IonicModule.forRoot()],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(WaterPage);

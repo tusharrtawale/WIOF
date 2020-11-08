@@ -7,7 +7,7 @@ import { BlogService } from "src/app/services/blog.service";
 @Component({
   selector: "app-blog-post",
   templateUrl: "./blog-post.page.html",
-  styleUrls: ["./blog-post.page.scss"],
+  styleUrls: ["./blog-post.page.scss"]
 })
 export class BlogPostPage implements OnInit {
   public blogDetails: Observable<Blog>;

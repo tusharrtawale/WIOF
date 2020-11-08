@@ -5,7 +5,7 @@ import { AuthService } from "../../services/auth.service";
 @Component({
   selector: "app-admin-dashboard",
   templateUrl: "./admin-dashboard.page.html",
-  styleUrls: ["./admin-dashboard.page.scss"],
+  styleUrls: ["./admin-dashboard.page.scss"]
 })
 export class AdminDashboardPage implements OnInit {
   constructor(private afAuthService: AuthService, private router: Router) {}
@@ -13,21 +13,21 @@ export class AdminDashboardPage implements OnInit {
     buttons: [
       {
         name: "Manage Blogs",
-        actionUrl: "manage-blog",
+        actionUrl: "manage-blog"
       },
       {
         name: "Manage Polls",
-        actionUrl: "manage-polls",
+        actionUrl: "manage-polls"
       },
       {
         name: "Manage Breaking News",
-        actionUrl: "manage-news",
+        actionUrl: "manage-news"
       },
       {
         name: "Manage Calendar",
-        actionUrl: "manage-calendar",
-      },
-    ],
+        actionUrl: "manage-calendar"
+      }
+    ]
   };
 
   ngOnInit() {}

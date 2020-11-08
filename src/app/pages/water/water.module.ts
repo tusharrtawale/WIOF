@@ -5,6 +5,6 @@ import { WaterPage } from "./water.page";
 
 @NgModule({
   imports: [AppCommonModule, WaterPageRoutingModule],
-  declarations: [WaterPage],
+  declarations: [WaterPage]
 })
 export class WaterPageModule {}

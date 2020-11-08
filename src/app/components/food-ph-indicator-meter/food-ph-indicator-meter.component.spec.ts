@@ -10,7 +10,7 @@ describe("FoodPhIndicatorMeterComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [FoodPhIndicatorMeterComponent],
-      imports: [IonicModule.forRoot()],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(FoodPhIndicatorMeterComponent);

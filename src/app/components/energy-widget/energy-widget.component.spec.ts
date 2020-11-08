@@ -10,7 +10,7 @@ describe("EnergyWidgetComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [EnergyWidgetComponent],
-      imports: [IonicModule.forRoot()],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(EnergyWidgetComponent);

@@ -10,7 +10,7 @@ describe("SubscribeComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [SubscribeComponent],
-      imports: [IonicModule.forRoot()],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(SubscribeComponent);

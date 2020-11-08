@@ -10,7 +10,7 @@ import { UiUtilService } from "src/app/util/UiUtilService";
 @Component({
   selector: "app-subscribe",
   templateUrl: "./subscribe.component.html",
-  styleUrls: ["./subscribe.component.scss"],
+  styleUrls: ["./subscribe.component.scss"]
 })
 export class SubscribeComponent implements OnInit {
   addSubscriberForm: FormGroup;
@@ -31,8 +31,8 @@ export class SubscribeComponent implements OnInit {
       lastName: new FormControl("", [Validators.required]),
       email: new FormControl("", [
         Validators.required,
-        Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"),
-      ]),
+        Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")
+      ])
     });
   }
 

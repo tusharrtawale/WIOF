@@ -10,7 +10,7 @@ export class UiUtilService {
 
   public async showLoader(message: string) {
     const loader = await this.loadingCtrl.create({
-      message: message,
+      message: message
     });
     loader.present();
     return loader;
@@ -20,7 +20,7 @@ export class UiUtilService {
     const alert = await this.alertCtrl.create({
       header: header,
       message: message,
-      buttons: buttons,
+      buttons: buttons
     });
     await alert.present();
   }

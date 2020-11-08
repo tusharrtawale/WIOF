@@ -4,7 +4,7 @@ import { Platform } from "@ionic/angular";
 @Component({
   selector: "app-header",
   templateUrl: "./header.component.html",
-  styleUrls: ["./header.component.scss"],
+  styleUrls: ["./header.component.scss"]
 })
 export class HeaderComponent implements OnInit {
   wiofLogo: string = "../../assets/logo.jpg";

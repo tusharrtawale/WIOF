@@ -10,7 +10,7 @@ describe("WiofSpinnerComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [WiofSpinnerComponent],
-      imports: [IonicModule.forRoot()],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(WiofSpinnerComponent);

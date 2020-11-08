@@ -4,7 +4,7 @@ import {
   FormBuilder,
   FormControl,
   FormGroup,
-  Validators,
+  Validators
 } from "@angular/forms";
 // import { AlertController, LoadingController } from "@ionic/angular";
 import { combineLatest, throwError, Subject } from "rxjs";
@@ -17,7 +17,7 @@ import { UiUtilService } from "src/app/util/UiUtilService";
 @Component({
   selector: "app-manage-calendar",
   templateUrl: "./manage-calendar.page.html",
-  styleUrls: ["./manage-calendar.page.scss"],
+  styleUrls: ["./manage-calendar.page.scss"]
 })
 export class ManageCalendarPage implements OnInit {
   addOccasionForm: FormGroup;
@@ -32,13 +32,13 @@ export class ManageCalendarPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.addOccasionForm= new FormGroup({
-      day:new FormControl("", [Validators.required]),
-      month:new FormControl("", [Validators.required]),
-      occasion:new FormControl("", [Validators.required]),
-      image:new FormControl("", [Validators.required]),
-      description:new FormControl("", [Validators.required]),
-      showMoreLink:new FormControl("", [Validators.required])
+    this.addOccasionForm = new FormGroup({
+      day: new FormControl("", [Validators.required]),
+      month: new FormControl("", [Validators.required]),
+      occasion: new FormControl("", [Validators.required]),
+      image: new FormControl("", [Validators.required]),
+      description: new FormControl("", [Validators.required]),
+      showMoreLink: new FormControl("", [Validators.required])
     });
   }
 
@@ -60,7 +60,7 @@ export class ManageCalendarPage implements OnInit {
       );
       combineLatest([
         this.calendarService.saveImage(this.imageToSave, occasion.image),
-        this.calendarService.saveOccasion(occasion),
+        this.calendarService.saveOccasion(occasion)
       ])
         .pipe(
           takeUntil(this.destroy$),
@@ -76,7 +76,7 @@ export class ManageCalendarPage implements OnInit {
             this.loader.dismiss();
             this.addOccasionForm.reset();
             this.uiUtil.presentAlert("Success", "Occasion has been saved!", [
-              "Cool!",
+              "Cool!"
             ]);
           },
           (error) => {

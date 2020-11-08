@@ -10,7 +10,7 @@ describe("EnvCalenderComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [EnvCalenderComponent],
-      imports: [IonicModule.forRoot()],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(EnvCalenderComponent);

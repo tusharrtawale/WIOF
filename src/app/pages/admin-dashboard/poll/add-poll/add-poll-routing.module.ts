@@ -6,12 +6,12 @@ import { AddPollPage } from "./add-poll.page";
 const routes: Routes = [
   {
     path: "",
-    component: AddPollPage,
-  },
+    component: AddPollPage
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AddPollPageRoutingModule {}

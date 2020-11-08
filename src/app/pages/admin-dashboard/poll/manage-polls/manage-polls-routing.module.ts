@@ -6,12 +6,12 @@ import { ManagePollsPage } from "./manage-polls.page";
 const routes: Routes = [
   {
     path: "",
-    component: ManagePollsPage,
-  },
+    component: ManagePollsPage
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class ManagePollsPageRoutingModule {}

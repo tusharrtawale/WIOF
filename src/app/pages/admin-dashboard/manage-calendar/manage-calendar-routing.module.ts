@@ -6,12 +6,12 @@ import { ManageCalendarPage } from "./manage-calendar.page";
 const routes: Routes = [
   {
     path: "",
-    component: ManageCalendarPage,
-  },
+    component: ManageCalendarPage
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class ManageCalendarPageRoutingModule {}

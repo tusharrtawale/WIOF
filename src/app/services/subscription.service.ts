@@ -2,13 +2,13 @@ import { Injectable } from "@angular/core";
 import { Subscriber } from "../models/Subscriber";
 import {
   AngularFirestore,
-  AngularFirestoreCollection,
+  AngularFirestoreCollection
 } from "@angular/fire/firestore";
 import { from } from "rxjs";
 import { FIREBASE_COLLECTION } from "../app.constants";
 
 @Injectable({
-  providedIn: "root",
+  providedIn: "root"
 })
 export class SubscriptionService {
   subscriptionsCollection: AngularFirestoreCollection<any>;

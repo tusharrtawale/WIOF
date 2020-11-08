@@ -9,7 +9,7 @@ describe("FirePage", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [FirePage],
-      imports: [IonicModule.forRoot()],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(FirePage);

@@ -9,7 +9,7 @@ describe("WiofFooterComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [WiofFooterComponent],
-      imports: [IonicModule.forRoot()],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(WiofFooterComponent);

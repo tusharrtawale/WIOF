@@ -6,12 +6,12 @@ import { SitemapPage } from "./sitemap.page";
 const routes: Routes = [
   {
     path: "",
-    component: SitemapPage,
-  },
+    component: SitemapPage
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class SitemapPageRoutingModule {}

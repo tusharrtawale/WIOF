@@ -10,7 +10,7 @@ describe("VideoCardComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [VideoCardComponent],
-      imports: [IonicModule.forRoot()],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(VideoCardComponent);

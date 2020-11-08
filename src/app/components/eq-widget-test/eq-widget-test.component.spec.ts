@@ -10,7 +10,7 @@ describe("EqWidgetTestComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [EqWidgetTestComponent],
-      imports: [IonicModule.forRoot()],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(EqWidgetTestComponent);

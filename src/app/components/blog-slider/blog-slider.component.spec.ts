@@ -10,7 +10,7 @@ describe("BlogSliderComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [BlogSliderComponent],
-      imports: [IonicModule.forRoot()],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(BlogSliderComponent);

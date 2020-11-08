@@ -6,7 +6,7 @@ import { ENDPOINTS } from "../app.constants";
 import { environment } from "src/environments/environment";
 
 @Injectable({
-  providedIn: "root",
+  providedIn: "root"
 })
 export class YoutubeVideoService {
   constructor(private http: HttpClient) {}
@@ -27,7 +27,7 @@ export class YoutubeVideoService {
             return {
               thumbnail: playlist_item.snippet.thumbnails.medium.url,
               title: playlist_item.snippet.title,
-              url: playlist_item.snippet.resourceId.videoId,
+              url: playlist_item.snippet.resourceId.videoId
             } as Video;
           });
         })

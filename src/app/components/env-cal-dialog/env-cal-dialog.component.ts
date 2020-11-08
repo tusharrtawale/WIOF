@@ -1,21 +1,26 @@
-import { HostListener, Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
+import {
+  HostListener,
+  Component,
+  OnInit,
+  Output,
+  Input,
+  EventEmitter
+} from "@angular/core";
 // import { EventEmitter } from 'protractor';
 
 import { BREAKING_NEWS_SLIDER_OPTIONS } from "src/app/app.constants";
 
 @Component({
-  selector: 'app-env-cal-dialog',
-  templateUrl: './env-cal-dialog.component.html',
-  styleUrls: ['./env-cal-dialog.component.scss'],
+  selector: "app-env-cal-dialog",
+  templateUrl: "./env-cal-dialog.component.html",
+  styleUrls: ["./env-cal-dialog.component.scss"]
 })
 export class EnvCalDialogComponent implements OnInit {
-  @Input() occasionDetails:any;
-  @Output() close:EventEmitter<any>= new EventEmitter;
+  @Input() occasionDetails: any;
+  @Output() close: EventEmitter<any> = new EventEmitter();
   width: number;
   slideOpts = BREAKING_NEWS_SLIDER_OPTIONS;
-  showNavigation:boolean=false;
-
-
+  showNavigation: boolean = false;
 
   @HostListener("window:resize", [])
   public onResize() {
@@ -33,35 +38,33 @@ export class EnvCalDialogComponent implements OnInit {
     "September",
     "October",
     "November",
-    "December",
+    "December"
   ];
-  constructor() { }
-
+  constructor() {}
 
   ngAfterViewInit() {
     this.detectScreenSize();
   }
 
   ngOnInit() {
-    if(this.occasionDetails.occasion.length >1 ){
-      this.showNavigation=true;      
+    if (this.occasionDetails.occasion.length > 1) {
+      this.showNavigation = true;
     }
   }
 
-  ngDestroy(){
-    this.showNavigation=false;  
+  ngDestroy() {
+    this.showNavigation = false;
   }
 
-  getMonth(month){
-    const month_num=Number(month);
+  getMonth(month) {
+    const month_num = Number(month);
     return this.months[month];
   }
 
   detectScreenSize() {
     this.width = window.innerWidth;
   }
-  closeDialog(){
+  closeDialog() {
     this.close.emit("close");
   }
-
 }

@@ -7,7 +7,7 @@ export class AppUtilService {
       optionData["option" + (index + 1)] = {
         option,
         votes: 0,
-        percent: 0,
+        percent: 0
       };
     });
 
@@ -32,12 +32,7 @@ export class AppUtilService {
     };
   }
 
-  formatImageName(imageName: string) {
-    let newImageName = "";
-    if (imageName) {
-      const imgNameArr = imageName.split("\\");
-      newImageName = "_" + imgNameArr[imgNameArr.length - 1];
-    }
-    return Date.now() + newImageName; // add timestamp to image name to keep it unique
+  formatImageName(prefix, imageToSave) {
+    return prefix + Date.now() + "." + imageToSave.name.split(".").pop(); // add timestamp to image name to keep it unique
   }
 }

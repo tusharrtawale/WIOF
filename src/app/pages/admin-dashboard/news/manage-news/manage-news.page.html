@@ -5,7 +5,10 @@
     </ion-buttons>
     <ion-title>Manage Breaking News</ion-title>
     <ion-buttons slot="end">
-      <ion-button
+      <ion-button color="dark" fill="clear" size="large" (click)="refreshData()"
+        ><ion-icon name="refresh-outline" slot="start"></ion-icon
+        >Refresh</ion-button
+      ><ion-button
         color="success"
         fill="solid"
         size="large"
@@ -53,7 +56,7 @@
               (click)="viewNewsDetails(news)"
               ><ion-icon slot="icon-only" name="eye-outline"></ion-icon
             ></ion-button>
-            <ion-button (click)="deleteNews(news, i, news.newsId)"
+            <ion-button (click)="deleteNews(newsList, i, news)"
               ><ion-icon slot="icon-only" name="trash-outline"></ion-icon
             ></ion-button>
           </ion-buttons>

@@ -5,12 +5,12 @@ import { TakeActionPage } from "./take-action.page";
 const routes: Routes = [
   {
     path: "",
-    component: TakeActionPage,
-  },
+    component: TakeActionPage
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class TakeActionPageRoutingModule {}

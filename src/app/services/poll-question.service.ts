@@ -4,7 +4,7 @@ import {
   AngularFirestoreCollection,
   QuerySnapshot,
   DocumentData,
-  DocumentChangeAction,
+  DocumentChangeAction
 } from "@angular/fire/firestore";
 import { map, switchMap, catchError, concatMap } from "rxjs/operators";
 import { from, Observable, of, throwError } from "rxjs";
@@ -12,7 +12,7 @@ import { FIREBASE_COLLECTION, POLL_STATUS } from "../app.constants";
 import { PollQuestion } from "../models/PollQuestion";
 
 @Injectable({
-  providedIn: "root",
+  providedIn: "root"
 })
 export class PollQuestionService {
   private pollCollection: AngularFirestoreCollection<any>;
@@ -29,7 +29,7 @@ export class PollQuestionService {
     let savePoll$ = null;
     if (pollQuestion.pollId !== null) {
       savePoll$ = this.pollCollection.doc(pollQuestion.pollId).update({
-        ...pollQuestion,
+        ...pollQuestion
       });
     } else {
       savePoll$ = this.pollCollection.add({ ...pollQuestion });
@@ -77,7 +77,7 @@ export class PollQuestionService {
       concatMap(() => {
         return this.pollCollection.doc(pollQuestionId).update({
           status: POLL_STATUS.PUBLISHED,
-          publishStartDate: new Date().getTime(),
+          publishStartDate: new Date().getTime()
         });
       })
     );
@@ -96,7 +96,7 @@ export class PollQuestionService {
             data.pollId = doc.id;
             this.pollCollection.doc(data.pollId).update({
               status: POLL_STATUS.INACTIVE,
-              publishEndDate: new Date().getTime(),
+              publishEndDate: new Date().getTime()
             });
             return data;
           })

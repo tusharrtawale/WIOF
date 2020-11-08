@@ -9,7 +9,7 @@ describe("LifeElementsComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [LifeElementsComponent],
-      imports: [IonicModule.forRoot()],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(LifeElementsComponent);

@@ -10,6 +10,6 @@ import { CopyrightPage } from "./copyright.page";
 
 @NgModule({
   imports: [CommonModule, FormsModule, IonicModule, CopyrightPageRoutingModule],
-  declarations: [CopyrightPage],
+  declarations: [CopyrightPage]
 })
 export class CopyrightPageModule {}

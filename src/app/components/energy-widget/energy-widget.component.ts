@@ -3,7 +3,7 @@ import { Component, OnInit } from "@angular/core";
 @Component({
   selector: "app-energy-widget",
   templateUrl: "./energy-widget.component.html",
-  styleUrls: ["./energy-widget.component.scss"],
+  styleUrls: ["./energy-widget.component.scss"]
 })
 export class EnergyWidgetComponent implements OnInit {
   EnergyConsumption: number;

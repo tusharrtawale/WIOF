@@ -27,7 +27,7 @@ export class PollQuestionService {
 
   savePollQuestion(pollQuestion: PollQuestion) {
     let savePoll$ = null;
-    if (pollQuestion.pollId !== undefined) {
+    if (pollQuestion.pollId !== null) {
       savePoll$ = this.pollCollection.doc(pollQuestion.pollId).update({
         ...pollQuestion,
       });

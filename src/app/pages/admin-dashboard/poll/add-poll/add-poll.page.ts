@@ -172,7 +172,7 @@ export class AddPollPage implements OnInit {
     isEditMode: boolean
   ) {
     return new PollQuestion(
-      isEditMode ? pollQuestion.pollId : undefined,
+      isEditMode ? pollQuestion.pollId : null,
       addPollForm.value.question,
       addPollForm.value.options,
       new Date(addPollForm.value.publishStartDate).getTime(),

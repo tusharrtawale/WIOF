@@ -28,27 +28,18 @@
 // // Using SCSS variables to store breakpoints
 $breakpoint-tablet: 767px;
 
-@media (max-width: $breakpoint-tablet) {
-  .landing-welcome-label {
-    // text-shadow: 1px 1px 5px green;
-    font-size: 15px;
-    // color: white;
-    color: black;
-    font-weight: bold;
-    padding: 20px;
-    margin: 0;
-  }
+.landing-welcome-label {
+  font-size: 30px;
+  text-shadow: 1px 1px 5px lightgrey;
+  color: black;
+  padding: 20px;
+  margin: 0;
+  font-weight: 500;
 }
 
-@media (min-width: $breakpoint-tablet) {
+@media (max-width: $breakpoint-tablet) {
   .landing-welcome-label {
-    // text-shadow: 1px 1px 5px green;
-    font-size: 30px;
-    // color: white;
-    color: black;
-    font-weight: bold;
-    padding: 20px;
-    margin: 0;
+    font-size: 22px;
   }
 }
 

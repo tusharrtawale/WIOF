@@ -6,6 +6,12 @@
     <ion-title>Manage Polls</ion-title>
     <ion-buttons slot="end">
       <ion-button
+        color="dark"
+        fill="clear"
+        size="large"
+        (click)="refreshData()"
+        ><ion-icon name="refresh-outline" slot="start"></ion-icon>Refresh</ion-button
+      ><ion-button
         color="success"
         fill="solid"
         size="large"

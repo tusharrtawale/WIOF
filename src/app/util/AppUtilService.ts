@@ -11,14 +11,16 @@ export class AppUtilService {
       };
     });
 
-    let totalVotes = pollsArray.length;
-    pollsArray.forEach((x, index) => {
-      optionData[x.option].votes += 1;
-    });
+    if (pollsArray.length > 0) {
+      let totalVotes = pollsArray.length;
+      pollsArray.forEach((x, index) => {
+        optionData[x.option].votes += 1;
+      });
 
-    Object.keys(optionData).forEach((x) => {
-      optionData[x].percent = (optionData[x].votes / totalVotes) * 100;
-    });
+      Object.keys(optionData).forEach((x) => {
+        optionData[x].percent = (optionData[x].votes / totalVotes) * 100;
+      });
+    }
   }
 
   onFileSelected(event, component) {

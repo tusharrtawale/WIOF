@@ -22,6 +22,10 @@ export class ManagePollsPage implements OnInit, OnDestroy {
     private route: ActivatedRoute
   ) {}
   ngOnInit() {
+    this.initPage();
+  }
+
+  initPage(){
     this.pollQuestionList$ = this.pollQuestionService.getPollQuestions().pipe(
       takeUntil(this.destroy$),
       map((pollQuestionList) => {
@@ -31,6 +35,10 @@ export class ManagePollsPage implements OnInit, OnDestroy {
         return throwError(err);
       })
     );
+  }
+
+  refreshData(){
+    this.initPage();
   }
 
   ngOnDestroy(): void {

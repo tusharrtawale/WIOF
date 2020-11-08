@@ -1,14 +1,13 @@
 .wiof-concent-popup {
-  // position: fixed;
-  // bottom:0px;
-  width: 100%;
   background-color: #2d2d2d;
+  padding: 10px;
 }
 
 .wiof-concent-popup p {
   margin: 0px;
   padding: 5px;
   color: #fff;
+  display: inline-block
 }
 
 .accept-button {
@@ -16,8 +15,12 @@
   border: 2px #fff solid;
   background-color: #2d2d2d;
   color: #fff;
-  // font-size: x-large; to be used with complete message
   font-size: large;
   padding: 5px;
   border-radius: 5px;
+  float: right;
+
+  @media (max-width: 600px) {
+    float: none;
+  }
 }

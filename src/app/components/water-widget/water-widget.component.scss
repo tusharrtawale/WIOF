@@ -5,6 +5,10 @@
   left: 50%;
 }
 
+.water-widget-padding {
+  padding: 10px;
+}
+
 .wiof-water-widget-card-header {
   background-color: $water-color;
   border-bottom: white 2px solid;
@@ -16,13 +20,14 @@
 
 .wiof-water-widget-icons {
   background-color: $water-color;
-  height: 80%;
+  height: 95%;
+  margin: 4px;
   padding: 5px;
 
   &:hover {
-    opacity: 0.8;
     border: solid 1px #000000;
     padding: 4px;
+    box-shadow: 3px 3px 10px #dddddd;
   }
 }
 
@@ -33,7 +38,7 @@
 }
 
 .wiof-water-widget-items {
-  height: 460px;
+  height: 425px;
 }
 
 .tooltip {
@@ -76,6 +81,9 @@
 }
 
 .wiof-water-widget-disclaimer {
-  position: relative;
-  top: -30px;
+  padding: 5px 10px;
+  margin-top: 5px;
+  background-color: rgba($water-color, $tint-fraction);
+  padding: 5px 10px;
+  margin-top: 5px;
 }

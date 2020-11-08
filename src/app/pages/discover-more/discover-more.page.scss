@@ -1,17 +1,13 @@
 @import "../../wiof-custom-theming.scss";
 
-.wiof-take-action {
-  // color: rgb(209, 161, 74);
-  color: $dark-color;
+.discover-more-title {
+  padding: 10px;
+  margin: 0 auto;
+  color: #2d2d2d;
+  display: inline-block;
 }
 
-
-// @media(min-width:500px){
-//   .video-frame{
-//     height:
-//   }
-// }
-
-
-
-
+.back-button {
+  padding: 5px;
+  float: right;
+}

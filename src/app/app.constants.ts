@@ -12,6 +12,14 @@ export const ELEMENT_VIDEOS_PLAYLIST_ID = {
   spirit: "PLitAAO2FhPTFjxy3EsgDR_XPtgiX8Ez-q",
 };
 
+export const ELEMENTS = {
+  EARTH: 'earth',
+  ENERGY: 'energy',
+  AIR: 'air',
+  WATER: 'water',
+  SPIRIT: 'spirit'
+}
+
 export const ELEMENT_BLOG_CATEGORY = {
   AIR: "Air",
   WATER: "Water",
@@ -156,7 +164,7 @@ export const VIDEO_PLAYER_VIDEOS = {
   EARTH: "LrLrOYLAwWY",
   FIRE: "L6murPEFbXg",
   SPIRIT: "LgUCyWhJf6s",
-  CONFIG: "hjdZ8PY6txk",
+  CONFIG: "SYWb9hNX-1s",
 };
 
 //TODO try to find another way

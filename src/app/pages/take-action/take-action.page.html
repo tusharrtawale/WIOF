@@ -1,7 +1,33 @@
 <app-header></app-header>
 <ion-content>
-  <app-back-button></app-back-button>
-  <h1 class="wiof-take-action">Take Action section is Coming Soon</h1>
-
+  <ion-toolbar class="take-action-toolbar-container">
+    <ion-title>Take Action</ion-title>
+      <app-back-button slot="end"></app-back-button>
+  </ion-toolbar>
+  <ion-toolbar>
+      <ion-row>
+        <ion-col class="element-buttons"><ion-button color="earth" (click)="selectElement(ELEMENTS.EARTH)">Earth</ion-button></ion-col>
+        <ion-col class="element-buttons"><ion-button color="energy" (click)="selectElement(ELEMENTS.ENERGY)">Energy</ion-button></ion-col>
+        <ion-col class="element-buttons"><ion-button color="airele" (click)="selectElement(ELEMENTS.AIR)">Air</ion-button></ion-col>
+        <ion-col class="element-buttons"><ion-button color="water" (click)="selectElement(ELEMENTS.WATER)">Water</ion-button></ion-col>
+        <ion-col class="element-buttons"><ion-button color="spirit" (click)="selectElement(ELEMENTS.SPIRIT)">Spirit</ion-button></ion-col>
+      </ion-row>
+  </ion-toolbar>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        {{cardContent.CARDTITLE}}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="take-action-content-container">
+      Below are Actions you can take towards {{cardContent.CARDTITLE}} Element.
+      <ul>
+        <li *ngFor="let link of cardContent.LINKS">
+          <a target="_blank" [href]="link">{{link}}</a>
+          </li>
+      </ul>
+      
+    </ion-card-content>
+  </ion-card>
   <app-wiof-footer></app-wiof-footer>
 </ion-content>

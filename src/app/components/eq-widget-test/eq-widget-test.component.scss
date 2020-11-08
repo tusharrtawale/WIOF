@@ -53,15 +53,20 @@
   top: 5px;
   &.range0 {
     // left:0%;
-    background-color: #ff0000;
+    // background-color: #ff0000;
+    background-image: linear-gradient(white, #ff0000, white);
   }
   &.range1 {
     // left:7.38%;
-    background-color: #9dff00;
+    // background-color: #9dff00;
+    background-image: linear-gradient(white, #9dff00, white);
+
   }
   &.range2 {
     // left:14.3%;
-    background-color: #fffb0b;
+    // background-color: #fffb0b;
+    background-image: linear-gradient(white, #fffb0b , white);
+
   }
 }
 

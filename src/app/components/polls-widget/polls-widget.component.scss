@@ -11,7 +11,7 @@
 }
 
 .polls-container {
-  background-color: antiquewhite;
+  background-color: $home-color-light;
   padding: 10px;
   padding-left: 20px;
   border-radius: 5px;
@@ -40,7 +40,7 @@
 }
 
 .wiof-polls-widget-card-header-text {
-  color: #ffffff;
+  color:$home-text-color;
 }
 
 .poll-widget-name-input {

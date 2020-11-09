@@ -59,7 +59,7 @@ $fontcolor: #fff;
   position: absolute;
   top: 110px;
   width: 35px;
-  color: $fontcolor;
+  color: $home-text-color;
   font-size: x-large;
 
   @media only screen and (max-width: 767px) {
@@ -70,14 +70,14 @@ $fontcolor: #fff;
 }
 
 .subscribe-text {
-  transform: rotate(-90deg);
-  color: $fontcolor;
+  transform: rotate(-90deg);  
   width: 100px;
   position: absolute;
   top: 40px;
   left: -34px;
   margin: 0px;
   font-weight: bold;
+  color: $home-text-color;
 
   @media only screen and (max-width: 767px) {
     top: 20px;
@@ -87,7 +87,7 @@ $fontcolor: #fff;
 
 h4 {
   padding: 10px;
-  color: $fontcolor;
+  color: $home-text-color;
 }
 
 .close-button {
@@ -95,22 +95,22 @@ h4 {
   top: 5px;
   right: 4px;
   background-color: $home-color;
-  color: $fontcolor;
+  color: $home-text-color;
   font-size: x-large;
 }
 
 .subscribe-button {
-  color: $fontcolor;
+  color: $home-text-color;
   background-color: $home-color;
   font-size: large;
-  border: 1px solid $fontcolor;
+  border: 1px solid $home-text-color;
   border-radius: 5px;
   transition: 0.5s;
   padding: 12px;
   margin-left: 40%;
 
   &:hover {
-    color: $home-color;
+    color: $home-text-color;
     background-color: $fontcolor;
     box-shadow: $shadowcolor 5px 6px;
   }

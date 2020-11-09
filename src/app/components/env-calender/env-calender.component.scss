@@ -6,7 +6,7 @@
 
   .env-calendar-heading {
     background-color: rgba(128, 64, 0, 0.5);
-    color: #fff;
+    color: $home-text-color;
     font-size: 20px;
     padding-left: 15px;
     height: 40px;
@@ -70,18 +70,19 @@
 }
 
 .wiof-calendar-container {
-  background-color: antiquewhite;
+  background-color: $home-color-light;
   border-radius: 4px;
 }
 
 .weekday {
-  color: #2d2d2d;
+  color: $home-text-color;
   text-align: center;
 }
 
 .title-text {
   font-size: 20px;
   font-weight: 500;
+  color:$home-text-color;
 }
 
 .occasion-name {
@@ -101,7 +102,7 @@
   top: 20%;
   left: 10%;
   width: 80%;
-  background-color: antiquewhite;
+  background-color: $home-color-light;
   border-radius: 15px;
   // border: 2px solid black;
   box-shadow: 0px 0px 5px 1px orange;
@@ -121,7 +122,7 @@
   border-radius: 5px;
   transition: 0.2s;
   padding: 12px;
-  color: #2d2d2d;
+  color: $home-text-color;
   width: calc(100% / 7);
   &:hover {
     background-color: #cccbb5;

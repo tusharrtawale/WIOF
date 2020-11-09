@@ -51,7 +51,7 @@
 
 .newsHeadlineScroll {
   background-color: $home-color;
-  color: $light-color;
+  color: $home-text-color;
   padding: 10px;
   margin: 0px 10px;
   border-radius: 5px;
@@ -61,12 +61,12 @@
 .wiof-slider-header {
   border-bottom: white 2px solid;
   background-color: $home-color;
-  color: $light-color;
+  color: $home-text-color;
 }
 
 .background {
   background-color: rgba($home-color, $tint-fraction);
-  background-color: antiquewhite;
+  background-color: $home-color-light;
   padding: 0;
 }
 

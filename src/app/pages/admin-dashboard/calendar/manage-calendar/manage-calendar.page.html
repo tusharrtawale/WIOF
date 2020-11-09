@@ -27,7 +27,9 @@
       <ion-col size="12" size-md="4">
         <ion-item lines="none">
           <ion-label position="floating">Month</ion-label>
-          <ion-select [(ngModel)]="selectedMonth" (ngModelChange)="onSelectMonth()"
+          <ion-select
+            [(ngModel)]="selectedMonth"
+            (ngModelChange)="onSelectMonth()"
           >
             <ion-select-option
               [value]="i"

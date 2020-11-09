@@ -25,9 +25,10 @@
   <ion-grid *ngIf="occasionsList$ | async as occasionsList">
     <ion-row class="item-divider-line">
       <ion-col size="12" size-md="4">
-        <ion-item>
+        <ion-item lines="none">
           <ion-label position="floating">Month</ion-label>
-          <ion-select [(ngModel)]="selectedMonth">
+          <ion-select [(ngModel)]="selectedMonth" (ngModelChange)="onSelectMonth()"
+          >
             <ion-select-option
               [value]="i"
               *ngFor="let month of months; let i = index;"

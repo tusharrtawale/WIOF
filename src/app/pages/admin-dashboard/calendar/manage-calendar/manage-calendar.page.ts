@@ -26,6 +26,7 @@ export class ManageCalendarPage implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.selectedMonth = new Date().getMonth();
     this.initPage();
   }
 
@@ -33,8 +34,11 @@ export class ManageCalendarPage implements OnInit {
     this.initPage();
   }
 
+  onSelectMonth() {
+    this.initPage();
+  }
+
   initPage() {
-    this.selectedMonth = new Date().getMonth();
     this.occasionsList$ = this.calendarService
       .getEnvCal(this.selectedMonth)
       .pipe(

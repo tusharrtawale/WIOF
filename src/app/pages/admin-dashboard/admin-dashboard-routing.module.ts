@@ -47,10 +47,22 @@ const routes: Routes = [
   },
   {
     path: "manage-calendar",
-    loadChildren: () =>
-      import("./manage-calendar/manage-calendar.module").then(
-        (m) => m.ManageCalendarPageModule
-      )
+    children: [
+      {
+        path: "",
+        loadChildren: () =>
+          import("./calendar/manage-calendar/manage-calendar.module").then(
+            (m) => m.ManageCalendarPageModule
+          )
+      },
+      {
+        path: "occasion/:mode",
+        loadChildren: () =>
+          import("./calendar/add-occasion/add-occasion.module").then(
+            (m) => m.AddOccasionPageModule
+          )
+      }
+    ]
   },
   {
     path: "manage-blog",
@@ -70,6 +82,13 @@ const routes: Routes = [
           )
       }
     ]
+  },
+  {
+    path: "add-occasion",
+    loadChildren: () =>
+      import("./calendar/add-occasion/add-occasion.module").then(
+        (m) => m.AddOccasionPageModule
+      )
   }
 ];
 

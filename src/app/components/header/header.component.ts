@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { Platform } from "@ionic/angular";
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap } from "@angular/router";
 import { switchMap } from "rxjs/operators";
-import { Subscription } from 'rxjs';
+import { Subscription } from "rxjs";
 
 @Component({
   selector: "app-header",
@@ -11,13 +11,13 @@ import { Subscription } from 'rxjs';
 })
 export class HeaderComponent implements OnInit {
   wiofLogo: string = "../../assets/logo.jpg";
-  sub:Subscription;
-  constructor(public platform: Platform, private route:ActivatedRoute) {}
+  sub: Subscription;
+  constructor(public platform: Platform, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.getColor();
   }
-  getColor(){
+  getColor() {
     console.log(this.route.params);
   }
 }

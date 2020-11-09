@@ -38,7 +38,7 @@
           </ion-card>
         </ion-slide>
       </ion-slides>
-      <marquee class="newsHeadlineScroll" direction="left" behavior="slide">
+      <marquee class="newsHeadlineScroll" direction="left" loop="infinite">
         <p>
           <span *ngFor="let news of newsList">
             <span>&#x25cf; </span>{{ news.headline }}

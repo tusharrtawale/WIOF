@@ -13,9 +13,10 @@ import { FIREBASE_COLLECTION } from "../app.constants";
 @Injectable({
   providedIn: "root"
 })
-export class EnvcalServiceService {
+export class EnvcalService {
   envcalCollectionByMonth: AngularFirestoreCollection<any>;
   envcalCollection: AngularFirestoreCollection<any>;
+  private viewEditModeOccasion: EnvDay;
 
   constructor(
     private storage: AngularFireStorage,
@@ -26,8 +27,8 @@ export class EnvcalServiceService {
     );
   }
 
-  getEnvCal(month: string): Observable<EnvDay[]> {
-    // getPolls(): Observable<Polls[]>{
+  getEnvCal(month: number): Observable<EnvDay[]> {
+    console.log("month:", month);
     this.envcalCollectionByMonth = this.database.collection(
       FIREBASE_COLLECTION.ENVCAL,
       (ref) => ref.where("month", "==", month)
@@ -37,9 +38,28 @@ export class EnvcalServiceService {
         querySnapshot.docs.map((doc) => {
           const data = doc.data() as EnvDay;
           data.id = doc.id;
+          data.image = this.getImage(data.imageName);
           return data;
         })
       )
+    );
+  }
+
+  getOccasion(id: string): Observable<EnvDay> {
+    const occassionDoc = this.database.doc<EnvDay>(
+      `${FIREBASE_COLLECTION.ENVCAL}/${id}`
+    );
+    return occassionDoc.get().pipe(
+      map((querySnapshot) => {
+        if (!querySnapshot.exists) {
+          return null;
+        } else {
+          var data = querySnapshot.data() as EnvDay;
+          data.id = querySnapshot.id;
+          data.image = this.getImage(data.imageName);
+          return data;
+        }
+      })
     );
   }
 
@@ -52,14 +72,45 @@ export class EnvcalServiceService {
 
   //to-do link images to each envday obj
 
-  saveImage(imageData: any, imageName: String) {
+  saveOccasionImage(imageData: any, imageName: String) {
     const imageUploadTask = this.storage.upload(
       `/${FIREBASE_COLLECTION.ENVCAL_IMAGE_STORAGE}/${imageName}`,
       imageData
     );
     return from(imageUploadTask);
   }
+
+  deleteOccasionImage(imageName: String) {
+    return this.storage
+      .ref(`/${FIREBASE_COLLECTION.ENVCAL_IMAGE_STORAGE}/${imageName}`)
+      .delete();
+  }
+
   saveOccasion(occasion: EnvDay) {
-    return from(this.envcalCollection.add({ ...occasion }));
+    let saveOccasion$ = null;
+    if (occasion.id !== null) {
+      saveOccasion$ = this.envcalCollection.doc(occasion.id.valueOf()).update({
+        ...occasion
+      });
+    } else {
+      saveOccasion$ = this.envcalCollection.add({ ...occasion });
+    }
+    return from(saveOccasion$);
+  }
+
+  deleteOccasion(occasionId: string) {
+    return from(this.envcalCollection.doc(occasionId).delete());
+  }
+
+  setViewEditModeOccasion(occasion: EnvDay) {
+    this.viewEditModeOccasion = { ...occasion };
+  }
+
+  getViewEditModeOccasion() {
+    return this.viewEditModeOccasion;
+  }
+
+  clearViewEditModeOccasion() {
+    this.viewEditModeOccasion = null;
   }
 }

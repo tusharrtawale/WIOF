@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { EnvDay } from "../../models/env-cal-data";
-import { EnvcalServiceService } from "../../services/envcal-service.service";
+import { EnvcalService } from "../../services/envcal-service";
 import { Observable } from "rxjs";
 import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 
@@ -28,7 +28,7 @@ export class EnvCalenderComponent implements OnInit {
 
   days: { class: string; day: string; occasion: any[] }[] = [];
   constructor(
-    private envDayService: EnvcalServiceService,
+    private envDayService: EnvcalService,
     private santz: DomSanitizer
   ) {}
 
@@ -36,7 +36,7 @@ export class EnvCalenderComponent implements OnInit {
   ngOnInit() {
     //test data
     this.envDayService
-      .getEnvCal(String(this.todayDate.getMonth()))
+      .getEnvCal(this.todayDate.getMonth())
       .subscribe((data) => {
         this.EnvDays = data;
         this.renderCalendar();
@@ -58,7 +58,7 @@ export class EnvCalenderComponent implements OnInit {
           day: x.day,
           month: x.month,
           name: x.occasion,
-          image: this.envDayService.getImage(x.image),
+          image: x.image,
           desc: x.description,
           link: x.showMoreLink
         });

@@ -3,15 +3,17 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/admin-dashboard"></ion-back-button>
     </ion-buttons>
-    <ion-title>Manage Calendar</ion-title>
+    <ion-title>Add Occasion</ion-title>
     <ion-buttons slot="end">
+      <ion-button color="success" fill="solid" size="large" (click)="onSubmit()"
+        >Save</ion-button
+      >
       <ion-button
-        color="success"
-        fill="solid"
+        color="medium"
+        fill="clear"
         size="large"
-        (click)="addNewOccassion()"
-        ><ion-icon name="add-outline" slot="start"></ion-icon>Add New
-        Occassion</ion-button
+        routerLink="/admin-dashboard"
+        >Cancel</ion-button
       >
     </ion-buttons>
   </ion-toolbar>
@@ -23,7 +25,7 @@
       <ion-row>
         <ion-col size-xs="12" size-md="12"
           ><ion-item>
-            <ion-label position="floating">Occassion</ion-label>
+            <ion-label position="floating">Occasion</ion-label>
             <ion-input formControlName="occasion"></ion-input>
           </ion-item>
         </ion-col>
@@ -38,20 +40,26 @@
         <ion-col size-xs="12" size-md="6"
           ><ion-item>
             <ion-label position="floating">Month</ion-label>
-            <ion-input formControlName="month"></ion-input>
+            <ion-select formControlName="month">
+              <ion-select-option
+                [value]="i"
+                *ngFor="let month of months; let i = index;"
+                >{{ month }}</ion-select-option
+              >
+            </ion-select>
           </ion-item>
         </ion-col>
 
         <ion-col size-xs="12"
           ><ion-item>
-            <ion-label position="stacked">Occassion Image URL</ion-label>
+            <ion-label position="stacked">Occasion Image URL</ion-label>
             <ion-input
               type="file"
               accept="image/*"
               (change)="onFileSelected($event)"
-              formControlName="image"
+              formControlName="imageName"
             ></ion-input>
-            <div><ion-img [src]="image"></ion-img></div>
+            <div><ion-img [src]="imageToDisplay"></ion-img></div>
           </ion-item>
         </ion-col>
 

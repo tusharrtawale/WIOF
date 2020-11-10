@@ -1,51 +1,58 @@
 <div class="wiof-env-calendar-dialog">
   <div *ngIf="occasionDetails; else loading">
-    <ion-row>
-      <ion-col size="1">
-        <div
-          *ngIf="showNavigation"
-          class="swiper-button-prev navigation-arrow-custom-styling"
-          (click)="wiofOccasionSlider.slidePrev()"
-        ></div>
-      </ion-col>
-      <ion-col size="10">
-        <ion-slides #wiofOccasionSlider [options]="slideOpts">
-          <ion-slide *ngFor="let occasn of occasionDetails.occasion">
-            <ion-card>
-              <ion-card-content class="ion-text-start card-content">
-                <ion-row>
-                  <ion-col size="8">
-                    <p style="color: #2d2d2d" *ngIf="occasn.day">
-                      Date: {{ occasn.day }} {{ getMonth(occasn.month) }}
-                    </p>
-                    <p style="color: #2d2d2d" *ngIf="occasn.name">
-                      Special Event: {{ occasn.name }}
-                    </p>
-                    <p style="color: #2d2d2d" *ngIf="occasn.desc">
-                      Description: {{ occasn.desc }}
-                    </p>
-                    <a *ngIf="occasn.link" target="_blank" [href]="occasn.link"
-                      >Show More ...</a
-                    >
-                  </ion-col>
-                  <ion-col size="4" class="image-container">
-                    <img [src]="occasn.image | async" />
-                  </ion-col>
-                </ion-row>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-        </ion-slides>
-      </ion-col>
-      <ion-col size="1">
-        <p class="closeButton" (click)="closeDialog()">X</p>
-        <div
-          *ngIf="showNavigation"
-          class="swiper-button-next navigation-arrow-custom-styling"
-          (click)="wiofOccasionSlider.slideNext()"
-        ></div>
-      </ion-col>
-    </ion-row>
+    <ion-slides #wiofOccasionSlider [options]="slideOpts">
+      <ion-slide *ngFor="let occasn of occasionDetails.occasion">
+        <ion-card class="occasion-card">
+          <ion-card-header>
+            <h2>
+              <strong class="occasion-card-header">{{ occasn.name }}</strong>
+              <p>{{ getMonth(occasn.month) }} {{ occasn.day }}</p>
+              <button class="occasion-card-close-btn" (click)="closeDialog()">
+                <ion-icon name="close" slot="icon-only"></ion-icon>
+              </button>
+            </h2>
+          </ion-card-header>
+          <ion-card-content class="ion-text-start card-content">
+            <img [src]="occasn.image | async" />
+            <div>
+              <p [innerHTML]="occasn.desc"></p>
+              <a *ngIf="occasn.link" target="_blank" [href]="occasn.link"
+                >Show More</a
+              >
+            </div>
+            <!-- <ion-row>
+              <ion-col size="4" class="image-container">
+                <img [src]="occasn.image | async" />
+              </ion-col>
+              <ion-col size="8" class="ion-padding">
+                <p style="color: #2d2d2d" *ngIf="occasn.day">
+                  Date: {{ occasn.day }} {{ getMonth(occasn.month) }}
+                </p>
+                <p style="color: #2d2d2d" *ngIf="occasn.name">
+                  Special Event: {{ occasn.name }}
+                </p>
+                <p style="color: #2d2d2d" *ngIf="occasn.desc">
+                  Description: {{ occasn.desc }}
+                </p>
+                <a *ngIf="occasn.link" target="_blank" [href]="occasn.link"
+                  >Show More ...</a
+                >
+              </ion-col>
+            </ion-row> -->
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+    <div
+      class="swiper-button-prev navigation-arrow-custom-styling"
+      (click)="wiofOccasionSlider.slidePrev()"
+      *ngIf="showNavigation"
+    ></div>
+    <div
+      class="swiper-button-next navigation-arrow-custom-styling"
+      (click)="wiofOccasionSlider.slideNext()"
+      *ngIf="showNavigation"
+    ></div>
   </div>
   <ng-template #loading>
     <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />

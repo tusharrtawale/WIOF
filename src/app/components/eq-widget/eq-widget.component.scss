@@ -25,3 +25,14 @@
   display: inline-block;
   width: 100%;
 }
+
+.answer-text {
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px;
+  color: $dark-color;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

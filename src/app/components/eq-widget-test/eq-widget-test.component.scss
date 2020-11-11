@@ -5,6 +5,10 @@
   background-color: white;
 }
 
+.arrow-container-parent {
+  padding: 0;
+}
+
 .arrow-container {
   padding: 0%;
 }
@@ -16,6 +20,7 @@
 .eqScaleContainer {
   display: flex;
   width: 100%;
+  padding: 0px 5px;;
 }
 .eqScale {
   display: block;
@@ -26,45 +31,51 @@
 .bracket {
   border: #202020 1px solid;
   width: 1px;
-  height: 48px;
+  height: 50px;
   z-index: 2;
   position: absolute;
   background-color: #2d2d2d;
   transition-delay: 1s;
   transition: 0.5s;
-  top: 5px;
+  top: 0px;
   // margin: 0 1%;
 }
 
+.phScale {
+  height: 40px;
+  box-shadow: 5px 5px 15px darkgrey;
+  padding: 2px;
+}
+
 .phScaleBlock {
-  // border: black px solid;
-  // width: 32.8px;
-  width: 6.667%;
-  // border:white 0.25% solid;
   text-align: center;
   font: "roboto";
   color: black;
   display: inline-block;
   height: 40px;
-  border: white 1.7px solid;
   z-index: 1;
-  // position: absolute;
+  height: 100%;
 
   top: 5px;
   &.range0 {
     // left:0%;
     // background-color: #ff0000;
-    background-image: linear-gradient(white, #ff0000, white);
+    background-image: linear-gradient(
+      90deg,
+      #ff4500 60%,
+      #ffa500 85%,
+      #9dff00 100%
+    );
   }
   &.range1 {
     // left:7.38%;
     // background-color: #9dff00;
-    background-image: linear-gradient(white, #9dff00, white);
+    background-image: linear-gradient(90deg, #9dff00 60%, #fffb0b 100%);
   }
   &.range2 {
     // left:14.3%;
     // background-color: #fffb0b;
-    background-image: linear-gradient(white, #fffb0b, white);
+    background-image: linear-gradient(90deg, #fffb0b 60%, #ffffff 100%);
   }
 }
 

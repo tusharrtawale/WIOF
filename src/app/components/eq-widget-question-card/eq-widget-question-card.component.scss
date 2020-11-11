@@ -1,21 +1,7 @@
-// .result1 {
-//   position: absolute;
-//   top: -150px;
-//   left: 50px;
-// }
-// .result2 {
-//   position: absolute;
-//   top: 0px;
-//   left: 50px;
-// }
-// .result3 {
-//   position: absolute;
-//   top: 150px;
-//   left: 50px;
-// }
 .eq-meter-heading {
   font-size: large;
   font-weight: bold;
+  padding: 10px;
 }
 .result-box {
   border-radius: 5px;
@@ -35,4 +21,13 @@
       font-size: 14px;
     }
   }
+}
+
+.eq-param-desc p {
+  padding: 5px 10px;
+  border: 1px solid lightgrey;
+  background: white;
+  border-radius: 15px;
+  font-weight: 500;
+  margin-top: 5px;
 }

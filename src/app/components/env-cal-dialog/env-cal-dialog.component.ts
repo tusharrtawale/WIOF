@@ -47,9 +47,7 @@ export class EnvCalDialogComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.occasionDetails.occasion.length > 1) {
-      this.showNavigation = true;
-    }
+    this.resetNavigation();
   }
 
   ngDestroy() {
@@ -57,13 +55,21 @@ export class EnvCalDialogComponent implements OnInit {
   }
 
   getMonth(month) {
-    const month_num = Number(month);
+    this.resetNavigation();
     return this.months[month];
+  }
+
+  resetNavigation(){
+    this.showNavigation = false;
+    if (this.occasionDetails.occasion.length > 1) {
+      this.showNavigation = true;
+    }
   }
 
   detectScreenSize() {
     this.width = window.innerWidth;
   }
+
   closeDialog() {
     this.close.emit("close");
   }

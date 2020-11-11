@@ -36,6 +36,7 @@
               'occasion-day': day.occasion[0] != null,
               'no-occasion-day': day.occasion[0] == null
             }"
+            (click)="openOccasionDialog(day)"
           >
             <h1
               [ngClass]="{
@@ -51,7 +52,6 @@
               class="occasion-day-image"
               *ngIf="day.occasion[0]"
               [src]="day.occasion[0].image | async"
-              (click)="openOccasionDialog(day)"
             />
             <!-- <p *ngIf="day.occasion[0]" class="occasion-name">
             {{ day.occasion[0].name }}

@@ -1,3 +1,5 @@
+@import "../../wiof-custom-theming.scss";
+
 .eq-meter-heading {
   font-size: large;
   font-weight: bold;
@@ -19,6 +21,8 @@
 
     ion-text {
       font-size: 14px;
+      color: $dark-color;
+      font-weight: 500;
     }
   }
 }
@@ -30,4 +34,8 @@
   border-radius: 15px;
   font-weight: 500;
   margin-top: 5px;
+}
+
+.submit-eq ::ng-deep .button {
+  background-color: $energy-color;
 }

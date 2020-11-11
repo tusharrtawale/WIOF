@@ -10,7 +10,7 @@
 }
 
 .arrow-container {
-  padding: 0%;
+  padding: 0px 2px;
 }
 .arrow {
   position: relative;
@@ -20,7 +20,7 @@
 .eqScaleContainer {
   display: flex;
   width: 100%;
-  padding: 0px 5px;;
+  padding: 15px 5px 0px;
 }
 .eqScale {
   display: block;
@@ -29,16 +29,23 @@
 }
 
 .bracket {
-  border: #202020 1px solid;
-  width: 1px;
+  width: 2px;
   height: 50px;
-  z-index: 2;
   position: absolute;
   background-color: #2d2d2d;
-  transition-delay: 1s;
-  transition: 0.5s;
   top: 0px;
-  // margin: 0 1%;
+
+  &:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid black;
+    position: absolute;
+    top: 50px;
+    right: -4px;
+  }
 }
 
 .phScale {

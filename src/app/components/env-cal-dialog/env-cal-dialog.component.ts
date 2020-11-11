@@ -59,7 +59,7 @@ export class EnvCalDialogComponent implements OnInit {
     return this.months[month];
   }
 
-  resetNavigation(){
+  resetNavigation() {
     this.showNavigation = false;
     if (this.occasionDetails.occasion.length > 1) {
       this.showNavigation = true;

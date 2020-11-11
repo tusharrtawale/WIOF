@@ -9,6 +9,14 @@
   border-bottom: white 2px solid;
 }
 
+.inputbar::-webkit-input-placeholder {
+  font-size: x-small;
+}
+
+body {
+  overflow: auto;
+}
+
 .wiof-fire-widget-card-background {
   background-color: rgba($energy-color, $tint-fraction);
 }

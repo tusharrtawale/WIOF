@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { image } from "d3";
 
 @Component({
   selector: "app-energy-widget",
@@ -16,8 +17,14 @@ export class EnergyWidgetComponent implements OnInit {
   buttonClicked = false;
   Consumptionnull = false;
   unitnull = false;
-
-  constructor() {}
+  petrolimages: any;
+  dieselimages: any;
+  numberofpetrolcans: number;
+  numberofdieselcans: number;
+  roundoffnumberofpetrolcans: number;
+  constructor() {
+    //this.images = [];
+  }
 
   ngOnInit() {}
 
@@ -27,22 +34,22 @@ export class EnergyWidgetComponent implements OnInit {
       this.unitnull = false;
       this.Consumptionnull = false;
       this.KgsofCO2 = this.EnergyConsumption * 612;
-
       this.litresofPetrol = this.KgsofCO2 / 2.296;
       this.litresofDiesel = this.KgsofCO2 / 2.653;
-
       this.kmsbycar = this.litresofPetrol * 15;
       this.KmsbySUV = this.litresofDiesel * 12;
+      this.numberofpetrolcans = this.litresofPetrol / 100;
+      this.numberofdieselcans = this.litresofDiesel / 500;
     } else if (this.Selectedunit === "2" && this.EnergyConsumption > 0) {
       this.buttonClicked = true;
       this.unitnull = false;
       this.Consumptionnull = false;
       this.KgsofCO2 = this.EnergyConsumption * 0.85;
-
       this.litresofPetrol = this.KgsofCO2 / 2.296;
       this.litresofDiesel = this.KgsofCO2 / 2.653;
       this.kmsbycar = this.litresofPetrol * 15;
       this.KmsbySUV = this.litresofDiesel * 12;
+      this.numberofpetrolcans = this.litresofPetrol / 100;
     } else if (
       this.EnergyConsumption < 0 &&
       (this.Selectedunit === "2" || this.Selectedunit === "1")
@@ -59,5 +66,11 @@ export class EnergyWidgetComponent implements OnInit {
       this.unitnull = true;
       this.Consumptionnull = true;
     }
+    // this.petrolimages=[];
+    // this.dieselimages=[];
+    // this.roundoffnumberofpetrolcans=Math.round(this.numberofpetrolcans);
+    // for (let i=0;i<this.roundoffnumberofpetrolcans;i++){
+    //   this.petrolimages.push({url:'../../../assets/Canimage.png'})
+    //   }
   }
 }

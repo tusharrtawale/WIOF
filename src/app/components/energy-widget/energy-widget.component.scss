@@ -13,6 +13,79 @@
   font-size: x-small;
 }
 
+#Diesel-main {
+  position: relative;
+}
+
+#Petrol-main {
+  position: relative;
+}
+
+#Diesel {
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  right: 20%;
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+  font-size: 14px;
+}
+#Diesel-sub {
+  position: absolute;
+  top: 60%;
+  left: 27%;
+  right: 20%;
+  font-weight: bolder;
+  font-size: larger;
+  //text-align: left;
+  vertical-align: middle;
+}
+
+@media only screen and (max-width: 600px) {
+  #Diesel-sub {
+    position: absolute;
+    top: 60%;
+    left: 27%;
+    right: 20%;
+    font-weight: bolder;
+    font-size: large;
+    vertical-align: middle;
+  }
+
+  #Petrol-sub {
+    position: absolute;
+    top: 60%;
+    left: 27%;
+    right: 20%;
+    font-weight: bolder;
+    font-size: large;
+    vertical-align: middle;
+  }
+}
+
+#Petrol-sub {
+  position: absolute;
+  top: 60%;
+  left: 10;
+  right: 55%;
+  font-weight: bolder;
+  font-size: larger;
+  //text-align: left;
+  vertical-align: middle;
+}
+
+#Petrol {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  right: 20%;
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+  font-size: 8px;
+}
+
 body {
   overflow: auto;
 }

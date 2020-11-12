@@ -4,7 +4,7 @@ import { image } from "d3";
 @Component({
   selector: "app-energy-widget",
   templateUrl: "./energy-widget.component.html",
-  styleUrls: ["./energy-widget.component.scss"]
+  styleUrls: ["./energy-widget.component.scss"],
 })
 export class EnergyWidgetComponent implements OnInit {
   EnergyConsumption: number;
@@ -22,14 +22,14 @@ export class EnergyWidgetComponent implements OnInit {
   numberofpetrolcans: number;
   numberofdieselcans: number;
   roundoffnumberofpetrolcans: number;
+  units = ["KW", "KWH"];
   constructor() {
-    //this.images = [];
   }
 
   ngOnInit() {}
 
   CalculateCO2() {
-    if (this.Selectedunit === "1" && this.EnergyConsumption > 0) {
+    if (this.Selectedunit === "KW" && this.EnergyConsumption > 0) {
       this.buttonClicked = true;
       this.unitnull = false;
       this.Consumptionnull = false;
@@ -40,7 +40,7 @@ export class EnergyWidgetComponent implements OnInit {
       this.KmsbySUV = this.litresofDiesel * 12;
       this.numberofpetrolcans = this.litresofPetrol / 100;
       this.numberofdieselcans = this.litresofDiesel / 500;
-    } else if (this.Selectedunit === "2" && this.EnergyConsumption > 0) {
+    } else if (this.Selectedunit === "KWH" && this.EnergyConsumption > 0) {
       this.buttonClicked = true;
       this.unitnull = false;
       this.Consumptionnull = false;
@@ -52,7 +52,7 @@ export class EnergyWidgetComponent implements OnInit {
       this.numberofpetrolcans = this.litresofPetrol / 100;
     } else if (
       this.EnergyConsumption < 0 &&
-      (this.Selectedunit === "2" || this.Selectedunit === "1")
+      (this.Selectedunit === "KWH" || this.Selectedunit === "KW")
     ) {
       this.unitnull = false;
       this.Consumptionnull = true;
@@ -66,11 +66,5 @@ export class EnergyWidgetComponent implements OnInit {
       this.unitnull = true;
       this.Consumptionnull = true;
     }
-    // this.petrolimages=[];
-    // this.dieselimages=[];
-    // this.roundoffnumberofpetrolcans=Math.round(this.numberofpetrolcans);
-    // for (let i=0;i<this.roundoffnumberofpetrolcans;i++){
-    //   this.petrolimages.push({url:'../../../assets/Canimage.png'})
-    //   }
   }
 }

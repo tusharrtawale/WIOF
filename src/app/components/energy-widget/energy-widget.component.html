@@ -1,48 +1,3 @@
-<!-- <ion-card class="wiof-fire-widget-card-background widget-height">
-  <ion-card-header class="wiof-fire-widget-card-header">
-    <ion-card-title class="title-text"> Energy Widget </ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <ion-list>
-              <ion-item>
-                <ion-label position="floating">Enter Monthly Energy Consumption</ion-label>          
-                <ion-input  [(ngModel)]="EnergyConsumption" type="number" required></ion-input>
-              </ion-item>
-            </ion-list>
-          </ion-col>
-          <ion-col>
-            <ion-label position="floating">Select Unit KW/KWH</ion-label>
-            <ion-select [(ngModel)]="Selectedunit" interface="popover" > 
-              <ion-select-option value="1">
-                KW
-              </ion-select-option>
-              <ion-select-option value="2">
-                KWH
-              </ion-select-option>
-            </ion-select>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            
-            <button class="wiof-primary-button" (click)="CalculateCO2()">
-              <ion-icon name="calculator-outline"></ion-icon> Calculate
-            </button>
-          </ion-col>
-        </ion-row>
-        <ion-row *ngIf="buttonClicked" style="border: solid peachpuff 2px; background-color:rgb(238, 199, 165);"> 
-          <ion-col style=" border-right:  solid peachpuff 2px;"><p>Can drive {{kmsbycar|number:"1.0-2"}} kms using a Petrol Fueled car</p></ion-col>
-          <ion-col><p>Can drive {{KmsbySUV|number:"1.0-2"}} kms using a Diesel Fueled SUV</p></ion-col>
-        </ion-row>
-      </ion-grid>
-
-
-    </ion-card-content>
-  </ion-card> -->
-
 <ion-card class="wiof-fire-widget-card-background widget-height">
   <ion-card-header class="wiof-fire-widget-card-header">
     <ion-card-title> Energy Widget </ion-card-title>
@@ -51,9 +6,7 @@
     <ion-grid>
       <ion-row style="padding-bottom: 10px">
         <ion-col>
-          <p
-            style="font-weight: bolder; font-size: medium; text-align: justify"
-          >
+          <p style="text-align: justify">
             Widget to analyse your energy needs and assess the level of
             sustainability needed by you to save for the future ... An
             instrument for you to become the change you want in the eco-system.
@@ -61,37 +14,29 @@
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col>
+        <ion-col size="12" size-md="8" size-lg="12" size-xl="8">
           <!-- <ion-list > -->
           <ion-item color="energy">
-            <input
+            <ion-input
               [(ngModel)]="EnergyConsumption"
-              placeholder="Enter Monthly Energy Consumption here"
-              class="inputbar"
-            />
-            <p *ngIf="Consumptionnull" style="color: red">
-              Please enter a valid Consumption
-            </p>
+              placeholder="Monthly Energy Consumption"
+            ></ion-input>
           </ion-item>
+          <p *ngIf="Consumptionnull" style="color: red">
+            Please enter a valid consumption
+          </p>
           <!-- </ion-list> -->
         </ion-col>
-        <ion-col>
-          <ion-label class="wiof-select" position="floating"
-            >Select Unit KW/KWH</ion-label
-          >
-          <ion-select
-            class="wiof-select"
-            [(ngModel)]="Selectedunit"
-            interface="popover"
-          >
-            <ion-select-option class="wiof-select" value="1">
-              KW
-            </ion-select-option>
-            <ion-select-option class="wiof-select" value="2">
-              KWH
-            </ion-select-option>
-          </ion-select>
-          <p *ngIf="unitnull" style="color: red">Please select a Unit</p>
+        <ion-col size="12" size-md="4" size-lg="12" size-xl="4">
+          <ion-item color="energy">
+            <ion-label>Select Unit</ion-label>
+            <ion-select interface="popover" [(ngModel)]="Selectedunit">
+              <ion-select-option *ngFor="let unit of units" [value]="unit">{{
+                unit | titlecase
+              }}</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <p *ngIf="unitnull" style="color: red">Please select a unit</p>
         </ion-col>
       </ion-row>
       <ion-row>
@@ -106,100 +51,38 @@
       <ion-row>
         <ion-col>
           <!-- <p>
-              Can drive {{ kmsbycar | number: "1.0-2" }} kms using a Petrol Fueled
-              car and number of petrolcans is {{numberofpetrolcans}}
-            </p> 
-            <p  style="position: absolute; z-index: 2; margin-top: 30px; margin-left: 30px; border: solid red 2px;"
-             >{{ litresofPetrol | number: "1.0-2"}} litres</p>
-            <img src="../../../assets/gas-station-icon-10.jpg" style="max-width:50%;; height:auto; position: relative;">-->
-          <div style="position: relative">
+            Can drive {{ kmsbycar | number: "1.0-2" }} kms using a Petrol Fueled
+            car and number of petrolcans is {{numberofpetrolcans}}
+          </p> 
+          <p  style="position: absolute; z-index: 2; margin-top: 30px; margin-left: 30px; border: solid red 2px;"
+           >{{ litresofPetrol | number: "1.0-2"}} litres</p>
+          <img src="../../../assets/gas-station-icon-10.jpg" style="max-width:50%;; height:auto; position: relative;">-->
+          <div id="Petrol-Main">
             <img
               src="../../../assets/gas-station-icon.jpg"
               alt="Pumpstation"
               width="100%"
               height="auto"
             />
-            <div
-              style="
-                position: absolute;
-                top: 15%;
-                left: 20%;
-                right: 20%;
-                width: 100%;
-                text-align: left;
-                font-weight: bold;
-                font-size: 14px;
-              "
-              *ngIf="buttonClicked"
-            >
+            <div id="Petrol" *ngIf="buttonClicked">
               {{ litresofPetrol | number: "1.0-0" }} litres
             </div>
-            <div
-              style="
-                position: absolute;
-                top: 60%;
-                left: 30%;
-                right: 30%;
-                font-weight: bolder;
-                font-size: larger;
-              "
-            >
-              Petrol
-            </div>
+            <div id="Petrol-sub">Petrol</div>
           </div>
         </ion-col>
         <ion-col>
-          <div style="position: relative">
+          <div id="Diesel-main">
             <img
               src="../../../assets/gas-station-icon.jpg"
               alt="Pumpstation"
               width="100%"
               height="auto"
             />
-            <div
-              style="
-                position: absolute;
-                top: 15%;
-                left: 20%;
-                right: 20%;
-                width: 100%;
-                text-align: left;
-                font-weight: bold;
-                font-size: 14px;
-              "
-              *ngIf="buttonClicked"
-            >
+            <div id="Diesel" *ngIf="buttonClicked">
               {{ litresofDiesel | number: "1.0-0" }} litres
             </div>
-            <div
-              style="
-                position: absolute;
-                top: 60%;
-                left: 30%;
-                right: 30%;
-                font-weight: bolder;
-                font-size: larger;
-              "
-            >
-              Diesel
-            </div>
+            <div id="Diesel-sub">Diesel</div>
           </div>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <p
-            style="
-              background-color: peachpuff;
-              font-size: small;
-              border-radius: 5px;
-              text-align: justify;
-              font-weight: bold;
-            "
-          >
-            The calculated fuel is energy equivalent of your entered Electricity
-            Consumption
-          </p>
         </ion-col>
       </ion-row>
     </ion-grid>

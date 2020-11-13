@@ -21,69 +21,21 @@
   position: relative;
 }
 
-#Diesel {
-  position: absolute;
-  top: 15%;
-  left: 20%;
-  right: 20%;
-  width: 100%;
-  text-align: left;
-  font-weight: bold;
-  font-size: 14px;
-}
 #Diesel-sub {
-  position: absolute;
-  top: 60%;
-  left: 27%;
-  right: 20%;
-  font-weight: bolder;
-  font-size: larger;
-  //text-align: left;
-  vertical-align: middle;
 }
 
 @media only screen and (max-width: 600px) {
   #Diesel-sub {
-    position: absolute;
-    top: 60%;
-    left: 27%;
-    right: 20%;
-    font-weight: bolder;
-    font-size: large;
-    vertical-align: middle;
   }
 
   #Petrol-sub {
-    position: absolute;
-    top: 60%;
-    left: 27%;
-    right: 20%;
-    font-weight: bolder;
-    font-size: large;
-    vertical-align: middle;
   }
 }
 
 #Petrol-sub {
-  position: absolute;
-  top: 60%;
-  left: 10;
-  right: 55%;
-  font-weight: bolder;
-  font-size: larger;
-  //text-align: left;
-  vertical-align: middle;
 }
 
 #Petrol {
-  position: absolute;
-  top: 20%;
-  left: 20%;
-  right: 20%;
-  width: 100%;
-  text-align: left;
-  font-weight: bold;
-  font-size: 8px;
 }
 
 body {
@@ -102,4 +54,39 @@ body {
   background: #2b2b2b;
   color: white;
   margin-right: 4px;
+}
+
+.energy-widget-coontent {
+  height: 515px;
+  overflow: auto;
+}
+
+.pump-station {
+  height: 225px;
+  width: 200px;
+  margin: 15px;
+
+  .litresText {
+    position: absolute;
+    top: 15%;
+    width: 80px;
+    text-align: center;
+    left: 55px;
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  .pump-image {
+    height: 100%;
+  }
+
+  .label {
+    position: absolute;
+    bottom: 30%;
+    left: 65px;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    text-shadow: 1px 1px 5px #000;
+  }
 }

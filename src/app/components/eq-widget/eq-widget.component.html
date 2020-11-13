@@ -43,6 +43,7 @@
     <app-eq-widget-question-card
       class="eq-user-response"
       *ngIf="showTest"
+      (back)="showTest = false"
     ></app-eq-widget-question-card>
   </ion-card-content>
 </ion-card>

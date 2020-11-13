@@ -22,14 +22,16 @@
   </div>
 </div>
 
-<div class="ion-text-center">
+<div class="ion-text-center" *ngIf="!showResult">
   <ion-button
     fill="solid"
     class="ion-margin-top"
     color="spirit"
-    *ngIf="!showResult"
     (click)="onSubmit()"
     >Submit</ion-button
+  >
+  <ion-button fill="outline" class="ion-margin-top" color="spirit" (click)="onBack()"
+    >Back</ion-button
   >
 </div>
 
@@ -37,15 +39,21 @@
   <p class="eq-meter-heading">Your emotional intelligence is:</p>
   <ion-row class="result-box">
     <ion-col size="6">
-      <p class="eq-meter-heading">Attention: {{ this.results[0] | number: "1.0-2"}}%</p>
+      <p class="eq-meter-heading">
+        Attention: {{ this.results[0] | number: "1.0-2" }}%
+      </p>
       <app-eq-widget-test [gpr]="['m', '1', results[0]]"></app-eq-widget-test>
     </ion-col>
     <ion-col size="6">
-      <p class="eq-meter-heading">Clarity: {{ this.results[1] | number: "1.0-2"}}%</p>
+      <p class="eq-meter-heading">
+        Clarity: {{ this.results[1] | number: "1.0-2" }}%
+      </p>
       <app-eq-widget-test [gpr]="['m', '2', results[1]]"></app-eq-widget-test>
     </ion-col>
     <ion-col size="6" offset="3">
-      <p class="eq-meter-heading">Reparation: {{ this.results[2] | number: "1.0-2"}}%</p>
+      <p class="eq-meter-heading">
+        Reparation: {{ this.results[2] | number: "1.0-2" }}%
+      </p>
       <app-eq-widget-test [gpr]="['m', '3', results[2]]"></app-eq-widget-test>
     </ion-col>
   </ion-row>

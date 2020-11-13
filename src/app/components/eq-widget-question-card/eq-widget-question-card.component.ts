@@ -1,5 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: "app-eq-widget-question-card",
@@ -9,6 +10,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 export class EqWidgetQuestionCardComponent implements OnInit {
   userResponse: FormGroup;
   showResult: boolean = false;
+  @Output('back') back$ = new EventEmitter();
   gender: string;
   results: number[];
   result1msg: string = "";
@@ -85,6 +87,10 @@ export class EqWidgetQuestionCardComponent implements OnInit {
     ];
     this.setMessage();
     this.showResult = true;
+  }
+
+  onBack(){
+    this.back$.emit();
   }
 
   getEmotionalAttentionFactor() {

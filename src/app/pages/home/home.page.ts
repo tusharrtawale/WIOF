@@ -7,7 +7,7 @@ import { ElementRef, ViewChild } from "@angular/core";
   styleUrls: ["home.page.scss"],
 })
 export class HomePage implements OnInit {
-  viewConcentPopup = true;
+  viewConsentPopup = true;
   ribbonCut = false;
   counter = 5;
   buttonClicked = false;
@@ -15,13 +15,19 @@ export class HomePage implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    // inauguration code
     this.ribbonCut = !!localStorage.getItem("ribbonCut");
+
+    const privacyConsentAccepted = localStorage.getItem("privacyConsentAccepted");
+    this.viewConsentPopup = privacyConsentAccepted === "true" ? false : true;
   }
 
   onAccept() {
-    this.viewConcentPopup = false;
+    this.viewConsentPopup = false;
+    localStorage.setItem("privacyConsentAccepted", "true");
   }
 
+  // inauguration code
   onOpening() {
     this.buttonClicked = true;
     setInterval(() => {

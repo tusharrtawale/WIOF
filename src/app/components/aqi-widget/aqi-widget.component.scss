@@ -14,6 +14,11 @@
   background-color: rgba($air-color, $tint-fraction);
 }
 
+.aqi-widget-contents{
+  height:500px;
+  overflow: auto;
+}
+
 .wiof-primary-button {
   width: 180px;
   border-radius: 25px;

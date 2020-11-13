@@ -13,17 +13,13 @@ export class TakeActionPage implements OnInit {
   cardContent: any = CARDCONTENTS.EARTH;
   ELEMENTS = ELEMENTS;
   element: string;
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute) {
+    const url_array = this.route.snapshot["_routerState"].url.split("/");
+    this.selectElement(url_array[2]);
+  }
 
   ngOnInit() {
     console.log(this.element);
-    this.route.paramMap.subscribe((params) => {
-      if (params.has("element")) {
-        this.element = params.get("element");
-        console.log(this.element);
-        this.selectElement(this.element);
-      }
-    });
   }
 
   selectElement(element: string) {

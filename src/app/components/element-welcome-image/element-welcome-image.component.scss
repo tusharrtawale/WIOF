@@ -15,13 +15,13 @@
 }
 
 .air-welcome-img {
-  background: url("../../../assets/Air_Banner.png");
+  background: url("../../../assets/banners/air_banner.jpg");
   outline: none;
   @include page-welcome-img;
 }
 
 .earth-welcome-img {
-  background: url("../../../assets/Earth_Banner.jpg");
+  background: url("../../../assets/banners/Earth_Banner.jpg");
   outline: none;
   @include page-welcome-img;
   @media only screen and (max-width: 768px) {
@@ -30,7 +30,7 @@
 }
 
 .fire-welcome-img {
-  background: url("../../../assets/Energy_Banner.jpg");
+  background: url("../../../assets/banners/Energy_Banner.jpg");
   outline: none;
   @include page-welcome-img;
   /* Medium devices (landscape tablets, 768px and up) */
@@ -40,13 +40,13 @@
 }
 
 .spirit-welcome-img {
-  background: url("../../../assets/Spirit_Banner.jpg");
+  background: url("../../../assets/banners/spirit_banner.jpg");
   outline: none;
   @include page-welcome-img;
 }
 
 .water-welcome-img {
-  background: url("../../../assets/Water_Banner.jpg");
+  background: url("../../../assets/banners/water_banner.jpg");
   outline: none;
   @include page-welcome-img;
 }

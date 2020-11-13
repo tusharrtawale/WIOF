@@ -13,8 +13,8 @@
   <ion-grid>
     <ion-row>
       <ion-col class="wiof-blog-col" size="12" size-lg="8" offset-lg="2">
-        <div *ngIf="(blogDetails | async) as blog" class="blog-container">
-          <ion-row>
+        <div class="blog-container">
+          <ion-row *ngIf="(blogDetails | async) as blog">
             <ion-col size="12">
               <h1>{{ blog.title }}</h1>
             </ion-col>

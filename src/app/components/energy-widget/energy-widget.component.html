@@ -46,22 +46,26 @@
       </ion-row>
       <ion-row>
         <ion-col>
-          <div class="pump-station"  *ngIf="buttonClicked">
-            <span class="litresText">{{ litresofPetrol | number: "1.0-0" }} litres</span>
+          <div class="pump-station" *ngIf="buttonClicked">
+            <span class="litresText"
+              >{{ litresofPetrol | number: "1.0-0" }} litres</span
+            >
             <img
               src="../../../assets/gas-station-icon.jpg"
               class="pump-image"
-            >
+            />
             <div class="label">Petrol</div>
           </div>
         </ion-col>
         <ion-col>
           <div class="pump-station" *ngIf="buttonClicked">
-            <span class="litresText">{{ litresofDiesel | number: "1.0-0" }} litres</span>
+            <span class="litresText"
+              >{{ litresofDiesel | number: "1.0-0" }} litres</span
+            >
             <img
               src="../../../assets/gas-station-icon.jpg"
               class="pump-image"
-            >
+            />
             <div class="label">Diesel</div>
           </div>
         </ion-col>

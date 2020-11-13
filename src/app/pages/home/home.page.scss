@@ -141,7 +141,7 @@ $breakpoint-tablet: 767px;
           color: #aa000f;
           text-shadow: 1px 1px 5px white;
           font-size: 50px;
-          
+
           &.site-name {
             text-shadow: 1px 1px 5px black;
             font-size: 40px;
@@ -189,7 +189,7 @@ $breakpoint-tablet: 767px;
 
     &:active {
       box-shadow: 5px 5px 5px rgba(50, 50, 50, 0.2), inset 10px 0 20px $light,
-      inset -2px 0 20px rgba(128, 128, 128, 0.5);
+        inset -2px 0 20px rgba(128, 128, 128, 0.5);
     }
   }
 

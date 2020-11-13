@@ -31,7 +31,8 @@ export class AddNewsPage implements OnInit {
     contentLabel: "Overview",
     categoryLabel: "Category",
     newsDateLabel: "News Date",
-    mediaLinkLabel: "Media Link",
+    mediaLinkLabel:
+      "Media Link (Please enter youtube video ID only, do not enter full link)",
     selectImageLabel: "Select Image",
     mediaTypeLabel: "Media Type",
     newsSourceLabel: "News Source URL",
@@ -54,7 +55,7 @@ export class AddNewsPage implements OnInit {
     this.route.paramMap.subscribe((param) => {
       if (param.has("mode") && param.get("mode") === "edit") {
         this.news = this.newsService.getViewEditModeNews();
-        this.news.imageLink.subscribe((imageData) => {
+        this.news.imageLink?.subscribe((imageData) => {
           this.imageToDisplay = imageData;
         });
         if (!this.news) {
@@ -166,15 +167,19 @@ export class AddNewsPage implements OnInit {
     news: News,
     isEditMode: boolean
   ) {
+    const mediaLink =
+      addNewsForm.value.mediaType === MEDIA_TYPE.VIDEO
+        ? addNewsForm.value.mediaLink
+        : isEditMode && news.mediaLink !== undefined
+        ? news.mediaLink
+        : this.appUtil.formatImageName("news_", this.imageToSave);
     return new News(
       isEditMode ? news.newsId : null,
       addNewsForm.value.headline,
       addNewsForm.value.content,
       addNewsForm.value.category,
       new Date(addNewsForm.value.date).getTime(),
-      isEditMode && news.mediaLink !== undefined
-        ? news.mediaLink
-        : this.appUtil.formatImageName("news_", this.imageToSave),
+      mediaLink,
       addNewsForm.value.mediaType,
       addNewsForm.value.newsSource
     );

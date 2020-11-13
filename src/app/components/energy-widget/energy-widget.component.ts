@@ -4,7 +4,7 @@ import { image } from "d3";
 @Component({
   selector: "app-energy-widget",
   templateUrl: "./energy-widget.component.html",
-  styleUrls: ["./energy-widget.component.scss"],
+  styleUrls: ["./energy-widget.component.scss"]
 })
 export class EnergyWidgetComponent implements OnInit {
   EnergyConsumption: number;
@@ -23,8 +23,7 @@ export class EnergyWidgetComponent implements OnInit {
   numberofdieselcans: number;
   roundoffnumberofpetrolcans: number;
   units = ["KW", "KWH"];
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit() {}
 

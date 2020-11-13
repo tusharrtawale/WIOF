@@ -13,6 +13,10 @@
   text-align: justify;
   text-justify: inter-word;
   color: $dark-color;
+
+  strong {
+    font-size: 16px;
+  }
 }
 
 .show-test-button {
@@ -35,4 +39,18 @@
   &:hover {
     opacity: 0.8;
   }
+}
+
+.eq-param-desc p {
+  padding: 5px 10px;
+  border: 1px solid lightgrey;
+  background: white;
+  border-radius: 15px;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+.eq-param-heading {
+  padding-left: 10px;
+  padding-bottom: 10px;
 }

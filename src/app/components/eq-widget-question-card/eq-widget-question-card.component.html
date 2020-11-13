@@ -22,52 +22,43 @@
   </div>
 </div>
 
-<ion-button
-  fill="solid"
-  class="ion-margin-top"
-  color="spirit"
-  *ngIf="!showResult"
-  (click)="onSubmit()"
-  >Submit</ion-button
->
+<div class="ion-text-center">
+  <ion-button
+    fill="solid"
+    class="ion-margin-top"
+    color="spirit"
+    *ngIf="!showResult"
+    (click)="onSubmit()"
+    >Submit</ion-button
+  >
+</div>
 
 <div *ngIf="showResult">
   <p class="eq-meter-heading">Your emotional intelligence is:</p>
   <ion-row class="result-box">
     <ion-col size="6">
-      <p class="eq-meter-heading">Attention:</p>
-      <!-- <app-eq-widget-result
-        class="result1"
-        [percent]="results[0]"
-        [msg]="result1msg"
-      >
-      </app-eq-widget-result> -->
+      <p class="eq-meter-heading">Attention: {{ this.results[0] | number: "1.0-2"}}%</p>
       <app-eq-widget-test [gpr]="['m', '1', results[0]]"></app-eq-widget-test>
     </ion-col>
     <ion-col size="6">
-      <p class="eq-meter-heading">Clarity:</p>
-      <!-- <app-eq-widget-result
-        class="result2"
-        [percent]="results[1]"
-        [msg]="result2msg"
-      ></app-eq-widget-result> -->
+      <p class="eq-meter-heading">Clarity: {{ this.results[1] | number: "1.0-2"}}%</p>
       <app-eq-widget-test [gpr]="['m', '2', results[1]]"></app-eq-widget-test>
     </ion-col>
     <ion-col size="6" offset="3">
-      <p class="eq-meter-heading">Reparation:</p>
-      <!-- <app-eq-widget-result
-        class="result3"
-        [percent]="results[2]"
-        [msg]="result3msg"
-      ></app-eq-widget-result> -->
+      <p class="eq-meter-heading">Reparation: {{ this.results[2] | number: "1.0-2"}}%</p>
       <app-eq-widget-test [gpr]="['m', '3', results[2]]"></app-eq-widget-test>
     </ion-col>
   </ion-row>
   <ion-row>
     <ion-col size="12" class="eq-param-desc">
-      <p>Attention: I am able to feel and express feelings properly.</p>
-      <p>Clarity: I understand my states well.</p>
-      <p>Reparation: I am able to regulate emotional states correctly.</p>
+      <p>Attention: {{ result1msg }}</p>
+      <p>Clarity: {{ result2msg }}</p>
+      <p>Reparation: {{ result3msg }}</p>
     </ion-col>
   </ion-row>
+  <div class="ion-text-center">
+    <ion-button color="spirit" (click)="showResult = false"
+      >Take Again</ion-button
+    >
+  </div>
 </div>

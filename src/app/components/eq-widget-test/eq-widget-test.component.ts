@@ -40,15 +40,6 @@ export class EqWidgetTestComponent implements OnInit {
     }
   }
 
-  // generateMessage(){
-  //   if(!this.food){
-  //     this.message="Please select a food to find its pH value."
-  //   }
-  //   else if(this.food){
-  //     this.message=`ph Level of ${this.food.name} is ${this.food.value}`;
-  //   }
-  // }
-
   positionArrow() {
     this.arrowPositionBracket = this.gpr[2] + "%";
   }

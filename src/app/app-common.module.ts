@@ -33,6 +33,7 @@ import { VideoCardComponent } from "./components/video-card/video-card.component
 import { BreakingNewsComponent } from "./components/breaking-news/breaking-news.component";
 import { SocialShareHomeComponent } from "./components/social-share-home/social-share-home.component";
 import { EnvCalDialogComponent } from "./components/env-cal-dialog/env-cal-dialog.component";
+import { TakeActionContentComponent } from "./components/take-action-content/take-action-content.component";
 
 @NgModule({
   imports: [
@@ -78,7 +79,8 @@ import { EnvCalDialogComponent } from "./components/env-cal-dialog/env-cal-dialo
     BreakingNewsComponent,
     EqWidgetTestComponent,
     SocialShareHomeComponent,
-    EnvCalDialogComponent
+    EnvCalDialogComponent,
+    TakeActionContentComponent
   ],
   declarations: [
     HeaderComponent,
@@ -110,7 +112,8 @@ import { EnvCalDialogComponent } from "./components/env-cal-dialog/env-cal-dialo
     BreakingNewsComponent,
     EqWidgetTestComponent,
     SocialShareHomeComponent,
-    EnvCalDialogComponent
+    EnvCalDialogComponent,
+    TakeActionContentComponent
   ],
   providers: []
 })

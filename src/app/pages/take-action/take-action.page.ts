@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ELEMENTS } from "../../app.constants";
-import { CARDCONTENTS } from "./card-contents";
+import { TAKE_ACTION_DATA } from "./take-action-data";
 import { PAGE_CATEGORY_MAP } from "../../app.constants";
 import { ActivatedRoute } from "@angular/router";
 
@@ -10,44 +10,28 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ["./take-action.page.scss"]
 })
 export class TakeActionPage implements OnInit {
-  cardContent: any = CARDCONTENTS.EARTH;
   ELEMENTS = ELEMENTS;
   element: string;
+  actions = TAKE_ACTION_DATA;
+  selectedElement = "earth";
+  elements = ["earth", "energy", "air", "water", "spirit"];
+
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
     console.log(this.element);
     this.route.paramMap.subscribe((params) => {
       if (params.has("element")) {
-        this.element = params.get("element");
-        console.log(this.element);
-        this.selectElement(this.element);
+        this.selectedElement = params.get("element");
       }
     });
   }
 
-  selectElement(element: string) {
-    switch (element) {
-      case ELEMENTS.EARTH: {
-        this.cardContent = CARDCONTENTS.EARTH;
-        break;
-      }
-      case ELEMENTS.ENERGY: {
-        this.cardContent = CARDCONTENTS.ENERGY;
-        break;
-      }
-      case ELEMENTS.AIR: {
-        this.cardContent = CARDCONTENTS.AIR;
-        break;
-      }
-      case ELEMENTS.WATER: {
-        this.cardContent = CARDCONTENTS.WATER;
-        break;
-      }
-      case ELEMENTS.SPIRIT: {
-        this.cardContent = CARDCONTENTS.SPIRIT;
-        break;
-      }
-    }
+  onSelectTab(event) {
+    this.selectedElement = this.elements[event.index];
+  }
+
+  isSelectedTab(tabLabel: string) {
+    return tabLabel.toLowerCase() === this.selectedElement;
   }
 }

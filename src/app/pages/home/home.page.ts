@@ -16,9 +16,16 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     // inauguration code
-    this.ribbonCut = !!localStorage.getItem("ribbonCut");
+    const ribbonCut = localStorage.getItem("ribbonCut");
+    this.ribbonCut = ribbonCut === "true" ? true : false;
+    const curtainEl = document.getElementById("curtain-id");
+    if (this.ribbonCut && curtainEl) {
+      curtainEl.style.display = "none";
+    }
 
-    const privacyConsentAccepted = localStorage.getItem("privacyConsentAccepted");
+    const privacyConsentAccepted = localStorage.getItem(
+      "privacyConsentAccepted"
+    );
     this.viewConsentPopup = privacyConsentAccepted === "true" ? false : true;
   }
 

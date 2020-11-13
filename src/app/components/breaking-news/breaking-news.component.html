@@ -1,5 +1,5 @@
 <!-- <ion-card *ngIf="newsList && newsList.length > 0"> -->
-<ion-card>
+<ion-card *ngIf="newsList.length > 0">
   <ion-card-header class="ion-align-center wiof-slider-header">
     <ion-row>
       <ion-col class="title-text" size="12">Breaking NEWS</ion-col>
@@ -30,7 +30,18 @@
                   </h2>
                   <p [innerHTML]="news.content"></p>
                   <p *ngIf="news.newsSource">
-                    <a [href]="news.newsSource" target="blank">Read More</a>
+                    <a
+                      [href]="news.newsSource"
+                      *ngIf="news.mediaType === 'image'"
+                      target="blank"
+                      >Read More</a
+                    >
+                    <a
+                      [href]="news.newsSource"
+                      *ngIf="news.mediaType === 'video'"
+                      target="blank"
+                      >Watch Now</a
+                    >
                   </p>
                 </ion-col>
               </ion-row>

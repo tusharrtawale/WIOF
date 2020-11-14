@@ -52,3 +52,7 @@
 .take-action-wrapper ::ng-deep .mat-tab-label-container {
   padding-top: 15px;
 }
+
+.take-action-wrapper ::ng-deep .mat-ink-bar {
+  visibility: hidden !important;
+}

@@ -7,7 +7,7 @@ import { Component, OnInit } from "@angular/core";
 })
 export class WaterWidgetComponent implements OnInit {
   waterWidgetItems: { name: string; icon: string; url: string }[];
-  about:boolean=false;
+  about: boolean = false;
   constructor() {}
 
   ngOnInit() {

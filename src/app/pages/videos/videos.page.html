@@ -42,7 +42,10 @@
       </ion-row>
     </ion-grid>
 
-    <p *ngIf="videosList && videosList.length === 0" class="no-videos-container">
+    <p
+      *ngIf="videosList && videosList.length === 0"
+      class="no-videos-container"
+    >
       We could not find videos under
       <strong>{{ this.category }}</strong> category!
     </p>

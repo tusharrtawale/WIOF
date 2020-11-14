@@ -65,6 +65,13 @@ export class AboutusPage implements OnInit {
     socialLink:"https://www.linkedin.com/in/priti-thankar-9976789/"
   },
   {
+    serialNo:16,
+    name:"Sneha Bijlani",
+    imageLink:"../../../assets/profiles/sneha_bijlani.jpg",
+    bio:"Sneha Bijlani is a Digital Marketing Professional and the Co-Founder of WIOF. She has been responsible for doing the initial mind-mapping of the website structure and content. She is also the reviewer of most of the blogs and ensures that they are meeting SEO standards. She is a Certified Digital Marketer from Lavenir Institute of Professional Studies. Her interests also include Content Writing, Psychology, Consumer Behavior, NLP, Social Etiquttes, Soft Skills and Public Speaking.",
+    socialLink:"https://www.linkedin.com/in/snehabijlani29/"
+  },
+  {
     serialNo:8,
     name:"Amrita",
     imageLink:"../../../assets/profiles/amrita.jpg",
@@ -119,8 +126,29 @@ export class AboutusPage implements OnInit {
     imageLink:"../../../assets/profiles/rahul_banerjee.jpg",
     bio:"Rahul Banerjee, an IT professional with keen interest in latest technology trends, is also very much grounded with our Socio-economic Issues, specifically very much alert about the environmental challenges but more enthusiastic on the solutions, however small they are. An amateur storyteller, mainly on human relations, with a passion to bring them to a wider reach of common people. Dreams of becoming an honest political adminstrator to serve the country.",
     socialLink:"https://www.linkedin.com/in/rahul-banerjee-35714921/"
+  },
+  {
+    serialNo:17,
+    name:"Neelu Tiwari",
+    imageLink:"../../../assets/profiles/neelu_tiwari.jpg",
+    bio:"Neelu Tiwari has contributed in initial technical analysis and feasibility of technical options to choose from to build the website with architectural design diagrams and PLM slection tool to setup the website program flow. She also has contributed in few blogs on vegan diet inspired from Sadhguru and yogic science. She is also a Certified Scrum Master from Scrum Alliance who has worked technically on several agile projects. She has done her Masters in Computer Applications from Pune University.",
+    socialLink:"https://www.linkedin.com/in/neelu-tiwari-45502617/"
+  },
+  {
+    serialNo:18,
+    name:"Prachi Khurana",
+    imageLink:"../../../assets/profiles/prachi_khurana.jpg",
+    bio:"Prachi Khurana is an IT professional  and has worked with multiple clients across industries. She is an open minded person which helps her experience new thoughts and ideas, this has strengthened her and her beliefs. She has volunteered with non profit events organisations involving children and their education. She is concerned with the way humans interact with the environment and affect it. She is a firm believer that each one of us with an extra step can make this world a better place to live in - together we can and we will.  She is ISTQB certified and has tested WIOF website for us as an independent tester.  She has done her BTech in Computer Science from Maharishi Dayanand University.",
+    socialLink:"https://www.linkedin.com/in/prachi-testautomation"
+  },
+  {
+    serialNo:19,
+    name:"Madhura Hambarde",
+    imageLink:"../../../assets/profiles/madhura_hambarde.jpg",
+    bio:"Madhura Hambarde is a Senior Systems Engineer by profession.  She has interest in the Air Pollution area and has written blogs pertaining to it on the Air Page of WIOF. She has also worked with the Eco Club of Infosys Pune in collaboration with Indian Institute of Tropical Meteorology, Pune (makers of the SAFAR AQI Monitoring App) to help monitor pollution in the Hinjewadi area by getting Air Monitoring Device from IITM to the Infosys Campus last year.  She has done her Bachelors in Electrical, Electronics and Communication Engineering from Pune University and is an Internet of Things (IOT) Enthusiast.",
+    socialLink:"https://www.linkedin.com/in/madhura-hambarde-166718155/"
   }
-  
+
 
   ]
   constructor() {}

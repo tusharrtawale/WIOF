@@ -22,6 +22,12 @@
   &.spirit {
     background-color: rgba($spirit-color, $tint-fraction);
   }
+
+  .no-blogs-container {
+    margin: 0;
+    padding: 20px;
+    min-height: 750px;
+  }
 }
 
 .header-text {
@@ -29,10 +35,6 @@
   transform: translateY(25%);
   margin: 0px;
   font-weight: 400;
-}
-
-.rect-button{
-  top:10px;
 }
 
 .blogs-header {

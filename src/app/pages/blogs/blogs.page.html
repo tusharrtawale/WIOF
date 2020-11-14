@@ -49,10 +49,9 @@
       </ion-row>
     </ion-grid>
 
-    <p *ngIf="blogList && blogList.length === 0" class="ion-padding">
+    <p *ngIf="blogList && blogList.length === 0" class="no-blogs-container">
       We could not find blogs under
-      <strong>{{ this.category }}</strong> category! You want to write one?
-      <a href="#">click here</a>.
+      <strong>{{ this.category }}</strong> category!
     </p>
   </div>
 

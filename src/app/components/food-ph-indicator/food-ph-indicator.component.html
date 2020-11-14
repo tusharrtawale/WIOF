@@ -6,7 +6,8 @@
     <ion-grid>
       <ion-row>
         <ion-col size="12" class="text">
-          <p style="text-align: justify;">
+          <a style="cursor: pointer;" (click)="about=!about"> About Food pH Indicator <ion-icon *ngIf="!about" name="chevron-down-outline"></ion-icon><ion-icon *ngIf="about" name="chevron-up-outline"></ion-icon></a>
+          <p *ngIf="about" style="text-align: justify;">
             The human body is built to naturally maintain a healthy balance of acidity and alkalinity, called a pH balance. One way we can help our body maintain a healthy pH balance is through our diet. A diet low in acid producing foods can help maintain a healthy body pH balance. 
             The scale below will tell you the pH balance of commonly consumed foods.
           </p>

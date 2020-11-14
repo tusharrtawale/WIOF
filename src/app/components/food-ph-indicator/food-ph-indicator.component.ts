@@ -9,6 +9,7 @@ export class FoodPhIndicatorComponent implements OnInit {
   foodOptions: any[];
   selectedFood: any;
   bridgeVariable: any = { name: "Default", value: 8 };
+  about:boolean=false;
   constructor() {}
 
   ngOnInit() {

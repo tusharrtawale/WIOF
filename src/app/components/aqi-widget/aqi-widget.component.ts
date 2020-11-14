@@ -14,6 +14,7 @@ export class AqiWidgetComponent implements OnInit {
   searchLocationTabSelect: boolean = false;
   showAqiScorecard: boolean = true;
   searchLocationResults;
+  about:boolean=false;
 
   constructor(private aqiService: AqiWidgetService) {}
 

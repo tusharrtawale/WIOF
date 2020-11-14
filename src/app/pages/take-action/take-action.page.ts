@@ -10,64 +10,30 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ["./take-action.page.scss"]
 })
 export class TakeActionPage implements OnInit {
-//   ELEMENTS = ELEMENTS;
-//   element: string;
-//   actions = TAKE_ACTION_DATA;  
-//   selectedElement:string;
-//   elements = ["earth", "energy", "air", "water", "spirit"];
-// constructor(private route: ActivatedRoute) {
-//     const url_array = this.route.snapshot["_routerState"].url.split("/");
-//     this.selectElement(url_array[2]);
-//   }
+  ELEMENTS = ELEMENTS;
+  element: string;
+  actions = TAKE_ACTION_DATA;
+  selectedElement = "earth";
+  elemetTabIndex: number;
+  elements = ["earth", "energy", "air", "water", "spirit"];
 
-//   ngOnInit() {
-//     console.log(this.element);
-//   }
+  constructor(private route: ActivatedRoute) {
+    const url_array = this.route.snapshot["_routerState"].url.split("/");
+    this.selectedElement = url_array[2];
+    this.onLoadGetElementIndex();
+  }
 
-//   selectElement(element){
-//     this.selectedElement=element;
-//   }
+  ngOnInit() {}
 
-//   onSelectTab(event) {
-//     this.selectedElement = this.elements[event.index];
-//   }
+  onLoadGetElementIndex() {
+    this.elemetTabIndex = this.elements.indexOf(this.selectedElement);
+  }
 
-//   isSelectedTab(tabLabel: string) {
-//     return tabLabel.toLowerCase() === this.selectedElement;
-//   }
-ELEMENTS = ELEMENTS;
-element: string;
-actions = TAKE_ACTION_DATA;
-selectedElement = "earth";
-elemetTabIndex:number;
-elements = ["earth", "energy", "air", "water", "spirit"];
+  onSelectTab(event) {
+    this.selectedElement = this.elements[event.index];
+  }
 
-constructor(private route: ActivatedRoute) {
-  // console.log(this.element);
-  // this.route.paramMap.subscribe((params) => {
-  //   if (params.has("element")) {
-  //     this.selectedElement = params.get("element");
-  //   }
-  // });
-
-  const url_array = this.route.snapshot["_routerState"].url.split("/");
-  this.selectedElement =url_array[2];
-  this.onLoadGetElementIndex();
-}
-
-ngOnInit() {
-  
-}
-
-onLoadGetElementIndex(){
-  this.elemetTabIndex = this.elements.indexOf(this.selectedElement);
-}
-
-onSelectTab(event) {
-  this.selectedElement = this.elements[event.index];
-}
-
-isSelectedTab(tabLabel: string) {
-  return tabLabel.toLowerCase() === this.selectedElement;
-}
+  isSelectedTab(tabLabel: string) {
+    return tabLabel.toLowerCase() === this.selectedElement;
+  }
 }

@@ -4,52 +4,45 @@ $fontcolor: #fff;
 
 .wiof-social-share-button {
   position: absolute;
-  padding: 10px;
-  width: 55px;
-  background-color: #8383835e;
+  padding: 8px;
+  width: 43px;
+  //background-color: #8383835e;
+  background-color: white;
   border-bottom-left-radius: 15px;
   border-top-left-radius: 15px;
   cursor: pointer;
   top: 20vh;
   right: 0px;
   z-index: 100;
-  transition: 0.4s;
-  transition-delay: 0.5s;
+  box-shadow: 1px 1px 20px lightgrey;
 
   &.inactive {
     left: -40px;
     opacity: 0%;
   }
 
-  //   @media only screen and (max-width: 767px) {
-  //     height: 120px;
-  //     width: 35px;
-  //   }
-}
+  @media screen and (max-width: 600px) {
+    width: 35px;
+    top: 22vh;
+  }
 
-.wiof-social-share-container {
-  //   transform: rotate(-90deg);
-  //   color: $fontcolor;
-  //   width: 100px;
-  //   position: relative;
-  //   top: 40px;
-  //   left: -58px;
-  //   margin: 0px;
-  //   font-weight: bold;
-  //   background: #fff;
-  //   padding: 5px;
-  //   text-align: right;
-
-  //   @media only screen and (max-width: 767px) {
-  //     top: 20px;
-  //     font-size: 14px;
-  //   }
+  @media screen and (min-width: 600px) and (max-width: 767px) {
+    width: 40px;
+  }
 }
 
 /* Share Buttons */
 
 .wiof-social-share-container a ion-icon {
-  font-size: 32px;
+  font-size: 30px;
+
+  @media screen and (max-width: 600px) {
+    font-size: 22px;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 767px) {
+    font-size: 28px;
+  }
 }
 
 .wiof-social-share-container a {

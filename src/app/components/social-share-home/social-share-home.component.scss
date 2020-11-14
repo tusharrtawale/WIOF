@@ -5,16 +5,16 @@ $fontcolor: #fff;
 .wiof-social-share-button {
   position: absolute;
   padding: 8px;
-  width: 43px;
-  //background-color: #8383835e;
-  background-color: white;
-  border-bottom-left-radius: 15px;
-  border-top-left-radius: 15px;
+  width: 45px;
+  background-color: #8383835e;
+  // background-color: white;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
   cursor: pointer;
-  top: 20vh;
-  right: 0px;
+  top: 45vh;
+  left: 0px;
   z-index: 100;
-  box-shadow: 1px 1px 20px lightgrey;
+  //box-shadow: 1px 1px 20px lightgrey;
 
   &.inactive {
     left: -40px;
@@ -22,12 +22,11 @@ $fontcolor: #fff;
   }
 
   @media screen and (max-width: 600px) {
-    width: 35px;
-    top: 22vh;
+    width: 40px;
   }
 
   @media screen and (min-width: 600px) and (max-width: 767px) {
-    width: 40px;
+    width: 43px;
   }
 }
 
@@ -37,7 +36,7 @@ $fontcolor: #fff;
   font-size: 30px;
 
   @media screen and (max-width: 600px) {
-    font-size: 22px;
+    font-size: 25px;
   }
 
   @media screen and (min-width: 600px) and (max-width: 767px) {

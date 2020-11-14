@@ -6,7 +6,7 @@
       <app-back-button class="back-button"></app-back-button>
     </ion-col>
   </ion-row>
-  <mat-tab-group (selectedTabChange)="onSelectTab($event)">
+  <mat-tab-group [selectedIndex]="elemetTabIndex" (selectedTabChange)="onSelectTab($event)">
     <mat-tab *ngFor="let action of actions" [ngClass]="selectedElement">
       <ng-template mat-tab-label>
         <img

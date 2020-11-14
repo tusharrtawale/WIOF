@@ -10,28 +10,64 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ["./take-action.page.scss"]
 })
 export class TakeActionPage implements OnInit {
-  ELEMENTS = ELEMENTS;
-  element: string;
-actions = TAKE_ACTION_DATA;  
+//   ELEMENTS = ELEMENTS;
+//   element: string;
+//   actions = TAKE_ACTION_DATA;  
+//   selectedElement:string;
+//   elements = ["earth", "energy", "air", "water", "spirit"];
+// constructor(private route: ActivatedRoute) {
+//     const url_array = this.route.snapshot["_routerState"].url.split("/");
+//     this.selectElement(url_array[2]);
+//   }
+
+//   ngOnInit() {
+//     console.log(this.element);
+//   }
+
+//   selectElement(element){
+//     this.selectedElement=element;
+//   }
+
+//   onSelectTab(event) {
+//     this.selectedElement = this.elements[event.index];
+//   }
+
+//   isSelectedTab(tabLabel: string) {
+//     return tabLabel.toLowerCase() === this.selectedElement;
+//   }
+ELEMENTS = ELEMENTS;
+element: string;
+actions = TAKE_ACTION_DATA;
 selectedElement = "earth";
+elemetTabIndex:number;
+elements = ["earth", "energy", "air", "water", "spirit"];
+
 constructor(private route: ActivatedRoute) {
-    const url_array = this.route.snapshot["_routerState"].url.split("/");
-    this.selectElement(url_array[2]);
-  }
+  // console.log(this.element);
+  // this.route.paramMap.subscribe((params) => {
+  //   if (params.has("element")) {
+  //     this.selectedElement = params.get("element");
+  //   }
+  // });
 
-  ngOnInit() {
-    console.log(this.element);
-  }
+  const url_array = this.route.snapshot["_routerState"].url.split("/");
+  this.selectedElement =url_array[2];
+  this.onLoadGetElementIndex();
+}
 
-  selectElement(element){
-    this.selectedElement=element;
-  }
+ngOnInit() {
+  
+}
 
-  // onSelectTab(event) {
-  //   this.selectedElement = this.elements[event.index];
-  // }
+onLoadGetElementIndex(){
+  this.elemetTabIndex = this.elements.indexOf(this.selectedElement);
+}
 
-  // isSelectedTab(tabLabel: string) {
-  //   return tabLabel.toLowerCase() === this.selectedElement;
-  // }
+onSelectTab(event) {
+  this.selectedElement = this.elements[event.index];
+}
+
+isSelectedTab(tabLabel: string) {
+  return tabLabel.toLowerCase() === this.selectedElement;
+}
 }

@@ -22,10 +22,12 @@
   &.spirit {
     background-color: rgba($spirit-color, $tint-fraction);
   }
-}
 
-.rect-button{
-  top:10px;
+  .no-videos-container {
+    margin: 0;
+    padding: 20px;
+    min-height: 750px;
+  }
 }
 
 .header-text {

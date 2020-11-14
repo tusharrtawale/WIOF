@@ -26,7 +26,7 @@ export class FirePage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.blogs = this.blogService.getBlogs(ELEMENT_BLOG_CATEGORY.FIRE);
+    this.blogs = this.blogService.getBlogs(ELEMENT_BLOG_CATEGORY.Energy);
     this.videos = this.videoService.getYoutubePlaylist(
       ELEMENT_VIDEOS_PLAYLIST_ID.FIRE
     );

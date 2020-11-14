@@ -1,9 +1,9 @@
 $bhue: 80;
 $bsat: 60;
 $blig: 55;
-$light: hsl($bhue, calc($bsat * 1%), calc($blig * 1%));
-$dark: hsl($bhue, calc($bsat * 1%), calc($blig * 1% - 15%));
-$darkest: hsl($bhue, calc($bsat * 1%), calc($blig * 1% - 35%));
+$light: hsl($bhue, calc(#{$bsat} * 1%), calc(#{$blig} * 1%));
+$dark: hsl($bhue, calc(#{$bsat} * 1%), calc(#{$blig} * 1% - 15%));
+$darkest: hsl($bhue, calc(#{$bsat} * 1%), calc(#{$blig} * 1% - 35%));
 
 #container {
   text-align: center;

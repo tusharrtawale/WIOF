@@ -42,19 +42,19 @@
 <div *ngIf="showResult">
   <p class="eq-meter-heading">Your emotional intelligence is:</p>
   <ion-row class="result-box">
-    <ion-col size="6">
+    <ion-col size="12" size-md="6">
       <p class="eq-meter-heading">
         Attention: {{ this.results[0] | number: "1.0-2" }}%
       </p>
       <app-eq-widget-test [gpr]="['m', '1', results[0]]"></app-eq-widget-test>
     </ion-col>
-    <ion-col size="6">
+    <ion-col size="12" size-md="6">
       <p class="eq-meter-heading">
         Clarity: {{ this.results[1] | number: "1.0-2" }}%
       </p>
       <app-eq-widget-test [gpr]="['m', '2', results[1]]"></app-eq-widget-test>
     </ion-col>
-    <ion-col size="6" offset="3">
+    <ion-col size="12" size-md="6" offset-md="3">
       <p class="eq-meter-heading">
         Reparation: {{ this.results[2] | number: "1.0-2" }}%
       </p>

@@ -41,34 +41,26 @@ export class EqWidgetTestComponent implements OnInit {
   }
 
   positionArrow() {
-    this.arrowPositionBracket = this.gpr[2] + "%";
+    this.arrowPositionBracket = "calc(" + this.gpr[2] + "% - 5px)";
   }
 
-  updateRanges() {
-    if (this.gpr[0] == "m" && this.gpr[1] == "1") {
-      this.firstBlockWidth = "52.5%";
-      this.secondBlockWidth = "27.5%";
-      this.thirdBlockWidth = "20%";
-    } else if (this.gpr[0] == "f" && this.gpr[1] == "1") {
-      this.firstBlockWidth = "60%";
-      this.secondBlockWidth = "27.5%";
-      this.thirdBlockWidth = "12.5%";
-    } else if (this.gpr[0] == "m" && this.gpr[1] == "2") {
-      this.firstBlockWidth = "62.5%";
-      this.secondBlockWidth = "25%";
-      this.thirdBlockWidth = "12.5%";
-    } else if (this.gpr[0] == "f" && this.gpr[1] == "2") {
-      this.firstBlockWidth = "57.5%";
-      this.secondBlockWidth = "27.5%";
-      this.thirdBlockWidth = "15%";
-    } else if (this.gpr[0] == "m" && this.gpr[1] == "3") {
-      this.firstBlockWidth = "57.5%";
-      this.secondBlockWidth = "30%";
-      this.thirdBlockWidth = "12.5%";
-    } else if (this.gpr[0] == "f" && this.gpr[1] == "3") {
-      this.firstBlockWidth = "57.5%";
-      this.secondBlockWidth = "27.5%";
-      this.thirdBlockWidth = "15%";
+  blockWidths = {
+    m: {
+      "1": ["52.5%", "27.5%", "20%"],
+      "2": ["60%", "27.5%", "12.5%"],
+      "3": ["62.5%", "25%", "12.5%"]
+    },
+    f: {
+      "1": ["57.5%", "27.5%", "15%"],
+      "2": ["57.5%", "30%", "12.5%"],
+      "3": ["57.5%", "27.5%", "15%"]
     }
+  };
+
+  updateRanges() {
+    const blockWidth = this.blockWidths[this.gpr[0]][this.gpr[1]];
+    this.firstBlockWidth = blockWidth[0];
+    this.secondBlockWidth = blockWidth[1];
+    this.thirdBlockWidth = blockWidth[2];
   }
 }

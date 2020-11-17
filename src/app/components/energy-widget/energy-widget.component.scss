@@ -1,0 +1,92 @@
+@import "../../wiof-custom-theming.scss";
+
+.wiof-select {
+  color: $dark-color;
+}
+
+.wiof-fire-widget-card-header {
+  background-color: $energy-color;
+  border-bottom: white 2px solid;
+}
+
+.inputbar::-webkit-input-placeholder {
+  font-size: x-small;
+}
+
+#Diesel-main {
+  position: relative;
+}
+
+#Petrol-main {
+  position: relative;
+}
+
+#Diesel-sub {
+}
+
+@media only screen and (max-width: 600px) {
+  #Diesel-sub {
+  }
+
+  #Petrol-sub {
+  }
+}
+
+#Petrol-sub {
+}
+
+#Petrol {
+}
+
+body {
+  overflow: auto;
+}
+
+.wiof-fire-widget-card-background {
+  background-color: rgba($energy-color, $tint-fraction);
+}
+
+.wiof-primary-button {
+  width: 180px;
+  border-radius: 25px;
+  font-size: large;
+  height: 40px;
+  background: #2b2b2b;
+  color: white;
+  margin-right: 4px;
+}
+
+.energy-widget-content {
+  height: 515px;
+  overflow: auto;
+}
+
+.pump-station {
+  height: 225px;
+  width: 200px;
+  margin: 15px;
+
+  .litresText {
+    position: absolute;
+    top: 15%;
+    width: 80px;
+    text-align: center;
+    left: 55px;
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  .pump-image {
+    height: 100%;
+  }
+
+  .label {
+    position: absolute;
+    bottom: 30%;
+    left: 65px;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    text-shadow: 1px 1px 5px #000;
+  }
+}

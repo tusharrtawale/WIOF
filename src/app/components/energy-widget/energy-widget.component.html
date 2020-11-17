@@ -1,0 +1,83 @@
+<ion-card class="wiof-fire-widget-card-background widget-height">
+  <ion-card-header class="wiof-fire-widget-card-header">
+    <ion-card-title> Energy Widget </ion-card-title>
+  </ion-card-header>
+  <ion-card-content class="energy-widget-content">
+    <ion-grid>
+      <ion-row style="padding-bottom: 10px">
+        <ion-col>
+          <p style="text-align: justify; color: #2d2d2d">
+            Widget to analyse your energy needs and assess the level of
+            sustainability needed by you to save for the future ... An
+            instrument for you to become the change you want in the eco-system.
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12" size-md="8" size-lg="12" size-xl="8">
+          <ion-item color="energy">
+            <ion-input
+              [(ngModel)]="EnergyConsumption"
+              placeholder="Monthly Energy Consumption"
+            ></ion-input>
+          </ion-item>
+          <p *ngIf="Consumptionnull" style="color: red">
+            Please enter a valid consumption
+          </p>
+        </ion-col>
+        <ion-col size="12" size-md="4" size-lg="12" size-xl="4">
+          <ion-item color="energy">
+            <ion-label>Select Unit</ion-label>
+            <ion-select interface="popover" [(ngModel)]="Selectedunit">
+              <ion-select-option *ngFor="let unit of units" [value]="unit">{{
+                unit | titlecase
+              }}</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <p *ngIf="unitnull" style="color: red">Please select a unit</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button color="energy" (click)="CalculateCO2()">
+            <ion-icon name="calculator-outline"></ion-icon> Calculate
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="pump-station" *ngIf="buttonClicked">
+            <span class="litresText"
+              >{{ litresofPetrol | number: "1.0-0" }} litres</span
+            >
+            <img
+              src="../../../assets/gas-station-icon.jpg"
+              class="pump-image"
+            />
+            <div class="label">Petrol</div>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="pump-station" *ngIf="buttonClicked">
+            <span class="litresText"
+              >{{ litresofDiesel | number: "1.0-0" }} litres</span
+            >
+            <img
+              src="../../../assets/gas-station-icon.jpg"
+              class="pump-image"
+            />
+            <div class="label">Diesel</div>
+          </div>
+        </ion-col>
+        <!-- <ion-col>
+          <div id="Diesel-main" class="pump-station">
+            <div id="Diesel" class="litresText" *ngIf="buttonClicked">
+              {{ litresofDiesel | number: "1.0-0" }} litres
+            </div>
+            <div id="Diesel-sub" class="label">Diesel</div>
+          </div>
+        </ion-col> -->
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>

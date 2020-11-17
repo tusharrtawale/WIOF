@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/admin-dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Occasion</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="success" fill="solid" size="large" (click)="onSubmit()"
+        >Save</ion-button
+      >
+      <ion-button
+        color="medium"
+        fill="clear"
+        size="large"
+        routerLink="/admin-dashboard"
+        >Cancel</ion-button
+      >
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="addOccasionForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-xs="12" size-md="12"
+          ><ion-item>
+            <ion-label position="floating">Occasion</ion-label>
+            <ion-input formControlName="occasion"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size-xs="12" size-md="6"
+          ><ion-item>
+            <ion-label position="floating">Day</ion-label>
+            <ion-input formControlName="day"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size-xs="12" size-md="6"
+          ><ion-item>
+            <ion-label position="floating">Month</ion-label>
+            <ion-select formControlName="month">
+              <ion-select-option
+                [value]="i"
+                *ngFor="let month of months; let i = index;"
+                >{{ month }}</ion-select-option
+              >
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size-xs="12"
+          ><ion-item>
+            <ion-label position="stacked">Occasion Image URL</ion-label>
+            <ion-input
+              type="file"
+              accept="image/*"
+              (change)="onFileSelected($event)"
+              formControlName="imageName"
+            ></ion-input>
+            <div><ion-img [src]="imageToDisplay"></ion-img></div>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size-xs="12">
+          <ion-item>
+            <ion-label position="floating"
+              >Special Event's Short Description</ion-label
+            >
+            <ion-textarea
+              formControlName="description"
+              rows="2"
+              auto-grow="true"
+            >
+            </ion-textarea>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size-xs="12" size-md="6"
+          ><ion-item>
+            <ion-label position="floating">External Link</ion-label>
+            <ion-input formControlName="showMoreLink"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

@@ -1,0 +1,58 @@
+// body { background-color:#555888; font-family:sans-serif; color:#fff; text-align:center }
+
+.wiof-eq-meter {
+  width: 200px;
+  height: 150px;
+  margin: 0px auto;
+}
+.meter-background {
+  position: relative;
+  height: 100px;
+  margin-bottom: 10px;
+  background-color: rgb(241, 222, 198);
+  border-radius: 150px 150px 0 0;
+  overflow: hidden;
+  text-align: center;
+}
+.meter-mask {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  left: 20px;
+  height: 80px;
+  background-color: rgb(90, 164, 233);
+  border-radius: 150px 150px 0 0;
+}
+.meter-percentage {
+  position: absolute;
+  top: 100px;
+  left: -200%;
+  width: 400%;
+  height: 400%;
+  margin-left: 100px;
+  background-color: #00ef93;
+}
+.meter-percentage {
+  transform-origin: top center;
+}
+.meter-min {
+  float: left;
+}
+.meter-max {
+  float: right;
+}
+.meter-value {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.msg-style {
+  text-align: center;
+  font-weight: bold;
+  // position: relative;
+  // top: -270px;
+}

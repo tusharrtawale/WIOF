@@ -1,0 +1,138 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/admin-dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="!isEditMode">{{ pageContent.addPollTitle }}</ion-title>
+    <ion-title *ngIf="isEditMode">{{ pageContent.editPollTitle }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="success" fill="solid" size="large" (click)="onSubmit()"
+        >{{ pageContent.savePollLabel }}</ion-button
+      >
+      <ion-button color="medium" fill="clear" size="large" routerLink=""
+        >{{ pageContent.cancelLabel }}</ion-button
+      >
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="addPollForm" (submit)="onSubmit()">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-xs="12" size-lg="6">
+          <ion-item>
+            <ion-label position="floating"
+              >{{ pageContent.pollQuestionLabel }}</ion-label
+            >
+            <ion-textarea formControlName="question"></ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-xs="12" size-lg="6">
+          <ion-row formArrayName="options">
+            <ion-col
+              size-xs="12"
+              size-md="6"
+              *ngFor="let option of getOptionControls().controls; let i = index"
+            >
+              <ion-item>
+                <ion-label position="floating"
+                  >{{ pageContent.optionLabel }} {{ i + 1 }}</ion-label
+                >
+                <ion-input [formControlName]="i"></ion-input>
+                <span
+                  class="input-close-icon"
+                  title="Remove this option"
+                  (click)="removeOption(i)"
+                  ><ion-icon name="close"></ion-icon
+                ></span>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size-xs="12" size-md="3">
+              <ion-button (click)="addOption()"
+                >{{ pageContent.addOptionBtnLabel }}
+                <ion-icon name="add"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-xs="12" size-md="6" size-lg="3">
+          <mat-form-field appearance="fill">
+            <mat-label>{{ pageContent.publishEndDateLabel }}</mat-label>
+            <input
+              matInput
+              [matDatepicker]="publishStartDatePicker"
+              formControlName="publishStartDate"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="publishStartDatePicker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #publishStartDatePicker></mat-datepicker>
+            <p>
+              <ion-note>{{ pageContent.publishStartDateDesc }}</ion-note>
+            </p>
+          </mat-form-field>
+        </ion-col>
+        <ion-col size-xs="12" size-md="6" size-lg="3">
+          <mat-form-field appearance="fill">
+            <mat-label>{{ pageContent.publishEndDateLabel }}</mat-label>
+            <input
+              matInput
+              [matDatepicker]="publishEndDatePicker"
+              formControlName="publishEndDate"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="publishEndDatePicker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #publishEndDatePicker></mat-datepicker>
+            <p>
+              <ion-note>{{ pageContent.publishEndDateDesc }}</ion-note>
+            </p>
+          </mat-form-field>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="isEditMode">
+        <ion-col size-xs="12" size-md="6">
+          <ion-card>
+            <ion-card-header class="poll-result-header"
+              >{{ pageContent.pollResultTitle }}</ion-card-header
+            >
+            <ion-card-content>
+              <ion-grid>
+                <ion-row>
+                  <ion-col
+                    size-xs="12"
+                    size-lg="6"
+                    class="poll-options"
+                    *ngFor="let option of pollQuestion.options; let i = index"
+                  >
+                    <ion-label>{{ option | titlecase }}</ion-label>
+                    <div class="poll-bar">
+                      <div
+                        class="poll-bar-fill"
+                        [style.width]="optionData['option' + (i + 1)]?.percent + '%'"
+                      >
+                        <span class="poll-percent"
+                          >{{ optionData["option" + (i + 1)]?.percent | number:
+                          "1.0-2" }}%</span
+                        >
+                      </div>
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

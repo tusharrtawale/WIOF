@@ -1,0 +1,28 @@
+<div class="polls-results-container">
+  <div class="title-text">Result</div>
+  <br />
+  <div class="font-size-medium">
+    <p>Poll Question</p>
+    <p style="font-size: large">{{ pollQuestion.question }}</p>
+  </div>
+  <br />
+  <p style="font-size: medium"></p>
+  <div
+    class="poll-options"
+    *ngFor="let option of pollQuestion.options; let i = index"
+  >
+    <ion-label>{{ option | titlecase }}</ion-label>
+    <div class="poll-bar">
+      <div
+        class="poll-bar-fill"
+        [style.width]="optionData['option' + (i + 1)]?.percent + '%'"
+      >
+        <span class="poll-percent"
+          >{{
+            optionData["option" + (i + 1)]?.percent | number: "1.0-2"
+          }}%</span
+        >
+      </div>
+    </div>
+  </div>
+</div>

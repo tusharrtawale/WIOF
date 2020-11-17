@@ -1,0 +1,49 @@
+<div class="food-ph-indicator-meter">
+  <ion-row>
+    <ion-col size="12">
+      <ion-row>
+        <ion-col class="phScale" size="12">
+          <div
+            class="phScaleBlock range0"
+            [style.width]="firstBlockWidth"
+          ></div>
+          <div
+            class="phScaleBlock range1"
+            [style.width]="secondBlockWidth"
+          ></div>
+          <div
+            class="phScaleBlock range2"
+            [style.width]="thirdBlockWidth"
+          ></div>
+        </ion-col>
+        <ion-col class="eqScaleContainer" size="12">
+          <div class="eqScale" style="width: 15%"><p>0%</p></div>
+          <!-- <div class="eqScale"><p>10%</p></div>
+            <div class="eqScale"><p>20%</p></div>
+            <div class="eqScale"><p>30%</p></div>
+            <div class="eqScale"><p>40%</p></div>
+            <div class="eqScale"><p>50%</p></div>
+            <div class="eqScale"><p>60%</p></div>
+            <div class="eqScale"><p>70%</p></div>
+            <div class="eqScale"><p>80%</p></div>
+            <div class="eqScale"><p>90%</p></div> -->
+          <div class="eqScale"><p></p></div>
+          <div class="eqScale"><p></p></div>
+          <div class="eqScale"><p></p></div>
+          <div class="eqScale"><p></p></div>
+          <div class="eqScale" style="width: 15%"><p>50%</p></div>
+          <div class="eqScale"><p></p></div>
+          <div class="eqScale"><p></p></div>
+          <div class="eqScale"><p></p></div>
+          <div class="eqScale"><p></p></div>
+
+          <div class="eqScale" style="width: 20%"><p>100%</p></div>
+        </ion-col>
+        <div class="bracket" [style.left]="arrowPositionBracket"></div>
+      </ion-row>
+    </ion-col>
+    <!-- <ion-col size="12" class="text">
+        {{ message }}
+      </ion-col> -->
+  </ion-row>
+</div>

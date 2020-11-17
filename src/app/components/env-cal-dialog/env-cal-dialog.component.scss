@@ -1,0 +1,50 @@
+@import "../../wiof-custom-theming.scss";
+
+.wiof-env-calendar-dialog {
+  padding: 5px;
+  color: #2d2d2d;
+}
+.image-container {
+  text-align: center;
+}
+.closeButton {
+  text-align: right;
+  cursor: pointer;
+  font-size: medium;
+  font-weight: bold;
+  padding-right: 5px;
+}
+.navigation-arrow-custom-styling {
+  top: 45%;
+}
+
+.occasion-card {
+  margin: 0 auto;
+  border: 1px solid lightgrey;
+
+  .occasion-card-header {
+    float: left;
+    text-align: left;
+    max-width: 200px;
+    padding-bottom: 10px;
+  }
+
+  .occasion-card-month {
+    float: right;
+    padding-right: 30px;
+  }
+
+  .occasion-card-close-btn {
+    float: right;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+  }
+
+  .card-content div {
+    padding-top: 10px;
+  }
+}

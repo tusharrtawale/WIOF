@@ -1,0 +1,41 @@
+<ion-card class="take-action-content">
+  <ion-card-header [class]="selectedElement">
+    <ion-card-title> {{ actionData.tab.title }} </ion-card-title>
+  </ion-card-header>
+  <ion-card-content class="app-take-action-content-container">
+    <p class="action-sub-heading">
+      Below are the actions you can take towards
+      {{ actionData.tab.title }} element.
+    </p>
+    <div>
+      <ion-grid class="actions-container">
+        <ion-row>
+          <ion-col
+            *ngFor="let action of actionData.links"
+            size="12"
+            size-md="6"
+            size-lg="3"
+          >
+            <ion-card class="action-card" [ngClass]="selectedElement">
+              <ion-card-content>
+                <h2 class="ion-padding">
+                  <strong class="action-card-title">{{
+                    action.heading
+                  }}</strong>
+                </h2>
+                <p class="action-card-content ion-padding-horizontal">
+                  {{ action.desc }}
+                </p>
+                <a [href]="action.link" target="_blank"
+                  ><ion-button color="{{ selectedElement }}"
+                    >Take Action</ion-button
+                  ></a
+                >
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </ion-card-content>
+</ion-card>

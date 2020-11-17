@@ -1,0 +1,30 @@
+@media (max-width: 800px) {
+  .menu-lg-toggle {
+    display: none;
+  }
+}
+@media (min-width: 800px) {
+  .menu-button-toggle {
+    display: none;
+  }
+}
+.ios {
+  padding-top: 7px;
+  background-color: white;
+  .wiof-logo {
+    top: -10px;
+  }
+}
+
+.wiof-logo {
+  height: 60px;
+  cursor: pointer;
+  position: absolute;
+  top: -30px;
+  left: 0px;
+  outline: none;
+}
+
+.header-padding {
+  padding: 5px;
+}

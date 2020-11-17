@@ -1,0 +1,58 @@
+@import "../../wiof-custom-theming.scss";
+
+.wiof-spirit-widget-card-header {
+  background-color: $spirit-color;
+  border-bottom: white 2px solid;
+}
+
+.wiof-spirit-widget-card-background {
+  background-color: rgba($spirit-color, $tint-fraction);
+}
+
+.eq-widget-card-content {
+  text-align: justify;
+  text-justify: inter-word;
+  color: $dark-color;
+  height: 500px;
+  overflow: auto;
+
+  strong {
+    font-size: 16px;
+  }
+}
+
+.show-test-button {
+  cursor: pointer;
+}
+
+.eq-user-response {
+  overflow: scroll;
+  height: 500px;
+  display: inline-block;
+  width: 100%;
+}
+
+.answer-text {
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px;
+  color: $dark-color;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.eq-param-desc p {
+  padding: 5px 10px;
+  border: 1px solid lightgrey;
+  background: white;
+  border-radius: 15px;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+.eq-param-heading {
+  padding-left: 10px;
+  padding-bottom: 10px;
+}

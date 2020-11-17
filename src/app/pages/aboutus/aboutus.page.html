@@ -1,0 +1,42 @@
+<app-header></app-header>
+
+<ion-content>
+  <ion-toolbar style="margin-top: 10px">
+    <ion-title>About Us</ion-title>
+    <app-back-button slot="end" class="back-button"></app-back-button>
+  </ion-toolbar>
+  <ion-card
+    *ngFor="let profile of aboutUsProfiles"
+    class="ion-margin profile-card"
+  >
+    <ion-card-content>
+      <ion-row>
+        <ion-col size="12" size-md="2" style="text-align: center">
+          <img class="profile-image" [src]="profile.imageLink" />
+        </ion-col>
+        <ion-col size="12" size-md="10">
+          <ion-card-title class="ion-padding-bottom" class="profile-name">
+            {{profile.name}}
+          </ion-card-title>
+          <p class="profile-bio-text">{{profile.bio}}</p>
+          <p class="linked-in-container">
+            <ion-icon
+              *ngIf="profile.socialLink"
+              name="logo-linkedin"
+              class="logo"
+            ></ion-icon
+            ><a
+              *ngIf="profile.socialLink"
+              [href]="profile.socialLink"
+              target="_blank"
+              class="link"
+            >
+              {{profile.socialLink}}</a
+            >
+          </p>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <app-wiof-footer></app-wiof-footer>
+</ion-content>

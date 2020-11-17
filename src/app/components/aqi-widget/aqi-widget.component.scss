@@ -1,0 +1,108 @@
+@import "../../wiof-custom-theming.scss";
+
+.wiof-spinner {
+  position: absolute;
+  left: 50%;
+}
+
+.wiof-aqi-widget-card-header {
+  background-color: $air-color;
+  border-bottom: $light-color 2px solid;
+}
+
+.wiof-aqi-widget-card-background {
+  background-color: rgba($air-color, $tint-fraction);
+}
+
+.aqi-widget-contents {
+  height: 500px;
+  overflow: auto;
+}
+
+.wiof-primary-button {
+  width: 180px;
+  border-radius: 25px;
+  height: 35px;
+  background: $dark-color;
+  color: $light-color;
+  margin-right: 4px;
+  padding: 2px;
+  font-weight: 600;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.button-icon {
+  vertical-align: bottom;
+  padding-right: 5px;
+}
+
+.wiof-aqi-widget-card-toolbar {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+//adding scroll to search results
+
+.wiof-aqi-widget-items {
+  height: 380px;
+}
+
+.wiof-aqi-widget-items [scrolly="true"] {
+  position: relative;
+  overflow: hidden;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.wiof-aqi-widget-items[scrolly="true"] {
+  overflow-y: auto;
+}
+
+.wiof-aqi-search-result-expand {
+  cursor: pointer;
+}
+.wiof-aqi-search-result-expand:hover {
+  color: blue;
+}
+
+//aqi colors
+
+.aqi-good {
+  background-color: $aqi-good-color;
+  color: $dark-color;
+}
+
+.aqi-moderate {
+  background-color: $aqi-moderate-color;
+  color: $dark-color;
+}
+
+.aqi-unhealthy-for-sensitive {
+  background-color: $aqi-unhealthy-for-sensitive-color;
+  color: $dark-color;
+}
+
+.aqi-unhealthy {
+  background-color: $aqi-unhealthy-color;
+  color: $light-color;
+}
+
+.aqi-very-unhealthy {
+  background-color: $aqi-very-unhealthy-color;
+  color: $light-color;
+}
+
+.aqi-hazardous {
+  background-color: $aqi-hazardous-color;
+  color: $light-color;
+}
+
+.aqi-na {
+  background-color: $light-color;
+  color: $dark-color;
+}

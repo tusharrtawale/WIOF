@@ -1,0 +1,73 @@
+<!-- <ion-card *ngIf="newsList && newsList.length > 0"> -->
+<ion-card *ngIf="newsList.length > 0">
+  <ion-card-header class="ion-align-center wiof-slider-header">
+    <ion-row>
+      <ion-col class="title-text" size="12">Breaking NEWS</ion-col>
+    </ion-row>
+  </ion-card-header>
+  <ion-card-content class="background">
+    <div *ngIf="newsList; else loading">
+      <ion-slides #wiofNewsSlider [options]="slideOpts">
+        <ion-slide *ngFor="let news of newsList">
+          <ion-card class="news-card">
+            <ion-card-content class="ion-text-start card-content">
+              <ion-row>
+                <ion-col class="mediaContainer" size-xs="12" size-md="4">
+                  <img
+                    class="mediaPlayer"
+                    [src]="news.imageLink | async"
+                    *ngIf="news.mediaType == 'image'"
+                  />
+                  <iframe
+                    class="mediaPlayer"
+                    [src]="news.sanitizedLink"
+                    *ngIf="news.mediaType == 'video'"
+                  ></iframe>
+                </ion-col>
+                <ion-col class="newsContent" size-xs="12" size-md="8">
+                  <h2>
+                    <strong>{{ news.headline }}</strong>
+                  </h2>
+                  <p [innerHTML]="news.content"></p>
+                  <p *ngIf="news.newsSource">
+                    <a
+                      [href]="news.newsSource"
+                      *ngIf="news.mediaType === 'image'"
+                      target="blank"
+                      >Read More</a
+                    >
+                    <a
+                      [href]="news.newsSource"
+                      *ngIf="news.mediaType === 'video'"
+                      target="blank"
+                      >Watch Now</a
+                    >
+                  </p>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+      <marquee class="newsHeadlineScroll" direction="left" loop="infinite">
+        <p>
+          <span *ngFor="let news of newsList">
+            <span>&#x25cf; </span>{{ news.headline }}
+          </span>
+        </p>
+      </marquee>
+      <div
+        class="swiper-button-prev navigation-arrow-custom-styling"
+        (click)="wiofNewsSlider.slidePrev()"
+      ></div>
+      <div
+        class="swiper-button-next navigation-arrow-custom-styling"
+        (click)="wiofNewsSlider.slideNext()"
+      ></div>
+      <!-- *ngIf="showNavigator()" -->
+    </div>
+    <ng-template #loading>
+      <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />
+    </ng-template>
+  </ion-card-content>
+</ion-card>

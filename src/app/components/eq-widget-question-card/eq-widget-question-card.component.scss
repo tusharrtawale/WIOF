@@ -1,0 +1,41 @@
+@import "../../wiof-custom-theming.scss";
+
+.eq-meter-heading {
+  font-size: large;
+  font-weight: bold;
+  padding: 10px;
+}
+.result-box {
+  border-radius: 5px;
+  background-color: white;
+}
+
+.eq-user-response {
+  p {
+    padding: 10px 0px 0px;
+  }
+
+  ion-item {
+    border-radius: 20px;
+    margin: 5px;
+
+    ion-text {
+      font-size: 14px;
+      color: $dark-color;
+      font-weight: 500;
+    }
+  }
+}
+
+.eq-param-desc p {
+  padding: 5px 10px;
+  border: 1px solid lightgrey;
+  background: white;
+  border-radius: 15px;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+.submit-eq ::ng-deep .button {
+  background-color: $energy-color;
+}

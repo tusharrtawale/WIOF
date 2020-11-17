@@ -1,0 +1,86 @@
+<ion-card *ngIf="blogList && blogList.length > 0">
+  <ion-card-header
+    class="ion-align-center wiof-slider-header"
+    [ngClass]="blogSliderClass"
+  >
+    <ion-row>
+      <ion-col class="title-text"> Blogs </ion-col>
+      <ion-col style="text-align: right">
+        <a
+          [routerLink]="['blogs']"
+          class="rect-button"
+          alt="Switch to list"
+          title="Switch to list"
+        >
+          <!-- Switch to list -->
+          <ion-icon name="list"></ion-icon>
+        </a>
+        <a
+          [routerLink]="['take-action']"
+          class="rect-button"
+          alt="Take Action"
+          title="Take Action"
+        >
+          <!-- <ion-icon slot="icon-only" name="person-circle"></ion-icon> -->
+          <!-- Take Action -->
+          <ion-icon name="trail-sign-outline"></ion-icon>
+        </a>
+      </ion-col>
+    </ion-row>
+  </ion-card-header>
+  <ion-card-content class="background" [ngClass]="blogSliderClass">
+    <div *ngIf="blogList; else loading">
+      <ion-slides #wiofBlogSlider [options]="slideOpts">
+        <ion-slide *ngFor="let blog of blogList">
+          <ion-card class="blog-card">
+            <ion-card-content class="ion-text-start card-content">
+              <img
+                [src]="blog.image | async"
+                [routerLink]="['blog', blog.id]"
+              />
+              <h6 class="ion-padding">
+                <strong class="blog-card-title"
+                  ><a class="link-title" [routerLink]="['blog', blog.id]">{{
+                    blog.title
+                  }}</a></strong
+                >
+              </h6>
+              <!-- <ion-label>Category: {{ blog.category }}</ion-label> -->
+              <p
+                class="blog-card-content ion-padding-horizontal"
+                [routerLink]="['blog', blog.id]"
+              >
+                {{ blog.shortDescription }}
+                <!-- <a [routerLink]="['blog-post', blog.id]">Read More</a> -->
+              </p>
+            </ion-card-content>
+            <!-- <ion-row class="blog-card-footer" [ngClass]="blogSliderClass">
+              <ion-col>
+                <ion-buttons>
+                  <ion-button [routerLink]="['take-action']"> -->
+            <!-- <ion-icon slot="icon-only" name="person-circle"></ion-icon> -->
+            <!-- Take Action
+                  </ion-button>
+                </ion-buttons>
+              </ion-col>
+            </ion-row> -->
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+      <div
+        class="swiper-button-prev navigation-arrow-custom-styling"
+        (click)="wiofBlogSlider.slidePrev()"
+        *ngIf="showNavigator()"
+      ></div>
+      <div
+        class="swiper-button-next navigation-arrow-custom-styling"
+        (click)="wiofBlogSlider.slideNext()"
+        *ngIf="showNavigator()"
+      ></div>
+    </div>
+
+    <ng-template #loading>
+      <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />
+    </ng-template>
+  </ion-card-content>
+</ion-card>

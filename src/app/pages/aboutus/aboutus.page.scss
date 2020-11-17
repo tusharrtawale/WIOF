@@ -1,0 +1,41 @@
+.back-button {
+  padding-right: 15px;
+}
+
+.profile-card {
+  &:hover {
+    box-shadow: 0px 5px 20px lightgrey;
+  }
+}
+
+.profile-image {
+  width: 100px;
+  border: 2px solid #2d2d2d;
+  border-radius: 5px;
+}
+
+.profile-name {
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
+}
+
+.profile-bio-text {
+  text-align: justify;
+  color: #2d2d2d;
+  font-size: 15px;
+}
+
+.linked-in-container {
+  padding-top: 10px;
+
+  .logo {
+    font-size: 25px;
+    vertical-align: bottom;
+    padding-right: 5px;
+  }
+
+  .link {
+    font-size: 15px;
+  }
+}

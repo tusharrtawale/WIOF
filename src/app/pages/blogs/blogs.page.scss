@@ -1,0 +1,68 @@
+@import "../../wiof-custom-theming.scss";
+
+.blogs-content {
+  padding-top: 60px;
+
+  &.air {
+    background-color: rgba($air-color, $tint-fraction);
+  }
+
+  &.earth {
+    background-color: rgba($earth-color, $tint-fraction);
+  }
+
+  &.water {
+    background-color: rgba($water-color, $tint-fraction);
+  }
+
+  &.energy {
+    background-color: rgba($energy-color, $tint-fraction);
+  }
+
+  &.spirit {
+    background-color: rgba($spirit-color, $tint-fraction);
+  }
+
+  .no-blogs-container {
+    margin: 0;
+    padding: 20px;
+    min-height: 750px;
+  }
+}
+
+.header-text {
+  font-size: x-large;
+  transform: translateY(25%);
+  margin: 0px;
+  font-weight: 400;
+}
+
+.blogs-header {
+  margin: 0 auto;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  font-size: 18px;
+  box-shadow: 0px 2px 5px 0px darkgrey;
+  padding: 0 10px;
+
+  &.air {
+    background-color: $air-color;
+  }
+
+  &.earth {
+    background-color: $earth-color;
+  }
+
+  &.water {
+    background-color: $water-color;
+  }
+
+  &.energy {
+    background-color: $energy-color;
+  }
+
+  &.spirit {
+    background-color: $spirit-color;
+  }
+}

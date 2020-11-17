@@ -1,0 +1,132 @@
+@import "../../wiof-custom-theming.scss";
+
+.video-card-footer {
+  background-color: white;
+  border-top: 1px solid lightgrey;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: $dark-color;
+}
+
+.news-card {
+  min-width: 20%;
+  height: calc(100% - 20px);
+  width: 100%;
+}
+
+.thumbnailImage {
+  align-self: center;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+.mediaContainer {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  @media (min-width: 768px) {
+    padding-top: 18.75%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  }
+  @media (max-width: 767px) {
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  }
+}
+
+.newsContent {
+  padding: 10px;
+}
+
+.mediaPlayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.newsHeadlineScroll {
+  background-color: $home-color;
+  color: $home-text-color;
+  padding: 10px;
+  margin: 0px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.wiof-slider-header {
+  border-bottom: white 2px solid;
+  background-color: $home-color;
+  color: $home-text-color;
+}
+
+.background {
+  background-color: rgba($home-color, $tint-fraction);
+  background-color: $home-color-light;
+  padding: 0;
+}
+
+// /* Using SCSS variables to store breakpoints */
+// $breakpoint-desktop: 1024px;
+// $breakpoint-tablet: 767px;
+// $breakpoint-mobile: 480px;
+
+// //xsmall view from 0 to 479
+// @media (max-width: $breakpoint-mobile){
+//   .thumbnailImage{
+//     width:320px;
+//   }
+// }
+
+// //small view from 480 to 766
+// @media (max-width: $breakpoint-tablet){
+//   .thumbnailImage{
+//     width:320px;
+//   }
+// }
+
+// //medium view from 767 to 1023
+// @media (max-width: $breakpoint-desktop){
+//   .thumbnailImage{
+//     width:249.5px;
+//   }
+// }
+
+// //large view 1024 and above
+// @media (min-width: $breakpoint-desktop){
+//   .thumbnailImage{
+//     width:249.5px;
+//   }
+// }
+
+.wiof-spinner {
+  position: absolute;
+  left: 50%;
+}
+
+.show-more-card {
+  height: calc(100% - 20px);
+  width: 100%;
+  padding-top: 30%;
+  cursor: pointer;
+
+  p {
+    font-size: 20px;
+
+    ion-icon {
+      font-size: 30px;
+    }
+  }
+}
+
+.swiper-slide {
+  height: auto;
+}
+
+.video-title {
+  text-decoration: none;
+}

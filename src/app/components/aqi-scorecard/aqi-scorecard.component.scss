@@ -1,0 +1,123 @@
+@import "../../wiof-custom-theming.scss";
+
+.aqi-good {
+  background-color: $aqi-good-color;
+  color: $dark-color;
+}
+
+.aqi-moderate {
+  background-color: $aqi-moderate-color;
+  color: $dark-color;
+}
+
+.aqi-unhealthy-for-sensitive {
+  background-color: $aqi-unhealthy-for-sensitive-color;
+  color: $dark-color;
+}
+
+.aqi-unhealthy {
+  background-color: $aqi-unhealthy-color;
+  color: $light-color;
+}
+
+.aqi-very-unhealthy {
+  background-color: $aqi-very-unhealthy-color;
+  color: $light-color;
+}
+
+.aqi-hazardous {
+  background-color: $aqi-hazardous-color;
+  color: $light-color;
+}
+
+.aqi-na {
+  background-color: $light-color;
+  color: $dark-color;
+}
+
+.card-non-aqi {
+  background-color: $light-color;
+  color: $dark-color;
+
+  ion-card-header {
+    padding: 0px;
+  }
+
+  ion-card-content {
+    padding: 0px;
+  }
+}
+
+//adding scroll to search results
+
+.wiof-aqi-widget-items {
+  height: 300px;
+}
+
+.wiof-aqi-widget-items [scrolly="true"] {
+  position: relative;
+  overflow: hidden;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.wiof-aqi-widget-items[scrolly="true"] {
+  overflow-y: auto;
+}
+
+.wiof-aqi-search-result-expand {
+  cursor: pointer;
+}
+
+.aqi-data-card {
+  padding: 5px;
+  background-color: $air-color;
+  color: $dark-color;
+}
+
+.aqi-level-card {
+  // box-shadow: -1px -1px 2px 0px #000000;
+  border-radius: 5px;
+  // border-top:1px #3d2e4b solid;
+  // border-left:1px  #3d2e4b solid;
+  // border-bottom:2px rgb(247, 228, 255)  solid;
+  // border-right:2px rgb(247, 228, 255) solid;
+  color: $dark-color;
+  padding: 2px 5px;
+  // font-size: 12px;
+  font-size: large;
+  text-align: center;
+}
+
+.aqi-station-name {
+  font-size: small;
+  text-align: left;
+  padding: 5px;
+}
+
+.dominent-pollutant {
+  font-size: small;
+  text-align: center;
+}
+
+.aqi-parameter {
+  color: $dark-color;
+  font-size: large;
+  text-align: center;
+  padding: 2px;
+  margin: 5px;
+}
+
+.aqi-parameter-value {
+  color: $dark-color;
+  font-size: medium;
+  text-align: center;
+  margin: 5px;
+}
+
+.data-credit {
+  font-size: small;
+  text-align: left;
+}

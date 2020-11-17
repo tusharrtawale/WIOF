@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/admin-dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Manage Polls</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="dark" fill="clear" size="large" (click)="refreshData()"
+        ><ion-icon name="refresh-outline" slot="start"></ion-icon
+        >Refresh</ion-button
+      ><ion-button
+        color="success"
+        fill="solid"
+        size="large"
+        (click)="addNewPoll()"
+        ><ion-icon name="add-outline" slot="start"></ion-icon>Add New
+        Poll</ion-button
+      >
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid *ngIf="pollQuestionList$ | async as pollQuestions">
+    <ion-row class="item-divider-line">
+      <ion-col size-md="4" size-lg="4" class="ion-align-self-center"
+        ><strong>Poll Question</strong></ion-col
+      >
+      <ion-col size-md="2" size-lg="2"><strong>Submit Date</strong></ion-col>
+      <ion-col size-md="2" size-lg="2"><strong>Publish Start</strong></ion-col>
+      <ion-col size-md="2" size-lg="2"><strong>Publish End</strong></ion-col>
+      <ion-col size-md="2" size-lg="2"
+        ><strong class="action-heading">Actions</strong></ion-col
+      >
+    </ion-row>
+    <ion-row
+      *ngFor="let pollQuestion of pollQuestions; let i = index"
+      class="item-divider-line"
+    >
+      <ion-col size-md="4" size-lg="4" class="ion-align-self-center"
+        >{{ pollQuestion.question }}</ion-col
+      >
+      <ion-col size-md="2" size-lg="2" class="ion-align-self-center">
+        {{pollQuestion.submitDate | date}}
+      </ion-col>
+      <ion-col size-md="2" size-lg="2" class="ion-align-self-center"
+        >{{pollQuestion.publishStartDate | date}}</ion-col
+      >
+      <ion-col size-md="2" size-lg="2" class="ion-align-self-center"
+        >{{pollQuestion.publishEndDate | date}}</ion-col
+      >
+      <ion-col size-md="2" size-lg="2">
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button
+              *ngIf="pollQuestion.status == 'submitted'"
+              title="Click to Publish Poll"
+              (click)="publishPollQuestion(pollQuestion.pollId)"
+              ><ion-icon slot="icon-only" name="rocket-outline"></ion-icon
+            ></ion-button>
+            <ion-button
+              (click)="publishPollQuestion(pollQuestion.pollId)"
+              *ngIf="pollQuestion.status == 'inactive'"
+              disabled
+              ><ion-icon
+                slot="icon-only"
+                name="rocket"
+                class="status-inactive"
+              ></ion-icon
+            ></ion-button>
+            <ion-button
+              *ngIf="pollQuestion.status == 'published'"
+              title="Published Poll"
+              ><ion-icon
+                slot="icon-only"
+                name="rocket"
+                class="status-published"
+              ></ion-icon
+            ></ion-button>
+            <ion-button
+              title="Click to view poll details"
+              (click)="viewPollDetails(pollQuestion)"
+              ><ion-icon slot="icon-only" name="eye-outline"></ion-icon
+            ></ion-button>
+            <ion-button
+              (click)="deletePollQuestion(pollQuestions, i, pollQuestion.pollId)"
+              ><ion-icon slot="icon-only" name="trash-outline"></ion-icon
+            ></ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

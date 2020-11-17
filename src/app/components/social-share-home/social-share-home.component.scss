@@ -1,0 +1,78 @@
+@import "../../wiof-custom-theming.scss";
+
+$fontcolor: #fff;
+
+.wiof-social-share-button {
+  position: absolute;
+  padding: 8px;
+  width: 45px;
+  background-color: #8383835e;
+  // background-color: white;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+  cursor: pointer;
+  top: 68vh;
+  left: 0px;
+  z-index: 100;
+  //box-shadow: 1px 1px 20px lightgrey;
+
+  &.inactive {
+    left: -40px;
+    opacity: 0%;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 40px;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 767px) {
+    width: 43px;
+  }
+}
+
+/* Share Buttons */
+
+.wiof-social-share-container a ion-icon {
+  font-size: 30px;
+
+  @media screen and (max-width: 600px) {
+    font-size: 25px;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 767px) {
+    font-size: 28px;
+  }
+}
+
+.wiof-social-share-container a {
+  // margin: 0 8px;
+  transition: 500ms;
+}
+
+.wiof-social-share-container #fb {
+  color: #3b5998;
+  &:hover {
+    scale: 1.2;
+  }
+}
+
+.wiof-social-share-container #tw {
+  color: #1da1f2;
+  &:hover {
+    scale: 1.2;
+  }
+}
+
+.wiof-social-share-container #li {
+  color: #0077b5;
+  &:hover {
+    scale: 1.2;
+  }
+}
+
+.wiof-social-share-container #wa {
+  color: #25d366;
+  &:hover {
+    scale: 1.2;
+  }
+}

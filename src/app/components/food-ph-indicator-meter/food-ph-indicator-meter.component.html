@@ -1,0 +1,53 @@
+<div class="food-ph-indicator-meter">
+  <ion-row style="padding-top: 50px">
+    <ion-col size="12">
+      <ion-row>
+        <ion-col style="text-align: center" size="5">Acidic</ion-col>
+        <ion-col style="text-align: center" size="2">Neutral</ion-col>
+        <ion-col style="text-align: center" size="5">Alkaline</ion-col>
+      </ion-row>
+    </ion-col>
+    <ion-col size="12">
+      <ion-row>
+        <ion-col class="phScale" size="12">
+          <div class="phScaleBlock ph0"></div>
+          <div class="phScaleBlock ph1"></div>
+          <div class="phScaleBlock ph2"></div>
+          <div class="phScaleBlock ph3"></div>
+          <div class="phScaleBlock ph4"></div>
+          <div class="phScaleBlock ph5"></div>
+          <div class="phScaleBlock ph6"></div>
+          <div class="phScaleBlock ph7"></div>
+          <div class="phScaleBlock ph8"></div>
+          <div class="phScaleBlock ph9"></div>
+          <div class="phScaleBlock ph10"></div>
+          <div class="phScaleBlock ph11"></div>
+          <div class="phScaleBlock ph12"></div>
+          <div class="phScaleBlock ph13"></div>
+          <div class="phScaleBlock ph14"></div>
+        </ion-col>
+        <ion-col class="phScale" size="12">
+          <div class="phScaleBlock"><p class="ph-widget-scale-text">0</p></div>
+          <div class="phScaleBlock"><p class="ph-widget-scale-text">1</p></div>
+          <div class="phScaleBlock"><p class="ph-widget-scale-text">2</p></div>
+          <div class="phScaleBlock"><p class="ph-widget-scale-text">3</p></div>
+          <div class="phScaleBlock"><p class="ph-widget-scale-text">4</p></div>
+          <div class="phScaleBlock"><p class="ph-widget-scale-text">5</p></div>
+          <div class="phScaleBlock"><p class="ph-widget-scale-text">6</p></div>
+          <div class="phScaleBlock"><p class="ph-widget-scale-text">7</p></div>
+          <div class="phScaleBlock"><p class="ph-widget-scale-text">8</p></div>
+          <div class="phScaleBlock"><p class="ph-widget-scale-text">9</p></div>
+          <div class="phScaleBlock"><p class="ph-widget-scale-text">10</p></div>
+          <div class="phScaleBlock"><p class="ph-widget-scale-text">11</p></div>
+          <div class="phScaleBlock"><p class="ph-widget-scale-text">12</p></div>
+          <div class="phScaleBlock"><p class="ph-widget-scale-text">13</p></div>
+          <div class="phScaleBlock"><p class="ph-widget-scale-text">14</p></div>
+        </ion-col>
+      </ion-row>
+      <div class="bracket" [ngClass]="updatePhPointer()"></div>
+    </ion-col>
+    <ion-col size="12" class="text">
+      {{ message }}
+    </ion-col>
+  </ion-row>
+</div>

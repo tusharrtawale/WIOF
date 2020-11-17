@@ -1,0 +1,58 @@
+@import "../../wiof-custom-theming.scss";
+
+.wiof-take-action {
+  padding: 20px;
+  margin-bottom: 350px;
+  color: rgb(209, 161, 74);
+}
+
+.take-action-title {
+  padding: 10px;
+  margin: 0 auto;
+  color: #2d2d2d;
+  display: inline-block;
+}
+
+.back-button {
+  padding: 5px;
+  float: right;
+}
+
+.element-buttons {
+  text-align: center;
+}
+
+.take-action-content-container {
+  min-height: 45vh;
+}
+
+.take-action-toolbar-container {
+  margin-top: 10px;
+}
+
+.tab-image {
+  height: 40px;
+  padding-right: 10px;
+}
+
+.tab-label {
+  font-size: 18px;
+}
+
+.take-action-wrapper ::ng-deep .mat-tab-label {
+  padding: 30px;
+  min-width: 100px;
+}
+
+.take-action-wrapper ::ng-deep .mat-tab-label-active {
+  border-radius: 15px 15px 0px 0px;
+  box-shadow: 5px 10px 25px grey;
+}
+
+.take-action-wrapper ::ng-deep .mat-tab-label-container {
+  padding-top: 15px;
+}
+
+.take-action-wrapper ::ng-deep .mat-ink-bar {
+  visibility: hidden !important;
+}

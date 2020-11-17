@@ -1,0 +1,49 @@
+@import "../../wiof-custom-theming.scss";
+
+.video-card {
+  min-width: 20%;
+  height: calc(100% - 10px);
+  margin: 5px;
+
+  ion-card-content {
+    padding: 5px 5px 5px 5px;
+  }
+}
+
+.thumbnailImage {
+  align-self: center;
+  width: 100%;
+}
+
+.video-card-footer {
+  background-color: white;
+  border-top: 1px solid lightgrey;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: $dark-color;
+
+  .button {
+    color: #2d2d2d;
+  }
+
+  &.air {
+    background-color: $air-color;
+  }
+
+  &.earth {
+    background-color: $earth-color;
+  }
+
+  &.water {
+    background-color: $water-color;
+  }
+
+  &.energy {
+    background-color: $energy-color;
+  }
+
+  &.spirit {
+    background-color: $spirit-color;
+  }
+}

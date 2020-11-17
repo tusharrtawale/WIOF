@@ -1,0 +1,69 @@
+<ion-row class="ion-align-items-center">
+  <ion-col class="ion-padding" size-xs="12">
+    <p style="text-align: center">
+      Choose any of the elements
+      <span class="wiof-read-more"
+        >to get to know more about how our actions are impacting the environment
+        and what can we do to help</span
+      >
+    </p>
+  </ion-col>
+  <ion-col class="ion-padding" size-xs="4" size-sm="2" offset-sm="1">
+    <div
+      class="ion-text-center landing-circle-img earth"
+      [ngClass]="{ active: isSelectedElement('earth') }"
+      [routerLink]="['/element', 'earth']"
+    ></div>
+    <h4 class="landing-circle-label" [routerLink]="['/element', 'earth']">
+      Earth
+    </h4>
+  </ion-col>
+
+  <ion-col class="ion-padding" size-xs="4" size-sm="2">
+    <div
+      class="ion-text-center landing-circle-img fire"
+      [ngClass]="{ active: isSelectedElement('fire') }"
+      [routerLink]="['/element', 'energy']"
+    ></div>
+    <h4 class="landing-circle-label" [routerLink]="['/element', 'energy']">
+      Energy
+    </h4>
+  </ion-col>
+
+  <ion-col class="ion-padding" size-xs="4" size-sm="2">
+    <div
+      class="ion-text-center landing-circle-img air"
+      [ngClass]="{ active: isSelectedElement('air') }"
+      [routerLink]="['/element', 'air']"
+    ></div>
+    <h4 class="landing-circle-label" [routerLink]="['/element', 'air']">Air</h4>
+  </ion-col>
+
+  <ion-col
+    class="ion-padding"
+    size-xs="5"
+    size-sm="2"
+    offset-xs="1"
+    offset-sm="0"
+  >
+    <div
+      class="ion-text-center landing-circle-img water"
+      [ngClass]="{ active: isSelectedElement('water') }"
+      [routerLink]="['/element', 'water']"
+    ></div>
+    <h4 class="landing-circle-label" [routerLink]="['/element', 'water']">
+      Water
+    </h4>
+  </ion-col>
+
+  <ion-col class="ion-padding" size-xs="5" size-sm="2">
+    <div
+      class="ion-text-center landing-circle-img spirit"
+      [ngClass]="{ active: isSelectedElement('spirit') }"
+      [routerLink]="['/element', 'spirit']"
+    ></div>
+    <h4 class="landing-circle-label" [routerLink]="['/element', 'spirit']">
+      Spirit
+    </h4>
+  </ion-col>
+</ion-row>

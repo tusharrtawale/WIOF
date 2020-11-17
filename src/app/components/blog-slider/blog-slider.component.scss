@@ -1,0 +1,113 @@
+@import "../../wiof-custom-theming.scss";
+
+.blog-card {
+  height: calc(100% - 20px);
+  margin: 5px;
+
+  ion-card-content {
+    padding: 5px 5px 15px 5px;
+  }
+  // padding-bottom: 50px;
+}
+
+.blog-card-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.blog-card-content {
+  display: -webkit-box;
+  height: 60px;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: $dark-color;
+  margin-bottom: 10px;
+}
+
+.blog-card-footer {
+  background-color: white;
+  border-top: 1px solid lightgrey;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: $dark-color;
+}
+
+.wiof-img-placeholder {
+  background-color: blue;
+  width: 100%;
+  height: 180px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 10px;
+}
+
+.blogImage {
+  align-self: center;
+  width: 320px;
+  padding: 10px;
+  align-self: center;
+}
+
+.wiof-slider-header {
+  border-bottom: white 2px solid;
+  color: $dark-color;
+}
+
+.wiof-spinner {
+  position: absolute;
+  left: 50%;
+}
+
+@mixin blog-card-style($color) {
+  background-color: $color;
+  &.background {
+    padding-bottom: 5px;
+    background-color: rgba($color, $tint-fraction);
+  }
+}
+
+.wiof-earth {
+  @include blog-card-style($earth-color);
+}
+
+.wiof-water {
+  @include blog-card-style($water-color);
+}
+
+.wiof-fire {
+  @include blog-card-style($energy-color);
+}
+
+.wiof-air {
+  @include blog-card-style($air-color);
+}
+
+.wiof-spirit {
+  @include blog-card-style($spirit-color);
+}
+
+.show-more-card {
+  height: calc(100% - 20px);
+  width: 100%;
+  padding-top: 40%;
+  cursor: pointer;
+
+  p {
+    font-size: 20px;
+
+    ion-icon {
+      font-size: 30px;
+    }
+  }
+}
+
+.swiper-slide {
+  height: auto;
+}

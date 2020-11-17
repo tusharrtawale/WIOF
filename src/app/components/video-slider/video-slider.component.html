@@ -1,0 +1,90 @@
+<ion-card *ngIf="videoList && videoList.length > 0">
+  <ion-card-header
+    class="ion-align-center wiof-slider-header"
+    [ngClass]="videoSliderClass"
+  >
+    <!-- <strong>Videos</strong> -->
+    <ion-row>
+      <ion-col class="title-text" size="4">Videos</ion-col>
+      <ion-col style="text-align: right" size="8"
+        ><a
+          [routerLink]="['videos']"
+          class="rect-button"
+          alt="Switch to list"
+          title="Switch to list"
+        >
+          <!-- Switch to list -->
+          <!-- <ion-icon name="list-outline"></ion-icon> -->
+          <ion-icon name="list"></ion-icon>
+        </a>
+        <a
+          [routerLink]="['take-action']"
+          class="rect-button"
+          alt="Take Action"
+          title="Take Action"
+        >
+          <!-- <ion-icon slot="icon-only" name="person-circle"></ion-icon> -->
+          <!-- <ion-icon name="trail-sign"></ion-icon> -->
+          <ion-icon name="trail-sign-outline"></ion-icon>
+        </a>
+      </ion-col>
+    </ion-row>
+  </ion-card-header>
+  <ion-card-content class="background" [ngClass]="videoSliderClass">
+    <div *ngIf="videoList; else loading">
+      <!-- <ion-slides [options]="slideOpts" pager> -->
+      <!-- <ion-slides #wiofVideoSlider [options]="slideOpts">         -->
+      <ion-slides #wiofVideoSlider [options]="slideOpts">
+        <ion-slide *ngFor="let video of videoList">
+          <ion-card class="video-card">
+            <ion-card-content class="ion-text-start card-content">
+              <img
+                [src]="video.thumbnail"
+                class="thumbnailImage"
+                [routerLink]="['video', video.url]"
+              />
+              <h4 class="ion-padding">
+                <strong
+                  ><a class="link-title" [routerLink]="['video', video.url]">{{
+                    video.title
+                  }}</a></strong
+                >
+              </h4>
+            </ion-card-content>
+            <!-- <ion-row class="video-card-footer" [ngClass]="videoSliderClass"> -->
+            <!-- <ion-col>
+                <ion-buttons>
+                  <ion-button [routerLink]="['take-action']"> -->
+            <!-- <ion-icon slot="icon-only" name="person-circle"></ion-icon> -->
+            <!-- Take Action -->
+            <!-- </ion-button>
+                </ion-buttons>
+              </ion-col> -->
+            <!-- </ion-row> -->
+          </ion-card>
+        </ion-slide>
+        <!-- <ion-slide>
+          <ion-card class="show-more-card" routerLink="videos">
+            <ion-card-content>
+              <p>Show More</p>
+              <p><ion-icon name="add-outline"></ion-icon></p>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide> -->
+      </ion-slides>
+      <div
+        class="swiper-button-prev navigation-arrow-custom-styling"
+        (click)="wiofVideoSlider.slidePrev()"
+        *ngIf="showNavigator()"
+      ></div>
+      <div
+        class="swiper-button-next navigation-arrow-custom-styling"
+        (click)="wiofVideoSlider.slideNext()"
+        *ngIf="showNavigator()"
+      ></div>
+    </div>
+    <ng-template #loading>
+      <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />
+    </ng-template>
+  </ion-card-content>
+</ion-card>

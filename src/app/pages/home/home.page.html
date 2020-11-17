@@ -1,0 +1,136 @@
+<!--INAUGURATION PAGE CODE-->
+<!-- <div class="ia-container" *ngIf="!ribbonCut">
+  <div class="ia-logo-image-container">
+    <img class="ia-logo-image" src="../../../assets/logo.png" />
+    <div class="ia-welcome-text">
+      <p>Welcome to the</p>
+      <p><strong>Inauguration Ceremony</strong></p>
+      <p><strong class="site-name">worldisonefamily.com</strong></p>
+    </div>
+  </div>
+  <div class="badge-space">
+    <div class="badge" (click)="onOpening()"></div>
+  </div>
+  <div class="ribbon color"></div>
+  <div class="diwali-text">"Happy Diwali"</div>
+  <div *ngIf="buttonClicked" class="counter">{{counter}}</div>
+</div>
+<div class="ia-curtain-container" id="curtain-id">
+  <div class="curtain">
+    <div class="rnUnit"></div>
+    <div class="rnUnit"></div>
+    <div class="rnUnit"></div>
+    <div class="rnUnit"></div>
+    <div class="rnUnit"></div>
+    <div class="rnUnit"></div>
+    <div class="rnUnit"></div>
+    <div class="rnUnit"></div>
+    <div class="rnUnit"></div>
+    <div class="rnUnit"></div>
+  </div>
+</div> -->
+
+<app-header></app-header>
+<app-subscribe></app-subscribe>
+<app-social-share-home style="z-index:1;"></app-social-share-home>
+<app-concent-popup
+  *ngIf="viewConsentPopup"
+  (accepted)="onAccept()"
+></app-concent-popup>
+<!-- <app-concent-popup *ngIf="viewConcentPopup" #cp='concentPopup' (accepted)="onAccept()"></app-concent-popup> -->
+
+<ion-content>
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col>
+        <div class="landing-welcome-img">
+          <p class="landing-welcome-label">
+            <span id="inspire" style="margin-right: 20%"
+              >Inspire through Creativity</span
+            ><br />
+            <span id="enlighten" style="margin-right: 5%"
+              >Enlighten through Knowlegde</span
+            ><br />
+            <span id="protect" style="margin-right: -10%"
+              >Protect through Action</span
+            >
+          </p>
+          <button
+            class="wiof-primary-button ion-margin-top"
+            [routerLink]="['/discover-more']"
+            routerLinkActive="router-link-active"
+          >
+            Discover More...
+          </button>
+        </div>
+      </ion-col>
+    </ion-row>
+    <app-life-elements></app-life-elements>
+    <ion-row>
+      <ion-col size="12">
+        <app-breaking-news></app-breaking-news>
+      </ion-col>
+      <ion-col size-lg="7" size-xs="12">
+        <!-- <app-video-widget [element]="elementName"></app-video-widget> -->
+        <app-env-calender></app-env-calender>
+      </ion-col>
+      <ion-col size-lg="5" size-xs="12">
+        <app-polls-widget></app-polls-widget>
+      </ion-col>
+    </ion-row>
+    <!-- <ion-row>
+      <ion-col class="ion-padding" offset-md="1" size-md="5">
+        <ion-card class="wiof-landing-card">
+          <ion-card-content class="ion-text-center">
+            <p>
+              Overwhelmed with the information out there, here is a one stop
+              solution to create a better world
+            </p>
+            <button class="wiof-primary-button ion-margin-top">
+              Learn More
+            </button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col class="ion-padding" size-md="5"
+        ><ion-card class="ion-align-self-center wiof-landing-card">
+          <ion-card-content class="ion-text-center">
+            <p>
+              Want to implement the changes you want to see in the world
+            </p>
+            <button class="wiof-primary-button ion-margin-top">
+              Take Action
+            </button>
+          </ion-card-content>
+        </ion-card></ion-col
+      >
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-padding" offset-md="1" size-md="5">
+        <ion-card class="wiof-landing-card">
+          <ion-card-content class="ion-text-center">
+            <p>
+              Our Latest Blog Posts
+            </p>
+            <button class="wiof-primary-button ion-margin-top">
+              Learn More
+            </button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col class="ion-padding" size-md="5"
+        ><ion-card class="wiof-landing-card">
+          <ion-card-content class="ion-text-center">
+            <p>
+              Our Campaigns
+            </p>
+            <button class="wiof-primary-button ion-margin-top">
+              Participate
+            </button>
+          </ion-card-content>
+        </ion-card></ion-col
+      >
+    </ion-row> -->
+  </ion-grid>
+  <app-wiof-footer></app-wiof-footer>
+</ion-content>

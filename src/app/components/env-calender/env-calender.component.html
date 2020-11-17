@@ -1,0 +1,85 @@
+<ion-card class="wiof-home background">
+  <ion-card-header class="wiof-env-calender-header wiof-home">
+    <ion-card-title class="title-text">
+      <span>Environment Calender</span></ion-card-title
+    >
+  </ion-card-header>
+  <ion-card-content class="wiof-env-calender-content background">
+    <ion-grid class="wiof-calendar-container">
+      <ion-row>
+        <ion-col class="month-header">
+          <!-- <ion-button (click)="prevMonth()"> <p> < </p> </ion-button> -->
+          <h1>{{ displayMonth }}</h1>
+          <p>{{ displayDay }}</p>
+          <!-- <ion-button (click)="nextMonth()"> <p> > </p> </ion-button> -->
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="weekday">Sunday</ion-col>
+        <ion-col class="weekday">Monday</ion-col>
+        <ion-col class="weekday">Tueday</ion-col>
+        <ion-col class="weekday">Wednesday</ion-col>
+        <ion-col class="weekday">Thursday</ion-col>
+        <ion-col class="weekday">Friday</ion-col>
+        <ion-col class="weekday">Saturday</ion-col>
+      </ion-row>
+      <ion-row>
+        <div
+          *ngFor="let day of days"
+          [class]="day.class"
+          [ngClass]="{
+            'occasion-day-container': day.occasion[0] != null
+          }"
+        >
+          <div
+            [ngClass]="{
+              'occasion-day': day.occasion[0] != null,
+              'no-occasion-day': day.occasion[0] == null
+            }"
+            (click)="openOccasionDialog(day)"
+          >
+            <h1
+              [ngClass]="{
+                'occasion-day-date': day.occasion[0] != null,
+                'no-occasion-day-date': day.occasion[0] == null
+              }"
+            >
+              <!-- <h1 class="noOccasionFormatDay"
+        > -->
+              {{ day.day }}
+            </h1>
+            <img
+              class="occasion-day-image"
+              *ngIf="day.occasion[0]"
+              [src]="day.occasion[0].image | async"
+            />
+            <!-- <p *ngIf="day.occasion[0]" class="occasion-name">
+            {{ day.occasion[0].name }}
+          </p> -->
+          </div>
+        </div>
+      </ion-row>
+    </ion-grid>
+    <div class="wiof-env-calendar-dialog-container" *ngIf="openDialog">
+      <app-env-cal-dialog
+        [occasionDetails]="occasionForDialog"
+        (close)="closeDialog()"
+      ></app-env-cal-dialog>
+    </div>
+  </ion-card-content>
+</ion-card>
+
+<!-- 
+<ion-card class="wiof-home background">
+  <ion-card-header class="wiof-env-calender-header wiof-home">
+    <ion-card-title class="title-text">
+      <span style="color: white;">Environment Calender</span></ion-card-title
+    >
+  </ion-card-header>
+  <ion-card-content class="wiof-env-calender-content">
+    <div class="env-calendar-div">
+      <p class="env-calendar-heading">August 2020</p>
+      <img src="../../../assets/Calender1.JPG" />
+    </div>
+  </ion-card-content>
+</ion-card> -->

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title routerLink="/home"
+      ><ion-img style="height: 60px" alt="WIOF" [src]="wiofLogo"></ion-img
+    ></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-text color="dark" class="wiof-login">
+    <h1>Login to Admin Dashboard</h1>
+  </ion-text>
+  <div *ngIf="error" style="color: red">
+    <p>{{error}}</p>
+  </div>
+  <ion-item>
+    <ion-label>Email</ion-label>
+    <ion-input name="email" [(ngModel)]="email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Password</ion-label>
+    <ion-input
+      type="password"
+      name="password"
+      [(ngModel)]="password"
+    ></ion-input>
+  </ion-item>
+  <ion-button class="wiof-login" (click)="onLogin()"> Login </ion-button>
+</ion-content>

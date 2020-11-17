@@ -1,0 +1,118 @@
+@import "../../wiof-custom-theming.scss";
+
+.landing-circle-img {
+  border-radius: 50%;
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 110px;
+  width: 110px;
+  margin: auto;
+  transition: 0.8s;
+  outline: none;
+  // transition-delay: 0.2s;
+  cursor: pointer;
+
+  &.earth {
+    background-image: url("/assets/icons/icon_earth.svg");
+    box-shadow: 1px 1px 5px 1px $earth-color;
+    &.active {
+      box-shadow: 1px 1px 12px 10px $earth-color;
+      background-image: url("/assets/icons/icon_earth_selected.svg");
+    }
+    &:hover {
+      box-shadow: 1px 1px 12px 10px $earth-color;
+    }
+  }
+
+  &.water {
+    background-image: url("/assets/icons/icon_water.svg");
+
+    box-shadow: 1px 1px 5px 1px $water-color;
+    &.active {
+      box-shadow: 1px 1px 12px 10px $water-color;
+      background-image: url("/assets/icons/icon_water_selected.svg");
+    }
+    &:hover {
+      box-shadow: 1px 1px 12px 10px $water-color;
+    }
+    &.clicked {
+      background-image: url("/assets/icons/icon_water_selected.svg");
+    }
+  }
+
+  &.fire {
+    background-image: url("/assets/icons/icon_energy.svg");
+    box-shadow: 1px 1px 5px 1px $energy-color; //energy and fire represent same element
+    &.active {
+      box-shadow: 1px 1px 12px 10px $energy-color; //energy and fire represent same element
+      background-image: url("/assets/icons/icon_energy_selected.svg");
+    }
+    &:hover {
+      box-shadow: 1px 1px 12px 10px $energy-color;
+    }
+  }
+
+  &.air {
+    background-image: url("/assets/icons/icon_air.svg");
+    box-shadow: 1px 1px 5px 1px $air-color;
+    &.active {
+      box-shadow: 1px 1px 12px 10px $air-color;
+      background-image: url("/assets/icons/icon_air_selected.svg");
+    }
+    &:hover {
+      box-shadow: 1px 1px 12px 10px $air-color;
+    }
+  }
+
+  &.spirit {
+    background-image: url("/assets/icons/icon_spirit.svg");
+    box-shadow: 1px 1px 5px 1px $spirit-color;
+    &.active {
+      box-shadow: 1px 1px 12px 10px $spirit-color;
+      background-image: url("/assets/icons/icon_spirit_selected.svg");
+    }
+    &:hover {
+      box-shadow: 1px 1px 12px 10px $spirit-color;
+    }
+  }
+
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+}
+
+.landing-circle-label {
+  padding-top: 5px;
+  color: black;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.8s;
+  &:hover {
+    color: rgb(12, 116, 201);
+  }
+}
+
+/* Using SCSS variables to store breakpoints */
+$breakpoint-desktop: 1024px;
+$breakpoint-tablet: 767px;
+
+@media (max-width: $breakpoint-desktop) {
+  .landing-circle-img {
+    height: 100px;
+    width: 100px;
+  }
+}
+@media (max-width: $breakpoint-tablet) {
+  .landing-circle-img {
+    height: 80px;
+    width: 80px;
+  }
+  .landing-circle-label {
+    font-size: 100%;
+  }
+  .wiof-read-more {
+    display: none;
+  }
+}

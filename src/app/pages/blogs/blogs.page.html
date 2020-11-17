@@ -1,0 +1,65 @@
+<app-header></app-header>
+
+<ion-content>
+  <!-- <h1 class="ion-padding blogs-header" [ngClass]="element">
+    <ion-row>
+      <ion-col size=12>
+        <app-back-button></app-back-button>
+      </ion-col>
+    </ion-row>
+    {{category}} Blogs
+  </h1> -->
+
+  <h1 class="blogs-header" [ngClass]="element">
+    <ion-row>
+      <ion-col size="6">
+        <p class="header-text">{{category}} Blogs</p>
+      </ion-col>
+      <ion-col size="6" style="text-align: right">
+        <a
+          [routerLink]="['take-action']"
+          class="rect-button"
+          style="position: relative"
+        >
+          <!-- <ion-icon slot="icon-only" name="person-circle"></ion-icon> -->
+          <!-- Take Action -->
+          <ion-icon name="trail-sign-outline"></ion-icon>
+        </a>
+        <app-back-button></app-back-button>
+      </ion-col>
+    </ion-row>
+  </h1>
+
+  <div
+    *ngIf="blogs | async as blogList; else loading"
+    class="blogs-content"
+    [ngClass]="element"
+  >
+    <ion-grid *ngIf="blogList.length > 0">
+      <ion-row>
+        <ion-col
+          size="12"
+          size-sm="6"
+          size-md="4"
+          size-lg="3"
+          *ngFor="let blog of blogList"
+        >
+          <app-blog-card [blog]="blog" [element]="element"></app-blog-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <p *ngIf="blogList && blogList.length === 0" class="no-blogs-container">
+      We could not find blogs under
+      <strong>{{ this.category }}</strong> category!
+    </p>
+  </div>
+
+  <ng-template #loading>
+    <div class="blogs-content">
+      <app-wiof-spinner></app-wiof-spinner>
+    </div>
+  </ng-template>
+
+  <app-wiof-footer></app-wiof-footer>
+</ion-content>

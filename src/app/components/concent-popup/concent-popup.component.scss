@@ -1,0 +1,26 @@
+.wiof-concent-popup {
+  background-color: #2d2d2d;
+  padding: 10px;
+}
+
+.wiof-concent-popup p {
+  margin: 0px;
+  padding: 5px;
+  color: #fff;
+  display: inline-block;
+}
+
+.accept-button {
+  text-align: right;
+  border: 2px #fff solid;
+  background-color: #2d2d2d;
+  color: #fff;
+  font-size: large;
+  padding: 5px;
+  border-radius: 5px;
+  float: right;
+
+  @media (max-width: 600px) {
+    float: none;
+  }
+}

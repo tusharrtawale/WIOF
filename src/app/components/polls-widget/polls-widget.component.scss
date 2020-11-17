@@ -1,0 +1,57 @@
+@import "../../wiof-custom-theming.scss";
+
+.wiof-poll-card {
+  background-color: rgba($home-color, $tint-fraction);
+  height: calc(100% - 20px);
+}
+
+.wiof-polls-widget-card-header {
+  background-color: $home-color;
+  border-bottom: white 2px solid;
+}
+
+.polls-container {
+  background-color: $home-color-light;
+  padding: 10px;
+  padding-left: 20px;
+  border-radius: 5px;
+  height: 100%;
+  overflow: auto;
+}
+
+.poll-options {
+  background-color: #dfdec9;
+  margin: 0px 0px 10px;
+  padding: 8px;
+  border-radius: 5px;
+  margin-left: 0;
+}
+
+.error {
+  color: rgb(243, 124, 124) (124, 82, 82);
+  transition: 0.5s;
+}
+.wiof-polls-widget-card-background {
+  color: black;
+  font-size: large;
+  padding-top: 10px;
+  padding: 0;
+  height: 100%;
+}
+
+.wiof-polls-widget-card-header-text {
+  color: $home-text-color;
+}
+
+.poll-widget-name-input {
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  padding-left: 5px;
+  height: 40px;
+  font-size: $font-size-medium;
+}
+
+// .wiof-polls-submit-button{
+//     background-color: $home-color;
+// }

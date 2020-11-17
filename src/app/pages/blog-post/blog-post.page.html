@@ -1,0 +1,54 @@
+<app-header></app-header>
+
+<!-- implement using url query instead -->
+<!-- [ngClass]="{
+  'wiof-earth':blog.category === 'Earth',
+  'wiof-water':blog.category === 'Water',
+  'wiof-fire':blog.category === 'Fire',
+  'wiof-air':blog.category === 'Air',
+  'wiof-spirit':blog.category === 'Spirit'
+}" -->
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="wiof-blog-col" size="12" size-lg="8" offset-lg="2">
+        <div class="blog-container">
+          <ion-row *ngIf="(blogDetails | async) as blog">
+            <ion-col size="12">
+              <h1>{{ blog.title }}</h1>
+            </ion-col>
+            <ion-col size="12">
+              <ion-img [src]="(blog.image| async)"></ion-img>
+            </ion-col>
+            <ion-col size="12">
+              <ion-text *ngIf="blog.author">By {{blog.author}}</ion-text><br />
+              <ion-text *ngIf="blog.publishDate"
+                >Published on {{blog.publishDate | date }}</ion-text
+              >
+            </ion-col>
+            <ion-col size="12">
+              <app-back-button></app-back-button>
+              <app-social-share></app-social-share>
+            </ion-col>
+            <ion-item-divider></ion-item-divider>
+            <ion-col size="12">
+              <ion-text
+                style="text-align: justify; text-justify: inter-word"
+                [innerHTML]="blog.content"
+              ></ion-text>
+            </ion-col>
+            <ion-item-divider></ion-item-divider>
+            <ion-col size="12">
+              <h4>About {{blog.author}}</h4>
+              <ion-text style="text-align: justify; text-justify: inter-word"
+                >{{blog.aboutAuthor}}</ion-text
+              >
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <app-wiof-footer></app-wiof-footer>
+</ion-content>

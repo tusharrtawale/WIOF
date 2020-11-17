@@ -34,6 +34,7 @@ export class SubscribeComponent implements OnInit {
         Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")
       ])
     });
+    this.openSubscriptionForm();
   }
 
   async onSubmit() {
@@ -72,6 +73,11 @@ export class SubscribeComponent implements OnInit {
         );
     }
     this.subscribeButton = true;
+  }
+
+  openSubscriptionForm(){
+    setTimeout( ()=>{this.subscribeButton=false;},60000);
+    
   }
 
   onSubscribeButtonClick() {

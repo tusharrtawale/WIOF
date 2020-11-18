@@ -2,6 +2,10 @@
 
 .ph-widget-scale-text {
   font-size: 12px;
+  
+  @media screen and (max-width: 350px){
+    font-size: 11px;
+  }
 }
 
 .food-ph-indicator-meter {

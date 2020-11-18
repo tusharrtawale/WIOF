@@ -23,15 +23,18 @@
   border: 1px solid lightgrey;
 
   .occasion-card-header {
-    float: left;
+    padding: 10px 20px;
     text-align: left;
-    max-width: 200px;
-    padding-bottom: 10px;
+
+    .occasion-name {
+      text-align: left;
+      padding-right: 30px;
+    }
   }
 
-  .occasion-card-month {
-    float: right;
-    padding-right: 30px;
+  .card-content {
+    max-height: 400px;
+    overflow: auto;
   }
 
   .occasion-card-close-btn {
@@ -42,9 +45,5 @@
     height: 30px;
     width: 30px;
     border-radius: 50%;
-  }
-
-  .card-content div {
-    padding-top: 10px;
   }
 }

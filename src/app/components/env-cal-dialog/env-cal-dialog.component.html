@@ -3,14 +3,16 @@
     <ion-slides #wiofOccasionSlider [options]="slideOpts">
       <ion-slide *ngFor="let occasn of occasionDetails.occasion">
         <ion-card class="occasion-card">
-          <ion-card-header>
-            <h2>
-              <strong class="occasion-card-header">{{ occasn.name }}</strong>
-              <p>{{ getMonth(occasn.month) }} {{ occasn.day }}</p>
-              <button class="occasion-card-close-btn" (click)="closeDialog()">
-                <ion-icon name="close" slot="icon-only"></ion-icon>
-              </button>
-            </h2>
+          <ion-card-header class="occasion-card-header">
+            <p class="occasion-month">
+              {{ getMonth(occasn.month) }} {{ occasn.day }}
+            </p>
+            <p class="occasion-name">
+              <strong>{{ occasn.name }}</strong>
+            </p>
+            <button class="occasion-card-close-btn" (click)="closeDialog()">
+              <ion-icon name="close" slot="icon-only"></ion-icon>
+            </button>
           </ion-card-header>
           <ion-card-content class="ion-text-start card-content">
             <img [src]="occasn.image | async" />

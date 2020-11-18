@@ -36,6 +36,7 @@
               'occasion-day': day.occasion[0] != null,
               'no-occasion-day': day.occasion[0] == null
             }"
+            title="{{ day.occasion[0]?.name }}"
             (click)="openOccasionDialog(day)"
           >
             <h1

@@ -26,6 +26,10 @@ export class AdminDashboardPage implements OnInit {
       {
         name: "Manage Calendar",
         actionUrl: "manage-calendar"
+      },
+      {
+        name: "View Subscriptions",
+        actionUrl: "subscribers"
       }
     ]
   };

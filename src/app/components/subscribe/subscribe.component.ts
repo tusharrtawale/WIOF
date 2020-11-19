@@ -91,7 +91,7 @@ export class SubscribeComponent implements OnInit {
     if(!this.getSubscribedFlag()){      
       setTimeout( ()=>{
         this.subscribeButton=false;
-      },30000);
+      },50000);
     }    
   }
 

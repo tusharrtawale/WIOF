@@ -1,6 +1,11 @@
 import { FormGroup } from "@angular/forms";
 
+const presentDateTime=new Date();
+const saveDate=presentDateTime.getDate() +"/" + presentDateTime.getMonth() +"/" + presentDateTime.getFullYear()+" "+presentDateTime.getHours()+":"+presentDateTime.getMinutes();
+
 export class Subscriber {
+  id:string;
+  datetime?:string;
   firstName: String;
   lastName: String;
   email: String;
@@ -8,6 +13,7 @@ export class Subscriber {
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
+    this.datetime=saveDate;
   }
 
   static createByForm(addSubscriberForm: FormGroup) {

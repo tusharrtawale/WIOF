@@ -89,6 +89,10 @@ const routes: Routes = [
       import("./calendar/add-occasion/add-occasion.module").then(
         (m) => m.AddOccasionPageModule
       )
+  },
+  {
+    path: 'subscribers',
+    loadChildren: () => import('./subscribers/subscribers.module').then( m => m.SubscribersPageModule)
   }
 ];
 

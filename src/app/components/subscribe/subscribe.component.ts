@@ -73,11 +73,26 @@ export class SubscribeComponent implements OnInit {
         );
     }
     this.subscribeButton = true;
+    this.setSubscribedFlag();
+  }
+
+  setSubscribedFlag(){
+    localStorage.setItem("subscribed","true");
+  }
+
+  getSubscribedFlag(){
+    if(localStorage.getItem("subscribed")){
+      return true;
+    }
+    return false;
   }
 
   openSubscriptionForm(){
-    setTimeout( ()=>{this.subscribeButton=false;},60000);
-    
+    if(!this.getSubscribedFlag()){      
+      setTimeout( ()=>{
+        this.subscribeButton=false;
+      },30000);
+    }    
   }
 
   onSubscribeButtonClick() {

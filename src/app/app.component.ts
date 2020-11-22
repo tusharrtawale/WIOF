@@ -17,7 +17,7 @@ export class AppComponent {
     private metaService:Meta
   ) {
     this.initializeApp();
-    this.addMetaTags();
+    // this.addMetaTags();
   }
 
   initializeApp() {

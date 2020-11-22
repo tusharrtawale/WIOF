@@ -6,7 +6,7 @@ import { AngularFirestoreModule } from "@angular/fire/firestore";
 // import {AngularFireAuthModule} from '@angular/fire/auth';
 import { AngularFireStorageModule } from "@angular/fire/storage";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { BrowserModule } from "@angular/platform-browser";
+import { BrowserModule, Meta } from "@angular/platform-browser";
 import { RouteReuseStrategy } from "@angular/router";
 import { SplashScreen } from "@ionic-native/splash-screen/ngx";
 import { StatusBar } from "@ionic-native/status-bar/ngx";
@@ -35,6 +35,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
   providers: [
     StatusBar,
     SplashScreen,
+    Meta,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

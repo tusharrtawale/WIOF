@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { AlertController, LoadingController } from "@ionic/angular";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { throwError, Subject } from "rxjs";
@@ -13,11 +13,13 @@ import { UiUtilService } from "src/app/util/UiUtilService";
   styleUrls: ["./subscribe.component.scss"]
 })
 export class SubscribeComponent implements OnInit {
+  @Input() page:string;
   addSubscriberForm: FormGroup;
   subscribeButton: Boolean;
   error: String;
   loader;
   destroy$: Subject<boolean> = new Subject();
+  
 
   constructor(
     private subscribeService: SubscriptionService,
@@ -35,6 +37,16 @@ export class SubscribeComponent implements OnInit {
       ])
     });
     this.openSubscriptionForm();
+  }
+
+  getElement(element){
+    if(element==this.page){
+      return true;
+
+    }
+    else{
+      return false;
+    }
   }
 
   async onSubmit() {
@@ -80,6 +92,17 @@ export class SubscribeComponent implements OnInit {
     localStorage.setItem("subscribed","true");
   }
 
+  setSubscriptionOpenedFlag(){
+    sessionStorage.setItem("subscriptionBoxOpened","true")
+  }
+
+  getSubscriptionOpenedFlag(){
+    if(sessionStorage.getItem("subscriptionBoxOpened")){
+      return true;
+    }
+    return false;
+  }
+
   getSubscribedFlag(){
     if(localStorage.getItem("subscribed")){
       return true;
@@ -89,10 +112,17 @@ export class SubscribeComponent implements OnInit {
 
   openSubscriptionForm(){
     if(!this.getSubscribedFlag()){      
-      setTimeout( ()=>{
-        this.subscribeButton=false;
-      },50000);
+      setTimeout( ()=>{ 
+        this.triggerOpen();
+      },10000);
     }    
+  }
+
+  triggerOpen(){
+    if(!this.getSubscriptionOpenedFlag()){
+      this.subscribeButton=false;
+      this.setSubscriptionOpenedFlag()
+    }
   }
 
   onSubscribeButtonClick() {

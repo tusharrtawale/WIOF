@@ -7,7 +7,6 @@ $fontcolor: #fff;
   position: absolute;
   height: 390px;
   width: 250px;
-  background-color: $home-color;
   top: 80px;
   border-bottom-right-radius: 15px;
   border-top-right-radius: 15px;
@@ -17,6 +16,25 @@ $fontcolor: #fff;
   &.active {
     left: 0px;
     box-shadow: 1px 1px 10px #000000;
+  }
+  
+  &.home{
+    background-color: $home-color;
+  }
+  &.earth{
+    background-color: $earth-color;
+  }
+  &.water{
+    background-color: $water-color;
+  }
+  &.air{
+    background-color: $air-color;
+  }
+  &.spirit{
+    background-color: $spirit-color;
+  }
+  &.energy{
+    background-color: $energy-color;
   }
 }
 
@@ -33,7 +51,7 @@ $fontcolor: #fff;
   position: absolute;
   height: 150px;
   width: 40px;
-  background-color: $home-color;
+  
   border-bottom-right-radius: 15px;
   border-top-right-radius: 15px;
   cursor: pointer;
@@ -47,6 +65,25 @@ $fontcolor: #fff;
   &.inactive {
     left: -40px;
     opacity: 0%;
+  }
+
+  &.home{
+    background-color: $home-color;
+  }
+  &.earth{
+    background-color: $earth-color;
+  }
+  &.water{
+    background-color: $water-color;
+  }
+  &.air{
+    background-color: $air-color;
+  }
+  &.spirit{
+    background-color: $spirit-color;
+  }
+  &.energy{
+    background-color: $energy-color;
   }
 
   @media only screen and (max-width: 767px) {
@@ -95,14 +132,34 @@ h4 {
   top: 5px;
   right: 4px;
   outline:none;
-  background-color: $home-color;
   color: $home-text-color;
   font-size: x-large;
+  
+  &.home{
+    background-color: $home-color;
+  }
+  &.earth{
+    background-color: $earth-color;
+  }
+  &.water{
+    background-color: $water-color;
+  }
+  &.air{
+    background-color: $air-color;
+  }
+  &.spirit{
+    background-color: $spirit-color;
+  }
+  &.energy{
+    background-color: $energy-color;
+  }
+
+
+
 }
 
 .subscribe-button {
   color: $home-text-color;
-  background-color: $home-color;
   font-size: large;
   border: 1px solid $home-text-color;
   border-radius: 5px;
@@ -117,8 +174,27 @@ h4 {
   }
   &:disabled {
     color: grey;
-    background-color: $home-color;
     border: 1px solid grey;
     box-shadow: none;
   }
+  
+  &.home{
+    background-color: $home-color;
+  }
+  &.earth{
+    background-color: $earth-color;
+  }
+  &.water{
+    background-color: $water-color;
+  }
+  &.air{
+    background-color: $air-color;
+  }
+  &.spirit{
+    background-color: $spirit-color;
+  }
+  &.energy{
+    background-color: $energy-color;
+  }
+
 }

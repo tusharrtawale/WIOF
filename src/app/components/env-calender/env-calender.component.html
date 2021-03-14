@@ -8,10 +8,8 @@
     <ion-grid class="wiof-calendar-container">
       <ion-row>
         <ion-col class="month-header">
-          <!-- <ion-button (click)="prevMonth()"> <p> < </p> </ion-button> -->
           <h1>{{ displayMonth }}</h1>
           <p>{{ displayDay }}</p>
-          <!-- <ion-button (click)="nextMonth()"> <p> > </p> </ion-button> -->
         </ion-col>
       </ion-row>
       <ion-row>
@@ -36,27 +34,42 @@
               'occasion-day': day.occasion[0] != null,
               'no-occasion-day': day.occasion[0] == null
             }"
-            title="{{ day.occasion[0]?.name }}"
-            (click)="openOccasionDialog(day)"
+            title="{{ day.occasion[day.selectedOccasionIndex]?.name }}"
           >
             <h1
               [ngClass]="{
                 'occasion-day-date': day.occasion[0] != null,
                 'no-occasion-day-date': day.occasion[0] == null
               }"
+              (click)="openOccasionDialog(day)"
             >
-              <!-- <h1 class="noOccasionFormatDay"
-        > -->
               {{ day.day }}
             </h1>
             <img
               class="occasion-day-image"
-              *ngIf="day.occasion[0]"
-              [src]="day.occasion[0].image | async"
+              *ngIf="day.occasion[day.selectedOccasionIndex]"
+              [src]="day.occasion[day.selectedOccasionIndex].image | async"
+              (click)="openOccasionDialog(day)"
             />
-            <!-- <p *ngIf="day.occasion[0]" class="occasion-name">
-            {{ day.occasion[0].name }}
-          </p> -->
+            <div *ngIf="day.occasion && day.occasion.length > 1">
+              <button
+                class="next-button"
+                [disabled]="day.selectedOccasionIndex === 0"
+                (click)="prevOccasion(day)"
+              >
+                <ion-icon slot="start" name="caret-back-outline"></ion-icon>
+              </button>
+
+              <button
+                class="prev-button"
+                [disabled]="
+                  day.selectedOccasionIndex === day.occasion.length - 1
+                "
+                (click)="nextOccasion(day)"
+              >
+                <ion-icon slot="start" name="caret-forward-outline"></ion-icon>
+              </button>
+            </div>
           </div>
         </div>
       </ion-row>
@@ -69,18 +82,3 @@
     </div>
   </ion-card-content>
 </ion-card>
-
-<!-- 
-<ion-card class="wiof-home background">
-  <ion-card-header class="wiof-env-calender-header wiof-home">
-    <ion-card-title class="title-text">
-      <span style="color: white;">Environment Calender</span></ion-card-title
-    >
-  </ion-card-header>
-  <ion-card-content class="wiof-env-calender-content">
-    <div class="env-calendar-div">
-      <p class="env-calendar-heading">August 2020</p>
-      <img src="../../../assets/Calender1.JPG" />
-    </div>
-  </ion-card-content>
-</ion-card> -->

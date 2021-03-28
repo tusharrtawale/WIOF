@@ -1,3 +1,4 @@
+import { Injectable } from "@angular/core";
 import {
   AngularFirestore,
   AngularFirestoreCollection
@@ -8,6 +9,9 @@ import { map } from "rxjs/operators";
 import { FIREBASE_COLLECTION } from "../app.constants";
 import { CoffeeConversation } from "../models/CoffeeConversation";
 
+@Injectable({
+  providedIn: "root"
+})
 export class CoffeeConversationService {
   ccCollection: AngularFirestoreCollection<any>;
   viewEditModeCC: CoffeeConversation;

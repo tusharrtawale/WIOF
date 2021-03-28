@@ -81,7 +81,7 @@ export class ManageNewsPage implements OnInit, OnDestroy {
 
   private async delNews(newsList: News[], index: number, news: News) {
     const loader = await this.uiUtil.showLoader(
-      "We are deleting the poll question..."
+      "We are deleting the news..."
     );
     this.newsService
       .deleteNews(news.newsId)

@@ -65,6 +65,25 @@ const routes: Routes = [
     ]
   },
   {
+    path: "manage-coffee-conversation",
+    children: [
+      {
+        path: "",
+        loadChildren: () =>
+          import(
+            "./coffee-conversation/manage-coffee-conversation/manage-coffee-conversation.module"
+          ).then((m) => m.ManageCoffeeConversationPageModule)
+      },
+      {
+        path: "coffee-conversation/:mode",
+        loadChildren: () =>
+          import(
+            "./coffee-conversation/add-coffee-conversation/add-coffee-conversation.module"
+          ).then((m) => m.AddCoffeeConversationPageModule)
+      }
+    ]
+  },
+  {
     path: "manage-blog",
     children: [
       {
@@ -91,8 +110,11 @@ const routes: Routes = [
       )
   },
   {
-    path: 'subscribers',
-    loadChildren: () => import('./subscribers/subscribers.module').then( m => m.SubscribersPageModule)
+    path: "subscribers",
+    loadChildren: () =>
+      import("./subscribers/subscribers.module").then(
+        (m) => m.SubscribersPageModule
+      )
   }
 ];
 

@@ -146,7 +146,8 @@ export const FIREBASE_COLLECTION = {
   POLL: "Poll",
   ENVCAL: "Envcal",
   NEWS: "News",
-  CONFIG: "config"
+  CONFIG: "config",
+  COFFEE_CONVERSATIONS: "coffee-conversations"
 };
 
 export const VIDEO_PLAYER_TITLES = {

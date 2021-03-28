@@ -1,5 +1,4 @@
 import { FormGroup } from "@angular/forms";
-import { PollQuestion } from "./PollQuestion";
 
 export class Poll {
   id: string;

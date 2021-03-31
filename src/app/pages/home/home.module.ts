@@ -5,6 +5,7 @@ import { IonicModule } from "@ionic/angular";
 import { AppCommonModule } from "src/app/app-common.module";
 import { HomePageRoutingModule } from "./home-routing.module";
 import { HomePage } from "./home.page";
+import { NgoComponent } from "../../components/ngo/ngo.component";
 
 @NgModule({
   imports: [
@@ -14,6 +15,6 @@ import { HomePage } from "./home.page";
     HomePageRoutingModule,
     AppCommonModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, NgoComponent]
 })
 export class HomePageModule {}

@@ -66,6 +66,25 @@
       }
     }
 
+    .next-button, .prev-button {
+      position: absolute;
+      bottom: 0.25rem;
+      border-radius: 50%;
+      background: white;
+      border: 1px solid white;
+      width: 25px;
+      height: 25px;
+      padding: 5px;
+    }
+
+    .next-button {
+      left: 0.25rem;
+    }
+
+    .prev-button {
+      right: 0.25rem;
+    }
+
     @media only screen and (max-width: 1200px) {
       height: 80px;
 

@@ -35,8 +35,7 @@ export class AddCoffeeConversationPage implements OnInit {
     intervieweeNameLabel: "Interviewee Name",
     intervieweeDescLabel: "Interviewee Description",
     interviewDateLabel: "Interview Date",
-    videoLinkLabel:
-      "Coffee Conversation Link (Please enter youtube video ID only, do not enter full link)",
+    videoLinkLabel: "Coffee Conversation Link (only youtube video ID)",
     knowMoreLinkLabel: "Know More Link",
     saveLabel: "Save",
     cancelLabel: "Cancel"
@@ -102,7 +101,7 @@ export class AddCoffeeConversationPage implements OnInit {
         coffeeConversation.category,
         Validators.required
       ),
-      inerviewerName: new FormControl(
+      interviewerName: new FormControl(
         coffeeConversation.interviewerName,
         Validators.required
       ),
@@ -153,8 +152,6 @@ export class AddCoffeeConversationPage implements OnInit {
             this.loader.dismiss();
             if (!this.isEditMode) {
               this.addCoffeeConversationForm.reset();
-              this.imageToDisplay = null;
-              this.imageToSave = null;
             }
             this.uiUtil.presentAlert(
               "Success",
@@ -180,18 +177,17 @@ export class AddCoffeeConversationPage implements OnInit {
     coffeeConversation: CoffeeConversation,
     isEditMode: boolean
   ) {
-    const videoLink = "http://youtube.com";
     return new CoffeeConversation(
       isEditMode ? coffeeConversation.ccId : null,
       addCoffeeConversationForm.value.topic,
       addCoffeeConversationForm.value.topicShortDesc,
       addCoffeeConversationForm.value.topicDesc,
       addCoffeeConversationForm.value.category,
-      addCoffeeConversationForm.value.inerviewerName,
+      addCoffeeConversationForm.value.interviewerName,
       addCoffeeConversationForm.value.intervieweeName,
       addCoffeeConversationForm.value.intervieweeDesc,
       new Date(addCoffeeConversationForm.value.interviewDate).getTime(),
-      videoLink,
+      addCoffeeConversationForm.value.videoLink,
       addCoffeeConversationForm.value.knowMoreLink
     );
   }

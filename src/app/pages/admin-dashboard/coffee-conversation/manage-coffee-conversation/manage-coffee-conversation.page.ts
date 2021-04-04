@@ -28,7 +28,7 @@ export class ManageCoffeeConversationPage implements OnInit, OnDestroy {
 
   initPage() {
     this.coffeeConversationList$ = this.coffeeConversationService
-      .getAllCoffeeConversations()
+      .getCoffeeConversations()
       .pipe(
         takeUntil(this.destroy$),
         map((coffeeConversationList) => {

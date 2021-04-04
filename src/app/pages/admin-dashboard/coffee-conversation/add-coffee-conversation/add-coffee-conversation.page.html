@@ -28,15 +28,14 @@
   <form [formGroup]="addCoffeeConversationForm">
     <ion-grid>
       <ion-row>
-        <ion-col size-xs="12"
+        <ion-col size-xs="12" size-md="8"
           ><ion-item>
             <ion-label position="floating"
               >{{pageContent.topicLabel}}</ion-label
             >
-            <ion-input formControlName="headline"></ion-input>
+            <ion-input formControlName="topic"></ion-input>
           </ion-item>
         </ion-col>
-
         <ion-col size-xs="12" size-md="4"
           ><ion-item>
             <ion-label position="floating"
@@ -52,13 +51,38 @@
           </ion-item>
         </ion-col>
 
+        <ion-col size-xs="12"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.topicShortDescLabel}}</ion-label
+            >
+            <ion-input formControlName="topicShortDesc"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size-xs="12" size-md="4"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.interviewerNameLabel}}</ion-label
+            >
+            <ion-input formControlName="interviewerName"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-md="4"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.intervieweeNameLabel}}</ion-label
+            >
+            <ion-input formControlName="intervieweeName"></ion-input>
+          </ion-item>
+        </ion-col>
         <ion-col size-xs="12" size-md="4">
           <mat-form-field appearance="standard" class="date-picker-field">
             <mat-label> {{ pageContent.interviewDateLabel }}</mat-label>
             <input
               matInput
               [matDatepicker]="coffeeConversationDatePicker"
-              formControlName="date"
+              formControlName="interviewDate"
             />
             <mat-datepicker-toggle
               matSuffix
@@ -66,6 +90,32 @@
             ></mat-datepicker-toggle>
             <mat-datepicker #coffeeConversationDatePicker></mat-datepicker>
           </mat-form-field>
+        </ion-col>
+
+        <ion-col size-xs="12"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.intervieweeDescLabel}}</ion-label
+            >
+            <ion-input formControlName="intervieweeDesc"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size-xs="12" size-md="6"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.videoLinkLabel}}</ion-label
+            >
+            <ion-input formControlName="videoLink"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-md="6"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.knowMoreLinkLabel}}</ion-label
+            >
+            <ion-input formControlName="knowMoreLink"></ion-input>
+          </ion-item>
         </ion-col>
 
         <ion-col size-xs="12">

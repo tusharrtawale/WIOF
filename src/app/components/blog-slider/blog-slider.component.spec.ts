@@ -1,7 +1,6 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 import { IonicModule } from "@ionic/angular";
 import { BlogSliderComponent } from "./blog-slider.component";
-import { BlogSliderComponent } from "./blog-slider.component";
 
 describe("BlogSliderComponent", () => {
   let component: BlogSliderComponent;

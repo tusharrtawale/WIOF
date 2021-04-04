@@ -1,3 +1,49 @@
-<p>
-  coffee-conversation works!
-</p>
+<ion-card *ngIf="coffeeConvList && coffeeConvList.length > 0">
+  <ion-card-header class="ion-align-center wiof-slider-header">
+    <ion-row>
+      <ion-col class="title-text" size="12">Coffee Conversations</ion-col>
+    </ion-row>
+  </ion-card-header>
+  <ion-card-content class="background">
+    <div *ngIf="coffeeConvList; else loading">
+      <ion-slides #wiofCoffeeConvSlider [options]="slideOpts">
+        <ion-slide *ngFor="let coffeeConv of coffeeConvList">
+          <ion-card class="coffee-conv-card">
+            <ion-card-content class="ion-text-start card-content">
+              <ion-row>
+                <ion-col class="media-container" size-xs="12" size-md="4">
+                  <iframe
+                    class="media-player"
+                    [src]="coffeeConv.sanitizedLink"
+                  ></iframe>
+                </ion-col>
+                <ion-col class="coffee-conv-content" size-xs="12" size-md="8">
+                  <h2>
+                    <strong>{{ coffeeConv.topic }}</strong>
+                  </h2>
+                  <p [innerHTML]="coffeeConv.topicShortDesc"></p>
+                  <p *ngIf="coffeeConv.knowMoreLink">
+                    <a [href]="coffeeConv.knowMoreLink" target="blank"
+                      >Know More</a
+                    >
+                  </p>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+      <div
+        class="swiper-button-prev navigation-arrow-custom-styling"
+        (click)="wiofCoffeeConvSlider.slidePrev()"
+      ></div>
+      <div
+        class="swiper-button-next navigation-arrow-custom-styling"
+        (click)="wiofCoffeeConvSlider.slideNext()"
+      ></div>
+    </div>
+    <ng-template #loading>
+      <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />
+    </ng-template>
+  </ion-card-content>
+</ion-card>

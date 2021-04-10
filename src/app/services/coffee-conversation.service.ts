@@ -39,16 +39,16 @@ export class CoffeeConversationService {
   }
 
   getCoffeeConversations(category?: String): Observable<CoffeeConversation[]> {
-    let ccCollection = this.database.collection(
+    let ccCollectn = this.database.collection(
       FIREBASE_COLLECTION.COFFEE_CONVERSATIONS
     );
     if (category !== undefined) {
-      ccCollection = this.database.collection(
+      ccCollectn = this.database.collection(
         FIREBASE_COLLECTION.COFFEE_CONVERSATIONS,
         (ref) => ref.where("category", "==", category)
       );
     }
-    return this.ccCollection.get().pipe(
+    return ccCollectn.get().pipe(
       map((querySnapshot) =>
         querySnapshot.docs.map((doc) => {
           const data = doc.data() as CoffeeConversation;

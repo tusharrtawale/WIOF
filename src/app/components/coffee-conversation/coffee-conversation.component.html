@@ -1,5 +1,8 @@
 <ion-card *ngIf="coffeeConvList && coffeeConvList.length > 0">
-  <ion-card-header class="ion-align-center wiof-slider-header" [ngClass]="coffeeConvClass">
+  <ion-card-header
+    class="ion-align-center wiof-slider-header"
+    [ngClass]="coffeeConvClass"
+  >
     <ion-row>
       <ion-col class="title-text" size="12">Coffee Conversations</ion-col>
     </ion-row>
@@ -21,7 +24,19 @@
                   <h2>
                     <strong>{{ coffeeConv.topic }}</strong>
                   </h2>
-                  <p [innerHTML]="coffeeConv.topicShortDesc"></p>
+                  <div
+                    class="interviewee-details"
+                    *ngIf="coffeeConv.intervieweeName.toUpperCase() !== 'NA'"
+                  >
+                    <p>
+                      Name of Interviewee:
+                      <strong>{{ coffeeConv.intervieweeName }}</strong>
+                    </p>
+                    <p>About Interviewee: {{ coffeeConv.intervieweeDesc }}</p>
+                  </div>
+                  <p>
+                    <span [innerHTML]="coffeeConv.topicShortDesc"></span>
+                  </p>
                   <p *ngIf="coffeeConv.knowMoreLink">
                     <a [href]="coffeeConv.knowMoreLink" target="blank"
                       >Know More</a

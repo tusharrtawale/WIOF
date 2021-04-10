@@ -2,8 +2,7 @@ import {
   HostListener,
   Component,
   Input,
-  OnInit,
-  AfterViewInit
+  OnInit
 } from "@angular/core";
 import { VIDEO_SLIDER_OPTIONS } from "src/app/app.constants";
 import { Video } from "src/app/models/Video";

@@ -12,7 +12,7 @@
           <ion-card class="news-card">
             <ion-card-content class="ion-text-start card-content">
               <ion-row>
-                <ion-col class="mediaContainer" size-xs="12" size-md="4">
+                <ion-col class="mediaContainer" size-xs="12" size-lg="5">
                   <img
                     class="mediaPlayer"
                     [src]="news.imageLink | async"
@@ -24,7 +24,7 @@
                     *ngIf="news.mediaType == 'video'"
                   ></iframe>
                 </ion-col>
-                <ion-col class="newsContent" size-xs="12" size-md="8">
+                <ion-col class="newsContent" size-xs="12" size-lg="7">
                   <h2>
                     <strong>{{ news.headline }}</strong>
                   </h2>

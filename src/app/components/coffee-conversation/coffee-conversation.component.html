@@ -1,0 +1,64 @@
+<ion-card *ngIf="coffeeConvList && coffeeConvList.length > 0">
+  <ion-card-header
+    class="ion-align-center wiof-slider-header"
+    [ngClass]="coffeeConvClass"
+  >
+    <ion-row>
+      <ion-col class="title-text" size="12">Coffee Conversations</ion-col>
+    </ion-row>
+  </ion-card-header>
+  <ion-card-content class="background" [ngClass]="coffeeConvClass">
+    <div *ngIf="coffeeConvList; else loading">
+      <ion-slides #wiofCoffeeConvSlider [options]="slideOpts">
+        <ion-slide *ngFor="let coffeeConv of coffeeConvList">
+          <ion-card class="coffee-conv-card">
+            <ion-card-content class="ion-text-start card-content">
+              <ion-row>
+                <ion-col class="media-container" size-xs="12" size-md="4">
+                  <iframe
+                    class="media-player"
+                    [src]="coffeeConv.sanitizedLink"
+                  ></iframe>
+                </ion-col>
+                <ion-col class="coffee-conv-content" size-xs="12" size-md="8">
+                  <h2>
+                    <strong>{{ coffeeConv.topic }}</strong>
+                  </h2>
+                  <div
+                    class="interviewee-details"
+                    *ngIf="coffeeConv.intervieweeName.toUpperCase() !== 'NA'"
+                  >
+                    <p>
+                      Name of Interviewee:
+                      <strong>{{ coffeeConv.intervieweeName }}</strong>
+                    </p>
+                    <p>About Interviewee: {{ coffeeConv.intervieweeDesc }}</p>
+                  </div>
+                  <p>
+                    <span [innerHTML]="coffeeConv.topicShortDesc"></span>
+                  </p>
+                  <p *ngIf="coffeeConv.knowMoreLink">
+                    <a [href]="coffeeConv.knowMoreLink" target="blank"
+                      >Know More</a
+                    >
+                  </p>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+      <div
+        class="swiper-button-prev navigation-arrow-custom-styling"
+        (click)="wiofCoffeeConvSlider.slidePrev()"
+      ></div>
+      <div
+        class="swiper-button-next navigation-arrow-custom-styling"
+        (click)="wiofCoffeeConvSlider.slideNext()"
+      ></div>
+    </div>
+    <ng-template #loading>
+      <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />
+    </ng-template>
+  </ion-card-content>
+</ion-card>

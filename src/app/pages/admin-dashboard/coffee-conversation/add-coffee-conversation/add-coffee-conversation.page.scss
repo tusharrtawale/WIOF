@@ -1,0 +1,8 @@
+.date-picker-field {
+  width: 100%;
+}
+
+.date-picker-field ::ng-deep .mat-form-field-flex {
+  padding-top: 0.5em;
+  padding-left: 15px;
+}

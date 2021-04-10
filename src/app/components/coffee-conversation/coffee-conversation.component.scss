@@ -49,12 +49,6 @@
   color: $home-text-color;
 }
 
-.background {
-  background-color: rgba($home-color, $tint-fraction);
-  background-color: $home-color-light;
-  padding: 0;
-}
-
 .wiof-spinner {
   position: absolute;
   left: 50%;
@@ -81,4 +75,35 @@
 
 .video-title {
   text-decoration: none;
+}
+
+@mixin blog-card-style($color) {
+  background-color: $color;
+  &.background {
+    padding: 0px;
+    background-color: rgba($color, $tint-fraction);
+    .coffee-conv-card .card-content {
+      padding: 5px;
+    }
+  }
+}
+
+.wiof-earth {
+  @include blog-card-style($earth-color);
+}
+
+.wiof-water {
+  @include blog-card-style($water-color);
+}
+
+.wiof-fire {
+  @include blog-card-style($energy-color);
+}
+
+.wiof-air {
+  @include blog-card-style($air-color);
+}
+
+.wiof-spirit {
+  @include blog-card-style($spirit-color);
 }

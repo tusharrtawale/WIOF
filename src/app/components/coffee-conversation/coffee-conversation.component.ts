@@ -11,10 +11,11 @@ export class CoffeeConversationComponent implements OnInit {
   @Input() coffeeConvList: Array<CoffeeConversation>;
   @Input() element: string;
   slideOpts = COFFEE_CONV_SLIDER_OPTIONS;
+  coffeeConvClass: string;
 
   constructor() {}
 
   ngOnInit() {
-    console.log(this.element);
+    this.coffeeConvClass = `wiof-${this.element}`;
   }
 }

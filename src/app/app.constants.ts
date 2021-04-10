@@ -24,7 +24,7 @@ export const ELEMENT_BLOG_CATEGORY = {
   AIR: "Air",
   WATER: "Water",
   EARTH: "Earth",
-  Energy: "Energy",
+  ENERGY: "Energy",
   SPIRIT: "Spirit"
 };
 

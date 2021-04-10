@@ -1,10 +1,10 @@
 <ion-card *ngIf="coffeeConvList && coffeeConvList.length > 0">
-  <ion-card-header class="ion-align-center wiof-slider-header">
+  <ion-card-header class="ion-align-center wiof-slider-header" [ngClass]="coffeeConvClass">
     <ion-row>
       <ion-col class="title-text" size="12">Coffee Conversations</ion-col>
     </ion-row>
   </ion-card-header>
-  <ion-card-content class="background">
+  <ion-card-content class="background" [ngClass]="coffeeConvClass">
     <div *ngIf="coffeeConvList; else loading">
       <ion-slides #wiofCoffeeConvSlider [options]="slideOpts">
         <ion-slide *ngFor="let coffeeConv of coffeeConvList">

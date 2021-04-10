@@ -4,13 +4,6 @@
     welcomeImageClass="air-welcome-img"
   ></app-element-welcome-image>
   <app-life-elements [element]="elementName"></app-life-elements>
-  <!-- <div >
-    <h1>AQI data</h1>
-    <p *ngIf="(aqi|async) as aqi_data" > {{aqi_data.data.aqi}} </p>
-
-    <p></p>
-    <div *ngIf="get_data|async">
-      </div> -->
   <ion-row>
     <ion-col size-md="7" size-xs="12">
       <app-video-widget [element]="elementName"></app-video-widget>
@@ -22,7 +15,7 @@
   <ion-row>
     <ion-col>
       <app-coffee-conversation
-        [coffeeConvList]="coffeeConversations | async"
+        [coffeeConvList]="coffeeConversations$ | async"
         [element]="elementName"
       ></app-coffee-conversation>
     </ion-col>
@@ -30,7 +23,7 @@
   <ion-row
     ><ion-col
       ><app-blog-slider
-        [blogList]="blogs | async"
+        [blogList]="blogs$ | async"
         [element]="elementName"
       ></app-blog-slider
     ></ion-col>
@@ -38,7 +31,7 @@
   <ion-row
     ><ion-col
       ><app-video-slider
-        [videoList]="videos | async"
+        [videoList]="videos$ | async"
         [element]="elementName"
       ></app-video-slider>
     </ion-col>

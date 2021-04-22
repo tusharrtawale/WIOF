@@ -24,7 +24,7 @@ export const ELEMENT_BLOG_CATEGORY = {
   AIR: "Air",
   WATER: "Water",
   EARTH: "Earth",
-  Energy: "Energy",
+  ENERGY: "Energy",
   SPIRIT: "Spirit"
 };
 
@@ -95,6 +95,19 @@ export const BREAKING_NEWS_SLIDER_OPTIONS = {
   }
 };
 
+export const COFFEE_CONV_SLIDER_OPTIONS = {
+  slidesPerView: 1,
+  spaceBetween: 1,
+  freeMode: true,
+  coverflowEffect: {
+    rotate: 50,
+    stretch: 0,
+    depth: 100,
+    modifier: 1,
+    slideShadows: true
+  }
+};
+
 export const BLOG_SLIDER_OPTIONS = {
   slidesPerView: 4,
   spaceBetween: 1,
@@ -146,7 +159,8 @@ export const FIREBASE_COLLECTION = {
   POLL: "Poll",
   ENVCAL: "Envcal",
   NEWS: "News",
-  CONFIG: "config"
+  CONFIG: "config",
+  COFFEE_CONVERSATIONS: "CoffeeConversations"
 };
 
 export const VIDEO_PLAYER_TITLES = {

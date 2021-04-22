@@ -1,0 +1,130 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/admin-dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="!isEditMode"
+      >{{ pageContent.addCoffeeConversationTitle }}</ion-title
+    >
+    <ion-title *ngIf="isEditMode"
+      >{{ pageContent.editCoffeeConversationTitle }}</ion-title
+    >
+    <ion-buttons slot="end">
+      <ion-button color="success" fill="solid" size="large" (click)="onSubmit()"
+        >{{ pageContent.saveLabel }}</ion-button
+      >
+      <ion-button
+        color="medium"
+        fill="clear"
+        size="large"
+        routerLink="/admin-dashboard/manage-coffee-conversation"
+        >{{ pageContent.cancelLabel }}</ion-button
+      >
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="addCoffeeConversationForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-xs="12" size-md="8"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.topicLabel}}</ion-label
+            >
+            <ion-input formControlName="topic"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-md="4"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.categoryLabel}}</ion-label
+            >
+            <ion-select formControlName="category">
+              <ion-select-option
+                [value]="category"
+                *ngFor="let category of categories"
+                >{{ category }}</ion-select-option
+              >
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size-xs="12"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.topicShortDescLabel}}</ion-label
+            >
+            <ion-input formControlName="topicShortDesc"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size-xs="12" size-md="4"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.interviewerNameLabel}}</ion-label
+            >
+            <ion-input formControlName="interviewerName"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-md="4"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.intervieweeNameLabel}}</ion-label
+            >
+            <ion-input formControlName="intervieweeName"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-md="4">
+          <mat-form-field appearance="standard" class="date-picker-field">
+            <mat-label> {{ pageContent.interviewDateLabel }}</mat-label>
+            <input
+              matInput
+              [matDatepicker]="coffeeConversationDatePicker"
+              formControlName="interviewDate"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="coffeeConversationDatePicker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #coffeeConversationDatePicker></mat-datepicker>
+          </mat-form-field>
+        </ion-col>
+
+        <ion-col size-xs="12"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.intervieweeDescLabel}}</ion-label
+            >
+            <ion-input formControlName="intervieweeDesc"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size-xs="12" size-md="6"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.videoLinkLabel}}</ion-label
+            >
+            <ion-input formControlName="videoLink"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-md="6"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.knowMoreLinkLabel}}</ion-label
+            >
+            <ion-input formControlName="knowMoreLink"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size-xs="12">
+          <ion-item
+            ><ion-label>{{pageContent.topicDescLabel}}</ion-label></ion-item
+          >
+          <quill-editor formControlName="topicDesc"></quill-editor>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

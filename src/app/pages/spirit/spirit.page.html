@@ -16,10 +16,18 @@
       <app-eq-widget></app-eq-widget>
     </ion-col>
   </ion-row>
+  <ion-row>
+    <ion-col>
+      <app-coffee-conversation
+        [coffeeConvList]="coffeeConversations$ | async"
+        [element]="elementName"
+      ></app-coffee-conversation>
+    </ion-col>
+  </ion-row>
   <ion-row
     ><ion-col
       ><app-blog-slider
-        [blogList]="blogs | async"
+        [blogList]="blogs$ | async"
         [element]="elementName"
       ></app-blog-slider
     ></ion-col>
@@ -27,7 +35,7 @@
   <ion-row
     ><ion-col
       ><app-video-slider
-        [videoList]="videos | async"
+        [videoList]="videos$ | async"
         [element]="elementName"
       ></app-video-slider>
     </ion-col>

@@ -28,6 +28,10 @@ export class AdminDashboardPage implements OnInit {
         actionUrl: "manage-calendar"
       },
       {
+        name: "Manage Coffee Conversations",
+        actionUrl: "manage-coffee-conversation"
+      },
+      {
         name: "View Subscriptions",
         actionUrl: "subscribers"
       }

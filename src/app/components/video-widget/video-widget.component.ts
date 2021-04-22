@@ -45,19 +45,6 @@ export class VideoWidgetComponent implements OnInit {
     );
   }
 
-  //future reference
-  // $('a.play-video').click(function(){
-  //   $('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
-  // });
-
-  // $('a.stop-video').click(function(){
-  //   $('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
-  // });
-
-  // $('a.pause-video').click(function(){
-  //   $('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
-  // });
-
   setPlayerTitle() {
     if (this.element === ELEMENT_SELECT.AIR) {
       this.videoPlayerTitle = VIDEO_PLAYER_TITLES.AIR;
@@ -73,6 +60,7 @@ export class VideoWidgetComponent implements OnInit {
       this.videoPlayerTitle = VIDEO_PLAYER_TITLES.CONFIG;
     }
   }
+  
   setVideoLink() {
     if (this.element === ELEMENT_SELECT.AIR) {
       this.videoLink = VIDEO_PLAYER_VIDEOS.AIR;

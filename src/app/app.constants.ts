@@ -173,11 +173,11 @@ export const VIDEO_PLAYER_TITLES = {
 };
 
 export const VIDEO_PLAYER_VIDEOS = {
-  AIR: "qmOkbaPtAJA",
-  WATER: "Z2HQY5A3o-s",
+  AIR: "Xs70ewSdEjE",
+  WATER: "RkdIIfArWqo",
   EARTH: "5aIOHHi_W5o",
-  FIRE: "L6murPEFbXg",
-  SPIRIT: "LgUCyWhJf6s",
+  FIRE: "mmyrbKBZ6SU",
+  SPIRIT: "CsCBbXkkRPY",
   CONFIG: "SYWb9hNX-1s"
 };
 

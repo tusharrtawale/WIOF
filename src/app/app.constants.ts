@@ -152,7 +152,7 @@ export const FIREBASE_COLLECTION = {
 export const VIDEO_PLAYER_TITLES = {
   AIR: "What is Air Quality Index?",
   WATER: "What is Ground water?",
-  EARTH: "What is Food pH?",
+  EARTH: "On Earth Day, Let's rediscover our Home - Our Planet",
   FIRE: "Energy consumption ranking from 1990 to 2017",
   SPIRIT: "What is Emotional Intelligence?",
   CONFIG: "About WorldIsOneFamily.com"
@@ -161,7 +161,7 @@ export const VIDEO_PLAYER_TITLES = {
 export const VIDEO_PLAYER_VIDEOS = {
   AIR: "qmOkbaPtAJA",
   WATER: "Z2HQY5A3o-s",
-  EARTH: "LrLrOYLAwWY",
+  EARTH: "5aIOHHi_W5o",
   FIRE: "L6murPEFbXg",
   SPIRIT: "LgUCyWhJf6s",
   CONFIG: "SYWb9hNX-1s"

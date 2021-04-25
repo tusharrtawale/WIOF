@@ -1,10 +1,13 @@
 <app-header></app-header>
+<app-subscribe [page]="'spirit'"></app-subscribe>
+<app-social-share-home style="z-index: 2"></app-social-share-home>
 <ion-content>
   <app-element-welcome-image
     welcomeImageClass="spirit-welcome-img"
   ></app-element-welcome-image>
 
   <app-life-elements [element]="elementName"></app-life-elements>
+
   <ion-row>
     <ion-col size-lg="7" size-xs="12">
       <app-video-widget [element]="elementName"></app-video-widget>

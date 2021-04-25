@@ -125,14 +125,14 @@ export class AboutusPage implements OnInit {
         "Shailendra Deshmukh is an IIT graduate and IT professional currently working as a project manager. He is an active Yoga practitioner and a Certified Yoga Teacher. Since childhood he has been a seeker and started practicing meditation at an early age while still in school. He has attended multiple Yoga workshops and training to deepen his practices. He has spent hundreds of hours doing meditation and practicing yoga. He has been through multiple experiences throughout this period. He keeps studying several classical books and commentaries from modern day Gurus in order to enhance his knowledge on Yoga and Spirituality.",
       socialLink: "https://www.linkedin.com/in/shailendra-deshmukh-51848833/"
     },
-    {
-      serialNo: 14,
-      name: "Preeti",
-      imageLink: "../../../assets/profiles/preeti.jpg",
-      bio:
-        "Preeti is a dynamic and energetic person who has expertise in prioritizing things in her life. She possesses a strong mindset, unlimited courage, excellent communication skills to have an enduring first impression and everlasting relationship with people. With almost 5 years of experience in the IT industry, she has the proficiency to grasp various technical aspects of a project and is also comfortable in managing as well as mentoring other people. When it comes to knowledge she always craves more and her decision to pursue a master's degree from an international university is just another example of the same. She is an environmental enthusiast who always advocates and is concerned with the protection of the environment.",
-      socialLink: "https://www.linkedin.com/in/mehtapreeti09/"
-    },
+    // {
+    //   serialNo: 14,
+    //   name: "Preeti",
+    //   imageLink: "../../../assets/profiles/preeti.jpg",
+    //   bio:
+    //     "Preeti is a dynamic and energetic person who has expertise in prioritizing things in her life. She possesses a strong mindset, unlimited courage, excellent communication skills to have an enduring first impression and everlasting relationship with people. With almost 5 years of experience in the IT industry, she has the proficiency to grasp various technical aspects of a project and is also comfortable in managing as well as mentoring other people. When it comes to knowledge she always craves more and her decision to pursue a master's degree from an international university is just another example of the same. She is an environmental enthusiast who always advocates and is concerned with the protection of the environment.",
+    //   socialLink: "https://www.linkedin.com/in/mehtapreeti09/"
+    // },
     {
       serialNo: 15,
       name: "Rahul Banerjee",

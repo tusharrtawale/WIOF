@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 
 import { AuthGuard } from "./guards/auth.guard";
 
+// Test commit for route
 const routes: Routes = [
   {
     path: "home",

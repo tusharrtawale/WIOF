@@ -51,7 +51,8 @@ export class AboutusPage implements OnInit {
       name: "Mahesh Kakade",
       imageLink: "../../../assets/profiles/mahesh_kakade.jpg",
       bio:
-        'Mahesh Kakade, the owner of our "Water" page, is into IT profession,  however he is more passionate on working for water conservation, waste minimization and other environmental issues. As time permits, he delves into problems and works relentlessly to come up with simple and practical solutions. He has undertaken projects to implement Rain Water Harvesting and installation of spray aerators on every single wash basin of the society he lives in. He believes in smart solutions via small investments that lead to huge savings of this precious natural resource. Our endeavor is to connect many like minded people and leverage each other\'s expertise to bring an awareness on Water conservation, Water Pollution and take action to come up with solutions to challenges related to Water.'
+        'Mahesh Kakade, the owner of our "Water" page, is into IT profession,  however he is more passionate on working for water conservation, waste minimization and other environmental issues. As time permits, he delves into problems and works relentlessly to come up with simple and practical solutions. He has undertaken projects to implement Rain Water Harvesting and installation of spray aerators on every single wash basin of the society he lives in. He believes in smart solutions via small investments that lead to huge savings of this precious natural resource. Our endeavor is to connect many like minded people and leverage each other\'s expertise to bring an awareness on Water conservation, Water Pollution and take action to come up with solutions to challenges related to Water.',
+      socialLink: "https://www.linkedin.com/in/mahesh-kakade-54567315"
     },
     {
       serialNo: 6,
@@ -79,14 +80,14 @@ export class AboutusPage implements OnInit {
     },
     {
       serialNo: 8,
-      name: "Amrita",
+      name: "Amrita Baskar",
       imageLink: "../../../assets/profiles/amrita.jpg",
       bio:
         "Amrita is a software engineer by profession and has contributed to the UX of WIOF. She is passionate about animal welfare and is ready to help out dogs in distress. She has rescued many strays, ensuring that they end up in good homes. She participates in a lot of environmental events and volunteers for animal shelters. She is a naturally creative person who believes in finding environmentally sustainable solutions for everyday living. In her free time, she creates artful jewellery with her family at PrettyKnotts to fund her various animal rescues."
     },
     {
       serialNo: 9,
-      name: "Naved",
+      name: "Naved Maulavi",
       imageLink: "../../../assets/profiles/naved.jpg",
       bio:
         "Naved Maulavi is a social, cheerful, and enthusiastic person with strong technical experience in IT and contributed to the development of the website with other crew members. He actively participated in National Service Scheme during college days and looking for opportunities to contribute to social causes. He has been part of Vasundhara Abhiyaan for mass tree plantation and nurturing at Baner hills. The experience of Naved with other developers helped the website to build up with better practices at the development level and get behind the scene work done.",
@@ -94,7 +95,7 @@ export class AboutusPage implements OnInit {
     },
     {
       serialNo: 10,
-      name: "Eeshan",
+      name: "Eeshan Jaiswal",
       imageLink: "../../../assets/profiles/eeshan_jaiswal.jpg",
       bio:
         "Eeshan is a Tech enthusiast and believes in sustainable development. At WIOF he has contributed towards the development of the website and various widgets. He has a keen interest in technology and he is always looking forward to developing solutions that can add more value to people's life. He wants to work towards the emerging issues in the world with help of technology, like the use of IoT in water tanks monitoring to preserve water, the use of Air Quality Monitoring System to aware people of increasing pollution, and more.",
@@ -102,7 +103,7 @@ export class AboutusPage implements OnInit {
     },
     {
       serialNo: 11,
-      name: "Devraj",
+      name: "Devraj Soni",
       imageLink: "../../../assets/profiles/devraj_soni.jpg",
       bio:
         "Devraj is responsible for developing the pH and Energy Widgets and few content videos of WIOF. His deep interest lies in developing sustainable business enterprises that meet not only today's needs but also promise a sustainable tomorrow. Apart from WIOF, Devraj has a family business of Embossed idols and Silver Jewellery. He also manages his own venture ThriveGreen in the Sustainability area.",
@@ -164,6 +165,30 @@ export class AboutusPage implements OnInit {
       bio:
         "Madhura Hambarde is a Senior Systems Engineer by profession.  She has interest in the Air Pollution area and has written blogs pertaining to it on the Air Page of WIOF. She has also worked with the Eco Club of Infosys Pune in collaboration with Indian Institute of Tropical Meteorology, Pune (makers of the SAFAR AQI Monitoring App) to help monitor pollution in the Hinjewadi area by getting Air Monitoring Device from IITM to the Infosys Campus last year.  She has done her Bachelors in Electrical, Electronics and Communication Engineering from Pune University and is an Internet of Things (IOT) Enthusiast.",
       socialLink: "https://www.linkedin.com/in/madhura-hambarde-166718155/"
+    },
+    {
+      serialNo: 20,
+      name: "Raj Maru",
+      imageLink: "../../../assets/profiles/Raj_Maru.jpeg",
+      bio:
+        "Raj Maru has been an Animal Rescuer for 7+ years and an Animal Liberation Activist. Certified from WVS Ooty for vaccinating animals and assisting surgeries, he routinely rescues, treats and fosters injured animals. A budding environmentalist, Raj is an IT Professional, and an ethical vegan for more than 2 years he firmly believes 'Hands that help are better than lips that pray'",
+      socialLink: "https://www.linkedin.com/in/raj-maru-1a9ba77a"
+    },
+    {
+      serialNo: 21,
+      name: "Krishna Kumavat",
+      imageLink: "../../../assets/profiles/krishna_kumavat.jpg",
+      bio:
+        "Krishna is a civil engineer by education and a software developer by profession. An ex-infoscion, he currently is working in Cap Gemini as a SAP Developer. He has written blogs on Water Conservation for WIOF and conducted interviews in Baroda with some environmentally conscious people for WIOF.",
+      socialLink: "https://www.linkedin.com/in/krishna-kumawat-a600a85b"
+    },
+    {
+      serialNo: 22,
+      name: "Roma Bakshi",
+      imageLink: "../../../assets/profiles/Roma Bakshi.jpeg",
+      bio:
+        "Roma is a Test Project Manager, Business Analyst and Scrum Master working in the Ministry of Social Development in Wellington, New Zealand. She is huge advocate of emotional well being and mental health and often puts motivational posts with inspiring quotes and thoughts pertaining to the same on her Insta handle. Her poem on handling Depression is the highlight of our Spirit apage. She has done her BCA from Jammu and MCA from Kurukshetra University.",
+      socialLink: "https://www.linkedin.com/in/roma-bakshi-27a788a"
     }
   ];
   constructor() {}

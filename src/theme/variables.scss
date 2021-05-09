@@ -75,14 +75,15 @@
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
 
-
   //home
-  --ion-color-home: #FFDE68;
-  --ion-color-home-rgb: 255,222,104;
+  //--ion-color-home: #FFDE68;
+  //testing color
+  --ion-color-home: #fbb0ac;
+  --ion-color-home-rgb: 252, 228, 213;
   --ion-color-home-contrast: #000000;
-  --ion-color-home-contrast-rgb: 0,0,0;
-  --ion-color-home-shade: #e0c35c;
-  --ion-color-home-tint: #ffe177;
+  --ion-color-home-contrast-rgb: 0, 0, 0;
+  --ion-color-home-shade: #fbb0ac;
+  --ion-color-home-tint: #fbb0ac;
 
   //home-light
   --ion-color-home-light: #c1a182;
@@ -95,12 +96,11 @@
   //earth
 
   --ion-color-earth: #bded81;
-  --ion-color-earth-rgb: 189,237,129;
+  --ion-color-earth-rgb: 189, 237, 129;
   --ion-color-earth-contrast: #000000;
-  --ion-color-earth-contrast-rgb: 0,0,0;
+  --ion-color-earth-contrast-rgb: 0, 0, 0;
   --ion-color-earth-shade: #a6d172;
   --ion-color-earth-tint: #c4ef8e;
-
 
   //energy
   --ion-color-energy: #ffebb8;
@@ -109,7 +109,6 @@
   --ion-color-energy-contrast-rgb: 0, 0, 0;
   --ion-color-energy-shade: #e0cfa2;
   --ion-color-energy-tint: #ffedbf;
-  
 
   // air
 
@@ -123,32 +122,30 @@
   //air ele - for take action page air variable is not working so had to create duplicate variable with different name
 
   --ion-color-airele: #e0caf5;
-  --ion-color-airele-rgb: 224,202,245;
+  --ion-color-airele-rgb: 224, 202, 245;
   --ion-color-airele-contrast: #000000;
-  --ion-color-airele-contrast-rgb: 0,0,0;
+  --ion-color-airele-contrast-rgb: 0, 0, 0;
   --ion-color-airele-shade: #c5b2d8;
   --ion-color-airele-tint: #e3cff6;
 
   //water
 
   --ion-color-water: #dff3ff;
-  --ion-color-water-rgb: 223,243,255;
+  --ion-color-water-rgb: 223, 243, 255;
   --ion-color-water-contrast: #000000;
-  --ion-color-water-contrast-rgb: 0,0,0;
+  --ion-color-water-contrast-rgb: 0, 0, 0;
   --ion-color-water-shade: #c4d6e0;
   --ion-color-water-tint: #e2f4ff;
 
   //spirit
 
   --ion-color-spirit: #f1dec6;
-  --ion-color-spirit-rgb: 241,222,198;
+  --ion-color-spirit-rgb: 241, 222, 198;
   --ion-color-spirit-contrast: #000000;
-  --ion-color-spirit-contrast-rgb: 0,0,0;
+  --ion-color-spirit-contrast-rgb: 0, 0, 0;
   --ion-color-spirit-shade: #d4c3ae;
   --ion-color-spirit-tint: #f2e1cc;
-
 }
-
 
 .ion-color-earth {
   --ion-color-base: var(--ion-color-earth);
@@ -186,7 +183,6 @@
   --ion-color-tint: var(--ion-color-airele-tint);
 }
 
-
 .ion-color-water {
   --ion-color-base: var(--ion-color-water);
   --ion-color-base-rgb: var(--ion-color-water-rgb);
@@ -195,7 +191,6 @@
   --ion-color-shade: var(--ion-color-water-shade);
   --ion-color-tint: var(--ion-color-water-tint);
 }
-
 
 .ion-color-home {
   --ion-color-base: var(--ion-color-home);
@@ -223,7 +218,6 @@
   --ion-color-shade: var(--ion-color-spirit-shade);
   --ion-color-tint: var(--ion-color-spirit-tint);
 }
-
 
 // @media (prefers-color-scheme: dark) {
 //   /*

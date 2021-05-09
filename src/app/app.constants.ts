@@ -164,11 +164,11 @@ export const FIREBASE_COLLECTION = {
 };
 
 export const VIDEO_PLAYER_TITLES = {
-  AIR: "What is Air Quality Index?",
-  WATER: "What is Ground water?",
-  EARTH: "On Earth Day, Let's rediscover our Home - Our Planet",
-  FIRE: "Energy consumption ranking from 1990 to 2017",
-  SPIRIT: "What is Emotional Intelligence?",
+  AIR: "The Current Deadly Killer in the Air",
+  WATER: "Water : The most precious resource",
+  EARTH: "Let's Rediscover our Planet Earth",
+  FIRE: "The Rise of Solar and Wind Energy",
+  SPIRIT: "Handling Depression with Self Love",
   CONFIG: "About WorldIsOneFamily.com"
 };
 
@@ -177,7 +177,7 @@ export const VIDEO_PLAYER_VIDEOS = {
   WATER: "RkdIIfArWqo",
   EARTH: "5aIOHHi_W5o",
   FIRE: "mmyrbKBZ6SU",
-  SPIRIT: "CsCBbXkkRPY",
+  SPIRIT: "xiAFq4ajWvM",
   CONFIG: "SYWb9hNX-1s"
 };
 

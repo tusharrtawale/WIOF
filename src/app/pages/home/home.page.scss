@@ -37,11 +37,12 @@ $breakpoint-tablet: 767px;
 
 .landing-welcome-label {
   font-size: 30px;
-  text-shadow: 5px 5px 5px #2d2d2d;
+  //text-shadow: 5px 5px 5px #2d2d2d;
   color: white;
   padding: 20px;
   margin: 0;
   font-weight: 500;
+  text-shadow: gold 10px 0px 10px;
 }
 
 @media (max-width: $breakpoint-tablet) {
@@ -61,7 +62,7 @@ $breakpoint-tablet: 767px;
 // }
 
 .landing-welcome-img {
-  background: url("../../../assets/banners/home_banner.jpg");
+  background: url("../../../assets/banners/beautiful-pink-peach-tree-blossom.jpg");
   background-repeat: no-repeat;
   // background-attachment: fixed;
   background-size: cover;

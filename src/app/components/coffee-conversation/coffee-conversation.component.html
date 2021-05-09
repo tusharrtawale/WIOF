@@ -1,4 +1,7 @@
-<ion-card *ngIf="coffeeConvList && coffeeConvList.length > 0">
+<ion-card
+  *ngIf="coffeeConvList && coffeeConvList.length > 0"
+  class="coffee-conv-container"
+>
   <ion-card-header
     class="ion-align-center wiof-slider-header"
     [ngClass]="coffeeConvClass"
@@ -14,13 +17,21 @@
           <ion-card class="coffee-conv-card">
             <ion-card-content class="ion-text-start card-content">
               <ion-row>
-                <ion-col class="media-container" size-xs="12" size-md="4">
+                <ion-col
+                  class="media-container"
+                  size-xs="12"
+                  [attr.size-md]="fromHomePage ? '12' : '6'"
+                >
                   <iframe
                     class="media-player"
                     [src]="coffeeConv.sanitizedLink"
                   ></iframe>
                 </ion-col>
-                <ion-col class="coffee-conv-content" size-xs="12" size-md="8">
+                <ion-col
+                  class="coffee-conv-content"
+                  size-xs="12"
+                  [attr.size-md]="fromHomePage ? '12' : '6'"
+                >
                   <h2>
                     <strong>{{ coffeeConv.topic }}</strong>
                   </h2>
@@ -49,10 +60,12 @@
         </ion-slide>
       </ion-slides>
       <div
+        *ngIf="coffeeConvList.length > 1"
         class="swiper-button-prev navigation-arrow-custom-styling"
         (click)="wiofCoffeeConvSlider.slidePrev()"
       ></div>
       <div
+        *ngIf="coffeeConvList.length > 1"
         class="swiper-button-next navigation-arrow-custom-styling"
         (click)="wiofCoffeeConvSlider.slideNext()"
       ></div>

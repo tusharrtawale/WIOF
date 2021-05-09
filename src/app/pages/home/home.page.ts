@@ -1,5 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { ElementRef, ViewChild } from "@angular/core";
+import { CoffeeConversationService } from "src/app/services/coffee-conversation.service";
+import { Observable } from "rxjs";
+import { CoffeeConversation } from "src/app/models/CoffeeConversation";
 
 @Component({
   selector: "app-home",
@@ -11,8 +14,9 @@ export class HomePage implements OnInit {
   ribbonCut = false;
   counter = 5;
   buttonClicked = false;
+  coffeeConversations$: Observable<CoffeeConversation[]>;
 
-  constructor() {}
+  constructor(private coffeeConvService: CoffeeConversationService) {}
 
   ngOnInit() {
     // inauguration code
@@ -27,6 +31,7 @@ export class HomePage implements OnInit {
       "privacyConsentAccepted"
     );
     this.viewConsentPopup = privacyConsentAccepted === "true" ? false : true;
+    this.coffeeConversations$ = this.coffeeConvService.getCoffeeConversations();
   }
 
   onAccept() {

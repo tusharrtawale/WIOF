@@ -33,7 +33,10 @@
 <app-header></app-header>
 <app-subscribe [page]="'home'"></app-subscribe>
 <app-social-share-home style="z-index: 2"></app-social-share-home>
-<app-concent-popup *ngIf="viewConsentPopup" (accepted)="onAccept()"></app-concent-popup>
+<app-concent-popup
+  *ngIf="viewConsentPopup"
+  (accepted)="onAccept()"
+></app-concent-popup>
 <!-- <app-concent-popup *ngIf="viewConcentPopup" #cp='concentPopup' (accepted)="onAccept()"></app-concent-popup> -->
 
 <ion-content>
@@ -42,12 +45,21 @@
       <ion-col>
         <div class="landing-welcome-img">
           <p class="landing-welcome-label">
-            <span id="inspire" style="margin-right: 20%">Inspire through Creativity</span><br />
-            <span id="enlighten" style="margin-right: 5%">Enlighten through Knowledge</span><br />
-            <span id="protect" style="margin-right: -10%">Protect through Action</span>
+            <span id="inspire" style="margin-right: 20%"
+              >Inspire through Creativity</span
+            ><br />
+            <span id="enlighten" style="margin-right: 5%"
+              >Enlighten through Knowledge</span
+            ><br />
+            <span id="protect" style="margin-right: -10%"
+              >Protect through Action</span
+            >
           </p>
-          <button class="wiof-primary-button ion-margin-top" [routerLink]="['/discover-more']"
-            routerLinkActive="router-link-active">
+          <button
+            class="wiof-primary-button ion-margin-top"
+            [routerLink]="['/discover-more']"
+            routerLinkActive="router-link-active"
+          >
             Discover More...
           </button>
         </div>
@@ -55,8 +67,14 @@
     </ion-row>
     <app-life-elements></app-life-elements>
     <ion-row>
-      <ion-col size="12">
+      <ion-col size-xs="12" size-md="6" size-lg="8">
         <app-breaking-news></app-breaking-news>
+      </ion-col>
+      <ion-col size-xs="12" size-md="6" size-lg="4">
+        <app-coffee-conversation
+          [coffeeConvList]="coffeeConversations$ | async"
+          [fromHomePage]="true"
+        ></app-coffee-conversation>
       </ion-col>
       <!-- <ion-col size="12">
         <app-ngo></app-ngo>

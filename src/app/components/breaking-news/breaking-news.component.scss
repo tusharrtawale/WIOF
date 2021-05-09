@@ -1,5 +1,36 @@
 @import "../../wiof-custom-theming.scss";
 
+.breaking-news-container {
+  height: calc(100% - 20px);
+
+  .background,
+  .background > div {
+    height: 100%;
+  }
+
+  ion-slides {
+    height: calc(100% - 110px);
+
+    .news-card {
+      min-width: 20%;
+      height: calc(100% - 10px);
+      width: 100%;
+
+      ion-card-content {
+        height: 100%;
+
+        ion-row {
+          height: 100%;
+
+          .media-container {
+            min-height: 300px;
+          }
+        }
+      }
+    }
+  }
+}
+
 .video-card-footer {
   background-color: white;
   border-top: 1px solid lightgrey;
@@ -9,19 +40,13 @@
   color: $dark-color;
 }
 
-.news-card {
-  min-width: 20%;
-  height: calc(100% - 10px);
-  width: 100%;
-}
-
 .thumbnailImage {
   align-self: center;
   width: 100%;
   padding-top: 56.25%;
 }
 
-.mediaContainer {
+.media-container {
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -69,7 +94,6 @@
 }
 
 .background {
-  background-color: rgba($home-color, $tint-fraction);
   background-color: $home-color-light;
   padding: 0;
 

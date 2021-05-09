@@ -1,5 +1,5 @@
 <!-- <ion-card *ngIf="newsList && newsList.length > 0"> -->
-<ion-card *ngIf="newsList.length > 0">
+<ion-card *ngIf="newsList.length > 0" class="breaking-news-container">
   <ion-card-header class="ion-align-center wiof-slider-header">
     <ion-row>
       <ion-col class="title-text" size="12">Breaking NEWS</ion-col>
@@ -12,7 +12,7 @@
           <ion-card class="news-card">
             <ion-card-content class="ion-text-start card-content">
               <ion-row>
-                <ion-col class="mediaContainer" size-xs="12" size-lg="5">
+                <ion-col class="media-container" size-xs="12" size-lg="8">
                   <img
                     class="mediaPlayer"
                     [src]="news.imageLink | async"
@@ -24,7 +24,7 @@
                     *ngIf="news.mediaType == 'video'"
                   ></iframe>
                 </ion-col>
-                <ion-col class="newsContent" size-xs="12" size-lg="7">
+                <ion-col class="newsContent" size-xs="12" size-lg="4">
                   <h2>
                     <strong>{{ news.headline }}</strong>
                   </h2>

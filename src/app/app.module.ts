@@ -15,6 +15,7 @@ import firebaseConfig from "../environment";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,6 +30,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
     AngularFireStorageModule,
+    AngularFireAnalyticsModule,
     BrowserAnimationsModule
     // AngularFireAuthModule    //To be used later to add authentication
   ],

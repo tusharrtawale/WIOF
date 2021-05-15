@@ -6,5 +6,6 @@ const firebaseConfig = {
   storageBucket: "wiof-staging.appspot.com",
   messagingSenderId: "1062529288860",
   appId: "1:1062529288860:web:d503fcf87348389340fb59",
+  measurementId: "G-9WDZE318VX"
 };
 export default firebaseConfig;

@@ -61,12 +61,15 @@
     .occasion-day-image {
       height: 100px;
       width: 100%;
+      object-fit: cover;
+
       &:hover {
         box-shadow: 5px 5px 20px grey;
       }
     }
 
-    .next-button, .prev-button {
+    .next-button,
+    .prev-button {
       position: absolute;
       bottom: 0.25rem;
       border-radius: 50%;

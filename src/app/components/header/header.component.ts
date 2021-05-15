@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit {
     } else if (url_array.includes("spirit")) {
       this.colorName = "spirit";
     } else {
-      this.colorName = "";
+      this.colorName = "home";
     }
   }
 }

@@ -2,7 +2,9 @@
 
 .wiof-env-calender-content {
   padding: 0;
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: calc(100% - 60px);
 
   .env-calendar-heading {
     background-color: rgba(128, 64, 0, 0.5);
@@ -127,11 +129,9 @@
   font-size: 10px;
 }
 
-.wiof-home {
-  background-color: $home-color;
-  &.background {
-    background-color: rgba($home-color, $tint-fraction);
-  }
+.wiof-calendar-wrapper {
+  height: calc(100% - 20px);
+  background-color: $home-color-light;
 }
 
 .wiof-env-calendar-dialog-container {
@@ -146,6 +146,7 @@
 }
 
 .wiof-env-calender-header {
+  background-color: $home-color;
   border-bottom: white 2px solid;
 }
 

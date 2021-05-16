@@ -84,13 +84,13 @@
 }
 
 .landing-circle-label {
-  padding-top: 5px;
-  color: black;
+  margin-top: 10px;
+  color: #505050;
   text-align: center;
   cursor: pointer;
-  transition: 0.8s;
+  //transition: 0.8s;
   &:hover {
-    color: rgb(12, 116, 201);
+    color: #000000;
   }
 }
 

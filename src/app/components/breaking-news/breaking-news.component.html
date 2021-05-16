@@ -57,10 +57,12 @@
         </p>
       </marquee>
       <div
+        *ngIf="newsList.length > 1"
         class="swiper-button-prev navigation-arrow-custom-styling"
         (click)="wiofNewsSlider.slidePrev()"
       ></div>
       <div
+        *ngIf="newsList.length > 1"
         class="swiper-button-next navigation-arrow-custom-styling"
         (click)="wiofNewsSlider.slideNext()"
       ></div>

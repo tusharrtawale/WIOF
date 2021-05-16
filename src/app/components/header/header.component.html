@@ -2,7 +2,6 @@
   <ion-row>
     <ion-col class="ion-align-self-start ion-no-padding">
       <ion-toolbar
-        [color]="colorName !== 'home' ? colorName : ''"
         class="header-padding toolbar-background-wrapper"
       >
         <ion-buttons class="menu-button-toggle" slot="start">
@@ -20,7 +19,7 @@
     <!-- uncomment when have to add menu and links in header-->
 
     <ion-col class="ion-align-self-end ion-no-padding">
-      <ion-toolbar [color]="colorName" class="header-padding">
+      <ion-toolbar class="header-padding toolbar-background-wrapper">
         <ion-buttons slot="end">
           <!-- <ion-button>
             Lifestyle

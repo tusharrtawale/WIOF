@@ -36,13 +36,12 @@ $darkest: hsl($bhue, calc(#{$bsat} * 1%), calc(#{$blig} * 1% - 35%));
 $breakpoint-tablet: 767px;
 
 .landing-welcome-label {
-  font-size: 30px;
-  //text-shadow: 5px 5px 5px #2d2d2d;
+  font-size: 35px;
   color: white;
   padding: 20px;
   margin: 0;
   font-weight: 500;
-  text-shadow: gold 10px 0px 10px;
+  text-shadow: black 10px 0px 10px;
 }
 
 @media (max-width: $breakpoint-tablet) {

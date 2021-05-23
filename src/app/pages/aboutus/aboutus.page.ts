@@ -83,7 +83,8 @@ export class AboutusPage implements OnInit {
       name: "Amrita Baskar",
       imageLink: "../../../assets/profiles/amrita.jpg",
       bio:
-        "Amrita is a software engineer by profession and has contributed to the UX of WIOF. She is passionate about animal welfare and is ready to help out dogs in distress. She has rescued many strays, ensuring that they end up in good homes. She participates in a lot of environmental events and volunteers for animal shelters. She is a naturally creative person who believes in finding environmentally sustainable solutions for everyday living. In her free time, she creates artful jewellery with her family at PrettyKnotts to fund her various animal rescues."
+        "Amrita is a software engineer by profession and has contributed to the UX of WIOF. She is passionate about animal welfare and is ready to help out dogs in distress. She has rescued many strays, ensuring that they end up in good homes. She participates in a lot of environmental events and volunteers for animal shelters. She is a naturally creative person who believes in finding environmentally sustainable solutions for everyday living. In her free time, she creates artful jewellery with her family at PrettyKnotts to fund her various animal rescues.",
+      socialLink: "https://www.linkedin.com/in/amrita-b-b9b48156/"
     },
     {
       serialNo: 9,

@@ -14,6 +14,14 @@ export class AboutusPage implements OnInit {
     socialLink?: string;
   }[] = [
     {
+      serialNo: 2,
+      name: "Prerana Sharma",
+      imageLink: "../../../assets/profiles/prerana_sharma.jpg",
+      bio:
+        "Prerana Sharma is our Product Owner. She helps drive the WIOF Team to define a clear product vision and bring it to realization. Having worked with some of the world's biggest agri input manufacturers, she is a domain expert in digital farming and has helped thousands of farmers derive benefits from precision agriculture. In her free time she loves to grow her own vegetables in her apartment. She has done her Bachelors in Information Technology from Meerut University and her Masters in Marketing Management and International Business from Birla Institute of Management Technology. She is a Certified Scrum Product Owner and proficient in German upto B1 Level from Stuttgart University.",
+      socialLink: "https://www.linkedin.com/in/prerana-sharma-cspo/"
+    },
+    {
       serialNo: 1,
       name: "Kuldeep Singh",
       imageLink: "../../../assets/profiles/kuldeep_singh.jpg",
@@ -22,12 +30,12 @@ export class AboutusPage implements OnInit {
       socialLink: "https://www.linkedin.com/in/kuldeepsinghjuneja/"
     },
     {
-      serialNo: 2,
-      name: "Prerana Sharma",
-      imageLink: "../../../assets/profiles/prerana_sharma.jpg",
+      serialNo: 7,
+      name: "Priti Thankar",
+      imageLink: "../../../assets/profiles/priti_thankar.jpg",
       bio:
-        'Prerana Sharma is our Product Owner and the owner of our "Earth" Page. She helps drive the WIOF Team to define a clear product vision and bring it to realization. Having worked with some of the world\'s biggest agri input manufacturers, she is a domain expert in digital farming and has helped thousands of farmers derive benefits from precision agriculture. In her free time she loves to grow her own vegetables in her apartment. She has done her Bachelors in Information Technology from Meerut University and her Masters in Marketing Management and International Business from Birla Institute of Management Technology. She is a Certified Scrum Product Owner and proficient in German upto B1 Level from Stuttgart University.',
-      socialLink: "https://www.linkedin.com/in/prerana-sharma-cspo/"
+        'Priti Thankar is the owner of our "Earth" Page and is a User Experience and Product Designer. She has contributed to the overall user experience and some key features of the WIOF, worked on defining the navigation, information architecture, menu structure, Interaction and few other important aspects of the experience. She has focused on making the website usable and user friendly. WIOFs clear, defined vision and mission statement has been a guiding light throughout the UX journey. Associating with WIOF has given her and opportunity  to contribute to her passion about caring for environment, sustainable living and well-being of the community.',
+      socialLink: "https://www.linkedin.com/in/priti-thankar-9976789/"
     },
     {
       serialNo: 3,
@@ -55,28 +63,28 @@ export class AboutusPage implements OnInit {
       socialLink: "https://www.linkedin.com/in/mahesh-kakade-54567315"
     },
     {
-      serialNo: 6,
-      name: "Ketki Anand",
-      imageLink: "../../../assets/profiles/ketki_anand.jpg",
-      bio:
-        'Ketki Anand is the owner of our "Spirit" Page. She has a degree in MBA from Symbiosis International University and Computer Science engineering from BMS Institute of Technology, Bangalore. Her passion for imparting knowledge to groom people professionally led her to enter the Learning and Development industry as a Communication and Behavioral Skills Trainer. A highly motivated professional, her creativity and ability to adapt to new and challenging industries make her trainings more relevant, adding a different perspective on regular topics. She is also a certified NLP Practitioner and guides people on Emotional Intelligence.  She is currently a Professor in MIT Pune School of Corporate Innovation and Leadership (SCIL).',
-      socialLink: "https://www.linkedin.com/in/ketkianand/"
-    },
-    {
       serialNo: 16,
       name: "Sneha Bijlani",
       imageLink: "../../../assets/profiles/sneha_bijlani.jpg",
       bio:
-        "Sneha Bijlani is a Digital Marketing Professional and the Co-Founder of WIOF. She has been responsible for doing the initial mind-mapping of the website structure and content. She is also the reviewer of most of the blogs and ensures that they are meeting SEO standards. She is a Certified Digital Marketer from Lavenir Institute of Professional Studies. Her interests also include Content Writing, Psychology, Consumer Behavior, NLP, Social Etiquttes, Soft Skills and Public Speaking.",
+        'Sneha Bijlani is the owner of our "Spirit" Page. She is a Digital Marketing Professional and the Co-Founder of WIOF. She has been responsible for doing the initial mind-mapping of the website structure and content. She is also the reviewer of most of the blogs and ensures that they are meeting SEO standards. She is a Certified Digital Marketer from Lavenir Institute of Professional Studies. Her interests also include Content Writing, Psychology, Consumer Behavior, NLP, Social Etiquttes, Soft Skills and Public Speaking.',
       socialLink: "https://www.linkedin.com/in/snehabijlani29/"
     },
     {
-      serialNo: 7,
-      name: "Priti Thankar",
-      imageLink: "../../../assets/profiles/priti_thankar.jpg",
+      serialNo: 17,
+      name: "Neelu Tiwari",
+      imageLink: "../../../assets/profiles/neelu_tiwari.jpg",
       bio:
-        "Priti Thankar is a User Experience and Product Designer. She has contributed to the overall user experience and some key features of the WIOF, worked on defining the navigation, information architecture, menu structure, Interaction and few other important aspects of the experience. She has focused on making the website usable and user friendly. WIOFs clear, defined vision and mission statement has been a guiding light throughout the UX journey. Associating with WIOF has given her and opportunity  to contribute to her passion about caring for environment, sustainable living and well-being of the community.",
-      socialLink: "https://www.linkedin.com/in/priti-thankar-9976789/"
+        "Neelu Tiwari has contributed in initial technical analysis and feasibility of technical options to choose from to build the website with architectural design diagrams and PLM slection tool to setup the website program flow. She also has contributed in few blogs on vegan diet inspired from Sadhguru and yogic science. She is also a Certified Scrum Master from Scrum Alliance who has worked technically on several agile projects. She has done her Masters in Computer Applications from Pune University.",
+      socialLink: "https://www.linkedin.com/in/neelu-tiwari-45502617/"
+    },
+    {
+      serialNo: 6,
+      name: "Ketki Anand",
+      imageLink: "../../../assets/profiles/ketki_anand.jpg",
+      bio:
+        "Ketki Anand has a degree in MBA from Symbiosis International University and Computer Science engineering from BMS Institute of Technology, Bangalore. Her passion for imparting knowledge to groom people professionally led her to enter the Learning and Development industry as a Communication and Behavioral Skills Trainer. A highly motivated professional, her creativity and ability to adapt to new and challenging industries make her trainings more relevant, adding a different perspective on regular topics. She is also a certified NLP Practitioner and guides people on Emotional Intelligence.  She is currently a Professor in MIT Pune School of Corporate Innovation and Leadership (SCIL).",
+      socialLink: "https://www.linkedin.com/in/ketkianand/"
     },
     {
       serialNo: 8,
@@ -118,7 +126,6 @@ export class AboutusPage implements OnInit {
         "Divya Chawla is an HR professional turned content creator and trainer who shares her passion with the WIOF team for making profound changes in saving the planet. She is deeply interested in spirituality , healing sciences , Sustainability and environmental issues which further makes her committed towards creating persuasive content for the community to partake in this vital movement. She has contributed to the research and blog content contribution of the Earth Page.",
       socialLink: "https://www.linkedin.com/in/divya-chawla-56a5253b/"
     },
-
     {
       serialNo: 13,
       name: "Shailendra Deshmukh",
@@ -127,14 +134,6 @@ export class AboutusPage implements OnInit {
         "Shailendra Deshmukh is an IIT graduate and IT professional currently working as a project manager. He is an active Yoga practitioner and a Certified Yoga Teacher. Since childhood he has been a seeker and started practicing meditation at an early age while still in school. He has attended multiple Yoga workshops and training to deepen his practices. He has spent hundreds of hours doing meditation and practicing yoga. He has been through multiple experiences throughout this period. He keeps studying several classical books and commentaries from modern day Gurus in order to enhance his knowledge on Yoga and Spirituality.",
       socialLink: "https://www.linkedin.com/in/shailendra-deshmukh-51848833/"
     },
-    // {
-    //   serialNo: 14,
-    //   name: "Preeti",
-    //   imageLink: "../../../assets/profiles/preeti.jpg",
-    //   bio:
-    //     "Preeti is a dynamic and energetic person who has expertise in prioritizing things in her life. She possesses a strong mindset, unlimited courage, excellent communication skills to have an enduring first impression and everlasting relationship with people. With almost 5 years of experience in the IT industry, she has the proficiency to grasp various technical aspects of a project and is also comfortable in managing as well as mentoring other people. When it comes to knowledge she always craves more and her decision to pursue a master's degree from an international university is just another example of the same. She is an environmental enthusiast who always advocates and is concerned with the protection of the environment.",
-    //   socialLink: "https://www.linkedin.com/in/mehtapreeti09/"
-    // },
     {
       serialNo: 15,
       name: "Rahul Banerjee",
@@ -142,14 +141,6 @@ export class AboutusPage implements OnInit {
       bio:
         "Rahul Banerjee, an IT professional with keen interest in latest technology trends, is also very much grounded with our Socio-economic Issues, specifically very much alert about the environmental challenges but more enthusiastic on the solutions, however small they are. An amateur storyteller, mainly on human relations, with a passion to bring them to a wider reach of common people. Dreams of becoming an honest political adminstrator to serve the country.",
       socialLink: "https://www.linkedin.com/in/rahul-banerjee-35714921/"
-    },
-    {
-      serialNo: 17,
-      name: "Neelu Tiwari",
-      imageLink: "../../../assets/profiles/neelu_tiwari.jpg",
-      bio:
-        "Neelu Tiwari has contributed in initial technical analysis and feasibility of technical options to choose from to build the website with architectural design diagrams and PLM slection tool to setup the website program flow. She also has contributed in few blogs on vegan diet inspired from Sadhguru and yogic science. She is also a Certified Scrum Master from Scrum Alliance who has worked technically on several agile projects. She has done her Masters in Computer Applications from Pune University.",
-      socialLink: "https://www.linkedin.com/in/neelu-tiwari-45502617/"
     },
     {
       serialNo: 18,
@@ -190,6 +181,14 @@ export class AboutusPage implements OnInit {
       bio:
         "Roma is a Test Project Manager, Business Analyst and Scrum Master working in the Ministry of Social Development in Wellington, New Zealand. She is huge advocate of emotional well being and mental health and often puts motivational posts with inspiring quotes and thoughts pertaining to the same on her Insta handle. Her poem on handling Depression is the highlight of our Spirit apage. She has done her BCA from Jammu and MCA from Kurukshetra University.",
       socialLink: "https://www.linkedin.com/in/roma-bakshi-27a788a"
+    },
+    {
+      serialNo: 23,
+      name: "Divya Jyoti Arya",
+      imageLink: "../../../assets/profiles/divya_jyoti_arya.jpg",
+      bio:
+        "Divya jyoti is an ambivert, creative and sensitive individual who is passionate about environment protection through sustainable development and organic farming. She has done Masters in Corporate Laws and provides her advise on legal technicalities to the WIOF Team. Her professional expertise is in Legal analytics, Content development and Project management. She believes in Yoga, Ayurveda and Satvic lifestyle to balance her energy and be in harmony with nature. She is known for her cheerful leadership and dynamic personality at her social engagements. She envisions the idea of 'Zero waste earth' through recycling non-biodegradable waste into art or useful products.",
+      socialLink: "https://www.linkedin.com/in/divyajyotiarya"
     }
   ];
   constructor() {}

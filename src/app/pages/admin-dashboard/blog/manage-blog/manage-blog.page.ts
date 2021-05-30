@@ -5,7 +5,7 @@ import { catchError, map, takeUntil, switchMap } from "rxjs/operators";
 import { Blog } from "src/app/models/Blog";
 import { BlogService } from "src/app/services/blog.service";
 import { UiUtilService } from "src/app/util/UiUtilService";
-import { Months } from "src/app/app.constants";
+import { UI_MESSAGES } from "src/app/app.constants";
 
 @Component({
   selector: "app-manage-blog",
@@ -58,17 +58,17 @@ export class ManageBlogPage implements OnInit, OnDestroy {
     blogImage: string
   ) {
     this.uiUtil.presentAlert(
-      "Confirm",
-      "Are you sure you want to delete the blog?",
+      UI_MESSAGES.CONFIRM_HEADER,
+      UI_MESSAGES.CONFIRM_DELETE_ITEM_DESC.replace("$ITEM", "blog"),
       [
         {
-          text: "Yes",
+          text: UI_MESSAGES.CONFIRM_DELETE_PRIMARY_CTA,
           handler: async () => {
             await this.delBlog(blogList, index, blogId, blogImage);
           }
         },
         {
-          text: "No",
+          text: UI_MESSAGES.CONFIRM_DELETE_SECONDARY_CTA,
           role: "cancel"
         }
       ]
@@ -95,18 +95,20 @@ export class ManageBlogPage implements OnInit, OnDestroy {
         (response) => {
           console.log(response);
           loader.dismiss();
-          this.uiUtil.presentAlert("Success", "Blog successfully deleted!", [
-            "OK"
-          ]);
+          this.uiUtil.presentAlert(
+            UI_MESSAGES.SUCCESS_HEADER,
+            UI_MESSAGES.SUCCESS_DELETE_ITEM_DESC.replace("$ITEM", "Blog"),
+            [UI_MESSAGES.FAILURE_CTA_TEXT]
+          );
           blogList.splice(index, 1);
         },
         (error) => {
           console.log(error);
           loader.dismiss();
           this.uiUtil.presentAlert(
-            "Error",
-            "Uh Oh! We could not delete the blog. Please try again.",
-            ["OK"]
+            UI_MESSAGES.FAILURE_HEADER,
+            UI_MESSAGES.FAILURE_DELETE_ITEM_DESC.replace("$ITEM", "blog"),
+            [UI_MESSAGES.FAILURE_CTA_TEXT]
           );
         }
       );

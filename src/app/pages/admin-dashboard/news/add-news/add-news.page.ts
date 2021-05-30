@@ -3,7 +3,11 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Subject, throwError, of } from "rxjs";
 import { catchError, switchMap, takeUntil } from "rxjs/operators";
-import { MEDIA_TYPE, PAGE_CATEGORY_MAP } from "src/app/app.constants";
+import {
+  MEDIA_TYPE,
+  PAGE_CATEGORY_MAP,
+  UI_MESSAGES
+} from "src/app/app.constants";
 import { News } from "src/app/models/News";
 import { NewsService } from "src/app/services/news.service";
 import { AppUtilService } from "src/app/util/AppUtilService";
@@ -15,14 +19,14 @@ import { UiUtilService } from "src/app/util/UiUtilService";
   styleUrls: ["./add-news.page.scss"]
 })
 export class AddNewsPage implements OnInit {
-  isEditMode: boolean = false;
+  isEditMode = false;
   news: News = {} as News;
   addNewsForm: FormGroup;
   loader;
   destroy$: Subject<boolean> = new Subject();
   imageToDisplay: string;
   imageToSave: any;
-  categories: String[] = Object.values(PAGE_CATEGORY_MAP);
+  categories: string[] = Object.values(PAGE_CATEGORY_MAP);
 
   pageContent = {
     addNewsTitle: "Add News",
@@ -117,7 +121,7 @@ export class AddNewsPage implements OnInit {
         this.news,
         this.isEditMode
       );
-      this.loader = await this.uiUtil.showLoader("We are saving your news...");
+      this.loader = await this.uiUtil.showLoader("Saving news...");
       this.newsService
         .saveNews(this.news)
         .pipe(
@@ -145,17 +149,19 @@ export class AddNewsPage implements OnInit {
               this.imageToDisplay = null;
               this.imageToSave = null;
             }
-            this.uiUtil.presentAlert("Success", "We saved your news!", [
-              "Cool!"
-            ]);
+            this.uiUtil.presentAlert(
+              UI_MESSAGES.SUCCESS_HEADER,
+              UI_MESSAGES.SUCCESS_ADD_ITEM_DESC.replace("$ITEM", "News"),
+              [UI_MESSAGES.SUCCESS_CTA_TEXT]
+            );
           },
           (error) => {
             console.log(error);
             this.loader.dismiss();
             this.uiUtil.presentAlert(
-              "Error",
-              "Uh oh! We could not save the news. Please try again.",
-              ["OK"]
+              UI_MESSAGES.FAILURE_HEADER,
+              UI_MESSAGES.FAILURE_ADD_ITEM_DESC.replace("$ITEM", "news"),
+              [UI_MESSAGES.FAILURE_CTA_TEXT]
             );
           }
         );

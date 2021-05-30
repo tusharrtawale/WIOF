@@ -160,7 +160,8 @@ export const FIREBASE_COLLECTION = {
   ENVCAL: "Envcal",
   NEWS: "News",
   CONFIG: "config",
-  COFFEE_CONVERSATIONS: "CoffeeConversations"
+  COFFEE_CONVERSATIONS: "CoffeeConversations",
+  IN_FOCUS: "InFocus"
 };
 
 export const VIDEO_PLAYER_TITLES = {
@@ -181,7 +182,7 @@ export const VIDEO_PLAYER_VIDEOS = {
   CONFIG: "SYWb9hNX-1s"
 };
 
-//TODO try to find another way
+// TODO try to find another way
 export const PAGE_CATEGORY_MAP = {
   air: "Air",
   water: "Water",
@@ -223,3 +224,27 @@ export const Months = [
   "November",
   "December"
 ];
+
+export const YOUTUBE_EMBED_VIDEO_LINK =
+  "https://www.youtube.com/embed/VIDEO_ID?controls=1";
+
+export const UI_MESSAGES = {
+  SUCCESS_HEADER: "Success",
+  SUCCESS_ADD_ITEM_DESC: "$ITEM saved successfully!",
+  SUCCESS_DELETE_ITEM_DESC: "$ITEM deleted successfully!",
+  SUCCESS_CTA_TEXT: "Cool!",
+  FAILURE_HEADER: "Error",
+  FAILURE_ADD_ITEM_DESC: "Uh oh! Failed to save $ITEM. Please try again.",
+  FAILURE_DELETE_ITEM_DESC: "Uh Oh! Failed to delete $ITEM. Please try again.",
+  FAILURE_CTA_TEXT: "OK",
+  SUCCESS_SUBSCRIPTION: "You are now subscribed to WIOF Newsletter.",
+  SUCCESS_PUBLISH_ITEM_DESC: "$ITEM successfully published!",
+  SUCCESS_POLL_VOTE_HEADER: "Vote Recorded",
+  SUCCESS_POLL_VOTE_DESC:
+    "Your vote has been recorded. Thanks $NAME for voting..!!",
+  CONFIRM_HEADER: "Confirm",
+  CONFIRM_DELETE_ITEM_DESC:
+    "Are you sure you want to delete this $ITEM?",
+  CONFIRM_DELETE_PRIMARY_CTA: 'Yes',
+  CONFIRM_DELETE_SECONDARY_CTA: 'No'
+};

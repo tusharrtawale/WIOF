@@ -5,7 +5,7 @@ import { Subject, Observable, throwError, of } from "rxjs";
 import { takeUntil, map, catchError, switchMap } from "rxjs/operators";
 import { UiUtilService } from "src/app/util/UiUtilService";
 import { Router, ActivatedRoute } from "@angular/router";
-import { MEDIA_TYPE } from "src/app/app.constants";
+import { MEDIA_TYPE, UI_MESSAGES } from "src/app/app.constants";
 
 @Component({
   selector: "app-manage-news",
@@ -62,17 +62,17 @@ export class ManageNewsPage implements OnInit, OnDestroy {
 
   deleteNews(newsList: News[], index: number, news: News) {
     this.uiUtil.presentAlert(
-      "Confirm",
-      "Are you sure you want to delete the news?",
+      UI_MESSAGES.CONFIRM_HEADER,
+      UI_MESSAGES.CONFIRM_DELETE_ITEM_DESC.replace("$ITEM", "news"),
       [
         {
-          text: "Yes",
+          text: UI_MESSAGES.CONFIRM_DELETE_PRIMARY_CTA,
           handler: async () => {
             await this.delNews(newsList, index, news);
           }
         },
         {
-          text: "No",
+          text: UI_MESSAGES.CONFIRM_DELETE_SECONDARY_CTA,
           role: "cancel"
         }
       ]
@@ -80,9 +80,7 @@ export class ManageNewsPage implements OnInit, OnDestroy {
   }
 
   private async delNews(newsList: News[], index: number, news: News) {
-    const loader = await this.uiUtil.showLoader(
-      "We are deleting the news..."
-    );
+    const loader = await this.uiUtil.showLoader("We are deleting the news...");
     this.newsService
       .deleteNews(news.newsId)
       .pipe(
@@ -98,18 +96,20 @@ export class ManageNewsPage implements OnInit, OnDestroy {
         (response) => {
           console.log(response);
           loader.dismiss();
-          this.uiUtil.presentAlert("Success", "News successfully deleted!", [
-            "OK"
-          ]);
+          this.uiUtil.presentAlert(
+            UI_MESSAGES.SUCCESS_HEADER,
+            UI_MESSAGES.SUCCESS_DELETE_ITEM_DESC.replace("$ITEM", "News"),
+            [UI_MESSAGES.FAILURE_CTA_TEXT]
+          );
           newsList.splice(index, 1);
         },
         (error) => {
           console.log(error);
           loader.dismiss();
           this.uiUtil.presentAlert(
-            "Error",
-            "Uh Oh! We could not delete news. Please try again.",
-            ["OK"]
+            UI_MESSAGES.FAILURE_HEADER,
+            UI_MESSAGES.FAILURE_DELETE_ITEM_DESC.replace("$ITEM", "news"),
+            [UI_MESSAGES.FAILURE_CTA_TEXT]
           );
         }
       );

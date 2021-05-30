@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Subject, throwError, of } from "rxjs";
 import { catchError, switchMap, takeUntil } from "rxjs/operators";
-import { ELEMENT_BLOG_CATEGORY } from "src/app/app.constants";
+import { ELEMENT_BLOG_CATEGORY, UI_MESSAGES } from "src/app/app.constants";
 import { Blog } from "src/app/models/Blog";
 import { BlogService } from "src/app/services/blog.service";
 import { AppUtilService } from "src/app/util/AppUtilService";
@@ -15,13 +15,13 @@ import { UiUtilService } from "src/app/util/UiUtilService";
   styleUrls: ["./add-blog.page.scss"]
 })
 export class AddBlogPage implements OnInit, OnDestroy {
-  categories: String[] = Object.values(ELEMENT_BLOG_CATEGORY);
+  categories: string[] = Object.values(ELEMENT_BLOG_CATEGORY);
   addBlogForm: FormGroup;
-  imageToDisplay: String;
+  imageToDisplay: string;
   imageToSave: any;
   loader;
   destroy$: Subject<boolean> = new Subject();
-  isEditMode: boolean = false;
+  isEditMode = false;
   blog: Blog = {} as Blog;
 
   pageContent = {
@@ -47,7 +47,7 @@ export class AddBlogPage implements OnInit, OnDestroy {
       if (param.has("mode") && param.get("mode") === "edit") {
         this.blog = this.blogService.getViewEditModeBlog();
         this.blog.image.subscribe((imageData) => {
-          this.imageToDisplay = imageData;
+          this.imageToDisplay = imageData.toString();
         });
         if (!this.blog) {
           this.router.navigateByUrl("/admin-dashboard/manage-blog");
@@ -101,7 +101,7 @@ export class AddBlogPage implements OnInit, OnDestroy {
         this.blog,
         this.isEditMode
       );
-      this.loader = await this.uiUtil.showLoader("We are saving your blog...");
+      this.loader = await this.uiUtil.showLoader("Saving blog...");
       this.blogService
         .saveBlog(this.blog)
         .pipe(
@@ -130,16 +130,18 @@ export class AddBlogPage implements OnInit, OnDestroy {
               this.imageToDisplay = null;
               this.imageToSave = null;
             }
-            this.uiUtil.presentAlert("Success", "We saved your blog!", [
-              "Cool!"
-            ]);
+            this.uiUtil.presentAlert(
+              UI_MESSAGES.SUCCESS_HEADER,
+              UI_MESSAGES.SUCCESS_ADD_ITEM_DESC.replace("$ITEM", "Blog"),
+              [UI_MESSAGES.SUCCESS_CTA_TEXT]
+            );
           },
           (error) => {
             this.loader.dismiss();
             this.uiUtil.presentAlert(
-              "Error",
-              "Uh oh! We could not save the blog. Please try again.",
-              ["OK"]
+              UI_MESSAGES.FAILURE_HEADER,
+              UI_MESSAGES.FAILURE_ADD_ITEM_DESC.replace("$ITEM", "blog"),
+              [UI_MESSAGES.FAILURE_CTA_TEXT]
             );
           }
         );

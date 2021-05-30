@@ -6,7 +6,8 @@ import { catchError, switchMap, takeUntil } from "rxjs/operators";
 import {
   MEDIA_TYPE,
   PAGE_CATEGORY_MAP,
-  UI_MESSAGES
+  UI_MESSAGES,
+  ITEMS
 } from "src/app/app.constants";
 import { News } from "src/app/models/News";
 import { NewsService } from "src/app/services/news.service";
@@ -121,7 +122,12 @@ export class AddNewsPage implements OnInit {
         this.news,
         this.isEditMode
       );
-      this.loader = await this.uiUtil.showLoader("Saving news...");
+      this.loader = await this.uiUtil.showLoader(
+        UI_MESSAGES.SAVE_IN_PROGRESS.replace(
+          UI_MESSAGES.PLACEHOLDER,
+          ITEMS.NEWS
+        )
+      );
       this.newsService
         .saveNews(this.news)
         .pipe(
@@ -151,7 +157,10 @@ export class AddNewsPage implements OnInit {
             }
             this.uiUtil.presentAlert(
               UI_MESSAGES.SUCCESS_HEADER,
-              UI_MESSAGES.SUCCESS_ADD_ITEM_DESC.replace("$ITEM", "News"),
+              UI_MESSAGES.SUCCESS_ADD_ITEM_DESC.replace(
+                UI_MESSAGES.PLACEHOLDER,
+                ITEMS.NEWS
+              ),
               [UI_MESSAGES.SUCCESS_CTA_TEXT]
             );
           },
@@ -160,7 +169,10 @@ export class AddNewsPage implements OnInit {
             this.loader.dismiss();
             this.uiUtil.presentAlert(
               UI_MESSAGES.FAILURE_HEADER,
-              UI_MESSAGES.FAILURE_ADD_ITEM_DESC.replace("$ITEM", "news"),
+              UI_MESSAGES.FAILURE_ADD_ITEM_DESC.replace(
+                UI_MESSAGES.PLACEHOLDER,
+                ITEMS.NEWS
+              ),
               [UI_MESSAGES.FAILURE_CTA_TEXT]
             );
           }

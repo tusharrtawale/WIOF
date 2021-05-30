@@ -228,7 +228,17 @@ export const Months = [
 export const YOUTUBE_EMBED_VIDEO_LINK =
   "https://www.youtube.com/embed/VIDEO_ID?controls=1";
 
+export const ITEMS = {
+  BLOG: "Blog",
+  POLL_QUESTION: "Poll question",
+  OCCASION: "Occasion",
+  COFFEE_CONVERSATION: "Coffee conversastion",
+  IN_FOCUS: "In Focus",
+  NEWS: "News"
+};
+
 export const UI_MESSAGES = {
+  PLACEHOLDER: "$ITEM",
   SUCCESS_HEADER: "Success",
   SUCCESS_ADD_ITEM_DESC: "$ITEM saved successfully!",
   SUCCESS_DELETE_ITEM_DESC: "$ITEM deleted successfully!",
@@ -243,8 +253,9 @@ export const UI_MESSAGES = {
   SUCCESS_POLL_VOTE_DESC:
     "Your vote has been recorded. Thanks $NAME for voting..!!",
   CONFIRM_HEADER: "Confirm",
-  CONFIRM_DELETE_ITEM_DESC:
-    "Are you sure you want to delete this $ITEM?",
-  CONFIRM_DELETE_PRIMARY_CTA: 'Yes',
-  CONFIRM_DELETE_SECONDARY_CTA: 'No'
+  CONFIRM_DELETE_ITEM_DESC: "Are you sure you want to delete this $ITEM?",
+  CONFIRM_DELETE_PRIMARY_CTA: "Yes",
+  CONFIRM_DELETE_SECONDARY_CTA: "No",
+  SAVE_IN_PROGRESS: "Saving $ITEM...",
+  DELETE_IN_PROGRESS: "Deleting $ITEM..."
 };

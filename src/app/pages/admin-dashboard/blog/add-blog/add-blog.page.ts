@@ -3,7 +3,11 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Subject, throwError, of } from "rxjs";
 import { catchError, switchMap, takeUntil } from "rxjs/operators";
-import { ELEMENT_BLOG_CATEGORY, UI_MESSAGES } from "src/app/app.constants";
+import {
+  ELEMENT_BLOG_CATEGORY,
+  UI_MESSAGES,
+  ITEMS
+} from "src/app/app.constants";
 import { Blog } from "src/app/models/Blog";
 import { BlogService } from "src/app/services/blog.service";
 import { AppUtilService } from "src/app/util/AppUtilService";
@@ -101,7 +105,12 @@ export class AddBlogPage implements OnInit, OnDestroy {
         this.blog,
         this.isEditMode
       );
-      this.loader = await this.uiUtil.showLoader("Saving blog...");
+      this.loader = await this.uiUtil.showLoader(
+        UI_MESSAGES.SAVE_IN_PROGRESS.replace(
+          UI_MESSAGES.PLACEHOLDER,
+          ITEMS.BLOG
+        )
+      );
       this.blogService
         .saveBlog(this.blog)
         .pipe(
@@ -132,7 +141,10 @@ export class AddBlogPage implements OnInit, OnDestroy {
             }
             this.uiUtil.presentAlert(
               UI_MESSAGES.SUCCESS_HEADER,
-              UI_MESSAGES.SUCCESS_ADD_ITEM_DESC.replace("$ITEM", "Blog"),
+              UI_MESSAGES.SUCCESS_ADD_ITEM_DESC.replace(
+                UI_MESSAGES.PLACEHOLDER,
+                ITEMS.BLOG
+              ),
               [UI_MESSAGES.SUCCESS_CTA_TEXT]
             );
           },
@@ -140,7 +152,10 @@ export class AddBlogPage implements OnInit, OnDestroy {
             this.loader.dismiss();
             this.uiUtil.presentAlert(
               UI_MESSAGES.FAILURE_HEADER,
-              UI_MESSAGES.FAILURE_ADD_ITEM_DESC.replace("$ITEM", "blog"),
+              UI_MESSAGES.FAILURE_ADD_ITEM_DESC.replace(
+                UI_MESSAGES.PLACEHOLDER,
+                ITEMS.BLOG
+              ),
               [UI_MESSAGES.FAILURE_CTA_TEXT]
             );
           }

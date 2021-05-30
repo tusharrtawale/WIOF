@@ -5,7 +5,7 @@ import { catchError, map, takeUntil } from "rxjs/operators";
 import { CoffeeConversation } from "src/app/models/CoffeeConversation";
 import { CoffeeConversationService } from "src/app/services/coffee-conversation.service";
 import { UiUtilService } from "src/app/util/UiUtilService";
-import { UI_MESSAGES } from "src/app/app.constants";
+import { UI_MESSAGES, ITEMS } from "src/app/app.constants";
 
 @Component({
   selector: "app-manage-coffee-conversation",
@@ -74,8 +74,8 @@ export class ManageCoffeeConversationPage implements OnInit, OnDestroy {
     this.uiUtil.presentAlert(
       UI_MESSAGES.CONFIRM_HEADER,
       UI_MESSAGES.CONFIRM_DELETE_ITEM_DESC.replace(
-        "$ITEM",
-        "coffee conversation"
+        UI_MESSAGES.PLACEHOLDER,
+        ITEMS.COFFEE_CONVERSATION
       ),
       [
         {
@@ -102,21 +102,23 @@ export class ManageCoffeeConversationPage implements OnInit, OnDestroy {
     coffeeConversation: CoffeeConversation
   ) {
     const loader = await this.uiUtil.showLoader(
-      "We are deleting the coffee conversation..."
+      UI_MESSAGES.DELETE_IN_PROGRESS.replace(
+        UI_MESSAGES.PLACEHOLDER,
+        ITEMS.COFFEE_CONVERSATION
+      )
     );
     this.coffeeConversationService
       .deleteCoffeeConversation(coffeeConversation.ccId)
       .pipe(takeUntil(this.destroy$))
       .subscribe(
-        //TODO handle delete error case
         (response) => {
           console.log(response);
           loader.dismiss();
           this.uiUtil.presentAlert(
             UI_MESSAGES.SUCCESS_HEADER,
             UI_MESSAGES.SUCCESS_DELETE_ITEM_DESC.replace(
-              "$ITEM",
-              "Coffee conversation"
+              UI_MESSAGES.PLACEHOLDER,
+              ITEMS.COFFEE_CONVERSATION
             ),
             [UI_MESSAGES.FAILURE_CTA_TEXT]
           );
@@ -128,8 +130,8 @@ export class ManageCoffeeConversationPage implements OnInit, OnDestroy {
           this.uiUtil.presentAlert(
             UI_MESSAGES.FAILURE_HEADER,
             UI_MESSAGES.FAILURE_DELETE_ITEM_DESC.replace(
-              "$ITEM",
-              "coffee conversation"
+              UI_MESSAGES.PLACEHOLDER,
+              ITEMS.COFFEE_CONVERSATION
             ),
             [UI_MESSAGES.FAILURE_CTA_TEXT]
           );

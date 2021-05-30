@@ -5,7 +5,7 @@ import { UiUtilService } from "src/app/util/UiUtilService";
 import { Router, ActivatedRoute } from "@angular/router";
 import { EnvcalService } from "src/app/services/envcal-service";
 import { takeUntil, switchMap, map, catchError } from "rxjs/operators";
-import { Months, UI_MESSAGES } from "src/app/app.constants";
+import { Months, UI_MESSAGES, ITEMS } from "src/app/app.constants";
 
 @Component({
   selector: "app-manage-calendar",
@@ -74,7 +74,10 @@ export class ManageCalendarPage implements OnInit, OnDestroy {
   ) {
     this.uiUtil.presentAlert(
       UI_MESSAGES.CONFIRM_HEADER,
-      UI_MESSAGES.CONFIRM_DELETE_ITEM_DESC.replace("$ITEM", "occassion"),
+      UI_MESSAGES.CONFIRM_DELETE_ITEM_DESC.replace(
+        UI_MESSAGES.PLACEHOLDER,
+        ITEMS.OCCASION
+      ),
       [
         {
           text: UI_MESSAGES.CONFIRM_DELETE_PRIMARY_CTA,
@@ -102,7 +105,10 @@ export class ManageCalendarPage implements OnInit, OnDestroy {
     occasionImage: string
   ) {
     const loader = await this.uiUtil.showLoader(
-      "We are deleting the occasion..."
+      UI_MESSAGES.DELETE_IN_PROGRESS.replace(
+        UI_MESSAGES.PLACEHOLDER,
+        ITEMS.OCCASION
+      )
     );
     this.calendarService
       .deleteOccasionImage(occasionImage)
@@ -113,13 +119,15 @@ export class ManageCalendarPage implements OnInit, OnDestroy {
         })
       )
       .subscribe(
-        //TODO handle delete error case
         (response) => {
           console.log(response);
           loader.dismiss();
           this.uiUtil.presentAlert(
             UI_MESSAGES.SUCCESS_HEADER,
-            UI_MESSAGES.SUCCESS_DELETE_ITEM_DESC.replace("$ITEM", "Occasion"),
+            UI_MESSAGES.SUCCESS_DELETE_ITEM_DESC.replace(
+              UI_MESSAGES.PLACEHOLDER,
+              ITEMS.OCCASION
+            ),
             [UI_MESSAGES.FAILURE_CTA_TEXT]
           );
           occasionList.splice(index, 1);
@@ -129,7 +137,10 @@ export class ManageCalendarPage implements OnInit, OnDestroy {
           loader.dismiss();
           this.uiUtil.presentAlert(
             UI_MESSAGES.FAILURE_HEADER,
-            UI_MESSAGES.FAILURE_DELETE_ITEM_DESC.replace("$ITEM", "occasion"),
+            UI_MESSAGES.FAILURE_DELETE_ITEM_DESC.replace(
+              UI_MESSAGES.PLACEHOLDER,
+              ITEMS.OCCASION
+            ),
             [UI_MESSAGES.FAILURE_CTA_TEXT]
           );
         }

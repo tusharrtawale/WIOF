@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Subject, throwError } from "rxjs";
 import { catchError, takeUntil } from "rxjs/operators";
-import { PAGE_CATEGORY_MAP, UI_MESSAGES } from "src/app/app.constants";
+import { PAGE_CATEGORY_MAP, UI_MESSAGES, ITEMS } from "src/app/app.constants";
 import { UiUtilService } from "src/app/util/UiUtilService";
 import { InFocus } from "src/app/models/InFocus";
 import { InFocusService } from "src/app/services/in-focus.service";
@@ -89,7 +89,12 @@ export class AddInFocusPage implements OnInit, OnDestroy {
         this.inFocus,
         this.isEditMode
       );
-      this.loader = await this.uiUtil.showLoader("Saving in focus...");
+      this.loader = await this.uiUtil.showLoader(
+        UI_MESSAGES.SAVE_IN_PROGRESS.replace(
+          UI_MESSAGES.PLACEHOLDER,
+          ITEMS.IN_FOCUS
+        )
+      );
       this.inFocusService
         .saveInFocus(this.inFocus)
         .pipe(
@@ -106,7 +111,10 @@ export class AddInFocusPage implements OnInit, OnDestroy {
             }
             this.uiUtil.presentAlert(
               UI_MESSAGES.SUCCESS_HEADER,
-              UI_MESSAGES.SUCCESS_ADD_ITEM_DESC.replace("$ITEM", "In focus"),
+              UI_MESSAGES.SUCCESS_ADD_ITEM_DESC.replace(
+                UI_MESSAGES.PLACEHOLDER,
+                ITEMS.IN_FOCUS
+              ),
               [UI_MESSAGES.SUCCESS_CTA_TEXT]
             );
           },
@@ -115,7 +123,10 @@ export class AddInFocusPage implements OnInit, OnDestroy {
             this.loader.dismiss();
             this.uiUtil.presentAlert(
               UI_MESSAGES.FAILURE_HEADER,
-              UI_MESSAGES.FAILURE_ADD_ITEM_DESC.replace("$ITEM", "in focus"),
+              UI_MESSAGES.FAILURE_ADD_ITEM_DESC.replace(
+                UI_MESSAGES.PLACEHOLDER,
+                ITEMS.IN_FOCUS
+              ),
               [UI_MESSAGES.FAILURE_CTA_TEXT]
             );
           }
@@ -140,6 +151,7 @@ export class AddInFocusPage implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.destroy$.next(true), this.destroy$.unsubscribe();
+    this.destroy$.next(true);
+    this.destroy$.unsubscribe();
   }
 }

@@ -23,10 +23,10 @@
 <ion-content>
   <ion-grid *ngIf="coffeeConversationList$ | async as coffeeConversationList">
     <ion-row class="item-divider-line">
-      <ion-col size-md="3" class="ion-align-self-center"
+      <ion-col size-md="8" class="ion-align-self-center"
         ><strong>Topic</strong></ion-col
       >
-      <ion-col size-md="5"><strong>Topic Short Desc</strong></ion-col>
+      <!-- <ion-col size-md="5"><strong>Topic Short Desc</strong></ion-col> -->
       <ion-col size-md="2"><strong>Interview Date</strong></ion-col>
       <ion-col size-md="2" class="action-heading"
         ><strong>Actions</strong></ion-col
@@ -36,15 +36,15 @@
       *ngFor="let coffeeConversation of coffeeConversationList; let i = index"
       class="item-divider-line"
     >
-      <ion-col size-md="3" class="ion-align-self-center"
+      <ion-col size-md="8" class="ion-align-self-center"
         >{{ coffeeConversation.topic }}</ion-col
       >
-      <ion-col
+      <!-- <ion-col
         size-md="5"
         class="ion-align-self-center"
         [innerHTML]="coffeeConversation.topicShortDesc"
       >
-      </ion-col>
+      </ion-col> -->
       <ion-col size-md="2" class="ion-align-self-center"
         >{{coffeeConversation.interviewDate | date}}</ion-col
       >

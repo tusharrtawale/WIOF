@@ -5,7 +5,7 @@ import { Subject, Observable, throwError, of } from "rxjs";
 import { takeUntil, map, catchError, switchMap } from "rxjs/operators";
 import { UiUtilService } from "src/app/util/UiUtilService";
 import { Router, ActivatedRoute } from "@angular/router";
-import { MEDIA_TYPE, UI_MESSAGES } from "src/app/app.constants";
+import { MEDIA_TYPE, UI_MESSAGES, ITEMS } from "src/app/app.constants";
 
 @Component({
   selector: "app-manage-news",
@@ -63,7 +63,10 @@ export class ManageNewsPage implements OnInit, OnDestroy {
   deleteNews(newsList: News[], index: number, news: News) {
     this.uiUtil.presentAlert(
       UI_MESSAGES.CONFIRM_HEADER,
-      UI_MESSAGES.CONFIRM_DELETE_ITEM_DESC.replace("$ITEM", "news"),
+      UI_MESSAGES.CONFIRM_DELETE_ITEM_DESC.replace(
+        UI_MESSAGES.PLACEHOLDER,
+        ITEMS.NEWS
+      ),
       [
         {
           text: UI_MESSAGES.CONFIRM_DELETE_PRIMARY_CTA,
@@ -80,25 +83,34 @@ export class ManageNewsPage implements OnInit, OnDestroy {
   }
 
   private async delNews(newsList: News[], index: number, news: News) {
-    const loader = await this.uiUtil.showLoader("We are deleting the news...");
+    const loader = await this.uiUtil.showLoader(
+      UI_MESSAGES.DELETE_IN_PROGRESS.replace(
+        UI_MESSAGES.PLACEHOLDER,
+        ITEMS.NEWS
+      )
+    );
     this.newsService
       .deleteNews(news.newsId)
       .pipe(
         takeUntil(this.destroy$),
         switchMap((data) => {
-          if (news.mediaType == MEDIA_TYPE.IMAGE) {
+          if (news.mediaType === MEDIA_TYPE.IMAGE) {
             return this.newsService.deleteNewsImage(news.mediaLink);
-          } else return of(true);
+          } else {
+            return of(true);
+          }
         })
       )
       .subscribe(
-        //TODO handle delete error case
         (response) => {
           console.log(response);
           loader.dismiss();
           this.uiUtil.presentAlert(
             UI_MESSAGES.SUCCESS_HEADER,
-            UI_MESSAGES.SUCCESS_DELETE_ITEM_DESC.replace("$ITEM", "News"),
+            UI_MESSAGES.SUCCESS_DELETE_ITEM_DESC.replace(
+              UI_MESSAGES.PLACEHOLDER,
+              ITEMS.NEWS
+            ),
             [UI_MESSAGES.FAILURE_CTA_TEXT]
           );
           newsList.splice(index, 1);
@@ -108,7 +120,10 @@ export class ManageNewsPage implements OnInit, OnDestroy {
           loader.dismiss();
           this.uiUtil.presentAlert(
             UI_MESSAGES.FAILURE_HEADER,
-            UI_MESSAGES.FAILURE_DELETE_ITEM_DESC.replace("$ITEM", "news"),
+            UI_MESSAGES.FAILURE_DELETE_ITEM_DESC.replace(
+              UI_MESSAGES.PLACEHOLDER,
+              ITEMS.NEWS
+            ),
             [UI_MESSAGES.FAILURE_CTA_TEXT]
           );
         }

@@ -6,7 +6,7 @@ import { Subject, throwError } from "rxjs";
 import { takeUntil, map, catchError } from "rxjs/operators";
 import { PollQuestion } from "src/app/models/PollQuestion";
 import { ActivatedRoute, Router } from "@angular/router";
-import { POLL_STATUS, UI_MESSAGES } from "src/app/app.constants";
+import { POLL_STATUS, UI_MESSAGES, ITEMS } from "src/app/app.constants";
 import { PollsService } from "src/app/services/polls.service";
 import { AppUtilService } from "src/app/util/AppUtilService";
 
@@ -129,7 +129,12 @@ export class AddPollPage implements OnInit, OnDestroy {
         this.pollQuestion,
         this.isEditMode
       );
-      this.loader = await this.uiUtil.showLoader("Saving poll question...");
+      this.loader = await this.uiUtil.showLoader(
+        UI_MESSAGES.SAVE_IN_PROGRESS.replace(
+          UI_MESSAGES.PLACEHOLDER,
+          ITEMS.POLL_QUESTION
+        )
+      );
 
       this.pollQuestionService
         .savePollQuestion(this.pollQuestion)
@@ -148,8 +153,8 @@ export class AddPollPage implements OnInit, OnDestroy {
             this.uiUtil.presentAlert(
               UI_MESSAGES.SUCCESS_HEADER,
               UI_MESSAGES.SUCCESS_ADD_ITEM_DESC.replace(
-                "$ITEM",
-                "Poll question"
+                UI_MESSAGES.PLACEHOLDER,
+                ITEMS.POLL_QUESTION
               ),
               [UI_MESSAGES.SUCCESS_CTA_TEXT]
             );
@@ -160,8 +165,8 @@ export class AddPollPage implements OnInit, OnDestroy {
             this.uiUtil.presentAlert(
               UI_MESSAGES.FAILURE_HEADER,
               UI_MESSAGES.FAILURE_ADD_ITEM_DESC.replace(
-                "$ITEM",
-                "poll question"
+                UI_MESSAGES.PLACEHOLDER,
+                ITEMS.POLL_QUESTION
               ),
               [UI_MESSAGES.FAILURE_CTA_TEXT]
             );

@@ -68,7 +68,12 @@ export class PollsWidgetComponent implements OnInit, OnDestroy {
         this.IP4.ip,
         this.IP6.ip
       );
-      this.loader = await this.uiUtil.showLoader("Saving your vote...");
+      this.loader = await this.uiUtil.showLoader(
+        UI_MESSAGES.SAVE_IN_PROGRESS.replace(
+          UI_MESSAGES.PLACEHOLDER,
+          "your vote"
+        )
+      );
       this.pollsService
         .savePolls(poll)
         .pipe(
@@ -99,7 +104,10 @@ export class PollsWidgetComponent implements OnInit, OnDestroy {
             this.loader.dismiss();
             this.uiUtil.presentAlert(
               UI_MESSAGES.FAILURE_HEADER,
-              UI_MESSAGES.FAILURE_ADD_ITEM_DESC.replace("$ITEM", "vote"),
+              UI_MESSAGES.FAILURE_ADD_ITEM_DESC.replace(
+                UI_MESSAGES.PLACEHOLDER,
+                "vote"
+              ),
               [UI_MESSAGES.FAILURE_CTA_TEXT]
             );
             console.log(error);

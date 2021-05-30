@@ -7,7 +7,7 @@ import { EnvDay } from "src/app/models/env-cal-data";
 import { EnvcalService } from "src/app/services/envcal-service";
 import { AppUtilService } from "src/app/util/AppUtilService";
 import { UiUtilService } from "src/app/util/UiUtilService";
-import { Months, UI_MESSAGES } from "src/app/app.constants";
+import { Months, UI_MESSAGES, ITEMS } from "src/app/app.constants";
 
 @Component({
   selector: "app-add-occasion",
@@ -97,7 +97,12 @@ export class AddOccasionPage implements OnInit {
         this.occasion,
         this.isEditMode
       );
-      this.loader = await this.uiUtil.showLoader("Saving occasion...");
+      this.loader = await this.uiUtil.showLoader(
+        UI_MESSAGES.SAVE_IN_PROGRESS.replace(
+          UI_MESSAGES.PLACEHOLDER,
+          ITEMS.OCCASION
+        )
+      );
       this.calendarService
         .saveOccasion(this.occasion)
         .pipe(
@@ -128,7 +133,10 @@ export class AddOccasionPage implements OnInit {
             }
             this.uiUtil.presentAlert(
               UI_MESSAGES.SUCCESS_HEADER,
-              UI_MESSAGES.SUCCESS_ADD_ITEM_DESC.replace("$ITEM", "Occasion"),
+              UI_MESSAGES.SUCCESS_ADD_ITEM_DESC.replace(
+                UI_MESSAGES.PLACEHOLDER,
+                ITEMS.OCCASION
+              ),
               [UI_MESSAGES.SUCCESS_CTA_TEXT]
             );
           },
@@ -136,7 +144,10 @@ export class AddOccasionPage implements OnInit {
             this.loader.dismiss();
             this.uiUtil.presentAlert(
               UI_MESSAGES.FAILURE_HEADER,
-              UI_MESSAGES.FAILURE_ADD_ITEM_DESC.replace("$ITEM", "occasion"),
+              UI_MESSAGES.FAILURE_ADD_ITEM_DESC.replace(
+                UI_MESSAGES.PLACEHOLDER,
+                ITEMS.OCCASION
+              ),
               [UI_MESSAGES.FAILURE_CTA_TEXT]
             );
           }

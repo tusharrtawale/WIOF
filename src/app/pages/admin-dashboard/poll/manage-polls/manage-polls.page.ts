@@ -5,7 +5,7 @@ import { PollQuestion } from "src/app/models/PollQuestion";
 import { PollQuestionService } from "src/app/services/poll-question.service";
 import { UiUtilService } from "src/app/util/UiUtilService";
 import { Router, ActivatedRoute } from "@angular/router";
-import { UI_MESSAGES } from "src/app/app.constants";
+import { UI_MESSAGES, ITEMS } from "src/app/app.constants";
 
 @Component({
   selector: "app-manage-polls",
@@ -54,7 +54,10 @@ export class ManagePollsPage implements OnInit, OnDestroy {
   ) {
     this.uiUtil.presentAlert(
       UI_MESSAGES.CONFIRM_HEADER,
-      UI_MESSAGES.CONFIRM_DELETE_ITEM_DESC.replace("$ITEM", "poll question"),
+      UI_MESSAGES.CONFIRM_DELETE_ITEM_DESC.replace(
+        UI_MESSAGES.PLACEHOLDER,
+        ITEMS.POLL_QUESTION
+      ),
       [
         {
           text: UI_MESSAGES.CONFIRM_DELETE_PRIMARY_CTA,
@@ -76,18 +79,20 @@ export class ManagePollsPage implements OnInit, OnDestroy {
     pollQuestionId: string
   ) {
     const loader = await this.uiUtil.showLoader(
-      "We are deleting the poll question..."
+      UI_MESSAGES.DELETE_IN_PROGRESS.replace(
+        UI_MESSAGES.PLACEHOLDER,
+        ITEMS.POLL_QUESTION
+      )
     );
     this.pollQuestionService.deletePollQuestion(pollQuestionId).subscribe(
-      //TODO handle delete error case
       (response) => {
         console.log(response);
         loader.dismiss();
         this.uiUtil.presentAlert(
           UI_MESSAGES.SUCCESS_HEADER,
           UI_MESSAGES.SUCCESS_DELETE_ITEM_DESC.replace(
-            "$ITEM",
-            "Poll question"
+            UI_MESSAGES.PLACEHOLDER,
+            ITEMS.POLL_QUESTION
           ),
           [UI_MESSAGES.FAILURE_CTA_TEXT]
         );
@@ -99,8 +104,8 @@ export class ManagePollsPage implements OnInit, OnDestroy {
         this.uiUtil.presentAlert(
           UI_MESSAGES.FAILURE_HEADER,
           UI_MESSAGES.FAILURE_DELETE_ITEM_DESC.replace(
-            "$ITEM",
-            "poll question"
+            UI_MESSAGES.PLACEHOLDER,
+            ITEMS.POLL_QUESTION
           ),
           [UI_MESSAGES.FAILURE_CTA_TEXT]
         );
@@ -116,8 +121,8 @@ export class ManagePollsPage implements OnInit, OnDestroy {
         this.uiUtil.presentAlert(
           UI_MESSAGES.SUCCESS_HEADER,
           UI_MESSAGES.SUCCESS_PUBLISH_ITEM_DESC.replace(
-            "$ITEM",
-            "Poll question"
+            UI_MESSAGES.PLACEHOLDER,
+            ITEMS.POLL_QUESTION
           ),
           [UI_MESSAGES.FAILURE_CTA_TEXT]
         );

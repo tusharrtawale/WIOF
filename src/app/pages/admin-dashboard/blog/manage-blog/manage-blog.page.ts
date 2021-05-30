@@ -5,7 +5,7 @@ import { catchError, map, takeUntil, switchMap } from "rxjs/operators";
 import { Blog } from "src/app/models/Blog";
 import { BlogService } from "src/app/services/blog.service";
 import { UiUtilService } from "src/app/util/UiUtilService";
-import { UI_MESSAGES } from "src/app/app.constants";
+import { UI_MESSAGES, ITEMS } from "src/app/app.constants";
 
 @Component({
   selector: "app-manage-blog",
@@ -59,7 +59,10 @@ export class ManageBlogPage implements OnInit, OnDestroy {
   ) {
     this.uiUtil.presentAlert(
       UI_MESSAGES.CONFIRM_HEADER,
-      UI_MESSAGES.CONFIRM_DELETE_ITEM_DESC.replace("$ITEM", "blog"),
+      UI_MESSAGES.CONFIRM_DELETE_ITEM_DESC.replace(
+        UI_MESSAGES.PLACEHOLDER,
+        ITEMS.BLOG
+      ),
       [
         {
           text: UI_MESSAGES.CONFIRM_DELETE_PRIMARY_CTA,
@@ -81,7 +84,12 @@ export class ManageBlogPage implements OnInit, OnDestroy {
     blogId: string,
     blogImage: string
   ) {
-    const loader = await this.uiUtil.showLoader("We are deleting the blog...");
+    const loader = await this.uiUtil.showLoader(
+      UI_MESSAGES.DELETE_IN_PROGRESS.replace(
+        UI_MESSAGES.PLACEHOLDER,
+        ITEMS.BLOG
+      )
+    );
     this.blogService
       .deleteBlogImage(blogImage)
       .pipe(
@@ -91,13 +99,15 @@ export class ManageBlogPage implements OnInit, OnDestroy {
         })
       )
       .subscribe(
-        //TODO handle delete error case
         (response) => {
           console.log(response);
           loader.dismiss();
           this.uiUtil.presentAlert(
             UI_MESSAGES.SUCCESS_HEADER,
-            UI_MESSAGES.SUCCESS_DELETE_ITEM_DESC.replace("$ITEM", "Blog"),
+            UI_MESSAGES.SUCCESS_DELETE_ITEM_DESC.replace(
+              UI_MESSAGES.PLACEHOLDER,
+              ITEMS.BLOG
+            ),
             [UI_MESSAGES.FAILURE_CTA_TEXT]
           );
           blogList.splice(index, 1);
@@ -107,7 +117,10 @@ export class ManageBlogPage implements OnInit, OnDestroy {
           loader.dismiss();
           this.uiUtil.presentAlert(
             UI_MESSAGES.FAILURE_HEADER,
-            UI_MESSAGES.FAILURE_DELETE_ITEM_DESC.replace("$ITEM", "blog"),
+            UI_MESSAGES.FAILURE_DELETE_ITEM_DESC.replace(
+              UI_MESSAGES.PLACEHOLDER,
+              ITEMS.BLOG
+            ),
             [UI_MESSAGES.FAILURE_CTA_TEXT]
           );
         }

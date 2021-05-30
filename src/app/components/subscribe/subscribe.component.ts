@@ -49,7 +49,12 @@ export class SubscribeComponent implements OnInit, OnDestroy {
   async onSubmit() {
     if (this.addSubscriberForm.valid) {
       const subscriber = Subscriber.createByForm(this.addSubscriberForm);
-      this.loader = await this.uiUtil.showLoader("Saving your subscription...");
+      this.loader = await this.uiUtil.showLoader(
+        UI_MESSAGES.SAVE_IN_PROGRESS.replace(
+          UI_MESSAGES.PLACEHOLDER,
+          "subscription"
+        )
+      );
       this.subscribeService
         .saveSubscriber(subscriber)
         .pipe(
@@ -76,7 +81,7 @@ export class SubscribeComponent implements OnInit, OnDestroy {
             this.uiUtil.presentAlert(
               UI_MESSAGES.FAILURE_HEADER,
               UI_MESSAGES.FAILURE_ADD_ITEM_DESC.replace(
-                "$ITEM",
+                UI_MESSAGES.PLACEHOLDER,
                 "subscription"
               ),
               [UI_MESSAGES.FAILURE_CTA_TEXT]

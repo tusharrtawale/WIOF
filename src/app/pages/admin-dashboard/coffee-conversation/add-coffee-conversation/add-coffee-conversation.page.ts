@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Subject, throwError } from "rxjs";
 import { catchError, takeUntil } from "rxjs/operators";
-import { PAGE_CATEGORY_MAP, UI_MESSAGES } from "src/app/app.constants";
+import { PAGE_CATEGORY_MAP, UI_MESSAGES, ITEMS } from "src/app/app.constants";
 import { CoffeeConversation } from "src/app/models/CoffeeConversation";
 import { CoffeeConversationService } from "src/app/services/coffee-conversation.service";
 import { AppUtilService } from "src/app/util/AppUtilService";
@@ -137,7 +137,10 @@ export class AddCoffeeConversationPage implements OnInit {
         this.isEditMode
       );
       this.loader = await this.uiUtil.showLoader(
-        "Saving coffee conversation..."
+        UI_MESSAGES.SAVE_IN_PROGRESS.replace(
+          UI_MESSAGES.PLACEHOLDER,
+          ITEMS.COFFEE_CONVERSATION
+        )
       );
       this.coffeeConversationService
         .saveCoffeeConversation(this.coffeeConversation)
@@ -156,8 +159,8 @@ export class AddCoffeeConversationPage implements OnInit {
             this.uiUtil.presentAlert(
               UI_MESSAGES.SUCCESS_HEADER,
               UI_MESSAGES.SUCCESS_ADD_ITEM_DESC.replace(
-                "$ITEM",
-                "Coffee conversation"
+                UI_MESSAGES.PLACEHOLDER,
+                ITEMS.COFFEE_CONVERSATION
               ),
               [UI_MESSAGES.SUCCESS_CTA_TEXT]
             );
@@ -168,8 +171,8 @@ export class AddCoffeeConversationPage implements OnInit {
             this.uiUtil.presentAlert(
               UI_MESSAGES.FAILURE_HEADER,
               UI_MESSAGES.FAILURE_ADD_ITEM_DESC.replace(
-                "$ITEM",
-                "coffee conversation"
+                UI_MESSAGES.PLACEHOLDER,
+                ITEMS.COFFEE_CONVERSATION
               ),
               [UI_MESSAGES.FAILURE_CTA_TEXT]
             );

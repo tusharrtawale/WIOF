@@ -2,7 +2,9 @@ import {
   HostListener,
   Component,
   Input,
-  OnInit
+  OnInit,
+  OnChanges,
+  AfterViewInit
 } from "@angular/core";
 import { VIDEO_SLIDER_OPTIONS } from "src/app/app.constants";
 import { Video } from "src/app/models/Video";
@@ -12,11 +14,14 @@ import { Video } from "src/app/models/Video";
   templateUrl: "./video-slider.component.html",
   styleUrls: ["./video-slider.component.scss"]
 })
-export class VideoSliderComponent implements OnInit {
+export class VideoSliderComponent implements OnInit, OnChanges, AfterViewInit {
   @Input() videoList: Array<Video>;
   @Input() element: String;
   videoSliderClass: String;
   width: number;
+  slideOpts = VIDEO_SLIDER_OPTIONS;
+
+  constructor() {}
 
   @HostListener("window:resize", [])
   public onResize() {
@@ -31,42 +36,31 @@ export class VideoSliderComponent implements OnInit {
     this.width = window.innerWidth;
   }
 
-  slideOpts = VIDEO_SLIDER_OPTIONS;
-
-  constructor() {}
+  ngOnChanges(): void {
+    if (this.videoList) {
+      this.videoList.sort(
+        (a, b) => b.publishedDate.getTime() - a.publishedDate.getTime()
+      );
+    }
+  }
 
   ngOnInit() {
     this.videoSliderClass = `wiof-${this.element}`;
   }
+
   showNavigator() {
     if (this.width >= 1024) {
       // slidesPerView: 4
-      if (this.videoList.length < 5) {
-        return false;
-      } else {
-        return true;
-      }
+      return this.videoList.length >= 5;
     } else if (this.width < 1024 && this.width >= 767) {
       // slidesPerView: 3
-      if (this.videoList.length < 4) {
-        return false;
-      } else {
-        return true;
-      }
+      return this.videoList.length >= 4;
     } else if (this.width < 767 && this.width >= 480) {
       // slidesPerView: 2
-      if (this.videoList.length < 3) {
-        return false;
-      } else {
-        return true;
-      }
+      return this.videoList.length >= 3;
     } else if (this.width < 480) {
       // slidesPerView: 1
-      if (this.videoList.length < 2) {
-        return false;
-      } else {
-        return true;
-      }
+      return this.videoList.length >= 2;
     }
   }
 }

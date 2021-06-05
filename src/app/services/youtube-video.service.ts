@@ -27,7 +27,8 @@ export class YoutubeVideoService {
             return {
               thumbnail: playlist_item.snippet.thumbnails.medium.url,
               title: playlist_item.snippet.title,
-              url: playlist_item.snippet.resourceId.videoId
+              url: playlist_item.snippet.resourceId.videoId,
+              publishedDate: new Date(playlist_item.snippet.publishedAt)
             } as Video;
           });
         })

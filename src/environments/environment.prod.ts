@@ -11,6 +11,6 @@ export const environment = {
     storageBucket: "wiof-production.appspot.com",
     messagingSenderId: "473258267258",
     appId: "1:473258267258:web:3570a04884ffc96616e1c3",
-    measurementId: "G-ZYBF649LMF"
+    measurementId: "G-BVGS3GESK2"
   }
 };

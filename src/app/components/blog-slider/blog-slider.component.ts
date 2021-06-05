@@ -35,32 +35,16 @@ export class BlogSliderComponent implements OnInit {
   showNavigator() {
     if (this.width >= 1024) {
       // slidesPerView: 4
-      if (this.blogList.length < 5) {
-        return false;
-      } else {
-        return true;
-      }
+      return this.blogList.length >= 5;
     } else if (this.width < 1024 && this.width >= 767) {
       // slidesPerView: 3
-      if (this.blogList.length < 4) {
-        return false;
-      } else {
-        return true;
-      }
+      return this.blogList.length >= 4;
     } else if (this.width < 767 && this.width >= 480) {
       // slidesPerView: 2
-      if (this.blogList.length < 3) {
-        return false;
-      } else {
-        return true;
-      }
+      return this.blogList.length >= 3;
     } else if (this.width < 480) {
       // slidesPerView: 1
-      if (this.blogList.length < 2) {
-        return false;
-      } else {
-        return true;
-      }
+      return this.blogList.length >= 2;
     }
   }
 }

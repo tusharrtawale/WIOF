@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "wiof-staging"
+    "default": "wiof-staging",
+    "production": "wiof-production"
   }
 }

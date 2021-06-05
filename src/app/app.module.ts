@@ -11,11 +11,11 @@ import { RouteReuseStrategy } from "@angular/router";
 import { SplashScreen } from "@ionic-native/splash-screen/ngx";
 import { StatusBar } from "@ionic-native/status-bar/ngx";
 import { IonicModule, IonicRouteStrategy } from "@ionic/angular";
-import firebaseConfig from "../environment";
+import { environment } from "../environments/environment";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
+import { AngularFireAnalyticsModule } from "@angular/fire/analytics";
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,7 +27,7 @@ import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireAnalyticsModule,

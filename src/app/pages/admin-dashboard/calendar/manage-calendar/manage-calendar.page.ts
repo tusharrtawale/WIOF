@@ -44,9 +44,7 @@ export class ManageCalendarPage implements OnInit {
       .pipe(
         takeUntil(this.destroy$),
         map((occasionList) => {
-          return occasionList.sort(
-            (a, b) => new Date(b.day).getTime() - new Date(a.day).getTime()
-          );
+          return occasionList.sort((a, b) => parseInt(a.day) - parseInt(b.day));
         }),
         catchError((err) => {
           return throwError(err);

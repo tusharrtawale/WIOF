@@ -23,7 +23,10 @@
 <ion-content>
   <ion-grid *ngIf="pollQuestionList$ | async as pollQuestions">
     <ion-row class="item-divider-line">
-      <ion-col size-md="4" size-lg="4" class="ion-align-self-center"
+      <ion-col size-md="1" size-lg="1" class="ion-align-self-center"
+        >Sr</ion-col
+      >
+      <ion-col size-md="3" size-lg="3" class="ion-align-self-center"
         ><strong>Poll Question</strong></ion-col
       >
       <ion-col size-md="2" size-lg="2"><strong>Submit Date</strong></ion-col>
@@ -37,7 +40,10 @@
       *ngFor="let pollQuestion of pollQuestions; let i = index"
       class="item-divider-line"
     >
-      <ion-col size-md="4" size-lg="4" class="ion-align-self-center"
+      <ion-col size-md="1" size-lg="1" class="ion-align-self-center"
+        >{{ i + 1 }}</ion-col
+      >
+      <ion-col size-md="3" size-lg="3" class="ion-align-self-center"
         >{{ pollQuestion.question }}</ion-col
       >
       <ion-col size-md="2" size-lg="2" class="ion-align-self-center">

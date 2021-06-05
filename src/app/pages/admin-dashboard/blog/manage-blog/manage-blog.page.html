@@ -22,10 +22,10 @@
 <ion-content>
   <ion-grid *ngIf="blogList$ | async as blogList">
     <ion-row class="item-divider-line">
-      <ion-col size-md="2" class="ion-align-self-center"
+      <ion-col size-md="1" class="ion-align-self-center"><strong>Sr</strong></ion-col>
+      <ion-col size-md="5" class="ion-align-self-center"
         ><strong>Title</strong></ion-col
       >
-      <ion-col size-md="4"><strong>Short Description</strong></ion-col>
       <ion-col size-md="2"><strong>Category</strong></ion-col>
       <ion-col size-md="2"><strong>Date</strong></ion-col>
       <ion-col size-md="2" class="action-heading"
@@ -36,15 +36,10 @@
       *ngFor="let blog of blogList; let i = index"
       class="item-divider-line"
     >
-      <ion-col size-md="2" class="ion-align-self-center"
+      <ion-col size-md="1" class="ion-align-self-center">{{ i + 1 }}</ion-col>
+      <ion-col size-md="5" class="ion-align-self-center"
         >{{ blog.title }}</ion-col
       >
-      <ion-col
-        size-md="4"
-        class="ion-align-self-center"
-        [innerHTML]="blog.shortDescription"
-      >
-      </ion-col>
       <ion-col size-md="2" class="ion-align-self-center"
         >{{blog.category | uppercase}}
       </ion-col>

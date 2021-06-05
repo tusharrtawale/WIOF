@@ -31,6 +31,10 @@ export class AdminDashboardPage implements OnInit {
         name: "Manage Coffee Conversations",
         actionUrl: "manage-coffee-conversation"
       },
+      // {
+      //   name: "Manage In Focus",
+      //   actionUrl: "manage-in-focus"
+      // },
       {
         name: "View Subscriptions",
         actionUrl: "subscribers"

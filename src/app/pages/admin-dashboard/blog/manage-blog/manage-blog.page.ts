@@ -31,10 +31,7 @@ export class ManageBlogPage implements OnInit, OnDestroy {
     this.blogList$ = this.blogService.getBlogs().pipe(
       takeUntil(this.destroy$),
       map((blogList) => {
-        return blogList.sort(
-          (a, b) =>
-            new Date(b.submitDate).getTime() - new Date(a.submitDate).getTime()
-        );
+        return blogList.sort((a, b) => (a.category > b.category ? 1 : -1));
       }),
       catchError((err) => {
         return throwError(err);

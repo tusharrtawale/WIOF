@@ -160,7 +160,8 @@ export const FIREBASE_COLLECTION = {
   ENVCAL: "Envcal",
   NEWS: "News",
   CONFIG: "config",
-  COFFEE_CONVERSATIONS: "CoffeeConversations"
+  COFFEE_CONVERSATIONS: "CoffeeConversations",
+  NGO_IN_FOCUS: "NGOinFocus"
 };
 
 export const VIDEO_PLAYER_TITLES = {

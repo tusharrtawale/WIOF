@@ -76,9 +76,12 @@
           [fromHomePage]="true"
         ></app-coffee-conversation>
       </ion-col>
-      <!-- <ion-col size="12">
-        <app-ngo></app-ngo>
-      </ion-col> -->
+      <ion-col size-xs="12" size-md="6" size-lg="8">
+        <app-ngo [ngoInFocus]="ngoInFocus$ | async"></app-ngo>
+      </ion-col>
+      <ion-col size-xs="12" size-md="6" size-lg="4">
+      
+      </ion-col>
       <ion-col size-lg="8" size-xs="12">
         <!-- <app-video-widget [element]="elementName"></app-video-widget> -->
         <app-env-calender></app-env-calender>

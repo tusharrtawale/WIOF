@@ -1,8 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 import { ElementRef, ViewChild } from "@angular/core";
 import { CoffeeConversationService } from "src/app/services/coffee-conversation.service";
+import { NgoInFocusService } from "src/app/services/ngo-in-focus.service";
 import { Observable } from "rxjs";
 import { CoffeeConversation } from "src/app/models/CoffeeConversation";
+import { iNgoInFocus } from "src/app/models/NgoInFocus";
+
 
 @Component({
   selector: "app-home",
@@ -15,8 +18,11 @@ export class HomePage implements OnInit {
   counter = 5;
   buttonClicked = false;
   coffeeConversations$: Observable<CoffeeConversation[]>;
+  ngoInFocus$: Observable<iNgoInFocus[]>
 
-  constructor(private coffeeConvService: CoffeeConversationService) {}
+  constructor(private coffeeConvService: CoffeeConversationService,
+    private ngoInFocusService: NgoInFocusService
+    ) {}
 
   ngOnInit() {
     // inauguration code
@@ -32,6 +38,7 @@ export class HomePage implements OnInit {
     );
     this.viewConsentPopup = privacyConsentAccepted === "true" ? false : true;
     this.coffeeConversations$ = this.coffeeConvService.getCoffeeConversations();
+    this.ngoInFocus$ = this.ngoInFocusService.getNgoInFocus();
   }
 
   onAccept() {

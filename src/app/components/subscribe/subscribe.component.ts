@@ -1,25 +1,24 @@
-import { Component, OnInit, Input } from "@angular/core";
-import { AlertController, LoadingController } from "@ionic/angular";
+import { Component, OnInit, Input, OnDestroy } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { throwError, Subject } from "rxjs";
 import { Subscriber } from "../../models/Subscriber";
 import { catchError, map, takeUntil } from "rxjs/operators";
 import { SubscriptionService } from "../../services/subscription.service";
 import { UiUtilService } from "src/app/util/UiUtilService";
+import { UI_MESSAGES } from "src/app/app.constants";
 
 @Component({
   selector: "app-subscribe",
   templateUrl: "./subscribe.component.html",
   styleUrls: ["./subscribe.component.scss"]
 })
-export class SubscribeComponent implements OnInit {
-  @Input() page:string;
+export class SubscribeComponent implements OnInit, OnDestroy {
+  @Input() page: string;
   addSubscriberForm: FormGroup;
-  subscribeButton: Boolean;
-  error: String;
+  subscribeButton: boolean;
+  error: string;
   loader;
   destroy$: Subject<boolean> = new Subject();
-  
 
   constructor(
     private subscribeService: SubscriptionService,
@@ -39,12 +38,10 @@ export class SubscribeComponent implements OnInit {
     this.openSubscriptionForm();
   }
 
-  getElement(element){
-    if(element==this.page){
+  getElement(element) {
+    if (element === this.page) {
       return true;
-
-    }
-    else{
+    } else {
       return false;
     }
   }
@@ -52,7 +49,12 @@ export class SubscribeComponent implements OnInit {
   async onSubmit() {
     if (this.addSubscriberForm.valid) {
       const subscriber = Subscriber.createByForm(this.addSubscriberForm);
-      this.loader = await this.uiUtil.showLoader("Saving your subscription...");
+      this.loader = await this.uiUtil.showLoader(
+        UI_MESSAGES.SAVE_IN_PROGRESS.replace(
+          UI_MESSAGES.PLACEHOLDER,
+          "subscription"
+        )
+      );
       this.subscribeService
         .saveSubscriber(subscriber)
         .pipe(
@@ -69,17 +71,20 @@ export class SubscribeComponent implements OnInit {
             this.loader.dismiss();
             this.addSubscriberForm.reset();
             this.uiUtil.presentAlert(
-              "Success",
-              "You are now subscribed to WIOF Newsletter",
-              ["Cool!"]
+              UI_MESSAGES.SUCCESS_HEADER,
+              UI_MESSAGES.SUCCESS_SUBSCRIPTION,
+              [UI_MESSAGES.SUCCESS_CTA_TEXT]
             );
           },
           (error) => {
             this.loader.dismiss();
             this.uiUtil.presentAlert(
-              "Error",
-              "Uh oh! We could not save it. Please try again.",
-              ["OK"]
+              UI_MESSAGES.FAILURE_HEADER,
+              UI_MESSAGES.FAILURE_ADD_ITEM_DESC.replace(
+                UI_MESSAGES.PLACEHOLDER,
+                "subscription"
+              ),
+              [UI_MESSAGES.FAILURE_CTA_TEXT]
             );
           }
         );
@@ -88,40 +93,40 @@ export class SubscribeComponent implements OnInit {
     this.setSubscribedFlag();
   }
 
-  setSubscribedFlag(){
-    localStorage.setItem("subscribed","true");
+  setSubscribedFlag() {
+    localStorage.setItem("subscribed", "true");
   }
 
-  setSubscriptionOpenedFlag(){
-    sessionStorage.setItem("subscriptionBoxOpened","true")
+  setSubscriptionOpenedFlag() {
+    sessionStorage.setItem("subscriptionBoxOpened", "true");
   }
 
-  getSubscriptionOpenedFlag(){
-    if(sessionStorage.getItem("subscriptionBoxOpened")){
+  getSubscriptionOpenedFlag() {
+    if (sessionStorage.getItem("subscriptionBoxOpened")) {
       return true;
     }
     return false;
   }
 
-  getSubscribedFlag(){
-    if(localStorage.getItem("subscribed")){
+  getSubscribedFlag() {
+    if (localStorage.getItem("subscribed")) {
       return true;
     }
     return false;
   }
 
-  openSubscriptionForm(){
-    if(!this.getSubscribedFlag()){      
-      setTimeout( ()=>{ 
+  openSubscriptionForm() {
+    if (!this.getSubscribedFlag()) {
+      setTimeout(() => {
         this.triggerOpen();
-      },10000);
-    }    
+      }, 10000);
+    }
   }
 
-  triggerOpen(){
-    if(!this.getSubscriptionOpenedFlag()){
-      this.subscribeButton=false;
-      this.setSubscriptionOpenedFlag()
+  triggerOpen() {
+    if (!this.getSubscriptionOpenedFlag()) {
+      this.subscribeButton = false;
+      this.setSubscriptionOpenedFlag();
     }
   }
 

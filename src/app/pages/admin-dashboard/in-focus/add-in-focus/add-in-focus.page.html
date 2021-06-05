@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/admin-dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="!isEditMode">{{ pageContent.addInFocusTitle }}</ion-title>
+    <ion-title *ngIf="isEditMode">{{ pageContent.editInFocusTitle }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="success" fill="solid" size="large" (click)="onSubmit()"
+        >{{ pageContent.saveLabel }}</ion-button
+      >
+      <ion-button
+        color="medium"
+        fill="clear"
+        size="large"
+        routerLink="/admin-dashboard/manage-in-focus"
+        >{{ pageContent.cancelLabel }}</ion-button
+      >
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="addInFocusForm">
+    <ion-grid>
+      
+    </ion-grid>
+  </form>
+</ion-content>

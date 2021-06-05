@@ -1,18 +1,18 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { EnvDay } from "src/app/models/env-cal-data";
 import { Subject, Observable, throwError } from "rxjs";
 import { UiUtilService } from "src/app/util/UiUtilService";
 import { Router, ActivatedRoute } from "@angular/router";
 import { EnvcalService } from "src/app/services/envcal-service";
 import { takeUntil, switchMap, map, catchError } from "rxjs/operators";
-import { Months } from "src/app/app.constants";
+import { Months, UI_MESSAGES, ITEMS } from "src/app/app.constants";
 
 @Component({
   selector: "app-manage-calendar",
   templateUrl: "./manage-calendar.page.html",
   styleUrls: ["./manage-calendar.page.scss"]
 })
-export class ManageCalendarPage implements OnInit {
+export class ManageCalendarPage implements OnInit, OnDestroy {
   destroy$: Subject<boolean> = new Subject();
   occasionsList$: Observable<EnvDay[]>;
   selectedMonth: number;
@@ -71,11 +71,14 @@ export class ManageCalendarPage implements OnInit {
     occasionImage: string
   ) {
     this.uiUtil.presentAlert(
-      "Confirm",
-      "Are you sure you want to delete the occasion?",
+      UI_MESSAGES.CONFIRM_HEADER,
+      UI_MESSAGES.CONFIRM_DELETE_ITEM_DESC.replace(
+        UI_MESSAGES.PLACEHOLDER,
+        ITEMS.OCCASION
+      ),
       [
         {
-          text: "Yes",
+          text: UI_MESSAGES.CONFIRM_DELETE_PRIMARY_CTA,
           handler: async () => {
             await this.delOccasion(
               occasionList,
@@ -86,7 +89,7 @@ export class ManageCalendarPage implements OnInit {
           }
         },
         {
-          text: "No",
+          text: UI_MESSAGES.CONFIRM_DELETE_SECONDARY_CTA,
           role: "cancel"
         }
       ]
@@ -100,7 +103,10 @@ export class ManageCalendarPage implements OnInit {
     occasionImage: string
   ) {
     const loader = await this.uiUtil.showLoader(
-      "We are deleting the occasion..."
+      UI_MESSAGES.DELETE_IN_PROGRESS.replace(
+        UI_MESSAGES.PLACEHOLDER,
+        ITEMS.OCCASION
+      )
     );
     this.calendarService
       .deleteOccasionImage(occasionImage)
@@ -111,14 +117,16 @@ export class ManageCalendarPage implements OnInit {
         })
       )
       .subscribe(
-        //TODO handle delete error case
         (response) => {
           console.log(response);
           loader.dismiss();
           this.uiUtil.presentAlert(
-            "Success",
-            "Occasion successfully deleted!",
-            ["OK"]
+            UI_MESSAGES.SUCCESS_HEADER,
+            UI_MESSAGES.SUCCESS_DELETE_ITEM_DESC.replace(
+              UI_MESSAGES.PLACEHOLDER,
+              ITEMS.OCCASION
+            ),
+            [UI_MESSAGES.FAILURE_CTA_TEXT]
           );
           occasionList.splice(index, 1);
         },
@@ -126,9 +134,12 @@ export class ManageCalendarPage implements OnInit {
           console.log(error);
           loader.dismiss();
           this.uiUtil.presentAlert(
-            "Error",
-            "Uh Oh! We could not delete the occasion. Please try again.",
-            ["OK"]
+            UI_MESSAGES.FAILURE_HEADER,
+            UI_MESSAGES.FAILURE_DELETE_ITEM_DESC.replace(
+              UI_MESSAGES.PLACEHOLDER,
+              ITEMS.OCCASION
+            ),
+            [UI_MESSAGES.FAILURE_CTA_TEXT]
           );
         }
       );

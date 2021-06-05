@@ -5,6 +5,7 @@ import { PollQuestion } from "src/app/models/PollQuestion";
 import { PollQuestionService } from "src/app/services/poll-question.service";
 import { UiUtilService } from "src/app/util/UiUtilService";
 import { Router, ActivatedRoute } from "@angular/router";
+import { UI_MESSAGES, ITEMS } from "src/app/app.constants";
 
 @Component({
   selector: "app-manage-polls",
@@ -52,17 +53,20 @@ export class ManagePollsPage implements OnInit, OnDestroy {
     pollQuestionId: string
   ) {
     this.uiUtil.presentAlert(
-      "Confirm",
-      "Are you sure you want to delete the poll question?",
+      UI_MESSAGES.CONFIRM_HEADER,
+      UI_MESSAGES.CONFIRM_DELETE_ITEM_DESC.replace(
+        UI_MESSAGES.PLACEHOLDER,
+        ITEMS.POLL_QUESTION
+      ),
       [
         {
-          text: "Yes",
+          text: UI_MESSAGES.CONFIRM_DELETE_PRIMARY_CTA,
           handler: async () => {
             await this.delPollQuestion(pollQuestionList, index, pollQuestionId);
           }
         },
         {
-          text: "No",
+          text: UI_MESSAGES.CONFIRM_DELETE_SECONDARY_CTA,
           role: "cancel"
         }
       ]
@@ -75,17 +79,22 @@ export class ManagePollsPage implements OnInit, OnDestroy {
     pollQuestionId: string
   ) {
     const loader = await this.uiUtil.showLoader(
-      "We are deleting the poll question..."
+      UI_MESSAGES.DELETE_IN_PROGRESS.replace(
+        UI_MESSAGES.PLACEHOLDER,
+        ITEMS.POLL_QUESTION
+      )
     );
     this.pollQuestionService.deletePollQuestion(pollQuestionId).subscribe(
-      //TODO handle delete error case
       (response) => {
         console.log(response);
         loader.dismiss();
         this.uiUtil.presentAlert(
-          "Success",
-          "Poll question successfully deleted!",
-          ["OK"]
+          UI_MESSAGES.SUCCESS_HEADER,
+          UI_MESSAGES.SUCCESS_DELETE_ITEM_DESC.replace(
+            UI_MESSAGES.PLACEHOLDER,
+            ITEMS.POLL_QUESTION
+          ),
+          [UI_MESSAGES.FAILURE_CTA_TEXT]
         );
         pollQuestionList.splice(index, 1);
       },
@@ -93,9 +102,12 @@ export class ManagePollsPage implements OnInit, OnDestroy {
         console.log(error);
         loader.dismiss();
         this.uiUtil.presentAlert(
-          "Error",
-          "Uh Oh! We could not delete poll question. Please try again.",
-          ["OK"]
+          UI_MESSAGES.FAILURE_HEADER,
+          UI_MESSAGES.FAILURE_DELETE_ITEM_DESC.replace(
+            UI_MESSAGES.PLACEHOLDER,
+            ITEMS.POLL_QUESTION
+          ),
+          [UI_MESSAGES.FAILURE_CTA_TEXT]
         );
       }
     );
@@ -107,9 +119,12 @@ export class ManagePollsPage implements OnInit, OnDestroy {
       .subscribe((data) => {
         console.log(data);
         this.uiUtil.presentAlert(
-          "Success",
-          "Poll question successfully published!",
-          ["OK"]
+          UI_MESSAGES.SUCCESS_HEADER,
+          UI_MESSAGES.SUCCESS_PUBLISH_ITEM_DESC.replace(
+            UI_MESSAGES.PLACEHOLDER,
+            ITEMS.POLL_QUESTION
+          ),
+          [UI_MESSAGES.FAILURE_CTA_TEXT]
         );
       });
   }

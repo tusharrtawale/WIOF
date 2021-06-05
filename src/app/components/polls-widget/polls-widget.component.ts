@@ -8,6 +8,7 @@ import { IpService } from "../../services/ip.service";
 import { PollQuestionService } from "../../services/poll-question.service";
 import { PollsService } from "../../services/polls.service";
 import { Poll } from "src/app/models/Poll";
+import { UI_MESSAGES } from "src/app/app.constants";
 
 @Component({
   selector: "app-polls-widget",
@@ -67,7 +68,12 @@ export class PollsWidgetComponent implements OnInit, OnDestroy {
         this.IP4.ip,
         this.IP6.ip
       );
-      this.loader = await this.uiUtil.showLoader("Saving your vote...");
+      this.loader = await this.uiUtil.showLoader(
+        UI_MESSAGES.SAVE_IN_PROGRESS.replace(
+          UI_MESSAGES.PLACEHOLDER,
+          "your vote"
+        )
+      );
       this.pollsService
         .savePolls(poll)
         .pipe(
@@ -83,11 +89,12 @@ export class PollsWidgetComponent implements OnInit, OnDestroy {
           (subscribeRes) => {
             this.loader.dismiss();
             this.uiUtil.presentAlert(
-              "Vote Recorded",
-              `Your vote has been recorded. Thanks ${
+              UI_MESSAGES.SUCCESS_POLL_VOTE_HEADER,
+              UI_MESSAGES.SUCCESS_POLL_VOTE_DESC.replace(
+                "$NAME",
                 this.wiofPollsForm.get("name").value
-              } for voting..!!`,
-              ["Okay"]
+              ),
+              [UI_MESSAGES.SUCCESS_CTA_TEXT]
             );
             this.wiofPollsForm.reset();
             this.showPollResult = true;
@@ -96,9 +103,12 @@ export class PollsWidgetComponent implements OnInit, OnDestroy {
           (error) => {
             this.loader.dismiss();
             this.uiUtil.presentAlert(
-              "Error",
-              "Uh oh! We could not save it. Please try again.",
-              ["OK"]
+              UI_MESSAGES.FAILURE_HEADER,
+              UI_MESSAGES.FAILURE_ADD_ITEM_DESC.replace(
+                UI_MESSAGES.PLACEHOLDER,
+                "vote"
+              ),
+              [UI_MESSAGES.FAILURE_CTA_TEXT]
             );
             console.log(error);
           }

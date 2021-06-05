@@ -115,6 +115,20 @@ const routes: Routes = [
       import("./subscribers/subscribers.module").then(
         (m) => m.SubscribersPageModule
       )
+  },
+  {
+    path: "add-in-focus",
+    loadChildren: () =>
+      import("./in-focus/add-in-focus/add-in-focus.module").then(
+        (m) => m.AddInFocusPageModule
+      )
+  },
+  {
+    path: "manage-in-focus",
+    loadChildren: () =>
+      import("./in-focus/manage-in-focus/manage-in-focus.module").then(
+        (m) => m.ManageInFocusPageModule
+      )
   }
 ];
 

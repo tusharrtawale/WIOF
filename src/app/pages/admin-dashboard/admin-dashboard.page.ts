@@ -36,6 +36,10 @@ export class AdminDashboardPage implements OnInit {
       //   actionUrl: "manage-in-focus"
       // },
       {
+        name: "Manage In Focus",
+        actionUrl: "manage-in-focus"
+      },
+      {
         name: "View Subscriptions",
         actionUrl: "subscribers"
       }

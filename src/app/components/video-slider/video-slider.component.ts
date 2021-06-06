@@ -16,8 +16,8 @@ import { Video } from "src/app/models/Video";
 })
 export class VideoSliderComponent implements OnInit, OnChanges, AfterViewInit {
   @Input() videoList: Array<Video>;
-  @Input() element: String;
-  videoSliderClass: String;
+  @Input() element: string;
+  videoSliderClass: string;
   width: number;
   slideOpts = VIDEO_SLIDER_OPTIONS;
 

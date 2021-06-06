@@ -16,7 +16,7 @@ import { Months, UI_MESSAGES, ITEMS } from "src/app/app.constants";
 })
 export class AddOccasionPage implements OnInit {
   addOccasionForm: FormGroup;
-  imageToDisplay: String;
+  imageToDisplay: string;
   imageToSave: any;
   loader;
   destroy$: Subject<boolean> = new Subject();
@@ -47,7 +47,7 @@ export class AddOccasionPage implements OnInit {
       if (param.has("mode") && param.get("mode") === "edit") {
         this.occasion = this.calendarService.getViewEditModeOccasion();
         this.occasion.image.subscribe((imageData) => {
-          this.imageToDisplay = imageData;
+          this.imageToDisplay = imageData.toString();
         });
         if (!this.occasion) {
           this.router.navigateByUrl("/admin-dashboard/manage-occasion");

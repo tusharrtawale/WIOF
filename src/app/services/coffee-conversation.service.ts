@@ -38,7 +38,7 @@ export class CoffeeConversationService {
     return from(coffeeConversation$);
   }
 
-  getCoffeeConversations(category?: String): Observable<CoffeeConversation[]> {
+  getCoffeeConversations(category?: string): Observable<CoffeeConversation[]> {
     let ccCollectn = this.database.collection(
       FIREBASE_COLLECTION.COFFEE_CONVERSATIONS
     );

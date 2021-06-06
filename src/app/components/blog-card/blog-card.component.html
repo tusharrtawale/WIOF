@@ -1,6 +1,6 @@
 <ion-card class="blog-card">
   <ion-card-content class="ion-text-start card-content">
-    <img [src]="blog.image | async" />
+    <img [src]="blog.image | async" [alt]="'Image for blog ' + blog.title" />
     <h6 class="ion-padding">
       <strong class="blog-card-title"
         ><a [routerLink]="['/element', element, 'blog', blog.id]">{{
@@ -8,20 +8,8 @@
         }}</a></strong
       >
     </h6>
-    <!-- <ion-label>Category: {{ blog.category }}</ion-label> -->
     <p class="blog-card-content ion-padding-horizontal">
       {{ blog.shortDescription }}
-      <!-- <a [routerLink]="['blog-post', blog.id]">Read More</a> -->
     </p>
   </ion-card-content>
-  <!-- <ion-row class="blog-card-footer" [ngClass]="element">
-    <ion-col>
-      <ion-buttons>
-        <ion-button [routerLink]="['take-action']"> -->
-  <!-- <ion-icon slot="icon-only" name="person-circle"></ion-icon> -->
-  <!-- Take Action -->
-  <!-- </ion-button>
-      </ion-buttons>
-    </ion-col>
-  </ion-row> -->
 </ion-card>

@@ -78,3 +78,16 @@
 .wiof-video-player-header {
   border-bottom: white 2px solid;
 }
+
+.in-focus-content {
+  padding: 15px;
+  color: $dark-color;
+
+  strong {
+    font-size: large;
+  }
+
+  p {
+    font-size: medium;
+  }
+}

@@ -13,12 +13,12 @@ import { takeUntil } from "rxjs/operators";
 export class VideoPostPage implements OnInit, OnDestroy {
   videoUrl: string = "";
   urlSafe: SafeResourceUrl;
-  id: String;
+  id: string;
   video: any;
   vid: any;
-  videoTitle: String;
-  videoChannelName: String;
-  videoDescription: String;
+  videoTitle: string;
+  videoChannelName: string;
+  videoDescription: string;
   destroy$: Subject<boolean> = new Subject();
   showFullVideoDescription: boolean = true;
 

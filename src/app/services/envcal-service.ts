@@ -63,7 +63,7 @@ export class EnvcalService {
     );
   }
 
-  getImage(Image: String): Observable<String> {
+  getImage(Image: string): Observable<String> {
     const ref = this.storage.ref(
       `/${FIREBASE_COLLECTION.ENVCAL_IMAGE_STORAGE}/${Image}`
     ); //creates reference to storage item using the link in parameter
@@ -72,7 +72,7 @@ export class EnvcalService {
 
   //to-do link images to each envday obj
 
-  saveOccasionImage(imageData: any, imageName: String) {
+  saveOccasionImage(imageData: any, imageName: string) {
     const imageUploadTask = this.storage.upload(
       `/${FIREBASE_COLLECTION.ENVCAL_IMAGE_STORAGE}/${imageName}`,
       imageData
@@ -80,7 +80,7 @@ export class EnvcalService {
     return from(imageUploadTask);
   }
 
-  deleteOccasionImage(imageName: String) {
+  deleteOccasionImage(imageName: string) {
     return this.storage
       .ref(`/${FIREBASE_COLLECTION.ENVCAL_IMAGE_STORAGE}/${imageName}`)
       .delete();

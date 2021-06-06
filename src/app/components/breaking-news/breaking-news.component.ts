@@ -17,7 +17,7 @@ import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 })
 export class BreakingNewsComponent implements OnInit {
   newsList: Array<News> = [];
-  videoSliderClass: String;
+  videoSliderClass: string;
   width: number;
   isVideo: boolean;
 

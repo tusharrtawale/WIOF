@@ -6,9 +6,9 @@ const saveDate=presentDateTime.getDate() +"/" + presentDateTime.getMonth() +"/" 
 export class Subscriber {
   id:string;
   datetime?:string;
-  firstName: String;
-  lastName: String;
-  email: String;
+  firstName: string;
+  lastName: string;
+  email: string;
   constructor(firstName, lastName, email) {
     this.firstName = firstName;
     this.lastName = lastName;

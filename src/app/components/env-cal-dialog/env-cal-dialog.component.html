@@ -15,32 +15,16 @@
             </button>
           </ion-card-header>
           <ion-card-content class="ion-text-start card-content">
-            <img [src]="occasn.image | async" />
+            <img
+              [src]="occasn.image | async"
+              [alt]="'Image for occasion ' + occasn.name"
+            />
             <div>
               <p [innerHTML]="occasn.desc"></p>
               <a *ngIf="occasn.link" target="_blank" [href]="occasn.link"
                 >Show More</a
               >
             </div>
-            <!-- <ion-row>
-              <ion-col size="4" class="image-container">
-                <img [src]="occasn.image | async" />
-              </ion-col>
-              <ion-col size="8" class="ion-padding">
-                <p style="color: #2d2d2d" *ngIf="occasn.day">
-                  Date: {{ occasn.day }} {{ getMonth(occasn.month) }}
-                </p>
-                <p style="color: #2d2d2d" *ngIf="occasn.name">
-                  Special Event: {{ occasn.name }}
-                </p>
-                <p style="color: #2d2d2d" *ngIf="occasn.desc">
-                  Description: {{ occasn.desc }}
-                </p>
-                <a *ngIf="occasn.link" target="_blank" [href]="occasn.link"
-                  >Show More ...</a
-                >
-              </ion-col>
-            </ion-row> -->
           </ion-card-content>
         </ion-card>
       </ion-slide>

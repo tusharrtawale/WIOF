@@ -34,7 +34,7 @@ export class NewsService {
     return from(saveNews$);
   }
 
-  saveNewsImage(imageData: any, imageName: String) {
+  saveNewsImage(imageData: any, imageName: string) {
     const imageUploadTask = this.storage.upload(
       `/${FIREBASE_COLLECTION.NEWS_IMAGE_STORAGE}/${imageName}`,
       imageData
@@ -42,14 +42,14 @@ export class NewsService {
     return from(imageUploadTask);
   }
 
-  getImage(imageName: String): Observable<String> {
+  getImage(imageName: string): Observable<String> {
     const ref = this.storage.ref(
       `/${FIREBASE_COLLECTION.NEWS_IMAGE_STORAGE}/${imageName}`
     ); //creates reference to storage item using the link in parameter
     return ref.getDownloadURL(); //pulls the download URL which is an observable , handle accordingly
   }
 
-  deleteNewsImage(imageName: String): Observable<String> {
+  deleteNewsImage(imageName: string): Observable<String> {
     return this.storage
       .ref(`/${FIREBASE_COLLECTION.NEWS_IMAGE_STORAGE}/${imageName}`)
       .delete();

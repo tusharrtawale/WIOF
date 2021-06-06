@@ -9,7 +9,7 @@ import { Blog } from "src/app/models/Blog";
 })
 export class BlogSliderComponent implements OnInit {
   @Input() blogList: Array<Blog>;
-  @Input() element: String;
+  @Input() element: string;
   blogSliderClass: string;
   slideOpts = BLOG_SLIDER_OPTIONS;
   width: number;

@@ -271,10 +271,10 @@ export class FoodPhIndicatorComponent implements OnInit {
       { name: "Raw Brussel", value: 10 },
       { name: "Sprouts", value: 10 },
       { name: "Raw Swiss Chard", value: 10 },
-      { name: "Kimchi & other  Fermented Vegetables", value: 10 },
+      { name: "Kimchi & other Fermented Vegetables", value: 10 },
       { name: "Raw Spinach", value: 10 },
       { name: "Baking Soda", value: 10 }
-    ];
+    ].sort((a, b) => (a.name < b.name ? -1 : 1));
   }
   updateBridgeVariable() {
     this.bridgeVariable = this.selectedFood;

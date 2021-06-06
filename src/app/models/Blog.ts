@@ -1,33 +1,30 @@
-import { FormGroup } from "@angular/forms";
 import { Observable } from "rxjs";
 
 export class Blog {
-  id: String;
-  title: String;
-  shortDescription: String;
-  content: String;
-  imageName: String;
-  image: Observable<String>;
-  externalUrl: String;
-  author: String;
-  aboutAuthor: String;
-  category: String;
-  subCategory: String;
-  // List<Tag> tags;
+  id: string;
+  title: string;
+  shortDescription: string;
+  content: string;
+  imageName: string;
+  image: Observable<string>;
+  externalUrl: string;
+  author: string;
+  aboutAuthor: string;
+  category: string;
+  subCategory: string;
   submitDate: Date;
-  // Date approvalDate;
   publishDate: Date;
 
   constructor(
-    id,
-    title,
-    authorName,
-    aboutAuthor,
-    category,
-    subCategory,
-    imageName,
-    shortDescription,
-    content
+    id: string,
+    title: string,
+    authorName: string,
+    aboutAuthor: string,
+    category: string,
+    subCategory: string,
+    imageName: string,
+    shortDescription: string,
+    content: string
   ) {
     this.id = id;
     this.title = title;

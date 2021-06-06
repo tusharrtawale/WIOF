@@ -1,54 +1,54 @@
 // this model represents responce received from youtube data v3 api
 
 export class Playlist {
-  kind: String;
-  etag: String;
+  kind: string;
+  etag: string;
   items: items[];
   pageInfo: any;
 }
 
 class items {
-  kind: String;
-  etag: String;
-  id: String;
+  kind: string;
+  etag: string;
+  id: string;
   snippet: {
-    publishedAt: String;
-    channelId: String;
-    title: String;
-    description: String;
+    publishedAt: string;
+    channelId: string;
+    title: string;
+    description: string;
     thumbnails: {
       default: {
-        url: String;
+        url: string;
         width: Number;
         height: Number;
       };
       medium: {
-        url: String;
+        url: string;
         width: Number;
         height: Number;
       };
       high: {
-        url: String;
+        url: string;
         width: Number;
         height: Number;
       };
       standard: {
-        url: String;
+        url: string;
         width: Number;
         height: Number;
       };
       maxres: {
-        url: String;
+        url: string;
         width: Number;
         height: Number;
       };
     };
-    channelTitle: String;
-    playlistId: String;
+    channelTitle: string;
+    playlistId: string;
     position: Number;
     resourceId: {
-      kind: String;
-      videoId: String;
+      kind: string;
+      videoId: string;
     };
   };
 }

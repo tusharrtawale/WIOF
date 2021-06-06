@@ -13,7 +13,7 @@ export class AqiWidgetService {
 
   constructor(private http: HttpClient) {}
 
-  getAqi(city: String): Observable<any> {
+  getAqi(city: string): Observable<any> {
     console.log(
       "api service called",
       `${ENDPOINTS.AQI_WIDGET}/feed/${city}/?token=${environment.aqi_api_key}`

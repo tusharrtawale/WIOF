@@ -22,7 +22,7 @@ export class AddCoffeeConversationPage implements OnInit {
   destroy$: Subject<boolean> = new Subject();
   imageToDisplay: string;
   imageToSave: any;
-  categories: String[] = Object.values(PAGE_CATEGORY_MAP);
+  categories: string[] = Object.values(PAGE_CATEGORY_MAP);
 
   pageContent = {
     addCoffeeConversationTitle: "Add Coffee Conversation",

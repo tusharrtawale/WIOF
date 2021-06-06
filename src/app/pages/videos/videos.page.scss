@@ -2,6 +2,7 @@
 
 .videos-content {
   padding-top: 60px;
+  min-height: calc(100% - 130px);
 
   &.air {
     background-color: rgba($air-color, $tint-fraction);
@@ -26,7 +27,6 @@
   .no-videos-container {
     margin: 0;
     padding: 20px;
-    min-height: 750px;
   }
 }
 

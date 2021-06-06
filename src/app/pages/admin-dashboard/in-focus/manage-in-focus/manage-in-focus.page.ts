@@ -4,7 +4,7 @@ import { InFocus } from "src/app/models/InFocus";
 import { InFocusService } from "src/app/services/in-focus.service";
 import { UiUtilService } from "src/app/util/UiUtilService";
 import { Router, ActivatedRoute } from "@angular/router";
-import { takeUntil, catchError } from "rxjs/operators";
+import { takeUntil, catchError, map } from "rxjs/operators";
 import { UI_MESSAGES, ITEMS } from "src/app/app.constants";
 
 @Component({
@@ -28,8 +28,9 @@ export class ManageInFocusPage implements OnInit, OnDestroy {
   }
 
   initPage() {
-    this.inFocusList$ = this.inFocusService.getInFocuss().pipe(
+    this.inFocusList$ = this.inFocusService.getInFocuses().pipe(
       takeUntil(this.destroy$),
+      map((data) => data.sort((a, b) => (a.category < b.category ? -1 : 1))),
       catchError((err) => {
         return throwError(err);
       })
@@ -117,6 +118,22 @@ export class ManageInFocusPage implements OnInit, OnDestroy {
           );
         }
       );
+  }
+
+  publishInFocus(inFocusId: string, category: string) {
+    this.inFocusService
+      .publishInFocus(inFocusId, category)
+      .subscribe((data) => {
+        console.log(data);
+        this.uiUtil.presentAlert(
+          UI_MESSAGES.SUCCESS_HEADER,
+          UI_MESSAGES.SUCCESS_PUBLISH_ITEM_DESC.replace(
+            UI_MESSAGES.PLACEHOLDER,
+            ITEMS.IN_FOCUS
+          ),
+          [UI_MESSAGES.FAILURE_CTA_TEXT]
+        );
+      });
   }
 
   ngOnDestroy(): void {

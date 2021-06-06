@@ -4,11 +4,12 @@ import {
   AngularFirestore,
   AngularFirestoreCollection
 } from "@angular/fire/firestore";
-import { map } from "rxjs/operators";
+import { map, concatMap } from "rxjs/operators";
 import { from, Observable } from "rxjs";
 import {
   FIREBASE_COLLECTION,
-  YOUTUBE_EMBED_VIDEO_LINK
+  YOUTUBE_EMBED_VIDEO_LINK,
+  ITEM_STATUS
 } from "../app.constants";
 import { DomSanitizer } from "@angular/platform-browser";
 
@@ -40,7 +41,7 @@ export class InFocusService {
     return from(inFocus$);
   }
 
-  getInFocuss(category?: string): Observable<InFocus[]> {
+  getInFocuses(category?: string): Observable<InFocus[]> {
     let inFocusCollectn = this.database.collection(
       FIREBASE_COLLECTION.IN_FOCUS
     );
@@ -62,6 +63,65 @@ export class InFocusService {
         })
       )
     );
+  }
+
+  getActiveInFocus(category: string): Observable<InFocus> | null {
+    const inFocusCollectn = this.database.collection(
+      FIREBASE_COLLECTION.IN_FOCUS,
+      (ref) =>
+        ref
+          .where("category", "==", category)
+          .where("status", "==", ITEM_STATUS.PUBLISHED)
+          .limit(1)
+    );
+    return inFocusCollectn.get().pipe(
+      map((querySnapshot) => {
+        if (querySnapshot.docs.length > 0) {
+          const data = querySnapshot.docs[0].data() as InFocus;
+          data.inFocusId = querySnapshot.docs[0].id;
+          data.sanitizedLink = this.sanitizer.bypassSecurityTrustResourceUrl(
+            YOUTUBE_EMBED_VIDEO_LINK.replace("VIDEO_ID", data.videoLink)
+          );
+          return data;
+        }
+        return null;
+      })
+    );
+  }
+
+  publishInFocus(inFocusId: string, category: string) {
+    return this.unpublishInFocus(category).pipe(
+      concatMap(() => {
+        return this.inFocusCollection.doc(inFocusId).update({
+          status: ITEM_STATUS.PUBLISHED,
+          publishDate: new Date().getTime(),
+          unpublishDate: null
+        });
+      })
+    );
+  }
+
+  unpublishInFocus(category: string) {
+    return this.database
+      .collection(FIREBASE_COLLECTION.IN_FOCUS, (ref) =>
+        ref
+          .where("category", "==", category)
+          .where("status", "==", ITEM_STATUS.PUBLISHED)
+      )
+      .get()
+      .pipe(
+        map((querySnapshot) =>
+          querySnapshot.docs.map((doc) => {
+            const data = doc.data() as InFocus;
+            data.inFocusId = doc.id;
+            this.inFocusCollection.doc(data.inFocusId).update({
+              status: ITEM_STATUS.INACTIVE,
+              unpublishDate: new Date().getTime()
+            });
+            return data;
+          })
+        )
+      );
   }
 
   deleteInFocus(inFocusId: string) {

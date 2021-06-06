@@ -35,6 +35,7 @@ import { SocialShareHomeComponent } from "./components/social-share-home/social-
 import { EnvCalDialogComponent } from "./components/env-cal-dialog/env-cal-dialog.component";
 import { TakeActionContentComponent } from "./components/take-action-content/take-action-content.component";
 import { CoffeeConversationComponent } from "./components/coffee-conversation/coffee-conversation.component";
+import { InFocusWidgetComponent } from './components/in-focus-widget/in-focus-widget.component';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -69,7 +70,8 @@ const COMPONENTS = [
   SocialShareHomeComponent,
   EnvCalDialogComponent,
   TakeActionContentComponent,
-  CoffeeConversationComponent
+  CoffeeConversationComponent,
+  InFocusWidgetComponent
 ];
 
 @NgModule({

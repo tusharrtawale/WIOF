@@ -6,7 +6,7 @@ import { Subject, throwError } from "rxjs";
 import { takeUntil, map, catchError } from "rxjs/operators";
 import { PollQuestion } from "src/app/models/PollQuestion";
 import { ActivatedRoute, Router } from "@angular/router";
-import { POLL_STATUS, UI_MESSAGES, ITEMS } from "src/app/app.constants";
+import { ITEM_STATUS, UI_MESSAGES, ITEMS } from "src/app/app.constants";
 import { PollsService } from "src/app/services/polls.service";
 import { AppUtilService } from "src/app/util/AppUtilService";
 
@@ -187,7 +187,7 @@ export class AddPollPage implements OnInit, OnDestroy {
       new Date(addPollForm.value.publishStartDate).getTime(),
       new Date(addPollForm.value.publishEndDate).getTime(),
       isEditMode ? pollQuestion.submitDate : new Date().getTime(),
-      isEditMode ? pollQuestion.status : POLL_STATUS.SUBMITTED
+      isEditMode ? pollQuestion.status : ITEM_STATUS.SUBMITTED
     );
   }
 

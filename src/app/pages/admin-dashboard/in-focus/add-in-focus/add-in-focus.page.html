@@ -23,7 +23,92 @@
 <ion-content>
   <form [formGroup]="addInFocusForm">
     <ion-grid>
-      
+      <ion-row>
+        <ion-col size-xs="12" size-md="4"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.titleLabel}}</ion-label
+            >
+            <ion-input formControlName="title"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-md="8"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.subTitleLabel}}</ion-label
+            >
+            <ion-input formControlName="subTitle"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.descriptionLabel}}</ion-label
+            >
+            <ion-textarea formControlName="description"></ion-textarea>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-md="4"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.categoryLabel}}</ion-label
+            >
+            <ion-select formControlName="category">
+              <ion-select-option
+                [value]="category"
+                *ngFor="let category of categories"
+                >{{ category }}</ion-select-option
+              >
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-md="4"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.videoLinkLabel}}</ion-label
+            >
+            <ion-input formControlName="videoLink"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-md="4"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.knowMoreLinkLabel}}</ion-label
+            >
+            <ion-input formControlName="knowMoreLink"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-md="4"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.submitDateLabel}}</ion-label
+            >
+            <ion-input disabled [value]="inFocus.submitDate | date"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-md="4"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.publishDateLabel}}</ion-label
+            >
+            <ion-input
+              disabled
+              [value]="inFocus.publishDate | date"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-md="4"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.unpublishDateLabel}}</ion-label
+            >
+            <ion-input
+              disabled
+              [value]="inFocus.unpublishDate | date"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
     </ion-grid>
   </form>
 </ion-content>

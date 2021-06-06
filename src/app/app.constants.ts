@@ -167,7 +167,7 @@ export const FIREBASE_COLLECTION = {
 export const VIDEO_PLAYER_TITLES = {
   AIR: "The Current Deadly Killer in the Air",
   WATER: "Water : The most precious resource",
-  EARTH: "Let's Rediscover our Planet Earth",
+  EARTH: "Rediscover our Planet Earth",
   FIRE: "The Rise of Solar and Wind Energy",
   SPIRIT: "Handling Depression with Self Love",
   CONFIG: "About WorldIsOneFamily.com"
@@ -191,7 +191,7 @@ export const PAGE_CATEGORY_MAP = {
   spirit: "Spirit"
 };
 
-export const POLL_STATUS = {
+export const ITEM_STATUS = {
   SUBMITTED: "submitted",
   PUBLISHED: "published",
   INACTIVE: "inactive"

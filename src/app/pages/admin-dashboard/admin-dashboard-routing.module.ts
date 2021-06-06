@@ -125,10 +125,22 @@ const routes: Routes = [
   },
   {
     path: "manage-in-focus",
-    loadChildren: () =>
-      import("./in-focus/manage-in-focus/manage-in-focus.module").then(
-        (m) => m.ManageInFocusPageModule
-      )
+    children: [
+      {
+        path: "",
+        loadChildren: () =>
+          import("./in-focus/manage-in-focus/manage-in-focus.module").then(
+            (m) => m.ManageInFocusPageModule
+          )
+      },
+      {
+        path: "in-focus/:mode",
+        loadChildren: () =>
+          import("./in-focus/add-in-focus/add-in-focus.module").then(
+            (m) => m.AddInFocusPageModule
+          )
+      }
+    ]
   }
 ];
 

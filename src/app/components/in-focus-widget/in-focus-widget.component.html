@@ -1,18 +1,19 @@
 <ion-card>
   <ion-card-header
     class="wiof-video-player-header"
-    [ngClass]="videoPlayerClass"
+    [ngClass]="inFocusClass"
   >
-    <ion-card-title class="title-text"> {{ videoPlayerTitle }} </ion-card-title>
+    <ion-card-title class="title-text"> {{ inFocus.title }} </ion-card-title>
   </ion-card-header>
   <ion-card-content
     class="wiof-video-player-content background"
-    [ngClass]="videoPlayerClass"
+    [ngClass]="inFocusClass"
   >
     <iframe
       id="iframeYTvideo"
+      [title]="inFocus.title"
       class="videoPlayer"
-      [src]="urlSafe"
+      [src]="inFocus.sanitizedLink"
       allowfullscreen
     ></iframe>
 

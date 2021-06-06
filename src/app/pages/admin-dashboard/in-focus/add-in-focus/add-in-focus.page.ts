@@ -3,7 +3,12 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Subject, throwError } from "rxjs";
 import { catchError, takeUntil } from "rxjs/operators";
-import { PAGE_CATEGORY_MAP, UI_MESSAGES, ITEMS } from "src/app/app.constants";
+import {
+  PAGE_CATEGORY_MAP,
+  UI_MESSAGES,
+  ITEMS,
+  ITEM_STATUS
+} from "src/app/app.constants";
 import { UiUtilService } from "src/app/util/UiUtilService";
 import { InFocus } from "src/app/models/InFocus";
 import { InFocusService } from "src/app/services/in-focus.service";
@@ -30,6 +35,9 @@ export class AddInFocusPage implements OnInit, OnDestroy {
     categoryLabel: "Category",
     videoLinkLabel: "In Focus Link (only youtube video ID)",
     knowMoreLinkLabel: "Know More Link",
+    submitDateLabel: "Submit Date",
+    publishDateLabel: "Publish Date",
+    unpublishDateLabel: "Unpublish Date",
     saveLabel: "Save",
     cancelLabel: "Cancel"
   };
@@ -146,7 +154,9 @@ export class AddInFocusPage implements OnInit, OnDestroy {
       addInFocusForm.value.description,
       addInFocusForm.value.category,
       addInFocusForm.value.videoLink,
-      addInFocusForm.value.knowMoreLink
+      addInFocusForm.value.knowMoreLink,
+      isEditMode ? inFocus.status : ITEM_STATUS.SUBMITTED,
+      new Date().getTime()
     );
   }
 

@@ -23,14 +23,18 @@ export class YoutubeVideoService {
       )
       .pipe(
         map((data) => {
-          return data.items.map((playlist_item) => {
-            return {
-              thumbnail: playlist_item.snippet.thumbnails.medium.url,
-              title: playlist_item.snippet.title,
-              url: playlist_item.snippet.resourceId.videoId,
-              publishedDate: new Date(playlist_item.snippet.publishedAt)
-            } as Video;
-          });
+          return data.items
+            .map((playlist_item) => {
+              return {
+                thumbnail: playlist_item.snippet.thumbnails.medium.url,
+                title: playlist_item.snippet.title,
+                url: playlist_item.snippet.resourceId.videoId,
+                publishedDate: new Date(playlist_item.snippet.publishedAt)
+              } as Video;
+            })
+            .sort(
+              (a, b) => b.publishedDate.getTime() - a.publishedDate.getTime()
+            );
         })
       );
   }

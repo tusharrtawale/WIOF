@@ -1,9 +1,9 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { IonicModule } from "@ionic/angular";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
 
-import { EnvCalDialogComponent } from "./env-cal-dialog.component";
+import { EnvCalDialogComponent } from './env-cal-dialog.component';
 
-describe("EnvCalDialogComponent", () => {
+describe('EnvCalDialogComponent', () => {
   let component: EnvCalDialogComponent;
   let fixture: ComponentFixture<EnvCalDialogComponent>;
 
@@ -18,7 +18,7 @@ describe("EnvCalDialogComponent", () => {
     fixture.detectChanges();
   }));
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

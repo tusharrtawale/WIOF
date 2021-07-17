@@ -1,4 +1,4 @@
-@import "../../wiof-custom-theming.scss";
+@import '../../wiof-custom-theming.scss';
 
 $shadowcolor: rgb(89, 45, 0);
 $fontcolor: #fff;
@@ -17,23 +17,23 @@ $fontcolor: #fff;
     left: 0px;
     box-shadow: 1px 1px 10px #000000;
   }
-  
-  &.home{
+
+  &.home {
     background-color: $home-color;
   }
-  &.earth{
+  &.earth {
     background-color: $earth-color;
   }
-  &.water{
+  &.water {
     background-color: $water-color;
   }
-  &.air{
+  &.air {
     background-color: $air-color;
   }
-  &.spirit{
+  &.spirit {
     background-color: $spirit-color;
   }
-  &.energy{
+  &.energy {
     background-color: $energy-color;
   }
 }
@@ -51,7 +51,7 @@ $fontcolor: #fff;
   position: absolute;
   height: 150px;
   width: 40px;
-  
+
   border-bottom-right-radius: 15px;
   border-top-right-radius: 15px;
   cursor: pointer;
@@ -67,22 +67,22 @@ $fontcolor: #fff;
     opacity: 0%;
   }
 
-  &.home{
+  &.home {
     background-color: $home-color;
   }
-  &.earth{
+  &.earth {
     background-color: $earth-color;
   }
-  &.water{
+  &.water {
     background-color: $water-color;
   }
-  &.air{
+  &.air {
     background-color: $air-color;
   }
-  &.spirit{
+  &.spirit {
     background-color: $spirit-color;
   }
-  &.energy{
+  &.energy {
     background-color: $energy-color;
   }
 
@@ -131,31 +131,28 @@ h4 {
   position: absolute;
   top: 5px;
   right: 4px;
-  outline:none;
+  outline: none;
   color: $home-text-color;
   font-size: x-large;
-  
-  &.home{
+
+  &.home {
     background-color: $home-color;
   }
-  &.earth{
+  &.earth {
     background-color: $earth-color;
   }
-  &.water{
+  &.water {
     background-color: $water-color;
   }
-  &.air{
+  &.air {
     background-color: $air-color;
   }
-  &.spirit{
+  &.spirit {
     background-color: $spirit-color;
   }
-  &.energy{
+  &.energy {
     background-color: $energy-color;
   }
-
-
-
 }
 
 .subscribe-button {
@@ -177,24 +174,23 @@ h4 {
     border: 1px solid grey;
     box-shadow: none;
   }
-  
-  &.home{
+
+  &.home {
     background-color: $home-color;
   }
-  &.earth{
+  &.earth {
     background-color: $earth-color;
   }
-  &.water{
+  &.water {
     background-color: $water-color;
   }
-  &.air{
+  &.air {
     background-color: $air-color;
   }
-  &.spirit{
+  &.spirit {
     background-color: $spirit-color;
   }
-  &.energy{
+  &.energy {
     background-color: $energy-color;
   }
-
 }

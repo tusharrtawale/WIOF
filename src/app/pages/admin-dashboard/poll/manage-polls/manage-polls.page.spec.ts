@@ -1,9 +1,9 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { IonicModule } from "@ionic/angular";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
 
-import { ManagePollsPage } from "./manage-polls.page";
+import { ManagePollsPage } from './manage-polls.page';
 
-describe("ManagePollsPage", () => {
+describe('ManagePollsPage', () => {
   let component: ManagePollsPage;
   let fixture: ComponentFixture<ManagePollsPage>;
 
@@ -18,7 +18,7 @@ describe("ManagePollsPage", () => {
     fixture.detectChanges();
   }));
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

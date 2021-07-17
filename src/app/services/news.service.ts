@@ -1,16 +1,16 @@
-import { Injectable } from "@angular/core";
-import { News } from "../models/News";
+import { Injectable } from '@angular/core';
+import { News } from '../models/News';
 import {
   AngularFirestore,
   AngularFirestoreCollection
-} from "@angular/fire/firestore";
-import { AngularFireStorage } from "@angular/fire/storage";
-import { map } from "rxjs/operators";
-import { from, Observable } from "rxjs";
-import { FIREBASE_COLLECTION } from "../app.constants";
+} from '@angular/fire/firestore';
+import { AngularFireStorage } from '@angular/fire/storage';
+import { map } from 'rxjs/operators';
+import { from, Observable } from 'rxjs';
+import { FIREBASE_COLLECTION } from '../app.constants';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class NewsService {
   newsCollection: AngularFirestoreCollection<any>;
@@ -61,7 +61,7 @@ export class NewsService {
         querySnapshot.docs.map((doc) => {
           const data = doc.data() as News;
           data.newsId = doc.id;
-          if (data.mediaType == "image") {
+          if (data.mediaType == 'image') {
             data.imageLink = this.getImage(data.mediaLink);
           }
           return data;

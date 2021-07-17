@@ -1,13 +1,13 @@
-import { Component, OnInit, Input, OnChanges } from "@angular/core";
-import { Observable } from "rxjs";
-import { AqiWidgetService } from "../../services/aqi-widget.service";
-import { AqiResponseData } from "../../models/Aqi";
-import { map } from "rxjs/operators";
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AqiWidgetService } from '../../services/aqi-widget.service';
+import { AqiResponseData } from '../../models/Aqi';
+import { map } from 'rxjs/operators';
 
 @Component({
-  selector: "app-aqi-scorecard",
-  templateUrl: "./aqi-scorecard.component.html",
-  styleUrls: ["./aqi-scorecard.component.scss"]
+  selector: 'app-aqi-scorecard',
+  templateUrl: './aqi-scorecard.component.html',
+  styleUrls: ['./aqi-scorecard.component.scss']
 })
 export class AqiScorecardComponent implements OnInit {
   @Input() locationUrl: string;
@@ -28,21 +28,21 @@ export class AqiScorecardComponent implements OnInit {
   }
 
   aqiColor(aqi: number) {
-    let aqiLevelClass = "aqi-level-card ";
+    let aqiLevelClass = 'aqi-level-card ';
     if (aqi > 0 && aqi < 51) {
-      aqiLevelClass += "aqi-good";
+      aqiLevelClass += 'aqi-good';
     } else if (aqi > 50 && aqi < 101) {
-      aqiLevelClass += "aqi-moderate";
+      aqiLevelClass += 'aqi-moderate';
     } else if (aqi > 100 && aqi < 151) {
-      aqiLevelClass += "aqi-unhealthy-for-sensitive";
+      aqiLevelClass += 'aqi-unhealthy-for-sensitive';
     } else if (aqi > 150 && aqi < 201) {
-      aqiLevelClass += "aqi-unhealthy";
+      aqiLevelClass += 'aqi-unhealthy';
     } else if (aqi > 200 && aqi < 300) {
-      aqiLevelClass += "aqi-very-unhealthy";
+      aqiLevelClass += 'aqi-very-unhealthy';
     } else if (aqi > 300) {
-      aqiLevelClass += "aqi-hazardous";
+      aqiLevelClass += 'aqi-hazardous';
     } else {
-      aqiLevelClass += "aqi-na";
+      aqiLevelClass += 'aqi-na';
     }
     return aqiLevelClass;
   }

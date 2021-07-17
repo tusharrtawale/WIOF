@@ -1,16 +1,16 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
-import { throwError, Subject, Observable } from "rxjs";
-import { catchError, map, takeUntil, switchMap } from "rxjs/operators";
-import { Blog } from "src/app/models/Blog";
-import { BlogService } from "src/app/services/blog.service";
-import { UiUtilService } from "src/app/util/UiUtilService";
-import { UI_MESSAGES, ITEMS } from "src/app/app.constants";
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { throwError, Subject, Observable } from 'rxjs';
+import { catchError, map, takeUntil, switchMap } from 'rxjs/operators';
+import { Blog } from 'src/app/models/Blog';
+import { BlogService } from 'src/app/services/blog.service';
+import { UiUtilService } from 'src/app/util/UiUtilService';
+import { UI_MESSAGES, ITEMS } from 'src/app/app.constants';
 
 @Component({
-  selector: "app-manage-blog",
-  templateUrl: "./manage-blog.page.html",
-  styleUrls: ["./manage-blog.page.scss"]
+  selector: 'app-manage-blog',
+  templateUrl: './manage-blog.page.html',
+  styleUrls: ['./manage-blog.page.scss']
 })
 export class ManageBlogPage implements OnInit, OnDestroy {
   destroy$: Subject<boolean> = new Subject();
@@ -69,7 +69,7 @@ export class ManageBlogPage implements OnInit, OnDestroy {
         },
         {
           text: UI_MESSAGES.CONFIRM_DELETE_SECONDARY_CTA,
-          role: "cancel"
+          role: 'cancel'
         }
       ]
     );
@@ -126,13 +126,13 @@ export class ManageBlogPage implements OnInit, OnDestroy {
 
   viewBlogDetails(blog: Blog) {
     this.blogService.setViewEditModeBlog(blog);
-    this.router.navigate(["blog", "edit"], {
+    this.router.navigate(['blog', 'edit'], {
       relativeTo: this.route,
       queryParams: { id: blog.id }
     });
   }
 
   addNewBlog() {
-    this.router.navigate(["blog", "new"], { relativeTo: this.route });
+    this.router.navigate(['blog', 'new'], { relativeTo: this.route });
   }
 }

@@ -1,10 +1,10 @@
-import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
-import { ManageCoffeeConversationPage } from "./manage-coffee-conversation.page";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { ManageCoffeeConversationPage } from './manage-coffee-conversation.page';
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     component: ManageCoffeeConversationPage
   }
 ];

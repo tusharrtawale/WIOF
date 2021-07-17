@@ -1,11 +1,11 @@
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
-import { ENDPOINTS } from "../app.constants";
-import { environment } from "src/environments/environment";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ENDPOINTS } from '../app.constants';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class AqiWidgetService {
   // https://api.waqi.info/feed/beijing/?token=655a2796ba9301e9aa31a2119528c6dfaa383f53
@@ -15,7 +15,7 @@ export class AqiWidgetService {
 
   getAqi(city: string): Observable<any> {
     console.log(
-      "api service called",
+      'api service called',
       `${ENDPOINTS.AQI_WIDGET}/feed/${city}/?token=${environment.aqi_api_key}`
     );
     return this.http.get(

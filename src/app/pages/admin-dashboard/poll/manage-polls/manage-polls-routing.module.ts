@@ -1,11 +1,11 @@
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
-import { ManagePollsPage } from "./manage-polls.page";
+import { ManagePollsPage } from './manage-polls.page';
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     component: ManagePollsPage
   }
 ];

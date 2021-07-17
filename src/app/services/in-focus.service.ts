@@ -1,20 +1,20 @@
-import { Injectable } from "@angular/core";
-import { InFocus } from "../models/InFocus";
+import { Injectable } from '@angular/core';
+import { InFocus } from '../models/InFocus';
 import {
   AngularFirestore,
   AngularFirestoreCollection
-} from "@angular/fire/firestore";
-import { map, concatMap } from "rxjs/operators";
-import { from, Observable } from "rxjs";
+} from '@angular/fire/firestore';
+import { map, concatMap } from 'rxjs/operators';
+import { from, Observable } from 'rxjs';
 import {
   FIREBASE_COLLECTION,
   YOUTUBE_EMBED_VIDEO_LINK,
   ITEM_STATUS
-} from "../app.constants";
-import { DomSanitizer } from "@angular/platform-browser";
+} from '../app.constants';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class InFocusService {
   inFocusCollection: AngularFirestoreCollection<any>;
@@ -48,7 +48,7 @@ export class InFocusService {
     if (category !== undefined) {
       inFocusCollectn = this.database.collection(
         FIREBASE_COLLECTION.IN_FOCUS,
-        (ref) => ref.where("category", "==", category)
+        (ref) => ref.where('category', '==', category)
       );
     }
     return inFocusCollectn.get().pipe(
@@ -57,7 +57,7 @@ export class InFocusService {
           const data = doc.data() as InFocus;
           data.inFocusId = doc.id;
           data.sanitizedLink = this.sanitizer.bypassSecurityTrustResourceUrl(
-            YOUTUBE_EMBED_VIDEO_LINK.replace("VIDEO_ID", data.videoLink)
+            YOUTUBE_EMBED_VIDEO_LINK.replace('VIDEO_ID', data.videoLink)
           );
           return data;
         })
@@ -70,8 +70,8 @@ export class InFocusService {
       FIREBASE_COLLECTION.IN_FOCUS,
       (ref) =>
         ref
-          .where("category", "==", category)
-          .where("status", "==", ITEM_STATUS.PUBLISHED)
+          .where('category', '==', category)
+          .where('status', '==', ITEM_STATUS.PUBLISHED)
           .limit(1)
     );
     return inFocusCollectn.get().pipe(
@@ -80,7 +80,7 @@ export class InFocusService {
           const data = querySnapshot.docs[0].data() as InFocus;
           data.inFocusId = querySnapshot.docs[0].id;
           data.sanitizedLink = this.sanitizer.bypassSecurityTrustResourceUrl(
-            YOUTUBE_EMBED_VIDEO_LINK.replace("VIDEO_ID", data.videoLink)
+            YOUTUBE_EMBED_VIDEO_LINK.replace('VIDEO_ID', data.videoLink)
           );
           return data;
         }
@@ -105,8 +105,8 @@ export class InFocusService {
     return this.database
       .collection(FIREBASE_COLLECTION.IN_FOCUS, (ref) =>
         ref
-          .where("category", "==", category)
-          .where("status", "==", ITEM_STATUS.PUBLISHED)
+          .where('category', '==', category)
+          .where('status', '==', ITEM_STATUS.PUBLISHED)
       )
       .get()
       .pipe(

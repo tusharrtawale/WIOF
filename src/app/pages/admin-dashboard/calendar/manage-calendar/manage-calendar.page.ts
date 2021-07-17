@@ -1,16 +1,16 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
-import { EnvDay } from "src/app/models/env-cal-data";
-import { Subject, Observable, throwError } from "rxjs";
-import { UiUtilService } from "src/app/util/UiUtilService";
-import { Router, ActivatedRoute } from "@angular/router";
-import { EnvcalService } from "src/app/services/envcal-service";
-import { takeUntil, switchMap, map, catchError } from "rxjs/operators";
-import { Months, UI_MESSAGES, ITEMS } from "src/app/app.constants";
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { EnvDay } from 'src/app/models/env-cal-data';
+import { Subject, Observable, throwError } from 'rxjs';
+import { UiUtilService } from 'src/app/util/UiUtilService';
+import { Router, ActivatedRoute } from '@angular/router';
+import { EnvcalService } from 'src/app/services/envcal-service';
+import { takeUntil, switchMap, map, catchError } from 'rxjs/operators';
+import { Months, UI_MESSAGES, ITEMS } from 'src/app/app.constants';
 
 @Component({
-  selector: "app-manage-calendar",
-  templateUrl: "./manage-calendar.page.html",
-  styleUrls: ["./manage-calendar.page.scss"]
+  selector: 'app-manage-calendar',
+  templateUrl: './manage-calendar.page.html',
+  styleUrls: ['./manage-calendar.page.scss']
 })
 export class ManageCalendarPage implements OnInit, OnDestroy {
   destroy$: Subject<boolean> = new Subject();
@@ -53,12 +53,12 @@ export class ManageCalendarPage implements OnInit, OnDestroy {
   }
 
   addNewOccasion() {
-    this.router.navigate(["occasion", "new"], { relativeTo: this.route });
+    this.router.navigate(['occasion', 'new'], { relativeTo: this.route });
   }
 
   viewOccasionDetails(occasion: EnvDay) {
     this.calendarService.setViewEditModeOccasion(occasion);
-    this.router.navigate(["occasion", "edit"], {
+    this.router.navigate(['occasion', 'edit'], {
       relativeTo: this.route,
       queryParams: { id: occasion.id }
     });
@@ -90,7 +90,7 @@ export class ManageCalendarPage implements OnInit, OnDestroy {
         },
         {
           text: UI_MESSAGES.CONFIRM_DELETE_SECONDARY_CTA,
-          role: "cancel"
+          role: 'cancel'
         }
       ]
     );

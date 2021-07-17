@@ -1,28 +1,28 @@
-import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
-import { SpiritPage } from "./spirit.page";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { SpiritPage } from './spirit.page';
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     component: SpiritPage
   },
   {
-    path: "blog",
+    path: 'blog',
     loadChildren: () =>
-      import("../blog-post/blog-post.module").then((m) => m.BlogPostPageModule)
+      import('../blog-post/blog-post.module').then((m) => m.BlogPostPageModule)
   },
   {
-    path: "video",
+    path: 'video',
     loadChildren: () =>
-      import("../video-post/video-post.module").then(
+      import('../video-post/video-post.module').then(
         (m) => m.VideoPostPageModule
       )
   },
   {
-    path: "take-action",
+    path: 'take-action',
     loadChildren: () =>
-      import("../take-action/take-action.module").then(
+      import('../take-action/take-action.module').then(
         (m) => m.TakeActionPageModule
       )
   }

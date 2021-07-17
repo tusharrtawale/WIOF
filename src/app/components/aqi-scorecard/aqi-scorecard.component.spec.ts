@@ -1,9 +1,9 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { IonicModule } from "@ionic/angular";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
 
-import { AqiScorecardComponent } from "./aqi-scorecard.component";
+import { AqiScorecardComponent } from './aqi-scorecard.component';
 
-describe("AqiScorecardComponent", () => {
+describe('AqiScorecardComponent', () => {
   let component: AqiScorecardComponent;
   let fixture: ComponentFixture<AqiScorecardComponent>;
 
@@ -18,7 +18,7 @@ describe("AqiScorecardComponent", () => {
     fixture.detectChanges();
   }));
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

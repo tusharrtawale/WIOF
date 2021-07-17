@@ -1,16 +1,16 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
-import { NewsService } from "src/app/services/news.service";
-import { News } from "src/app/models/News";
-import { Subject, Observable, throwError, of } from "rxjs";
-import { takeUntil, map, catchError, switchMap } from "rxjs/operators";
-import { UiUtilService } from "src/app/util/UiUtilService";
-import { Router, ActivatedRoute } from "@angular/router";
-import { MEDIA_TYPE, UI_MESSAGES, ITEMS } from "src/app/app.constants";
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { NewsService } from 'src/app/services/news.service';
+import { News } from 'src/app/models/News';
+import { Subject, Observable, throwError, of } from 'rxjs';
+import { takeUntil, map, catchError, switchMap } from 'rxjs/operators';
+import { UiUtilService } from 'src/app/util/UiUtilService';
+import { Router, ActivatedRoute } from '@angular/router';
+import { MEDIA_TYPE, UI_MESSAGES, ITEMS } from 'src/app/app.constants';
 
 @Component({
-  selector: "app-manage-news",
-  templateUrl: "./manage-news.page.html",
-  styleUrls: ["./manage-news.page.scss"]
+  selector: 'app-manage-news',
+  templateUrl: './manage-news.page.html',
+  styleUrls: ['./manage-news.page.scss']
 })
 export class ManageNewsPage implements OnInit, OnDestroy {
   destroy$: Subject<boolean> = new Subject();
@@ -49,12 +49,12 @@ export class ManageNewsPage implements OnInit, OnDestroy {
   }
 
   addBreakinNews() {
-    this.router.navigate(["news", "new"], { relativeTo: this.route });
+    this.router.navigate(['news', 'new'], { relativeTo: this.route });
   }
 
   viewNewsDetails(news: News) {
     this.newsService.setViewEditModeNews(news);
-    this.router.navigate(["news", "edit"], {
+    this.router.navigate(['news', 'edit'], {
       relativeTo: this.route,
       queryParams: { id: news.newsId }
     });
@@ -76,7 +76,7 @@ export class ManageNewsPage implements OnInit, OnDestroy {
         },
         {
           text: UI_MESSAGES.CONFIRM_DELETE_SECONDARY_CTA,
-          role: "cancel"
+          role: 'cancel'
         }
       ]
     );

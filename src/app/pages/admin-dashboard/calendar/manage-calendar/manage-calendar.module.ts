@@ -1,12 +1,12 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { IonicModule } from "@ionic/angular";
+import { IonicModule } from '@ionic/angular';
 
-import { ManageCalendarPageRoutingModule } from "./manage-calendar-routing.module";
+import { ManageCalendarPageRoutingModule } from './manage-calendar-routing.module';
 
-import { ManageCalendarPage } from "./manage-calendar.page";
+import { ManageCalendarPage } from './manage-calendar.page';
 
 @NgModule({
   imports: [

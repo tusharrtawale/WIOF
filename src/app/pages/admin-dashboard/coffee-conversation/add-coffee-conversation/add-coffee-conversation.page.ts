@@ -1,18 +1,18 @@
-import { Component, OnInit } from "@angular/core";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { ActivatedRoute, Router } from "@angular/router";
-import { Subject, throwError } from "rxjs";
-import { catchError, takeUntil } from "rxjs/operators";
-import { PAGE_CATEGORY_MAP, UI_MESSAGES, ITEMS } from "src/app/app.constants";
-import { CoffeeConversation } from "src/app/models/CoffeeConversation";
-import { CoffeeConversationService } from "src/app/services/coffee-conversation.service";
-import { AppUtilService } from "src/app/util/AppUtilService";
-import { UiUtilService } from "src/app/util/UiUtilService";
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subject, throwError } from 'rxjs';
+import { catchError, takeUntil } from 'rxjs/operators';
+import { PAGE_CATEGORY_MAP, UI_MESSAGES, ITEMS } from 'src/app/app.constants';
+import { CoffeeConversation } from 'src/app/models/CoffeeConversation';
+import { CoffeeConversationService } from 'src/app/services/coffee-conversation.service';
+import { AppUtilService } from 'src/app/util/AppUtilService';
+import { UiUtilService } from 'src/app/util/UiUtilService';
 
 @Component({
-  selector: "app-add-coffee-conversation",
-  templateUrl: "./add-coffee-conversation.page.html",
-  styleUrls: ["./add-coffee-conversation.page.scss"]
+  selector: 'app-add-coffee-conversation',
+  templateUrl: './add-coffee-conversation.page.html',
+  styleUrls: ['./add-coffee-conversation.page.scss']
 })
 export class AddCoffeeConversationPage implements OnInit {
   isEditMode: boolean = false;
@@ -25,20 +25,20 @@ export class AddCoffeeConversationPage implements OnInit {
   categories: string[] = Object.values(PAGE_CATEGORY_MAP);
 
   pageContent = {
-    addCoffeeConversationTitle: "Add Coffee Conversation",
-    editCoffeeConversationTitle: "Edit Coffee Conversation",
-    topicLabel: "Topic",
-    topicShortDescLabel: "Topic Short Description",
-    topicDescLabel: "Topic Detailed Description",
-    categoryLabel: "Category",
-    interviewerNameLabel: "Interviewer Name",
-    intervieweeNameLabel: "Interviewee Name",
-    intervieweeDescLabel: "Interviewee Description",
-    interviewDateLabel: "Interview Date",
-    videoLinkLabel: "Coffee Conversation Link (only youtube video ID)",
-    knowMoreLinkLabel: "Know More Link",
-    saveLabel: "Save",
-    cancelLabel: "Cancel"
+    addCoffeeConversationTitle: 'Add Coffee Conversation',
+    editCoffeeConversationTitle: 'Edit Coffee Conversation',
+    topicLabel: 'Topic',
+    topicShortDescLabel: 'Topic Short Description',
+    topicDescLabel: 'Topic Detailed Description',
+    categoryLabel: 'Category',
+    interviewerNameLabel: 'Interviewer Name',
+    intervieweeNameLabel: 'Interviewee Name',
+    intervieweeDescLabel: 'Interviewee Description',
+    interviewDateLabel: 'Interview Date',
+    videoLinkLabel: 'Coffee Conversation Link (only youtube video ID)',
+    knowMoreLinkLabel: 'Know More Link',
+    saveLabel: 'Save',
+    cancelLabel: 'Cancel'
   };
 
   constructor(
@@ -52,11 +52,11 @@ export class AddCoffeeConversationPage implements OnInit {
   ngOnInit() {
     this.coffeeConversation = {} as CoffeeConversation;
     this.route.paramMap.subscribe((param) => {
-      if (param.has("mode") && param.get("mode") === "edit") {
+      if (param.has('mode') && param.get('mode') === 'edit') {
         this.coffeeConversation = this.coffeeConversationService.getViewEditModeCoffeeConversation();
         if (!this.coffeeConversation) {
           this.router.navigateByUrl(
-            "/admin-dashboard/manage-coffee-conversation"
+            '/admin-dashboard/manage-coffee-conversation'
           );
           return;
         }
@@ -73,16 +73,16 @@ export class AddCoffeeConversationPage implements OnInit {
 
   private initForm() {
     return new FormGroup({
-      topic: new FormControl("", Validators.required),
-      topicShortDesc: new FormControl("", Validators.required),
-      topicDesc: new FormControl("", Validators.required),
-      category: new FormControl("", Validators.required),
-      interviewerName: new FormControl("", Validators.required),
-      intervieweeName: new FormControl("", Validators.required),
-      intervieweeDesc: new FormControl("", Validators.required),
-      interviewDate: new FormControl("", Validators.required),
-      videoLink: new FormControl("", Validators.required),
-      knowMoreLink: new FormControl("", Validators.required)
+      topic: new FormControl('', Validators.required),
+      topicShortDesc: new FormControl('', Validators.required),
+      topicDesc: new FormControl('', Validators.required),
+      category: new FormControl('', Validators.required),
+      interviewerName: new FormControl('', Validators.required),
+      intervieweeName: new FormControl('', Validators.required),
+      intervieweeDesc: new FormControl('', Validators.required),
+      interviewDate: new FormControl('', Validators.required),
+      videoLink: new FormControl('', Validators.required),
+      knowMoreLink: new FormControl('', Validators.required)
     });
   }
 

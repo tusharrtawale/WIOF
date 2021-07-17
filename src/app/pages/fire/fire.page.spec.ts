@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { IonicModule } from "@ionic/angular";
-import { FirePage } from "./fire.page";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
+import { FirePage } from './fire.page';
 
-describe("FirePage", () => {
+describe('FirePage', () => {
   let component: FirePage;
   let fixture: ComponentFixture<FirePage>;
 
@@ -17,7 +17,7 @@ describe("FirePage", () => {
     fixture.detectChanges();
   }));
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

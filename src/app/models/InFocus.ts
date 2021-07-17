@@ -1,5 +1,5 @@
-import { SafeResourceUrl } from "@angular/platform-browser";
-import { ITEM_STATUS } from "../app.constants";
+import { SafeResourceUrl } from '@angular/platform-browser';
+import { ITEM_STATUS } from '../app.constants';
 
 export class InFocus {
   inFocusId: string;

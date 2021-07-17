@@ -1,24 +1,24 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { combineLatest, Subject, throwError } from "rxjs";
-import { catchError, map, takeUntil } from "rxjs/operators";
-import { PollQuestion } from "src/app/models/PollQuestion";
-import { UiUtilService } from "src/app/util/UiUtilService";
-import { IpService } from "../../services/ip.service";
-import { PollQuestionService } from "../../services/poll-question.service";
-import { PollsService } from "../../services/polls.service";
-import { Poll } from "src/app/models/Poll";
-import { UI_MESSAGES } from "src/app/app.constants";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { combineLatest, Subject, throwError } from 'rxjs';
+import { catchError, map, takeUntil } from 'rxjs/operators';
+import { PollQuestion } from 'src/app/models/PollQuestion';
+import { UiUtilService } from 'src/app/util/UiUtilService';
+import { IpService } from '../../services/ip.service';
+import { PollQuestionService } from '../../services/poll-question.service';
+import { PollsService } from '../../services/polls.service';
+import { Poll } from 'src/app/models/Poll';
+import { UI_MESSAGES } from 'src/app/app.constants';
 
 @Component({
-  selector: "app-polls-widget",
-  templateUrl: "./polls-widget.component.html",
-  styleUrls: ["./polls-widget.component.scss"]
+  selector: 'app-polls-widget',
+  templateUrl: './polls-widget.component.html',
+  styleUrls: ['./polls-widget.component.scss']
 })
 export class PollsWidgetComponent implements OnInit, OnDestroy {
   pollQuestion: PollQuestion;
-  IP4: any = { ip: "" };
-  IP6: any = { ip: "" };
+  IP4: any = { ip: '' };
+  IP6: any = { ip: '' };
   showPollResult: boolean = false;
   showForm: boolean = true;
   errorShow: boolean = false;
@@ -35,8 +35,8 @@ export class PollsWidgetComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.wiofPollsForm = new FormGroup({
-      name: new FormControl(""),
-      option: new FormControl("", [Validators.required])
+      name: new FormControl(''),
+      option: new FormControl('', [Validators.required])
     });
 
     this.pollQuestion = {} as PollQuestion;
@@ -71,7 +71,7 @@ export class PollsWidgetComponent implements OnInit, OnDestroy {
       this.loader = await this.uiUtil.showLoader(
         UI_MESSAGES.SAVE_IN_PROGRESS.replace(
           UI_MESSAGES.PLACEHOLDER,
-          "your vote"
+          'your vote'
         )
       );
       this.pollsService
@@ -91,8 +91,8 @@ export class PollsWidgetComponent implements OnInit, OnDestroy {
             this.uiUtil.presentAlert(
               UI_MESSAGES.SUCCESS_POLL_VOTE_HEADER,
               UI_MESSAGES.SUCCESS_POLL_VOTE_DESC.replace(
-                "$NAME",
-                this.wiofPollsForm.get("name").value
+                '$NAME',
+                this.wiofPollsForm.get('name').value
               ),
               [UI_MESSAGES.SUCCESS_CTA_TEXT]
             );
@@ -106,7 +106,7 @@ export class PollsWidgetComponent implements OnInit, OnDestroy {
               UI_MESSAGES.FAILURE_HEADER,
               UI_MESSAGES.FAILURE_ADD_ITEM_DESC.replace(
                 UI_MESSAGES.PLACEHOLDER,
-                "vote"
+                'vote'
               ),
               [UI_MESSAGES.FAILURE_CTA_TEXT]
             );

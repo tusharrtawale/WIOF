@@ -1,15 +1,15 @@
-import { Injectable } from "@angular/core";
-import { Poll } from "../models/Poll";
+import { Injectable } from '@angular/core';
+import { Poll } from '../models/Poll';
 import {
   AngularFirestore,
   AngularFirestoreCollection
-} from "@angular/fire/firestore";
-import { map } from "rxjs/operators";
-import { from, Observable } from "rxjs";
-import { FIREBASE_COLLECTION } from "../app.constants";
+} from '@angular/fire/firestore';
+import { map } from 'rxjs/operators';
+import { from, Observable } from 'rxjs';
+import { FIREBASE_COLLECTION } from '../app.constants';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class PollsService {
   private pollsCollection: AngularFirestoreCollection<any>;
@@ -30,7 +30,7 @@ export class PollsService {
     // getPolls(): Observable<Polls[]>{
     const pollsCollectionById = this.database.collection(
       FIREBASE_COLLECTION.POLLS,
-      (ref) => ref.where("pollQuestionId", "==", pollQuestionId)
+      (ref) => ref.where('pollQuestionId', '==', pollQuestionId)
     );
     return pollsCollectionById.get().pipe(
       map((querySnapshot) =>

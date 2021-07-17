@@ -9,7 +9,7 @@ describe('InFocusWidgetComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InFocusWidgetComponent ],
+      declarations: [InFocusWidgetComponent],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 

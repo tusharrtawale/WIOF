@@ -1,11 +1,20 @@
-import { FormGroup } from "@angular/forms";
+import { FormGroup } from '@angular/forms';
 
-const presentDateTime=new Date();
-const saveDate=presentDateTime.getDate() +"/" + presentDateTime.getMonth() +"/" + presentDateTime.getFullYear()+" "+presentDateTime.getHours()+":"+presentDateTime.getMinutes();
+const presentDateTime = new Date();
+const saveDate =
+  presentDateTime.getDate() +
+  '/' +
+  presentDateTime.getMonth() +
+  '/' +
+  presentDateTime.getFullYear() +
+  ' ' +
+  presentDateTime.getHours() +
+  ':' +
+  presentDateTime.getMinutes();
 
 export class Subscriber {
-  id:string;
-  datetime?:string;
+  id: string;
+  datetime?: string;
   firstName: string;
   lastName: string;
   email: string;
@@ -13,7 +22,7 @@ export class Subscriber {
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
-    this.datetime=saveDate;
+    this.datetime = saveDate;
   }
 
   static createByForm(addSubscriberForm: FormGroup) {

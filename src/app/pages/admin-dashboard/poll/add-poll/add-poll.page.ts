@@ -1,19 +1,19 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
-import { FormGroup, FormControl, FormArray, Validators } from "@angular/forms";
-import { UiUtilService } from "src/app/util/UiUtilService";
-import { PollQuestionService } from "src/app/services/poll-question.service";
-import { Subject, throwError } from "rxjs";
-import { takeUntil, map, catchError } from "rxjs/operators";
-import { PollQuestion } from "src/app/models/PollQuestion";
-import { ActivatedRoute, Router } from "@angular/router";
-import { ITEM_STATUS, UI_MESSAGES, ITEMS } from "src/app/app.constants";
-import { PollsService } from "src/app/services/polls.service";
-import { AppUtilService } from "src/app/util/AppUtilService";
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
+import { UiUtilService } from 'src/app/util/UiUtilService';
+import { PollQuestionService } from 'src/app/services/poll-question.service';
+import { Subject, throwError } from 'rxjs';
+import { takeUntil, map, catchError } from 'rxjs/operators';
+import { PollQuestion } from 'src/app/models/PollQuestion';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ITEM_STATUS, UI_MESSAGES, ITEMS } from 'src/app/app.constants';
+import { PollsService } from 'src/app/services/polls.service';
+import { AppUtilService } from 'src/app/util/AppUtilService';
 
 @Component({
-  selector: "app-add-poll",
-  templateUrl: "./add-poll.page.html",
-  styleUrls: ["./add-poll.page.scss"]
+  selector: 'app-add-poll',
+  templateUrl: './add-poll.page.html',
+  styleUrls: ['./add-poll.page.scss']
 })
 export class AddPollPage implements OnInit, OnDestroy {
   addPollForm: FormGroup;
@@ -24,18 +24,18 @@ export class AddPollPage implements OnInit, OnDestroy {
   pollQuestion: PollQuestion = {} as PollQuestion;
   optionData = {};
   pageContent = {
-    addPollTitle: "Add Poll",
-    editPollTitle: "Edit Poll",
-    savePollLabel: "Save",
-    cancelLabel: "Cancel",
-    pollQuestionLabel: "Poll Question",
-    optionLabel: "Option",
-    addOptionBtnLabel: "Add Option",
-    publishStartDateLabel: "Publish Start Date",
-    publishStartDateDesc: "*Start date of accepting polls for this question",
-    publishEndDateDesc: "*Last date of accepting polls for this question",
-    publishEndDateLabel: "Publish End Date",
-    pollResultTitle: "Poll Result"
+    addPollTitle: 'Add Poll',
+    editPollTitle: 'Edit Poll',
+    savePollLabel: 'Save',
+    cancelLabel: 'Cancel',
+    pollQuestionLabel: 'Poll Question',
+    optionLabel: 'Option',
+    addOptionBtnLabel: 'Add Option',
+    publishStartDateLabel: 'Publish Start Date',
+    publishStartDateDesc: '*Start date of accepting polls for this question',
+    publishEndDateDesc: '*Last date of accepting polls for this question',
+    publishEndDateLabel: 'Publish End Date',
+    pollResultTitle: 'Poll Result'
   };
 
   constructor(
@@ -50,10 +50,10 @@ export class AddPollPage implements OnInit, OnDestroy {
   ngOnInit() {
     this.pollQuestion = {} as PollQuestion;
     this.route.paramMap.subscribe((param) => {
-      if (param.has("mode") && param.get("mode") === "edit") {
+      if (param.has('mode') && param.get('mode') === 'edit') {
         this.pollQuestion = this.pollQuestionService.getViewEditModePollQuestion();
         if (!this.pollQuestion) {
-          this.router.navigateByUrl("/admin-dashboard/manage-polls");
+          this.router.navigateByUrl('/admin-dashboard/manage-polls');
           return;
         }
         this.isEditMode = true;
@@ -86,12 +86,12 @@ export class AddPollPage implements OnInit, OnDestroy {
     publishEndDate.setDate(publishStartDate.getDate() + 7);
 
     return new FormGroup({
-      question: new FormControl("", Validators.required),
+      question: new FormControl('', Validators.required),
       options: new FormArray([
-        new FormControl("", Validators.required),
-        new FormControl("", Validators.required),
-        new FormControl("", Validators.required),
-        new FormControl("", Validators.required)
+        new FormControl('', Validators.required),
+        new FormControl('', Validators.required),
+        new FormControl('', Validators.required),
+        new FormControl('', Validators.required)
       ]),
       publishStartDate: new FormControl(publishStartDate, Validators.required),
       publishEndDate: new FormControl(publishEndDate, Validators.required)
@@ -118,7 +118,7 @@ export class AddPollPage implements OnInit, OnDestroy {
   }
 
   getOptionControls() {
-    return this.addPollForm.get("options") as FormArray;
+    return this.addPollForm.get('options') as FormArray;
   }
 
   async onSubmit() {
@@ -196,7 +196,7 @@ export class AddPollPage implements OnInit, OnDestroy {
   }
 
   addOption() {
-    this.getOptionControls().push(new FormControl("", Validators.required));
+    this.getOptionControls().push(new FormControl('', Validators.required));
   }
 
   ngOnDestroy(): void {

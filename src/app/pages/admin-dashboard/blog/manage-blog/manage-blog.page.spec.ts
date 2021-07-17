@@ -1,9 +1,9 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { IonicModule } from "@ionic/angular";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
 
-import { ManageBlogPage } from "./manage-blog.page";
+import { ManageBlogPage } from './manage-blog.page';
 
-describe("ManageBlogPage", () => {
+describe('ManageBlogPage', () => {
   let component: ManageBlogPage;
   let fixture: ComponentFixture<ManageBlogPage>;
 
@@ -18,7 +18,7 @@ describe("ManageBlogPage", () => {
     fixture.detectChanges();
   }));
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

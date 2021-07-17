@@ -1,9 +1,9 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { IonicModule } from "@ionic/angular";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
 
-import { WiofSpinnerComponent } from "./wiof-spinner.component";
+import { WiofSpinnerComponent } from './wiof-spinner.component';
 
-describe("WiofSpinnerComponent", () => {
+describe('WiofSpinnerComponent', () => {
   let component: WiofSpinnerComponent;
   let fixture: ComponentFixture<WiofSpinnerComponent>;
 
@@ -18,7 +18,7 @@ describe("WiofSpinnerComponent", () => {
     fixture.detectChanges();
   }));
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

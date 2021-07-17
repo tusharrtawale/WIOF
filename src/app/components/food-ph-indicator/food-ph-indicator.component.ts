@@ -1,4 +1,12 @@
 import { Component, OnInit } from "@angular/core";
+import { FormControl } from "@angular/forms";
+import { startWith, map } from "rxjs/operators";
+import { Observable } from "rxjs";
+
+interface Food {
+  name: string;
+  value: number;
+}
 
 @Component({
   selector: "app-food-ph-indicator",
@@ -6,10 +14,13 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./food-ph-indicator.component.scss"]
 })
 export class FoodPhIndicatorComponent implements OnInit {
-  foodOptions: any[];
-  selectedFood: any;
-  bridgeVariable: any = { name: "Default", value: 8 };
-  about: boolean = false;
+  foodOptions: Food[];
+  filteredfoodOptions$;
+  selectedFood = { name: "Default", value: 8 };
+  foodInputCtrl = new FormControl("");
+  bridgeVariable = this.selectedFood;
+  about = false;
+
   constructor() {}
 
   ngOnInit() {
@@ -275,7 +286,31 @@ export class FoodPhIndicatorComponent implements OnInit {
       { name: "Raw Spinach", value: 10 },
       { name: "Baking Soda", value: 10 }
     ].sort((a, b) => (a.name < b.name ? -1 : 1));
+    
+    this.filteredfoodOptions$ = this.foodInputCtrl.valueChanges.pipe(
+      startWith(""),
+      map((value) => (typeof value === "string" ? value : value.name)),
+      map((name) =>
+        name ? this.filterFoodOptions(name) : this.foodOptions.slice()
+      )
+    );
   }
+
+  filterFoodOptions(foodName: string) {
+    foodName = foodName?.toLowerCase();
+    return this.foodOptions.filter((food) =>
+      food.name.toLowerCase().includes(foodName)
+    );
+  }
+
+  getSelectedFoodName(food: Food) {
+    return food.name || "";
+  }
+
+  setSelectedFoodName(selectedFood: any) {
+    this.selectedFood = selectedFood;
+  }
+
   updateBridgeVariable() {
     this.bridgeVariable = this.selectedFood;
   }

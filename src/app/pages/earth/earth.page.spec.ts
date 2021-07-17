@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { IonicModule } from "@ionic/angular";
-import { EarthPage } from "./earth.page";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
+import { EarthPage } from './earth.page';
 
-describe("EarthPage", () => {
+describe('EarthPage', () => {
   let component: EarthPage;
   let fixture: ComponentFixture<EarthPage>;
 
@@ -17,7 +17,7 @@ describe("EarthPage", () => {
     fixture.detectChanges();
   }));
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

@@ -1,13 +1,13 @@
-import { Component, OnInit } from "@angular/core";
-import { EnvDay } from "../../models/env-cal-data";
-import { EnvcalService } from "../../services/envcal-service";
-import { Observable } from "rxjs";
-import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
+import { Component, OnInit } from '@angular/core';
+import { EnvDay } from '../../models/env-cal-data';
+import { EnvcalService } from '../../services/envcal-service';
+import { Observable } from 'rxjs';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
-  selector: "app-env-calender",
-  templateUrl: "./env-calender.component.html",
-  styleUrls: ["./env-calender.component.scss"]
+  selector: 'app-env-calender',
+  templateUrl: './env-calender.component.html',
+  styleUrls: ['./env-calender.component.scss']
 })
 export class EnvCalenderComponent implements OnInit {
   todayDate = new Date();
@@ -23,7 +23,12 @@ export class EnvCalenderComponent implements OnInit {
   occasionForDialog: any;
 
   selectedOccasionIndex: number = 0;
-  days: { class: string; day: string; occasion: any[], selectedOccasionIndex: number }[] = [];
+  days: {
+    class: string;
+    day: string;
+    occasion: any[];
+    selectedOccasionIndex: number;
+  }[] = [];
 
   constructor(
     private envDayService: EnvcalService,
@@ -41,7 +46,7 @@ export class EnvCalenderComponent implements OnInit {
     this.link = this.santz.bypassSecurityTrustResourceUrl(this.safeUrl);
 
     this.safeUrl =
-      "https://firebasestorage.googleapis.com/v0/b/wiof-staging.appspot.com/o/environment-calendar%2F1603616920627_IMG-20180901-WA0021.jpg?alt=media&token=d81cae0f-9581-4f37-8d9a-425a001ea94b";
+      'https://firebasestorage.googleapis.com/v0/b/wiof-staging.appspot.com/o/environment-calendar%2F1603616920627_IMG-20180901-WA0021.jpg?alt=media&token=d81cae0f-9581-4f37-8d9a-425a001ea94b';
   }
 
   getOccasion(day, month) {
@@ -54,7 +59,7 @@ export class EnvCalenderComponent implements OnInit {
           name: x.occasion,
           image: x.image,
           desc: x.description,
-          link: x.showMoreLink,
+          link: x.showMoreLink
         });
       }
     });
@@ -75,23 +80,28 @@ export class EnvCalenderComponent implements OnInit {
     ).getDate();
     const firstDayIndex = this.todayDate.getDay();
     const months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December"
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December'
     ];
     this.displayMonth = months[this.todayDate.getMonth()];
     this.displayDay = new Date().toDateString();
     for (let x = firstDayIndex; x > 0; x--) {
-      this.days.push({ class: "day", day: "", occasion: [], selectedOccasionIndex: 0 });
+      this.days.push({
+        class: 'day',
+        day: '',
+        occasion: [],
+        selectedOccasionIndex: 0
+      });
     }
 
     for (let i = 1; i <= lastDay; i++) {
@@ -100,7 +110,7 @@ export class EnvCalenderComponent implements OnInit {
         this.todayDate.getMonth() === new Date().getMonth()
       ) {
         this.days.push({
-          class: "day today",
+          class: 'day today',
           day: String(i),
           occasion: this.getOccasion(
             String(i),
@@ -110,7 +120,7 @@ export class EnvCalenderComponent implements OnInit {
         });
       } else {
         this.days.push({
-          class: "day",
+          class: 'day',
           day: String(i),
           occasion: this.getOccasion(
             String(i),
@@ -132,16 +142,11 @@ export class EnvCalenderComponent implements OnInit {
     console.log(this.occasionForDialog);
   }
 
-
-
   nextOccasion(day) {
     day.selectedOccasionIndex++;
   }
 
-
-
   prevOccasion(day) {
     day.selectedOccasionIndex--;
   }
-
 }

@@ -1,13 +1,13 @@
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { map, catchError } from "rxjs/operators";
-import { Video } from "../models/Video";
-import { ENDPOINTS } from "../app.constants";
-import { environment } from "src/environments/environment";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { map, catchError } from 'rxjs/operators';
+import { Video } from '../models/Video';
+import { ENDPOINTS } from '../app.constants';
+import { environment } from 'src/environments/environment';
 import { of } from 'rxjs';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class YoutubeVideoService {
   constructor(private http: HttpClient) {}
@@ -38,7 +38,7 @@ export class YoutubeVideoService {
             );
         }),
         catchError(() => {
-          return of([])
+          return of([]);
         })
       );
   }

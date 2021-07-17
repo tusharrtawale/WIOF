@@ -1,15 +1,15 @@
-import { Component, OnInit } from "@angular/core";
-import { image } from "d3";
+import { Component, OnInit } from '@angular/core';
+import { image } from 'd3';
 
 @Component({
-  selector: "app-energy-widget",
-  templateUrl: "./energy-widget.component.html",
-  styleUrls: ["./energy-widget.component.scss"]
+  selector: 'app-energy-widget',
+  templateUrl: './energy-widget.component.html',
+  styleUrls: ['./energy-widget.component.scss']
 })
 export class EnergyWidgetComponent implements OnInit {
   EnergyConsumption: number;
   KgsofCO2: number;
-  Selectedunit = "";
+  Selectedunit = '';
   litresofPetrol: number;
   litresofDiesel: number;
   KmsbySUV;
@@ -22,13 +22,13 @@ export class EnergyWidgetComponent implements OnInit {
   numberofpetrolcans: number;
   numberofdieselcans: number;
   roundoffnumberofpetrolcans: number;
-  units = ["KW", "KWH"];
+  units = ['KW', 'KWH'];
   constructor() {}
 
   ngOnInit() {}
 
   CalculateCO2() {
-    if (this.Selectedunit === "KW" && this.EnergyConsumption > 0) {
+    if (this.Selectedunit === 'KW' && this.EnergyConsumption > 0) {
       this.buttonClicked = true;
       this.unitnull = false;
       this.Consumptionnull = false;
@@ -39,7 +39,7 @@ export class EnergyWidgetComponent implements OnInit {
       this.KmsbySUV = this.litresofDiesel * 12;
       this.numberofpetrolcans = this.litresofPetrol / 100;
       this.numberofdieselcans = this.litresofDiesel / 500;
-    } else if (this.Selectedunit === "KWH" && this.EnergyConsumption > 0) {
+    } else if (this.Selectedunit === 'KWH' && this.EnergyConsumption > 0) {
       this.buttonClicked = true;
       this.unitnull = false;
       this.Consumptionnull = false;
@@ -51,16 +51,16 @@ export class EnergyWidgetComponent implements OnInit {
       this.numberofpetrolcans = this.litresofPetrol / 100;
     } else if (
       this.EnergyConsumption < 0 &&
-      (this.Selectedunit === "KWH" || this.Selectedunit === "KW")
+      (this.Selectedunit === 'KWH' || this.Selectedunit === 'KW')
     ) {
       this.unitnull = false;
       this.Consumptionnull = true;
-    } else if (this.EnergyConsumption > 0 && this.Selectedunit === "") {
+    } else if (this.EnergyConsumption > 0 && this.Selectedunit === '') {
       this.unitnull = true;
       this.Consumptionnull = false;
     } else if (
       this.EnergyConsumption === undefined &&
-      this.Selectedunit === ""
+      this.Selectedunit === ''
     ) {
       this.unitnull = true;
       this.Consumptionnull = true;

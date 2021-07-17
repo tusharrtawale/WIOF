@@ -1,4 +1,4 @@
-import { SafeResourceUrl } from "@angular/platform-browser";
+import { SafeResourceUrl } from '@angular/platform-browser';
 
 export class CoffeeConversation {
   ccId: string;

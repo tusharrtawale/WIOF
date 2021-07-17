@@ -1,9 +1,9 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { IonicModule } from "@ionic/angular";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
 
-import { ManageCalendarPage } from "./manage-calendar.page";
+import { ManageCalendarPage } from './manage-calendar.page';
 
-describe("ManageCalendarPage", () => {
+describe('ManageCalendarPage', () => {
   let component: ManageCalendarPage;
   let fixture: ComponentFixture<ManageCalendarPage>;
 
@@ -18,7 +18,7 @@ describe("ManageCalendarPage", () => {
     fixture.detectChanges();
   }));
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

@@ -1,15 +1,15 @@
-import { Component, OnInit, Input } from "@angular/core";
-import { VIDEO_PLAYER_TITLES, VIDEO_PLAYER_VIDEOS } from "../../app.constants";
-import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
+import { Component, OnInit, Input } from '@angular/core';
+import { VIDEO_PLAYER_TITLES, VIDEO_PLAYER_VIDEOS } from '../../app.constants';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
-  selector: "app-video-widget",
-  templateUrl: "./video-widget.component.html",
-  styleUrls: ["./video-widget.component.scss"]
+  selector: 'app-video-widget',
+  templateUrl: './video-widget.component.html',
+  styleUrls: ['./video-widget.component.scss']
 })
 export class VideoWidgetComponent implements OnInit {
   @Input() element: string;
-  iframe_player = document.getElementsByTagName("iframe");
+  iframe_player = document.getElementsByTagName('iframe');
 
   videoPlayerTitle: string;
   videoLink: string;
@@ -32,10 +32,10 @@ export class VideoWidgetComponent implements OnInit {
   }
 
   stopVideo() {
-    console.log("play pressed");
+    console.log('play pressed');
     this.iframe_player[0].contentWindow.postMessage(
-      '{"event":"command","func":"' + "stopVideo" + '","args":""}',
-      "*"
+      '{"event":"command","func":"' + 'stopVideo' + '","args":""}',
+      '*'
     );
   }
 

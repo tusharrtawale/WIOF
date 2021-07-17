@@ -1,12 +1,12 @@
-import { Component, OnInit } from "@angular/core";
-import { ExcelGeneratorService } from "../../../services/excel-generator.service";
-import { SubscriptionService } from "../../../services/subscription.service";
-import { Subscriber } from "../../../models/Subscriber";
+import { Component, OnInit } from '@angular/core';
+import { ExcelGeneratorService } from '../../../services/excel-generator.service';
+import { SubscriptionService } from '../../../services/subscription.service';
+import { Subscriber } from '../../../models/Subscriber';
 
 @Component({
-  selector: "app-subscribers",
-  templateUrl: "./subscribers.page.html",
-  styleUrls: ["./subscribers.page.scss"]
+  selector: 'app-subscribers',
+  templateUrl: './subscribers.page.html',
+  styleUrls: ['./subscribers.page.scss']
 })
 export class SubscribersPage implements OnInit {
   constructor(
@@ -23,7 +23,7 @@ export class SubscribersPage implements OnInit {
   generateExcel() {
     this._excelGenerator.exportAsExcelFile(
       this.subscribersJson,
-      "wiof_subscribers"
+      'wiof_subscribers'
     );
   }
 

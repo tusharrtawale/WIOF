@@ -1,15 +1,15 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import {
   AngularFirestore,
   AngularFirestoreCollection
-} from "@angular/fire/firestore";
-import { map, concatMap } from "rxjs/operators";
-import { from, Observable } from "rxjs";
-import { FIREBASE_COLLECTION, ITEM_STATUS } from "../app.constants";
-import { PollQuestion } from "../models/PollQuestion";
+} from '@angular/fire/firestore';
+import { map, concatMap } from 'rxjs/operators';
+import { from, Observable } from 'rxjs';
+import { FIREBASE_COLLECTION, ITEM_STATUS } from '../app.constants';
+import { PollQuestion } from '../models/PollQuestion';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class PollQuestionService {
   private pollCollection: AngularFirestoreCollection<any>;
@@ -37,7 +37,7 @@ export class PollQuestionService {
   getPollQuestion(): Observable<PollQuestion[]> {
     const pollCollectionById = this.database.collection(
       FIREBASE_COLLECTION.POLL,
-      (ref) => ref.where("status", "==", ITEM_STATUS.PUBLISHED)
+      (ref) => ref.where('status', '==', ITEM_STATUS.PUBLISHED)
     );
     return pollCollectionById.get().pipe(
       map((querySnapshot) =>
@@ -83,7 +83,7 @@ export class PollQuestionService {
   inactivatePollQuestions() {
     return this.database
       .collection(FIREBASE_COLLECTION.POLL, (ref) =>
-        ref.where("status", "==", ITEM_STATUS.PUBLISHED)
+        ref.where('status', '==', ITEM_STATUS.PUBLISHED)
       )
       .get()
       .pipe(

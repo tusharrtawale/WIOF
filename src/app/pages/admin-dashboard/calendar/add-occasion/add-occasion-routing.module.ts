@@ -1,11 +1,11 @@
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
-import { AddOccasionPage } from "./add-occasion.page";
+import { AddOccasionPage } from './add-occasion.page';
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     component: AddOccasionPage
   }
 ];

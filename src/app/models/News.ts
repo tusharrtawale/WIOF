@@ -1,7 +1,7 @@
 //Schema for the News
 
-import { SafeResourceUrl } from "@angular/platform-browser";
-import { Observable } from "rxjs";
+import { SafeResourceUrl } from '@angular/platform-browser';
+import { Observable } from 'rxjs';
 
 export class News {
   newsId: string;

@@ -9,7 +9,7 @@ describe('CoffeeConversationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CoffeeConversationComponent ],
+      declarations: [CoffeeConversationComponent],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 

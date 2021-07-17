@@ -4,14 +4,14 @@ import {
   Input,
   OnInit,
   AfterViewInit
-} from "@angular/core";
-import { VIDEO_SLIDER_OPTIONS } from "src/app/app.constants";
-import { Video } from "src/app/models/Video";
+} from '@angular/core';
+import { VIDEO_SLIDER_OPTIONS } from 'src/app/app.constants';
+import { Video } from 'src/app/models/Video';
 
 @Component({
-  selector: "app-video-slider",
-  templateUrl: "./video-slider.component.html",
-  styleUrls: ["./video-slider.component.scss"]
+  selector: 'app-video-slider',
+  templateUrl: './video-slider.component.html',
+  styleUrls: ['./video-slider.component.scss']
 })
 export class VideoSliderComponent implements OnInit, AfterViewInit {
   @Input() videoList: Array<Video>;
@@ -22,7 +22,7 @@ export class VideoSliderComponent implements OnInit, AfterViewInit {
 
   constructor() {}
 
-  @HostListener("window:resize", [])
+  @HostListener('window:resize', [])
   public onResize() {
     this.detectScreenSize();
   }

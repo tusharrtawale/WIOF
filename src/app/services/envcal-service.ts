@@ -1,17 +1,17 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 
-import { EnvDay } from "../models/env-cal-data";
+import { EnvDay } from '../models/env-cal-data';
 import {
   AngularFirestore,
   AngularFirestoreCollection
-} from "@angular/fire/firestore";
-import { AngularFireStorage } from "@angular/fire/storage";
-import { map } from "rxjs/operators";
-import { from, Observable } from "rxjs";
-import { FIREBASE_COLLECTION } from "../app.constants";
+} from '@angular/fire/firestore';
+import { AngularFireStorage } from '@angular/fire/storage';
+import { map } from 'rxjs/operators';
+import { from, Observable } from 'rxjs';
+import { FIREBASE_COLLECTION } from '../app.constants';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class EnvcalService {
   envcalCollectionByMonth: AngularFirestoreCollection<any>;
@@ -28,10 +28,10 @@ export class EnvcalService {
   }
 
   getEnvCal(month: number): Observable<EnvDay[]> {
-    console.log("month:", month);
+    console.log('month:', month);
     this.envcalCollectionByMonth = this.database.collection(
       FIREBASE_COLLECTION.ENVCAL,
-      (ref) => ref.where("month", "==", month)
+      (ref) => ref.where('month', '==', month)
     );
     return this.envcalCollectionByMonth.get().pipe(
       map((querySnapshot) =>

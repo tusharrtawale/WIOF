@@ -1,22 +1,22 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { ActivatedRoute, Router } from "@angular/router";
-import { Subject, throwError } from "rxjs";
-import { catchError, takeUntil } from "rxjs/operators";
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subject, throwError } from 'rxjs';
+import { catchError, takeUntil } from 'rxjs/operators';
 import {
   PAGE_CATEGORY_MAP,
   UI_MESSAGES,
   ITEMS,
   ITEM_STATUS
-} from "src/app/app.constants";
-import { UiUtilService } from "src/app/util/UiUtilService";
-import { InFocus } from "src/app/models/InFocus";
-import { InFocusService } from "src/app/services/in-focus.service";
+} from 'src/app/app.constants';
+import { UiUtilService } from 'src/app/util/UiUtilService';
+import { InFocus } from 'src/app/models/InFocus';
+import { InFocusService } from 'src/app/services/in-focus.service';
 
 @Component({
-  selector: "app-add-in-focus",
-  templateUrl: "./add-in-focus.page.html",
-  styleUrls: ["./add-in-focus.page.scss"]
+  selector: 'app-add-in-focus',
+  templateUrl: './add-in-focus.page.html',
+  styleUrls: ['./add-in-focus.page.scss']
 })
 export class AddInFocusPage implements OnInit, OnDestroy {
   isEditMode = false;
@@ -27,19 +27,19 @@ export class AddInFocusPage implements OnInit, OnDestroy {
   categories: string[] = Object.values(PAGE_CATEGORY_MAP);
 
   pageContent = {
-    addInFocusTitle: "Add In Focus",
-    editInFocusTitle: "Edit In Focus",
-    titleLabel: "Title",
-    subTitleLabel: "Sub Title",
-    descriptionLabel: "Description",
-    categoryLabel: "Category",
-    videoLinkLabel: "In Focus Link (only youtube video ID)",
-    knowMoreLinkLabel: "Know More Link",
-    submitDateLabel: "Submit Date",
-    publishDateLabel: "Publish Date",
-    unpublishDateLabel: "Unpublish Date",
-    saveLabel: "Save",
-    cancelLabel: "Cancel"
+    addInFocusTitle: 'Add In Focus',
+    editInFocusTitle: 'Edit In Focus',
+    titleLabel: 'Title',
+    subTitleLabel: 'Sub Title',
+    descriptionLabel: 'Description',
+    categoryLabel: 'Category',
+    videoLinkLabel: 'In Focus Link (only youtube video ID)',
+    knowMoreLinkLabel: 'Know More Link',
+    submitDateLabel: 'Submit Date',
+    publishDateLabel: 'Publish Date',
+    unpublishDateLabel: 'Unpublish Date',
+    saveLabel: 'Save',
+    cancelLabel: 'Cancel'
   };
 
   constructor(
@@ -52,10 +52,10 @@ export class AddInFocusPage implements OnInit, OnDestroy {
   ngOnInit() {
     this.inFocus = {} as InFocus;
     this.route.paramMap.subscribe((param) => {
-      if (param.has("mode") && param.get("mode") === "edit") {
+      if (param.has('mode') && param.get('mode') === 'edit') {
         this.inFocus = this.inFocusService.getViewEditModeInFocus();
         if (!this.inFocus) {
-          this.router.navigateByUrl("/admin-dashboard/manage-in-focus");
+          this.router.navigateByUrl('/admin-dashboard/manage-in-focus');
           return;
         }
         this.isEditMode = true;
@@ -69,12 +69,12 @@ export class AddInFocusPage implements OnInit, OnDestroy {
 
   private initForm() {
     return new FormGroup({
-      title: new FormControl("", Validators.required),
-      subTitle: new FormControl("", Validators.required),
-      description: new FormControl("", Validators.required),
-      category: new FormControl("", Validators.required),
-      videoLink: new FormControl("", Validators.required),
-      knowMoreLink: new FormControl("", Validators.required)
+      title: new FormControl('', Validators.required),
+      subTitle: new FormControl('', Validators.required),
+      description: new FormControl('', Validators.required),
+      category: new FormControl('', Validators.required),
+      videoLink: new FormControl('', Validators.required),
+      knowMoreLink: new FormControl('', Validators.required)
     });
   }
 

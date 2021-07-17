@@ -1,16 +1,16 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { Observable, Subject, throwError } from "rxjs";
-import { catchError, map, takeUntil } from "rxjs/operators";
-import { PollQuestion } from "src/app/models/PollQuestion";
-import { PollQuestionService } from "src/app/services/poll-question.service";
-import { UiUtilService } from "src/app/util/UiUtilService";
-import { Router, ActivatedRoute } from "@angular/router";
-import { UI_MESSAGES, ITEMS } from "src/app/app.constants";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Observable, Subject, throwError } from 'rxjs';
+import { catchError, map, takeUntil } from 'rxjs/operators';
+import { PollQuestion } from 'src/app/models/PollQuestion';
+import { PollQuestionService } from 'src/app/services/poll-question.service';
+import { UiUtilService } from 'src/app/util/UiUtilService';
+import { Router, ActivatedRoute } from '@angular/router';
+import { UI_MESSAGES, ITEMS } from 'src/app/app.constants';
 
 @Component({
-  selector: "app-manage-polls",
-  templateUrl: "./manage-polls.page.html",
-  styleUrls: ["./manage-polls.page.scss"]
+  selector: 'app-manage-polls',
+  templateUrl: './manage-polls.page.html',
+  styleUrls: ['./manage-polls.page.scss']
 })
 export class ManagePollsPage implements OnInit, OnDestroy {
   destroy$: Subject<boolean> = new Subject();
@@ -67,7 +67,7 @@ export class ManagePollsPage implements OnInit, OnDestroy {
         },
         {
           text: UI_MESSAGES.CONFIRM_DELETE_SECONDARY_CTA,
-          role: "cancel"
+          role: 'cancel'
         }
       ]
     );
@@ -131,13 +131,13 @@ export class ManagePollsPage implements OnInit, OnDestroy {
 
   viewPollDetails(pollQuestion: PollQuestion) {
     this.pollQuestionService.setViewEditModePollQuestion(pollQuestion);
-    this.router.navigate(["poll", "edit"], {
+    this.router.navigate(['poll', 'edit'], {
       relativeTo: this.route,
       queryParams: { id: pollQuestion.pollId }
     });
   }
 
   addNewPoll() {
-    this.router.navigate(["poll", "new"], { relativeTo: this.route });
+    this.router.navigate(['poll', 'new'], { relativeTo: this.route });
   }
 }

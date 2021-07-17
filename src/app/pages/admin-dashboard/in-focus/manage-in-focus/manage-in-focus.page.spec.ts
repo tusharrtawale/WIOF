@@ -9,7 +9,7 @@ describe('ManageInFocusPage', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ManageInFocusPage ],
+      declarations: [ManageInFocusPage],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 

@@ -1,9 +1,9 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { IonicModule } from "@ionic/angular";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
 
-import { EqWidgetResultComponent } from "./eq-widget-result.component";
+import { EqWidgetResultComponent } from './eq-widget-result.component';
 
-describe("EqWidgetResultComponent", () => {
+describe('EqWidgetResultComponent', () => {
   let component: EqWidgetResultComponent;
   let fixture: ComponentFixture<EqWidgetResultComponent>;
 
@@ -18,7 +18,7 @@ describe("EqWidgetResultComponent", () => {
     fixture.detectChanges();
   }));
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

@@ -1,17 +1,17 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
-import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
-import { ActivatedRoute } from "@angular/router";
-import { YoutubeVideoService } from "../../services/youtube-video.service";
-import { Subject } from "rxjs";
-import { takeUntil } from "rxjs/operators";
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
+import { YoutubeVideoService } from '../../services/youtube-video.service';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
-  selector: "app-video-post",
-  templateUrl: "./video-post.page.html",
-  styleUrls: ["./video-post.page.scss"]
+  selector: 'app-video-post',
+  templateUrl: './video-post.page.html',
+  styleUrls: ['./video-post.page.scss']
 })
 export class VideoPostPage implements OnInit, OnDestroy {
-  videoUrl: string = "";
+  videoUrl: string = '';
   urlSafe: SafeResourceUrl;
   id: string;
   video: any;
@@ -30,8 +30,8 @@ export class VideoPostPage implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
-      if (params.has("videoId")) {
-        this.id = params.get("videoId");
+      if (params.has('videoId')) {
+        this.id = params.get('videoId');
         this.videoUrl = `https://www.youtube.com/embed/${this.id}?controls=1`;
         this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(
           this.videoUrl

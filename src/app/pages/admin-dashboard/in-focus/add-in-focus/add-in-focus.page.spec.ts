@@ -9,7 +9,7 @@ describe('AddInFocusPage', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddInFocusPage ],
+      declarations: [AddInFocusPage],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 

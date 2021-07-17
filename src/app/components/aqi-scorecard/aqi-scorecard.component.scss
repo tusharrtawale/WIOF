@@ -1,4 +1,4 @@
-@import "../../wiof-custom-theming.scss";
+@import '../../wiof-custom-theming.scss';
 
 .aqi-good {
   background-color: $aqi-good-color;
@@ -54,7 +54,7 @@
   height: 300px;
 }
 
-.wiof-aqi-widget-items [scrolly="true"] {
+.wiof-aqi-widget-items [scrolly='true'] {
   position: relative;
   overflow: hidden;
 
@@ -63,7 +63,7 @@
   }
 }
 
-.wiof-aqi-widget-items[scrolly="true"] {
+.wiof-aqi-widget-items[scrolly='true'] {
   overflow-y: auto;
 }
 

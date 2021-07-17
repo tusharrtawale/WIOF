@@ -1,11 +1,11 @@
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
-import { AddPollPage } from "./add-poll.page";
+import { AddPollPage } from './add-poll.page';
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     component: AddPollPage
   }
 ];

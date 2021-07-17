@@ -1,16 +1,16 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
-import { Subject, Observable, throwError } from "rxjs";
-import { InFocus } from "src/app/models/InFocus";
-import { InFocusService } from "src/app/services/in-focus.service";
-import { UiUtilService } from "src/app/util/UiUtilService";
-import { Router, ActivatedRoute } from "@angular/router";
-import { takeUntil, catchError, map } from "rxjs/operators";
-import { UI_MESSAGES, ITEMS } from "src/app/app.constants";
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subject, Observable, throwError } from 'rxjs';
+import { InFocus } from 'src/app/models/InFocus';
+import { InFocusService } from 'src/app/services/in-focus.service';
+import { UiUtilService } from 'src/app/util/UiUtilService';
+import { Router, ActivatedRoute } from '@angular/router';
+import { takeUntil, catchError, map } from 'rxjs/operators';
+import { UI_MESSAGES, ITEMS } from 'src/app/app.constants';
 
 @Component({
-  selector: "app-manage-in-focus",
-  templateUrl: "./manage-in-focus.page.html",
-  styleUrls: ["./manage-in-focus.page.scss"]
+  selector: 'app-manage-in-focus',
+  templateUrl: './manage-in-focus.page.html',
+  styleUrls: ['./manage-in-focus.page.scss']
 })
 export class ManageInFocusPage implements OnInit, OnDestroy {
   destroy$: Subject<boolean> = new Subject();
@@ -42,14 +42,14 @@ export class ManageInFocusPage implements OnInit, OnDestroy {
   }
 
   addInFocus() {
-    this.router.navigate(["in-focus", "new"], {
+    this.router.navigate(['in-focus', 'new'], {
       relativeTo: this.route
     });
   }
 
   viewInFocusDetails(inFocus: InFocus) {
     this.inFocusService.setViewEditModeInFocus(inFocus);
-    this.router.navigate(["in-focus", "edit"], {
+    this.router.navigate(['in-focus', 'edit'], {
       relativeTo: this.route,
       queryParams: { id: inFocus.inFocusId }
     });
@@ -71,7 +71,7 @@ export class ManageInFocusPage implements OnInit, OnDestroy {
         },
         {
           text: UI_MESSAGES.CONFIRM_DELETE_SECONDARY_CTA,
-          role: "cancel"
+          role: 'cancel'
         }
       ]
     );

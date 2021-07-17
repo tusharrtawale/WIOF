@@ -1,4 +1,4 @@
-@import "../../wiof-custom-theming.scss";
+@import '../../wiof-custom-theming.scss';
 
 .eq-indicator-meter {
   border-radius: 5px;
@@ -36,7 +36,7 @@
   top: 0px;
 
   &:after {
-    content: "";
+    content: '';
     width: 0;
     height: 0;
     border-left: 5px solid transparent;
@@ -56,7 +56,7 @@
 
 .eqScaleBlock {
   text-align: center;
-  font: "roboto";
+  font: 'roboto';
   color: black;
   display: inline-block;
   height: 40px;

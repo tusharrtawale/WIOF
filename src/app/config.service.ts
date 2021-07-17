@@ -1,14 +1,14 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import {
   AngularFirestore,
   AngularFirestoreCollection
-} from "@angular/fire/firestore";
-import { from, Observable } from "rxjs";
-import { map } from "rxjs/operators";
-import { FIREBASE_COLLECTION } from "./app.constants";
+} from '@angular/fire/firestore';
+import { from, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { FIREBASE_COLLECTION } from './app.constants';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class ConfigService {
   congifCollection: AngularFirestoreCollection<any>;
@@ -22,7 +22,7 @@ export class ConfigService {
   getConfig(file: string): Observable<any> {
     const configCollectionByCategory = this.database.collection(
       FIREBASE_COLLECTION.CONFIG,
-      (ref) => ref.where("file", "==", file)
+      (ref) => ref.where('file', '==', file)
     );
     return configCollectionByCategory.snapshotChanges().pipe(
       map((actions) =>

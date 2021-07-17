@@ -1,9 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: "app-eq-widget",
-  templateUrl: "./eq-widget.component.html",
-  styleUrls: ["./eq-widget.component.scss"]
+  selector: 'app-eq-widget',
+  templateUrl: './eq-widget.component.html',
+  styleUrls: ['./eq-widget.component.scss']
 })
 export class EQWidgetComponent implements OnInit {
   showTest: boolean = false;

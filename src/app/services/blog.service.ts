@@ -1,16 +1,16 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import {
   AngularFirestore,
   AngularFirestoreCollection
-} from "@angular/fire/firestore";
-import { AngularFireStorage } from "@angular/fire/storage";
-import { from, Observable } from "rxjs";
-import { map } from "rxjs/operators";
-import { Blog } from "../models/Blog";
-import { FIREBASE_COLLECTION } from "../app.constants";
+} from '@angular/fire/firestore';
+import { AngularFireStorage } from '@angular/fire/storage';
+import { from, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Blog } from '../models/Blog';
+import { FIREBASE_COLLECTION } from '../app.constants';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class BlogService {
   blogCollection: AngularFirestoreCollection<any>;
@@ -36,7 +36,7 @@ export class BlogService {
     if (category !== undefined) {
       blogCollectn = this.database.collection(
         FIREBASE_COLLECTION.BLOGS,
-        (ref) => ref.where("category", "==", category)
+        (ref) => ref.where('category', '==', category)
       );
     }
     return blogCollectn.get().pipe(

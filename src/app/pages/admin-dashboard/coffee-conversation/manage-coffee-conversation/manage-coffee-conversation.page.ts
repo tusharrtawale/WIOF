@@ -1,16 +1,16 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
-import { Observable, Subject, throwError } from "rxjs";
-import { catchError, map, takeUntil } from "rxjs/operators";
-import { CoffeeConversation } from "src/app/models/CoffeeConversation";
-import { CoffeeConversationService } from "src/app/services/coffee-conversation.service";
-import { UiUtilService } from "src/app/util/UiUtilService";
-import { UI_MESSAGES, ITEMS } from "src/app/app.constants";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable, Subject, throwError } from 'rxjs';
+import { catchError, map, takeUntil } from 'rxjs/operators';
+import { CoffeeConversation } from 'src/app/models/CoffeeConversation';
+import { CoffeeConversationService } from 'src/app/services/coffee-conversation.service';
+import { UiUtilService } from 'src/app/util/UiUtilService';
+import { UI_MESSAGES, ITEMS } from 'src/app/app.constants';
 
 @Component({
-  selector: "app-manage-coffee-conversation",
-  templateUrl: "./manage-coffee-conversation.page.html",
-  styleUrls: ["./manage-coffee-conversation.page.scss"]
+  selector: 'app-manage-coffee-conversation',
+  templateUrl: './manage-coffee-conversation.page.html',
+  styleUrls: ['./manage-coffee-conversation.page.scss']
 })
 export class ManageCoffeeConversationPage implements OnInit, OnDestroy {
   destroy$: Subject<boolean> = new Subject();
@@ -51,7 +51,7 @@ export class ManageCoffeeConversationPage implements OnInit, OnDestroy {
   }
 
   addCoffeeConversation() {
-    this.router.navigate(["coffee-conversation", "new"], {
+    this.router.navigate(['coffee-conversation', 'new'], {
       relativeTo: this.route
     });
   }
@@ -60,7 +60,7 @@ export class ManageCoffeeConversationPage implements OnInit, OnDestroy {
     this.coffeeConversationService.setViewEditModeCoffeeConversation(
       coffeeConversation
     );
-    this.router.navigate(["coffee-conversation", "edit"], {
+    this.router.navigate(['coffee-conversation', 'edit'], {
       relativeTo: this.route,
       queryParams: { id: coffeeConversation.ccId }
     });
@@ -90,7 +90,7 @@ export class ManageCoffeeConversationPage implements OnInit, OnDestroy {
         },
         {
           text: UI_MESSAGES.CONFIRM_DELETE_SECONDARY_CTA,
-          role: "cancel"
+          role: 'cancel'
         }
       ]
     );

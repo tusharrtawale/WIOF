@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { IonicModule } from "@ionic/angular";
-import { AirPage } from "./air.page";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
+import { AirPage } from './air.page';
 
-describe("AirPage", () => {
+describe('AirPage', () => {
   let component: AirPage;
   let fixture: ComponentFixture<AirPage>;
 
@@ -17,7 +17,7 @@ describe("AirPage", () => {
     fixture.detectChanges();
   }));
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

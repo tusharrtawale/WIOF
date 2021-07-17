@@ -9,7 +9,7 @@ describe('NgoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgoComponent ],
+      declarations: [NgoComponent],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 

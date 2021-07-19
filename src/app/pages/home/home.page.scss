@@ -87,9 +87,10 @@ $breakpoint-tablet: 767px;
 .wiof-primary-button {
   width: 150px;
   border-radius: 25px;
-  height: 30px;
-  background: white;
-  color: black;
+  padding: 10px;
+  background: #fff;
+  color: #000;
+  font-size: medium;
 }
 
 .wiof-footer {

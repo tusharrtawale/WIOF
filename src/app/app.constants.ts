@@ -1,7 +1,7 @@
 export const POLL_STATUS = {
-  SUBMITTED: "submitted",
-  PUBLISHED: "published",
-  INACTIVE: "inactive"
+  SUBMITTED: 'submitted',
+  PUBLISHED: 'published',
+  INACTIVE: 'inactive'
 };
 
 export const ELEMENT_VIDEOS_PLAYLIST_ID = {
@@ -25,7 +25,6 @@ export const ELEMENTS = {
   WATER: 'water',
   SPIRIT: 'spirit'
 };
-
 
 export const ELEMENT_BLOG_CATEGORY = {
   AIR: 'Air',
@@ -169,8 +168,8 @@ export const FIREBASE_COLLECTION = {
   CONFIG: 'config',
   COFFEE_CONVERSATIONS: 'CoffeeConversations',
   IN_FOCUS: 'InFocus',
-  NGO_IN_FOCUS: "NGOinFocus",
-  COURSE_IN_FOCUS: "CourseInFocus"
+  NGO_IN_FOCUS: 'NGOinFocus',
+  COURSE_IN_FOCUS: 'CourseInFocus'
 };
 
 export const VIDEO_PLAYER_TITLES = {

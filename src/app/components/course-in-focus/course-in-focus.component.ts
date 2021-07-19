@@ -1,16 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { iCourseInFocus } from 'src/app/models/courseInFocus';
+import { CourseInFocus } from 'src/app/models/courseInFocus';
 
 @Component({
   selector: 'app-course-in-focus',
   templateUrl: './course-in-focus.component.html',
-  styleUrls: ['./course-in-focus.component.scss'],
+  styleUrls: ['./course-in-focus.component.scss']
 })
 export class CourseInFocusComponent implements OnInit {
-  @Input() courseInFocus: iCourseInFocus;
+  @Input() courseInFocus: CourseInFocus;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {}
-
 }

@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { iNgoInFocus } from 'src/app/models/NgoInFocus';
-
+import { NgoInFocus } from 'src/app/models/NgoInFocus';
 
 @Component({
   selector: 'app-ngo',
@@ -8,9 +7,9 @@ import { iNgoInFocus } from 'src/app/models/NgoInFocus';
   styleUrls: ['./ngo.component.scss']
 })
 export class NgoComponent implements OnInit {
-  @Input() ngoInFocus: iNgoInFocus;
+  @Input() ngoInFocus: NgoInFocus;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {}
 }

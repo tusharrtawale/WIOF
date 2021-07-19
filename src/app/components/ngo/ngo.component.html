@@ -8,7 +8,11 @@
     <div *ngIf="ngoInFocus; else loading">
       <ion-row>
         <ion-col class="text-center" size="12">
-          <img [src]="ngoInFocus[0].ngoLogo" style="width: 100px;" alt="NGO Logo"><br>
+          <img
+            [src]="ngoInFocus[0].ngoLogo"
+            style="width: 100px"
+            alt="NGO Logo"
+          /><br />
           <p class="bold">
             {{ ngoInFocus[0].ngoName }}
           </p>
@@ -26,7 +30,12 @@
           <ion-button>Know More</ion-button>
         </ion-col> -->
         <ion-col size="12" class="text-center">
-          <img class="ngo-in-focus-image" style="padding: 10px;" [src]="ngoInFocus[0].ngoImage" alt="NGO in Focus">
+          <img
+            class="ngo-in-focus-image"
+            style="padding: 10px"
+            [src]="ngoInFocus[0].ngoImage"
+            alt="NGO in Focus"
+          />
         </ion-col>
       </ion-row>
     </div>

@@ -31,13 +31,17 @@ export class AdminDashboardPage implements OnInit {
         name: 'Manage Coffee Conversations',
         actionUrl: 'manage-coffee-conversation'
       },
-      // {
-      //   name: "Manage In Focus",
-      //   actionUrl: "manage-in-focus"
-      // },
       {
         name: 'Manage In Focus',
         actionUrl: 'manage-in-focus'
+      },
+      {
+        name: 'Manage NGO In Focus',
+        actionUrl: 'manage-ngo-in-focus'
+      },
+      {
+        name: 'Manage Course In Focus',
+        actionUrl: 'manage-course-in-focus'
       },
       {
         name: 'View Subscriptions',

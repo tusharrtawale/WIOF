@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/admin-dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="!isEditMode">{{ pageContent.addNgoInFocusTitle }}</ion-title>
+    <ion-title *ngIf="isEditMode">{{ pageContent.editNgoInFocusTitle }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="success" fill="solid" size="large" (click)="onSubmit()"
+        >{{ pageContent.saveLabel }}</ion-button
+      >
+      <ion-button
+        color="medium"
+        fill="clear"
+        size="large"
+        routerLink="/admin-dashboard/manage-in-focus"
+        >{{ pageContent.cancelLabel }}</ion-button
+      >
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="addNgoInFocusForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-xs="12" size-md="4"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.nameLabel}}</ion-label
+            >
+            <ion-input formControlName="ngoName"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-md="8"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.linkLabel}}</ion-label
+            >
+            <ion-input formControlName="ngoLink"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.descriptionLabel}}</ion-label
+            >
+            <ion-textarea formControlName="description"></ion-textarea>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-md="4"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.categoryLabel}}</ion-label
+            >
+            <ion-select formControlName="category">
+              <ion-select-option
+                [value]="category"
+                *ngFor="let category of categories"
+                >{{ category }}</ion-select-option
+              >
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-md="4"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.submitDateLabel}}</ion-label
+            >
+            <ion-input disabled [value]="ngoInFocus.submitDate | date"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-md="4"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.publishDateLabel}}</ion-label
+            >
+            <ion-input
+              disabled
+              [value]="ngoInFocus.publishDate | date"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-md="4"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.unpublishDateLabel}}</ion-label
+            >
+            <ion-input
+              disabled
+              [value]="ngoInFocus.unpublishDate | date"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

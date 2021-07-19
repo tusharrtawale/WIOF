@@ -1,21 +1,20 @@
 @import '../../wiof-custom-theming.scss';
 
 .wiof-slider-header {
-    border-bottom: white 2px solid;
-    background-color: $home-color;
-    color: $home-text-color;
-  }
+  border-bottom: white 2px solid;
+  background-color: $home-color;
+  color: $home-text-color;
+}
 
-  .wiof-ngo-in-focus-container{    
-    height: calc(100% - 20px);
-  }
+.wiof-ngo-in-focus-container {
+  height: calc(100% - 20px);
+}
 
-  .ngo-description {
-    display: -webkit-box;
-    height: 60px;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  
+.ngo-description {
+  display: -webkit-box;
+  height: 60px;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

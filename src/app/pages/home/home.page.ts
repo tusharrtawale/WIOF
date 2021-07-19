@@ -1,13 +1,12 @@
-import { Component, OnInit } from "@angular/core";
-import { ElementRef, ViewChild } from "@angular/core";
-import { CoffeeConversationService } from "src/app/services/coffee-conversation.service";
-import { NgoInFocusService } from "src/app/services/ngo-in-focus.service";
-import { Observable } from "rxjs";
-import { CoffeeConversation } from "src/app/models/CoffeeConversation";
-import { iNgoInFocus } from "src/app/models/NgoInFocus";
-import { CourseInFocusService } from "src/app/services/course-in-focus.service";
-import { iCourseInFocus } from "src/app/models/courseInFocus";
-
+import { Component, OnInit } from '@angular/core';
+import { ElementRef, ViewChild } from '@angular/core';
+import { CoffeeConversationService } from 'src/app/services/coffee-conversation.service';
+import { NgoInFocusService } from 'src/app/services/ngo-in-focus.service';
+import { Observable } from 'rxjs';
+import { CoffeeConversation } from 'src/app/models/CoffeeConversation';
+import { NgoInFocus } from 'src/app/models/NgoInFocus';
+import { CourseInFocusService } from 'src/app/services/course-in-focus.service';
+import { CourseInFocus } from 'src/app/models/courseInFocus';
 
 @Component({
   selector: 'app-home',
@@ -20,8 +19,8 @@ export class HomePage implements OnInit {
   counter = 5;
   buttonClicked = false;
   coffeeConversations$: Observable<CoffeeConversation[]>;
-  ngoInFocus$: Observable<iNgoInFocus[]>
-  courseInFocus$: Observable<iCourseInFocus[]>
+  ngoInFocus$: Observable<NgoInFocus>;
+  courseInFocus$: Observable<CourseInFocus>;
 
   inputList = [
     { name: 'Amit', age: 25, city: 'Bengaluru' },
@@ -31,10 +30,11 @@ export class HomePage implements OnInit {
     { name: 'Rajesh', age: 32, city: 'Chennai' }
   ];
 
-  constructor(private coffeeConvService: CoffeeConversationService,
+  constructor(
+    private coffeeConvService: CoffeeConversationService,
     private ngoInFocusService: NgoInFocusService,
     private courseInFocusService: CourseInFocusService
-    ) {}
+  ) {}
 
   ngOnInit() {
     // inauguration code
@@ -50,23 +50,21 @@ export class HomePage implements OnInit {
     );
     this.viewConsentPopup = privacyConsentAccepted === 'true' ? false : true;
     this.coffeeConversations$ = this.coffeeConvService.getCoffeeConversations();
-    this.ngoInFocus$ = this.ngoInFocusService.getNgoInFocus();
-    this.courseInFocus$ = this.courseInFocusService.getCourseInFocus();
+    this.ngoInFocus$ = this.ngoInFocusService.getActiveNgoInFocus();
+    this.courseInFocus$ = this.courseInFocusService.getActiveCourseInFocus();
 
     console.log(this.convertList());
-
   }
 
-  convertList(){
+  convertList() {
     let outputList = new Object();
-    this.inputList.forEach(element => {
-        if ( outputList[element['city']]){
-          outputList[element['city']].push(element);
-        }
-        else {
-          outputList[element['city']] = [];
-          outputList[element['city']].push(element);
-        }
+    this.inputList.forEach((element) => {
+      if (outputList[element['city']]) {
+        outputList[element['city']].push(element);
+      } else {
+        outputList[element['city']] = [];
+        outputList[element['city']].push(element);
+      }
     });
     return outputList;
   }

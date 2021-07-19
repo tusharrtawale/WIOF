@@ -24,6 +24,7 @@
                 >
                   <iframe
                     class="media-player"
+                    [title]="coffeeConv.topic"
                     [src]="coffeeConv.sanitizedLink"
                   ></iframe>
                 </ion-col>
@@ -40,24 +41,31 @@
                     *ngIf="coffeeConv.intervieweeName.toUpperCase() !== 'NA'"
                   >
                     <p>
-                      Name of Interviewee:
+                      <span>Name of Interviewee</span>:
                       <strong>{{ coffeeConv.intervieweeName }}</strong>
                     </p>
-                    <p>About Interviewee: {{ coffeeConv.intervieweeDesc }}</p>
+                    <p>
+                      <span>About Interviewee</span>:
+                      {{ coffeeConv.intervieweeDesc }}
+                    </p>
                   </div>
                   <p>
                     <span [innerHTML]="coffeeConv.topicShortDesc"></span>
                   </p>
-                  <!-- <p *ngIf="coffeeConv.knowMoreLink">
-                    <a [href]="coffeeConv.knowMoreLink" target="blank"
-                      >Know More</a
-                    >
-                  </p> -->
                 </ion-col>
               </ion-row>
-              <ion-row style="padding: 10px;" *ngIf="coffeeConv.knowMoreLink">
+              <ion-row
+                style="margin: 0px 15px 15px 15px"
+                *ngIf="coffeeConv.knowMoreLink"
+              >
                 <ion-col>
-                <ion-button  [href]="coffeeConv.knowMoreLink" target="_blank" color="home" type="submit">Know More</ion-button>
+                  <ion-button
+                    [href]="coffeeConv.knowMoreLink"
+                    target="_blank"
+                    color="home"
+                    type="submit"
+                    >Know More</ion-button
+                  >
                 </ion-col>
               </ion-row>
             </ion-card-content>

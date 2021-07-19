@@ -86,8 +86,8 @@ $light-color: #fff;
   text-decoration: none;
   font-weight: bold;
 }
-    
-.bold{
+
+.bold {
   font-weight: bold;
   font-size: 1.1rem;
   padding-left: 16px;
@@ -132,7 +132,11 @@ $font-size-medium: 18px;
 .action-heading {
   padding-left: 20px;
 }
-//setting font color
-// *{
-//   color: $dark-color;
-// }
+
+.status-published {
+  color: orange;
+}
+
+.status-inactive {
+  color: grey;
+}

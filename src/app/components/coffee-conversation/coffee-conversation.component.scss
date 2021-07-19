@@ -49,14 +49,16 @@
 }
 
 .coffee-conv-content {
-  padding: 15px;
+  padding: 16px;
 
   .interviewee-details {
     border-radius: 5px;
-    padding: 5px;
-    border: 1px solid lightgrey;
-    margin: 5px;
-    margin-left: 0;
+    padding: 10px 10px 10px 0px;
+    margin: 10px 5px 10px 0;
+
+    span {
+      text-decoration: underline;
+    }
   }
 }
 

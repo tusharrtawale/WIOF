@@ -2,5 +2,14 @@
   "projects": {
     "default": "wiof-staging",
     "production": "wiof-production"
+  },
+  "targets": {
+    "wiof-production": {
+      "hosting": {
+        "app": [
+          "wiof-production"
+        ]
+      }
+    }
   }
 }

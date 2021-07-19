@@ -141,6 +141,28 @@ const routes: Routes = [
           )
       }
     ]
+  },
+  {
+    path: 'manage-course-in-focus',
+    loadChildren: () =>
+      import(
+        './course-in-focus/manage-course-in-focus/manage-course-in-focus.module'
+      ).then((m) => m.ManageCourseInFocusPageModule)
+  },
+  {
+    path: 'add-course-in-focus',
+    loadChildren: () =>
+      import(
+        './course-in-focus/add-course-in-focus/add-course-in-focus.module'
+      ).then((m) => m.AddCourseInFocusPageModule)
+  },
+  {
+    path: 'add-ngo-in-focus',
+    loadChildren: () => import('./ngo-in-focus/add-ngo-in-focus/add-ngo-in-focus.module').then( m => m.AddNgoInFocusPageModule)
+  },
+  {
+    path: 'manage-ngo-in-focus',
+    loadChildren: () => import('./ngo-in-focus/manage-ngo-in-focus/manage-ngo-in-focus.module').then( m => m.ManageNgoInFocusPageModule)
   }
 ];
 

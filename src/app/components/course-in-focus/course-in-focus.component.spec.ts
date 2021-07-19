@@ -9,7 +9,7 @@ describe('CourseInFocusComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CourseInFocusComponent ],
+      declarations: [CourseInFocusComponent],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 

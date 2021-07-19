@@ -5,6 +5,8 @@ import { NgoInFocusService } from "src/app/services/ngo-in-focus.service";
 import { Observable } from "rxjs";
 import { CoffeeConversation } from "src/app/models/CoffeeConversation";
 import { iNgoInFocus } from "src/app/models/NgoInFocus";
+import { CourseInFocusService } from "src/app/services/course-in-focus.service";
+import { iCourseInFocus } from "src/app/models/courseInFocus";
 
 
 @Component({
@@ -19,9 +21,19 @@ export class HomePage implements OnInit {
   buttonClicked = false;
   coffeeConversations$: Observable<CoffeeConversation[]>;
   ngoInFocus$: Observable<iNgoInFocus[]>
+  courseInFocus$: Observable<iCourseInFocus[]>
+
+  inputList = [
+    { name: 'Amit', age: 25, city: 'Bengaluru' },
+    { name: 'Pankaj', age: 30, city: 'Bengaluru' },
+    { name: 'Nitin', age: 28, city: 'Mumbai' },
+    { name: 'Ganesh', age: 23, city: 'Mumbai' },
+    { name: 'Rajesh', age: 32, city: 'Chennai' }
+  ];
 
   constructor(private coffeeConvService: CoffeeConversationService,
-    private ngoInFocusService: NgoInFocusService
+    private ngoInFocusService: NgoInFocusService,
+    private courseInFocusService: CourseInFocusService
     ) {}
 
   ngOnInit() {
@@ -39,6 +51,24 @@ export class HomePage implements OnInit {
     this.viewConsentPopup = privacyConsentAccepted === "true" ? false : true;
     this.coffeeConversations$ = this.coffeeConvService.getCoffeeConversations();
     this.ngoInFocus$ = this.ngoInFocusService.getNgoInFocus();
+    this.courseInFocus$ = this.courseInFocusService.getCourseInFocus();
+
+    console.log(this.convertList());
+
+  }
+
+  convertList(){
+    let outputList = new Object();
+    this.inputList.forEach(element => {
+        if ( outputList[element['city']]){
+          outputList[element['city']].push(element);
+        }
+        else {
+          outputList[element['city']] = [];
+          outputList[element['city']].push(element);
+        }
+    });
+    return outputList;
   }
 
   onAccept() {

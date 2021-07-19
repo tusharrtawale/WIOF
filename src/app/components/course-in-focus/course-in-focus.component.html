@@ -1,0 +1,39 @@
+<ion-card class="wiof-course-in-focus-container">
+  <ion-card-header class="ion-align-center wiof-slider-header">
+    <ion-row>
+      <ion-col class="title-text" size="12">Course in Focus</ion-col>
+    </ion-row>
+  </ion-card-header>
+  <ion-card-content class="background">
+    <div *ngIf="courseInFocus; else loading">
+      <ion-row>
+        <ion-col class="text-left bold" size="12">
+          {{ courseInFocus[0].courseName }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <p class="course-description ion-padding-horizontal">
+            {{ courseInFocus[0].description  }}
+          </p>
+        </ion-col>
+        <!-- <ion-col size="12">
+          <ion-button>Know More</ion-button>
+        </ion-col> -->
+        
+        <ion-col size="12" class="text-center">
+          <img class= "course-in-focus-image" style="padding: 10px;" [src]="courseInFocus[0].courseImage" alt="Course in Focus">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+        <ion-button [href]="courseInFocus[0].courseLink" target="_blank" color="home" type="submit">Find out more</ion-button>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <ng-template #loading>
+      <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />
+    </ng-template>
+  </ion-card-content>
+</ion-card>

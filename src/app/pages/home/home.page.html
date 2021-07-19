@@ -76,11 +76,13 @@
           [fromHomePage]="true"
         ></app-coffee-conversation>
       </ion-col>
+    </ion-row>
+    <ion-row>
       <ion-col size-xs="12" size-md="6" size-lg="8">
         <app-ngo [ngoInFocus]="ngoInFocus$ | async"></app-ngo>
       </ion-col>
       <ion-col size-xs="12" size-md="6" size-lg="4">
-      
+        <app-course-in-focus [courseInFocus]="courseInFocus$ | async"></app-course-in-focus>
       </ion-col>
       <ion-col size-lg="8" size-xs="12">
         <!-- <app-video-widget [element]="elementName"></app-video-widget> -->

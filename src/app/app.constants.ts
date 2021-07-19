@@ -161,7 +161,8 @@ export const FIREBASE_COLLECTION = {
   NEWS: "News",
   CONFIG: "config",
   COFFEE_CONVERSATIONS: "CoffeeConversations",
-  NGO_IN_FOCUS: "NGOinFocus"
+  NGO_IN_FOCUS: "NGOinFocus",
+  COURSE_IN_FOCUS: "CourseInFocus"
 };
 
 export const VIDEO_PLAYER_TITLES = {

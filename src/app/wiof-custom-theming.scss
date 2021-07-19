@@ -80,6 +80,12 @@ $light-color: #fff;
   text-decoration: none;
   font-weight: bold;
 }
+    
+.bold{
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding-left: 16px;
+}
 
 //ph values and corresponding highlighting square locations
 $ph0: 0.88%;

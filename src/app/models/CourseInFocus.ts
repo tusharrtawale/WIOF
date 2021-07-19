@@ -1,9 +1,9 @@
-export interface iNgoInFocus{
+export interface iCourseInFocus{
     id?: string;
-    ngoName: string;
+    courseName: string;
     description: string;
-    ngoImage: string;
-    ngoLogo?: string;
+    courseImage: string;
+    courseLink: string;
     creationDate?: Date;
     creationId?: string;
     updateDate?: Date;

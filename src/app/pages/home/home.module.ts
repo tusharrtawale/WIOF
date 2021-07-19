@@ -6,6 +6,7 @@ import { AppCommonModule } from "src/app/app-common.module";
 import { HomePageRoutingModule } from "./home-routing.module";
 import { HomePage } from "./home.page";
 import { NgoComponent } from "../../components/ngo/ngo.component";
+import { CourseInFocusComponent } from "../../components/course-in-focus/course-in-focus.component";
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { NgoComponent } from "../../components/ngo/ngo.component";
     HomePageRoutingModule,
     AppCommonModule
   ],
-  declarations: [HomePage, NgoComponent]
+  declarations: [HomePage, NgoComponent, CourseInFocusComponent]
 })
 export class HomePageModule {}

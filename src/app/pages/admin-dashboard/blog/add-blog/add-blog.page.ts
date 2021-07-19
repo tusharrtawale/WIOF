@@ -1,36 +1,40 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { ActivatedRoute, Router } from "@angular/router";
-import { Subject, throwError, of } from "rxjs";
-import { catchError, switchMap, takeUntil } from "rxjs/operators";
-import { ELEMENT_BLOG_CATEGORY } from "src/app/app.constants";
-import { Blog } from "src/app/models/Blog";
-import { BlogService } from "src/app/services/blog.service";
-import { AppUtilService } from "src/app/util/AppUtilService";
-import { UiUtilService } from "src/app/util/UiUtilService";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subject, throwError, of } from 'rxjs';
+import { catchError, switchMap, takeUntil } from 'rxjs/operators';
+import {
+  ELEMENT_BLOG_CATEGORY,
+  UI_MESSAGES,
+  ITEMS
+} from 'src/app/app.constants';
+import { Blog } from 'src/app/models/Blog';
+import { BlogService } from 'src/app/services/blog.service';
+import { AppUtilService } from 'src/app/util/AppUtilService';
+import { UiUtilService } from 'src/app/util/UiUtilService';
 
 @Component({
-  selector: "app-add-blog",
-  templateUrl: "./add-blog.page.html",
-  styleUrls: ["./add-blog.page.scss"]
+  selector: 'app-add-blog',
+  templateUrl: './add-blog.page.html',
+  styleUrls: ['./add-blog.page.scss']
 })
 export class AddBlogPage implements OnInit, OnDestroy {
-  categories: String[] = Object.values(ELEMENT_BLOG_CATEGORY);
+  categories: string[] = Object.values(ELEMENT_BLOG_CATEGORY);
   addBlogForm: FormGroup;
-  imageToDisplay: String;
+  imageToDisplay: string;
   imageToSave: any;
   loader;
   destroy$: Subject<boolean> = new Subject();
-  isEditMode: boolean = false;
+  isEditMode = false;
   blog: Blog = {} as Blog;
 
   pageContent = {
-    addBlogTitle: "Add Blog",
-    editBlogTitle: "Edit Blog",
-    titleLabel: "Title",
-    shortDescriptionLabel: "Short Description",
-    saveBlogLabel: "Save",
-    cancelLabel: "Cancel"
+    addBlogTitle: 'Add Blog',
+    editBlogTitle: 'Edit Blog',
+    titleLabel: 'Title',
+    shortDescriptionLabel: 'Short Description',
+    saveBlogLabel: 'Save',
+    cancelLabel: 'Cancel'
   };
 
   constructor(
@@ -44,13 +48,13 @@ export class AddBlogPage implements OnInit, OnDestroy {
   ngOnInit() {
     this.blog = {} as Blog;
     this.route.paramMap.subscribe((param) => {
-      if (param.has("mode") && param.get("mode") === "edit") {
+      if (param.has('mode') && param.get('mode') === 'edit') {
         this.blog = this.blogService.getViewEditModeBlog();
         this.blog.image.subscribe((imageData) => {
-          this.imageToDisplay = imageData;
+          this.imageToDisplay = imageData.toString();
         });
         if (!this.blog) {
-          this.router.navigateByUrl("/admin-dashboard/manage-blog");
+          this.router.navigateByUrl('/admin-dashboard/manage-blog');
           return;
         }
         this.isEditMode = true;
@@ -64,14 +68,14 @@ export class AddBlogPage implements OnInit, OnDestroy {
 
   private initForm() {
     return new FormGroup({
-      title: new FormControl("", [Validators.required]),
-      authorName: new FormControl("", [Validators.required]),
-      aboutAuthor: new FormControl("", [Validators.required]),
-      category: new FormControl("", [Validators.required]),
-      subCategory: new FormControl("", [Validators.required]),
-      image: new FormControl("", [Validators.required]),
-      shortDescription: new FormControl("", [Validators.required]),
-      content: new FormControl("", [Validators.required])
+      title: new FormControl('', [Validators.required]),
+      authorName: new FormControl('', [Validators.required]),
+      aboutAuthor: new FormControl('', [Validators.required]),
+      category: new FormControl('', [Validators.required]),
+      subCategory: new FormControl('', [Validators.required]),
+      image: new FormControl('', [Validators.required]),
+      shortDescription: new FormControl('', [Validators.required]),
+      content: new FormControl('', [Validators.required])
     });
   }
 
@@ -101,7 +105,12 @@ export class AddBlogPage implements OnInit, OnDestroy {
         this.blog,
         this.isEditMode
       );
-      this.loader = await this.uiUtil.showLoader("We are saving your blog...");
+      this.loader = await this.uiUtil.showLoader(
+        UI_MESSAGES.SAVE_IN_PROGRESS.replace(
+          UI_MESSAGES.PLACEHOLDER,
+          ITEMS.BLOG
+        )
+      );
       this.blogService
         .saveBlog(this.blog)
         .pipe(
@@ -130,16 +139,24 @@ export class AddBlogPage implements OnInit, OnDestroy {
               this.imageToDisplay = null;
               this.imageToSave = null;
             }
-            this.uiUtil.presentAlert("Success", "We saved your blog!", [
-              "Cool!"
-            ]);
+            this.uiUtil.presentAlert(
+              UI_MESSAGES.SUCCESS_HEADER,
+              UI_MESSAGES.SUCCESS_ADD_ITEM_DESC.replace(
+                UI_MESSAGES.PLACEHOLDER,
+                ITEMS.BLOG
+              ),
+              [UI_MESSAGES.SUCCESS_CTA_TEXT]
+            );
           },
           (error) => {
             this.loader.dismiss();
             this.uiUtil.presentAlert(
-              "Error",
-              "Uh oh! We could not save the blog. Please try again.",
-              ["OK"]
+              UI_MESSAGES.FAILURE_HEADER,
+              UI_MESSAGES.FAILURE_ADD_ITEM_DESC.replace(
+                UI_MESSAGES.PLACEHOLDER,
+                ITEMS.BLOG
+              ),
+              [UI_MESSAGES.FAILURE_CTA_TEXT]
             );
           }
         );
@@ -160,7 +177,7 @@ export class AddBlogPage implements OnInit, OnDestroy {
       addBlogForm.value.subCategory,
       isEditMode && blog.imageName !== undefined
         ? blog.imageName
-        : this.appUtil.formatImageName("blog_", this.imageToSave),
+        : this.appUtil.formatImageName('blog_', this.imageToSave),
       addBlogForm.value.shortDescription,
       addBlogForm.value.content
     );

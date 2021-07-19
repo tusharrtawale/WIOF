@@ -21,8 +21,6 @@
           alt="Take Action"
           title="Take Action"
         >
-          <!-- <ion-icon slot="icon-only" name="person-circle"></ion-icon> -->
-          <!-- Take Action -->
           <ion-icon name="trail-sign-outline"></ion-icon>
         </a>
       </ion-col>
@@ -37,6 +35,7 @@
               <img
                 [src]="blog.image | async"
                 [routerLink]="['blog', blog.id]"
+                [alt]="'Image for blog ' + blog.title"
               />
               <h6 class="ion-padding">
                 <strong class="blog-card-title"
@@ -45,25 +44,13 @@
                   }}</a></strong
                 >
               </h6>
-              <!-- <ion-label>Category: {{ blog.category }}</ion-label> -->
               <p
                 class="blog-card-content ion-padding-horizontal"
                 [routerLink]="['blog', blog.id]"
               >
                 {{ blog.shortDescription }}
-                <!-- <a [routerLink]="['blog-post', blog.id]">Read More</a> -->
               </p>
             </ion-card-content>
-            <!-- <ion-row class="blog-card-footer" [ngClass]="blogSliderClass">
-              <ion-col>
-                <ion-buttons>
-                  <ion-button [routerLink]="['take-action']"> -->
-            <!-- <ion-icon slot="icon-only" name="person-circle"></ion-icon> -->
-            <!-- Take Action
-                  </ion-button>
-                </ion-buttons>
-              </ion-col>
-            </ion-row> -->
           </ion-card>
         </ion-slide>
       </ion-slides>

@@ -5,15 +5,15 @@ import {
   Output,
   Input,
   EventEmitter
-} from "@angular/core";
+} from '@angular/core';
 // import { EventEmitter } from 'protractor';
 
-import { BREAKING_NEWS_SLIDER_OPTIONS } from "src/app/app.constants";
+import { BREAKING_NEWS_SLIDER_OPTIONS } from 'src/app/app.constants';
 
 @Component({
-  selector: "app-env-cal-dialog",
-  templateUrl: "./env-cal-dialog.component.html",
-  styleUrls: ["./env-cal-dialog.component.scss"]
+  selector: 'app-env-cal-dialog',
+  templateUrl: './env-cal-dialog.component.html',
+  styleUrls: ['./env-cal-dialog.component.scss']
 })
 export class EnvCalDialogComponent implements OnInit {
   @Input() occasionDetails: any;
@@ -22,23 +22,23 @@ export class EnvCalDialogComponent implements OnInit {
   slideOpts = BREAKING_NEWS_SLIDER_OPTIONS;
   showNavigation: boolean = false;
 
-  @HostListener("window:resize", [])
+  @HostListener('window:resize', [])
   public onResize() {
     this.detectScreenSize();
   }
   months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
   ];
   constructor() {}
 
@@ -71,6 +71,6 @@ export class EnvCalDialogComponent implements OnInit {
   }
 
   closeDialog() {
-    this.close.emit("close");
+    this.close.emit('close');
   }
 }

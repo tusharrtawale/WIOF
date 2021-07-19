@@ -1,4 +1,4 @@
-@import "../../wiof-custom-theming.scss";
+@import '../../wiof-custom-theming.scss';
 
 .wiof-spinner {
   position: absolute;
@@ -64,7 +64,7 @@
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
-.wiof-water-widget-items[scrolly="true"] {
+.wiof-water-widget-items[scrolly='true'] {
   position: relative;
   overflow: hidden;
 
@@ -73,7 +73,7 @@
   }
 }
 
-.wiof-water-widget-items[scrolly="true"] {
+.wiof-water-widget-items[scrolly='true'] {
   overflow-y: auto;
 }
 

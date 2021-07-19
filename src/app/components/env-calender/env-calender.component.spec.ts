@@ -1,9 +1,9 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { IonicModule } from "@ionic/angular";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
 
-import { EnvCalenderComponent } from "./env-calender.component";
+import { EnvCalenderComponent } from './env-calender.component';
 
-describe("EnvCalenderComponent", () => {
+describe('EnvCalenderComponent', () => {
   let component: EnvCalenderComponent;
   let fixture: ComponentFixture<EnvCalenderComponent>;
 
@@ -18,7 +18,7 @@ describe("EnvCalenderComponent", () => {
     fixture.detectChanges();
   }));
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

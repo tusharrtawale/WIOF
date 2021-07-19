@@ -1,7 +1,7 @@
-@import "../../wiof-custom-theming.scss";
+@import '../../wiof-custom-theming.scss';
 
 .wiof-video-player-content {
-  padding: 5px;
+  padding: 0px;
   text-align: center;
 }
 
@@ -28,6 +28,7 @@
   height: 100%;
   margin-top: auto;
   margin-bottom: auto;
+  border: 0;
 }
 
 .title-text {

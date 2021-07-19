@@ -1,13 +1,13 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: "app-social-share",
-  templateUrl: "./social-share.component.html",
-  styleUrls: ["./social-share.component.scss"]
+  selector: 'app-social-share',
+  templateUrl: './social-share.component.html',
+  styleUrls: ['./social-share.component.scss']
 })
 export class SocialShareComponent implements OnInit {
   // @Input() title:string="Get to know more at WorldIsOneFamily.com";
-  title: string = "See what I found on Worldisonefamily.com..!!";
+  title: string = 'See what I found on Worldisonefamily.com..!!';
   url: string = window.location.href;
   facebookShareLink: string = `https://www.facebook.com/sharer.php?u=${this.url}`;
   // https://www.linkedin.com/shareArticle?url=[post-url]&title=[post-title]

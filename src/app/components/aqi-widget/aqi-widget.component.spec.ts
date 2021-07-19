@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { IonicModule } from "@ionic/angular";
-import { AqiWidgetComponent } from "./aqi-widget.component";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
+import { AqiWidgetComponent } from './aqi-widget.component';
 
-describe("AqiWidgetComponent", () => {
+describe('AqiWidgetComponent', () => {
   let component: AqiWidgetComponent;
   let fixture: ComponentFixture<AqiWidgetComponent>;
 
@@ -17,7 +17,7 @@ describe("AqiWidgetComponent", () => {
     fixture.detectChanges();
   }));
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

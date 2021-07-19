@@ -13,10 +13,11 @@
       <ion-col
         size-xs="12"
         size-md="6"
-        offset-md="3"
+        size-lg="4"
         *ngFor="let button of adminDB.buttons"
       >
         <ion-button
+          color="secondary"
           class="admin-panel-button"
           expand="full"
           [routerLink]="button.actionUrl"

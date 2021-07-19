@@ -3,27 +3,26 @@ import {
   Component,
   Input,
   OnInit,
-  OnChanges,
   AfterViewInit
-} from "@angular/core";
-import { VIDEO_SLIDER_OPTIONS } from "src/app/app.constants";
-import { Video } from "src/app/models/Video";
+} from '@angular/core';
+import { VIDEO_SLIDER_OPTIONS } from 'src/app/app.constants';
+import { Video } from 'src/app/models/Video';
 
 @Component({
-  selector: "app-video-slider",
-  templateUrl: "./video-slider.component.html",
-  styleUrls: ["./video-slider.component.scss"]
+  selector: 'app-video-slider',
+  templateUrl: './video-slider.component.html',
+  styleUrls: ['./video-slider.component.scss']
 })
-export class VideoSliderComponent implements OnInit, OnChanges, AfterViewInit {
+export class VideoSliderComponent implements OnInit, AfterViewInit {
   @Input() videoList: Array<Video>;
-  @Input() element: String;
-  videoSliderClass: String;
+  @Input() element: string;
+  videoSliderClass: string;
   width: number;
   slideOpts = VIDEO_SLIDER_OPTIONS;
 
   constructor() {}
 
-  @HostListener("window:resize", [])
+  @HostListener('window:resize', [])
   public onResize() {
     this.detectScreenSize();
   }
@@ -34,14 +33,6 @@ export class VideoSliderComponent implements OnInit, OnChanges, AfterViewInit {
 
   detectScreenSize() {
     this.width = window.innerWidth;
-  }
-
-  ngOnChanges(): void {
-    if (this.videoList) {
-      this.videoList.sort(
-        (a, b) => b.publishedDate.getTime() - a.publishedDate.getTime()
-      );
-    }
   }
 
   ngOnInit() {

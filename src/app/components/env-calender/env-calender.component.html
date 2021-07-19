@@ -50,6 +50,10 @@
               *ngIf="day.occasion[day.selectedOccasionIndex]"
               [src]="day.occasion[day.selectedOccasionIndex].image | async"
               (click)="openOccasionDialog(day)"
+              [alt]="
+                'Image for occasion ' +
+                day.occasion[day.selectedOccasionIndex]?.name
+              "
             />
             <div *ngIf="day.occasion && day.occasion.length > 1">
               <button

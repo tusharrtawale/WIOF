@@ -1,10 +1,10 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 export class AppUtilService {
   public calculatePollResult(pollQuestion, pollsArray, optionData) {
     pollQuestion.options.forEach((option, index) => {
-      optionData["option" + (index + 1)] = {
+      optionData['option' + (index + 1)] = {
         option,
         votes: 0,
         percent: 0
@@ -33,6 +33,6 @@ export class AppUtilService {
   }
 
   formatImageName(prefix, imageToSave) {
-    return prefix + Date.now() + "." + imageToSave.name.split(".").pop(); // add timestamp to image name to keep it unique
+    return prefix + Date.now() + '.' + imageToSave.name.split('.').pop(); // add timestamp to image name to keep it unique
   }
 }

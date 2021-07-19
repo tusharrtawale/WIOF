@@ -1,16 +1,16 @@
-import { Injectable } from "@angular/core";
-import { Subscriber } from "../models/Subscriber";
+import { Injectable } from '@angular/core';
+import { Subscriber } from '../models/Subscriber';
 import {
   AngularFirestore,
   AngularFirestoreCollection
-} from "@angular/fire/firestore";
-import { from } from "rxjs";
-import { FIREBASE_COLLECTION } from "../app.constants";
-import { Observable } from "rxjs";
-import { map } from "rxjs/operators";
+} from '@angular/fire/firestore';
+import { from } from 'rxjs';
+import { FIREBASE_COLLECTION } from '../app.constants';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class SubscriptionService {
   subscriptionsCollection: AngularFirestoreCollection<any>;
@@ -20,7 +20,6 @@ export class SubscriptionService {
       FIREBASE_COLLECTION.SUBSCRIPTIONS
     );
   }
-
 
   getSubscribers(): Observable<Subscriber[]> {
     return this.subscriptionsCollection.get().pipe(

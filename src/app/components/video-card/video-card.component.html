@@ -1,6 +1,10 @@
 <ion-card class="video-card">
   <ion-card-content class="ion-text-start card-content">
-    <img [src]="video.thumbnail" class="thumbnailImage" />
+    <img
+      [src]="video.thumbnail"
+      class="thumbnailImage"
+      [alt]="'Image for video ' + video.title"
+    />
     <h6 class="ion-padding">
       <strong
         ><a
@@ -11,14 +15,4 @@
       >
     </h6>
   </ion-card-content>
-  <!-- <ion-row class="video-card-footer" [ngClass]="element">
-    <ion-col>
-      <ion-buttons>
-        <ion-button [routerLink]="['take-action']"> -->
-  <!-- <ion-icon slot="icon-only" name="person-circle"></ion-icon> -->
-  <!-- Take Action
-        </ion-button>
-      </ion-buttons>
-    </ion-col>
-  </ion-row> -->
 </ion-card>

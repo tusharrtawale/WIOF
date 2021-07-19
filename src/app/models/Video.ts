@@ -1,6 +1,6 @@
 export class Video {
-  title: String;
-  url: String;
-  thumbnail: String;
+  title: string;
+  url: string;
+  thumbnail: string;
   publishedDate: Date;
 }

@@ -16,6 +16,14 @@
       <app-eq-widget></app-eq-widget>
     </ion-col>
   </ion-row>
+  <ion-row>
+    <ion-col size-xs="12" *ngIf="this.inFocus$ | async as inFocus">
+      <app-in-focus-widget
+        [element]="elementName"
+        [inFocus]="inFocus"
+      ></app-in-focus-widget>
+    </ion-col>
+  </ion-row>
   <ion-row
     ><ion-col
       ><app-blog-slider

@@ -1,16 +1,16 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
-import { NewsService } from "src/app/services/news.service";
-import { News } from "src/app/models/News";
-import { Subject, Observable, throwError, of } from "rxjs";
-import { takeUntil, map, catchError, switchMap } from "rxjs/operators";
-import { UiUtilService } from "src/app/util/UiUtilService";
-import { Router, ActivatedRoute } from "@angular/router";
-import { MEDIA_TYPE } from "src/app/app.constants";
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { NewsService } from 'src/app/services/news.service';
+import { News } from 'src/app/models/News';
+import { Subject, Observable, throwError, of } from 'rxjs';
+import { takeUntil, map, catchError, switchMap } from 'rxjs/operators';
+import { UiUtilService } from 'src/app/util/UiUtilService';
+import { Router, ActivatedRoute } from '@angular/router';
+import { MEDIA_TYPE, UI_MESSAGES, ITEMS } from 'src/app/app.constants';
 
 @Component({
-  selector: "app-manage-news",
-  templateUrl: "./manage-news.page.html",
-  styleUrls: ["./manage-news.page.scss"]
+  selector: 'app-manage-news',
+  templateUrl: './manage-news.page.html',
+  styleUrls: ['./manage-news.page.scss']
 })
 export class ManageNewsPage implements OnInit, OnDestroy {
   destroy$: Subject<boolean> = new Subject();
@@ -49,12 +49,12 @@ export class ManageNewsPage implements OnInit, OnDestroy {
   }
 
   addBreakinNews() {
-    this.router.navigate(["news", "new"], { relativeTo: this.route });
+    this.router.navigate(['news', 'new'], { relativeTo: this.route });
   }
 
   viewNewsDetails(news: News) {
     this.newsService.setViewEditModeNews(news);
-    this.router.navigate(["news", "edit"], {
+    this.router.navigate(['news', 'edit'], {
       relativeTo: this.route,
       queryParams: { id: news.newsId }
     });
@@ -62,18 +62,21 @@ export class ManageNewsPage implements OnInit, OnDestroy {
 
   deleteNews(newsList: News[], index: number, news: News) {
     this.uiUtil.presentAlert(
-      "Confirm",
-      "Are you sure you want to delete the news?",
+      UI_MESSAGES.CONFIRM_HEADER,
+      UI_MESSAGES.CONFIRM_DELETE_ITEM_DESC.replace(
+        UI_MESSAGES.PLACEHOLDER,
+        ITEMS.NEWS
+      ),
       [
         {
-          text: "Yes",
+          text: UI_MESSAGES.CONFIRM_DELETE_PRIMARY_CTA,
           handler: async () => {
             await this.delNews(newsList, index, news);
           }
         },
         {
-          text: "No",
-          role: "cancel"
+          text: UI_MESSAGES.CONFIRM_DELETE_SECONDARY_CTA,
+          role: 'cancel'
         }
       ]
     );
@@ -81,35 +84,47 @@ export class ManageNewsPage implements OnInit, OnDestroy {
 
   private async delNews(newsList: News[], index: number, news: News) {
     const loader = await this.uiUtil.showLoader(
-      "We are deleting the news..."
+      UI_MESSAGES.DELETE_IN_PROGRESS.replace(
+        UI_MESSAGES.PLACEHOLDER,
+        ITEMS.NEWS
+      )
     );
     this.newsService
       .deleteNews(news.newsId)
       .pipe(
         takeUntil(this.destroy$),
         switchMap((data) => {
-          if (news.mediaType == MEDIA_TYPE.IMAGE) {
+          if (news.mediaType === MEDIA_TYPE.IMAGE) {
             return this.newsService.deleteNewsImage(news.mediaLink);
-          } else return of(true);
+          } else {
+            return of(true);
+          }
         })
       )
       .subscribe(
-        //TODO handle delete error case
         (response) => {
           console.log(response);
           loader.dismiss();
-          this.uiUtil.presentAlert("Success", "News successfully deleted!", [
-            "OK"
-          ]);
+          this.uiUtil.presentAlert(
+            UI_MESSAGES.SUCCESS_HEADER,
+            UI_MESSAGES.SUCCESS_DELETE_ITEM_DESC.replace(
+              UI_MESSAGES.PLACEHOLDER,
+              ITEMS.NEWS
+            ),
+            [UI_MESSAGES.FAILURE_CTA_TEXT]
+          );
           newsList.splice(index, 1);
         },
         (error) => {
           console.log(error);
           loader.dismiss();
           this.uiUtil.presentAlert(
-            "Error",
-            "Uh Oh! We could not delete news. Please try again.",
-            ["OK"]
+            UI_MESSAGES.FAILURE_HEADER,
+            UI_MESSAGES.FAILURE_DELETE_ITEM_DESC.replace(
+              UI_MESSAGES.PLACEHOLDER,
+              ITEMS.NEWS
+            ),
+            [UI_MESSAGES.FAILURE_CTA_TEXT]
           );
         }
       );

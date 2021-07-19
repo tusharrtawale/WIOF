@@ -9,12 +9,7 @@ import { NgoPageRoutingModule } from './ngo-routing.module';
 import { NgoPage } from './ngo.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    NgoPageRoutingModule
-  ],
+  imports: [CommonModule, FormsModule, IonicModule, NgoPageRoutingModule],
   declarations: [NgoPage]
 })
 export class NgoPageModule {}

@@ -1,9 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: "app-wiof-footer",
-  templateUrl: "./wiof-footer.component.html",
-  styleUrls: ["./wiof-footer.component.scss"]
+  selector: 'app-wiof-footer',
+  templateUrl: './wiof-footer.component.html',
+  styleUrls: ['./wiof-footer.component.scss']
 })
 export class WiofFooterComponent implements OnInit {
   constructor() {}

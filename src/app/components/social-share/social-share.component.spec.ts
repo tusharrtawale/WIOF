@@ -1,9 +1,9 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { IonicModule } from "@ionic/angular";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
 
-import { SocialShareComponent } from "./social-share.component";
+import { SocialShareComponent } from './social-share.component';
 
-describe("SocialShareComponent", () => {
+describe('SocialShareComponent', () => {
   let component: SocialShareComponent;
   let fixture: ComponentFixture<SocialShareComponent>;
 
@@ -18,7 +18,7 @@ describe("SocialShareComponent", () => {
     fixture.detectChanges();
   }));
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

@@ -1,7 +1,8 @@
-@import "../../wiof-custom-theming.scss";
+@import '../../wiof-custom-theming.scss';
 
 .videos-content {
   padding-top: 60px;
+  min-height: calc(100% - 130px);
 
   &.air {
     background-color: rgba($air-color, $tint-fraction);
@@ -26,15 +27,13 @@
   .no-videos-container {
     margin: 0;
     padding: 20px;
-    min-height: 750px;
   }
 }
 
 .header-text {
-  font-size: x-large;
-  transform: translateY(25%);
+  font-size: larger;
+  transform: translateY(40%);
   margin: 0px;
-  font-weight: 400;
 }
 
 .videos-header {

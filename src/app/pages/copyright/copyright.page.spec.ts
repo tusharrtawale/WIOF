@@ -1,9 +1,9 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { IonicModule } from "@ionic/angular";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
 
-import { CopyrightPage } from "./copyright.page";
+import { CopyrightPage } from './copyright.page';
 
-describe("CopyrightPage", () => {
+describe('CopyrightPage', () => {
   let component: CopyrightPage;
   let fixture: ComponentFixture<CopyrightPage>;
 
@@ -18,7 +18,7 @@ describe("CopyrightPage", () => {
     fixture.detectChanges();
   }));
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

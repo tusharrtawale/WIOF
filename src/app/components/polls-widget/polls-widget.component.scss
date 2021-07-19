@@ -1,4 +1,4 @@
-@import "../../wiof-custom-theming.scss";
+@import '../../wiof-custom-theming.scss';
 
 .wiof-poll-card {
   background-color: rgba($home-color, $tint-fraction);
@@ -50,8 +50,5 @@
   padding-left: 5px;
   height: 40px;
   font-size: $font-size-medium;
+  background-color: $light-color;
 }
-
-// .wiof-polls-submit-button{
-//     background-color: $home-color;
-// }

@@ -1,10 +1,10 @@
-import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: "app-concent-popup",
-  templateUrl: "./concent-popup.component.html",
-  styleUrls: ["./concent-popup.component.scss"],
-  exportAs: "concentPopup"
+  selector: 'app-concent-popup',
+  templateUrl: './concent-popup.component.html',
+  styleUrls: ['./concent-popup.component.scss'],
+  exportAs: 'concentPopup'
 })
 export class ConcentPopupComponent implements OnInit {
   @Output() accepted = new EventEmitter();
@@ -14,6 +14,6 @@ export class ConcentPopupComponent implements OnInit {
   ngOnInit() {}
   onAccept() {
     this.read = true;
-    this.accepted.emit("concentAccepted");
+    this.accepted.emit('concentAccepted');
   }
 }

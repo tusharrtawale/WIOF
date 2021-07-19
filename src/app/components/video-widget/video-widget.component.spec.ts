@@ -1,9 +1,9 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { IonicModule } from "@ionic/angular";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
 
-import { VideoWidgetComponent } from "./video-widget.component";
+import { VideoWidgetComponent } from './video-widget.component';
 
-describe("VideoWidgetComponent", () => {
+describe('VideoWidgetComponent', () => {
   let component: VideoWidgetComponent;
   let fixture: ComponentFixture<VideoWidgetComponent>;
 
@@ -18,7 +18,7 @@ describe("VideoWidgetComponent", () => {
     fixture.detectChanges();
   }));
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

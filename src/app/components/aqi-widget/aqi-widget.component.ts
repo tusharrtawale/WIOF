@@ -1,14 +1,14 @@
-import { Component, OnInit } from "@angular/core";
-import { AqiWidgetService } from "../../services/aqi-widget.service";
+import { Component, OnInit } from '@angular/core';
+import { AqiWidgetService } from '../../services/aqi-widget.service';
 
 @Component({
-  selector: "app-aqi-widget",
-  templateUrl: "./aqi-widget.component.html",
-  styleUrls: ["./aqi-widget.component.scss"]
+  selector: 'app-aqi-widget',
+  templateUrl: './aqi-widget.component.html',
+  styleUrls: ['./aqi-widget.component.scss']
 })
 export class AqiWidgetComponent implements OnInit {
   majorLocations: string[];
-  selectedLocation: string = "mumbai";
+  selectedLocation: string = 'mumbai';
   searchLocation: string;
   searchLocationClickedFlag: boolean = false;
   searchLocationTabSelect: boolean = false;
@@ -19,7 +19,7 @@ export class AqiWidgetComponent implements OnInit {
   constructor(private aqiService: AqiWidgetService) {}
 
   ngOnInit() {
-    this.majorLocations = ["mumbai", "delhi", "lucknow", "bangalore"];
+    this.majorLocations = ['mumbai', 'delhi', 'lucknow', 'bangalore'];
   }
 
   searchByLocation() {
@@ -45,21 +45,21 @@ export class AqiWidgetComponent implements OnInit {
   }
 
   aqiColor(aqi: number) {
-    let aqiLevelClass = "aqi-level-card ";
+    let aqiLevelClass = 'aqi-level-card ';
     if (aqi > 0 && aqi < 51) {
-      aqiLevelClass += "aqi-good";
+      aqiLevelClass += 'aqi-good';
     } else if (aqi > 50 && aqi < 101) {
-      aqiLevelClass += "aqi-moderate";
+      aqiLevelClass += 'aqi-moderate';
     } else if (aqi > 100 && aqi < 151) {
-      aqiLevelClass += "aqi-unhealthy-for-sensitive";
+      aqiLevelClass += 'aqi-unhealthy-for-sensitive';
     } else if (aqi > 150 && aqi < 201) {
-      aqiLevelClass += "aqi-unhealthy";
+      aqiLevelClass += 'aqi-unhealthy';
     } else if (aqi > 200 && aqi < 300) {
-      aqiLevelClass += "aqi-very-unhealthy";
+      aqiLevelClass += 'aqi-very-unhealthy';
     } else if (aqi > 300) {
-      aqiLevelClass += "aqi-hazardous";
+      aqiLevelClass += 'aqi-hazardous';
     } else {
-      aqiLevelClass += "aqi-na";
+      aqiLevelClass += 'aqi-na';
     }
     return aqiLevelClass;
   }

@@ -1,4 +1,4 @@
-@import "../../wiof-custom-theming.scss";
+@import '../../wiof-custom-theming.scss';
 
 .wiof-spinner {
   position: absolute;
@@ -50,7 +50,7 @@
   height: 380px;
 }
 
-.wiof-aqi-widget-items [scrolly="true"] {
+.wiof-aqi-widget-items [scrolly='true'] {
   position: relative;
   overflow: hidden;
 
@@ -59,7 +59,7 @@
   }
 }
 
-.wiof-aqi-widget-items[scrolly="true"] {
+.wiof-aqi-widget-items[scrolly='true'] {
   overflow-y: auto;
 }
 

@@ -1,40 +1,42 @@
-import { CommonModule } from "@angular/common";
-import { NgModule } from "@angular/core";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { RouterModule } from "@angular/router";
-import { IonicModule } from "@ionic/angular";
-import { AqiScorecardComponent } from "./components/aqi-scorecard/aqi-scorecard.component";
-import { ConcentPopupComponent } from "./components/concent-popup/concent-popup.component";
-import { AqiWidgetComponent } from "./components/aqi-widget/aqi-widget.component";
-import { BlogCardComponent } from "./components/blog-card/blog-card.component";
-import { BlogSliderComponent } from "./components/blog-slider/blog-slider.component";
-import { BackButtonComponent } from "./components/back-button/back-button.component";
-import { SocialShareComponent } from "./components/social-share/social-share.component";
-import { ElementWelcomeImageComponent } from "./components/element-welcome-image/element-welcome-image.component";
-import { EnergyWidgetComponent } from "./components/energy-widget/energy-widget.component";
-import { EQWidgetComponent } from "./components/eq-widget/eq-widget.component";
-import { EqWidgetResultComponent } from "./components/eq-widget-result/eq-widget-result.component";
-import { EqWidgetTestComponent } from "./components/eq-widget-test/eq-widget-test.component";
-import { EqWidgetQuestionCardComponent } from "./components/eq-widget-question-card/eq-widget-question-card.component";
-import { FoodPhIndicatorMeterComponent } from "./components/food-ph-indicator-meter/food-ph-indicator-meter.component";
-import { FoodPhIndicatorComponent } from "./components/food-ph-indicator/food-ph-indicator.component";
-import { HeaderComponent } from "./components/header/header.component";
-import { LifeElementsComponent } from "./components/life-elements/life-elements.component";
-import { EnvCalenderComponent } from "./components/env-calender/env-calender.component";
-import { PollResultComponent } from "./components/poll-result/poll-result.component";
-import { PollsWidgetComponent } from "./components/polls-widget/polls-widget.component";
-import { SubscribeComponent } from "./components/subscribe/subscribe.component";
-import { VideoSliderComponent } from "./components/video-slider/video-slider.component";
-import { VideoWidgetComponent } from "./components/video-widget/video-widget.component";
-import { WaterWidgetComponent } from "./components/water-widget/water-widget.component";
-import { WiofFooterComponent } from "./components/wiof-footer/wiof-footer.component";
-import { WiofSpinnerComponent } from "./components/wiof-spinner/wiof-spinner.component";
-import { VideoCardComponent } from "./components/video-card/video-card.component";
-import { BreakingNewsComponent } from "./components/breaking-news/breaking-news.component";
-import { SocialShareHomeComponent } from "./components/social-share-home/social-share-home.component";
-import { EnvCalDialogComponent } from "./components/env-cal-dialog/env-cal-dialog.component";
-import { TakeActionContentComponent } from "./components/take-action-content/take-action-content.component";
-import { CoffeeConversationComponent } from "./components/coffee-conversation/coffee-conversation.component";
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { IonicModule } from '@ionic/angular';
+import { AqiScorecardComponent } from './components/aqi-scorecard/aqi-scorecard.component';
+import { ConcentPopupComponent } from './components/concent-popup/concent-popup.component';
+import { AqiWidgetComponent } from './components/aqi-widget/aqi-widget.component';
+import { BlogCardComponent } from './components/blog-card/blog-card.component';
+import { BlogSliderComponent } from './components/blog-slider/blog-slider.component';
+import { BackButtonComponent } from './components/back-button/back-button.component';
+import { SocialShareComponent } from './components/social-share/social-share.component';
+import { ElementWelcomeImageComponent } from './components/element-welcome-image/element-welcome-image.component';
+import { EnergyWidgetComponent } from './components/energy-widget/energy-widget.component';
+import { EQWidgetComponent } from './components/eq-widget/eq-widget.component';
+import { EqWidgetResultComponent } from './components/eq-widget-result/eq-widget-result.component';
+import { EqWidgetTestComponent } from './components/eq-widget-test/eq-widget-test.component';
+import { EqWidgetQuestionCardComponent } from './components/eq-widget-question-card/eq-widget-question-card.component';
+import { FoodPhIndicatorMeterComponent } from './components/food-ph-indicator-meter/food-ph-indicator-meter.component';
+import { FoodPhIndicatorComponent } from './components/food-ph-indicator/food-ph-indicator.component';
+import { HeaderComponent } from './components/header/header.component';
+import { LifeElementsComponent } from './components/life-elements/life-elements.component';
+import { EnvCalenderComponent } from './components/env-calender/env-calender.component';
+import { PollResultComponent } from './components/poll-result/poll-result.component';
+import { PollsWidgetComponent } from './components/polls-widget/polls-widget.component';
+import { SubscribeComponent } from './components/subscribe/subscribe.component';
+import { VideoSliderComponent } from './components/video-slider/video-slider.component';
+import { VideoWidgetComponent } from './components/video-widget/video-widget.component';
+import { WaterWidgetComponent } from './components/water-widget/water-widget.component';
+import { WiofFooterComponent } from './components/wiof-footer/wiof-footer.component';
+import { WiofSpinnerComponent } from './components/wiof-spinner/wiof-spinner.component';
+import { VideoCardComponent } from './components/video-card/video-card.component';
+import { BreakingNewsComponent } from './components/breaking-news/breaking-news.component';
+import { SocialShareHomeComponent } from './components/social-share-home/social-share-home.component';
+import { EnvCalDialogComponent } from './components/env-cal-dialog/env-cal-dialog.component';
+import { TakeActionContentComponent } from './components/take-action-content/take-action-content.component';
+import { CoffeeConversationComponent } from './components/coffee-conversation/coffee-conversation.component';
+import { InFocusWidgetComponent } from './components/in-focus-widget/in-focus-widget.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -69,7 +71,8 @@ const COMPONENTS = [
   SocialShareHomeComponent,
   EnvCalDialogComponent,
   TakeActionContentComponent,
-  CoffeeConversationComponent
+  CoffeeConversationComponent,
+  InFocusWidgetComponent
 ];
 
 @NgModule({
@@ -78,7 +81,8 @@ const COMPONENTS = [
     CommonModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatAutocompleteModule
   ],
   exports: [
     CommonModule,

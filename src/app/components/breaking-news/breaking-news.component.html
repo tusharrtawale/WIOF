@@ -1,4 +1,3 @@
-<!-- <ion-card *ngIf="newsList && newsList.length > 0"> -->
 <ion-card *ngIf="newsList.length > 0" class="breaking-news-container">
   <ion-card-header class="ion-align-center wiof-slider-header">
     <ion-row>
@@ -16,10 +15,12 @@
                   <img
                     class="mediaPlayer"
                     [src]="news.imageLink | async"
+                    [alt]="'Image for news ' + news.headline"
                     *ngIf="news.mediaType == 'image'"
                   />
                   <iframe
                     class="mediaPlayer"
+                    [title]="'Video for news ' + news.headline"
                     [src]="news.sanitizedLink"
                     *ngIf="news.mediaType == 'video'"
                   ></iframe>
@@ -66,7 +67,6 @@
         class="swiper-button-next navigation-arrow-custom-styling"
         (click)="wiofNewsSlider.slideNext()"
       ></div>
-      <!-- *ngIf="showNavigator()" -->
     </div>
     <ng-template #loading>
       <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />

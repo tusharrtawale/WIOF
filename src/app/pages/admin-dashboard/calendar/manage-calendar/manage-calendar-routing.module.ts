@@ -1,11 +1,11 @@
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
-import { ManageCalendarPage } from "./manage-calendar.page";
+import { ManageCalendarPage } from './manage-calendar.page';
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     component: ManageCalendarPage
   }
 ];

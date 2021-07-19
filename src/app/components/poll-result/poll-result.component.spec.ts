@@ -1,9 +1,9 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { IonicModule } from "@ionic/angular";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
 
-import { PollResultComponent } from "./poll-result.component";
+import { PollResultComponent } from './poll-result.component';
 
-describe("PollResultComponent", () => {
+describe('PollResultComponent', () => {
   let component: PollResultComponent;
   let fixture: ComponentFixture<PollResultComponent>;
 
@@ -18,7 +18,7 @@ describe("PollResultComponent", () => {
     fixture.detectChanges();
   }));
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

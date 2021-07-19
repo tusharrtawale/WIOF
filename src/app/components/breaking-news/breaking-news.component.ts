@@ -4,27 +4,27 @@ import {
   HostListener,
   Input,
   AfterViewInit
-} from "@angular/core";
-import { BREAKING_NEWS_SLIDER_OPTIONS } from "src/app/app.constants";
-import { News } from "src/app/models/News";
-import { NewsService } from "../../services/news.service";
-import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
+} from '@angular/core';
+import { BREAKING_NEWS_SLIDER_OPTIONS } from 'src/app/app.constants';
+import { News } from 'src/app/models/News';
+import { NewsService } from '../../services/news.service';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
-  selector: "app-breaking-news",
-  templateUrl: "./breaking-news.component.html",
-  styleUrls: ["./breaking-news.component.scss"]
+  selector: 'app-breaking-news',
+  templateUrl: './breaking-news.component.html',
+  styleUrls: ['./breaking-news.component.scss']
 })
 export class BreakingNewsComponent implements OnInit {
   newsList: Array<News> = [];
-  videoSliderClass: String;
+  videoSliderClass: string;
   width: number;
   isVideo: boolean;
 
   //handle youtube video
   videoLink: string;
 
-  @HostListener("window:resize", [])
+  @HostListener('window:resize', [])
   public onResize() {
     this.detectScreenSize();
   }
@@ -49,11 +49,11 @@ export class BreakingNewsComponent implements OnInit {
       this.newsList = data;
       console.log(this.newsList);
       this.newsList.map((x) => {
-        if (x.mediaType == "video") {
+        if (x.mediaType == 'video') {
           x.sanitizedLink = this.sanitizer.bypassSecurityTrustResourceUrl(
             `https://www.youtube.com/embed/${x.mediaLink}?controls=1`
           );
-        } else if (x.mediaType == "image") {
+        } else if (x.mediaType == 'image') {
           //handle image from storage
         }
       });

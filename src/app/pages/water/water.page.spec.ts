@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { IonicModule } from "@ionic/angular";
-import { WaterPage } from "./water.page";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
+import { WaterPage } from './water.page';
 
-describe("WaterPage", () => {
+describe('WaterPage', () => {
   let component: WaterPage;
   let fixture: ComponentFixture<WaterPage>;
 
@@ -17,7 +17,7 @@ describe("WaterPage", () => {
     fixture.detectChanges();
   }));
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

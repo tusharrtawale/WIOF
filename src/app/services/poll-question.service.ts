@@ -1,18 +1,15 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import {
   AngularFirestore,
-  AngularFirestoreCollection,
-  QuerySnapshot,
-  DocumentData,
-  DocumentChangeAction
-} from "@angular/fire/firestore";
-import { map, switchMap, catchError, concatMap } from "rxjs/operators";
-import { from, Observable, of, throwError } from "rxjs";
-import { FIREBASE_COLLECTION, POLL_STATUS } from "../app.constants";
-import { PollQuestion } from "../models/PollQuestion";
+  AngularFirestoreCollection
+} from '@angular/fire/firestore';
+import { map, concatMap } from 'rxjs/operators';
+import { from, Observable } from 'rxjs';
+import { FIREBASE_COLLECTION, ITEM_STATUS } from '../app.constants';
+import { PollQuestion } from '../models/PollQuestion';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class PollQuestionService {
   private pollCollection: AngularFirestoreCollection<any>;
@@ -40,7 +37,7 @@ export class PollQuestionService {
   getPollQuestion(): Observable<PollQuestion[]> {
     const pollCollectionById = this.database.collection(
       FIREBASE_COLLECTION.POLL,
-      (ref) => ref.where("status", "==", POLL_STATUS.PUBLISHED)
+      (ref) => ref.where('status', '==', ITEM_STATUS.PUBLISHED)
     );
     return pollCollectionById.get().pipe(
       map((querySnapshot) =>
@@ -76,7 +73,7 @@ export class PollQuestionService {
     return this.inactivatePollQuestions().pipe(
       concatMap(() => {
         return this.pollCollection.doc(pollQuestionId).update({
-          status: POLL_STATUS.PUBLISHED,
+          status: ITEM_STATUS.PUBLISHED,
           publishStartDate: new Date().getTime()
         });
       })
@@ -86,7 +83,7 @@ export class PollQuestionService {
   inactivatePollQuestions() {
     return this.database
       .collection(FIREBASE_COLLECTION.POLL, (ref) =>
-        ref.where("status", "==", POLL_STATUS.PUBLISHED)
+        ref.where('status', '==', ITEM_STATUS.PUBLISHED)
       )
       .get()
       .pipe(
@@ -95,7 +92,7 @@ export class PollQuestionService {
             const data = doc.data() as PollQuestion;
             data.pollId = doc.id;
             this.pollCollection.doc(data.pollId).update({
-              status: POLL_STATUS.INACTIVE,
+              status: ITEM_STATUS.INACTIVE,
               publishEndDate: new Date().getTime()
             });
             return data;

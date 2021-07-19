@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { IonicModule } from "@ionic/angular";
-import { AdminDashboardPage } from "./admin-dashboard.page";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
+import { AdminDashboardPage } from './admin-dashboard.page';
 
-describe("AdminDashboardPage", () => {
+describe('AdminDashboardPage', () => {
   let component: AdminDashboardPage;
   let fixture: ComponentFixture<AdminDashboardPage>;
 
@@ -17,7 +17,7 @@ describe("AdminDashboardPage", () => {
     fixture.detectChanges();
   }));
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

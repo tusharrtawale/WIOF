@@ -5,7 +5,7 @@ import { iNgoInFocus } from 'src/app/models/NgoInFocus';
 @Component({
   selector: 'app-ngo',
   templateUrl: './ngo.component.html',
-  styleUrls: ['./ngo.component.scss'],
+  styleUrls: ['./ngo.component.scss']
 })
 export class NgoComponent implements OnInit {
   @Input() ngoInFocus: iNgoInFocus;
@@ -13,5 +13,4 @@ export class NgoComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {}
-
 }

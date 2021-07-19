@@ -1,9 +1,9 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { IonicModule } from "@ionic/angular";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
 
-import { FoodPhIndicatorComponent } from "./food-ph-indicator.component";
+import { FoodPhIndicatorComponent } from './food-ph-indicator.component';
 
-describe("FoodPhIndicatorComponent", () => {
+describe('FoodPhIndicatorComponent', () => {
   let component: FoodPhIndicatorComponent;
   let fixture: ComponentFixture<FoodPhIndicatorComponent>;
 
@@ -18,7 +18,7 @@ describe("FoodPhIndicatorComponent", () => {
     fixture.detectChanges();
   }));
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

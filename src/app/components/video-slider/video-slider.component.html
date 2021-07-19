@@ -3,7 +3,6 @@
     class="ion-align-center wiof-slider-header"
     [ngClass]="videoSliderClass"
   >
-    <!-- <strong>Videos</strong> -->
     <ion-row>
       <ion-col class="title-text" size="4">Videos</ion-col>
       <ion-col style="text-align: right" size="8"
@@ -14,7 +13,6 @@
           title="Switch to list"
         >
           <!-- Switch to list -->
-          <!-- <ion-icon name="list-outline"></ion-icon> -->
           <ion-icon name="list"></ion-icon>
         </a>
         <a
@@ -23,8 +21,6 @@
           alt="Take Action"
           title="Take Action"
         >
-          <!-- <ion-icon slot="icon-only" name="person-circle"></ion-icon> -->
-          <!-- <ion-icon name="trail-sign"></ion-icon> -->
           <ion-icon name="trail-sign-outline"></ion-icon>
         </a>
       </ion-col>
@@ -32,8 +28,6 @@
   </ion-card-header>
   <ion-card-content class="background" [ngClass]="videoSliderClass">
     <div *ngIf="videoList; else loading">
-      <!-- <ion-slides [options]="slideOpts" pager> -->
-      <!-- <ion-slides #wiofVideoSlider [options]="slideOpts">         -->
       <ion-slides #wiofVideoSlider [options]="slideOpts">
         <ion-slide *ngFor="let video of videoList">
           <ion-card class="video-card">
@@ -42,6 +36,7 @@
                 [src]="video.thumbnail"
                 class="thumbnailImage"
                 [routerLink]="['video', video.url]"
+                [alt]="'Image for video ' + video.title"
               />
               <h4 class="ion-padding">
                 <strong
@@ -51,26 +46,8 @@
                 >
               </h4>
             </ion-card-content>
-            <!-- <ion-row class="video-card-footer" [ngClass]="videoSliderClass"> -->
-            <!-- <ion-col>
-                <ion-buttons>
-                  <ion-button [routerLink]="['take-action']"> -->
-            <!-- <ion-icon slot="icon-only" name="person-circle"></ion-icon> -->
-            <!-- Take Action -->
-            <!-- </ion-button>
-                </ion-buttons>
-              </ion-col> -->
-            <!-- </ion-row> -->
           </ion-card>
         </ion-slide>
-        <!-- <ion-slide>
-          <ion-card class="show-more-card" routerLink="videos">
-            <ion-card-content>
-              <p>Show More</p>
-              <p><ion-icon name="add-outline"></ion-icon></p>
-            </ion-card-content>
-          </ion-card>
-        </ion-slide> -->
       </ion-slides>
       <div
         class="swiper-button-prev navigation-arrow-custom-styling"

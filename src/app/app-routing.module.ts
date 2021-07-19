@@ -1,137 +1,135 @@
-import { NgModule } from "@angular/core";
-import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import { AuthGuard } from "./guards/auth.guard";
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
-    path: "home",
+    path: 'home',
     loadChildren: () =>
-      import("./pages/home/home.module").then((m) => m.HomePageModule)
+      import('./pages/home/home.module').then((m) => m.HomePageModule)
   },
   {
-    path: "",
-    redirectTo: "home",
-    pathMatch: "full"
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
   },
   {
-    path: "element/:element/blogs/blog",
-    redirectTo: "element/:element/blog",
-    pathMatch: "prefix"
+    path: 'element/:element/blogs/blog',
+    redirectTo: 'element/:element/blog',
+    pathMatch: 'prefix'
   },
   {
-    path: "element/:element/blogs/take-action",
-    redirectTo: "element/:element/take-action",
-    pathMatch: "full"
+    path: 'element/:element/blogs/take-action',
+    redirectTo: 'element/:element/take-action',
+    pathMatch: 'full'
   },
   {
-    path: "element/:element/videos/video",
-    redirectTo: "element/:element/video",
-    pathMatch: "prefix"
+    path: 'element/:element/videos/video',
+    redirectTo: 'element/:element/video',
+    pathMatch: 'prefix'
   },
   {
-    path: "element/:element/videos/take-action",
-    redirectTo: "element/:element/take-action",
-    pathMatch: "full"
+    path: 'element/:element/videos/take-action',
+    redirectTo: 'element/:element/take-action',
+    pathMatch: 'full'
   },
   {
-    path: "element/earth",
+    path: 'element/earth',
     loadChildren: () =>
-      import("./pages/earth/earth.module").then((m) => m.EarthPageModule)
+      import('./pages/earth/earth.module').then((m) => m.EarthPageModule)
   },
   {
-    path: "element/water",
+    path: 'element/water',
     loadChildren: () =>
-      import("./pages/water/water.module").then((m) => m.WaterPageModule)
+      import('./pages/water/water.module').then((m) => m.WaterPageModule)
   },
   {
-    path: "element/energy",
+    path: 'element/energy',
     loadChildren: () =>
-      import("./pages/fire/fire.module").then((m) => m.FirePageModule)
+      import('./pages/fire/fire.module').then((m) => m.FirePageModule)
   },
   {
-    path: "element/spirit",
+    path: 'element/spirit',
     loadChildren: () =>
-      import("./pages/spirit/spirit.module").then((m) => m.SpiritPageModule)
+      import('./pages/spirit/spirit.module').then((m) => m.SpiritPageModule)
   },
   {
-    path: "element/water",
+    path: 'element/water',
     loadChildren: () =>
-      import("./pages/water/water.module").then((m) => m.WaterPageModule)
+      import('./pages/water/water.module').then((m) => m.WaterPageModule)
   },
   {
-    path: "element/air",
+    path: 'element/air',
     loadChildren: () =>
-      import("./pages/air/air.module").then((m) => m.AirPageModule)
+      import('./pages/air/air.module').then((m) => m.AirPageModule)
   },
   {
-    path: "admin-dashboard",
+    path: 'admin-dashboard',
     loadChildren: () =>
-      import("./pages/admin-dashboard/admin-dashboard.module").then(
+      import('./pages/admin-dashboard/admin-dashboard.module').then(
         (m) => m.AdminDashboardPageModule
       ),
     canActivate: [AuthGuard]
   },
   {
-    path: "login",
+    path: 'login',
     loadChildren: () =>
-      import("./pages/login/login.module").then((m) => m.LoginPageModule)
+      import('./pages/login/login.module').then((m) => m.LoginPageModule)
   },
   {
-    path: "element/:element/blogs",
+    path: 'element/:element/blogs',
     loadChildren: () =>
-      import("./pages/blogs/blogs.module").then((m) => m.BlogsPageModule)
+      import('./pages/blogs/blogs.module').then((m) => m.BlogsPageModule)
   },
 
   {
-    path: "element/:element/videos",
+    path: 'element/:element/videos',
     loadChildren: () =>
-      import("./pages/videos/videos.module").then((m) => m.VideosPageModule)
+      import('./pages/videos/videos.module').then((m) => m.VideosPageModule)
   },
   {
-    path: "discover-more",
+    path: 'discover-more',
     loadChildren: () =>
-      import("./pages/discover-more/discover-more.module").then(
+      import('./pages/discover-more/discover-more.module').then(
         (m) => m.DiscoverMorePageModule
       )
   },
   {
-    path: "privacy-policy",
+    path: 'privacy-policy',
     loadChildren: () =>
-      import("./pages/privacy-policy/privacy-policy.module").then(
+      import('./pages/privacy-policy/privacy-policy.module').then(
         (m) => m.PrivacyPolicyPageModule
       )
   },
   {
-    path: "sitemap",
+    path: 'sitemap',
     loadChildren: () =>
-      import("./pages/sitemap/sitemap.module").then((m) => m.SitemapPageModule)
+      import('./pages/sitemap/sitemap.module').then((m) => m.SitemapPageModule)
   },
   {
-    path: "copyright",
+    path: 'copyright',
     loadChildren: () =>
-      import("./pages/copyright/copyright.module").then(
+      import('./pages/copyright/copyright.module').then(
         (m) => m.CopyrightPageModule
       )
   },
   {
-    path: "aboutus",
+    path: 'aboutus',
     loadChildren: () =>
-      import("./pages/aboutus/aboutus.module").then((m) => m.AboutusPageModule)
+      import('./pages/aboutus/aboutus.module').then((m) => m.AboutusPageModule)
   },
   {
-    path: "**",
+    path: '**',
     loadChildren: () =>
-      import("./pages/not-found/not-found.module").then(
+      import('./pages/not-found/not-found.module').then(
         (m) => m.NotFoundPageModule
       )
   }
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes)
-  ],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

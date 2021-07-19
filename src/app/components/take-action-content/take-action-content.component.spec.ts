@@ -1,9 +1,9 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { IonicModule } from "@ionic/angular";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
 
-import { TakeActionContentComponent } from "./take-action-content.component";
+import { TakeActionContentComponent } from './take-action-content.component';
 
-describe("TakeActionContentComponent", () => {
+describe('TakeActionContentComponent', () => {
   let component: TakeActionContentComponent;
   let fixture: ComponentFixture<TakeActionContentComponent>;
 
@@ -18,7 +18,7 @@ describe("TakeActionContentComponent", () => {
     fixture.detectChanges();
   }));
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

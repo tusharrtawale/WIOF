@@ -1,21 +1,25 @@
-import { HttpClientModule } from "@angular/common/http";
-import { NgModule } from "@angular/core";
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 //Firestore Integration Modules
-import { AngularFireModule } from "@angular/fire";
-import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 // import {AngularFireAuthModule} from '@angular/fire/auth';
-import { AngularFireStorageModule } from "@angular/fire/storage";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { BrowserModule, Meta } from "@angular/platform-browser";
-import { RouteReuseStrategy } from "@angular/router";
-import { SplashScreen } from "@ionic-native/splash-screen/ngx";
-import { StatusBar } from "@ionic-native/status-bar/ngx";
-import { IonicModule, IonicRouteStrategy } from "@ionic/angular";
-import { environment } from "../environments/environment";
-import { AppRoutingModule } from "./app-routing.module";
-import { AppComponent } from "./app.component";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { AngularFireAnalyticsModule } from "@angular/fire/analytics";
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule, Meta } from '@angular/platform-browser';
+import { RouteReuseStrategy } from '@angular/router';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { environment } from '../environments/environment';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  AngularFireAnalyticsModule,
+  ScreenTrackingService,
+  UserTrackingService
+} from '@angular/fire/analytics';
 
 @NgModule({
   declarations: [AppComponent],
@@ -38,7 +42,9 @@ import { AngularFireAnalyticsModule } from "@angular/fire/analytics";
     StatusBar,
     SplashScreen,
     Meta,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    ScreenTrackingService,
+    UserTrackingService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,22 +1,22 @@
-import { Component, OnInit } from "@angular/core";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { ActivatedRoute, Router } from "@angular/router";
-import { of, Subject, throwError } from "rxjs";
-import { catchError, switchMap, takeUntil } from "rxjs/operators";
-import { EnvDay } from "src/app/models/env-cal-data";
-import { EnvcalService } from "src/app/services/envcal-service";
-import { AppUtilService } from "src/app/util/AppUtilService";
-import { UiUtilService } from "src/app/util/UiUtilService";
-import { Months } from "src/app/app.constants";
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { of, Subject, throwError } from 'rxjs';
+import { catchError, switchMap, takeUntil } from 'rxjs/operators';
+import { EnvDay } from 'src/app/models/env-cal-data';
+import { EnvcalService } from 'src/app/services/envcal-service';
+import { AppUtilService } from 'src/app/util/AppUtilService';
+import { UiUtilService } from 'src/app/util/UiUtilService';
+import { Months, UI_MESSAGES, ITEMS } from 'src/app/app.constants';
 
 @Component({
-  selector: "app-add-occasion",
-  templateUrl: "./add-occasion.page.html",
-  styleUrls: ["./add-occasion.page.scss"]
+  selector: 'app-add-occasion',
+  templateUrl: './add-occasion.page.html',
+  styleUrls: ['./add-occasion.page.scss']
 })
 export class AddOccasionPage implements OnInit {
   addOccasionForm: FormGroup;
-  imageToDisplay: String;
+  imageToDisplay: string;
   imageToSave: any;
   loader;
   destroy$: Subject<boolean> = new Subject();
@@ -25,12 +25,12 @@ export class AddOccasionPage implements OnInit {
   months = Months;
 
   pageContent = {
-    addOccasionTitle: "Add Occasion",
-    editOccasionTitle: "Edit Occasion",
-    occasionLabel: "Occasion",
-    descriptionLabel: "Description",
-    saveOccasionLabel: "Save",
-    cancelLabel: "Cancel"
+    addOccasionTitle: 'Add Occasion',
+    editOccasionTitle: 'Edit Occasion',
+    occasionLabel: 'Occasion',
+    descriptionLabel: 'Description',
+    saveOccasionLabel: 'Save',
+    cancelLabel: 'Cancel'
   };
 
   constructor(
@@ -44,13 +44,13 @@ export class AddOccasionPage implements OnInit {
   ngOnInit() {
     this.occasion = {} as EnvDay;
     this.route.paramMap.subscribe((param) => {
-      if (param.has("mode") && param.get("mode") === "edit") {
+      if (param.has('mode') && param.get('mode') === 'edit') {
         this.occasion = this.calendarService.getViewEditModeOccasion();
         this.occasion.image.subscribe((imageData) => {
-          this.imageToDisplay = imageData;
+          this.imageToDisplay = imageData.toString();
         });
         if (!this.occasion) {
-          this.router.navigateByUrl("/admin-dashboard/manage-occasion");
+          this.router.navigateByUrl('/admin-dashboard/manage-occasion');
           return;
         }
         this.isEditMode = true;
@@ -64,12 +64,12 @@ export class AddOccasionPage implements OnInit {
 
   private initForm() {
     return new FormGroup({
-      day: new FormControl("", [Validators.required]),
-      month: new FormControl("", [Validators.required]),
-      occasion: new FormControl("", [Validators.required]),
-      imageName: new FormControl("", [Validators.required]),
-      description: new FormControl("", [Validators.required]),
-      showMoreLink: new FormControl("", [Validators.required])
+      day: new FormControl('', [Validators.required]),
+      month: new FormControl('', [Validators.required]),
+      occasion: new FormControl('', [Validators.required]),
+      imageName: new FormControl('', [Validators.required]),
+      description: new FormControl('', [Validators.required]),
+      showMoreLink: new FormControl('', [Validators.required])
     });
   }
 
@@ -98,7 +98,10 @@ export class AddOccasionPage implements OnInit {
         this.isEditMode
       );
       this.loader = await this.uiUtil.showLoader(
-        "We are saving your occasion..."
+        UI_MESSAGES.SAVE_IN_PROGRESS.replace(
+          UI_MESSAGES.PLACEHOLDER,
+          ITEMS.OCCASION
+        )
       );
       this.calendarService
         .saveOccasion(this.occasion)
@@ -128,16 +131,24 @@ export class AddOccasionPage implements OnInit {
               this.imageToDisplay = null;
               this.imageToSave = null;
             }
-            this.uiUtil.presentAlert("Success", "We saved your occasion!", [
-              "Cool!"
-            ]);
+            this.uiUtil.presentAlert(
+              UI_MESSAGES.SUCCESS_HEADER,
+              UI_MESSAGES.SUCCESS_ADD_ITEM_DESC.replace(
+                UI_MESSAGES.PLACEHOLDER,
+                ITEMS.OCCASION
+              ),
+              [UI_MESSAGES.SUCCESS_CTA_TEXT]
+            );
           },
           (error) => {
             this.loader.dismiss();
             this.uiUtil.presentAlert(
-              "Error",
-              "Uh oh! We could not save the occasion. Please try again.",
-              ["OK"]
+              UI_MESSAGES.FAILURE_HEADER,
+              UI_MESSAGES.FAILURE_ADD_ITEM_DESC.replace(
+                UI_MESSAGES.PLACEHOLDER,
+                ITEMS.OCCASION
+              ),
+              [UI_MESSAGES.FAILURE_CTA_TEXT]
             );
           }
         );
@@ -156,7 +167,7 @@ export class AddOccasionPage implements OnInit {
       addOccasionForm.value.occasion,
       isEditMode && occasion.imageName !== undefined
         ? occasion.imageName
-        : this.appUtil.formatImageName("occasion_", this.imageToSave),
+        : this.appUtil.formatImageName('occasion_', this.imageToSave),
       addOccasionForm.value.description,
       addOccasionForm.value.showMoreLink
     );

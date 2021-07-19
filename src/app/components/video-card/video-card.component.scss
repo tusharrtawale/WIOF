@@ -1,4 +1,4 @@
-@import "../../wiof-custom-theming.scss";
+@import '../../wiof-custom-theming.scss';
 
 .video-card {
   min-width: 20%;
@@ -6,7 +6,7 @@
   margin: 5px;
 
   ion-card-content {
-    padding: 5px 5px 5px 5px;
+    padding: 0px;
   }
 }
 

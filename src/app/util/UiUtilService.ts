@@ -1,7 +1,7 @@
-import { LoadingController, AlertController } from "@ionic/angular";
-import { Injectable } from "@angular/core";
+import { LoadingController, AlertController } from '@ionic/angular';
+import { Injectable } from '@angular/core';
 
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 export class UiUtilService {
   constructor(
     private loadingCtrl: LoadingController,

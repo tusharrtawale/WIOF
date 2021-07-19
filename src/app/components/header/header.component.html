@@ -1,9 +1,7 @@
 <ion-header>
   <ion-row>
     <ion-col class="ion-align-self-start ion-no-padding">
-      <ion-toolbar
-        class="header-padding toolbar-background-wrapper"
-      >
+      <ion-toolbar class="header-padding toolbar-background-wrapper">
         <ion-buttons class="menu-button-toggle" slot="start">
           <!-- uncomment when have to add menu and links in header-->
           <!-- <ion-menu-button>
@@ -11,7 +9,12 @@
           </ion-menu-button> -->
         </ion-buttons>
         <ion-title routerLink="/home">
-          <img class="wiof-logo" alt="WIOF" [src]="wiofLogo" tabindex="-1" />
+          <img
+            class="wiof-logo"
+            alt="World is one family logo"
+            [src]="wiofLogo"
+            tabindex="-1"
+          />
           <!-- </ion-img> -->
         </ion-title>
       </ion-toolbar>

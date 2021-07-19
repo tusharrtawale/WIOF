@@ -21,6 +21,12 @@ $tint-fraction: 0.5;
 $dark-color: #2d2d2d;
 $light-color: #fff;
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    $dark-color: #fff;
+  }
+}
+
 //swtich to list button on sliders
 .rect-button {
   text-decoration: none;

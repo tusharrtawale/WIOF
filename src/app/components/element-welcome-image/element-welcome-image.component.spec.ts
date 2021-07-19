@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { IonicModule } from "@ionic/angular";
-import { ElementWelcomeImageComponent } from "./element-welcome-image.component";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
+import { ElementWelcomeImageComponent } from './element-welcome-image.component';
 
-describe("ElementWelcomeImageComponent", () => {
+describe('ElementWelcomeImageComponent', () => {
   let component: ElementWelcomeImageComponent;
   let fixture: ComponentFixture<ElementWelcomeImageComponent>;
 
@@ -17,7 +17,7 @@ describe("ElementWelcomeImageComponent", () => {
     fixture.detectChanges();
   }));
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

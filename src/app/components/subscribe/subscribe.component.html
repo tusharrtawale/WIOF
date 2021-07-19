@@ -1,28 +1,33 @@
 <div
   class="wiof-subscribe-button"
- 
   (click)="onSubscribeButtonClick()"
-  [ngClass]="{ inactive: !subscribeButton,
-  home: page== 'home',
-  earth: page== 'earth',
-  air: page== 'air',
-  water: page== 'water',
-  spirit: page== 'spirit',
-  energy: page== 'energy'
+  [ngClass]="{
+    inactive: !subscribeButton,
+    home: page == 'home',
+    earth: page == 'earth',
+    air: page == 'air',
+    water: page == 'water',
+    spirit: page == 'spirit',
+    energy: page == 'energy'
   }"
-  >
+>
   <p class="subscribe-text">Subscribe</p>
   <ion-icon class="mail" name="mail-outline"></ion-icon>
 </div>
-<div class="wiof-subscribe" [ngClass]="{ active: !subscribeButton,
-  home: page== 'home',
-  earth: page== 'earth',
-  air: page== 'air',
-  water: page== 'water',
-  spirit: page== 'spirit',
-  energy: page== 'energy' }">
+<div
+  class="wiof-subscribe"
+  [ngClass]="{
+    active: !subscribeButton,
+    home: page == 'home',
+    earth: page == 'earth',
+    air: page == 'air',
+    water: page == 'water',
+    spirit: page == 'spirit',
+    energy: page == 'energy'
+  }"
+>
   <h4 class="subscribe-heading">Subscribe to WIOF NewsLetter</h4>
-  <button class="close-button" [ngClass]='page' (click)="onBack()">
+  <button class="close-button" [ngClass]="page" (click)="onBack()">
     <ion-icon name="close-circle-outline"></ion-icon>
   </button>
   <form
@@ -45,7 +50,7 @@
     <button
       [disabled]="!addSubscriberForm.valid"
       class="subscribe-button"
-      [ngClass]='page'
+      [ngClass]="page"
       type="submit"
       expand="block"
       fill="clear"

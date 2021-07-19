@@ -1,4 +1,4 @@
-@import "../../wiof-custom-theming.scss";
+@import '../../wiof-custom-theming.scss';
 
 .breaking-news-container {
   height: calc(100% - 20px);
@@ -67,6 +67,7 @@
   width: 100%;
   height: 100%;
   border: none;
+  object-fit: cover;
 }
 
 .newsHeadlineScroll {

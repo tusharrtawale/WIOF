@@ -30,10 +30,11 @@ export class AddCourseInFocusPage implements OnInit, OnDestroy {
   categories: string[] = Object.values(PAGE_CATEGORY_MAP);
 
   pageContent = {
-    addCourseInFocusTitle: 'Add In Focus',
-    editCourseInFocusTitle: 'Edit In Focus',
-    nameLabel: 'Title',
-    linkLabel: 'Sub Title',
+    addCourseInFocusTitle: 'Add Course In Focus',
+    editCourseInFocusTitle: 'Edit Course In Focus',
+    nameLabel: 'Course Name',
+    linkLabel: 'Course Link',
+    imageLabel: 'Course Image',
     descriptionLabel: 'Description',
     categoryLabel: 'Category',
     submitDateLabel: 'Submit Date',
@@ -81,8 +82,6 @@ export class AddCourseInFocusPage implements OnInit, OnDestroy {
       courseImage: new FormControl('', [Validators.required]),
       description: new FormControl('', Validators.required),
       category: new FormControl('', Validators.required)
-      //courseLink: new FormControl('', Validators.required),
-      //knowMoreLink: new FormControl('', Validators.required)
     });
   }
 
@@ -104,8 +103,6 @@ export class AddCourseInFocusPage implements OnInit, OnDestroy {
         Validators.required
       ),
       category: new FormControl(courseInFocus.category, Validators.required)
-      //courseLink: new FormControl(courseInFocus.courseLink, Validators.required),
-      //knowMoreLink: new FormControl(courseInFocus.courseImage, Validators.required)
     });
   }
 
@@ -151,6 +148,8 @@ export class AddCourseInFocusPage implements OnInit, OnDestroy {
             this.loader.dismiss();
             if (!this.isEditMode) {
               this.addCourseInFocusForm.reset();
+              this.imageToDisplay = null;
+              this.imageToSave = null;
             }
             this.uiUtil.presentAlert(
               UI_MESSAGES.SUCCESS_HEADER,

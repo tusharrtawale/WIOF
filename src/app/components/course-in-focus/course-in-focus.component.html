@@ -4,41 +4,39 @@
       <ion-col class="title-text" size="12">Course in Focus</ion-col>
     </ion-row>
   </ion-card-header>
-  <ion-card-content class="background">
+  <ion-card-content class="background ion-no-padding">
     <div *ngIf="courseInFocus; else loading">
       <ion-row>
-        <ion-col class="text-left bold" size="12">
-          {{ courseInFocus[0].courseName }}
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col size="12">
-          <p class="course-description ion-padding-horizontal">
-            {{ courseInFocus[0].description }}
-          </p>
-        </ion-col>
-        <!-- <ion-col size="12">
-          <ion-button>Know More</ion-button>
-        </ion-col> -->
-
-        <ion-col size="12" class="text-center">
+        <ion-col size="12" size-md="6" size-lg="4">
           <img
             class="course-in-focus-image"
-            style="padding: 10px"
-            [src]="courseInFocus[0].courseImage"
+            style="max-height: 300px; object-fit: contain; text-align: left"
+            [src]="courseInFocus.image$ | async"
             alt="Course in Focus"
           />
         </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <ion-button
-            [href]="courseInFocus[0].courseLink"
-            target="_blank"
-            color="home"
-            type="submit"
-            >Find out more</ion-button
-          >
+        <ion-col
+          class="text-left"
+          size="12"
+          size-md="6"
+          size-lg="8"
+          style="padding: 15px"
+        >
+          <h2>
+            <strong>{{ courseInFocus.courseName }}</strong>
+          </h2>
+          <p class="course-description ion-padding-vertical">
+            {{ courseInFocus.description }}
+          </p>
+          <p class="ion-padding-top">
+            <ion-button
+              [href]="courseInFocus.courseLink"
+              target="_blank"
+              color="home"
+              type="submit"
+              >Find out more</ion-button
+            >
+          </p>
         </ion-col>
       </ion-row>
     </div>

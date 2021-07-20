@@ -32,7 +32,8 @@ export class Blog {
     this.aboutAuthor = aboutAuthor;
     this.category = category;
     this.subCategory = subCategory;
-    (this.imageName = imageName), (this.shortDescription = shortDescription);
+    this.imageName = imageName;
+    this.shortDescription = shortDescription;
     this.content = content;
   }
 }

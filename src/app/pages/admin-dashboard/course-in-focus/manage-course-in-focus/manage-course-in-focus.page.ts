@@ -28,13 +28,17 @@ export class ManageCourseInFocusPage implements OnInit, OnDestroy {
   }
 
   initPage() {
-    this.courseInFocusList$ = this.courseInFocusService.getCoursesInFocus().pipe(
-      takeUntil(this.destroy$),
-      map((data) => data.sort((a, b) => (a.submitDate < b.submitDate ? -1 : 1))),
-      catchError((err) => {
-        return throwError(err);
-      })
-    );
+    this.courseInFocusList$ = this.courseInFocusService
+      .getCoursesInFocus()
+      .pipe(
+        takeUntil(this.destroy$),
+        map((data) =>
+          data.sort((a, b) => (a.submitDate < b.submitDate ? -1 : 1))
+        ),
+        catchError((err) => {
+          return throwError(err);
+        })
+      );
   }
 
   refreshData() {
@@ -55,7 +59,11 @@ export class ManageCourseInFocusPage implements OnInit, OnDestroy {
     });
   }
 
-  deleteCourseInFocus(courseInFocusList: CourseInFocus[], index: number, courseInFocus: CourseInFocus) {
+  deleteCourseInFocus(
+    courseInFocusList: CourseInFocus[],
+    index: number,
+    courseInFocus: CourseInFocus
+  ) {
     this.uiUtil.presentAlert(
       UI_MESSAGES.CONFIRM_HEADER,
       UI_MESSAGES.CONFIRM_DELETE_ITEM_DESC.replace(
@@ -66,7 +74,11 @@ export class ManageCourseInFocusPage implements OnInit, OnDestroy {
         {
           text: UI_MESSAGES.CONFIRM_DELETE_PRIMARY_CTA,
           handler: async () => {
-            await this.delCourseInFocus(courseInFocusList, index, courseInFocus);
+            await this.delCourseInFocus(
+              courseInFocusList,
+              index,
+              courseInFocus
+            );
           }
         },
         {

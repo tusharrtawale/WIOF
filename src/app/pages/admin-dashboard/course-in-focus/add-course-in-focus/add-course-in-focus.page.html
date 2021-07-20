@@ -3,8 +3,12 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/admin-dashboard"></ion-back-button>
     </ion-buttons>
-    <ion-title *ngIf="!isEditMode">{{ pageContent.addCourseInFocusTitle }}</ion-title>
-    <ion-title *ngIf="isEditMode">{{ pageContent.editCourseInFocusTitle }}</ion-title>
+    <ion-title *ngIf="!isEditMode"
+      >{{ pageContent.addCourseInFocusTitle }}</ion-title
+    >
+    <ion-title *ngIf="isEditMode"
+      >{{ pageContent.editCourseInFocusTitle }}</ion-title
+    >
     <ion-buttons slot="end">
       <ion-button color="success" fill="solid" size="large" (click)="onSubmit()"
         >{{ pageContent.saveLabel }}</ion-button
@@ -13,7 +17,7 @@
         color="medium"
         fill="clear"
         size="large"
-        routerLink="/admin-dashboard/manage-in-focus"
+        routerLink="/admin-dashboard/manage-course-in-focus"
         >{{ pageContent.cancelLabel }}</ion-button
       >
     </ion-buttons>
@@ -26,17 +30,13 @@
       <ion-row>
         <ion-col size-xs="12" size-md="4"
           ><ion-item>
-            <ion-label position="floating"
-              >{{pageContent.nameLabel}}</ion-label
-            >
+            <ion-label position="floating">{{pageContent.nameLabel}}</ion-label>
             <ion-input formControlName="courseName"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size-xs="12" size-md="8"
           ><ion-item>
-            <ion-label position="floating"
-              >{{pageContent.linkLabel}}</ion-label
-            >
+            <ion-label position="floating">{{pageContent.linkLabel}}</ion-label>
             <ion-input formControlName="courseLink"></ion-input>
           </ion-item>
         </ion-col>
@@ -67,7 +67,10 @@
             <ion-label position="floating"
               >{{pageContent.submitDateLabel}}</ion-label
             >
-            <ion-input disabled [value]="courseInFocus.submitDate | date"></ion-input>
+            <ion-input
+              disabled
+              [value]="courseInFocus.submitDate | date"
+            ></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size-xs="12" size-md="4"

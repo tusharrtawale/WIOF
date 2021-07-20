@@ -6,10 +6,7 @@ import {
 } from '@angular/fire/firestore';
 import { map, concatMap } from 'rxjs/operators';
 import { from, Observable } from 'rxjs';
-import {
-  FIREBASE_COLLECTION,
-  ITEM_STATUS
-} from '../app.constants';
+import { FIREBASE_COLLECTION, ITEM_STATUS } from '../app.constants';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Injectable({
@@ -24,7 +21,7 @@ export class NgoInFocusService {
     private sanitizer: DomSanitizer
   ) {
     this.ngoInFocusCollection = this.database.collection(
-      FIREBASE_COLLECTION.IN_FOCUS
+      FIREBASE_COLLECTION.NGO_IN_FOCUS
     );
   }
 
@@ -42,11 +39,11 @@ export class NgoInFocusService {
 
   getNgosInFocus(category?: string): Observable<NgoInFocus[]> {
     let ngoInFocusCollectn = this.database.collection(
-      FIREBASE_COLLECTION.IN_FOCUS
+      FIREBASE_COLLECTION.NGO_IN_FOCUS
     );
     if (category !== undefined) {
       ngoInFocusCollectn = this.database.collection(
-        FIREBASE_COLLECTION.IN_FOCUS,
+        FIREBASE_COLLECTION.NGO_IN_FOCUS,
         (ref) => ref.where('category', '==', category)
       );
     }
@@ -63,11 +60,8 @@ export class NgoInFocusService {
 
   getActiveNgoInFocus(): Observable<NgoInFocus> | null {
     const ngoInFocusCollectn = this.database.collection(
-      FIREBASE_COLLECTION.IN_FOCUS,
-      (ref) =>
-        ref
-        .where('status', '==', ITEM_STATUS.PUBLISHED)
-        .limit(1)
+      FIREBASE_COLLECTION.NGO_IN_FOCUS,
+      (ref) => ref.where('status', '==', ITEM_STATUS.PUBLISHED).limit(1)
     );
     return ngoInFocusCollectn.get().pipe(
       map((querySnapshot) => {
@@ -95,9 +89,8 @@ export class NgoInFocusService {
 
   unpublishNgoInFocus(id: string) {
     return this.database
-      .collection(FIREBASE_COLLECTION.IN_FOCUS, (ref) =>
-        ref
-          .where('status', '==', ITEM_STATUS.PUBLISHED)
+      .collection(FIREBASE_COLLECTION.NGO_IN_FOCUS, (ref) =>
+        ref.where('status', '==', ITEM_STATUS.PUBLISHED)
       )
       .get()
       .pipe(

@@ -52,7 +52,10 @@
       class="item-divider-line"
     >
       <ion-col size-md="2" class="ion-align-self-center"
-        >{{ i + 1 }}. <a [href]="courseInFocus.courseLink">{{ courseInFocus.courseName }}</a></ion-col
+        >{{ i + 1 }}.
+        <a [href]="courseInFocus.courseLink"
+          >{{ courseInFocus.courseName }}</a
+        ></ion-col
       >
       <ion-col size-md="3" class="ion-align-self-center"
         >{{ courseInFocus.description }}</ion-col

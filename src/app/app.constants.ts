@@ -161,6 +161,7 @@ export const FIREBASE_COLLECTION = {
   BLOG_IMAGE_STORAGE: 'blog-images',
   ENVCAL_IMAGE_STORAGE: 'environment-calendar',
   NEWS_IMAGE_STORAGE: 'news-images',
+  COURSE_IN_FOCUS_IMAGE_STORAGE: 'course-in-focus-images',
   POLLS: 'Polls',
   POLL: 'Poll',
   ENVCAL: 'Envcal',

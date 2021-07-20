@@ -70,7 +70,7 @@ export class AddNgoInFocusPage implements OnInit, OnDestroy {
       ngoName: new FormControl('', Validators.required),
       ngoLink: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
-      category: new FormControl('', Validators.required),
+      category: new FormControl('', Validators.required)
       //ngoLink: new FormControl('', Validators.required),
       //knowMoreLink: new FormControl('', Validators.required)
     });
@@ -79,9 +79,12 @@ export class AddNgoInFocusPage implements OnInit, OnDestroy {
   private initFormByNgoInFocus(ngoInFocus: NgoInFocus) {
     return new FormGroup({
       ngoName: new FormControl(ngoInFocus.ngoName, Validators.required),
-      knowMoreLink: new FormControl(ngoInFocus.knowMoreLink, Validators.required),
+      knowMoreLink: new FormControl(
+        ngoInFocus.knowMoreLink,
+        Validators.required
+      ),
       description: new FormControl(ngoInFocus.description, Validators.required),
-      category: new FormControl(ngoInFocus.category, Validators.required),
+      category: new FormControl(ngoInFocus.category, Validators.required)
       //ngoLink: new FormControl(ngoInFocus.ngoLink, Validators.required),
       //knowMoreLink: new FormControl(ngoInFocus.ngoImage, Validators.required)
     });

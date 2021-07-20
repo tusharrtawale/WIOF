@@ -30,7 +30,9 @@ export class ManageNgoInFocusPage implements OnInit, OnDestroy {
   initPage() {
     this.ngoInFocusList$ = this.ngoInFocusService.getNgosInFocus().pipe(
       takeUntil(this.destroy$),
-      map((data) => data.sort((a, b) => (a.submitDate < b.submitDate ? -1 : 1))),
+      map((data) =>
+        data.sort((a, b) => (a.submitDate < b.submitDate ? -1 : 1))
+      ),
       catchError((err) => {
         return throwError(err);
       })
@@ -55,7 +57,11 @@ export class ManageNgoInFocusPage implements OnInit, OnDestroy {
     });
   }
 
-  deleteNgoInFocus(ngoInFocusList: NgoInFocus[], index: number, ngoInFocus: NgoInFocus) {
+  deleteNgoInFocus(
+    ngoInFocusList: NgoInFocus[],
+    index: number,
+    ngoInFocus: NgoInFocus
+  ) {
     this.uiUtil.presentAlert(
       UI_MESSAGES.CONFIRM_HEADER,
       UI_MESSAGES.CONFIRM_DELETE_ITEM_DESC.replace(
@@ -121,19 +127,17 @@ export class ManageNgoInFocusPage implements OnInit, OnDestroy {
   }
 
   publishNgoInFocus(id: string, category: string) {
-    this.ngoInFocusService
-      .publishNgoInFocus(id, category)
-      .subscribe((data) => {
-        console.log(data);
-        this.uiUtil.presentAlert(
-          UI_MESSAGES.SUCCESS_HEADER,
-          UI_MESSAGES.SUCCESS_PUBLISH_ITEM_DESC.replace(
-            UI_MESSAGES.PLACEHOLDER,
-            ITEMS.IN_FOCUS
-          ),
-          [UI_MESSAGES.FAILURE_CTA_TEXT]
-        );
-      });
+    this.ngoInFocusService.publishNgoInFocus(id, category).subscribe((data) => {
+      console.log(data);
+      this.uiUtil.presentAlert(
+        UI_MESSAGES.SUCCESS_HEADER,
+        UI_MESSAGES.SUCCESS_PUBLISH_ITEM_DESC.replace(
+          UI_MESSAGES.PLACEHOLDER,
+          ITEMS.IN_FOCUS
+        ),
+        [UI_MESSAGES.FAILURE_CTA_TEXT]
+      );
+    });
   }
 
   ngOnDestroy(): void {

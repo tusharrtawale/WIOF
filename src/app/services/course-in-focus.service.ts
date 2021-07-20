@@ -6,11 +6,9 @@ import {
 } from '@angular/fire/firestore';
 import { map, concatMap } from 'rxjs/operators';
 import { from, Observable } from 'rxjs';
-import {
-  FIREBASE_COLLECTION,
-  ITEM_STATUS
-} from '../app.constants';
+import { FIREBASE_COLLECTION, ITEM_STATUS } from '../app.constants';
 import { DomSanitizer } from '@angular/platform-browser';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -20,11 +18,11 @@ export class CourseInFocusService {
   viewEditModeCourseInFocus: CourseInFocus;
 
   constructor(
-    private database: AngularFirestore,
-    private sanitizer: DomSanitizer
+    private storage: AngularFireStorage,
+    private database: AngularFirestore
   ) {
     this.courseInFocusCollection = this.database.collection(
-      FIREBASE_COLLECTION.IN_FOCUS
+      FIREBASE_COLLECTION.COURSE_IN_FOCUS
     );
   }
 
@@ -42,11 +40,11 @@ export class CourseInFocusService {
 
   getCoursesInFocus(category?: string): Observable<CourseInFocus[]> {
     let courseInFocusCollectn = this.database.collection(
-      FIREBASE_COLLECTION.IN_FOCUS
+      FIREBASE_COLLECTION.COURSE_IN_FOCUS
     );
     if (category !== undefined) {
       courseInFocusCollectn = this.database.collection(
-        FIREBASE_COLLECTION.IN_FOCUS,
+        FIREBASE_COLLECTION.COURSE_IN_FOCUS,
         (ref) => ref.where('category', '==', category)
       );
     }
@@ -61,19 +59,24 @@ export class CourseInFocusService {
     );
   }
 
+  getImage(image: string): Observable<string> {
+    const ref = this.storage.ref(
+      `/${FIREBASE_COLLECTION.COURSE_IN_FOCUS_IMAGE_STORAGE}/${image}`
+    ); //creates reference to storage item using the link in parameter
+    return ref.getDownloadURL(); //pulls the download URL which is an observable , handle accordingly
+  }
+
   getActiveCourseInFocus(): Observable<CourseInFocus> | null {
     const courseInFocusCollectn = this.database.collection(
-      FIREBASE_COLLECTION.IN_FOCUS,
-      (ref) =>
-        ref
-        .where('status', '==', ITEM_STATUS.PUBLISHED)
-        .limit(1)
+      FIREBASE_COLLECTION.COURSE_IN_FOCUS,
+      (ref) => ref.where('status', '==', ITEM_STATUS.PUBLISHED).limit(1)
     );
     return courseInFocusCollectn.get().pipe(
       map((querySnapshot) => {
         if (querySnapshot.docs.length > 0) {
           const data = querySnapshot.docs[0].data() as CourseInFocus;
           data.id = querySnapshot.docs[0].id;
+          data.image$ = this.getImage(data.courseImage);
           return data;
         }
         return null;
@@ -95,9 +98,8 @@ export class CourseInFocusService {
 
   unpublishCourseInFocus(id: string) {
     return this.database
-      .collection(FIREBASE_COLLECTION.IN_FOCUS, (ref) =>
-        ref
-          .where('status', '==', ITEM_STATUS.PUBLISHED)
+      .collection(FIREBASE_COLLECTION.COURSE_IN_FOCUS, (ref) =>
+        ref.where('status', '==', ITEM_STATUS.PUBLISHED)
       )
       .get()
       .pipe(
@@ -113,6 +115,20 @@ export class CourseInFocusService {
           })
         )
       );
+  }
+
+  saveCourseInFocusImage(imageData: any, imageName: string) {
+    const imageUploadTask = this.storage.upload(
+      `/${FIREBASE_COLLECTION.COURSE_IN_FOCUS_IMAGE_STORAGE}/${imageName}`,
+      imageData
+    );
+    return from(imageUploadTask);
+  }
+
+  deleteCourseInFocusImage(imageName: string) {
+    return this.storage
+      .ref(`/${FIREBASE_COLLECTION.COURSE_IN_FOCUS_IMAGE_STORAGE}/${imageName}`)
+      .delete();
   }
 
   deleteCourseInFocus(id: string) {

@@ -103,27 +103,6 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'add-occasion',
-    loadChildren: () =>
-      import('./calendar/add-occasion/add-occasion.module').then(
-        (m) => m.AddOccasionPageModule
-      )
-  },
-  {
-    path: 'subscribers',
-    loadChildren: () =>
-      import('./subscribers/subscribers.module').then(
-        (m) => m.SubscribersPageModule
-      )
-  },
-  {
-    path: 'add-in-focus',
-    loadChildren: () =>
-      import('./in-focus/add-in-focus/add-in-focus.module').then(
-        (m) => m.AddInFocusPageModule
-      )
-  },
-  {
     path: 'manage-in-focus',
     children: [
       {
@@ -144,25 +123,48 @@ const routes: Routes = [
   },
   {
     path: 'manage-course-in-focus',
-    loadChildren: () =>
-      import(
-        './course-in-focus/manage-course-in-focus/manage-course-in-focus.module'
-      ).then((m) => m.ManageCourseInFocusPageModule)
-  },
-  {
-    path: 'add-course-in-focus',
-    loadChildren: () =>
-      import(
-        './course-in-focus/add-course-in-focus/add-course-in-focus.module'
-      ).then((m) => m.AddCourseInFocusPageModule)
-  },
-  {
-    path: 'add-ngo-in-focus',
-    loadChildren: () => import('./ngo-in-focus/add-ngo-in-focus/add-ngo-in-focus.module').then( m => m.AddNgoInFocusPageModule)
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import(
+            './course-in-focus/manage-course-in-focus/manage-course-in-focus.module'
+          ).then((m) => m.ManageCourseInFocusPageModule)
+      },
+      {
+        path: 'course-in-focus/:mode',
+        loadChildren: () =>
+          import(
+            './course-in-focus/add-course-in-focus/add-course-in-focus.module'
+          ).then((m) => m.AddCourseInFocusPageModule)
+      }
+    ]
   },
   {
     path: 'manage-ngo-in-focus',
-    loadChildren: () => import('./ngo-in-focus/manage-ngo-in-focus/manage-ngo-in-focus.module').then( m => m.ManageNgoInFocusPageModule)
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import(
+            './ngo-in-focus/manage-ngo-in-focus/manage-ngo-in-focus.module'
+          ).then((m) => m.ManageNgoInFocusPageModule)
+      },
+      {
+        path: 'ngo-in-focus/:mode',
+        loadChildren: () =>
+          import(
+            './ngo-in-focus/add-ngo-in-focus/add-ngo-in-focus.module'
+          ).then((m) => m.AddNgoInFocusPageModule)
+      }
+    ]
+  },
+  {
+    path: 'subscribers',
+    loadChildren: () =>
+      import('./subscribers/subscribers.module').then(
+        (m) => m.SubscribersPageModule
+      )
   }
 ];
 

@@ -24,9 +24,9 @@ export class BlogService {
   }
 
   // function to pull Images from firebase storage using image link stored in firestore in each blog
-  getImage(Image: string): Observable<string> {
+  getImage(image: string): Observable<string> {
     const ref = this.storage.ref(
-      `/${FIREBASE_COLLECTION.BLOG_IMAGE_STORAGE}/${Image}`
+      `/${FIREBASE_COLLECTION.BLOG_IMAGE_STORAGE}/${image}`
     ); //creates reference to storage item using the link in parameter
     return ref.getDownloadURL(); //pulls the download URL which is an observable , handle accordingly
   }

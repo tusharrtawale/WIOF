@@ -1,8 +1,11 @@
+import { Observable } from 'rxjs';
+
 export class CourseInFocus {
   id?: string;
   courseName: string;
   description: string;
   courseImage: string;
+  image$: Observable<string>;
   courseLink: string;
   creationDate?: Date;
   creationId?: string;
@@ -20,6 +23,7 @@ export class CourseInFocus {
     courseLink: string,
     description: string,
     category: string,
+    courseImage: string,
     status: string,
     submitDate: number
   ) {
@@ -28,6 +32,7 @@ export class CourseInFocus {
     this.courseLink = courseLink;
     this.description = description;
     this.category = category;
+    this.courseImage = courseImage;
     this.status = status;
     this.submitDate = submitDate;
   }

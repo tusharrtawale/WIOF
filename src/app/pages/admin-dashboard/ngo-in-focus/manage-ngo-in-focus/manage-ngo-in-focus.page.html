@@ -23,9 +23,7 @@
 <ion-content>
   <ion-grid *ngIf="ngoInFocusList$ | async as ngoInFocuses">
     <ion-row class="item-divider-line">
-      <ion-col
-        ><strong>Total Items: {{ngoInFocuses.length}}</strong></ion-col
-      >
+      <ion-col><strong>Total Items: {{ngoInFocuses.length}}</strong></ion-col>
     </ion-row>
     <ion-row class="item-divider-line">
       <ion-col size-md="2" class="ion-align-self-center"
@@ -52,7 +50,10 @@
       class="item-divider-line"
     >
       <ion-col size-md="2" class="ion-align-self-center"
-        >{{ i + 1 }}. <a [href]="ngoInFocus.knowMoreLink">{{ ngoInFocus.ngoName }}</a></ion-col
+        >{{ i + 1 }}.
+        <a [href]="ngoInFocus.knowMoreLink"
+          >{{ ngoInFocus.ngoName }}</a
+        ></ion-col
       >
       <ion-col size-md="3" class="ion-align-self-center"
         >{{ ngoInFocus.description }}</ion-col
@@ -105,8 +106,7 @@
               (click)="viewNgoInFocusDetails(ngoInFocus)"
               ><ion-icon slot="icon-only" name="eye-outline"></ion-icon
             ></ion-button>
-            <ion-button
-              (click)="deleteNgoInFocus(ngoInFocus, i, ngoInFocus.id)"
+            <ion-button (click)="deleteNgoInFocus(ngoInFocus, i, ngoInFocus.id)"
               ><ion-icon slot="icon-only" name="trash-outline"></ion-icon
             ></ion-button>
           </ion-buttons>

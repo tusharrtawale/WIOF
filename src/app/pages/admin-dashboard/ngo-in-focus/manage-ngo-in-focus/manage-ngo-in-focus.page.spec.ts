@@ -7,16 +7,18 @@ describe('ManageNgoInFocusPage', () => {
   let component: ManageNgoInFocusPage;
   let fixture: ComponentFixture<ManageNgoInFocusPage>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ManageNgoInFocusPage ],
-      imports: [IonicModule.forRoot()]
-    }).compileComponents();
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [ManageNgoInFocusPage],
+        imports: [IonicModule.forRoot()]
+      }).compileComponents();
 
-    fixture = TestBed.createComponent(ManageNgoInFocusPage);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  }));
+      fixture = TestBed.createComponent(ManageNgoInFocusPage);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+    })
+  );
 
   it('should create', () => {
     expect(component).toBeTruthy();

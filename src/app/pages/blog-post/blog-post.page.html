@@ -19,7 +19,7 @@
               <h1>{{ blog.title }}</h1>
             </ion-col>
             <ion-col size="12">
-              <ion-img [src]="(blog.image| async)"></ion-img>
+              <ion-img [src]="(blog.image$ | async)"></ion-img>
             </ion-col>
             <ion-col size="12">
               <ion-text *ngIf="blog.author">By {{blog.author}}</ion-text><br />

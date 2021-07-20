@@ -44,7 +44,7 @@ export class BlogService {
         querySnapshot.docs.map((doc) => {
           const data = doc.data() as Blog;
           data.id = doc.id;
-          data.image = this.getImage(data.imageName); //datatype is observable, handle accordingly
+          data.image$ = this.getImage(data.imageName);
           return data;
         })
       )
@@ -60,9 +60,9 @@ export class BlogService {
         if (!querySnapshot.exists) {
           return null;
         } else {
-          var data = querySnapshot.data() as Blog;
+          const data = querySnapshot.data() as Blog;
           data.id = querySnapshot.id;
-          data.image = this.getImage(data.imageName); //datatype is observable, handle accordingly
+          data.image$ = this.getImage(data.imageName);
           return data;
         }
       })

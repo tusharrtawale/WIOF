@@ -33,7 +33,7 @@
           <ion-card class="blog-card">
             <ion-card-content class="ion-text-start card-content">
               <img
-                [src]="blog.image | async"
+                [src]="blog.image$ | async"
                 [routerLink]="['blog', blog.id]"
                 [alt]="'Image for blog ' + blog.title"
               />

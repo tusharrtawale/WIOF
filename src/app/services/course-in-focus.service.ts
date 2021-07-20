@@ -53,6 +53,7 @@ export class CourseInFocusService {
         querySnapshot.docs.map((doc) => {
           const data = doc.data() as CourseInFocus;
           data.id = doc.id;
+          data.image$ = this.getImage(data.courseImage);
           return data;
         })
       )

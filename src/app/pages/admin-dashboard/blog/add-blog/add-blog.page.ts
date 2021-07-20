@@ -50,7 +50,7 @@ export class AddBlogPage implements OnInit, OnDestroy {
     this.route.paramMap.subscribe((param) => {
       if (param.has('mode') && param.get('mode') === 'edit') {
         this.blog = this.blogService.getViewEditModeBlog();
-        this.blog.image.subscribe((imageData) => {
+        this.blog.image$.subscribe((imageData) => {
           this.imageToDisplay = imageData.toString();
         });
         if (!this.blog) {

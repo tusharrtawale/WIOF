@@ -6,7 +6,7 @@ export class Blog {
   shortDescription: string;
   content: string;
   imageName: string;
-  image: Observable<string>;
+  image$: Observable<string>;
   externalUrl: string;
   author: string;
   aboutAuthor: string;

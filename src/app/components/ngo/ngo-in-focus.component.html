@@ -4,40 +4,35 @@
       <ion-col class="title-text" size="12">NGO in Focus</ion-col>
     </ion-row>
   </ion-card-header>
-  <ion-card-content class="background">
+  <ion-card-content class="background" style="padding: 0">
     <div *ngIf="ngoInFocus; else loading">
       <ion-row>
-        <ion-col class="text-center" size="12">
-          <img
-            [src]="ngoInFocus.logoImage$ | async"
-            class="logo"
-            alt=""
-          /><br />
-          <p class="bold">
-            {{ ngoInFocus.ngoName }}
-          </p>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col size="12">
-          <p class="ngo-description ion-padding-horizontal">
-            {{ ngoInFocus.description }}
-          </p>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col size="12" class="text-center">
+        <ion-col size="12" size-lg="6" class="text-center">
           <img
             class="ngo-in-focus-image"
             [src]="ngoInFocus.image$ | async"
             alt="NGO in Focus"
           />
         </ion-col>
-        <ion-col class="ion-padding-top text-center">
+        <ion-col size="12" size-lg="6" class="ion-padding">
+          <img
+            [src]="ngoInFocus.logoImage$ | async"
+            class="logo"
+            alt=""
+          /><br />
+          <h2>
+            <strong>
+              {{ ngoInFocus.ngoName }}
+            </strong>
+          </h2>
+          <p class="ngo-description ion-margin-vertical">
+            {{ ngoInFocus.description }}
+          </p>
           <ion-button
             [href]="ngoInFocus.knowMoreLink"
             target="_blank"
             color="home"
+            class="know-more-btn"
             >Know More</ion-button
           >
         </ion-col>
@@ -45,7 +40,7 @@
     </div>
 
     <ng-template #loading>
-      <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />
+      <app-wiof-spinner></app-wiof-spinner>
     </ng-template>
   </ion-card-content>
 </ion-card>

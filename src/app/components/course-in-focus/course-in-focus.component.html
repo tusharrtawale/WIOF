@@ -7,26 +7,37 @@
   <ion-card-content class="background ion-no-padding">
     <div *ngIf="courseInFocus; else loading">
       <ion-row>
-        <ion-col size="12">
+        <ion-col size="12" size-sm="4" size-md="12" size-lg="4">
           <img
             class="course-in-focus-image"
-            style="max-height: 300px; object-fit: contain; text-align: left"
             [src]="courseInFocus.image$ | async"
             alt="Course in Focus"
           />
         </ion-col>
-        <ion-col class="text-left" size="12" style="padding: 15px">
+        <ion-col
+          size="12"
+          size-sm="8"
+          size-md="12"
+          size-lg="8"
+          class="course-details"
+        >
           <h2>
-            <strong>{{ courseInFocus.courseName }}</strong>
+            <strong
+              ><a [href]="courseInFocus.link"></a
+              >{{ courseInFocus.name }}</strong
+            >
           </h2>
-          <p class="course-description ion-padding-vertical">
+          <p><span>Offered By</span>: {{ courseInFocus.offeredBy }}</p>
+          <p><span>Duration</span>: {{ courseInFocus.duration }}</p>
+          <p><span>Approx. Cost</span>: {{ courseInFocus.approxCost }}</p>
+        </ion-col>
+        <ion-col class="text-left" size="12" class="course-details-desc">
+          <p>Key Topics: {{ courseInFocus.keyTopics }}</p>
+          <p class="course-description">
             {{ courseInFocus.description }}
           </p>
-          <p class="ion-padding-top">
-            <ion-button
-              [href]="courseInFocus.courseLink"
-              target="_blank"
-              color="home"
+          <p>
+            <ion-button [href]="courseInFocus.link" target="_blank" color="home"
               >Know More</ion-button
             >
           </p>
@@ -35,7 +46,7 @@
     </div>
 
     <ng-template #loading>
-      <ion-spinner name="crescent" class="wiof-spinner"></ion-spinner><br />
+      <app-wiof-spinner></app-wiof-spinner>
     </ng-template>
   </ion-card-content>
 </ion-card>

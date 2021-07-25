@@ -31,13 +31,13 @@
         <ion-col size-xs="12" size-md="4"
           ><ion-item>
             <ion-label position="floating">{{pageContent.nameLabel}}</ion-label>
-            <ion-input formControlName="courseName"></ion-input>
+            <ion-input formControlName="name"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size-xs="12" size-md="4"
           ><ion-item>
             <ion-label position="floating">{{pageContent.linkLabel}}</ion-label>
-            <ion-input formControlName="courseLink"></ion-input>
+            <ion-input formControlName="link"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size-xs="12" size-md="4"
@@ -52,6 +52,38 @@
                 >{{ category }}</ion-select-option
               >
             </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-md="4"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.offeredByLabel}}</ion-label
+            >
+            <ion-input formControlName="offeredBy"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-md="4"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.durationLabel}}</ion-label
+            >
+            <ion-input formControlName="duration"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-md="4"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.approxCostLabel}}</ion-label
+            >
+            <ion-input formControlName="approxCost"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.keyTopicsLabel}}</ion-label
+            >
+            <ion-input formControlName="keyTopics"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size-xs="12"
@@ -69,7 +101,7 @@
               type="file"
               accept="image/*"
               (change)="onFileSelected($event)"
-              formControlName="courseImage"
+              formControlName="image"
             ></ion-input>
             <div><ion-img [src]="imageToDisplay"></ion-img></div>
           </ion-item>

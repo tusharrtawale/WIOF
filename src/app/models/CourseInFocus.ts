@@ -2,11 +2,15 @@ import { Observable } from 'rxjs';
 
 export class CourseInFocus {
   id?: string;
-  courseName: string;
+  name: string;
+  offeredBy: string;
+  duration: string;
+  approxCost: string;
+  keyTopics: string;
   description: string;
-  courseImage: string;
+  image: string;
   image$: Observable<string>;
-  courseLink: string;
+  link: string;
   creationDate?: Date;
   creationId?: string;
   updateDate?: Date;
@@ -19,20 +23,28 @@ export class CourseInFocus {
 
   constructor(
     id: string,
-    courseName: string,
-    courseLink: string,
+    name: string,
+    offeredBy: string,
+    duration: string,
+    approxCost: string,
+    keyTopics: string,
+    link: string,
     description: string,
     category: string,
-    courseImage: string,
+    image: string,
     status: string,
     submitDate: number
   ) {
     this.id = id;
-    this.courseName = courseName;
-    this.courseLink = courseLink;
+    this.name = name;
+    this.offeredBy = offeredBy;
+    this.duration = duration;
+    this.approxCost = approxCost;
+    this.keyTopics = keyTopics;
+    this.link = link;
     this.description = description;
     this.category = category;
-    this.courseImage = courseImage;
+    this.image = image;
     this.status = status;
     this.submitDate = submitDate;
   }

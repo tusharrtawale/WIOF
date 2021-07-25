@@ -32,7 +32,7 @@
         ><strong>Course Name</strong></ion-col
       >
       <ion-col size-md="3" class="ion-align-self-center"
-        ><strong>Description</strong></ion-col
+        ><strong>Key Topics</strong></ion-col
       >
       <ion-col size-md="1" class="ion-align-self-center"
         ><strong>Category</strong></ion-col
@@ -53,12 +53,12 @@
     >
       <ion-col size-md="2" class="ion-align-self-center"
         >{{ i + 1 }}.
-        <a [href]="courseInFocus.courseLink" target="_blank"
-          >{{ courseInFocus.courseName }}</a
+        <a [href]="courseInFocus.link" target="_blank"
+          >{{ courseInFocus.name }}</a
         ></ion-col
       >
       <ion-col size-md="3" class="ion-align-self-center"
-        >{{ courseInFocus.description }}</ion-col
+        >{{ courseInFocus.keyTopics }}</ion-col
       >
       <ion-col size-md="1" class="ion-align-self-center"
         >{{ courseInFocus.category | uppercase}}</ion-col
@@ -109,7 +109,7 @@
               ><ion-icon slot="icon-only" name="eye-outline"></ion-icon
             ></ion-button>
             <ion-button
-              (click)="deleteCourseInFocus(courseInFocus, i, courseInFocus.id)"
+              (click)="deleteCourseInFocus(courseInFocuses, i, courseInFocus.id)"
               ><ion-icon slot="icon-only" name="trash-outline"></ion-icon
             ></ion-button>
           </ion-buttons>

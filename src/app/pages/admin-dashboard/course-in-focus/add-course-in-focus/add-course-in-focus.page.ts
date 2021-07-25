@@ -34,6 +34,10 @@ export class AddCourseInFocusPage implements OnInit, OnDestroy {
     editCourseInFocusTitle: 'Edit Course In Focus',
     nameLabel: 'Course Name',
     linkLabel: 'Course Link',
+    offeredByLabel: 'Offered By',
+    durationLabel: 'Duration',
+    approxCostLabel: 'Approximate Cost',
+    keyTopicsLabel: 'Key Topics',
     imageLabel: 'Course Image',
     descriptionLabel: 'Description',
     categoryLabel: 'Category',
@@ -77,9 +81,13 @@ export class AddCourseInFocusPage implements OnInit, OnDestroy {
 
   private initForm() {
     return new FormGroup({
-      courseName: new FormControl('', Validators.required),
-      courseLink: new FormControl('', Validators.required),
-      courseImage: new FormControl('', [Validators.required]),
+      name: new FormControl('', Validators.required),
+      offeredBy: new FormControl('', Validators.required),
+      duration: new FormControl('', Validators.required),
+      approxCost: new FormControl('', Validators.required),
+      keyTopics: new FormControl('', Validators.required),
+      link: new FormControl('', Validators.required),
+      image: new FormControl('', [Validators.required]),
       description: new FormControl('', Validators.required),
       category: new FormControl('', Validators.required)
     });
@@ -87,15 +95,16 @@ export class AddCourseInFocusPage implements OnInit, OnDestroy {
 
   private initFormByCourseInFocus(courseInFocus: CourseInFocus) {
     return new FormGroup({
-      courseName: new FormControl(
-        courseInFocus.courseName,
+      name: new FormControl(courseInFocus.name, Validators.required),
+      offeredBy: new FormControl(courseInFocus.offeredBy, Validators.required),
+      duration: new FormControl(courseInFocus.duration, Validators.required),
+      approxCost: new FormControl(
+        courseInFocus.approxCost,
         Validators.required
       ),
-      courseLink: new FormControl(
-        courseInFocus.courseLink,
-        Validators.required
-      ),
-      courseImage: new FormControl(courseInFocus.courseImage, [
+      link: new FormControl(courseInFocus.link, Validators.required),
+      image: new FormControl(courseInFocus.image, [Validators.required]),
+      keyTopics: new FormControl(courseInFocus.keyTopics, [
         Validators.required
       ]),
       description: new FormControl(
@@ -132,7 +141,7 @@ export class AddCourseInFocusPage implements OnInit, OnDestroy {
             if (this.imageToSave !== undefined) {
               return this.courseInFocusService.saveCourseInFocusImage(
                 this.imageToSave,
-                this.courseInFocus.courseImage
+                this.courseInFocus.image
               );
             } else {
               return of(true);
@@ -183,12 +192,16 @@ export class AddCourseInFocusPage implements OnInit, OnDestroy {
   ) {
     return new CourseInFocus(
       isEditMode ? courseInFocus.id : null,
-      addCourseInFocusForm.value.courseName,
-      addCourseInFocusForm.value.courseLink,
+      addCourseInFocusForm.value.name,
+      addCourseInFocusForm.value.offeredBy,
+      addCourseInFocusForm.value.duration,
+      addCourseInFocusForm.value.approxCost,
+      addCourseInFocusForm.value.keyTopics,
+      addCourseInFocusForm.value.link,
       addCourseInFocusForm.value.description,
       addCourseInFocusForm.value.category,
-      isEditMode && courseInFocus.courseImage !== undefined
-        ? courseInFocus.courseImage
+      isEditMode && courseInFocus.image !== undefined
+        ? courseInFocus.image
         : this.appUtil.formatImageName('courseInFocus_', this.imageToSave),
       isEditMode ? courseInFocus.status : ITEM_STATUS.SUBMITTED,
       new Date().getTime()

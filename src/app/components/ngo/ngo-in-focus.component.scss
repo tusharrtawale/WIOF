@@ -15,16 +15,18 @@
   }
 
   .ngo-in-focus-image {
-    padding: 10px;
     max-height: 300px;
+    width: 100%;
   }
-}
 
-.ngo-description {
-  display: -webkit-box;
-  height: 60px;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  .ngo-description {
+    display: -webkit-box;
+    height: 110px;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 10px 0;
+    text-align: left;
+  }
 }

@@ -8,6 +8,16 @@
 
 .wiof-ngo-in-focus-container {
   height: calc(100% - 20px);
+
+  .logo {
+    max-height: 60px;
+    object-fit: contain;
+  }
+
+  .ngo-in-focus-image {
+    padding: 10px;
+    max-height: 300px;
+  }
 }
 
 .ngo-description {

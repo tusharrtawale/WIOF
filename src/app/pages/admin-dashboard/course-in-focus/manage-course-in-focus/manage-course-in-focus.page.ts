@@ -68,7 +68,7 @@ export class ManageCourseInFocusPage implements OnInit, OnDestroy {
       UI_MESSAGES.CONFIRM_HEADER,
       UI_MESSAGES.CONFIRM_DELETE_ITEM_DESC.replace(
         UI_MESSAGES.PLACEHOLDER,
-        ITEMS.IN_FOCUS
+        ITEMS.COURSE_IN_FOCUS
       ),
       [
         {
@@ -97,7 +97,7 @@ export class ManageCourseInFocusPage implements OnInit, OnDestroy {
     const loader = await this.uiUtil.showLoader(
       UI_MESSAGES.DELETE_IN_PROGRESS.replace(
         UI_MESSAGES.PLACEHOLDER,
-        ITEMS.IN_FOCUS
+        ITEMS.COURSE_IN_FOCUS
       )
     );
     this.courseInFocusService
@@ -111,7 +111,7 @@ export class ManageCourseInFocusPage implements OnInit, OnDestroy {
             UI_MESSAGES.SUCCESS_HEADER,
             UI_MESSAGES.SUCCESS_DELETE_ITEM_DESC.replace(
               UI_MESSAGES.PLACEHOLDER,
-              ITEMS.IN_FOCUS
+              ITEMS.COURSE_IN_FOCUS
             ),
             [UI_MESSAGES.FAILURE_CTA_TEXT]
           );
@@ -124,7 +124,7 @@ export class ManageCourseInFocusPage implements OnInit, OnDestroy {
             UI_MESSAGES.FAILURE_HEADER,
             UI_MESSAGES.FAILURE_DELETE_ITEM_DESC.replace(
               UI_MESSAGES.PLACEHOLDER,
-              ITEMS.IN_FOCUS
+              ITEMS.COURSE_IN_FOCUS
             ),
             [UI_MESSAGES.FAILURE_CTA_TEXT]
           );
@@ -141,7 +141,7 @@ export class ManageCourseInFocusPage implements OnInit, OnDestroy {
           UI_MESSAGES.SUCCESS_HEADER,
           UI_MESSAGES.SUCCESS_PUBLISH_ITEM_DESC.replace(
             UI_MESSAGES.PLACEHOLDER,
-            ITEMS.IN_FOCUS
+            ITEMS.COURSE_IN_FOCUS
           ),
           [UI_MESSAGES.FAILURE_CTA_TEXT]
         );

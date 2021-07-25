@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { NgoComponent } from './ngo.component';
+import { NgoInFocusComponent } from './ngo-in-focus.component';
 
-describe('NgoComponent', () => {
-  let component: NgoComponent;
-  let fixture: ComponentFixture<NgoComponent>;
+describe('NgoInFocusComponent', () => {
+  let component: NgoInFocusComponent;
+  let fixture: ComponentFixture<NgoInFocusComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [NgoComponent],
+      declarations: [NgoInFocusComponent],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(NgoComponent);
+    fixture = TestBed.createComponent(NgoInFocusComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

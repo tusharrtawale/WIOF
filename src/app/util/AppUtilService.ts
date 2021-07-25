@@ -12,7 +12,7 @@ export class AppUtilService {
     });
 
     if (pollsArray.length > 0) {
-      let totalVotes = pollsArray.length;
+      const totalVotes = pollsArray.length;
       pollsArray.forEach((x, index) => {
         optionData[x.option].votes += 1;
       });
@@ -23,12 +23,19 @@ export class AppUtilService {
     }
   }
 
-  onFileSelected(event, component) {
+  onFileSelected(
+    event,
+    component,
+    imageProps?: { imageToSave: string; imageToDisplay: string }
+  ) {
     const fileReader = new FileReader();
     fileReader.readAsDataURL(event.target.files[0]);
-    component.imageToSave = event.target.files[0];
+    component[imageProps?.imageToSave ?? 'imageToSave'] = event.target.files[0];
+
     fileReader.onload = () => {
-      component.imageToDisplay = fileReader.result as string;
+      component[
+        imageProps?.imageToDisplay ?? 'imageToDisplay'
+      ] = fileReader.result as string;
     };
   }
 

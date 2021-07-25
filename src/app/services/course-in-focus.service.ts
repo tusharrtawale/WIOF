@@ -8,6 +8,7 @@ import { map, concatMap } from 'rxjs/operators';
 import { from, Observable } from 'rxjs';
 import { FIREBASE_COLLECTION, ITEM_STATUS } from '../app.constants';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,8 @@ export class CourseInFocusService {
 
   constructor(
     private storage: AngularFireStorage,
-    private database: AngularFirestore
+    private database: AngularFirestore,
+    private sanitizer: DomSanitizer
   ) {
     this.courseInFocusCollection = this.database.collection(
       FIREBASE_COLLECTION.COURSE_IN_FOCUS
@@ -62,8 +64,8 @@ export class CourseInFocusService {
   getImage(image: string): Observable<string> {
     const ref = this.storage.ref(
       `/${FIREBASE_COLLECTION.COURSE_IN_FOCUS_IMAGE_STORAGE}/${image}`
-    ); //creates reference to storage item using the link in parameter
-    return ref.getDownloadURL(); //pulls the download URL which is an observable , handle accordingly
+    ); // creates reference to storage item using the link in parameter
+    return ref.getDownloadURL(); // pulls the download URL which is an observable , handle accordingly
   }
 
   getActiveCourseInFocus(): Observable<CourseInFocus> | null {

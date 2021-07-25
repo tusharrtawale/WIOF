@@ -5,7 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { AppCommonModule } from 'src/app/app-common.module';
 import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
-import { NgoComponent } from '../../components/ngo/ngo.component';
+import { NgoInFocusComponent } from '../../components/ngo/ngo-in-focus.component';
 import { CourseInFocusComponent } from '../../components/course-in-focus/course-in-focus.component';
 
 @NgModule({
@@ -16,6 +16,6 @@ import { CourseInFocusComponent } from '../../components/course-in-focus/course-
     HomePageRoutingModule,
     AppCommonModule
   ],
-  declarations: [HomePage, NgoComponent, CourseInFocusComponent]
+  declarations: [HomePage, NgoInFocusComponent, CourseInFocusComponent]
 })
 export class HomePageModule {}

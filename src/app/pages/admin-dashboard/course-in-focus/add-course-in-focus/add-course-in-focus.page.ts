@@ -121,7 +121,7 @@ export class AddCourseInFocusPage implements OnInit, OnDestroy {
       this.loader = await this.uiUtil.showLoader(
         UI_MESSAGES.SAVE_IN_PROGRESS.replace(
           UI_MESSAGES.PLACEHOLDER,
-          ITEMS.IN_FOCUS
+          ITEMS.COURSE_IN_FOCUS
         )
       );
       this.courseInFocusService
@@ -155,7 +155,7 @@ export class AddCourseInFocusPage implements OnInit, OnDestroy {
               UI_MESSAGES.SUCCESS_HEADER,
               UI_MESSAGES.SUCCESS_ADD_ITEM_DESC.replace(
                 UI_MESSAGES.PLACEHOLDER,
-                ITEMS.IN_FOCUS
+                ITEMS.COURSE_IN_FOCUS
               ),
               [UI_MESSAGES.SUCCESS_CTA_TEXT]
             );
@@ -167,7 +167,7 @@ export class AddCourseInFocusPage implements OnInit, OnDestroy {
               UI_MESSAGES.FAILURE_HEADER,
               UI_MESSAGES.FAILURE_ADD_ITEM_DESC.replace(
                 UI_MESSAGES.PLACEHOLDER,
-                ITEMS.IN_FOCUS
+                ITEMS.COURSE_IN_FOCUS
               ),
               [UI_MESSAGES.FAILURE_CTA_TEXT]
             );

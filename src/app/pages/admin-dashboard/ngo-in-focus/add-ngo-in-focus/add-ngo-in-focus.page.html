@@ -37,7 +37,7 @@
         <ion-col size-xs="12" size-md="8"
           ><ion-item>
             <ion-label position="floating">{{pageContent.linkLabel}}</ion-label>
-            <ion-input formControlName="ngoLink"></ion-input>
+            <ion-input formControlName="knowMoreLink"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size-xs="12"
@@ -48,7 +48,7 @@
             <ion-textarea formControlName="description"></ion-textarea>
           </ion-item>
         </ion-col>
-        <ion-col size-xs="12" size-md="4"
+        <ion-col size-xs="12"
           ><ion-item>
             <ion-label position="floating"
               >{{pageContent.categoryLabel}}</ion-label
@@ -60,6 +60,34 @@
                 >{{ category }}</ion-select-option
               >
             </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12"
+          ><ion-item>
+            <ion-label position="stacked"
+              >{{pageContent.ngoLogoLabel}}</ion-label
+            >
+            <ion-input
+              type="file"
+              accept="image/*"
+              (change)="onFileSelected($event, true)"
+              formControlName="ngoLogo"
+            ></ion-input>
+            <div><ion-img [src]="logoImageToDisplay"></ion-img></div>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12"
+          ><ion-item>
+            <ion-label position="stacked"
+              >{{pageContent.ngoImageLabel}}</ion-label
+            >
+            <ion-input
+              type="file"
+              accept="image/*"
+              (change)="onFileSelected($event)"
+              formControlName="ngoImage"
+            ></ion-input>
+            <div><ion-img [src]="imageToDisplay"></ion-img></div>
           </ion-item>
         </ion-col>
         <ion-col size-xs="12" size-md="4"

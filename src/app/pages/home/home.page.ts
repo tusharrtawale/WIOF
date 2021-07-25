@@ -22,14 +22,6 @@ export class HomePage implements OnInit {
   ngoInFocus$: Observable<NgoInFocus>;
   courseInFocus$: Observable<CourseInFocus>;
 
-  inputList = [
-    { name: 'Amit', age: 25, city: 'Bengaluru' },
-    { name: 'Pankaj', age: 30, city: 'Bengaluru' },
-    { name: 'Nitin', age: 28, city: 'Mumbai' },
-    { name: 'Ganesh', age: 23, city: 'Mumbai' },
-    { name: 'Rajesh', age: 32, city: 'Chennai' }
-  ];
-
   constructor(
     private coffeeConvService: CoffeeConversationService,
     private ngoInFocusService: NgoInFocusService,
@@ -38,12 +30,12 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     // inauguration code
-    const ribbonCut = localStorage.getItem('ribbonCut');
-    this.ribbonCut = ribbonCut === 'true' ? true : false;
-    const curtainEl = document.getElementById('curtain-id');
-    if (this.ribbonCut && curtainEl) {
-      curtainEl.style.display = 'none';
-    }
+    // const ribbonCut = localStorage.getItem('ribbonCut');
+    // this.ribbonCut = ribbonCut === 'true' ? true : false;
+    // const curtainEl = document.getElementById('curtain-id');
+    // if (this.ribbonCut && curtainEl) {
+    //   curtainEl.style.display = 'none';
+    // }
 
     const privacyConsentAccepted = localStorage.getItem(
       'privacyConsentAccepted'
@@ -52,21 +44,6 @@ export class HomePage implements OnInit {
     this.coffeeConversations$ = this.coffeeConvService.getCoffeeConversations();
     this.ngoInFocus$ = this.ngoInFocusService.getActiveNgoInFocus();
     this.courseInFocus$ = this.courseInFocusService.getActiveCourseInFocus();
-
-    console.log(this.convertList());
-  }
-
-  convertList() {
-    let outputList = new Object();
-    this.inputList.forEach((element) => {
-      if (outputList[element['city']]) {
-        outputList[element['city']].push(element);
-      } else {
-        outputList[element['city']] = [];
-        outputList[element['city']].push(element);
-      }
-    });
-    return outputList;
   }
 
   onAccept() {
@@ -75,19 +52,19 @@ export class HomePage implements OnInit {
   }
 
   // inauguration code
-  onOpening() {
-    this.buttonClicked = true;
-    setInterval(() => {
-      this.counter--;
-    }, 1000);
+  // onOpening() {
+  //   this.buttonClicked = true;
+  //   setInterval(() => {
+  //     this.counter--;
+  //   }, 1000);
 
-    setTimeout(() => {
-      this.ribbonCut = true;
-      localStorage.setItem('ribbonCut', 'true');
-      setTimeout(() => {
-        const curtainEl = document.getElementById('curtain-id');
-        curtainEl.style.display = 'none';
-      }, 3000);
-    }, 5000);
-  }
+  //   setTimeout(() => {
+  //     this.ribbonCut = true;
+  //     localStorage.setItem('ribbonCut', 'true');
+  //     setTimeout(() => {
+  //       const curtainEl = document.getElementById('curtain-id');
+  //       curtainEl.style.display = 'none';
+  //     }, 3000);
+  //   }, 5000);
+  // }
 }

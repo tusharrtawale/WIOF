@@ -8,6 +8,7 @@ import { map, concatMap } from 'rxjs/operators';
 import { from, Observable } from 'rxjs';
 import { FIREBASE_COLLECTION, ITEM_STATUS } from '../app.constants';
 import { DomSanitizer } from '@angular/platform-browser';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,7 @@ export class NgoInFocusService {
   viewEditModeNgoInFocus: NgoInFocus;
 
   constructor(
+    private storage: AngularFireStorage,
     private database: AngularFirestore,
     private sanitizer: DomSanitizer
   ) {
@@ -52,10 +54,19 @@ export class NgoInFocusService {
         querySnapshot.docs.map((doc) => {
           const data = doc.data() as NgoInFocus;
           data.id = doc.id;
+          data.image$ = this.getImage(data.ngoImage);
+          data.logoImage$ = this.getImage(data.ngoLogo);
           return data;
         })
       )
     );
+  }
+
+  getImage(image: string): Observable<string> {
+    const ref = this.storage.ref(
+      `/${FIREBASE_COLLECTION.NGO_IN_FOCUS_IMAGE_STORAGE}/${image}`
+    ); // creates reference to storage item using the link in parameter
+    return ref.getDownloadURL(); // pulls the download URL which is an observable , handle accordingly
   }
 
   getActiveNgoInFocus(): Observable<NgoInFocus> | null {
@@ -68,6 +79,8 @@ export class NgoInFocusService {
         if (querySnapshot.docs.length > 0) {
           const data = querySnapshot.docs[0].data() as NgoInFocus;
           data.id = querySnapshot.docs[0].id;
+          data.image$ = this.getImage(data.ngoImage);
+          data.logoImage$ = this.getImage(data.ngoLogo);
           return data;
         }
         return null;
@@ -106,6 +119,20 @@ export class NgoInFocusService {
           })
         )
       );
+  }
+
+  saveNgoInFocusImage(imageData: any, imageName: string) {
+    const imageUploadTask = this.storage.upload(
+      `/${FIREBASE_COLLECTION.NGO_IN_FOCUS_IMAGE_STORAGE}/${imageName}`,
+      imageData
+    );
+    return from(imageUploadTask);
+  }
+
+  deleteNgoInFocusImage(imageName: string) {
+    return this.storage
+      .ref(`/${FIREBASE_COLLECTION.NGO_IN_FOCUS_IMAGE_STORAGE}/${imageName}`)
+      .delete();
   }
 
   deleteNgoInFocus(ngoInFocusId: string) {

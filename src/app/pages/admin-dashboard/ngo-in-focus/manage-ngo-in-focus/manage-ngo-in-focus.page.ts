@@ -4,7 +4,7 @@ import { NgoInFocus } from 'src/app/models/NgoInFocus';
 import { NgoInFocusService } from 'src/app/services/ngo-in-focus.service';
 import { UiUtilService } from 'src/app/util/UiUtilService';
 import { Router, ActivatedRoute } from '@angular/router';
-import { takeUntil, catchError, map } from 'rxjs/operators';
+import { takeUntil, catchError, map, switchMap } from 'rxjs/operators';
 import { UI_MESSAGES, ITEMS } from 'src/app/app.constants';
 
 @Component({
@@ -66,7 +66,7 @@ export class ManageNgoInFocusPage implements OnInit, OnDestroy {
       UI_MESSAGES.CONFIRM_HEADER,
       UI_MESSAGES.CONFIRM_DELETE_ITEM_DESC.replace(
         UI_MESSAGES.PLACEHOLDER,
-        ITEMS.IN_FOCUS
+        ITEMS.NGO_IN_FOCUS
       ),
       [
         {
@@ -91,12 +91,22 @@ export class ManageNgoInFocusPage implements OnInit, OnDestroy {
     const loader = await this.uiUtil.showLoader(
       UI_MESSAGES.DELETE_IN_PROGRESS.replace(
         UI_MESSAGES.PLACEHOLDER,
-        ITEMS.IN_FOCUS
+        ITEMS.NGO_IN_FOCUS
       )
     );
     this.ngoInFocusService
-      .deleteNgoInFocus(ngoInFocus.id)
-      .pipe(takeUntil(this.destroy$))
+      .deleteNgoInFocusImage(ngoInFocus.ngoImage)
+      .pipe(
+        takeUntil(this.destroy$),
+        switchMap(() => {
+          return this.ngoInFocusService.deleteNgoInFocusImage(
+            ngoInFocus.ngoLogo
+          );
+        }),
+        switchMap(() => {
+          return this.ngoInFocusService.deleteNgoInFocus(ngoInFocus.id);
+        })
+      )
       .subscribe(
         (response) => {
           console.log(response);
@@ -105,7 +115,7 @@ export class ManageNgoInFocusPage implements OnInit, OnDestroy {
             UI_MESSAGES.SUCCESS_HEADER,
             UI_MESSAGES.SUCCESS_DELETE_ITEM_DESC.replace(
               UI_MESSAGES.PLACEHOLDER,
-              ITEMS.IN_FOCUS
+              ITEMS.NGO_IN_FOCUS
             ),
             [UI_MESSAGES.FAILURE_CTA_TEXT]
           );
@@ -118,7 +128,7 @@ export class ManageNgoInFocusPage implements OnInit, OnDestroy {
             UI_MESSAGES.FAILURE_HEADER,
             UI_MESSAGES.FAILURE_DELETE_ITEM_DESC.replace(
               UI_MESSAGES.PLACEHOLDER,
-              ITEMS.IN_FOCUS
+              ITEMS.NGO_IN_FOCUS
             ),
             [UI_MESSAGES.FAILURE_CTA_TEXT]
           );
@@ -133,7 +143,7 @@ export class ManageNgoInFocusPage implements OnInit, OnDestroy {
         UI_MESSAGES.SUCCESS_HEADER,
         UI_MESSAGES.SUCCESS_PUBLISH_ITEM_DESC.replace(
           UI_MESSAGES.PLACEHOLDER,
-          ITEMS.IN_FOCUS
+          ITEMS.NGO_IN_FOCUS
         ),
         [UI_MESSAGES.FAILURE_CTA_TEXT]
       );

@@ -162,6 +162,7 @@ export const FIREBASE_COLLECTION = {
   ENVCAL_IMAGE_STORAGE: 'environment-calendar',
   NEWS_IMAGE_STORAGE: 'news-images',
   COURSE_IN_FOCUS_IMAGE_STORAGE: 'course-in-focus-images',
+  NGO_IN_FOCUS_IMAGE_STORAGE: 'ngo-in-focus-images',
   POLLS: 'Polls',
   POLL: 'Poll',
   ENVCAL: 'Envcal',
@@ -243,7 +244,9 @@ export const ITEMS = {
   OCCASION: 'Occasion',
   COFFEE_CONVERSATION: 'Coffee conversastion',
   IN_FOCUS: 'In Focus',
-  NEWS: 'News'
+  NEWS: 'News',
+  COURSE_IN_FOCUS: 'Course in focus',
+  NGO_IN_FOCUS: 'NGO in focus'
 };
 
 export const UI_MESSAGES = {

@@ -1,9 +1,13 @@
+import { Observable } from 'rxjs';
+
 export class NgoInFocus {
   id?: string;
   ngoName: string;
   description: string;
   ngoImage: string;
+  image$: Observable<string>;
   ngoLogo: string;
+  logoImage$: Observable<string>;
   creationDate?: Date;
   creationId?: string;
   updateDate?: Date;
@@ -18,6 +22,8 @@ export class NgoInFocus {
   constructor(
     id: string,
     ngoName: string,
+    ngoLogo: string,
+    ngoImage: string,
     knowMoreLink: string,
     description: string,
     category: string,
@@ -26,6 +32,8 @@ export class NgoInFocus {
   ) {
     this.id = id;
     this.ngoName = ngoName;
+    this.ngoLogo = ngoLogo;
+    this.ngoImage = ngoImage;
     this.knowMoreLink = knowMoreLink;
     this.description = description;
     this.category = category;

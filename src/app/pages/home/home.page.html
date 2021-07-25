@@ -77,11 +77,13 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <!-- <ion-col size-xs="12" size-md="6" size-lg="8">
-        <app-ngo [ngoInFocus]="ngoInFocus$ | async"></app-ngo>
-      </ion-col> -->
-      <ion-col size-xs="12" size-md="12" size-lg="12">
-        <app-course-in-focus [courseInFocus]="courseInFocus$ | async"></app-course-in-focus>
+      <ion-col size-xs="12" size-md="6" size-lg="8">
+        <app-ngo-in-focus [ngoInFocus]="ngoInFocus$ | async"></app-ngo-in-focus>
+      </ion-col>
+      <ion-col size-xs="12" size-md="6" size-lg="4">
+        <app-course-in-focus
+          [courseInFocus]="courseInFocus$ | async"
+        ></app-course-in-focus>
       </ion-col>
       <ion-col size-lg="8" size-xs="12">
         <app-env-calender></app-env-calender>

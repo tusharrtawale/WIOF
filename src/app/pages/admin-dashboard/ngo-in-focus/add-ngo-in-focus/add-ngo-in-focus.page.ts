@@ -105,7 +105,7 @@ export class AddNgoInFocusPage implements OnInit, OnDestroy {
     });
   }
 
-  onFileSelected(event, isLogoImage) {
+  onFileSelected(event, isLogoImage?: boolean) {
     if (isLogoImage) {
       this.appUtil.onFileSelected(event, this, {
         imageToSave: 'logoImageToSave',

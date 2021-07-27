@@ -11,7 +11,7 @@
           <ion-card class="news-card">
             <ion-card-content class="ion-text-start card-content">
               <ion-row>
-                <ion-col class="media-container" size-xs="12" size-lg="8">
+                <ion-col class="media-container" size-xs="12" size-xl="8">
                   <img
                     class="mediaPlayer"
                     [src]="news.imageLink | async"
@@ -25,25 +25,20 @@
                     *ngIf="news.mediaType == 'video'"
                   ></iframe>
                 </ion-col>
-                <ion-col class="newsContent" size-xs="12" size-lg="4">
-                  <h2>
-                    <strong>{{ news.headline }}</strong>
-                  </h2>
-                  <p [innerHTML]="news.content"></p>
-                  <p *ngIf="news.newsSource">
-                    <a
+                <ion-col class="news-content" size-xs="12" size-xl="4">
+                  <article>
+                    <h2>
+                      <strong>{{ news.headline }}</strong>
+                    </h2>
+                    <p class="content" [innerHTML]="news.content"></p>
+                    <ion-button
+                      *ngIf="news.newsSource"
                       [href]="news.newsSource"
-                      *ngIf="news.mediaType === 'image'"
-                      target="blank"
-                      >Read More</a
+                      target="_blank"
+                      color="home"
+                      >Know More</ion-button
                     >
-                    <a
-                      [href]="news.newsSource"
-                      *ngIf="news.mediaType === 'video'"
-                      target="blank"
-                      >Watch Now</a
-                    >
-                  </p>
+                  </article>
                 </ion-col>
               </ion-row>
             </ion-card-content>

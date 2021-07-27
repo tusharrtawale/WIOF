@@ -27,6 +27,14 @@
           .media-container {
             min-height: 300px;
           }
+
+          .news-content {
+            padding: 15px;
+          
+            .content {
+              padding: 10px 0;
+            }
+          }
         }
       }
     }
@@ -53,10 +61,6 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-}
-
-.newsContent {
-  padding: 15px;
 }
 
 .navigation-arrow-custom-styling {

@@ -44,10 +44,10 @@ export class HomePage implements OnInit {
       'privacyConsentAccepted'
     );
     this.viewConsentPopup = privacyConsentAccepted === 'true' ? false : true;
-    this.coffeeConversations$ = this.coffeeConvService.getCoffeeConversations();
-    this.ngoInFocus$ = this.ngoInFocusService.getActiveNgoInFocus();
-    this.courseInFocus$ = this.courseInFocusService.getActiveCourseInFocus();
     this.newsList$ = this.newsService.getAllNews();
+    this.coffeeConversations$ = this.coffeeConvService.getCoffeeConversations();
+    // this.ngoInFocus$ = this.ngoInFocusService.getActiveNgoInFocus();
+    // this.courseInFocus$ = this.courseInFocusService.getActiveCourseInFocus();
   }
 
   onAccept() {

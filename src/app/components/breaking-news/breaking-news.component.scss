@@ -30,12 +30,57 @@
 
           .news-content {
             padding: 15px;
-          
+
             .content {
               padding: 10px 0;
             }
           }
         }
+      }
+    }
+  }
+
+  .newsHeadlineScroll {
+    position: relative;
+    height: 55px;
+    background-color: #fbb0ac;
+    color: #2d2d2d;
+    padding: 15px;
+    font-weight: 500;
+    white-space: nowrap;
+
+    div {
+      display: inline-block;
+      width: max-content;
+      padding-left: 100%;
+      /* show the marquee just outside the paragraph */
+      will-change: transform;
+      animation: marquee 15s linear infinite;
+    }
+
+    div:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(-100%, 0);
+      }
+    }
+
+    /* Respect user preferences about animations */
+    @media (prefers-reduced-motion: reduce) {
+      div {
+        animation-iteration-count: 1;
+        animation-duration: 0.01;
+        /* instead of animation: none, so an animationend event is 
+         * still available, if previously attached.
+         */
+        width: auto;
+        padding-left: 0;
       }
     }
   }
@@ -72,13 +117,6 @@
   height: 100%;
   border: none;
   object-fit: cover;
-}
-
-.newsHeadlineScroll {
-  background-color: $home-color;
-  color: $home-text-color;
-  padding: 15px;
-  font-weight: bold;
 }
 
 .wiof-slider-header {

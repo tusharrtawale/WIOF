@@ -45,13 +45,13 @@
           </ion-card>
         </ion-slide>
       </ion-slides>
-      <marquee class="newsHeadlineScroll" direction="left" loop="infinite">
-        <p>
+      <div class="newsHeadlineScroll">
+        <div [ngStyle]="{ 'animation-duration': newsList.length * 10 + 's' }">
           <span *ngFor="let news of newsList">
-            <span>&#x25cf; </span>{{ news.headline }}
-          </span>
-        </p>
-      </marquee>
+            &#x25cf; {{ news.headline }}</span
+          >
+        </div>
+      </div>
       <div
         *ngIf="newsList.length > 1"
         class="swiper-button-prev navigation-arrow-custom-styling"

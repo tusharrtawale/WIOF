@@ -1,4 +1,4 @@
-<ion-card class="wiof-course-in-focus-container">
+<ion-card class="wiof-course-in-focus-container" *ngIf="courseInFocus">
   <ion-card-header class="ion-align-center wiof-slider-header">
     <ion-row>
       <ion-col class="title-text" size="12">Course in Focus</ion-col>
@@ -6,21 +6,8 @@
   </ion-card-header>
   <ion-card-content class="background ion-no-padding">
     <div *ngIf="courseInFocus; else loading">
-      <ion-row>
-        <ion-col size="12" size-sm="4" size-md="12" size-lg="4">
-          <img
-            class="course-in-focus-image"
-            [src]="courseInFocus.image$ | async"
-            alt="Course in Focus"
-          />
-        </ion-col>
-        <ion-col
-          size="12"
-          size-sm="8"
-          size-md="12"
-          size-lg="8"
-          class="course-details"
-        >
+      <ion-row class="ion-padding course-details">
+        <ion-col size="9">
           <h2>
             <strong
               ><a [href]="courseInFocus.link"></a
@@ -31,9 +18,16 @@
           <p><span>Duration</span>: {{ courseInFocus.duration }}</p>
           <p><span>Approx. Cost</span>: {{ courseInFocus.approxCost }}</p>
         </ion-col>
-        <ion-col class="text-left" size="12" class="course-details-desc">
-          <p>Key Topics: {{ courseInFocus.keyTopics }}</p>
-          <p class="course-description">
+        <ion-col size="3">
+          <img
+            class="course-in-focus-image"
+            [src]="courseInFocus.image$ | async"
+            alt="Course in Focus"
+          />
+        </ion-col>
+        <ion-col size="12">
+          <p><span>Key Topics</span>: {{ courseInFocus.keyTopics }}</p>
+          <p class="ion-margin-top course-description">
             {{ courseInFocus.description }}
           </p>
           <p>

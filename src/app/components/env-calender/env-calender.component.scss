@@ -115,8 +115,10 @@
 }
 
 .weekday {
-  color: $home-text-color;
-  text-align: center;
+  ion-col {
+    color: $home-text-color;
+    text-align: center;
+  }
 }
 
 .title-text {

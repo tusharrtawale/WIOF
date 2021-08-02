@@ -18,33 +18,23 @@
   overflow: hidden;
   text-overflow: ellipsis;
   padding: 0;
-  margin-bottom: 5px;
+  margin: 5px 0px;
 }
 
 .course-in-focus-image {
   width: 100%;
   object-fit: contain;
   text-align: left;
-  padding: 0;
   max-height: 200px;
-
-  @media screen and (min-width: 575px) and (max-width: 767px) {
-    padding: 15px 0 0 10px;
-  }
-
-  @media screen and (min-width: 992px) {
-    padding: 15px 0 0 10px;
-  }
+  box-shadow: 2px 2px 5px;
 }
 
 .course-details {
-  padding: 10px 15px 0 15px;
+  h2 {
+    margin-bottom: 5px;
+  }
 
   p span {
-    text-decoration: underline;
+    font-weight: 500;
   }
-}
-
-.course-details-desc {
-  padding: 0 15px 15px 15px;
 }

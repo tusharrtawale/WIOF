@@ -15,7 +15,7 @@
                   <img
                     class="mediaPlayer"
                     [src]="news.imageLink | async"
-                    [alt]="'Image for news ' + news.headline"
+                    alt=""
                     *ngIf="news.mediaType == 'image'"
                   />
                   <iframe

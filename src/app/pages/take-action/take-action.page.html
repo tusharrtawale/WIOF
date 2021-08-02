@@ -16,13 +16,13 @@
           *ngIf="!isSelectedTab(action.tab.title)"
           [src]="action.tab.image"
           class="tab-image"
-          [alt]="action.tab.title + ' image'"
+          alt=""
         />
         <img
           *ngIf="isSelectedTab(action.tab.title)"
           [src]="action.tab.selectedImage"
           class="tab-image"
-          [alt]="action.tab.title + ' image'"
+          alt=""
         />
         <span class="tab-label">{{ action.tab.title }}</span>
       </ng-template>

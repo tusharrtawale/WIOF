@@ -15,10 +15,7 @@
             </button>
           </ion-card-header>
           <ion-card-content class="ion-text-start card-content">
-            <img
-              [src]="occasn.image | async"
-              [alt]="'Image for occasion ' + occasn.name"
-            />
+            <img [src]="occasn.image | async" alt="" />
             <div>
               <p [innerHTML]="occasn.desc"></p>
               <a *ngIf="occasn.link" target="_blank" [href]="occasn.link"

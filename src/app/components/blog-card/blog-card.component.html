@@ -1,6 +1,6 @@
 <ion-card class="blog-card">
   <ion-card-content class="ion-text-start card-content">
-    <img [src]="blog.image$ | async" [alt]="'Image for blog ' + blog.title" />
+    <img [src]="blog.image$ | async" alt="" />
     <h6 class="ion-padding">
       <strong class="blog-card-title"
         ><a [routerLink]="['/element', element, 'blog', blog.id]">{{

@@ -91,27 +91,18 @@ export const VIDEO_SLIDER_OPTIONS = {
 export const BREAKING_NEWS_SLIDER_OPTIONS = {
   slidesPerView: 1,
   spaceBetween: 1,
-  freeMode: true,
-  coverflowEffect: {
-    rotate: 50,
-    stretch: 0,
-    depth: 100,
-    modifier: 1,
-    slideShadows: true
+  freeMode: false,
+  loop: true,
+  autoplay: {
+    delay: 5000,
+    pauseOnMouseEnter: true
   }
 };
 
 export const COFFEE_CONV_SLIDER_OPTIONS = {
   slidesPerView: 1,
   spaceBetween: 1,
-  freeMode: true,
-  coverflowEffect: {
-    rotate: 50,
-    stretch: 0,
-    depth: 100,
-    modifier: 1,
-    slideShadows: true
-  }
+  freeMode: false
 };
 
 export const BLOG_SLIDER_OPTIONS = {

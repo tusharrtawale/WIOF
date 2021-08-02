@@ -92,7 +92,6 @@ export const BREAKING_NEWS_SLIDER_OPTIONS = {
   slidesPerView: 1,
   spaceBetween: 1,
   freeMode: false,
-  loop: true,
   autoplay: {
     delay: 5000,
     pauseOnMouseEnter: true

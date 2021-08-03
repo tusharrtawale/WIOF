@@ -31,12 +31,7 @@ export class ManageNewsPage implements OnInit, OnDestroy {
     this.newsList$ = this.newsService.getAllNews().pipe(
       takeUntil(this.destroy$),
       map((newsList) => {
-        return newsList
-          .map((news) => {
-            news.date = new Date().getTime();
-            return news;
-          })
-          .sort((a, b) => b.date - a.date);
+        return newsList.sort((a, b) => b.date - a.date);
       }),
       catchError((err) => {
         return throwError(err);

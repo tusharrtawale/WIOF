@@ -3,10 +3,13 @@
     <img [src]="blog.image$ | async" alt="" />
     <h3 class="ion-padding">
       <strong class="blog-card-title"
-        ><a [routerLink]="['/element', element, 'blog', blog.id]">{{
-          blog.title
-        }}</a></strong
+        ><a
+          class="link-title"
+          [routerLink]="['/element', element, 'blog', blog.id]"
+          >{{ blog.title }}</a
+        ></strong
       >
+      <em [attr.aria-label]="'author' + blog.author"> - {{ blog.author }}</em>
     </h3>
     <p class="blog-card-content ion-padding-horizontal">
       {{ blog.shortDescription }}

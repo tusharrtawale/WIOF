@@ -43,6 +43,9 @@
                     blog.title
                   }}</a></strong
                 >
+                <em [attr.aria-label]="'author' + blog.author">
+                  - {{ blog.author }}</em
+                >
               </h3>
               <p
                 class="blog-card-content ion-padding-horizontal"

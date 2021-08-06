@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
-import { VIDEO_PLAYER_TITLES, VIDEO_PLAYER_VIDEOS } from '../../app.constants';
+import { Component, OnInit, Input } from '@angular/core';
+import { VIDEO_PLAYER_TITLES, VIDEO_PLAYER_VIDEOS, YOUTUBE_EMBED_VIDEO_LINK } from '../../app.constants';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { AppUtilService } from 'src/app/util/AppUtilService';
 
@@ -26,7 +26,7 @@ export class VideoWidgetComponent implements OnInit {
     this.setPlayerTitle();
     this.setVideoLink();
     this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(
-      `https://www.youtube.com/embed/${this.videoLink}?enablejsapi=1&version=3&playerapiid=ytplayer?controls=1`
+      YOUTUBE_EMBED_VIDEO_LINK.replace('VIDEO_ID', this.videoLink)
     );
   }
 

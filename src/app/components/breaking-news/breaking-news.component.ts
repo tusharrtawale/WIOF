@@ -5,7 +5,10 @@ import {
   AfterViewInit,
   OnChanges
 } from '@angular/core';
-import { BREAKING_NEWS_SLIDER_OPTIONS } from 'src/app/app.constants';
+import {
+  BREAKING_NEWS_SLIDER_OPTIONS,
+  YOUTUBE_EMBED_VIDEO_LINK
+} from 'src/app/app.constants';
 import { News } from 'src/app/models/News';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -45,7 +48,7 @@ export class BreakingNewsComponent implements AfterViewInit, OnChanges {
       this.newsList.forEach((news) => {
         if (news.mediaType === 'video') {
           news.sanitizedLink = this.sanitizer.bypassSecurityTrustResourceUrl(
-            `https://www.youtube.com/embed/${news.mediaLink}?controls=1`
+            YOUTUBE_EMBED_VIDEO_LINK.replace('VIDEO_ID', news.mediaLink)
           );
         }
       });

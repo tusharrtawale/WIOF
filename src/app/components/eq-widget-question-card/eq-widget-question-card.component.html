@@ -22,21 +22,12 @@
   </div>
 </div>
 
-<div class="ion-text-center" *ngIf="!showResult">
-  <ion-button
-    fill="solid"
-    class="ion-margin-top"
-    color="spirit"
-    (click)="onSubmit()"
-    >Submit</ion-button
-  >
-  <ion-button
-    fill="solid"
-    class="ion-margin-top"
-    color="spirit"
-    (click)="onBack()"
-    >Back</ion-button
-  >
+<div
+  class="ion-text-center ion-margin-top ion-margin-bottom"
+  *ngIf="!showResult"
+>
+  <button class="wiof-primary-button" (click)="onSubmit()">Submit</button>
+  <button class="wiof-primary-button secondary" (click)="onBack()">Back</button>
 </div>
 
 <div *ngIf="showResult">
@@ -68,9 +59,9 @@
       <p>Reparation: {{ result3msg }}</p>
     </ion-col>
   </ion-row>
-  <div class="ion-text-center">
-    <ion-button color="spirit" (click)="showResult = false"
-      >Take Again</ion-button
-    >
+  <div class="ion-text-center ion-padding-top ion-padding-bottom">
+    <button class="wiof-primary-button" (click)="showResult = false">
+      Take Again
+    </button>
   </div>
 </div>

@@ -10,6 +10,7 @@
             </ion-col>
             <ion-col size="12" class="video-player-col">
               <iframe
+                [title]="videoTitle"
                 class="videoPlayer"
                 [src]="urlSafe"
                 allowfullscreen
@@ -57,20 +58,6 @@
             </ion-col>
           </ion-row>
         </div>
-
-        <!-- <div *ngIf="(urlSafe)">
-          <h1>{{videoTitle}}</h1>
-          <iframe
-            class="videoPlayer"
-            [src]="urlSafe"
-            allowfullscreen
-          ></iframe>
-          <br/>
-          <ion-item-divider></ion-item-divider>
-          <br/>
-          <ion-text>Video Credit (Youtube Channel): {{videoChannelName}}</ion-text><br/><br/>
-          <ion-text style="text-align: justify; text-justify: inter-word;">Description: {{videoDescription}}</ion-text>
-        </div> -->
       </ion-col>
     </ion-row>
   </ion-grid>

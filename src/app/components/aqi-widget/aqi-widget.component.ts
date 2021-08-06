@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AqiWidgetService } from '../../services/aqi-widget.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-aqi-widget',
@@ -8,13 +9,13 @@ import { AqiWidgetService } from '../../services/aqi-widget.service';
 })
 export class AqiWidgetComponent implements OnInit {
   majorLocations: string[];
-  selectedLocation: string = 'mumbai';
+  selectedLocation = 'mumbai';
   searchLocation: string;
-  searchLocationClickedFlag: boolean = false;
-  searchLocationTabSelect: boolean = false;
-  showAqiScorecard: boolean = true;
+  searchLocationClickedFlag = false;
+  searchLocationTabSelect = false;
+  showAqiScorecard = true;
   searchLocationResults;
-  about: boolean = false;
+  about = false;
 
   constructor(private aqiService: AqiWidgetService) {}
 
@@ -23,7 +24,14 @@ export class AqiWidgetComponent implements OnInit {
   }
 
   searchByLocation() {
-    this.searchLocationResults = this.aqiService.search(this.searchLocation);
+    this.searchLocationResults = this.aqiService
+      .search(this.searchLocation)
+      .pipe(
+        map((result) => {
+          result.data = result.data.sort((a, b) => (+a.aqi > +b.aqi ? -1 : 1));
+          return result;
+        })
+      );
     this.searchLocationClickedFlag = true;
     this.showAqiScorecard = false;
   }

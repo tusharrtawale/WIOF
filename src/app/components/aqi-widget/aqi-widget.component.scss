@@ -19,21 +19,6 @@
   overflow: auto;
 }
 
-.wiof-primary-button {
-  width: 180px;
-  border-radius: 25px;
-  height: 35px;
-  background: $dark-color;
-  color: $light-color;
-  margin-right: 4px;
-  padding: 2px;
-  font-weight: 600;
-
-  &:hover {
-    opacity: 0.9;
-  }
-}
-
 .button-icon {
   vertical-align: bottom;
   padding-right: 5px;
@@ -68,6 +53,12 @@
 }
 .wiof-aqi-search-result-expand:hover {
   color: blue;
+}
+
+.aqi {
+  padding: 3px 20px;
+  border-radius: 15px;
+  border: 1px solid $dark-color;
 }
 
 //aqi colors

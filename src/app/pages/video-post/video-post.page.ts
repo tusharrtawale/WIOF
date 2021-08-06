@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { YoutubeVideoService } from '../../services/youtube-video.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { YOUTUBE_EMBED_VIDEO_LINK } from 'src/app/app.constants';
 
 @Component({
   selector: 'app-video-post',
@@ -32,7 +33,7 @@ export class VideoPostPage implements OnInit, OnDestroy {
     this.route.paramMap.subscribe((params) => {
       if (params.has('videoId')) {
         this.id = params.get('videoId');
-        this.videoUrl = `https://www.youtube.com/embed/${this.id}?controls=1`;
+        this.videoUrl = YOUTUBE_EMBED_VIDEO_LINK.replace('VIDEO_ID', this.id);
         this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(
           this.videoUrl
         );

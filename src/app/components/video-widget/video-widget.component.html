@@ -10,7 +10,7 @@
     [ngClass]="videoPlayerClass"
   >
     <iframe
-      id="iframeYTvideo"
+      [title]="videoPlayerTitle"
       class="videoPlayer"
       [src]="urlSafe"
       allowfullscreen

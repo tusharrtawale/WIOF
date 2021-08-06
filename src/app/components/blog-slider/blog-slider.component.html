@@ -38,14 +38,18 @@
                 alt=""
               />
               <h3 class="ion-padding">
-                <strong class="blog-card-title"
-                  ><a class="link-title" [routerLink]="['blog', blog.id]">{{
+                <div class="blog-card-title">
+                  <a class="link-title" [routerLink]="['blog', blog.id]">{{
                     blog.title
-                  }}</a></strong
-                >
-                <em [attr.aria-label]="'author' + blog.author">
-                  - {{ blog.author }}</em
-                >
+                  }}</a>
+                </div>
+                <div>
+                  <small
+                    style="font-size: 85%"
+                    [attr.aria-label]="'author ' + blog.author"
+                    >- {{ blog.author }}</small
+                  >
+                </div>
               </h3>
               <p
                 class="blog-card-content ion-padding-horizontal"

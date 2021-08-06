@@ -27,37 +27,11 @@
       </ion-col>
     </ion-row>
     <ion-toolbar color="air" class="wiof-aqi-widget-card-toolbar">
-      <!-- <ion-toolbar color="air"> -->
-
-      <!-- <ion-button fill="solid" slot="start" (click)="loadMajorCitiesDiv()"
-      ><ion-icon name="golf-outline"></ion-icon> Major Cities</ion-button
-    >
-    <ion-button fill="solid" slot="start" (click)="loadSearchLocationDiv()"
-      ><ion-icon name="search-outline"></ion-icon> Search Location</ion-button
-    > -->
-      <button
-        class="wiof-primary-button"
-        slot="start"
-        (click)="loadMajorCitiesDiv()"
-      >
-        <ion-icon
-          name="golf-outline"
-          class="button-icon"
-          slot="start"
-        ></ion-icon
-        >Major Cities
+      <button class="wiof-primary-button" (click)="loadMajorCitiesDiv()">
+        <ion-icon name="golf-outline"></ion-icon>Major Cities
       </button>
-      <button
-        class="wiof-primary-button"
-        slot="start"
-        (click)="loadSearchLocationDiv()"
-      >
-        <ion-icon
-          name="search-outline"
-          class="button-icon"
-          slot="start"
-        ></ion-icon
-        >Search Location
+      <button class="wiof-primary-button" (click)="loadSearchLocationDiv()">
+        <ion-icon name="search-outline"></ion-icon>Search Location
       </button>
       <!-- <button
       class="wiof-primary-button"
@@ -106,13 +80,20 @@
     >
       <ion-row>
         <ion-col size="9">
-          <ion-item>
-            <ion-label position="floating">Enter Location</ion-label>
-            <ion-input [(ngModel)]="searchLocation"></ion-input>
+          <ion-item style="border-radius: 10px">
+            <ion-input
+              [(ngModel)]="searchLocation"
+              placeholder="Enter Location"
+            ></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="3">
-          <ion-button (click)="searchByLocation()">Search</ion-button>
+          <button
+            class="wiof-primary-button full-width full-height"
+            (click)="searchByLocation()"
+          >
+            Search
+          </button>
         </ion-col>
       </ion-row>
       <div *ngIf="searchLocationClickedFlag">
@@ -131,39 +112,25 @@
               <p style="color: grey">Please search for another location.</p>
             </div>
             <div *ngIf="locationsFound.data[0]">
-              <ion-row>
-                <ion-col size-xs="10">
-                  <p>
-                    <strong
-                      >Station Name (Click on location for AQI details)</strong
-                    >
-                  </p>
-                </ion-col>
-                <ion-col size-xs="2">
-                  <p style="text-align: center"><strong>AQI</strong></p>
-                </ion-col>
-              </ion-row>
-              <div *ngFor="let location of locationsFound.data">
-                <ion-row>
-                  <ion-col size-xs="10">
-                    <p
-                      class="wiof-aqi-search-result-expand"
-                      (click)="expandLocationAqiDetails(location.station.url)"
-                    >
-                      <!-- (click)=expandLocationAqiDetails({{location.station.url}}) -->
-                      {{ location.station.name }}
-                    </p>
-                  </ion-col>
-                  <ion-col size-xs="2">
-                    <p
-                      style="text-align: center"
-                      [ngClass]="aqiColor(location.aqi)"
-                    >
-                      {{ location.aqi }}
-                    </p>
-                  </ion-col>
-                </ion-row>
-              </div>
+              <ion-list style="border-radius: 10px">
+                <ion-item>
+                  <strong class="wiof-aqi-search-result-expand">
+                    Station Name (Click on location for AQI details) </strong
+                  ><strong slot="end">AQI</strong>
+                </ion-item>
+
+                <ion-item *ngFor="let location of locationsFound.data">
+                  <span class="wiof-aqi-search-result-expand">{{
+                    location.station.name
+                  }}</span
+                  ><span
+                    class="aqi"
+                    slot="end"
+                    [ngClass]="aqiColor(location.aqi)"
+                    >{{ location.aqi }}</span
+                  >
+                </ion-item>
+              </ion-list>
             </div>
           </div>
           <ng-template #loading> Fetching locations... </ng-template>

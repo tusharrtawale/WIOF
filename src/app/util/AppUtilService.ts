@@ -42,4 +42,16 @@ export class AppUtilService {
   formatImageName(prefix, imageToSave) {
     return prefix + Date.now() + '.' + imageToSave.name.split('.').pop(); // add timestamp to image name to keep it unique
   }
+
+  stopVideos() {
+    const iframePlayers = document.getElementsByTagName('iframe');
+    for (let i = 0; i < iframePlayers.length; i++) {
+      iframePlayers
+        .item(i)
+        .contentWindow.postMessage(
+          '{"event":"command","func":"' + 'stopVideo' + '","args":""}',
+          '*'
+        );
+    }
+  }
 }

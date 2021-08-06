@@ -1,33 +1,21 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { Component, OnInit, Input } from '@angular/core';
 import { InFocus } from 'src/app/models/InFocus';
+import { AppUtilService } from 'src/app/util/AppUtilService';
 
 @Component({
   selector: 'app-in-focus-widget',
   templateUrl: './in-focus-widget.component.html',
   styleUrls: ['./in-focus-widget.component.scss']
 })
-export class InFocusWidgetComponent implements OnInit, OnDestroy {
+export class InFocusWidgetComponent implements OnInit {
   @Input() element: string;
   @Input() inFocus: InFocus;
-  urlSafe: SafeResourceUrl;
   inFocusClass: string;
-  iframe_player = document.getElementsByTagName('iframe');
 
-  constructor() {}
+  constructor(private appUtilService: AppUtilService) {}
 
   ngOnInit() {
+    this.appUtilService.stopVideos();
     this.inFocusClass = `wiof-${this.element}`;
-  }
-
-  ngOnDestroy() {
-    this.stopVideo();
-  }
-
-  stopVideo() {
-    this.iframe_player[0].contentWindow.postMessage(
-      '{"event":"command","func":"' + 'stopVideo' + '","args":""}',
-      window.location.origin
-    );
   }
 }

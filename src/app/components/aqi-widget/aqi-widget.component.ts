@@ -28,7 +28,7 @@ export class AqiWidgetComponent implements OnInit {
       .search(this.searchLocation)
       .pipe(
         map((result) => {
-          result.data = result.data.sort((a, b) => (+a.aqi > +b.aqi ? -1 : 1));
+          result.data.sort((a, b) => (+a.aqi > +b.aqi ? -1 : 1));
           return result;
         })
       );

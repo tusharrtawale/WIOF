@@ -14,7 +14,7 @@
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col size="12" size-md="8" size-lg="12" size-xl="8">
+        <ion-col size="12" size-md="5" size-lg="12" size-xl="5">
           <ion-item color="energy">
             <ion-input
               [(ngModel)]="EnergyConsumption"
@@ -36,10 +36,11 @@
           </ion-item>
           <p *ngIf="unitnull" style="color: red">Please select a unit</p>
         </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <button (click)="CalculateCO2()" class="wiof-primary-button">
+        <ion-col size="12" size-md="3" size-lg="12" size-xl="3">
+          <button
+            (click)="CalculateCO2()"
+            class="wiof-primary-button full-width full-height"
+          >
             <ion-icon name="calculator-outline"></ion-icon>Calculate
           </button>
         </ion-col>

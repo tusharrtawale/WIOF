@@ -32,13 +32,14 @@
                     </h2>
                     <p>{{ news.date | date: 'EEE, MMM dd YYYY' }}</p>
                     <p class="content" [innerHTML]="news.content"></p>
-                    <ion-button
-                      *ngIf="news.newsSource"
-                      [href]="news.newsSource"
-                      target="_blank"
-                      color="home"
-                      >Know More</ion-button
-                    >
+                    <p *ngIf="news.newsSource">
+                      <a
+                        [href]="news.newsSource"
+                        target="_blank"
+                        class="wiof-primary-link"
+                        >Know More</a
+                      >
+                    </p>
                   </article>
                 </ion-col>
               </ion-row>

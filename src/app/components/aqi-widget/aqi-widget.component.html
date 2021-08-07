@@ -27,10 +27,18 @@
       </ion-col>
     </ion-row>
     <ion-toolbar color="air" class="wiof-aqi-widget-card-toolbar">
-      <button class="wiof-primary-button" (click)="loadMajorCitiesDiv()">
+      <button
+        class="wiof-primary-button"
+        [ngClass]="{ active: !searchLocationTabSelect }"
+        (click)="loadMajorCitiesDiv()"
+      >
         <ion-icon name="golf-outline"></ion-icon>Major Cities
       </button>
-      <button class="wiof-primary-button" (click)="loadSearchLocationDiv()">
+      <button
+        class="wiof-primary-button"
+        [ngClass]="{ active: searchLocationTabSelect }"
+        (click)="loadSearchLocationDiv()"
+      >
         <ion-icon name="search-outline"></ion-icon>Search Location
       </button>
       <!-- <button
@@ -79,17 +87,18 @@
       *ngIf="searchLocationTabSelect"
     >
       <ion-row>
-        <ion-col size="9">
-          <ion-item style="border-radius: 10px">
+        <ion-col size="8" class="ion-no-padding">
+          <ion-item>
             <ion-input
               [(ngModel)]="searchLocation"
               placeholder="Enter Location"
             ></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col size="3">
+        <ion-col size="4" class="ion-no-padding">
           <button
-            class="wiof-primary-button full-width full-height"
+            class="wiof-primary-button full-width full-height no-margin"
+            style="border-radius: 0; min-width: 100%"
             (click)="searchByLocation()"
           >
             Search
@@ -112,7 +121,7 @@
               <p style="color: grey">Please search for another location.</p>
             </div>
             <div *ngIf="locationsFound.data[0]">
-              <ion-list style="border-radius: 10px">
+              <ion-list>
                 <ion-item>
                   <strong class="wiof-aqi-search-result-expand">
                     Station Name (Click on location for AQI details) </strong

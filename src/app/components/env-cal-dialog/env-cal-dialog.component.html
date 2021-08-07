@@ -5,7 +5,7 @@
         <ion-card class="occasion-card">
           <ion-card-header class="occasion-card-header">
             <p class="occasion-month">
-              {{ getMonth(occasn.month) }} {{ occasn.day }}
+              <span>{{ getMonth(occasn.month) }} {{ occasn.day }}</span>
             </p>
             <p class="occasion-name">
               <strong>{{ occasn.name }}</strong>
@@ -18,9 +18,15 @@
             <img [src]="occasn.image | async" alt="" />
             <div>
               <p [innerHTML]="occasn.desc"></p>
-              <a *ngIf="occasn.link" target="_blank" [href]="occasn.link"
-                >Show More</a
-              >
+              <p style="margin: 10px 0; text-align: center">
+                <a
+                  *ngIf="occasn.link"
+                  class="wiof-primary-link"
+                  target="_blank"
+                  [href]="occasn.link"
+                  >Show More</a
+                >
+              </p>
             </div>
           </ion-card-content>
         </ion-card>

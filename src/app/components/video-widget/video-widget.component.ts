@@ -1,5 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { VIDEO_PLAYER_TITLES, VIDEO_PLAYER_VIDEOS, YOUTUBE_EMBED_VIDEO_LINK } from '../../app.constants';
+import {
+  VIDEO_PLAYER_TITLES,
+  VIDEO_PLAYER_VIDEOS,
+  YOUTUBE_EMBED_VIDEO_LINK
+} from '../../app.constants';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { AppUtilService } from 'src/app/util/AppUtilService';
 

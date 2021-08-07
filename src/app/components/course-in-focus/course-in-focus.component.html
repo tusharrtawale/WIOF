@@ -31,8 +31,11 @@
             {{ courseInFocus.description }}
           </p>
           <p>
-            <ion-button [href]="courseInFocus.link" target="_blank" color="home"
-              >Know More</ion-button
+            <a
+              [href]="courseInFocus.link"
+              target="_blank"
+              class="wiof-primary-link"
+              >Know More</a
             >
           </p>
         </ion-col>

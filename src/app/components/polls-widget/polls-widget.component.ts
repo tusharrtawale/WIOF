@@ -39,7 +39,6 @@ export class PollsWidgetComponent implements OnInit, OnDestroy {
       option: new FormControl('', [Validators.required])
     });
 
-    this.pollQuestion = {} as PollQuestion;
     combineLatest([
       //TODO IP handling pending
       // this.ip.getIp4(),

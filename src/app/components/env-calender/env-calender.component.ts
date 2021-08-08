@@ -13,15 +13,11 @@ export class EnvCalenderComponent implements OnInit {
   todayDate = new Date();
   imageUrl: Observable<any>;
   openDialog: boolean = false;
-
   safeUrl: string;
-
   displayMonth: string;
   displayDay: string;
   link: SafeResourceUrl;
-
   occasionForDialog: any;
-
   selectedOccasionIndex: number = 0;
   days: {
     class: string;
@@ -29,13 +25,13 @@ export class EnvCalenderComponent implements OnInit {
     occasion: any[];
     selectedOccasionIndex: number;
   }[] = [];
+  EnvDays: EnvDay[];
 
   constructor(
     private envDayService: EnvcalService,
     private santz: DomSanitizer
   ) {}
 
-  EnvDays: EnvDay[];
   ngOnInit() {
     this.envDayService
       .getEnvCal(this.todayDate.getMonth())

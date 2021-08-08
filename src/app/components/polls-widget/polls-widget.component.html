@@ -1,4 +1,4 @@
-<ion-card class="wiof-poll-card">
+<ion-card class="wiof-poll-card" *ngIf="pollQuestion">
   <ion-card-header class="wiof-polls-widget-card-header">
     <ion-card-title class="wiof-polls-widget-card-header-text">
       Weekly Polls
@@ -42,9 +42,7 @@
 
         <br />
         <p *ngIf="errorShow" class="error">Please fill all fields correctly</p>
-        <button class="wiof-primary-button no-margin" type="submit">
-          Submit Poll
-        </button>
+        <button class="wiof-primary-btn no-margin" type="submit">Submit Poll</button>
       </form>
     </div>
     <app-poll-result

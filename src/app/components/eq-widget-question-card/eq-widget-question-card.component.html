@@ -26,8 +26,8 @@
   class="ion-text-center ion-margin-top ion-margin-bottom"
   *ngIf="!showResult"
 >
-  <button class="wiof-primary-button" (click)="onSubmit()">Submit</button>
-  <button class="wiof-primary-button secondary" (click)="onBack()">Back</button>
+  <button class="wiof-primary-btn" (click)="onSubmit()">Submit</button>
+  <button class="wiof-secondary-btn" (click)="onBack()">Back</button>
 </div>
 
 <div *ngIf="showResult">
@@ -60,8 +60,6 @@
     </ion-col>
   </ion-row>
   <div class="ion-text-center ion-padding-top ion-padding-bottom">
-    <button class="wiof-primary-button" (click)="showResult = false">
-      Take Again
-    </button>
+    <button class="wiof-primary-btn" (click)="showResult = false">Take Again</button>
   </div>
 </div>

@@ -14,7 +14,7 @@
                 <ion-col class="media-container" size="12" size-xl="7">
                   <img
                     class="mediaPlayer"
-                    [src]="news.imageLink | async"
+                    [src]="news.image$ | async"
                     alt=""
                     *ngIf="news.mediaType == 'image'"
                   />

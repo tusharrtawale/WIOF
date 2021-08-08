@@ -37,7 +37,7 @@ export class AddCourseInFocusPage implements OnInit, OnDestroy {
     offeredByLabel: 'Offered By',
     durationLabel: 'Duration',
     approxCostLabel: 'Approximate Cost',
-    keyTopicsLabel: 'Key Topics',
+    keyTopicsLabel: 'Key Topics(Enter comma(,) separated list of topics)',
     imageLabel: 'Course Image',
     descriptionLabel: 'Description',
     categoryLabel: 'Category',

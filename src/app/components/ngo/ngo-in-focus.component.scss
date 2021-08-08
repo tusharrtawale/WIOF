@@ -14,19 +14,25 @@
     object-fit: contain;
   }
 
-  .ngo-in-focus-image {
-    max-height: 300px;
+  .media-container {
+    min-height: 300px;
+    max-height: 550px;
+  }
+
+  .media-player {
     width: 100%;
+    height: 100%;
+    border: none;
+    object-fit: cover;
   }
 
   .ngo-description {
     display: -webkit-box;
-    height: 110px;
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin: 10px 0 15px;
+    margin: 10px 0 20px;
     text-align: left;
   }
 }

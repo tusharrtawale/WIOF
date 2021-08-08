@@ -1,11 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subject, Observable, throwError } from 'rxjs';
+import { Subject, Observable, throwError, of } from 'rxjs';
 import { NgoInFocus } from 'src/app/models/NgoInFocus';
 import { NgoInFocusService } from 'src/app/services/ngo-in-focus.service';
 import { UiUtilService } from 'src/app/util/UiUtilService';
 import { Router, ActivatedRoute } from '@angular/router';
 import { takeUntil, catchError, map, switchMap } from 'rxjs/operators';
-import { UI_MESSAGES, ITEMS } from 'src/app/app.constants';
+import { UI_MESSAGES, ITEMS, MEDIA_TYPE } from 'src/app/app.constants';
 
 @Component({
   selector: 'app-manage-ngo-in-focus',
@@ -95,13 +95,17 @@ export class ManageNgoInFocusPage implements OnInit, OnDestroy {
       )
     );
     this.ngoInFocusService
-      .deleteNgoInFocusImage(ngoInFocus.ngoImage)
+      .deleteNgoInFocusImage(ngoInFocus.ngoLogo)
       .pipe(
         takeUntil(this.destroy$),
         switchMap(() => {
-          return this.ngoInFocusService.deleteNgoInFocusImage(
-            ngoInFocus.ngoLogo
-          );
+          if (ngoInFocus.mediaType === MEDIA_TYPE.IMAGE) {
+            return this.ngoInFocusService.deleteNgoInFocusImage(
+              ngoInFocus.mediaLink
+            );
+          } else {
+            return of(true);
+          }
         }),
         switchMap(() => {
           return this.ngoInFocusService.deleteNgoInFocus(ngoInFocus.id);

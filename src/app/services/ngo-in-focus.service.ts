@@ -5,8 +5,13 @@ import {
   AngularFirestoreCollection
 } from '@angular/fire/firestore';
 import { map, concatMap } from 'rxjs/operators';
-import { from, Observable } from 'rxjs';
-import { FIREBASE_COLLECTION, ITEM_STATUS } from '../app.constants';
+import { from, Observable, of } from 'rxjs';
+import {
+  FIREBASE_COLLECTION,
+  ITEM_STATUS,
+  MEDIA_TYPE,
+  YOUTUBE_EMBED_VIDEO_LINK
+} from '../app.constants';
 import { DomSanitizer } from '@angular/platform-browser';
 import { AngularFireStorage } from '@angular/fire/storage';
 
@@ -54,7 +59,14 @@ export class NgoInFocusService {
         querySnapshot.docs.map((doc) => {
           const data = doc.data() as NgoInFocus;
           data.id = doc.id;
-          data.image$ = this.getImage(data.ngoImage);
+          if (data.mediaType === MEDIA_TYPE.IMAGE) {
+            data.image$ = this.getImage(data.mediaLink);
+          } else {
+            data.sanitizedLink = this.sanitizer.bypassSecurityTrustResourceUrl(
+              YOUTUBE_EMBED_VIDEO_LINK.replace('VIDEO_ID', data.mediaLink)
+            );
+            data.image$ = of('');
+          }
           data.logoImage$ = this.getImage(data.ngoLogo);
           return data;
         })
@@ -79,7 +91,13 @@ export class NgoInFocusService {
         if (querySnapshot.docs.length > 0) {
           const data = querySnapshot.docs[0].data() as NgoInFocus;
           data.id = querySnapshot.docs[0].id;
-          data.image$ = this.getImage(data.ngoImage);
+          if (data.mediaType === MEDIA_TYPE.IMAGE) {
+            data.image$ = this.getImage(data.mediaLink);
+          } else {
+            data.sanitizedLink = this.sanitizer.bypassSecurityTrustResourceUrl(
+              YOUTUBE_EMBED_VIDEO_LINK.replace('VIDEO_ID', data.mediaLink)
+            );
+          }
           data.logoImage$ = this.getImage(data.ngoLogo);
           return data;
         }

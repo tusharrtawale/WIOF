@@ -62,7 +62,7 @@ export class NewsService {
           const data = doc.data() as News;
           data.newsId = doc.id;
           if (data.mediaType == 'image') {
-            data.imageLink = this.getImage(data.mediaLink);
+            data.image$ = this.getImage(data.mediaLink);
           }
           return data;
         })

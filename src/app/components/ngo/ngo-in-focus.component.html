@@ -7,12 +7,19 @@
   <ion-card-content class="background" style="padding: 0">
     <div *ngIf="ngoInFocus; else loading">
       <ion-row>
-        <ion-col size="12" size-lg="6" class="text-center">
+        <ion-col size="12" size-lg="6" class="text-center media-container">
           <img
-            class="ngo-in-focus-image"
+            class="media-player"
             [src]="ngoInFocus.image$ | async"
             alt=""
+            *ngIf="ngoInFocus.mediaType == 'image'"
           />
+          <iframe
+            class="media-player"
+            [title]="'Video for Ngo ' + ngoInFocus.ngoName"
+            [src]="ngoInFocus.sanitizedLink"
+            *ngIf="ngoInFocus.mediaType == 'video'"
+          ></iframe>
         </ion-col>
         <ion-col size="12" size-lg="6" class="ion-padding">
           <img

@@ -60,7 +60,7 @@ export class AddNewsPage implements OnInit {
     this.route.paramMap.subscribe((param) => {
       if (param.has('mode') && param.get('mode') === 'edit') {
         this.news = this.newsService.getViewEditModeNews();
-        this.news.imageLink?.subscribe((imageData) => {
+        this.news.image$?.subscribe((imageData) => {
           this.imageToDisplay = imageData;
         });
         if (!this.news) {

@@ -7,7 +7,8 @@ import {
   PAGE_CATEGORY_MAP,
   UI_MESSAGES,
   ITEMS,
-  ITEM_STATUS
+  ITEM_STATUS,
+  MEDIA_TYPE
 } from 'src/app/app.constants';
 import { UiUtilService } from 'src/app/util/UiUtilService';
 import { NgoInFocus } from 'src/app/models/NgoInFocus';
@@ -37,6 +38,9 @@ export class AddNgoInFocusPage implements OnInit, OnDestroy {
     nameLabel: 'NGO Name',
     linkLabel: 'Know More Link',
     ngoLogoLabel: 'NGO Logo',
+    mediaLinkLabel:
+      'Media Link (Please enter youtube video ID only, do not enter full link)',
+    mediaTypeLabel: 'Media Type',
     ngoImageLabel: 'NGO Image',
     descriptionLabel: 'Description',
     categoryLabel: 'Category',
@@ -77,15 +81,38 @@ export class AddNgoInFocusPage implements OnInit, OnDestroy {
         this.isEditMode = false;
         this.addNgoInFocusForm = this.initForm();
       }
+      this.updateMediaTypeValidation();
     });
+  }
+
+  updateMediaTypeValidation() {
+    this.addNgoInFocusForm
+      .get('mediaType')
+      .valueChanges.subscribe((mediaType) => {
+        if (mediaType === MEDIA_TYPE.IMAGE) {
+          this.addNgoInFocusForm
+            .get('image')
+            .setValidators(Validators.required);
+          this.addNgoInFocusForm.get('mediaLink').clearValidators();
+        } else if (mediaType === MEDIA_TYPE.VIDEO) {
+          this.addNgoInFocusForm
+            .get('mediaLink')
+            .setValidators(Validators.required);
+          this.addNgoInFocusForm.get('image').clearValidators();
+          this.imageToSave = undefined;
+          this.imageToDisplay = undefined;
+        }
+      });
   }
 
   private initForm() {
     return new FormGroup({
       ngoName: new FormControl('', Validators.required),
       knowMoreLink: new FormControl('', Validators.required),
+      mediaType: new FormControl('', Validators.required),
+      mediaLink: new FormControl(''),
+      image: new FormControl(''),
       ngoLogo: new FormControl('', Validators.required),
-      ngoImage: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
       category: new FormControl('', Validators.required)
     });
@@ -98,8 +125,10 @@ export class AddNgoInFocusPage implements OnInit, OnDestroy {
         ngoInFocus.knowMoreLink,
         Validators.required
       ),
+      mediaType: new FormControl(ngoInFocus.mediaType, Validators.required),
       ngoLogo: new FormControl(ngoInFocus.ngoLogo, Validators.required),
-      ngoImage: new FormControl(ngoInFocus.ngoImage, Validators.required),
+      mediaLink: new FormControl(ngoInFocus.mediaLink),
+      image: new FormControl(''),
       description: new FormControl(ngoInFocus.description, Validators.required),
       category: new FormControl(ngoInFocus.category, Validators.required)
     });
@@ -138,14 +167,13 @@ export class AddNgoInFocusPage implements OnInit, OnDestroy {
             if (this.imageToSave !== undefined) {
               return this.ngoInFocusService.saveNgoInFocusImage(
                 this.imageToSave,
-                this.ngoInFocus.ngoImage
+                this.ngoInFocus.mediaLink
               );
             } else {
               return of(true);
             }
           }),
-          switchMap((data) => {
-            console.log(data);
+          switchMap(() => {
             if (this.logoImageToSave !== undefined) {
               return this.ngoInFocusService.saveNgoInFocusImage(
                 this.logoImageToSave,
@@ -196,6 +224,13 @@ export class AddNgoInFocusPage implements OnInit, OnDestroy {
     ngoInFocus: NgoInFocus,
     isEditMode: boolean
   ) {
+    const mediaLink =
+      addNgoInFocusForm.value.mediaType === MEDIA_TYPE.VIDEO
+        ? addNgoInFocusForm.value.mediaLink
+        : isEditMode && ngoInFocus.mediaLink !== undefined
+        ? ngoInFocus.mediaLink
+        : this.appUtil.formatImageName('ngoInFocus_', this.imageToSave);
+
     return new NgoInFocus(
       isEditMode ? ngoInFocus.id : null,
       addNgoInFocusForm.value.ngoName,
@@ -205,9 +240,8 @@ export class AddNgoInFocusPage implements OnInit, OnDestroy {
             'ngoInFocus_logo_',
             this.logoImageToSave
           ),
-      isEditMode && ngoInFocus.ngoImage !== undefined
-        ? ngoInFocus.ngoImage
-        : this.appUtil.formatImageName('ngoInFocus_', this.imageToSave),
+      addNgoInFocusForm.value.mediaType,
+      mediaLink,
       addNgoInFocusForm.value.knowMoreLink,
       addNgoInFocusForm.value.description,
       addNgoInFocusForm.value.category,

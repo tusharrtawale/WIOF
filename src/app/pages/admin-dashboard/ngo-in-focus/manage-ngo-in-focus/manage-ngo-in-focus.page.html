@@ -27,10 +27,10 @@
     </ion-row>
     <ion-row class="item-divider-line">
       <ion-col size-md="2" class="ion-align-self-center"
-        ><strong>Title</strong></ion-col
+        ><strong>NGO Name</strong></ion-col
       >
       <ion-col size-md="3" class="ion-align-self-center"
-        ><strong>Subtitle</strong></ion-col
+        ><strong>Know More Link</strong></ion-col
       >
       <ion-col size-md="1" class="ion-align-self-center"
         ><strong>Category</strong></ion-col
@@ -50,13 +50,12 @@
       class="item-divider-line"
     >
       <ion-col size-md="2" class="ion-align-self-center"
-        >{{ i + 1 }}.
-        <a [href]="ngoInFocus.knowMoreLink"
-          >{{ ngoInFocus.ngoName }}</a
-        ></ion-col
+        >{{ i + 1 }}. {{ ngoInFocus.ngoName }}</ion-col
       >
       <ion-col size-md="3" class="ion-align-self-center"
-        >{{ ngoInFocus.description }}</ion-col
+        ><a [href]="ngoInFocus.knowMoreLink" target="_blank"
+          >{{ ngoInFocus.knowMoreLink }}</a
+        ></ion-col
       >
       <ion-col size-md="1" class="ion-align-self-center"
         >{{ ngoInFocus.category | uppercase}}</ion-col

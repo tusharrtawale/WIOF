@@ -12,7 +12,7 @@ export class News {
   mediaLink: string;
   mediaType: string;
   sanitizedLink: SafeResourceUrl;
-  imageLink: Observable<any>;
+  image$: Observable<any>;
   newsSource: string;
   //tags: string[]
   //subcategory: string[]

@@ -12,13 +12,12 @@
 
 .course-description {
   display: -webkit-box;
-  height: 70px;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
   padding: 0;
-  margin: 5px 0px 10px;
+  margin: 10px 0px 20px;
 }
 
 .course-in-focus-image {
@@ -36,5 +35,15 @@
 
   p span {
     font-weight: 500;
+    
+    &.topic {
+      font-size: small;
+      background-color: yellowgreen;
+      color: $light-color;
+      border-radius: 5px;
+      padding: 2.5px 5px;
+      margin: 5px 5px 0 0;
+      display: inline-block;
+    }
   }
 }

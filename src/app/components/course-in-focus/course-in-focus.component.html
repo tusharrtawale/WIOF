@@ -16,7 +16,7 @@
           </h2>
           <p><span>Offered By</span>: {{ courseInFocus.offeredBy }}</p>
           <p><span>Duration</span>: {{ courseInFocus.duration }}</p>
-          <p><span>Approx. Cost</span>: {{ courseInFocus.approxCost }}</p>
+          <p><span>Approx. Cost: {{ courseInFocus.approxCost }}</span></p>
         </ion-col>
         <ion-col size="3">
           <img
@@ -26,7 +26,14 @@
           />
         </ion-col>
         <ion-col size="12">
-          <p><span>Key Topics</span>: {{ courseInFocus.keyTopics }}</p>
+          <p>
+            <span>Key Topics</span>:
+            <span
+              class="topic"
+              *ngFor="let topic of courseInFocus.keyTopics.split(',')"
+              >{{ topic }}</span
+            >
+          </p>
           <p class="ion-margin-top course-description">
             {{ courseInFocus.description }}
           </p>

@@ -1,13 +1,15 @@
 import { Observable } from 'rxjs';
+import { SafeResourceUrl } from '@angular/platform-browser';
 
 export class NgoInFocus {
   id?: string;
   ngoName: string;
   description: string;
-  ngoImage: string;
   image$: Observable<string>;
   ngoLogo: string;
   logoImage$: Observable<string>;
+  mediaType: string;
+  mediaLink: string;
   creationDate?: Date;
   creationId?: string;
   updateDate?: Date;
@@ -18,12 +20,14 @@ export class NgoInFocus {
   submitDate: number;
   publishDate: number;
   unpublishDate: number;
+  sanitizedLink: SafeResourceUrl;
 
   constructor(
     id: string,
     ngoName: string,
     ngoLogo: string,
-    ngoImage: string,
+    mediaType: string,
+    mediaLink: string,
     knowMoreLink: string,
     description: string,
     category: string,
@@ -33,7 +37,8 @@ export class NgoInFocus {
     this.id = id;
     this.ngoName = ngoName;
     this.ngoLogo = ngoLogo;
-    this.ngoImage = ngoImage;
+    this.mediaType = mediaType;
+    this.mediaLink = mediaLink;
     this.knowMoreLink = knowMoreLink;
     this.description = description;
     this.category = category;

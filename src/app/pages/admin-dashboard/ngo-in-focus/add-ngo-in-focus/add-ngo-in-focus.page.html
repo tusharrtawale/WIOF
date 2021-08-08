@@ -48,7 +48,7 @@
             <ion-textarea formControlName="description"></ion-textarea>
           </ion-item>
         </ion-col>
-        <ion-col size-xs="12"
+        <ion-col size-xs="12" size-md="4"
           ><ion-item>
             <ion-label position="floating"
               >{{pageContent.categoryLabel}}</ion-label
@@ -60,6 +60,32 @@
                 >{{ category }}</ion-select-option
               >
             </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-md="4"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.mediaTypeLabel}}</ion-label
+            >
+            <ion-select
+              formControlName="mediaType"
+              #mediaType
+              (ngModelChange)="updateMediaTypeValidation()"
+            >
+              <ion-select-option [value]="'image'">Image</ion-select-option>
+              <ion-select-option [value]="'video'">Video</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col
+          *ngIf="mediaType.value && mediaType.value === 'video'"
+          size-xs="12"
+          size-md="4"
+          ><ion-item>
+            <ion-label position="floating"
+              >{{pageContent.mediaLinkLabel}}</ion-label
+            >
+            <ion-input formControlName="mediaLink"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size-xs="12"
@@ -76,7 +102,9 @@
             <div><ion-img [src]="logoImageToDisplay"></ion-img></div>
           </ion-item>
         </ion-col>
-        <ion-col size-xs="12"
+        <ion-col
+          *ngIf="mediaType.value && mediaType.value === 'image'"
+          size-xs="12"
           ><ion-item>
             <ion-label position="stacked"
               >{{pageContent.ngoImageLabel}}</ion-label
@@ -85,7 +113,7 @@
               type="file"
               accept="image/*"
               (change)="onFileSelected($event)"
-              formControlName="ngoImage"
+              formControlName="image"
             ></ion-input>
             <div><ion-img [src]="imageToDisplay"></ion-img></div>
           </ion-item>

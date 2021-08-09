@@ -1,5 +1,7 @@
+@import '../../wiof-custom-theming.scss';
+
 .wiof-concent-popup {
-  background-color: #2d2d2d;
+  background-color: $dark-color;
   padding: 10px;
 }
 
@@ -13,7 +15,7 @@
 .accept-button {
   text-align: right;
   border: 2px solid #fff;
-  background-color: #2d2d2d;
+  background-color: $dark-color;
   color: white;
   font-size: medium;
   padding: 5px;

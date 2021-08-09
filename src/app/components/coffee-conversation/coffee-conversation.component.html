@@ -43,11 +43,15 @@
                   >
                     <p>
                       <span>Name of Interviewee</span>:
-                      <strong>{{ coffeeConv.intervieweeName }}</strong>
-                    </p>
-                    <p class="about-interviewee">
-                      <span>About Interviewee</span>:
-                      {{ coffeeConv.intervieweeDesc }}
+                      <span
+                        style="display: inline-block"
+                        (click)="showIntervieweeDetails($event, true)"
+                        ><a
+                          href=""
+                          title="Click to know more about interviewee"
+                          >{{ coffeeConv.intervieweeName }}</a
+                        ></span
+                      >
                     </p>
                   </div>
                   <p style="margin-bottom: 20px">
@@ -61,6 +65,14 @@
                       >Know More</a
                     >
                   </p>
+                  <div
+                    class="about-interviewee"
+                    *ngIf="showAboutInterviewee"
+                    (mouseleave)="showIntervieweeDetails($event, false)"
+                  >
+                    <h3>About Interviewee</h3>
+                    <p>{{ coffeeConv.intervieweeDesc }}</p>
+                  </div>
                 </ion-col>
               </ion-row>
             </ion-card-content>

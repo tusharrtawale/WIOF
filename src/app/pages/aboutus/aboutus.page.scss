@@ -1,3 +1,5 @@
+@import '../../wiof-custom-theming.scss';
+
 .back-button {
   padding-right: 15px;
 }
@@ -14,7 +16,7 @@
 
 .profile-image {
   width: 100px;
-  border: 2px solid #2d2d2d;
+  border: 2px solid $dark-color;
   border-radius: 5px;
 }
 
@@ -26,7 +28,7 @@
 
 .profile-bio-text {
   text-align: justify;
-  color: #2d2d2d;
+  color: $dark-color;
   font-size: 15px;
 }
 

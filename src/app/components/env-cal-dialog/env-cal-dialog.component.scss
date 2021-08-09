@@ -1,7 +1,7 @@
 @import '../../wiof-custom-theming.scss';
 
 .wiof-env-calendar-dialog {
-  color: #2d2d2d;
+  color: $dark-color;
 }
 .image-container {
   text-align: center;
@@ -27,8 +27,8 @@
       span {
         padding: 5px 10px;
         border-radius: 5px;
-        background: yellowgreen;
-        color: white;
+        background-color: $home-color-dark;
+        color: $light-color;
         font-weight: 500;
       }
     }

@@ -12,6 +12,7 @@ $home-color: #fbb0ac;
 $home-color-light: #fce4d5;
 $home-color-light2: #e0e0ba;
 $home-text-color: #2d2d2d;
+$home-color-dark: darken($home-color, 5%);
 
 //add tint to various slider backgrounds
 
@@ -206,8 +207,8 @@ p {
 
 .wiof-primary-link {
   border-radius: 5px;
-  background: #2d2d2d;
-  color: #fff;
+  background: $dark-color;
+  color: $light-color;
   margin: 0 auto;
   font-weight: 500;
   padding: 6px 15px;

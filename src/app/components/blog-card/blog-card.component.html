@@ -1,13 +1,11 @@
-<ion-card class="blog-card">
+<ion-card class="blog-card" [routerLink]="['blog', blog.id]">
   <ion-card-content class="ion-text-start card-content">
-    <img [src]="blog.image$ | async" alt="" />
+    <div class="img-container">
+      <img [src]="blog.image$ | async" alt="" />
+    </div>
     <h3 class="ion-padding">
       <div class="blog-card-title">
-        <a
-          class="link-title"
-          [routerLink]="['/element', element, 'blog', blog.id]"
-          >{{ blog.title }}</a
-        >
+        <a class="link-title">{{ blog.title }}</a>
       </div>
       <div>
         <small

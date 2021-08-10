@@ -30,18 +30,14 @@
     <div *ngIf="blogList; else loading">
       <ion-slides #wiofBlogSlider [options]="slideOpts">
         <ion-slide *ngFor="let blog of blogList">
-          <ion-card class="blog-card">
+          <ion-card class="blog-card" [routerLink]="['blog', blog.id]">
             <ion-card-content class="ion-text-start card-content">
-              <img
-                [src]="blog.image$ | async"
-                [routerLink]="['blog', blog.id]"
-                alt=""
-              />
+              <div class="img-container">
+                <img [src]="blog.image$ | async" alt="" />
+              </div>
               <h3 class="ion-padding">
                 <div class="blog-card-title">
-                  <a class="link-title" [routerLink]="['blog', blog.id]">{{
-                    blog.title
-                  }}</a>
+                  <a class="link-title">{{ blog.title }}</a>
                 </div>
                 <div>
                   <small

@@ -4,7 +4,7 @@ import { CourseInFocus } from 'src/app/models/CourseInFocus';
 import { CourseInFocusService } from 'src/app/services/course-in-focus.service';
 import { UiUtilService } from 'src/app/util/UiUtilService';
 import { Router, ActivatedRoute } from '@angular/router';
-import { takeUntil, catchError, map } from 'rxjs/operators';
+import { takeUntil, catchError, map, switchMap } from 'rxjs/operators';
 import { UI_MESSAGES, ITEMS } from 'src/app/app.constants';
 
 @Component({
@@ -101,8 +101,15 @@ export class ManageCourseInFocusPage implements OnInit, OnDestroy {
       )
     );
     this.courseInFocusService
-      .deleteCourseInFocus(courseInFocus.id)
-      .pipe(takeUntil(this.destroy$))
+      .deleteCourseInFocusImage(courseInFocus.image)
+      .pipe(
+        takeUntil(this.destroy$),
+        switchMap(() => {
+          return this.courseInFocusService.deleteCourseInFocus(
+            courseInFocus.id
+          );
+        })
+      )
       .subscribe(
         (response) => {
           console.log(response);

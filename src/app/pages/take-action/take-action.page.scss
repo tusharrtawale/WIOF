@@ -11,6 +11,7 @@
   margin: 0 auto;
   color: $dark-color;
   display: inline-block;
+  font-size: x-large;
 }
 
 .back-button {
@@ -47,9 +48,13 @@
 .take-action-wrapper ::ng-deep .mat-tab-label-active {
   border-radius: 15px 15px 0px 0px;
   box-shadow: 5px 10px 25px grey;
+  opacity: 1;
+  border: 1px solid lightgrey;
+  border-bottom: none;
 }
 
 .take-action-wrapper ::ng-deep .mat-tab-label-container {
+  margin: 0 15px;
   padding-top: 15px;
 }
 

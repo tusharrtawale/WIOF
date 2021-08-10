@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TakeAction } from './take-action';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-take-action-content',
@@ -10,7 +11,13 @@ export class TakeActionContentComponent implements OnInit {
   @Input() actionData: TakeAction;
   @Input() selectedElement: string;
 
-  constructor() {}
+  constructor(private sanitizer: DomSanitizer) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.actionData.links.forEach((action) => {
+      action.linkSafe = this.sanitizer.bypassSecurityTrustResourceUrl(
+        action.link
+      );
+    });
+  }
 }

@@ -17,20 +17,24 @@
             size-lg="3"
           >
             <ion-card class="action-card" [ngClass]="selectedElement">
-              <ion-card-content>
-                <h2 class="ion-padding">
-                  <strong class="action-card-title">{{
-                    action.heading
-                  }}</strong>
-                </h2>
+              <ion-card-content
+                class="ion-no-padding ion-text-left"
+                style="height: 100%"
+              >
+                <div class="action-media-container">
+                  <iframe
+                    [title]="'Video for ' + action.heading"
+                    [src]="action.linkSafe"
+                    style="border: none; width: 100%; min-height: 200px"
+                  >
+                  </iframe>
+                </div>
+                <h3 class="action-card-title">
+                  {{ action.heading }}
+                </h3>
                 <p class="action-card-content ion-padding-horizontal">
                   {{ action.desc }}
                 </p>
-                <a [href]="action.link" target="_blank"
-                  ><ion-button color="{{ selectedElement }}"
-                    >Take Action</ion-button
-                  ></a
-                >
               </ion-card-content>
             </ion-card>
           </ion-col>

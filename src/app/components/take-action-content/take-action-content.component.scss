@@ -44,58 +44,55 @@
   .action-card {
     height: 100%;
     margin: 5px;
-    text-align: center;
+    box-shadow: 1px 2px 4px lightgrey;
+
     &.air {
-      box-shadow: 1px 2px 4px $air-color;
+      .action-card-title,
+      .action-media-container {
+        background-color: darken($air-color, 15%);
+      }
     }
 
     &.earth {
-      box-shadow: 1px 2px 4px $earth-color;
+      .action-card-title,
+      .action-media-container {
+        background-color: darken($earth-color, 15%);
+      }
     }
 
     &.water {
-      box-shadow: 1px 2px 4px $water-color;
+      .action-card-title,
+      .action-media-container {
+        background-color: darken($water-color, 15%);
+      }
     }
 
     &.energy {
-      box-shadow: 1px 2px 4px $energy-color;
+      .action-card-title,
+      .action-media-container {
+        background-color: darken($energy-color, 25%);
+      }
     }
 
     &.spirit {
-      box-shadow: 1px 2px 4px $spirit-color;
+      .action-card-title,
+      .action-media-container {
+        background-color: darken($spirit-color, 15%);
+      }
     }
 
     &:hover {
-      cursor: pointer;
       font-size: 18px !important;
-
-      &.air {
-        box-shadow: 5px 5px 20px $air-color;
-      }
-
-      &.earth {
-        box-shadow: 5px 5px 20px $earth-color;
-      }
-
-      &.water {
-        box-shadow: 5px 5px 20px $water-color;
-      }
-
-      &.energy {
-        box-shadow: 5px 5px 20px $energy-color;
-      }
-
-      &.spirit {
-        box-shadow: 5px 5px 20px $spirit-color;
-      }
+      box-shadow: 5px 5px 20px lightgrey;
     }
 
     .action-card-title {
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      color: white;
+      padding: 10px 15px 15px;
+      font-weight: bold;
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 16px;
     }
 
     .action-card-content {

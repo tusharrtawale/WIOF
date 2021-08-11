@@ -4,6 +4,7 @@ export class CourseInFocus {
   id?: string;
   name: string;
   offeredBy: string;
+  platform: string;
   duration: string;
   approxCost: string;
   keyTopics: string;
@@ -25,6 +26,7 @@ export class CourseInFocus {
     id: string,
     name: string,
     offeredBy: string,
+    platform: string,
     duration: string,
     approxCost: string,
     keyTopics: string,
@@ -38,6 +40,7 @@ export class CourseInFocus {
     this.id = id;
     this.name = name;
     this.offeredBy = offeredBy;
+    this.platform = platform;
     this.duration = duration;
     this.approxCost = approxCost;
     this.keyTopics = keyTopics;

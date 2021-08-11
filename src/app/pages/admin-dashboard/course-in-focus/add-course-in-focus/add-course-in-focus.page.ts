@@ -34,10 +34,12 @@ export class AddCourseInFocusPage implements OnInit, OnDestroy {
     editCourseInFocusTitle: 'Edit Course In Focus',
     nameLabel: 'Course Name',
     linkLabel: 'Course Link',
-    offeredByLabel: 'Offered By',
+    offeredByLabel: 'Offered By (e.g. ABC university)',
+    platformLabel: 'Course Platform (e.g. Coursera)',
     durationLabel: 'Duration',
-    approxCostLabel: 'Approximate Cost',
-    keyTopicsLabel: 'Key Topics(Enter comma(,) separated list of topics)',
+    approxCostLabel: 'Approximate Cost (e.g. ₹2000)',
+    keyTopicsLabel:
+      'Key Topics (Enter comma separated list of topics e.g. Topic1, Topic2)',
     imageLabel: 'Course Image',
     descriptionLabel: 'Description',
     categoryLabel: 'Category',
@@ -83,6 +85,7 @@ export class AddCourseInFocusPage implements OnInit, OnDestroy {
     return new FormGroup({
       name: new FormControl('', Validators.required),
       offeredBy: new FormControl('', Validators.required),
+      platform: new FormControl('', Validators.required),
       duration: new FormControl('', Validators.required),
       approxCost: new FormControl('', Validators.required),
       keyTopics: new FormControl('', Validators.required),
@@ -97,6 +100,7 @@ export class AddCourseInFocusPage implements OnInit, OnDestroy {
     return new FormGroup({
       name: new FormControl(courseInFocus.name, Validators.required),
       offeredBy: new FormControl(courseInFocus.offeredBy, Validators.required),
+      platform: new FormControl(courseInFocus.platform, Validators.required),
       duration: new FormControl(courseInFocus.duration, Validators.required),
       approxCost: new FormControl(
         courseInFocus.approxCost,
@@ -194,6 +198,7 @@ export class AddCourseInFocusPage implements OnInit, OnDestroy {
       isEditMode ? courseInFocus.id : null,
       addCourseInFocusForm.value.name,
       addCourseInFocusForm.value.offeredBy,
+      addCourseInFocusForm.value.platform,
       addCourseInFocusForm.value.duration,
       addCourseInFocusForm.value.approxCost,
       addCourseInFocusForm.value.keyTopics,

@@ -12,7 +12,7 @@ $home-color: #fbb0ac;
 $home-color-light: #fce4d5;
 $home-color-light2: #e0e0ba;
 $home-text-color: #2d2d2d;
-$home-color-dark: darken($home-color, 5%);
+$home-color-dark: darken($home-color, 8%);
 
 //add tint to various slider backgrounds
 
@@ -27,6 +27,8 @@ $light-color: #fff;
     $dark-color: #fff;
   }
 }
+
+$font-weight-medium: 500;
 
 //swtich to list button on sliders
 .rect-button {
@@ -80,7 +82,7 @@ $light-color: #fff;
 
 .title-text {
   font-size: 20px;
-  font-weight: 500;
+  font-weight: $font-weight-medium;
 }
 
 .link-title {
@@ -126,6 +128,10 @@ $font-size-medium: 18px;
   font-size: $font-size-medium;
 }
 
+.font-weight-medium {
+  font-weight: $font-weight-medium;
+}
+
 .item-divider-line {
   border-bottom: 1px solid lightgrey;
 }
@@ -151,7 +157,7 @@ p {
   border-radius: 5px;
   margin: 5px 5px;
   padding: 0 10px;
-  font-weight: 500;
+  font-weight: $font-weight-medium;
   min-height: 35px;
   max-height: 50px;
   min-width: 120px;
@@ -210,7 +216,7 @@ p {
   background: $dark-color;
   color: $light-color;
   margin: 0 auto;
-  font-weight: 500;
+  font-weight: $font-weight-medium;
   padding: 6px 15px;
   text-decoration: none;
   font-size: 15px;
@@ -222,4 +228,19 @@ p {
 
 .no-margin {
   margin: 0 auto;
+}
+
+@mixin key-tag($background-color) {
+  font-size: 14px;
+  background-color: $background-color;
+  color: $light-color;
+  border-radius: 5px;
+  padding: 2.5px 5px;
+  margin: 5px 5px 0 0;
+  font-weight: $font-weight-medium;
+  display: inline-block;
+}
+
+.home-key-tag {
+  @include key-tag($home-color-dark);
 }

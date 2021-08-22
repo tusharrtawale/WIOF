@@ -32,6 +32,14 @@
               {{ ngoInFocus.ngoName }}
             </strong>
           </h2>
+          <p>
+            <span class="font-weight-medium">Key Activities/Work Areas</span>:
+            <span
+              class="home-key-tag"
+              *ngFor="let activity of ngoInFocus.keyActivities.split(',')"
+              >{{ activity }}</span
+            >
+          </p>
           <p class="ngo-description ion-margin-vertical">
             {{ ngoInFocus.description }}
           </p>

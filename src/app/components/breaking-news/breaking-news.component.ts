@@ -1,46 +1,26 @@
-import {
-  Component,
-  HostListener,
-  Input,
-  AfterViewInit,
-  OnChanges
-} from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import {
   BREAKING_NEWS_SLIDER_OPTIONS,
   YOUTUBE_EMBED_VIDEO_LINK
 } from 'src/app/app.constants';
 import { News } from 'src/app/models/News';
 import { DomSanitizer } from '@angular/platform-browser';
+import { AppUtilService } from 'src/app/util/AppUtilService';
 
 @Component({
   selector: 'app-breaking-news',
   templateUrl: './breaking-news.component.html',
   styleUrls: ['./breaking-news.component.scss']
 })
-export class BreakingNewsComponent implements AfterViewInit, OnChanges {
+export class BreakingNewsComponent implements OnChanges {
   @Input() newsList: Array<News>;
   videoSliderClass: string;
-  width: number;
-  isVideo: boolean;
   slideOpts = BREAKING_NEWS_SLIDER_OPTIONS;
 
-  // handle youtube video
-  videoLink: string;
-
-  @HostListener('window:resize', [])
-  public onResize() {
-    this.detectScreenSize();
-  }
-
-  ngAfterViewInit() {
-    this.detectScreenSize();
-  }
-
-  detectScreenSize() {
-    this.width = window.innerWidth;
-  }
-
-  constructor(private sanitizer: DomSanitizer) {}
+  constructor(
+    private sanitizer: DomSanitizer,
+    private appUtilService: AppUtilService
+  ) {}
 
   ngOnChanges() {
     if (this.newsList) {
@@ -53,5 +33,9 @@ export class BreakingNewsComponent implements AfterViewInit, OnChanges {
         }
       });
     }
+  }
+
+  stopVideos() {
+    this.appUtilService.stopVideos();
   }
 }

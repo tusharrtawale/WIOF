@@ -37,6 +37,8 @@ export class AddNgoInFocusPage implements OnInit, OnDestroy {
     editNgoInFocusTitle: 'Edit NGO In Focus',
     nameLabel: 'NGO Name',
     linkLabel: 'Know More Link',
+    keyActivitiesLabel:
+      'Key Activities/Work Areas (Enter comma separated list of activites e.g. activity1, activity2)',
     ngoLogoLabel: 'NGO Logo',
     mediaLinkLabel:
       'Media Link (Please enter youtube video ID only, do not enter full link)',
@@ -113,6 +115,7 @@ export class AddNgoInFocusPage implements OnInit, OnDestroy {
       mediaLink: new FormControl(''),
       image: new FormControl(''),
       ngoLogo: new FormControl('', Validators.required),
+      keyActivities: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
       category: new FormControl('', Validators.required)
     });
@@ -129,6 +132,10 @@ export class AddNgoInFocusPage implements OnInit, OnDestroy {
       ngoLogo: new FormControl(ngoInFocus.ngoLogo, Validators.required),
       mediaLink: new FormControl(ngoInFocus.mediaLink),
       image: new FormControl(''),
+      keyActivities: new FormControl(
+        ngoInFocus.keyActivities,
+        Validators.required
+      ),
       description: new FormControl(ngoInFocus.description, Validators.required),
       category: new FormControl(ngoInFocus.category, Validators.required)
     });
@@ -147,7 +154,6 @@ export class AddNgoInFocusPage implements OnInit, OnDestroy {
 
   async onSubmit() {
     if (this.addNgoInFocusForm.valid) {
-      console.log(this.addNgoInFocusForm.value);
       this.ngoInFocus = this.createByForm(
         this.addNgoInFocusForm,
         this.ngoInFocus,
@@ -243,6 +249,7 @@ export class AddNgoInFocusPage implements OnInit, OnDestroy {
       addNgoInFocusForm.value.mediaType,
       mediaLink,
       addNgoInFocusForm.value.knowMoreLink,
+      addNgoInFocusForm.value.keyActivities,
       addNgoInFocusForm.value.description,
       addNgoInFocusForm.value.category,
       isEditMode ? ngoInFocus.status : ITEM_STATUS.SUBMITTED,

@@ -33,7 +33,7 @@
 
 .title-text {
   font-size: 20px;
-  font-weight: 500;
+  font-weight: $font-weight-medium;
 }
 
 @mixin video-widget-style($color) {
@@ -67,7 +67,7 @@
   background-color: $dark-color;
   .title-text {
     font-size: 20px;
-    font-weight: 500;
+    font-weight: $font-weight-medium;
     color: $light-color;
   }
   &.background {

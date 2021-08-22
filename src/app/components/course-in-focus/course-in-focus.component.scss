@@ -30,21 +30,11 @@
 
 .course-details {
   h2 {
-    margin-bottom: 5px;
+    margin-bottom: 7px;
+    margin-top: 0;
   }
 
   p span {
-    font-weight: 500;
-
-    &.topic {
-      font-size: 14px;
-      background-color: $home-color-dark;
-      color: #fff;
-      border-radius: 5px;
-      padding: 2.5px 5px;
-      margin: 5px 5px 0 0;
-      font-weight: 500;
-      display: inline-block;
-    }
+    font-weight: $font-weight-medium;
   }
 }

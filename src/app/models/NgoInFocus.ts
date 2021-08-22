@@ -4,6 +4,7 @@ import { SafeResourceUrl } from '@angular/platform-browser';
 export class NgoInFocus {
   id?: string;
   ngoName: string;
+  keyActivities: string;
   description: string;
   image$: Observable<string>;
   ngoLogo: string;
@@ -29,6 +30,7 @@ export class NgoInFocus {
     mediaType: string,
     mediaLink: string,
     knowMoreLink: string,
+    keyActivities: string,
     description: string,
     category: string,
     status: string,
@@ -40,6 +42,7 @@ export class NgoInFocus {
     this.mediaType = mediaType;
     this.mediaLink = mediaLink;
     this.knowMoreLink = knowMoreLink;
+    this.keyActivities = keyActivities;
     this.description = description;
     this.category = category;
     this.status = status;

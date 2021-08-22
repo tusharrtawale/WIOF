@@ -51,7 +51,7 @@
 
             h3 {
               text-align: center;
-              font-weight: 500;
+              font-weight: $font-weight-medium;
               padding: 12px 0px;
               background: $dark-color;
               color: $light-color;
@@ -91,7 +91,7 @@
     margin: 10px 0px;
 
     span {
-      font-weight: 500;
+      font-weight: $font-weight-medium;
     }
 
     a {

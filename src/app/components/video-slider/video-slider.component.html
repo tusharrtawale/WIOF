@@ -8,18 +8,18 @@
       <ion-col style="text-align: right" size="8"
         ><a
           [routerLink]="['videos']"
-          class="rect-button"
-          alt="Switch to list"
-          title="Switch to list"
+          class="wiof-icon-only-btn"
+          title="Go to list view"
+          aria-label="Go to list view"
         >
           <!-- Switch to list -->
           <ion-icon name="list"></ion-icon>
         </a>
         <a
           [routerLink]="['take-action']"
-          class="rect-button"
-          alt="Take Action"
-          title="Take Action"
+          class="wiof-icon-only-btn"
+          title="Go to Take Action"
+          aria-label="Go to Take Action"
         >
           <ion-icon name="trail-sign-outline"></ion-icon>
         </a>
@@ -32,12 +32,14 @@
         <ion-slide *ngFor="let video of videoList">
           <ion-card class="video-card">
             <ion-card-content class="ion-text-start card-content">
-              <img
-                [src]="video.thumbnail"
-                class="thumbnailImage"
-                [routerLink]="['video', video.url]"
-                alt=""
-              />
+              <div class="img-container">
+                <img
+                  [src]="video.thumbnail"
+                  class="thumbnailImage"
+                  [routerLink]="['video', video.url]"
+                  alt=""
+                />
+              </div>
               <h3 class="ion-padding">
                 <strong
                   ><a class="link-title" [routerLink]="['video', video.url]">{{

@@ -1,6 +1,13 @@
 <ion-card class="video-card">
   <ion-card-content class="ion-text-start card-content">
-    <img [src]="video.thumbnail" class="thumbnailImage" alt="" />
+    <div class="img-container">
+      <img
+        [src]="video.thumbnail"
+        class="thumbnailImage"
+        [routerLink]="['video', video.url]"
+        alt=""
+      />
+    </div>
     <h3 class="ion-padding">
       <strong
         ><a

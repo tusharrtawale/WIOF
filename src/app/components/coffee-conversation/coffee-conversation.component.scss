@@ -49,13 +49,28 @@
             top: 5%;
             left: 5%;
 
-            h3 {
-              text-align: center;
-              font-weight: $font-weight-medium;
-              padding: 12px 0px;
+            .header {
               background: $dark-color;
-              color: $light-color;
-              margin: 0 auto;
+              text-align: center;
+
+              h3 {
+                font-weight: $font-weight-medium;
+                padding: 12px 0px;
+                color: $light-color;
+                margin: 0 auto;
+                font-weight: 500;
+                display: inline-block;
+              }
+
+              button {
+                float: right;
+                padding: 5px 5px 3px 5px;
+                border-radius: 50%;
+                margin-top: 8px;
+                margin-right: 8px;
+                color: $dark-color;
+                background: $light-color;
+              }
             }
 
             p {

@@ -65,12 +65,13 @@
                       >Know More</a
                     >
                   </p>
-                  <div
-                    class="about-interviewee"
-                    *ngIf="showAboutInterviewee"
-                    (mouseleave)="showIntervieweeDetails($event, false)"
-                  >
-                    <h3>About Interviewee</h3>
+                  <div class="about-interviewee" *ngIf="showAboutInterviewee">
+                    <div class="header">
+                      <h3>About Interviewee</h3>
+                      <button (click)="showIntervieweeDetails($event, false)">
+                        <ion-icon name="close" slot="icon-only"></ion-icon>
+                      </button>
+                    </div>
                     <p>{{ coffeeConv.intervieweeDesc }}</p>
                   </div>
                 </ion-col>

@@ -250,6 +250,8 @@ export const UI_MESSAGES = {
   FAILURE_DELETE_ITEM_DESC: 'Uh Oh! Failed to delete $ITEM. Please try again.',
   FAILURE_CTA_TEXT: 'OK',
   SUCCESS_SUBSCRIPTION: 'You are now subscribed to WIOF Newsletter.',
+  ALREADY_SUBSCRIBED:
+    'You have already been subscribed to WIOF Newsletter. Please try again with a different email id.',
   SUCCESS_PUBLISH_ITEM_DESC: '$ITEM successfully published!',
   SUCCESS_POLL_VOTE_HEADER: 'Vote Recorded',
   SUCCESS_POLL_VOTE_DESC:

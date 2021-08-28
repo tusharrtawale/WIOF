@@ -48,7 +48,6 @@ export class SubscribeComponent implements OnInit, OnDestroy {
 
   async onSubmit() {
     if (this.addSubscriberForm.valid) {
-      const subscriber = Subscriber.createByForm(this.addSubscriberForm);
       this.loader = await this.uiUtil.showLoader(
         UI_MESSAGES.SAVE_IN_PROGRESS.replace(
           UI_MESSAGES.PLACEHOLDER,
@@ -56,38 +55,49 @@ export class SubscribeComponent implements OnInit, OnDestroy {
         )
       );
       this.subscribeService
-        .saveSubscriber(subscriber)
-        .pipe(
-          takeUntil(this.destroy$),
-          map((subscribeRes) => {
-            return subscribeRes;
-          }),
-          catchError((err) => {
-            return throwError(err);
-          })
-        )
-        .subscribe(
-          (subscribeRes) => {
+        .findSubscriber(this.addSubscriberForm.value.email)
+        .subscribe(async (data) => {
+          if (data) {
             this.loader.dismiss();
-            this.addSubscriberForm.reset();
             this.uiUtil.presentAlert(
               UI_MESSAGES.SUCCESS_HEADER,
-              UI_MESSAGES.SUCCESS_SUBSCRIPTION,
+              UI_MESSAGES.ALREADY_SUBSCRIBED,
               [UI_MESSAGES.SUCCESS_CTA_TEXT]
             );
-          },
-          (error) => {
-            this.loader.dismiss();
-            this.uiUtil.presentAlert(
-              UI_MESSAGES.FAILURE_HEADER,
-              UI_MESSAGES.FAILURE_ADD_ITEM_DESC.replace(
-                UI_MESSAGES.PLACEHOLDER,
-                'subscription'
-              ),
-              [UI_MESSAGES.FAILURE_CTA_TEXT]
-            );
+          } else {
+            const subscriber = Subscriber.createByForm(this.addSubscriberForm);
+            this.subscribeService
+              .saveSubscriber(subscriber)
+              .pipe(
+                takeUntil(this.destroy$),
+                catchError((err) => {
+                  return throwError(err);
+                })
+              )
+              .subscribe(
+                () => {
+                  this.loader.dismiss();
+                  this.addSubscriberForm.reset();
+                  this.uiUtil.presentAlert(
+                    UI_MESSAGES.SUCCESS_HEADER,
+                    UI_MESSAGES.SUCCESS_SUBSCRIPTION,
+                    [UI_MESSAGES.SUCCESS_CTA_TEXT]
+                  );
+                },
+                (error) => {
+                  this.loader.dismiss();
+                  this.uiUtil.presentAlert(
+                    UI_MESSAGES.FAILURE_HEADER,
+                    UI_MESSAGES.FAILURE_ADD_ITEM_DESC.replace(
+                      UI_MESSAGES.PLACEHOLDER,
+                      'subscription'
+                    ),
+                    [UI_MESSAGES.FAILURE_CTA_TEXT]
+                  );
+                }
+              );
           }
-        );
+        });
     }
     this.subscribeButton = true;
     this.setSubscribedFlag();

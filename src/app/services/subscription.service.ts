@@ -33,6 +33,16 @@ export class SubscriptionService {
     );
   }
 
+  findSubscriber(email: string): Observable<Boolean> {
+    const subscriberCollection = this.database.collection(
+      FIREBASE_COLLECTION.SUBSCRIPTIONS,
+      (ref) => ref.where('email', '==', email).limit(1)
+    );
+    return subscriberCollection
+      .get()
+      .pipe(map((querySnapshot) => querySnapshot.docs.length > 0));
+  }
+
   saveSubscriber(subscriber: Subscriber) {
     // from create an observable from promise
     return from(this.subscriptionsCollection.add({ ...subscriber }));

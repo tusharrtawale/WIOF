@@ -16,6 +16,25 @@
       transform: scale(1);
       transition: transform 1s;
     }
+
+    .author-name {
+      font-size: 90%;
+      display: inline-block;
+      width: 55%;
+    }
+
+    .time-to-read {
+      font-size: 90%;
+      float: right;
+      padding-top: 2px;
+
+      ion-icon {
+        height: 16px;
+        width: 16px;
+        padding-right: 2px;
+        vertical-align: text-bottom;
+      }
+    }
   }
 
   &:hover {

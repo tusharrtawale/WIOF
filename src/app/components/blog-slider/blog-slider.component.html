@@ -34,19 +34,26 @@
               <div class="img-container">
                 <img [src]="blog.image$ | async" alt="" />
               </div>
-              <h3 class="ion-padding">
-                <div class="blog-card-title">
+              <div class="ion-padding">
+                <h3 class="blog-card-title">
                   <a class="link-title">{{ blog.title }}</a>
-                </div>
+                </h3>
                 <div>
                   <small
-                    style="font-size: 85%"
                     class="author-name"
                     [attr.aria-label]="'author ' + blog.author"
-                    >- {{ blog.author }}</small
+                    >by {{ blog.author }}</small
+                  >
+                  <small class="time-to-read"
+                    ><ion-icon
+                      slot="icon-only"
+                      name="stopwatch-outline"
+                    ></ion-icon
+                    >{{ blog.timeToRead }} min read</small
                   >
                 </div>
-              </h3>
+                <div></div>
+              </div>
               <p
                 class="blog-card-content ion-padding-horizontal"
                 [routerLink]="['blog', blog.id]"

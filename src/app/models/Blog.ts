@@ -12,6 +12,7 @@ export class Blog {
   aboutAuthor: string;
   category: string;
   subCategory: string;
+  timeToRead: number;
   submitDate: Date;
   publishDate: Date;
 

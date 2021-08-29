@@ -28,4 +28,15 @@
   padding: 20px;
   margin-top: 10px;
   margin-bottom: 10px;
+
+  .time-to-read {
+    color: grey;
+    font-size: 15px;
+
+    ion-icon {
+      height: 18px;
+      width: 18px;
+      vertical-align: text-bottom;
+    }
+  }
 }

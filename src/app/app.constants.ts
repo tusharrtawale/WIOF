@@ -263,3 +263,5 @@ export const UI_MESSAGES = {
   SAVE_IN_PROGRESS: 'Saving $ITEM...',
   DELETE_IN_PROGRESS: 'Deleting $ITEM...'
 };
+
+export const AVG_WORD_READ_PER_MIN = 250;

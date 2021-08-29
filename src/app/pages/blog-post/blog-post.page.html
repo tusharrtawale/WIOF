@@ -1,14 +1,4 @@
 <app-header></app-header>
-
-<!-- implement using url query instead -->
-<!-- [ngClass]="{
-  'wiof-earth':blog.category === 'Earth',
-  'wiof-water':blog.category === 'Water',
-  'wiof-fire':blog.category === 'Fire',
-  'wiof-air':blog.category === 'Air',
-  'wiof-spirit':blog.category === 'Spirit'
-}" -->
-
 <ion-content>
   <ion-grid>
     <ion-row>
@@ -22,7 +12,16 @@
               <ion-img [src]="(blog.image$ | async)"></ion-img>
             </ion-col>
             <ion-col size="12">
-              <ion-text *ngIf="blog.author">By {{blog.author}}</ion-text><br />
+              <div>
+                <ion-text *ngIf="blog.author">By {{blog.author}}</ion-text> |
+                <span class="time-to-read"
+                  ><ion-icon
+                    slot="icon-only"
+                    name="stopwatch-outline"
+                  ></ion-icon>
+                  {{blog.timeToRead}} min read</span
+                >
+              </div>
               <ion-text *ngIf="blog.publishDate"
                 >Published on {{blog.publishDate | date }}</ion-text
               >

@@ -7,7 +7,7 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import { from, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Blog } from '../models/Blog';
-import { FIREBASE_COLLECTION } from '../app.constants';
+import { FIREBASE_COLLECTION, AVG_WORD_READ_PER_MIN } from '../app.constants';
 
 @Injectable({
   providedIn: 'root'
@@ -45,10 +45,16 @@ export class BlogService {
           const data = doc.data() as Blog;
           data.id = doc.id;
           data.image$ = this.getImage(data.imageName);
+          data.timeToRead = this.getTimeToRead(data.content);
           return data;
         })
       )
     );
+  }
+
+  getTimeToRead(content: string): number {
+    const totalWords = content.split(' ').length;
+    return Math.ceil(totalWords / AVG_WORD_READ_PER_MIN);
   }
 
   getBlog(id: string): Observable<Blog> {
@@ -60,9 +66,10 @@ export class BlogService {
         if (!querySnapshot.exists) {
           return null;
         } else {
-          const data = querySnapshot.data() as Blog;
+          const data = querySnapshot.data();
           data.id = querySnapshot.id;
           data.image$ = this.getImage(data.imageName);
+          data.timeToRead = this.getTimeToRead(data.content);
           return data;
         }
       })

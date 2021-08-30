@@ -12,6 +12,7 @@ export class AboutusPage implements OnInit {
     imageLink: string;
     bio: string;
     socialLink?: string;
+    showKnowMore?: boolean;
   }[] = [
     {
       serialNo: 2,

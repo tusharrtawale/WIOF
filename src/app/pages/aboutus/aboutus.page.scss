@@ -5,22 +5,58 @@
 }
 
 .profile-card {
-  padding: 1px;
+  height: 100%;
+  margin: 5px;
+  border: 1px solid lightgray;
 
   &:hover {
     box-shadow: 0px 5px 20px lightgrey;
     border: 1px solid lightgrey;
     padding: 0px;
   }
+
+  .profile-header {
+    text-align: center;
+    padding: 15px;
+    padding-top: 20px;
+    background: #fffaf0;
+    border-radius: 5px 5px 0 0;
+    border-bottom: 1px solid lightgrey;
+  }
+
+  .close-icon {
+    position: absolute;
+    cursor: pointer;
+    top: 15px;
+    right: 15px;
+  }
+
+  .profile-detail-bio-header {
+    display: inline-block;
+    width: 90%;
+  }
+
+  .profile-detail-bio {
+    max-height: 300px;
+    overflow: auto;
+    padding-top: 0;
+    color: #2d2d2d;
+    padding: 15px;
+  }
 }
 
 .profile-image {
   width: 100px;
-  border: 2px solid $dark-color;
-  border-radius: 5px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0px 0px 5px grey;
+  border: 2px solid white;
 }
 
 .profile-name {
+  color: $dark-color;
+  padding-top: 10px;
   @media screen and (max-width: 767px) {
     text-align: center;
   }
@@ -30,10 +66,16 @@
   text-align: justify;
   color: $dark-color;
   font-size: 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .linked-in-container {
   padding-top: 10px;
+  color: $dark-color;
 
   .logo {
     font-size: 25px;
@@ -43,5 +85,6 @@
 
   .link {
     font-size: 15px;
+    color: $dark-color;
   }
 }

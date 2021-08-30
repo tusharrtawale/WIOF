@@ -4,6 +4,13 @@
   padding-right: 15px;
 }
 
+.profile-card-container {
+  padding: 10px;
+  @media screen and (max-width: 767px) {
+    padding: 0px 0 15px 0px;
+  }
+}
+
 .profile-card {
   height: 100%;
   margin: 5px;
@@ -34,14 +41,15 @@
   .profile-detail-bio-header {
     display: inline-block;
     width: 90%;
+    font-size: 20px;
+    font-weight: 500;
   }
 
   .profile-detail-bio {
-    max-height: 300px;
+    height: 330px;
     overflow: auto;
-    padding-top: 0;
-    color: #2d2d2d;
-    padding: 15px;
+    color: $dark-color;
+    padding: 0 15px 15px 15px;
   }
 }
 
@@ -57,9 +65,8 @@
 .profile-name {
   color: $dark-color;
   padding-top: 10px;
-  @media screen and (max-width: 767px) {
-    text-align: center;
-  }
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .profile-bio-text {

@@ -139,6 +139,7 @@ p {
   max-height: 50px;
   min-width: 120px;
   font-size: 15px;
+  cursor: pointer;
 
   &:hover {
     box-shadow: 0 4px 8px grey;
@@ -238,4 +239,8 @@ p {
 
 .home-key-tag {
   @include key-tag($home-color-dark);
+}
+
+ion-icon {
+  pointer-events: none;
 }

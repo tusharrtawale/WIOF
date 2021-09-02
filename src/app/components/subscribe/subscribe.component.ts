@@ -76,6 +76,9 @@ export class SubscribeComponent implements OnInit, OnDestroy {
               )
               .subscribe(
                 () => {
+                  this.subscribeButton = true;
+                  this.setSubscribedFlag();
+
                   this.loader.dismiss();
                   this.addSubscriberForm.reset();
                   this.uiUtil.presentAlert(
@@ -99,8 +102,6 @@ export class SubscribeComponent implements OnInit, OnDestroy {
           }
         });
     }
-    this.subscribeButton = true;
-    this.setSubscribedFlag();
   }
 
   setSubscribedFlag() {
@@ -112,17 +113,11 @@ export class SubscribeComponent implements OnInit, OnDestroy {
   }
 
   getSubscriptionOpenedFlag() {
-    if (sessionStorage.getItem('subscriptionBoxOpened')) {
-      return true;
-    }
-    return false;
+    return Boolean(sessionStorage.getItem('subscriptionBoxOpened'));
   }
 
   getSubscribedFlag() {
-    if (localStorage.getItem('subscribed')) {
-      return true;
-    }
-    return false;
+    return Boolean(localStorage.getItem('subscribed'));
   }
 
   openSubscriptionForm() {

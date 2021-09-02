@@ -5,21 +5,23 @@ $fontcolor: #fff;
 
 .wiof-subscribe {
   position: absolute;
-  height: 390px;
-  width: 250px;
-  top: 80px;
-  border-bottom-right-radius: 15px;
-  border-top-right-radius: 15px;
+  width: 300px;
+  top: 120px;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
   z-index: 100;
   transition: 0.5s;
-  left: -250px;
+  right: -300px;
+  padding: 20px 15px;
+  color: $dark-color;
+
   &.active {
-    left: 0px;
-    box-shadow: 1px 1px 10px #000000;
+    right: 0px;
+    box-shadow: 1px 1px 15px $dark-color;
   }
 
   &.home {
-    background-color: $home-color;
+    background-color: lighten($home-color, 5%);
   }
   &.earth {
     background-color: $earth-color;
@@ -39,7 +41,6 @@ $fontcolor: #fff;
 }
 
 .wiof-subscribe-form {
-  padding: 10px;
   z-index: 100;
 
   .item-input {
@@ -51,16 +52,15 @@ $fontcolor: #fff;
   position: absolute;
   height: 150px;
   width: 40px;
-
-  border-bottom-right-radius: 15px;
-  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
   cursor: pointer;
-  top: 22vh;
-  left: 0px;
+  top: 15vh;
+  right: 0px;
   z-index: 100;
-  // opacity: 85%;
   transition: 0.4s;
   transition-delay: 0.5s;
+  opacity: 0.6;
 
   &.inactive {
     left: -40px;
@@ -68,7 +68,7 @@ $fontcolor: #fff;
   }
 
   &.home {
-    background-color: $home-color;
+    background-color: lighten($home-color, 5%);
   }
   &.earth {
     background-color: $earth-color;
@@ -96,12 +96,14 @@ $fontcolor: #fff;
   position: absolute;
   top: 110px;
   width: 35px;
-  color: $home-text-color;
+  color: $dark-color;
+  right: 2px;
   font-size: x-large;
 
   @media only screen and (max-width: 767px) {
     top: 90px;
     width: 32px;
+    right: -1px;
     font-size: large;
   }
 }
@@ -111,10 +113,10 @@ $fontcolor: #fff;
   width: 100px;
   position: absolute;
   top: 40px;
-  left: -34px;
+  left: -30px;
   margin: 0px;
   font-weight: bold;
-  color: $home-text-color;
+  color: $dark-color;
 
   @media only screen and (max-width: 767px) {
     top: 20px;
@@ -123,74 +125,20 @@ $fontcolor: #fff;
 }
 
 h4 {
-  padding: 10px;
-  color: $home-text-color;
+  color: $dark-color;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 18px;
+  width: 90%;
 }
 
 .close-button {
   position: absolute;
-  top: 5px;
+  top: 15px;
   right: 4px;
   outline: none;
-  color: $home-text-color;
+  color: $dark-color;
   font-size: x-large;
-
-  &.home {
-    background-color: $home-color;
-  }
-  &.earth {
-    background-color: $earth-color;
-  }
-  &.water {
-    background-color: $water-color;
-  }
-  &.air {
-    background-color: $air-color;
-  }
-  &.spirit {
-    background-color: $spirit-color;
-  }
-  &.energy {
-    background-color: $energy-color;
-  }
+  background-color: transparent;
 }
 
-.subscribe-button {
-  color: $home-text-color;
-  font-size: large;
-  border: 1px solid $home-text-color;
-  border-radius: 5px;
-  transition: 0.5s;
-  padding: 12px;
-  margin-left: 40%;
-
-  &:hover {
-    color: $home-text-color;
-    background-color: $fontcolor;
-    box-shadow: $shadowcolor 5px 6px;
-  }
-  &:disabled {
-    color: grey;
-    border: 1px solid grey;
-    box-shadow: none;
-  }
-
-  &.home {
-    background-color: $home-color;
-  }
-  &.earth {
-    background-color: $earth-color;
-  }
-  &.water {
-    background-color: $water-color;
-  }
-  &.air {
-    background-color: $air-color;
-  }
-  &.spirit {
-    background-color: $spirit-color;
-  }
-  &.energy {
-    background-color: $energy-color;
-  }
-}

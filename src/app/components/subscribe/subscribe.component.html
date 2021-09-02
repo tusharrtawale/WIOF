@@ -27,7 +27,11 @@
   }"
 >
   <h4 class="subscribe-heading">Subscribe to WIOF NewsLetter</h4>
-  <button class="close-button" [ngClass]="page" (click)="onBack()">
+  <button
+    class="close-button"
+    title="Close subscription box"
+    (click)="onBack()"
+  >
     <ion-icon name="close-circle-outline"></ion-icon>
   </button>
   <form
@@ -49,13 +53,16 @@
     ><br />
     <button
       [disabled]="!addSubscriberForm.valid"
-      class="subscribe-button"
-      [ngClass]="page"
+      class="wiof-primary-btn"
       type="submit"
-      expand="block"
-      fill="clear"
     >
-      Subscribe
-    </button>
+      Subscribe</button
+    ><br />
+    <p>
+      Please be rest assured that you will not receive any promotional emails
+      from us and we also do not share our mailing lists with any third party.
+      By Subscribing to us, you only receive information about new relevant
+      content added to our website.
+    </p>
   </form>
 </div>

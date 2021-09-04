@@ -6,15 +6,20 @@ $fontcolor: #fff;
   position: absolute;
   padding: 8px;
   width: 45px;
-  background-color: #8383835e;
-  // background-color: white;
-  border-bottom-right-radius: 15px;
-  border-top-right-radius: 15px;
+  background-color: $light-color;
+  // background-color: #8383835e;
+  opacity: 0.6;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
   cursor: pointer;
-  top: 15vh;
+  top: 9rem;
   left: 0px;
   z-index: 100;
-  //box-shadow: 1px 1px 20px lightgrey;
+  transition: 0.5s;
+
+  &:hover {
+    opacity: 1;
+  }
 
   &.inactive {
     left: -40px;

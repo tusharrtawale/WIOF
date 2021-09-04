@@ -5,14 +5,14 @@ $fontcolor: #fff;
 
 .wiof-subscribe {
   position: absolute;
-  width: 300px;
-  top: 120px;
-  border-bottom-left-radius: 15px;
-  border-top-left-radius: 15px;
+  width: 275px;
+  top: 6rem;
+  border-bottom-left-radius: 1rem;
+  border-top-left-radius: 1rem;
   z-index: 100;
   transition: 0.5s;
-  right: -300px;
-  padding: 20px 15px;
+  right: -275px;
+  padding: 1rem 1rem;
   color: $dark-color;
 
   &.active {
@@ -55,12 +55,16 @@ $fontcolor: #fff;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
   cursor: pointer;
-  top: 15vh;
-  right: 0px;
+  top: 9rem;
+  right: 0;
   z-index: 100;
-  transition: 0.4s;
-  transition-delay: 0.5s;
+  transition: 0.5s;
+  // transition-delay: 0.5s;
   opacity: 0.6;
+
+  &:hover {
+    opacity: 1;
+  }
 
   &.inactive {
     left: -40px;
@@ -141,4 +145,3 @@ h4 {
   font-size: x-large;
   background-color: transparent;
 }
-

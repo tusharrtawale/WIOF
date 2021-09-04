@@ -1,41 +1,40 @@
 @import '../../wiof-custom-theming.scss';
 
 .back-button {
-  padding-right: 15px;
+  padding-right: 1rem;
 }
 
 .profile-card-container {
   padding: 10px;
   @media screen and (max-width: 767px) {
-    padding: 0px 0 15px 0px;
+    padding: 0 0 1rem 0;
   }
 }
 
 .profile-card {
   height: 100%;
   margin: 5px;
-  border: 1px solid lightgray;
+  border: 1px solid lightgrey;
 
   &:hover {
-    box-shadow: 0px 5px 20px lightgrey;
+    box-shadow: 0px 5px 25px lightgrey;
     border: 1px solid lightgrey;
     padding: 0px;
   }
 
   .profile-header {
     text-align: center;
-    padding: 15px;
+    padding: 1rem;
     padding-top: 20px;
     background: $header-color;
-    border-radius: 5px 5px 0 0;
     border-bottom: 1px solid lightgrey;
   }
 
   .close-icon {
     position: absolute;
     cursor: pointer;
-    top: 15px;
-    right: 15px;
+    top: 1rem;
+    right: 1rem;
   }
 
   .profile-detail-bio-header {
@@ -46,10 +45,10 @@
   }
 
   .profile-detail-bio {
-    height: 330px;
+    height: 329px;
     overflow: auto;
     color: $dark-color;
-    padding: 0 15px 15px 15px;
+    padding: 0 1rem 1rem 1rem;
   }
 }
 

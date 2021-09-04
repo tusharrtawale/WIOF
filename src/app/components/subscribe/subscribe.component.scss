@@ -17,7 +17,7 @@ $fontcolor: #fff;
 
   &.active {
     right: 0px;
-    box-shadow: 1px 1px 15px $dark-color;
+    box-shadow: 1px 1px 1rem $dark-color;
   }
 
   &.home {
@@ -52,8 +52,8 @@ $fontcolor: #fff;
   position: absolute;
   height: 150px;
   width: 40px;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
   cursor: pointer;
   top: 9rem;
   right: 0;
@@ -131,14 +131,14 @@ $fontcolor: #fff;
 h4 {
   color: $dark-color;
   margin-top: 0;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
   font-size: 18px;
   width: 90%;
 }
 
 .close-button {
   position: absolute;
-  top: 15px;
+  top: 1rem;
   right: 4px;
   outline: none;
   color: $dark-color;

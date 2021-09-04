@@ -20,7 +20,7 @@
 .eqScaleContainer {
   display: flex;
   width: 100%;
-  padding: 15px 5px 0px;
+  padding: 1rem 5px 0;
 }
 .eqScale {
   display: block;
@@ -50,7 +50,7 @@
 
 .eqScalePercent {
   height: 40px;
-  box-shadow: 5px 5px 15px darkgrey;
+  box-shadow: 5px 5px 1rem darkgrey;
   padding: 2px;
 }
 

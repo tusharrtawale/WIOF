@@ -178,7 +178,7 @@ export const VIDEO_PLAYER_VIDEOS = {
   WATER: 'RkdIIfArWqo',
   EARTH: '5aIOHHi_W5o',
   FIRE: 'mmyrbKBZ6SU',
-  SPIRIT: 'xiAFq4ajWvM',
+  SPIRIT: 'CEqoCcacR3Y',
   CONFIG: 'SYWb9hNX-1s'
 };
 
@@ -244,14 +244,14 @@ export const UI_MESSAGES = {
   SUCCESS_HEADER: 'Success',
   SUCCESS_ADD_ITEM_DESC: '$ITEM saved successfully!',
   SUCCESS_DELETE_ITEM_DESC: '$ITEM deleted successfully!',
-  SUCCESS_CTA_TEXT: 'Cool!',
+  SUCCESS_CTA_TEXT: 'OK',
   FAILURE_HEADER: 'Error',
   FAILURE_ADD_ITEM_DESC: 'Uh oh! Failed to save $ITEM. Please try again.',
   FAILURE_DELETE_ITEM_DESC: 'Uh Oh! Failed to delete $ITEM. Please try again.',
   FAILURE_CTA_TEXT: 'OK',
-  SUCCESS_SUBSCRIPTION: 'You are now subscribed to WIOF Newsletter.',
+  SUCCESS_SUBSCRIPTION: 'You are now subscribed to WIOF Newsletter. Stay tuned for receiving periodic updates on our website in your mailbox.',
   ALREADY_SUBSCRIBED:
-    'You have already been subscribed to WIOF Newsletter. Please try again with a different email id.',
+    'You have already been subscribed to WIOF Newsletter. Stay tuned for receiving periodic updates on our website in your mailbox.',
   SUCCESS_PUBLISH_ITEM_DESC: '$ITEM successfully published!',
   SUCCESS_POLL_VOTE_HEADER: 'Vote Recorded',
   SUCCESS_POLL_VOTE_DESC:

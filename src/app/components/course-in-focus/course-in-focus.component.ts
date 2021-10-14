@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CourseInFocus } from 'src/app/models/courseInFocus';
+import { COFFEE_CONV_SLIDER_OPTIONS } from 'src/app/app.constants';
 
 @Component({
   selector: 'app-course-in-focus',
@@ -7,7 +8,8 @@ import { CourseInFocus } from 'src/app/models/courseInFocus';
   styleUrls: ['./course-in-focus.component.scss']
 })
 export class CourseInFocusComponent implements OnInit {
-  @Input() courseInFocus: CourseInFocus;
+  @Input() coursesInFocus: CourseInFocus[];
+  slideOpts = COFFEE_CONV_SLIDER_OPTIONS;
 
   constructor() {}
 

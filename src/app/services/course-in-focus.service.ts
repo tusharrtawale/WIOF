@@ -68,32 +68,37 @@ export class CourseInFocusService {
     return ref.getDownloadURL(); // pulls the download URL which is an observable , handle accordingly
   }
 
-  getActiveCourseInFocus(): Observable<CourseInFocus> | null {
+  getActiveCoursesInFocus(category?: string): Observable<Array<CourseInFocus>> {
     const courseInFocusCollectn = this.database.collection(
       FIREBASE_COLLECTION.COURSE_IN_FOCUS,
-      (ref) => ref.where('status', '==', ITEM_STATUS.PUBLISHED).limit(1)
+      (ref) => {
+        const query = ref
+          .where('status', '==', ITEM_STATUS.PUBLISHED)
+          .orderBy('submitDate', 'desc');
+        if (category !== undefined) {
+          return query.where('category', '==', category);
+        }
+        return query;
+      }
     );
     return courseInFocusCollectn.get().pipe(
-      map((querySnapshot) => {
-        if (querySnapshot.docs.length > 0) {
-          const data = querySnapshot.docs[0].data() as CourseInFocus;
-          data.id = querySnapshot.docs[0].id;
+      map((querySnapshot) =>
+        querySnapshot.docs.map((doc) => {
+          const data = doc.data() as CourseInFocus;
+          data.id = doc.id;
           data.image$ = this.getImage(data.image);
           return data;
-        }
-        return null;
-      })
+        })
+      )
     );
   }
 
-  publishCourseInFocus(id: string, category: string) {
-    return this.unpublishCourseInFocus(category).pipe(
-      concatMap(() => {
-        return this.courseInFocusCollection.doc(id).update({
-          status: ITEM_STATUS.PUBLISHED,
-          publishDate: new Date().getTime(),
-          unpublishDate: null
-        });
+  publishCourseInFocus(id: string) {
+    return from(
+      this.courseInFocusCollection.doc(id).update({
+        status: ITEM_STATUS.PUBLISHED,
+        publishDate: new Date().getTime(),
+        unpublishDate: null
       })
     );
   }

@@ -21,7 +21,7 @@ export class HomePage implements OnInit {
   buttonClicked = false;
   coffeeConversations$: Observable<CoffeeConversation[]>;
   ngoInFocus$: Observable<NgoInFocus>;
-  courseInFocus$: Observable<CourseInFocus>;
+  coursesInFocus$: Observable<CourseInFocus[]>;
   newsList$: Observable<News[]>;
 
   constructor(
@@ -47,7 +47,7 @@ export class HomePage implements OnInit {
     this.newsList$ = this.newsService.getAllNews();
     this.coffeeConversations$ = this.coffeeConvService.getCoffeeConversations();
     this.ngoInFocus$ = this.ngoInFocusService.getActiveNgoInFocus();
-    this.courseInFocus$ = this.courseInFocusService.getActiveCourseInFocus();
+    this.coursesInFocus$ = this.courseInFocusService.getActiveCoursesInFocus();
   }
 
   onAccept() {

@@ -81,11 +81,11 @@
             <ion-button
               *ngIf="courseInFocus.status == 'submitted'"
               title="Click to Publish Course In Focus"
-              (click)="publishCourseInFocus(courseInFocus.id, courseInFocus.category)"
+              (click)="publishCourseInFocus(courseInFocus.id)"
               ><ion-icon slot="icon-only" name="rocket-outline"></ion-icon
             ></ion-button>
             <ion-button
-              (click)="publishCourseInFocus(courseInFocus.id, courseInFocus.category)"
+              (click)="publishCourseInFocus(courseInFocus.id)"
               *ngIf="courseInFocus.status == 'inactive'"
               disabled
               ><ion-icon

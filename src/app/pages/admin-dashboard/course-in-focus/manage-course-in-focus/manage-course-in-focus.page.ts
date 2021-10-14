@@ -139,20 +139,18 @@ export class ManageCourseInFocusPage implements OnInit, OnDestroy {
       );
   }
 
-  publishCourseInFocus(id: string, category: string) {
-    this.courseInFocusService
-      .publishCourseInFocus(id, category)
-      .subscribe((data) => {
-        console.log(data);
-        this.uiUtil.presentAlert(
-          UI_MESSAGES.SUCCESS_HEADER,
-          UI_MESSAGES.SUCCESS_PUBLISH_ITEM_DESC.replace(
-            UI_MESSAGES.PLACEHOLDER,
-            ITEMS.COURSE_IN_FOCUS
-          ),
-          [UI_MESSAGES.FAILURE_CTA_TEXT]
-        );
-      });
+  publishCourseInFocus(id: string) {
+    this.courseInFocusService.publishCourseInFocus(id).subscribe((data) => {
+      console.log(data);
+      this.uiUtil.presentAlert(
+        UI_MESSAGES.SUCCESS_HEADER,
+        UI_MESSAGES.SUCCESS_PUBLISH_ITEM_DESC.replace(
+          UI_MESSAGES.PLACEHOLDER,
+          ITEMS.COURSE_IN_FOCUS
+        ),
+        [UI_MESSAGES.FAILURE_CTA_TEXT]
+      );
+    });
   }
 
   ngOnDestroy(): void {

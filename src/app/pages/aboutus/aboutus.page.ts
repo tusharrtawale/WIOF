@@ -104,14 +104,6 @@ export class AboutusPage implements OnInit {
       socialLink: 'https://www.linkedin.com/in/naved-maulavi'
     },
     {
-      serialNo: 10,
-      name: 'Eeshan Jaiswal',
-      imageLink: '../../../assets/profiles/eeshan_jaiswal.jpg',
-      bio:
-        "Eeshan is a Tech enthusiast and believes in sustainable development. At WIOF he has contributed towards the development of the website and various widgets. He has a keen interest in technology and he is always looking forward to developing solutions that can add more value to people's life. He wants to work towards the emerging issues in the world with help of technology, like the use of IoT in water tanks monitoring to preserve water, the use of Air Quality Monitoring System to aware people of increasing pollution, and more.",
-      socialLink: 'https://www.linkedin.com/in/eeshan-jaiswal-114737101/'
-    },
-    {
       serialNo: 11,
       name: 'Devraj Soni',
       imageLink: '../../../assets/profiles/devraj_soni.jpg',
@@ -150,14 +142,6 @@ export class AboutusPage implements OnInit {
       bio:
         'Prachi Munjal is an IT professional  and has worked with multiple clients across industries. She is an open minded person which helps her experience new thoughts and ideas, this has strengthened her and her beliefs. She has volunteered with non profit events organisations involving children and their education. She is concerned with the way humans interact with the environment and affect it. She is a firm believer that each one of us with an extra step can make this world a better place to live in - together we can and we will.  She is ISTQB certified and has tested WIOF website for us as an independent tester.  She has done her BTech in Computer Science from Maharishi Dayanand University.',
       socialLink: 'https://www.linkedin.com/in/prachi-testautomation'
-    },
-    {
-      serialNo: 19,
-      name: 'Madhura Hambarde',
-      imageLink: '../../../assets/profiles/madhura_hambarde.jpg',
-      bio:
-        'Madhura Hambarde is a Senior Systems Engineer by profession.  She has interest in the Air Pollution area and has written blogs pertaining to it on the Air Page of WIOF. She has also worked with the Eco Club of Infosys Pune in collaboration with Indian Institute of Tropical Meteorology, Pune (makers of the SAFAR AQI Monitoring App) to help monitor pollution in the Hinjewadi area by getting Air Monitoring Device from IITM to the Infosys Campus last year.  She has done her Bachelors in Electrical, Electronics and Communication Engineering from Pune University and is an Internet of Things (IOT) Enthusiast.',
-      socialLink: 'https://www.linkedin.com/in/madhura-hambarde-166718155/'
     },
     {
       serialNo: 20,

@@ -12,39 +12,39 @@ export class AdminDashboardPage implements OnInit {
   adminDB = {
     buttons: [
       {
-        name: 'Manage Blogs',
+        name: 'Blogs',
         actionUrl: 'manage-blog'
       },
       {
-        name: 'Manage Polls',
+        name: 'Polls',
         actionUrl: 'manage-polls'
       },
       {
-        name: 'Manage Breaking News',
+        name: 'Breaking News',
         actionUrl: 'manage-news'
       },
       {
-        name: 'Manage Calendar',
+        name: 'Calendar',
         actionUrl: 'manage-calendar'
       },
       {
-        name: 'Manage Coffee Conversations',
+        name: 'Coffee Conversations',
         actionUrl: 'manage-coffee-conversation'
       },
       {
-        name: 'Manage In Focus',
+        name: 'In Focus',
         actionUrl: 'manage-in-focus'
       },
       {
-        name: 'Manage NGO In Focus',
+        name: 'NGOs In Focus',
         actionUrl: 'manage-ngo-in-focus'
       },
       {
-        name: 'Manage Course In Focus',
+        name: 'Courses In Focus',
         actionUrl: 'manage-course-in-focus'
       },
       {
-        name: 'View Subscriptions',
+        name: 'Subscriptions',
         actionUrl: 'subscribers'
       }
     ]

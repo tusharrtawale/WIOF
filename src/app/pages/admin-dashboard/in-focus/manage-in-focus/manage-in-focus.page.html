@@ -76,13 +76,12 @@
             <ion-button
               *ngIf="inFocus.status == 'submitted'"
               title="Click to Publish In Focus"
-              (click)="publishInFocus(inFocus.inFocusId, inFocus.category)"
+              (click)="publishInFocus(inFocus.inFocusId)"
               ><ion-icon slot="icon-only" name="rocket-outline"></ion-icon
             ></ion-button>
             <ion-button
-              (click)="publishInFocus(inFocus.inFocusId, inFocus.category)"
+              (click)="publishInFocus(inFocus.inFocusId)"
               *ngIf="inFocus.status == 'inactive'"
-              disabled
               ><ion-icon
                 slot="icon-only"
                 name="rocket"
@@ -92,6 +91,7 @@
             <ion-button
               *ngIf="inFocus.status == 'published'"
               title="Published In Focus"
+              (click)="unpublishInFocus(inFocus.inFocusId)"
               ><ion-icon
                 slot="icon-only"
                 name="rocket"

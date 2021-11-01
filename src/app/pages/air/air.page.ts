@@ -25,7 +25,7 @@ export class AirPage implements OnInit {
 
   blogs$: Observable<Blog[]>;
   videos$: Observable<Video[]>;
-  inFocus$: Observable<InFocus>;
+  inFocuses$: Observable<InFocus[]>;
   coffeeConversations$: Observable<CoffeeConversation[]>;
   elementName: string = ELEMENT_SELECT.AIR;
 
@@ -44,7 +44,7 @@ export class AirPage implements OnInit {
     this.coffeeConversations$ = this.coffeeConvService.getCoffeeConversations(
       ELEMENT_BLOG_CATEGORY.AIR
     );
-    this.inFocus$ = this.inFocusService.getActiveInFocus(
+    this.inFocuses$ = this.inFocusService.getActiveInFocuses(
       ELEMENT_BLOG_CATEGORY.AIR
     );
   }

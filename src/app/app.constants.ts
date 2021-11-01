@@ -254,6 +254,7 @@ export const UI_MESSAGES = {
   ALREADY_SUBSCRIBED:
     'You have already been subscribed to WIOF Newsletter. Stay tuned for receiving periodic updates on our website in your mailbox.',
   SUCCESS_PUBLISH_ITEM_DESC: '$ITEM successfully published!',
+  SUCCESS_UNPUBLISH_ITEM_DESC: '$ITEM successfully unpublished!',
   SUCCESS_POLL_VOTE_HEADER: 'Vote Recorded',
   SUCCESS_POLL_VOTE_DESC:
     'Your vote has been recorded. Thanks $NAME for voting..!!',
@@ -266,3 +267,11 @@ export const UI_MESSAGES = {
 };
 
 export const AVG_WORD_READ_PER_MIN = 250;
+
+export const IN_FOCUS_TITLE = {
+  [ELEMENT_SELECT.EARTH]: 'Animal Rescue in Focus',
+  [ELEMENT_SELECT.AIR]: 'City in Focus',
+  [ELEMENT_SELECT.FIRE]: 'Innovation in Focus',
+  [ELEMENT_SELECT.WATER]: 'River in Focus',
+  [ELEMENT_SELECT.SPIRIT]: 'Asana in Focus'
+};

@@ -22,7 +22,7 @@ import { InFocusService } from 'src/app/services/in-focus.service';
 export class EarthPage implements OnInit {
   blogs$: Observable<Blog[]>;
   videos$: Observable<Video[]>;
-  inFocus$: Observable<InFocus>;
+  inFocuses$: Observable<InFocus[]>;
   coffeeConversations$: Observable<CoffeeConversation[]>;
   elementName: string = ELEMENT_SELECT.EARTH;
 
@@ -41,7 +41,7 @@ export class EarthPage implements OnInit {
     this.coffeeConversations$ = this.coffeeConvService.getCoffeeConversations(
       ELEMENT_BLOG_CATEGORY.EARTH
     );
-    this.inFocus$ = this.inFocusService.getActiveInFocus(
+    this.inFocuses$ = this.inFocusService.getActiveInFocuses(
       ELEMENT_BLOG_CATEGORY.EARTH
     );
   }

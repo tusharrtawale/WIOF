@@ -120,20 +120,32 @@ export class ManageInFocusPage implements OnInit, OnDestroy {
       );
   }
 
-  publishInFocus(inFocusId: string, category: string) {
-    this.inFocusService
-      .publishInFocus(inFocusId, category)
-      .subscribe((data) => {
-        console.log(data);
-        this.uiUtil.presentAlert(
-          UI_MESSAGES.SUCCESS_HEADER,
-          UI_MESSAGES.SUCCESS_PUBLISH_ITEM_DESC.replace(
-            UI_MESSAGES.PLACEHOLDER,
-            ITEMS.IN_FOCUS
-          ),
-          [UI_MESSAGES.FAILURE_CTA_TEXT]
-        );
-      });
+  publishInFocus(inFocusId: string) {
+    this.inFocusService.publishInFocus(inFocusId).subscribe((data) => {
+      console.log(data);
+      this.uiUtil.presentAlert(
+        UI_MESSAGES.SUCCESS_HEADER,
+        UI_MESSAGES.SUCCESS_PUBLISH_ITEM_DESC.replace(
+          UI_MESSAGES.PLACEHOLDER,
+          ITEMS.IN_FOCUS
+        ),
+        [UI_MESSAGES.FAILURE_CTA_TEXT]
+      );
+    });
+  }
+
+  unpublishInFocus(inFocusId: string) {
+    this.inFocusService.unpublishInFocus(inFocusId).subscribe((data) => {
+      console.log(data);
+      this.uiUtil.presentAlert(
+        UI_MESSAGES.SUCCESS_HEADER,
+        UI_MESSAGES.SUCCESS_UNPUBLISH_ITEM_DESC.replace(
+          UI_MESSAGES.PLACEHOLDER,
+          ITEMS.IN_FOCUS
+        ),
+        [UI_MESSAGES.FAILURE_CTA_TEXT]
+      );
+    });
   }
 
   ngOnDestroy(): void {

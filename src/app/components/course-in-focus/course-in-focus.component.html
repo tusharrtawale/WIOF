@@ -3,13 +3,11 @@
   class="wiof-course-in-focus-container"
 >
   <ion-card-header class="ion-align-center wiof-slider-header">
-    <ion-row>
-      <ion-col class="title-text" size="12">Course in Focus</ion-col>
-    </ion-row>
+    <ion-card-title class="title-text">Course in Focus</ion-card-title>
   </ion-card-header>
   <ion-card-content class="background ion-no-padding">
     <div *ngIf="coursesInFocus; else loading">
-      <ion-slides #wiofNewsSlider [options]="slideOpts">
+      <ion-slides #slider [options]="slideOpts">
         <ion-slide *ngFor="let courseInFocus of coursesInFocus">
           <ion-card
             class="ion-no-padding ion-no-margin"
@@ -69,12 +67,12 @@
       <div
         *ngIf="coursesInFocus.length > 1"
         class="swiper-button-prev navigation-arrow-custom-styling"
-        (click)="wiofNewsSlider.slidePrev()"
+        (click)="slider.slidePrev()"
       ></div>
       <div
         *ngIf="coursesInFocus.length > 1"
         class="swiper-button-next navigation-arrow-custom-styling"
-        (click)="wiofNewsSlider.slideNext()"
+        (click)="slider.slideNext()"
       ></div>
     </div>
 

@@ -22,7 +22,7 @@ import { InFocusService } from 'src/app/services/in-focus.service';
 export class FirePage implements OnInit {
   blogs$: Observable<Blog[]>;
   videos$: Observable<Video[]>;
-  inFocus$: Observable<InFocus>;
+  inFocuses$: Observable<InFocus[]>;
   coffeeConversations$: Observable<CoffeeConversation[]>;
   elementName: string = ELEMENT_SELECT.FIRE;
 
@@ -41,7 +41,7 @@ export class FirePage implements OnInit {
     this.coffeeConversations$ = this.coffeeConvService.getCoffeeConversations(
       ELEMENT_BLOG_CATEGORY.ENERGY
     );
-    this.inFocus$ = this.inFocusService.getActiveInFocus(
+    this.inFocuses$ = this.inFocusService.getActiveInFocuses(
       ELEMENT_BLOG_CATEGORY.ENERGY
     );
   }

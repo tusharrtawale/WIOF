@@ -4,7 +4,7 @@ import {
   AngularFirestore,
   AngularFirestoreCollection
 } from '@angular/fire/firestore';
-import { map, concatMap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { from, Observable } from 'rxjs';
 import { FIREBASE_COLLECTION, ITEM_STATUS } from '../app.constants';
 import { AngularFireStorage } from '@angular/fire/storage';
@@ -105,23 +105,12 @@ export class CourseInFocusService {
 
   unpublishCourseInFocus(id: string) {
     return this.database
-      .collection(FIREBASE_COLLECTION.COURSE_IN_FOCUS, (ref) =>
-        ref.where('status', '==', ITEM_STATUS.PUBLISHED)
-      )
-      .get()
-      .pipe(
-        map((querySnapshot) =>
-          querySnapshot.docs.map((doc) => {
-            const data = doc.data() as CourseInFocus;
-            data.id = doc.id;
-            this.courseInFocusCollection.doc(data.id).update({
-              status: ITEM_STATUS.INACTIVE,
-              unpublishDate: new Date().getTime()
-            });
-            return data;
-          })
-        )
-      );
+      .collection(FIREBASE_COLLECTION.COURSE_IN_FOCUS)
+      .doc(id)
+      .update({
+        status: ITEM_STATUS.INACTIVE,
+        unpublishDate: new Date().getTime()
+      });
   }
 
   saveCourseInFocusImage(imageData: any, imageName: string) {

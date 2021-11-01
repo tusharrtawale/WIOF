@@ -15,10 +15,10 @@
     </ion-col>
   </ion-row>
   <ion-row>
-    <ion-col size-xs="12" *ngIf="this.inFocus$ | async as inFocus">
+    <ion-col>
       <app-in-focus-widget
+        [inFocuses]="this.inFocuses$ | async"
         [element]="elementName"
-        [inFocus]="inFocus"
       ></app-in-focus-widget>
     </ion-col>
   </ion-row>

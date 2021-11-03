@@ -20,7 +20,7 @@ export class HomePage implements OnInit {
   counter = 5;
   buttonClicked = false;
   coffeeConversations$: Observable<CoffeeConversation[]>;
-  ngoInFocus$: Observable<NgoInFocus>;
+  ngosInFocus$: Observable<NgoInFocus[]>;
   coursesInFocus$: Observable<CourseInFocus[]>;
   newsList$: Observable<News[]>;
 
@@ -46,7 +46,7 @@ export class HomePage implements OnInit {
     this.viewConsentPopup = privacyConsentAccepted === 'true' ? false : true;
     this.newsList$ = this.newsService.getAllNews();
     this.coffeeConversations$ = this.coffeeConvService.getCoffeeConversations();
-    this.ngoInFocus$ = this.ngoInFocusService.getActiveNgoInFocus();
+    this.ngosInFocus$ = this.ngoInFocusService.getActiveNgosInFocus();
     this.coursesInFocus$ = this.courseInFocusService.getActiveCoursesInFocus();
   }
 

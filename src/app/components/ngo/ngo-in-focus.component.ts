@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgoInFocus } from 'src/app/models/NgoInFocus';
+import { COFFEE_CONV_SLIDER_OPTIONS } from 'src/app/app.constants';
 
 @Component({
   selector: 'app-ngo-in-focus',
@@ -7,7 +8,8 @@ import { NgoInFocus } from 'src/app/models/NgoInFocus';
   styleUrls: ['./ngo-in-focus.component.scss']
 })
 export class NgoInFocusComponent implements OnInit {
-  @Input() ngoInFocus: NgoInFocus;
+  @Input() ngosInFocus: Array<NgoInFocus>;
+  slideOpts = COFFEE_CONV_SLIDER_OPTIONS;
 
   constructor() {}
 

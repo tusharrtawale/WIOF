@@ -81,16 +81,24 @@ export class NgoInFocusService {
     return ref.getDownloadURL(); // pulls the download URL which is an observable , handle accordingly
   }
 
-  getActiveNgoInFocus(): Observable<NgoInFocus> | null {
+  getActiveNgosInFocus(category?: string): Observable<NgoInFocus[]> | null {
     const ngoInFocusCollectn = this.database.collection(
       FIREBASE_COLLECTION.NGO_IN_FOCUS,
-      (ref) => ref.where('status', '==', ITEM_STATUS.PUBLISHED).limit(1)
+      (ref) => {
+        const query = ref
+          .where('status', '==', ITEM_STATUS.PUBLISHED)
+          .orderBy('submitDate', 'desc');
+        if (category !== undefined) {
+          return query.where('category', '==', category);
+        }
+        return query;
+      }
     );
     return ngoInFocusCollectn.get().pipe(
-      map((querySnapshot) => {
-        if (querySnapshot.docs.length > 0) {
-          const data = querySnapshot.docs[0].data() as NgoInFocus;
-          data.id = querySnapshot.docs[0].id;
+      map((querySnapshot) =>
+        querySnapshot.docs.map((doc) => {
+          const data = doc.data() as NgoInFocus;
+          data.id = doc.id;
           if (data.mediaType === MEDIA_TYPE.IMAGE) {
             data.image$ = this.getImage(data.mediaLink);
           } else {
@@ -100,9 +108,8 @@ export class NgoInFocusService {
           }
           data.logoImage$ = this.getImage(data.ngoLogo);
           return data;
-        }
-        return null;
-      })
+        })
+      )
     );
   }
 

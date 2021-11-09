@@ -33,12 +33,10 @@ export class ManageCoffeeConversationPage implements OnInit, OnDestroy {
       .pipe(
         takeUntil(this.destroy$),
         map((coffeeConversationList) => {
-          return coffeeConversationList
-            .map((coffeeConversation) => {
-              coffeeConversation.interviewDate = new Date().getTime();
-              return coffeeConversation;
-            })
-            .sort((a, b) => b.interviewDate - a.interviewDate);
+          coffeeConversationList.sort(
+            (a, b) => b.interviewDate - a.interviewDate
+          );
+          return coffeeConversationList;
         }),
         catchError((err) => {
           return throwError(err);

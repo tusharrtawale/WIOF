@@ -17,11 +17,7 @@
           <ion-card class="coffee-conv-card">
             <ion-card-content class="ion-text-start card-content">
               <ion-row>
-                <ion-col
-                  class="media-container"
-                  size-xs="12"
-                  [attr.size-md]="fromHomePage ? '12' : '6'"
-                >
+                <ion-col class="media-container" size-xs="12">
                   <iframe
                     class="media-player"
                     [title]="coffeeConv.topic"
@@ -29,11 +25,7 @@
                     allowfullscreen
                   ></iframe>
                 </ion-col>
-                <ion-col
-                  class="coffee-conv-content"
-                  size-xs="12"
-                  [attr.size-md]="fromHomePage ? '12' : '6'"
-                >
+                <ion-col class="coffee-conv-content" size-xs="12">
                   <h2>
                     <strong>{{ coffeeConv.topic }}</strong>
                   </h2>

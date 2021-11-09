@@ -7,7 +7,7 @@
     background-color: $home-color-light;
     padding: 0;
     width: 100%;
-    height: calc(100% - 60px);
+    height: calc(100% - 58px);
 
     ion-slides {
       height: 100%;
@@ -33,6 +33,7 @@
             overflow: hidden;
             width: 100%;
             min-height: 300px;
+            padding: 0;
           }
 
           .about-interviewee {
@@ -161,33 +162,36 @@
   text-decoration: none;
 }
 
-@mixin blog-card-style($color) {
+@mixin card-style($color) {
   background-color: $color;
   &.background {
     padding: 0px;
     background-color: rgba($color, $tint-fraction);
+
     .coffee-conv-card .card-content {
       padding: 5px;
+      color: $dark-color;
+      background-color: rgba($color, $tint-fraction);
     }
   }
 }
 
 .wiof-earth {
-  @include blog-card-style($earth-color);
+  @include card-style($earth-color);
 }
 
 .wiof-water {
-  @include blog-card-style($water-color);
+  @include card-style($water-color);
 }
 
 .wiof-fire {
-  @include blog-card-style($energy-color);
+  @include card-style($energy-color);
 }
 
 .wiof-air {
-  @include blog-card-style($air-color);
+  @include card-style($air-color);
 }
 
 .wiof-spirit {
-  @include blog-card-style($spirit-color);
+  @include card-style($spirit-color);
 }

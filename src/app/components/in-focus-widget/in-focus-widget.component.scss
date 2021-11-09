@@ -1,5 +1,9 @@
 @import '../../wiof-custom-theming.scss';
 
+.wiof-in-focus-container {
+  height: calc(100% - 20px);
+}
+
 .wiof-video-player-content {
   padding: 0px;
   text-align: center;
@@ -90,5 +94,6 @@
 
   p {
     font-size: medium;
+    margin-top: 10px;
   }
 }

@@ -55,7 +55,7 @@ export class ManageInFocusPage implements OnInit, OnDestroy {
     });
   }
 
-  deleteInFocus(inFocusList: InFocus[], index: number, inFocus: InFocus) {
+  deleteInFocus(inFocusList: InFocus[], index: number, inFocusId: string) {
     this.uiUtil.presentAlert(
       UI_MESSAGES.CONFIRM_HEADER,
       UI_MESSAGES.CONFIRM_DELETE_ITEM_DESC.replace(
@@ -66,7 +66,7 @@ export class ManageInFocusPage implements OnInit, OnDestroy {
         {
           text: UI_MESSAGES.CONFIRM_DELETE_PRIMARY_CTA,
           handler: async () => {
-            await this.delInFocus(inFocusList, index, inFocus);
+            await this.delInFocus(inFocusList, index, inFocusId);
           }
         },
         {
@@ -80,7 +80,7 @@ export class ManageInFocusPage implements OnInit, OnDestroy {
   private async delInFocus(
     inFocusList: InFocus[],
     index: number,
-    inFocus: InFocus
+    inFocusId: string
   ) {
     const loader = await this.uiUtil.showLoader(
       UI_MESSAGES.DELETE_IN_PROGRESS.replace(
@@ -89,7 +89,7 @@ export class ManageInFocusPage implements OnInit, OnDestroy {
       )
     );
     this.inFocusService
-      .deleteInFocus(inFocus.inFocusId)
+      .deleteInFocus(inFocusId)
       .pipe(takeUntil(this.destroy$))
       .subscribe(
         (response) => {

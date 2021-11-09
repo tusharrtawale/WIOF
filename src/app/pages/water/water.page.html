@@ -16,11 +16,21 @@
     </ion-col>
   </ion-row>
   <ion-row>
-    <ion-col>
+    <ion-col size-lg="7" size-xs="12">
       <app-in-focus-widget
         [inFocuses]="this.inFocuses$ | async"
         [element]="elementName"
       ></app-in-focus-widget>
+    </ion-col>
+    <ion-col
+      size-lg="5"
+      size-xs="12"
+      *ngIf="this.coffeeConversations$ | async as coffeeConversations"
+    >
+      <app-coffee-conversation
+        [element]="elementName"
+        [coffeeConvList]="coffeeConversations"
+      ></app-coffee-conversation>
     </ion-col>
   </ion-row>
   <ion-row

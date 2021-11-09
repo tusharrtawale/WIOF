@@ -1,4 +1,4 @@
-<ion-card *ngIf="inFocuses?.length > 0" class="wiof-course-in-focus-container">
+<ion-card *ngIf="inFocuses?.length > 0" class="wiof-in-focus-container">
   <ion-card-header class="wiof-video-player-header" [ngClass]="inFocusClass">
     <ion-card-title class="title-text"> {{ inFocusTitle }} </ion-card-title>
   </ion-card-header>
@@ -7,7 +7,7 @@
       <ion-slide *ngFor="let inFocus of inFocuses">
         <ion-grid class="ion-no-padding">
           <ion-row>
-            <ion-col size-xs="12" size-lg="8" class="wiof-video-player-content">
+            <ion-col size-xs="12" class="wiof-video-player-content">
               <iframe
                 [title]="inFocus.title"
                 class="videoPlayer"
@@ -15,7 +15,7 @@
                 allowfullscreen
               ></iframe>
             </ion-col>
-            <ion-col size-xs="12" size-lg="4" class="in-focus-content">
+            <ion-col size-xs="12" class="in-focus-content">
               <strong>{{ inFocus.subTitle }}</strong>
               <p>{{ inFocus.description }}</p>
             </ion-col>

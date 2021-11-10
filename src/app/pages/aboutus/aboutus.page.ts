@@ -68,7 +68,7 @@ export class AboutusPage implements OnInit {
       name: 'Sneha Bijlani',
       imageLink: '../../../assets/profiles/sneha_bijlani.jpg',
       bio:
-        'Sneha Bijlani is the owner of our "Spirit" Page. She is a Digital Marketing Professional and the Co-Founder of WIOF. She has been responsible for doing the initial mind-mapping of the website structure and content. She is also the reviewer of most of the blogs and ensures that they are meeting SEO standards. She is a Certified Digital Marketer from Lavenir Institute of Professional Studies. Her interests also include Content Writing, Psychology, Consumer Behavior, NLP, Social Etiquttes, Soft Skills and Public Speaking.',
+        'Sneha Bijlani is a Digital Marketing Professional and the Co-Founder of WIOF. She has been responsible for doing the initial mind-mapping of the website structure and content. She is also the reviewer of most of the blogs and ensures that they are meeting SEO standards. She is a Certified Digital Marketer from Lavenir Institute of Professional Studies. Her interests also include Content Writing, Psychology, Consumer Behavior, NLP, Social Etiquttes, Soft Skills and Public Speaking.',
       socialLink: 'https://www.linkedin.com/in/snehabijlani29/'
     },
     {
@@ -76,7 +76,7 @@ export class AboutusPage implements OnInit {
       name: 'Neelu Tiwari',
       imageLink: '../../../assets/profiles/neelu_tiwari.jpg',
       bio:
-        'Neelu Tiwari has contributed in initial technical analysis and feasibility of technical options to choose from to build the website with architectural design diagrams and PLM slection tool to setup the website program flow. She also has contributed in few blogs on vegan diet inspired from Sadhguru and yogic science. She is also a Certified Scrum Master from Scrum Alliance who has worked technically on several agile projects. She has done her Masters in Computer Applications from Pune University.',
+        'Neelu Tiwari is the owner of our "Spirit" Page. She has contributed in initial technical analysis and feasibility of technical options to choose from to build the website with architectural design diagrams and PLM slection tool to setup the website program flow. She also has contributed in few blogs on vegan diet inspired from Sadhguru and yogic science. She is also a Certified Scrum Master from Scrum Alliance who has worked technically on several agile projects. She has done her Masters in Computer Applications from Pune University.',
       socialLink: 'https://www.linkedin.com/in/neelu-tiwari-45502617/'
     },
     {
@@ -104,12 +104,12 @@ export class AboutusPage implements OnInit {
       socialLink: 'https://www.linkedin.com/in/naved-maulavi'
     },
     {
-      serialNo: 11,
-      name: 'Devraj Soni',
-      imageLink: '../../../assets/profiles/devraj_soni.jpg',
+      serialNo: 20,
+      name: 'Raj Maru',
+      imageLink: '../../../assets/profiles/Raj.PNG',
       bio:
-        "Devraj is responsible for developing the pH and Energy Widgets and few content videos of WIOF. His deep interest lies in developing sustainable business enterprises that meet not only today's needs but also promise a sustainable tomorrow. Apart from WIOF, Devraj has a family business of Embossed idols and Silver Jewellery. He also manages his own venture ThriveGreen in the Sustainability area.",
-      socialLink: 'https://www.linkedin.com/in/devraj-soni-07101995/'
+        "Raj Maru has been an Animal Rescuer for 7+ years and an Animal Liberation Activist. Certified from WVS Ooty for vaccinating animals and assisting surgeries, he routinely rescues, treats and fosters injured animals. A budding environmentalist, Raj is an IT Professional, and an ethical vegan for more than 2 years he firmly believes 'Hands that help are better than lips that pray'",
+      socialLink: 'https://www.linkedin.com/in/raj-maru-1a9ba77a'
     },
     {
       serialNo: 12,
@@ -144,12 +144,12 @@ export class AboutusPage implements OnInit {
       socialLink: 'https://www.linkedin.com/in/prachi-testautomation'
     },
     {
-      serialNo: 20,
-      name: 'Raj Maru',
-      imageLink: '../../../assets/profiles/Raj_Maru.jpeg',
+      serialNo: 11,
+      name: 'Devraj Soni',
+      imageLink: '../../../assets/profiles/devraj_soni.jpg',
       bio:
-        "Raj Maru has been an Animal Rescuer for 7+ years and an Animal Liberation Activist. Certified from WVS Ooty for vaccinating animals and assisting surgeries, he routinely rescues, treats and fosters injured animals. A budding environmentalist, Raj is an IT Professional, and an ethical vegan for more than 2 years he firmly believes 'Hands that help are better than lips that pray'",
-      socialLink: 'https://www.linkedin.com/in/raj-maru-1a9ba77a'
+        "Devraj is responsible for developing the pH and Energy Widgets and few content videos of WIOF. His deep interest lies in developing sustainable business enterprises that meet not only today's needs but also promise a sustainable tomorrow. Apart from WIOF, Devraj has a family business of Embossed idols and Silver Jewellery. He also manages his own venture ThriveGreen in the Sustainability area.",
+      socialLink: 'https://www.linkedin.com/in/devraj-soni-07101995/'
     },
     {
       serialNo: 21,

@@ -3,7 +3,7 @@ import { Subscriber } from '../models/Subscriber';
 import {
   AngularFirestore,
   AngularFirestoreCollection
-} from '@angular/fire/firestore';
+} from '@angular/fire/compat/firestore';
 import { from } from 'rxjs';
 import { FIREBASE_COLLECTION } from '../app.constants';
 import { Observable } from 'rxjs';

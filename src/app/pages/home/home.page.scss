@@ -1,4 +1,4 @@
-@import '../../wiof-custom-theming.scss';
+@import "../../wiof-custom-theming.scss";
 
 $bhue: 80;
 $bsat: 60;
@@ -42,8 +42,7 @@ $breakpoint-tablet: 767px;
   color: white;
   padding: 20px;
   margin: 0;
-  font-weight: $font-weight-medium;
-  text-shadow: black 10px 0px 10px;
+  text-shadow: -2px 2px 0 black;
 }
 
 @media (max-width: $breakpoint-tablet) {
@@ -63,7 +62,7 @@ $breakpoint-tablet: 767px;
 // }
 
 .landing-welcome-img {
-  background: url('../../../assets/banners/beautiful-pink-peach-tree-blossom.jpg');
+  background: url("../../../assets/banners/home_banner.jpg");
   background-repeat: no-repeat;
   // background-attachment: fixed;
   background-size: cover;
@@ -184,7 +183,7 @@ $breakpoint-tablet: 767px;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-image: url('../../../assets/icon/favicon.png');
+    background-image: url("../../../assets/icon/favicon.png");
     background-size: contain;
     box-shadow: 5px 5px 1rem rgba(50, 50, 50, 0.2), inset 10px 0 20px $light,
       inset -2px 0 20px rgba(128, 128, 128, 0.5);

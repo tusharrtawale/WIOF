@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {
   AngularFirestore,
   AngularFirestoreCollection
-} from '@angular/fire/firestore';
+} from '@angular/fire/compat/firestore';
 import { DomSanitizer } from '@angular/platform-browser';
 import { from, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';

@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import {
   AngularFirestore,
   AngularFirestoreCollection
-} from '@angular/fire/firestore';
-import { AngularFireStorage } from '@angular/fire/storage';
+} from '@angular/fire/compat/firestore';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { from, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Blog } from '../models/Blog';

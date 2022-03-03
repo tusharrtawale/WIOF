@@ -3,7 +3,7 @@ import { NgoInFocus } from '../models/NgoInFocus';
 import {
   AngularFirestore,
   AngularFirestoreCollection
-} from '@angular/fire/firestore';
+} from '@angular/fire/compat/firestore';
 import { map, concatMap } from 'rxjs/operators';
 import { from, Observable, of } from 'rxjs';
 import {
@@ -13,7 +13,7 @@ import {
   YOUTUBE_EMBED_VIDEO_LINK
 } from '../app.constants';
 import { DomSanitizer } from '@angular/platform-browser';
-import { AngularFireStorage } from '@angular/fire/storage';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
 
 @Injectable({
   providedIn: 'root'

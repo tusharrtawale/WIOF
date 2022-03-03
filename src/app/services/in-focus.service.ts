@@ -3,7 +3,7 @@ import { InFocus } from '../models/InFocus';
 import {
   AngularFirestore,
   AngularFirestoreCollection
-} from '@angular/fire/firestore';
+} from '@angular/fire/compat/firestore';
 import { map } from 'rxjs/operators';
 import { from, Observable } from 'rxjs';
 import {

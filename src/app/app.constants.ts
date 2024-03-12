@@ -176,7 +176,7 @@ export const VIDEO_PLAYER_TITLES = {
 export const VIDEO_PLAYER_VIDEOS = {
   AIR: 'Xs70ewSdEjE',
   WATER: 'RkdIIfArWqo',
-  EARTH: '5aIOHHi_W5o',
+  EARTH: 'ghkQoJoipbM',
   FIRE: 'mmyrbKBZ6SU',
   SPIRIT: 'CEqoCcacR3Y',
   CONFIG: 'SYWb9hNX-1s'
